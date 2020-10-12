@@ -1,1 +1,6 @@
 bold *constrained* & **un**constrained
+
+== Prerequisites
+
+* Ruby
+* GEM
