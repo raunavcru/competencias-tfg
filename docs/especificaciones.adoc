@@ -13,6 +13,7 @@ Un *administrador* debe ser capaz de:
 * Asignar competencias a una asignatura.
 * Crear y eliminar nuevos administradores.
 * Modificar sus datos de usuario.
+
 image:images/admin.png[Admin, 500, 500]
  
 
