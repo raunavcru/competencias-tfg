@@ -14,7 +14,7 @@ Un *administrador* debe ser capaz de:
 * Crear y eliminar nuevos administradores.
 * Modificar sus datos de usuario.
 
-image:images/admin.png[Admin, 500, 500]
+image:images/admin.png[Admin, 500, 700]
  
 
 
