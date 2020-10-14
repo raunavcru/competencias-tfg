@@ -1,6 +1,4 @@
-image::https://asciidoctor.org/images/octocat.jpg[GitHub mascot]
 == Especificaciones
-image::https://asciidoctor.org/images/octocat.jpg[GitHub mascot]
 Un *administrador* debe ser capaz de:
 
 * Crear, modificar y eliminar alumnos.
@@ -15,8 +13,8 @@ Un *administrador* debe ser capaz de:
 * Asignar competencias a una asignatura.
 * Crear y eliminar nuevos administradores.
 * Modificar sus datos de usuario.
-
- image::https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.xatakandroid.com%2Fpersonalizacion%2Fnova-launcher-anade-nuevas-formas-iconos-android-11-dp4-su-beta&psig=AOvVaw13A_FeEOr1U3hEYtXjnrZ-&ust=1602757427530000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJin6Ovus-wCFQAAAAAdAAAAABAD[title="admin"]
+image:images/admin.png[]
+image:admin.png[]
  
 
 
