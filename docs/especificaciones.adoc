@@ -18,7 +18,6 @@ Un *administrador* debe ser capaz de:
 .Diagrama de Administrador 
 image::images/admin.png[Admin,600,500]
 
- +
 Un *profesor* debe ser capaz de:
 
 * Listar sus grupos de clase.
