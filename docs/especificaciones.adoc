@@ -17,7 +17,8 @@ Un *administrador* debe ser capaz de:
 [#img-admin] 
 .Diagrama de Administrador 
 image::images/admin.png[Admin,600,500]
-= a
+
+
 
 Un *profesor* debe ser capaz de:
 
