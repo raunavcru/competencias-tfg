@@ -25,14 +25,18 @@ Un *profesor* debe ser capaz de:
 * Listar las competencias de una asignatura.
 * Listar sus alumnos.
 * Listar, crear, modificar y eliminar actividades.
+* Ver las calificaciones de un alumno.
 * Crear, modificar y eliminar ejercicios. 
 * Asignar competencias a un ejercicio.
 * Asignar una intensidad a una competencia.
 * Asignar ejercicios a una actividad.
 * Ponderar una competencia en un ejercicio.
 * Puntuar las competencias de un ejercicio.
+* Ponderar un ejercicio.
 * Puntuar un ejercicio.
+* Ponderar una actividad.
 * Puntuar una actividad.
+* Modificar sus datos de usuario.
 
 [#img-profesor] 
 .Diagrama de Profesor 
