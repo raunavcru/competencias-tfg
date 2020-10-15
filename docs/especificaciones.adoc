@@ -37,5 +37,5 @@ Un *profesor* debe ser capaz de:
 
 [#img-profesor] 
 .Diagrama de Profesor 
-image::images/profesor.png[Profesor,500,400]
+image::images/profesor.png[Profesor,600,500]
 
