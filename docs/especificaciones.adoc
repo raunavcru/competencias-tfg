@@ -2,11 +2,11 @@
 
 === Definiciones
 
-* **Actividad**: Tarea que crea un profesor para evaluar una o varias competencias de un alumno. Pueden ser pruebas, examenes, ejercicios de clases, salidas extraescolares, trabajos grupales, etc.
+* **Actividad**: Tarea que crea un profesor para evaluar una o varias competencias de un alumno. Pueden ser pruebas, exámenes, ejercicios de clases, salidas extraescolares, trabajos grupales, etc.
 * **Ejercicio**: Parte de la que se componen las actividades. Por ejemplo, en un exámen de matemáticas, puede ser que un ejercicio sea realizar una ecuación.
-* **Grupo**: Conjunto de alumno asignado a un asignatura de un nivel específico. Por ejemplo, una clase de 3ºB de matemáticas. 
-* **Competencia concreta**: Competencia de nivel 1. Competencia muy delimitada, asociada a una asignatura, que puede puntuarse directamente.
-* **Competencia específica**: Competencia de nivel 2. Competencia estrechamente relaciona de una asignatura. Se calcula a partir de las competencias concretas.
+* **Grupo**: Conjunto de alumnos asignados a una asignatura de un nivel específico. Por ejemplo, una clase de 3ºB de matemáticas. 
+* **Competencia concreta**: Competencia de nivel 1. Competencia muy delimitada, asociada a una asignatura, que se puede puntuar directamente.
+* **Competencia específica**: Competencia de nivel 2. Competencia estrechamente relacionada con una asignatura. Se calcula a partir de las competencias concretas.
 * **Competencia general**: Competencia de nivel 3. Competencia de alto nivel que engloba varias asignaturas y habilidades.
 
 
@@ -35,17 +35,17 @@ Un *profesor* debe ser capaz de:
 * Listar sus grupos de clase.
 * Listar sus asignaturas.
 * Listar las competencias de una asignatura.
-* Listar sus alumnos.
+* Listar a sus alumnos.
 * Listar, crear, modificar y eliminar actividades.
 * Ver las calificaciones de un alumno.
 * Crear, modificar y eliminar ejercicios. 
 * Asignar competencias a un ejercicio.
 * Asignar una intensidad a una competencia.
 * Asignar ejercicios a una actividad.
-* Ponderar una competencia concreta en un ejercicio.
-* Puntuar las competencias concreta de un ejercicio.
-* Ponderar un ejercicio dentro de un actividad.
-* Puntuar un ejercicio dentro de un actividad.
+* Ponderar una competencia concretas en un ejercicio.
+* Puntuar las competencias concretas de un ejercicio.
+* Ponderar un ejercicio dentro de una actividad.
+* Puntuar un ejercicio dentro de una actividad.
 * Ponderar una actividad.
 * Puntuar una actividad.
 * Calcular las competencias específicas y generales a partir de las concretas.
