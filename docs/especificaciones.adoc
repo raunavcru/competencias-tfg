@@ -1,3 +1,15 @@
+== Terminología 
+
+=== Definiciones
+
+* **Actividad**: Tarea que crea un profesor para evaluar una o varias competencias de un alumno. Pueden ser pruebas, examenes, ejercicios de clases, salidas extraescolares, trabajos grupales, etc.
+* **Ejercicio**: Parte de la que se componen las actividades. Por ejemplo, en un exámen de matemáticas, puede ser que un ejercicio sea realizar una ecuación.
+* **Grupo**: Conjunto de alumno asignado a un asignatura de un nivel específico. Por ejemplo, una clase de 3ºB de matemáticas. 
+* **Competencia concreta**: Competencia de nivel 1. Competencia muy delimitada, asociada a una asignatura, que puede puntuarse directamente.
+* **Competencia específica**: Competencia de nivel 2. Competencia estrechamente relaciona de una asignatura. Se calcula a partir de las competencias concretas.
+* **Competencia general**: Competencia de nivel 3. Competencia de alto nivel que engloba varias asignaturas y habilidades.
+
+
 == Especificaciones
 Un *administrador* debe ser capaz de:
 
@@ -9,7 +21,7 @@ Un *administrador* debe ser capaz de:
 * Listar, crear, modificar y eliminar asignaturas.
 * Asignar una asignatura a grupos de clase.
 * Asignar asignatura a profesores.
-* Listar, crear, modificar y eliminar competencias.
+* Listar, crear, modificar y eliminar competencias. Se especifican tres niveles de competencia. El nivel 1 será llamada competencias concretas, las de nivel 2 competencias específicas y las de nivel 3 competencias generales.
 * Asignar competencias a una asignatura.
 * Listar, crear y eliminar nuevos administradores.
 * Modificar sus datos de usuario.
@@ -30,15 +42,19 @@ Un *profesor* debe ser capaz de:
 * Asignar competencias a un ejercicio.
 * Asignar una intensidad a una competencia.
 * Asignar ejercicios a una actividad.
-* Ponderar una competencia en un ejercicio.
-* Puntuar las competencias de un ejercicio.
-* Ponderar un ejercicio.
-* Puntuar un ejercicio.
+* Ponderar una competencia concreta en un ejercicio.
+* Puntuar las competencias concreta de un ejercicio.
+* Ponderar un ejercicio dentro de un actividad.
+* Puntuar un ejercicio dentro de un actividad.
 * Ponderar una actividad.
 * Puntuar una actividad.
+* Calcular las competencias específicas y generales a partir de las concretas.
 * Modificar sus datos de usuario.
 
 [#img-profesor] 
 .Diagrama de Profesor 
 image::images/profesor.png[Profesor,650,450]
 
+== Requisitos no funcionales 
+
+* La aplicación debe de estar disponible en inglés y español.
