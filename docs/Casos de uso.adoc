@@ -3,11 +3,10 @@
 |===
 | **CU-00** Listado de alumnos.
 
-| Descripción
+| Descripción:
+El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de alumnos inscrito_.
 
-|El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de alumnos inscrito_.
-
-| Secuencia normal
+| Secuencia normal:
 
  1.El adminsitrador desea obtener la lista de alumnos incritos.
 
@@ -19,24 +18,31 @@
 
 |image::mockups/Inicio-de-sesión.png[]
 
+|===
+|===
+| **CU-00**  Creación de alumnos.
+
+|Descripción :El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de un alumno_.
+
+| Secuencia normal:
+
+1.El adminsitrador desea crear un alumno.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de alumnos.
+
+4.El administrador obtiene el listado de alumnos.
+
+5.El administrador solicita crear un alumno.
+
+6.El administrador crea un alumno.
 
 
-**CU-00**  Creación de alumnos.
+|image::mockups/Inicio-de-sesión.png[]
 
-==== Descripción 
-====
-El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de un alumno_.
-====
-==== Secuencia normal
-====
-. El adminsitrador desea crear un alumno.
-. El sistema solicita las credenciales para identificarse.
-. El administrador solicita la lista de alumnos.
-. El administrador obtiene el listado de alumnos.
-. El administrador solicita crear un alumno.
-. El administrador crea un alumno.
-====
-image::mockups/Inicio-de-sesión.png[]
+|===
+|===
 
 **CU-00**  Edición de alumnos.
 
