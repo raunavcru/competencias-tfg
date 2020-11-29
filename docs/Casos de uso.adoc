@@ -43,7 +43,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-
 | **CU-00**  Edición de alumnos.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la edición de un alumno_.
@@ -66,7 +65,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-
 | **CU-00**  Eliminación de alumnos.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de un alumno_.
@@ -89,7 +87,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-
 | **CU-00** Listado de profesores.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de profesores inscrito_.
@@ -107,7 +104,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-
 | **CU-00**  Creación de profesores.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de un profesor_.
@@ -130,7 +126,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-
 | **CU-00**  Edición de profesores.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la edición de un profesor_.
@@ -153,7 +148,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-
 | **CU-00**  Eliminación de profesores.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de un profesor_.
@@ -174,6 +168,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |image::mockups/Inicio-de-sesión.png[]
 
+|===
+|===
 | **CU-00** Listado de Grupos de clase.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de grupo de clase_.
@@ -181,15 +177,17 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |Secuencia normal:
 
 1.El adminsitrador desea obtener la lista de grupos de clase.
+
 2.El sistema solicita las credenciales para identificarse.
+
 3.El administrador solicita la lista de grupos de clase.
+
 4.El administrador obtiene el listado de grupos de clase.
 
 |image::mockups/Inicio-de-sesión.png[]
 
 |===
 |===
-
 |**CU-00**  Creación de Grupos de clase.
 
 | Descripción:
@@ -213,7 +211,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-
 | **CU-00**  Edición de Grupos de clase.
 
 | Descripción: 
@@ -238,8 +235,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-
-
 |**CU-00**  Eliminación de Grupos de clase.
 
 | Descripción: 
@@ -264,7 +259,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-
 | **CU-00**  Asignar alumnos a sus respectivos grupos de clase.
 
 |Descripción: 
@@ -290,7 +284,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-
 | **CU-00**   Asignar profesores a un grupo de clase.
 
 |Descripción:
@@ -316,7 +309,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-
 |**CU-00** Listado de asignaturas.
 
 |Descripción:
@@ -336,8 +328,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-
-
 | **CU-00**  Creación de asignaturas.
 
 |Descripción: 
@@ -361,7 +351,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-
 |**CU-00**  Edición de asignaturas.
 
 | Descripción:
@@ -385,7 +374,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-
 | **CU-00**  Eliminación de asignaturas.
 
 |Descripción:
@@ -410,7 +398,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-
 | **CU-00**  Asignar una asignatura a grupos de clase.
 
 | Descripción: 
@@ -436,7 +423,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-
 |**CU-00**  Asignar asignatura a profesores.
 
 | Descripción: 
