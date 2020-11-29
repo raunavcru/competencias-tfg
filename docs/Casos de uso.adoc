@@ -2,10 +2,10 @@
 
 |===
 | **CU-00** Listado de alumnos.
-
+{set:cellbgcolor:#51adcf}
 | Descripción:
 El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de alumnos inscrito_.
-
+{set:cellbgcolor!}
 | Secuencia normal:
 
  1.El adminsitrador desea obtener la lista de alumnos incritos.
@@ -22,7 +22,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-00**  Creación de alumnos.
 
-|Descripción :El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de un alumno_.
+|Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de un alumno_.
 
 | Secuencia normal:
 
