@@ -447,6 +447,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |image::mockups/Inicio-de-sesión.png[]
 
 |===
+|===
 | **CU-00** Listado de competencias.
 
 | Descripción:
@@ -533,7 +534,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-00**  Eliminación de competencias.
+| **CU-00**  Asignación de competencias.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la asignación de competencias a una asignatura_.
 
