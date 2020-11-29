@@ -49,7 +49,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |Secuencia normal:
 
-1.El adminsitrador desea crear un alumno.
+1.El adminsitrador desea editar un alumno.
 
 2.El sistema solicita las credenciales para identificarse.
 
@@ -71,7 +71,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 | Secuencia normal:
 
-1.El adminsitrador desea crear un alumno.
+1.El adminsitrador desea eliminar un alumno.
 
 2.El sistema solicita las credenciales para identificarse.
 
@@ -132,7 +132,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 | Secuencia normal:
 
-1.El adminsitrador desea crear un profesor.
+1.El adminsitrador desea editar un profesor.
 
 2.El sistema solicita las credenciales para identificarse.
 
@@ -154,7 +154,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 | Secuencia normal:
 
-1.El adminsitrador desea crear un profesor.
+1.El adminsitrador desea eliminar un profesor.
 
 2.El sistema solicita las credenciales para identificarse.
 
@@ -219,7 +219,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 | Secuencia normal:
 
-1.El adminsitrador desea crear un profesor.
+1.El adminsitrador desea editar un profesor.
 
 2.El sistema solicita las credenciales para identificarse.
 
@@ -243,7 +243,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 | Secuencia normal:
 
-1. El adminsitrador desea crear un grupos de clase.
+1. El adminsitrador desea eliminar un grupos de clase.
 
 2. El sistema solicita las credenciales para identificarse.
 
@@ -358,7 +358,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 | Secuencia normal:
 
-1.El adminsitrador desea crear una asignatura.
+1.El adminsitrador desea editar una asignatura.
 
 2.El sistema solicita las credenciales para identificarse.
 
@@ -382,7 +382,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |Secuencia normal:
 
-1.El adminsitrador desea crear un alumno.
+1.El adminsitrador desea eliminar un alumno.
 
 2.El sistema solicita las credenciales para identificarse.
 
@@ -445,4 +445,202 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 7.El administrador solicita la asignación de una asignatura.
 
 |image::mockups/Inicio-de-sesión.png[]
+
+|===
+| **CU-00** Listado de competencias.
+
+| Descripción:
+El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de competencias_.
+
+| Secuencia normal:
+
+ 1.El adminsitrador desea obtener la lista de competencias.
+
+ 2.El sistema solicita las credenciales para identificarse.
+
+ 3.El administrador solicita la lista de competencias.
+
+ 4.El administrador obtiene el listado de competencias.
+
+|image::mockups/Inicio-de-sesión.png[]
+
+|===
+|===
+| **CU-00**  Creación de competencias.
+
+|Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de una competencia_.
+
+| Secuencia normal:
+
+1.El adminsitrador desea crear una competencia.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de competencias.
+
+4.El administrador obtiene el listado de competencias.
+
+5.El administrador solicita crear una competencia.
+
+6.El administrador crea una competencia.
+
+
+|image::mockups/Inicio-de-sesión.png[]
+
+|===
+|===
+| **CU-00**  Edición de competencias.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la edición de una competencia_.
+
+|Secuencia normal:
+
+1.El adminsitrador desea editar una competencia.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de competencias.
+
+4.El administrador obtiene el listado de competencias.
+
+5.El administrador solicita la edición una competencia.
+
+6.El administrador edita una competencia.
+
+|image::mockups/Inicio-de-sesión.png[]
+
+|===
+|===
+| **CU-00**  Eliminación de competencias.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de una competencia_.
+
+| Secuencia normal:
+
+1.El adminsitrador desea eleminar una competencia.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de competencias.
+
+4.El administrador obtiene el listado de competencias.
+
+5.El administrador solicita la eliminación una competencia.
+
+6.El administrador elimina una competencia.
+
+|image::mockups/Inicio-de-sesión.png[]
+
+|===
+|===
+| **CU-00**  Eliminación de competencias.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la asignación de competencias a una asignatura_.
+
+| Secuencia normal:
+
+1.El adminsitrador desea asignar una competencia a una asignatura.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de asignaturas.
+
+4.El administrador obtiene el listado de asignaturas.
+
+5.El administrador solicita la lista de competencias.
+
+6.El administrador obtiene el listado de competencias.
+
+5.El administrador asigna la competencia de una asignatura.
+
+|image::mockups/Inicio-de-sesión.png[]
+
+|===
+|===
+| **CU-00** Listado de administradores.
+
+| Descripción:
+El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de administradores_.
+
+| Secuencia normal:
+
+ 1.El adminsitrador desea obtener la lista de administradores. 
+
+ 2.El sistema solicita las credenciales para identificarse.
+
+ 3.El administrador solicita la lista de administradores.
+
+ 4.El administrador obtiene el listado de administradores.
+
+|image::mockups/Inicio-de-sesión.png[]
+
+|===
+|===
+| **CU-00**  Creación de administradores.
+
+|Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de un nuevo administrador_.
+
+| Secuencia normal:
+
+1.El adminsitrador desea crear un administrador.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de administradores.
+
+4.El administrador obtiene el listado de administradores.
+
+5.El administrador solicita crear un administrador.
+
+6.El administrador crea un administrador.
+
+
+|image::mockups/Inicio-de-sesión.png[]
+
+|===
+|===
+| **CU-00**  Eliminación de administradores.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de un administrador_.
+
+| Secuencia normal:
+
+1.El adminsitrador desea eleminar un administrador.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de administradores.
+
+4.El administrador obtiene el listado de administradores.
+
+5.El administrador solicita la eliminación un administrador.
+
+6.El administrador elimina un administrador.
+
+|image::mockups/Inicio-de-sesión.png[]
+
+|===
+|===
+| **CU-00**  Edición de usuarios.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la edición de un usuario.
+
+|Secuencia normal:
+
+1.El adminsitrador desea editar un usuario.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de usuarios.
+
+4.El administrador obtiene el listado de usuarios.
+
+5.El administrador solicita la edición un usuario.
+
+6.El administrador edita un usuario.
+
+|image::mockups/Inicio-de-sesión.png[]
+
+|===
+
 
