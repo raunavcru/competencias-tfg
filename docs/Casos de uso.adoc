@@ -1,19 +1,25 @@
 == Casos de Uso
 
-**CU-00** Listado de alumnos.
+|===
+| **CU-00** Listado de alumnos.
 
-==== Descripción 
-====
-El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de alumnos inscrito_.
-====
-==== Secuencia normal
-====
-. El adminsitrador desea obtener la lista de alumnos incritos.
-. El sistema solicita las credenciales para identificarse.
-. El administrador solicita la lista de alumnos.
-. El administrador obtiene el listado de alumnos.
-====
-image::mockups/Inicio-de-sesión.png[]
+| Descripción
+
+|El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de alumnos inscrito_.
+
+| Secuencia normal
+
+ 1.El adminsitrador desea obtener la lista de alumnos incritos.
+
+ 2.El sistema solicita las credenciales para identificarse.
+
+ 3.El administrador solicita la lista de alumnos.
+
+ 4.El administrador obtiene el listado de alumnos.
+
+|image::mockups/Inicio-de-sesión.png[]
+
+
 
 **CU-00**  Creación de alumnos.
 
