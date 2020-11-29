@@ -1,0 +1,339 @@
+== Casos de Uso
+
+**CU-00** Listado de alumnos.
+
+==== Descripción 
+====
+El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de alumnos inscrito_.
+====
+==== Secuencia normal
+====
+. El adminsitrador desea obtener la lista de alumnos incritos.
+. El sistema solicita las credenciales para identificarse.
+. El administrador solicita la lista de alumnos.
+. El administrador obtiene el listado de alumnos.
+====
+image::mockups/Inicio-de-sesión.png[]
+
+**CU-00**  Creación de alumnos.
+
+==== Descripción 
+====
+El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de un alumno_.
+====
+==== Secuencia normal
+====
+. El adminsitrador desea crear un alumno.
+. El sistema solicita las credenciales para identificarse.
+. El administrador solicita la lista de alumnos.
+. El administrador obtiene el listado de alumnos.
+. El administrador solicita crear un alumno.
+. El administrador crea un alumno.
+====
+image::mockups/Inicio-de-sesión.png[]
+
+**CU-00**  Edición de alumnos.
+
+==== Descripción 
+====
+El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la edición de un alumno_.
+====
+==== Secuencia normal
+====
+. El adminsitrador desea crear un alumno.
+. El sistema solicita las credenciales para identificarse.
+. El administrador solicita la lista de alumnos.
+. El administrador obtiene el listado de alumnos.
+. El administrador solicita la edición un alumno.
+. El administrador edita un alumno.
+====
+image::mockups/Inicio-de-sesión.png[]
+
+**CU-00**  Eliminación de alumnos.
+
+==== Descripción 
+====
+El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de un alumno_.
+====
+==== Secuencia normal
+====
+. El adminsitrador desea crear un alumno.
+. El sistema solicita las credenciales para identificarse.
+. El administrador solicita la lista de alumnos.
+. El administrador obtiene el listado de alumnos.
+. El administrador solicita la eliminación un alumno.
+. El administrador elimina un alumno.
+====
+image::mockups/Inicio-de-sesión.png[]
+
+**CU-00** Listado de profesores.
+
+==== Descripción 
+====
+El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de profesores inscrito_.
+====
+==== Secuencia normal
+====
+. El adminsitrador desea obtener la lista de profesores incritos.
+. El sistema solicita las credenciales para identificarse.
+. El administrador solicita la lista de profesores.
+. El administrador obtiene el listado de profesores.
+====
+image::mockups/Inicio-de-sesión.png[]
+
+**CU-00**  Creación de profesores.
+
+==== Descripción 
+====
+El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de un profesor_.
+====
+==== Secuencia normal
+====
+. El adminsitrador desea crear un profesor.
+. El sistema solicita las credenciales para identificarse.
+. El administrador solicita la lista de profesores.
+. El administrador obtiene el listado de profesores.
+. El administrador solicita crear un profesor.
+. El administrador crea un profesor.
+====
+image::mockups/Inicio-de-sesión.png[]
+
+**CU-00**  Edición de profesores.
+
+==== Descripción 
+====
+El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la edición de un profesor_.
+====
+==== Secuencia normal
+====
+. El adminsitrador desea crear un profesor.
+. El sistema solicita las credenciales para identificarse.
+. El administrador solicita la lista de profesores.
+. El administrador obtiene el listado de profesores.
+. El administrador solicita la edición un profesor.
+. El administrador edita un profesor.
+====
+image::mockups/Inicio-de-sesión.png[]
+
+**CU-00**  Eliminación de profesores.
+
+==== Descripción 
+====
+El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de un profesor_.
+====
+==== Secuencia normal
+====
+. El adminsitrador desea crear un profesor.
+. El sistema solicita las credenciales para identificarse.
+. El administrador solicita la lista de profesores.
+. El administrador obtiene el listado de profesores.
+. El administrador solicita la eliminación un profesor.
+. El administrador elimina un profesor.
+====
+image::mockups/Inicio-de-sesión.png[]
+
+**CU-00** Listado de Grupos de clase.
+
+==== Descripción 
+====
+El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de grupo de clase_.
+====
+==== Secuencia normal
+====
+. El adminsitrador desea obtener la lista de grupos de clase.
+. El sistema solicita las credenciales para identificarse.
+. El administrador solicita la lista de grupos de clase.
+. El administrador obtiene el listado de grupos de clase.
+====
+image::mockups/Inicio-de-sesión.png[]
+
+**CU-00**  Creación de Grupos de clase.
+
+==== Descripción 
+====
+El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de un grupo de clase_.
+====
+==== Secuencia normal
+====
+. El adminsitrador desea crear un grupos de clase.
+. El sistema solicita las credenciales para identificarse.
+. El administrador solicita la lista de grupos de clase.
+. El administrador obtiene el listado de grupos de clase.
+. El administrador solicita crear un grupo de clase.
+. El administrador crea un grupo de clase.
+====
+image::mockups/Inicio-de-sesión.png[]
+
+**CU-00**  Edición de Grupos de clase.
+
+==== Descripción 
+====
+El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la edición de un grupo de clase_.
+====
+==== Secuencia normal
+====
+. El adminsitrador desea crear un profesor.
+. El sistema solicita las credenciales para identificarse.
+. El administrador solicita la lista de grupos de clase.
+. El administrador obtiene el listado de grupos de clase.
+. El administrador solicita la edición un grupoo de clase.
+. El administrador edita un grupo de clase.
+====
+image::mockups/Inicio-de-sesión.png[]
+
+**CU-00**  Eliminación de Grupos de clase.
+
+==== Descripción 
+====
+El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de un grupos de clase.
+====
+==== Secuencia normal
+====
+. El adminsitrador desea crear un grupos de clase.
+. El sistema solicita las credenciales para identificarse.
+. El administrador solicita la lista de grupos de clase.
+. El administrador obtiene el listado de grupos de clase.
+. El administrador solicita la eliminación un grupo de clase.
+. El administrador elimina un grupo de clase.
+====
+image::mockups/Inicio-de-sesión.png[]
+
+
+**CU-00**  Asignar alumnos a sus respectivos grupos de clase.
+
+==== Descripción 
+====
+El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador asignar alumnos a sus respectivos grupos de clase_.
+====
+==== Secuencia normal
+====
+. El adminsitrador desea asignar alumnos a sus respectivos grupos de clase.
+. El sistema solicita las credenciales para identificarse.
+. El administrador solicita la lista de grupos de clase.
+. El administrador obtiene el listado de grupos de clase.
+. El administrador solicita la lista de alumnos no inscritos.
+. El administrador obtiene la lista de alumnos no inscritos.
+. El administrador solicita la asignación de un alumno.
+====
+image::mockups/Inicio-de-sesión.png[]
+
+**CU-00**   Asignar profesores a un grupo de clase.
+
+==== Descripción 
+====
+El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador asignar profesores a un grupo de clase_.
+====
+==== Secuencia normal
+====
+. El adminsitrador desea asignar asignar profesores a un grupo de clase.
+. El sistema solicita las credenciales para identificarse.
+. El administrador solicita la lista de grupos de clase.
+. El administrador obtiene el listado de grupos de clase.
+. El administrador solicita la lista de profesores no inscritos.
+. El administrador obtiene la lista de profesores no inscritos.
+. El administrador solicita la asignación de un profesor.
+====
+image::mockups/Inicio-de-sesión.png[]
+
+**CU-00** Listado de asignaturas.
+
+==== Descripción 
+====
+El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de asignaturas_.
+====
+==== Secuencia normal
+====
+. El adminsitrador desea obtener la lista de asignaturas.
+. El sistema solicita las credenciales para identificarse.
+. El administrador solicita la lista de asignaturas.
+. El administrador obtiene el listado de asignaturas.
+====
+image::mockups/Inicio-de-sesión.png[]
+
+**CU-00**  Creación de asignaturas.
+
+==== Descripción 
+====
+El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de una asignatura_.
+====
+==== Secuencia normal
+====
+. El adminsitrador desea crear una asignatura.
+. El sistema solicita las credenciales para identificarse.
+. El administrador solicita la lista de asignaturas.
+. El administrador obtiene el listado de asignaturas.
+. El administrador solicita crear una asignatura.
+. El administrador crea una asignatura.
+====
+image::mockups/Inicio-de-sesión.png[]
+
+**CU-00**  Edición de asignaturas.
+
+==== Descripción 
+====
+El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la edición de una asignatura_.
+====
+==== Secuencia normal
+====
+. El adminsitrador desea crear una asignatura.
+. El sistema solicita las credenciales para identificarse.
+. El administrador solicita la lista de asignaturas.
+. El administrador obtiene el listado de asignaturas.
+. El administrador solicita la edición una asignatura.
+. El administrador edita una asignatura.
+====
+image::mockups/Inicio-de-sesión.png[]
+
+**CU-00**  Eliminación de asignaturas.
+
+==== Descripción 
+====
+El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de una asignatura.
+====
+==== Secuencia normal
+====
+. El adminsitrador desea crear un alumno.
+. El sistema solicita las credenciales para identificarse.
+. El administrador solicita la lista de asignaturas.
+. El administrador obtiene el listado de asignaturas.
+. El administrador solicita la eliminación una asignatura.
+. El administrador elimina una asignatura.
+====
+image::mockups/Inicio-de-sesión.png[]
+´
+**CU-00**  Asignar una asignatura a grupos de clase.
+
+==== Descripción 
+====
+El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador asignar una asignatura a grupos de clase_.
+====
+==== Secuencia normal
+====
+. El adminsitrador desea asignar una asignatura a grupos de clase.
+. El sistema solicita las credenciales para identificarse.
+. El administrador solicita la lista de grupos de clase.
+. El administrador obtiene el listado de grupos de clase.
+. El administrador solicita la lista de asignaturas no inscritas.
+. El administrador obtiene la lista de asignaturas no inscritas.
+. El administrador solicita la asignación de una asignatura.
+====
+image::mockups/Inicio-de-sesión.png[]
+
+**CU-00**  Asignar asignatura a profesores.
+
+==== Descripción 
+====
+El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador asignar una asignatura a un profesor_.
+====
+==== Secuencia normal
+====
+. El adminsitrador desea asignar una asignatura a un profesor.
+. El sistema solicita las credenciales para identificarse.
+. El administrador solicita la lista de profesores.
+. El administrador obtiene el listado de profesores.
+. El administrador solicita la lista de asignaturas no inscritas.
+. El administrador obtiene la lista de asignaturas no inscritas.
+. El administrador solicita la asignación de una asignatura.
+====
+image::mockups/Inicio-de-sesión.png[]
+
