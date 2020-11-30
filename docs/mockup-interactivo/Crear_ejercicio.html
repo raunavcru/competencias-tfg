@@ -33,10 +33,20 @@
 		--web-center-horizontally: true;
 		--web-enable-deep-linking: true;
 	}
-	#Rectngulo_450_dai {
+	@keyframes fadein {
+	
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	
+	}
+	#Rectngulo_450 {
 		fill: rgba(246,248,249,1);
 	}
-	.Rectngulo_450_dai {
+	.Rectngulo_450 {
 		position: absolute;
 		overflow: visible;
 		width: 1440px;
@@ -44,18 +54,22 @@
 		left: 0px;
 		top: 50px;
 	}
-	#Primary_Button_daj {
+	#Primary_Button {
 		position: absolute;
 		width: 299px;
 		height: 70px;
 		left: 571px;
 		top: 518px;
 		overflow: visible;
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: page;
+		--web-action-target: Ver_actividad.html;
+		cursor: pointer;
 	}
-	#base_dak {
+	#base {
 		fill: rgba(250,105,128,1);
 	}
-	.base_dak {
+	.base {
 		position: absolute;
 		overflow: visible;
 		width: 299px;
@@ -63,7 +77,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#Crear_dal {
+	#Crear {
 		left: 124px;
 		top: 22px;
 		position: absolute;
@@ -77,7 +91,7 @@
 		font-size: 20px;
 		color: rgba(255,255,255,1);
 	}
-	#Crear_ejercicio_dam {
+	#Crear_ejercicio_bk {
 		left: 601px;
 		top: 134px;
 		position: absolute;
@@ -91,7 +105,7 @@
 		font-size: 35px;
 		color: rgba(250,105,128,1);
 	}
-	#Grupo_21_dan {
+	#Grupo_21 {
 		position: absolute;
 		width: 1440px;
 		height: 50px;
@@ -99,7 +113,7 @@
 		top: 0px;
 		overflow: visible;
 	}
-	#Header_-_Desktop_dao {
+	#Header_-_Desktop {
 		position: absolute;
 		width: 1440px;
 		height: 50px;
@@ -107,10 +121,10 @@
 		top: 0px;
 		overflow: visible;
 	}
-	#base_dap {
+	#base_bn {
 		fill: rgba(246,248,249,1);
 	}
-	.base_dap {
+	.base_bn {
 		position: absolute;
 		overflow: visible;
 		width: 1440px;
@@ -118,7 +132,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#LOGO_daq {
+	#LOGO {
 		left: 20px;
 		top: 18px;
 		position: absolute;
@@ -134,13 +148,17 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#INICIO_dar {
+	#INICIO {
 		left: 900px;
 		top: 19px;
 		position: absolute;
 		overflow: visible;
 		width: 35px;
 		white-space: nowrap;
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: page;
+		--web-action-target: Home_profesor.html;
+		cursor: pointer;
 		line-height: 20px;
 		margin-top: -4.5px;
 		text-align: left;
@@ -150,7 +168,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#MIS_GRUPOS_das {
+	#MIS_GRUPOS {
 		opacity: 0.5;
 		left: 1139px;
 		top: 19px;
@@ -167,7 +185,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#christopher-campbell-28567-uns_dat {
+	#christopher-campbell-28567-uns {
 		position: absolute;
 		width: 30px;
 		height: 30px;
@@ -175,7 +193,7 @@
 		top: 10px;
 		overflow: visible;
 	}
-	#MIS_ASIGNATURAS_dau {
+	#MIS_ASIGNATURAS {
 		opacity: 0.5;
 		left: 1251px;
 		top: 19px;
@@ -200,7 +218,7 @@
 		top: 19px;
 		overflow: visible;
 	}
-	#MIS_ACTIVIDADES_daw {
+	#MIS_ACTIVIDADES {
 		opacity: 0.5;
 		left: 0px;
 		top: 0px;
@@ -217,7 +235,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#Error_Dropdown_dax {
+	#Error_Dropdown {
 		position: absolute;
 		width: 360px;
 		height: 63px;
@@ -225,7 +243,7 @@
 		top: 371px;
 		overflow: visible;
 	}
-	#Field_day {
+	#Field {
 		fill: rgba(255,255,255,1);
 		stroke: rgba(250,105,128,1);
 		stroke-width: 2px;
@@ -234,7 +252,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Field_day {
+	.Field {
 		position: absolute;
 		overflow: visible;
 		width: 360px;
@@ -242,7 +260,7 @@
 		left: 0px;
 		top: 23px;
 	}
-	#Select_daz {
+	#Select {
 		left: 16px;
 		top: 35px;
 		position: absolute;
@@ -258,7 +276,7 @@
 		font-size: 13px;
 		color: rgba(166,173,180,1);
 	}
-	#Peso_da {
+	#Peso {
 		left: 0px;
 		top: 0px;
 		position: absolute;
@@ -274,7 +292,7 @@
 		font-size: 13px;
 		color: rgba(255,77,77,1);
 	}
-	#dropdown_da {
+	#dropdown {
 		position: absolute;
 		width: 10px;
 		height: 6px;
@@ -282,10 +300,10 @@
 		top: 40px;
 		overflow: visible;
 	}
-	#dropdown_dba {
+	#dropdown_b {
 		fill: rgba(166,173,180,1);
 	}
-	.dropdown_dba {
+	.dropdown_b {
 		overflow: visible;
 		position: absolute;
 		width: 10px;
@@ -294,7 +312,7 @@
 		top: 0px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Focus_1_da {
+	#Focus_1 {
 		position: absolute;
 		width: 360px;
 		height: 97px;
@@ -302,7 +320,7 @@
 		top: 236px;
 		overflow: visible;
 	}
-	#Field_da {
+	#Field_b {
 		fill: rgba(255,255,255,1);
 		stroke: rgba(250,105,128,1);
 		stroke-width: 2px;
@@ -311,7 +329,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Field_da {
+	.Field_b {
 		position: absolute;
 		overflow: visible;
 		width: 360px;
@@ -3193,70 +3211,70 @@ window.application = new Application();
 </head>
 <body>
 <div id="Crear_ejercicio">
-	<svg class="Rectngulo_450_dai">
-		<rect id="Rectngulo_450_dai" rx="0" ry="0" x="0" y="0" width="1440" height="950">
+	<svg class="Rectngulo_450">
+		<rect id="Rectngulo_450" rx="0" ry="0" x="0" y="0" width="1440" height="950">
 		</rect>
 	</svg>
-	<div id="Primary_Button_daj" class="Primary_Button">
-		<svg class="base_dak">
-			<rect id="base_dak" rx="6" ry="6" x="0" y="0" width="299" height="70">
+	<div onclick="application.goToTargetView(event)" id="Primary_Button" class="Primary_Button">
+		<svg class="base">
+			<rect id="base" rx="6" ry="6" x="0" y="0" width="299" height="70">
 			</rect>
 		</svg>
-		<div id="Crear_dal">
+		<div id="Crear">
 			<span>Crear</span>
 		</div>
 	</div>
-	<div id="Crear_ejercicio_dam">
+	<div id="Crear_ejercicio_bk">
 		<span>Crear ejercicio</span>
 	</div>
-	<div id="Grupo_21_dan">
-		<div id="Header_-_Desktop_dao" class="Header___Desktop">
-			<svg class="base_dap">
-				<rect id="base_dap" rx="0" ry="0" x="0" y="0" width="1440" height="50">
+	<div id="Grupo_21">
+		<div id="Header_-_Desktop" class="Header___Desktop">
+			<svg class="base_bn">
+				<rect id="base_bn" rx="0" ry="0" x="0" y="0" width="1440" height="50">
 				</rect>
 			</svg>
-			<div id="LOGO_daq">
+			<div id="LOGO">
 				<span>LOGO</span>
 			</div>
-			<div id="INICIO_dar">
+			<div onclick="application.goToTargetView(event)" id="INICIO">
 				<span>INICIO</span>
 			</div>
-			<div id="MIS_GRUPOS_das">
+			<div id="MIS_GRUPOS">
 				<span>MIS GRUPOS</span>
 			</div>
-			<img id="christopher-campbell-28567-uns_dat" src="images/christopher-campbell-28567-uns_dat.png" srcset="images/christopher-campbell-28567-uns_dat.png 1x, images/christopher-campbell-28567-uns_dat@2x.png 2x">
+			<img id="christopher-campbell-28567-uns" src="images/christopher-campbell-28567-uns.png" srcset="images/christopher-campbell-28567-uns.png 1x, images/christopher-campbell-28567-uns@2x.png 2x">
 				
-			<div id="MIS_ASIGNATURAS_dau">
+			<div id="MIS_ASIGNATURAS">
 				<span>MIS ASIGNATURAS</span>
 			</div>
 		</div>
 		<div id="Componente_89__10" class="Componente_89___10">
-			<div id="MIS_ACTIVIDADES_daw">
+			<div id="MIS_ACTIVIDADES">
 				<span>MIS ACTIVIDADES</span>
 			</div>
 		</div>
 	</div>
-	<div id="Error_Dropdown_dax" class="Error_Dropdown">
-		<svg class="Field_day">
-			<rect id="Field_day" rx="6" ry="6" x="0" y="0" width="360" height="40">
+	<div id="Error_Dropdown" class="Error_Dropdown">
+		<svg class="Field">
+			<rect id="Field" rx="6" ry="6" x="0" y="0" width="360" height="40">
 			</rect>
 		</svg>
-		<div id="Select_daz">
+		<div id="Select">
 			<span>Select…</span>
 		</div>
-		<div id="Peso_da">
+		<div id="Peso">
 			<span>Peso</span>
 		</div>
-		<div id="dropdown_da" class="dropdown">
-			<svg class="dropdown_dba" viewBox="0 0 10 6">
-				<path id="dropdown_dba" d="M 5 6 C 4.699999809265137 6 4.5 5.900000095367432 4.300000190734863 5.699999809265137 L 0.3000001907348633 1.699999809265137 C -0.0999998152256012 1.299999833106995 -0.0999998152256012 0.6999998092651367 0.3000001907348633 0.2999998331069946 C 0.7000001668930054 -0.1000001430511475 1.300000190734863 -0.1000001728534698 1.700000166893005 0.2999998331069946 L 5 3.599999904632568 L 8.300000190734863 0.2999999523162842 C 8.699999809265137 -0.1000000536441803 9.300000190734863 -0.1000000536441803 9.699999809265137 0.2999999523162842 C 10.09999942779541 0.6999999284744263 10.09999942779541 1.299999952316284 9.699999809265137 1.699999928474426 L 5.699999809265137 5.699999809265137 C 5.5 5.900000095367432 5.300000190734863 6 5 6 Z">
+		<div id="dropdown" class="dropdown">
+			<svg class="dropdown_b" viewBox="0 0 10 6">
+				<path id="dropdown_b" d="M 5 6 C 4.699999809265137 6 4.5 5.900000095367432 4.300000190734863 5.699999809265137 L 0.3000001907348633 1.699999809265137 C -0.0999998152256012 1.299999833106995 -0.0999998152256012 0.6999998092651367 0.3000001907348633 0.2999998331069946 C 0.7000001668930054 -0.1000001430511475 1.300000190734863 -0.1000001728534698 1.700000166893005 0.2999998331069946 L 5 3.599999904632568 L 8.300000190734863 0.2999999523162842 C 8.699999809265137 -0.1000000536441803 9.300000190734863 -0.1000000536441803 9.699999809265137 0.2999999523162842 C 10.09999942779541 0.6999999284744263 10.09999942779541 1.299999952316284 9.699999809265137 1.699999928474426 L 5.699999809265137 5.699999809265137 C 5.5 5.900000095367432 5.300000190734863 6 5 6 Z">
 				</path>
 			</svg>
 		</div>
 	</div>
-	<div id="Focus_1_da" class="Focus_1">
-		<svg class="Field_da">
-			<rect id="Field_da" rx="6" ry="6" x="0" y="0" width="360" height="76">
+	<div id="Focus_1" class="Focus_1">
+		<svg class="Field_b">
+			<rect id="Field_b" rx="6" ry="6" x="0" y="0" width="360" height="76">
 			</rect>
 		</svg>
 		<div id="Enunciado">

@@ -33,10 +33,20 @@
 		--web-center-horizontally: true;
 		--web-enable-deep-linking: true;
 	}
-	#Rectngulo_449_ce {
+	@keyframes fadein {
+	
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	
+	}
+	#Rectngulo_449 {
 		fill: rgba(246,248,249,1);
 	}
-	.Rectngulo_449_ce {
+	.Rectngulo_449 {
 		position: absolute;
 		overflow: visible;
 		width: 1440px;
@@ -44,7 +54,7 @@
 		left: 0px;
 		top: 50px;
 	}
-	#Grupo_21_cf {
+	#Grupo_21 {
 		position: absolute;
 		width: 1440px;
 		height: 50px;
@@ -52,7 +62,7 @@
 		top: 0px;
 		overflow: visible;
 	}
-	#Header_-_Desktop_ch {
+	#Header_-_Desktop {
 		position: absolute;
 		width: 1440px;
 		height: 50px;
@@ -60,10 +70,10 @@
 		top: 0px;
 		overflow: visible;
 	}
-	#base_daa {
+	#base {
 		fill: rgba(246,248,249,1);
 	}
-	.base_daa {
+	.base {
 		position: absolute;
 		overflow: visible;
 		width: 1440px;
@@ -71,7 +81,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#LOGO_cj {
+	#LOGO {
 		left: 20px;
 		top: 18px;
 		position: absolute;
@@ -87,13 +97,17 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#INICIO_ck {
+	#INICIO {
 		left: 900px;
 		top: 19px;
 		position: absolute;
 		overflow: visible;
 		width: 35px;
 		white-space: nowrap;
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: page;
+		--web-action-target: Home_profesor.html;
+		cursor: pointer;
 		line-height: 20px;
 		margin-top: -4.5px;
 		text-align: left;
@@ -103,7 +117,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#MIS_GRUPOS_ck {
+	#MIS_GRUPOS {
 		opacity: 0.5;
 		left: 1139px;
 		top: 19px;
@@ -120,7 +134,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#christopher-campbell-28567-uns_cl {
+	#christopher-campbell-28567-uns {
 		position: absolute;
 		width: 30px;
 		height: 30px;
@@ -128,7 +142,7 @@
 		top: 10px;
 		overflow: visible;
 	}
-	#MIS_ASIGNATURAS_cm {
+	#MIS_ASIGNATURAS {
 		opacity: 0.5;
 		left: 1251px;
 		top: 19px;
@@ -153,7 +167,7 @@
 		top: 19px;
 		overflow: visible;
 	}
-	#MIS_ACTIVIDADES_co {
+	#MIS_ACTIVIDADES {
 		opacity: 0.5;
 		left: 0px;
 		top: 0px;
@@ -170,7 +184,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#Ver_actividad_cp {
+	#Ver_actividad_br {
 		left: 614px;
 		top: 122px;
 		position: absolute;
@@ -248,18 +262,22 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#Primary_Button_daa {
+	#Primary_Button {
 		position: absolute;
 		width: 92px;
 		height: 24px;
 		left: 126px;
 		top: 404px;
 		overflow: visible;
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: page;
+		--web-action-target: Crear_ejercicio.html;
+		cursor: pointer;
 	}
-	#base_dab {
+	#base_bx {
 		fill: rgba(250,105,128,1);
 	}
-	.base_dab {
+	.base_bx {
 		position: absolute;
 		overflow: visible;
 		width: 92px;
@@ -267,7 +285,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#Crear_ejercicio_cw {
+	#Crear_ejercicio {
 		left: 11px;
 		top: 7px;
 		position: absolute;
@@ -315,7 +333,7 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#Primary_Button_dab {
+	#Primary_Button_b {
 		position: absolute;
 		width: 1239px;
 		height: 127px;
@@ -323,7 +341,7 @@
 		top: 478px;
 		overflow: visible;
 	}
-	#base_dac {
+	#base_b {
 		fill: transparent;
 		stroke: rgba(250,105,128,1);
 		stroke-width: 2px;
@@ -332,7 +350,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.base_dac {
+	.base_b {
 		position: absolute;
 		overflow: visible;
 		width: 1239px;
@@ -340,7 +358,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#Primary_Button_dac {
+	#Primary_Button_ca {
 		position: absolute;
 		width: 92px;
 		height: 24px;
@@ -348,10 +366,10 @@
 		top: 565px;
 		overflow: visible;
 	}
-	#base_dad {
+	#base_ca {
 		fill: rgba(250,105,128,1);
 	}
-	.base_dad {
+	.base_ca {
 		position: absolute;
 		overflow: visible;
 		width: 92px;
@@ -375,7 +393,7 @@
 		font-size: 10px;
 		color: rgba(255,255,255,1);
 	}
-	#Primary_Button_dad {
+	#Primary_Button_cb {
 		position: absolute;
 		width: 92px;
 		height: 24px;
@@ -383,10 +401,10 @@
 		top: 404px;
 		overflow: visible;
 	}
-	#base_dae {
+	#base_cb {
 		fill: rgba(250,105,128,1);
 	}
-	.base_dae {
+	.base_cb {
 		position: absolute;
 		overflow: visible;
 		width: 92px;
@@ -410,7 +428,7 @@
 		font-size: 10px;
 		color: rgba(255,255,255,1);
 	}
-	#Primary_Button_dae {
+	#Primary_Button_cc {
 		position: absolute;
 		width: 92px;
 		height: 24px;
@@ -418,10 +436,10 @@
 		top: 404px;
 		overflow: visible;
 	}
-	#base_daf {
+	#base_cc {
 		fill: rgba(250,105,128,1);
 	}
-	.base_daf {
+	.base_cc {
 		position: absolute;
 		overflow: visible;
 		width: 92px;
@@ -429,7 +447,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#Eliminar_c {
+	#Eliminar_cb {
 		left: 26px;
 		top: 7px;
 		position: absolute;
@@ -445,18 +463,22 @@
 		font-size: 10px;
 		color: rgba(255,255,255,1);
 	}
-	#Primary_Button_daf {
+	#Primary_Button_cd {
 		position: absolute;
 		width: 92px;
 		height: 24px;
 		left: 1241px;
 		top: 530px;
 		overflow: visible;
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: page;
+		--web-action-target: Modificar_ejercicio.html;
+		cursor: pointer;
 	}
-	#base_dag {
+	#base_cd {
 		fill: rgba(250,105,128,1);
 	}
-	.base_dag {
+	.base_cd {
 		position: absolute;
 		overflow: visible;
 		width: 92px;
@@ -464,7 +486,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#Modificar_dac {
+	#Modificar {
 		left: 24px;
 		top: 7px;
 		position: absolute;
@@ -480,18 +502,22 @@
 		font-size: 10px;
 		color: rgba(255,255,255,1);
 	}
-	#Primary_Button_dag {
+	#Primary_Button_cf {
 		position: absolute;
 		width: 92px;
 		height: 24px;
 		left: 549px;
 		top: 404px;
 		overflow: visible;
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: page;
+		--web-action-target: Copiar_ejercicio.html;
+		cursor: pointer;
 	}
-	#base_dah {
+	#base_cg {
 		fill: rgba(250,105,128,1);
 	}
-	.base_dah {
+	.base_cg {
 		position: absolute;
 		overflow: visible;
 		width: 92px;
@@ -3357,38 +3383,38 @@ window.application = new Application();
 </head>
 <body>
 <div id="Ver_actividad">
-	<svg class="Rectngulo_449_ce">
-		<rect id="Rectngulo_449_ce" rx="0" ry="0" x="0" y="0" width="1440" height="950">
+	<svg class="Rectngulo_449">
+		<rect id="Rectngulo_449" rx="0" ry="0" x="0" y="0" width="1440" height="950">
 		</rect>
 	</svg>
-	<div id="Grupo_21_cf">
-		<div id="Header_-_Desktop_ch" class="Header___Desktop">
-			<svg class="base_daa">
-				<rect id="base_daa" rx="0" ry="0" x="0" y="0" width="1440" height="50">
+	<div id="Grupo_21">
+		<div id="Header_-_Desktop" class="Header___Desktop">
+			<svg class="base">
+				<rect id="base" rx="0" ry="0" x="0" y="0" width="1440" height="50">
 				</rect>
 			</svg>
-			<div id="LOGO_cj">
+			<div id="LOGO">
 				<span>LOGO</span>
 			</div>
-			<div id="INICIO_ck">
+			<div onclick="application.goToTargetView(event)" id="INICIO">
 				<span>INICIO</span>
 			</div>
-			<div id="MIS_GRUPOS_ck">
+			<div id="MIS_GRUPOS">
 				<span>MIS GRUPOS</span>
 			</div>
-			<img id="christopher-campbell-28567-uns_cl" src="images/christopher-campbell-28567-uns_cl.png" srcset="images/christopher-campbell-28567-uns_cl.png 1x, images/christopher-campbell-28567-uns_cl@2x.png 2x">
+			<img id="christopher-campbell-28567-uns" src="images/christopher-campbell-28567-uns.png" srcset="images/christopher-campbell-28567-uns.png 1x, images/christopher-campbell-28567-uns@2x.png 2x">
 				
-			<div id="MIS_ASIGNATURAS_cm">
+			<div id="MIS_ASIGNATURAS">
 				<span>MIS ASIGNATURAS</span>
 			</div>
 		</div>
 		<div id="Componente_89__9" class="Componente_89___9">
-			<div id="MIS_ACTIVIDADES_co">
+			<div id="MIS_ACTIVIDADES">
 				<span>MIS ACTIVIDADES</span>
 			</div>
 		</div>
 	</div>
-	<div id="Ver_actividad_cp">
+	<div id="Ver_actividad_br">
 		<span>Ver actividad</span>
 	</div>
 	<div id="Asignatura_Matemticas_">
@@ -3403,12 +3429,12 @@ window.application = new Application();
 	<div id="Peso_07">
 		<span>Peso: </span><span style="color:rgba(32,33,36,1);">0,7</span>
 	</div>
-	<div id="Primary_Button_daa" class="Primary_Button">
-		<svg class="base_dab">
-			<rect id="base_dab" rx="6" ry="6" x="0" y="0" width="92" height="24">
+	<div onclick="application.goToTargetView(event)" id="Primary_Button" class="Primary_Button">
+		<svg class="base_bx">
+			<rect id="base_bx" rx="6" ry="6" x="0" y="0" width="92" height="24">
 			</rect>
 		</svg>
-		<div id="Crear_ejercicio_cw">
+		<div id="Crear_ejercicio">
 			<span>Crear ejercicio</span>
 		</div>
 	</div>
@@ -3418,51 +3444,51 @@ window.application = new Application();
 	<div id="Peso_03">
 		<span>Peso: </span><span style="color:rgba(32,33,36,1);">0,3</span>
 	</div>
-	<div id="Primary_Button_dab" class="Primary_Button">
-		<svg class="base_dac">
-			<rect id="base_dac" rx="6" ry="6" x="0" y="0" width="1239" height="127">
+	<div id="Primary_Button_b" class="Primary_Button">
+		<svg class="base_b">
+			<rect id="base_b" rx="6" ry="6" x="0" y="0" width="1239" height="127">
 			</rect>
 		</svg>
 	</div>
-	<div id="Primary_Button_dac" class="Primary_Button">
-		<svg class="base_dad">
-			<rect id="base_dad" rx="6" ry="6" x="0" y="0" width="92" height="24">
+	<div id="Primary_Button_ca" class="Primary_Button">
+		<svg class="base_ca">
+			<rect id="base_ca" rx="6" ry="6" x="0" y="0" width="92" height="24">
 			</rect>
 		</svg>
 		<div id="Eliminar">
 			<span>Eliminar</span>
 		</div>
 	</div>
-	<div id="Primary_Button_dad" class="Primary_Button">
-		<svg class="base_dae">
-			<rect id="base_dae" rx="6" ry="6" x="0" y="0" width="92" height="24">
+	<div id="Primary_Button_cb" class="Primary_Button">
+		<svg class="base_cb">
+			<rect id="base_cb" rx="6" ry="6" x="0" y="0" width="92" height="24">
 			</rect>
 		</svg>
 		<div id="Modificar_">
 			<span>Modificar </span>
 		</div>
 	</div>
-	<div id="Primary_Button_dae" class="Primary_Button">
-		<svg class="base_daf">
-			<rect id="base_daf" rx="6" ry="6" x="0" y="0" width="92" height="24">
+	<div id="Primary_Button_cc" class="Primary_Button">
+		<svg class="base_cc">
+			<rect id="base_cc" rx="6" ry="6" x="0" y="0" width="92" height="24">
 			</rect>
 		</svg>
-		<div id="Eliminar_c">
+		<div id="Eliminar_cb">
 			<span>Eliminar</span>
 		</div>
 	</div>
-	<div id="Primary_Button_daf" class="Primary_Button">
-		<svg class="base_dag">
-			<rect id="base_dag" rx="6" ry="6" x="0" y="0" width="92" height="24">
+	<div onclick="application.goToTargetView(event)" id="Primary_Button_cd" class="Primary_Button">
+		<svg class="base_cd">
+			<rect id="base_cd" rx="6" ry="6" x="0" y="0" width="92" height="24">
 			</rect>
 		</svg>
-		<div id="Modificar_dac">
+		<div id="Modificar">
 			<span>Modificar</span>
 		</div>
 	</div>
-	<div id="Primary_Button_dag" class="Primary_Button">
-		<svg class="base_dah">
-			<rect id="base_dah" rx="6" ry="6" x="0" y="0" width="92" height="24">
+	<div onclick="application.goToTargetView(event)" id="Primary_Button_cf" class="Primary_Button">
+		<svg class="base_cg">
+			<rect id="base_cg" rx="6" ry="6" x="0" y="0" width="92" height="24">
 			</rect>
 		</svg>
 		<div id="Buscar_ejercicio">

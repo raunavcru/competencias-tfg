@@ -33,10 +33,20 @@
 		--web-center-horizontally: true;
 		--web-enable-deep-linking: true;
 	}
-	#Rectngulo_450_c {
+	@keyframes fadein {
+	
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	
+	}
+	#Rectngulo_450 {
 		fill: rgba(246,248,249,1);
 	}
-	.Rectngulo_450_c {
+	.Rectngulo_450 {
 		position: absolute;
 		overflow: visible;
 		width: 1440px;
@@ -44,7 +54,7 @@
 		left: 0px;
 		top: 50px;
 	}
-	#Primary_Button_c {
+	#Primary_Button {
 		position: absolute;
 		width: 299px;
 		height: 70px;
@@ -52,10 +62,10 @@
 		top: 664px;
 		overflow: visible;
 	}
-	#base_c {
+	#base {
 		fill: rgba(250,105,128,1);
 	}
-	.base_c {
+	.base {
 		position: absolute;
 		overflow: visible;
 		width: 299px;
@@ -63,7 +73,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#Crear_c {
+	#Crear {
 		left: 124px;
 		top: 22px;
 		position: absolute;
@@ -91,7 +101,7 @@
 		font-size: 35px;
 		color: rgba(250,105,128,1);
 	}
-	#Focus_1_c {
+	#Focus_1 {
 		position: absolute;
 		width: 360px;
 		height: 61px;
@@ -99,7 +109,7 @@
 		top: 326px;
 		overflow: visible;
 	}
-	#Field_ca {
+	#Field {
 		fill: rgba(255,255,255,1);
 		stroke: rgba(250,105,128,1);
 		stroke-width: 2px;
@@ -108,7 +118,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Field_ca {
+	.Field {
 		position: absolute;
 		overflow: visible;
 		width: 360px;
@@ -148,7 +158,7 @@
 		font-size: 13px;
 		color: rgba(32,33,36,1);
 	}
-	#Grupo_21_cc {
+	#Grupo_21 {
 		position: absolute;
 		width: 1440px;
 		height: 50px;
@@ -156,7 +166,7 @@
 		top: 0px;
 		overflow: visible;
 	}
-	#Header_-_Desktop_cd {
+	#Header_-_Desktop {
 		position: absolute;
 		width: 1440px;
 		height: 50px;
@@ -164,10 +174,10 @@
 		top: 0px;
 		overflow: visible;
 	}
-	#base_ce {
+	#base_br {
 		fill: rgba(246,248,249,1);
 	}
-	.base_ce {
+	.base_br {
 		position: absolute;
 		overflow: visible;
 		width: 1440px;
@@ -175,7 +185,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#LOGO_cf {
+	#LOGO {
 		left: 20px;
 		top: 18px;
 		position: absolute;
@@ -191,13 +201,17 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#INICIO_cg {
+	#INICIO {
 		left: 900px;
 		top: 19px;
 		position: absolute;
 		overflow: visible;
 		width: 35px;
 		white-space: nowrap;
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: page;
+		--web-action-target: Home_profesor.html;
+		cursor: pointer;
 		line-height: 20px;
 		margin-top: -4.5px;
 		text-align: left;
@@ -207,7 +221,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#MIS_GRUPOS_ch {
+	#MIS_GRUPOS {
 		opacity: 0.5;
 		left: 1139px;
 		top: 19px;
@@ -224,7 +238,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#christopher-campbell-28567-uns_ci {
+	#christopher-campbell-28567-uns {
 		position: absolute;
 		width: 30px;
 		height: 30px;
@@ -232,7 +246,7 @@
 		top: 10px;
 		overflow: visible;
 	}
-	#MIS_ASIGNATURAS_cj {
+	#MIS_ASIGNATURAS {
 		opacity: 0.5;
 		left: 1251px;
 		top: 19px;
@@ -257,7 +271,7 @@
 		top: 19px;
 		overflow: visible;
 	}
-	#MIS_ACTIVIDADES_cl {
+	#MIS_ACTIVIDADES {
 		opacity: 0.5;
 		left: 0px;
 		top: 0px;
@@ -274,7 +288,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#Error_1_cm {
+	#Error_1 {
 		position: absolute;
 		width: 360px;
 		height: 63px;
@@ -282,7 +296,7 @@
 		top: 199px;
 		overflow: visible;
 	}
-	#Field_cn {
+	#Field_b {
 		fill: rgba(255,255,255,1);
 		stroke: rgba(250,105,128,1);
 		stroke-width: 2px;
@@ -291,7 +305,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Field_cn {
+	.Field_b {
 		position: absolute;
 		overflow: visible;
 		width: 360px;
@@ -299,7 +313,7 @@
 		left: 0px;
 		top: 23px;
 	}
-	#Asignatura_co {
+	#Asignatura {
 		left: 0px;
 		top: 0px;
 		position: absolute;
@@ -315,7 +329,7 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#Matemticas_cp {
+	#Matemticas {
 		left: 16px;
 		top: 37px;
 		position: absolute;
@@ -331,7 +345,7 @@
 		font-size: 13px;
 		color: rgba(32,33,36,1);
 	}
-	#Header_cq {
+	#Header {
 		position: absolute;
 		width: 360px;
 		height: 35px;
@@ -339,7 +353,7 @@
 		top: 258px;
 		overflow: visible;
 	}
-	#dropdown_cr {
+	#dropdown {
 		position: absolute;
 		width: 360px;
 		height: 35px;
@@ -347,7 +361,7 @@
 		top: 0px;
 		overflow: visible;
 	}
-	#Rectngulo_431_cs {
+	#Rectngulo_431 {
 		fill: rgba(246,248,249,1);
 		stroke: rgba(250,105,128,1);
 		stroke-width: 1px;
@@ -356,7 +370,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Rectngulo_431_cs {
+	.Rectngulo_431 {
 		position: absolute;
 		overflow: visible;
 		width: 360px;
@@ -364,13 +378,13 @@
 		left: 0px;
 		top: 0px;
 	}
-	#Matemticas_ct {
+	#Matemticas_b {
 		left: 20px;
 		top: 8px;
 		position: absolute;
-		overflow: hidden;
+		overflow: visible;
 		width: 321px;
-		height: 10px;
+		height: 21px;
 		line-height: 20px;
 		margin-top: -4.5px;
 		text-align: left;
@@ -380,7 +394,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#Error_Dropdown_cu {
+	#Error_Dropdown {
 		position: absolute;
 		width: 360px;
 		height: 63px;
@@ -388,7 +402,7 @@
 		top: 514px;
 		overflow: visible;
 	}
-	#Field_cv {
+	#Field_ca {
 		fill: rgba(255,255,255,1);
 		stroke: rgba(250,105,128,1);
 		stroke-width: 2px;
@@ -397,7 +411,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Field_cv {
+	.Field_ca {
 		position: absolute;
 		overflow: visible;
 		width: 360px;
@@ -405,7 +419,7 @@
 		left: 0px;
 		top: 23px;
 	}
-	#Select_cw {
+	#Select {
 		left: 16px;
 		top: 35px;
 		position: absolute;
@@ -437,7 +451,7 @@
 		font-size: 13px;
 		color: rgba(255,77,77,1);
 	}
-	#dropdown_cy {
+	#dropdown_cb {
 		position: absolute;
 		width: 10px;
 		height: 6px;
@@ -445,10 +459,10 @@
 		top: 40px;
 		overflow: visible;
 	}
-	#dropdown_cz {
+	#dropdown_cc {
 		fill: rgba(166,173,180,1);
 	}
-	.dropdown_cz {
+	.dropdown_cc {
 		overflow: visible;
 		position: absolute;
 		width: 10px;
@@ -457,7 +471,7 @@
 		top: 0px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Focus_1_ca {
+	#Focus_1_cd {
 		position: absolute;
 		width: 360px;
 		height: 61px;
@@ -465,7 +479,7 @@
 		top: 420px;
 		overflow: visible;
 	}
-	#Field_cc {
+	#Field_ce {
 		fill: rgba(255,255,255,1);
 		stroke: rgba(250,105,128,1);
 		stroke-width: 2px;
@@ -474,7 +488,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Field_cc {
+	.Field_ce {
 		position: absolute;
 		overflow: visible;
 		width: 360px;
@@ -3356,25 +3370,25 @@ window.application = new Application();
 </head>
 <body>
 <div id="Crear_Actividad">
-	<svg class="Rectngulo_450_c">
-		<rect id="Rectngulo_450_c" rx="0" ry="0" x="0" y="0" width="1440" height="950">
+	<svg class="Rectngulo_450">
+		<rect id="Rectngulo_450" rx="0" ry="0" x="0" y="0" width="1440" height="950">
 		</rect>
 	</svg>
-	<div id="Primary_Button_c" class="Primary_Button">
-		<svg class="base_c">
-			<rect id="base_c" rx="6" ry="6" x="0" y="0" width="299" height="70">
+	<div id="Primary_Button" class="Primary_Button">
+		<svg class="base">
+			<rect id="base" rx="6" ry="6" x="0" y="0" width="299" height="70">
 			</rect>
 		</svg>
-		<div id="Crear_c">
+		<div id="Crear">
 			<span>Crear</span>
 		</div>
 	</div>
 	<div id="Crear_actividad">
 		<span>Crear actividad</span>
 	</div>
-	<div id="Focus_1_c" class="Focus_1">
-		<svg class="Field_ca">
-			<rect id="Field_ca" rx="6" ry="6" x="0" y="0" width="360" height="40">
+	<div id="Focus_1" class="Focus_1">
+		<svg class="Field">
+			<rect id="Field" rx="6" ry="6" x="0" y="0" width="360" height="40">
 			</rect>
 		</svg>
 		<div id="Fecha">
@@ -3384,77 +3398,77 @@ window.application = new Application();
 			<span>17/08/2020</span>
 		</div>
 	</div>
-	<div id="Grupo_21_cc">
-		<div id="Header_-_Desktop_cd" class="Header___Desktop">
-			<svg class="base_ce">
-				<rect id="base_ce" rx="0" ry="0" x="0" y="0" width="1440" height="50">
+	<div id="Grupo_21">
+		<div id="Header_-_Desktop" class="Header___Desktop">
+			<svg class="base_br">
+				<rect id="base_br" rx="0" ry="0" x="0" y="0" width="1440" height="50">
 				</rect>
 			</svg>
-			<div id="LOGO_cf">
+			<div id="LOGO">
 				<span>LOGO</span>
 			</div>
-			<div id="INICIO_cg">
+			<div onclick="application.goToTargetView(event)" id="INICIO">
 				<span>INICIO</span>
 			</div>
-			<div id="MIS_GRUPOS_ch">
+			<div id="MIS_GRUPOS">
 				<span>MIS GRUPOS</span>
 			</div>
-			<img id="christopher-campbell-28567-uns_ci" src="images/christopher-campbell-28567-uns_ci.png" srcset="images/christopher-campbell-28567-uns_ci.png 1x, images/christopher-campbell-28567-uns_ci@2x.png 2x">
+			<img id="christopher-campbell-28567-uns" src="images/christopher-campbell-28567-uns.png" srcset="images/christopher-campbell-28567-uns.png 1x, images/christopher-campbell-28567-uns@2x.png 2x">
 				
-			<div id="MIS_ASIGNATURAS_cj">
+			<div id="MIS_ASIGNATURAS">
 				<span>MIS ASIGNATURAS</span>
 			</div>
 		</div>
 		<div id="Componente_89__6" class="Componente_89___6">
-			<div id="MIS_ACTIVIDADES_cl">
+			<div id="MIS_ACTIVIDADES">
 				<span>MIS ACTIVIDADES</span>
 			</div>
 		</div>
 	</div>
-	<div id="Error_1_cm" class="Error_1">
-		<svg class="Field_cn">
-			<rect id="Field_cn" rx="6" ry="6" x="0" y="0" width="360" height="40">
+	<div id="Error_1" class="Error_1">
+		<svg class="Field_b">
+			<rect id="Field_b" rx="6" ry="6" x="0" y="0" width="360" height="40">
 			</rect>
 		</svg>
-		<div id="Asignatura_co">
+		<div id="Asignatura">
 			<span>Asignatura</span>
 		</div>
-		<div id="Matemticas_cp">
+		<div id="Matemticas">
 			<span>Matemáticas</span>
 		</div>
 	</div>
-	<div id="Header_cq">
-		<div id="dropdown_cr">
-			<svg class="Rectngulo_431_cs">
-				<rect id="Rectngulo_431_cs" rx="0" ry="0" x="0" y="0" width="360" height="35">
+	<div id="Header">
+		<div id="dropdown">
+			<svg class="Rectngulo_431">
+				<rect id="Rectngulo_431" rx="0" ry="0" x="0" y="0" width="360" height="35">
 				</rect>
 			</svg>
-			<div id="Matemticas_ct">
+			<div id="Matemticas_b">
 				<span>Matemáticas</span>
 			</div>
 		</div>
 	</div>
-	<div id="Error_Dropdown_cu" class="Error_Dropdown">
-		<svg class="Field_cv">
-			<rect id="Field_cv" rx="6" ry="6" x="0" y="0" width="360" height="40">
+	<div id="Error_Dropdown" class="Error_Dropdown">
+		<svg class="Field_ca">
+			<rect id="Field_ca" rx="6" ry="6" x="0" y="0" width="360" height="40">
 			</rect>
 		</svg>
-		<div id="Select_cw">
+		<div id="Select">
 			<span>Select…</span>
 		</div>
 		<div id="Peso">
 			<span>Peso</span>
 		</div>
-		<div id="dropdown_cy" class="dropdown">
-			<svg class="dropdown_cz" viewBox="0 0 10 6">
-				<path id="dropdown_cz" d="M 5 6 C 4.699999809265137 6 4.5 5.900000095367432 4.300000190734863 5.699999809265137 L 0.3000001907348633 1.699999809265137 C -0.0999998152256012 1.299999833106995 -0.0999998152256012 0.6999998092651367 0.3000001907348633 0.2999998331069946 C 0.7000001668930054 -0.1000001430511475 1.300000190734863 -0.1000001728534698 1.700000166893005 0.2999998331069946 L 5 3.599999904632568 L 8.300000190734863 0.2999999523162842 C 8.699999809265137 -0.1000000536441803 9.300000190734863 -0.1000000536441803 9.699999809265137 0.2999999523162842 C 10.09999942779541 0.6999999284744263 10.09999942779541 1.299999952316284 9.699999809265137 1.699999928474426 L 5.699999809265137 5.699999809265137 C 5.5 5.900000095367432 5.300000190734863 6 5 6 Z">
+		<div id="dropdown_cb" class="dropdown">
+			<svg class="dropdown_cc" viewBox="0 0 10 6">
+				<path id="dropdown_cc" d="M 5 6 C 4.699999809265137 6 4.5 5.900000095367432 4.300000190734863 5.699999809265137 L 0.3000001907348633 1.699999809265137 C -0.0999998152256012 1.299999833106995 -0.0999998152256012 0.6999998092651367 0.3000001907348633 0.2999998331069946 C 0.7000001668930054 -0.1000001430511475 1.300000190734863 -0.1000001728534698 1.700000166893005 0.2999998331069946 L 5 3.599999904632568 L 8.300000190734863 0.2999999523162842 C 8.699999809265137 -0.1000000536441803 9.300000190734863 -0.1000000536441803 9.699999809265137 0.2999999523162842 C 10.09999942779541 0.6999999284744263 10.09999942779541 1.299999952316284 9.699999809265137 1.699999928474426 L 5.699999809265137 5.699999809265137 C 5.5 5.900000095367432 5.300000190734863 6 5 6 Z">
 				</path>
 			</svg>
 		</div>
 	</div>
-	<div id="Focus_1_ca" class="Focus_1">
-		<svg class="Field_cc">
-			<rect id="Field_cc" rx="6" ry="6" x="0" y="0" width="360" height="40">
+	<div id="Focus_1_cd" class="Focus_1">
+		<svg class="Field_ce">
+			<rect id="Field_ce" rx="6" ry="6" x="0" y="0" width="360" height="40">
 			</rect>
 		</svg>
 		<div id="Perodo">
