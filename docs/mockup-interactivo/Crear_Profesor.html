@@ -10,6 +10,7 @@
 		--web-view-name: Crear Profesor;
 		--web-view-id: Crear_Profesor;
 		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
 		--web-enable-deep-linking: true;
 	}
 	:root {
@@ -29,12 +30,23 @@
 		--web-view-name: Crear Profesor;
 		--web-view-id: Crear_Profesor;
 		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
 		--web-enable-deep-linking: true;
 	}
-	#Rectngulo_450_bn {
+	@keyframes fadein {
+	
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	
+	}
+	#Rectngulo_450_br {
 		fill: rgba(246,248,249,1);
 	}
-	.Rectngulo_450_bn {
+	.Rectngulo_450_br {
 		position: absolute;
 		overflow: visible;
 		width: 1440px;
@@ -42,7 +54,7 @@
 		left: 0px;
 		top: 50px;
 	}
-	#Crear_profesor_bo {
+	#Crear_profesor_bs {
 		left: 602px;
 		top: 90px;
 		position: absolute;
@@ -56,69 +68,12 @@
 		font-size: 35px;
 		color: rgba(250,105,128,1);
 	}
-	#Focus_1_bp {
-		position: absolute;
-		width: 360px;
-		height: 61px;
-		left: 540px;
-		top: 165px;
-		overflow: visible;
-	}
-	#Field_bq {
-		fill: rgba(255,255,255,1);
-		stroke: rgba(250,105,128,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Field_bq {
-		position: absolute;
-		overflow: visible;
-		width: 360px;
-		height: 40px;
-		left: 0px;
-		top: 21px;
-	}
-	#Nombre_br {
-		left: 0px;
-		top: 0px;
-		position: absolute;
-		overflow: visible;
-		width: 50px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 13px;
-		color: rgba(250,105,128,1);
-	}
-	#Manuel_bs {
-		left: 16px;
-		top: 35px;
-		position: absolute;
-		overflow: visible;
-		width: 43px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
 	#Focus_1_bt {
 		position: absolute;
 		width: 360px;
 		height: 61px;
 		left: 540px;
-		top: 468px;
+		top: 165px;
 		overflow: visible;
 	}
 	#Field_bu {
@@ -138,12 +93,12 @@
 		left: 0px;
 		top: 21px;
 	}
-	#Iniciales_bv {
+	#Nombre_bv {
 		left: 0px;
 		top: 0px;
 		position: absolute;
 		overflow: visible;
-		width: 51px;
+		width: 50px;
 		white-space: nowrap;
 		line-height: 20px;
 		margin-top: -3.5px;
@@ -154,12 +109,12 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#Mancopmac_bw {
+	#Manuel_bw {
 		left: 16px;
 		top: 35px;
 		position: absolute;
 		overflow: visible;
-		width: 72px;
+		width: 43px;
 		white-space: nowrap;
 		line-height: 20px;
 		margin-top: -3.5px;
@@ -175,7 +130,7 @@
 		width: 360px;
 		height: 61px;
 		left: 540px;
-		top: 266px;
+		top: 468px;
 		overflow: visible;
 	}
 	#Field_by {
@@ -195,12 +150,12 @@
 		left: 0px;
 		top: 21px;
 	}
-	#Apellidos_bz {
+	#Iniciales_bz {
 		left: 0px;
 		top: 0px;
 		position: absolute;
 		overflow: visible;
-		width: 58px;
+		width: 51px;
 		white-space: nowrap;
 		line-height: 20px;
 		margin-top: -3.5px;
@@ -211,12 +166,12 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#Copado_Machuca_b {
+	#Mancopmac_b {
 		left: 16px;
 		top: 35px;
 		position: absolute;
 		overflow: visible;
-		width: 102px;
+		width: 72px;
 		white-space: nowrap;
 		line-height: 20px;
 		margin-top: -3.5px;
@@ -232,7 +187,7 @@
 		width: 360px;
 		height: 61px;
 		left: 540px;
-		top: 367px;
+		top: 266px;
 		overflow: visible;
 	}
 	#Field_bb {
@@ -245,6 +200,63 @@
 		shape-rendering: auto;
 	}
 	.Field_bb {
+		position: absolute;
+		overflow: visible;
+		width: 360px;
+		height: 40px;
+		left: 0px;
+		top: 21px;
+	}
+	#Apellidos_ba {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 58px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 13px;
+		color: rgba(250,105,128,1);
+	}
+	#Copado_Machuca_ba {
+		left: 16px;
+		top: 35px;
+		position: absolute;
+		overflow: visible;
+		width: 102px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Focus_1_bd {
+		position: absolute;
+		width: 360px;
+		height: 61px;
+		left: 540px;
+		top: 367px;
+		overflow: visible;
+	}
+	#Field_bc {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(250,105,128,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Field_bc {
 		position: absolute;
 		overflow: visible;
 		width: 360px;
@@ -319,13 +331,17 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#INICIO_ba {
+	#INICIO_bc {
 		left: 605px;
 		top: 19px;
 		position: absolute;
 		overflow: visible;
 		width: 35px;
 		white-space: nowrap;
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: page;
+		--web-action-target: Home_admin.html;
+		cursor: pointer;
 		line-height: 20px;
 		margin-top: -4.5px;
 		text-align: left;
@@ -335,7 +351,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#PROFESORES_ba {
+	#PROFESORES_be {
 		opacity: 0.5;
 		left: 1060px;
 		top: 18px;
@@ -352,7 +368,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#GRUPOS_ba {
+	#GRUPOS_be {
 		opacity: 0.5;
 		left: 1177px;
 		top: 18px;
@@ -369,7 +385,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#christopher-campbell-28567-uns_bb {
+	#christopher-campbell-28567-uns_bf {
 		position: absolute;
 		width: 30px;
 		height: 30px;
@@ -377,7 +393,7 @@
 		top: 10px;
 		overflow: visible;
 	}
-	#ASIGNATURAS_bc {
+	#ASIGNATURAS_bg {
 		opacity: 0.5;
 		left: 1268px;
 		top: 18px;
@@ -394,7 +410,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#COMPETENCIAS_be {
+	#COMPETENCIAS_bh {
 		opacity: 0.5;
 		left: 831px;
 		top: 18px;
@@ -411,7 +427,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#ADMINISTRADORES_be {
+	#ADMINISTRADORES_bi {
 		opacity: 0.5;
 		left: 681px;
 		top: 18px;
@@ -428,7 +444,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#ALUMNOS_bf {
+	#ALUMNOS_bj {
 		opacity: 0.5;
 		left: 962px;
 		top: 18px;
@@ -445,69 +461,12 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#Focus_1_bg {
-		position: absolute;
-		width: 360px;
-		height: 61px;
-		left: 540px;
-		top: 670px;
-		overflow: visible;
-	}
-	#Field_bh {
-		fill: rgba(255,255,255,1);
-		stroke: rgba(250,105,128,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Field_bh {
-		position: absolute;
-		overflow: visible;
-		width: 360px;
-		height: 40px;
-		left: 0px;
-		top: 21px;
-	}
-	#Contrasea_bi {
-		left: 0px;
-		top: 0px;
-		position: absolute;
-		overflow: visible;
-		width: 71px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 13px;
-		color: rgba(250,105,128,1);
-	}
-	#_bj {
-		left: 16px;
-		top: 35px;
-		position: absolute;
-		overflow: visible;
-		width: 84px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
 	#Focus_1_bk {
 		position: absolute;
 		width: 360px;
 		height: 61px;
 		left: 540px;
-		top: 569px;
+		top: 670px;
 		overflow: visible;
 	}
 	#Field_bl {
@@ -527,7 +486,64 @@
 		left: 0px;
 		top: 21px;
 	}
-	#Email_bm {
+	#Contrasea_bm {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 71px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 13px;
+		color: rgba(250,105,128,1);
+	}
+	#_bn {
+		left: 16px;
+		top: 35px;
+		position: absolute;
+		overflow: visible;
+		width: 84px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Focus_1_bo {
+		position: absolute;
+		width: 360px;
+		height: 61px;
+		left: 540px;
+		top: 569px;
+		overflow: visible;
+	}
+	#Field_bp {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(250,105,128,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Field_bp {
+		position: absolute;
+		overflow: visible;
+		width: 360px;
+		height: 40px;
+		left: 0px;
+		top: 21px;
+	}
+	#Email_bq {
 		left: 0px;
 		top: 0px;
 		position: absolute;
@@ -543,7 +559,7 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#mancopmacuses_bn {
+	#mancopmacuses_br {
 		left: 16px;
 		top: 35px;
 		position: absolute;
@@ -559,18 +575,22 @@
 		font-size: 13px;
 		color: rgba(32,33,36,1);
 	}
-	#Primary_Button_bo {
+	#Primary_Button_bs {
 		position: absolute;
 		width: 299px;
 		height: 70px;
 		left: 571px;
 		top: 872px;
 		overflow: visible;
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: page;
+		--web-action-target: Lista_Profesor.html;
+		cursor: pointer;
 	}
-	#base_bp {
+	#base_bt {
 		fill: rgba(250,105,128,1);
 	}
-	.base_bp {
+	.base_bt {
 		position: absolute;
 		overflow: visible;
 		width: 299px;
@@ -578,7 +598,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#Crear_bq {
+	#Crear_bu {
 		left: 124px;
 		top: 22px;
 		position: absolute;
@@ -592,7 +612,7 @@
 		font-size: 20px;
 		color: rgba(255,255,255,1);
 	}
-	#Focus_1_bs {
+	#Focus_1_bw {
 		position: absolute;
 		width: 360px;
 		height: 61px;
@@ -600,7 +620,7 @@
 		top: 771px;
 		overflow: visible;
 	}
-	#Field_bt {
+	#Field_be {
 		fill: rgba(255,255,255,1);
 		stroke: rgba(250,105,128,1);
 		stroke-width: 2px;
@@ -609,7 +629,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Field_bt {
+	.Field_be {
 		position: absolute;
 		overflow: visible;
 		width: 360px;
@@ -617,7 +637,7 @@
 		left: 0px;
 		top: 21px;
 	}
-	#Confirmar_contrasea_bt {
+	#Confirmar_contrasea_bx {
 		left: 0px;
 		top: 0px;
 		position: absolute;
@@ -633,7 +653,7 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#_bu {
+	#_by {
 		left: 16px;
 		top: 35px;
 		position: absolute;
@@ -3491,35 +3511,23 @@ window.application = new Application();
 </head>
 <body>
 <div id="Crear_Profesor">
-	<svg class="Rectngulo_450_bn">
-		<rect id="Rectngulo_450_bn" rx="0" ry="0" x="0" y="0" width="1440" height="950">
+	<svg class="Rectngulo_450_br">
+		<rect id="Rectngulo_450_br" rx="0" ry="0" x="0" y="0" width="1440" height="950">
 		</rect>
 	</svg>
-	<div id="Crear_profesor_bo">
+	<div id="Crear_profesor_bs">
 		<span>Crear profesor</span>
-	</div>
-	<div id="Focus_1_bp" class="Focus_1">
-		<svg class="Field_bq">
-			<rect id="Field_bq" rx="6" ry="6" x="0" y="0" width="360" height="40">
-			</rect>
-		</svg>
-		<div id="Nombre_br">
-			<span>Nombre</span>
-		</div>
-		<div id="Manuel_bs">
-			<span>Manuel</span>
-		</div>
 	</div>
 	<div id="Focus_1_bt" class="Focus_1">
 		<svg class="Field_bu">
 			<rect id="Field_bu" rx="6" ry="6" x="0" y="0" width="360" height="40">
 			</rect>
 		</svg>
-		<div id="Iniciales_bv">
-			<span>Iniciales</span>
+		<div id="Nombre_bv">
+			<span>Nombre</span>
 		</div>
-		<div id="Mancopmac_bw">
-			<span>Mancopmac</span>
+		<div id="Manuel_bw">
+			<span>Manuel</span>
 		</div>
 	</div>
 	<div id="Focus_1_bx" class="Focus_1">
@@ -3527,16 +3535,28 @@ window.application = new Application();
 			<rect id="Field_by" rx="6" ry="6" x="0" y="0" width="360" height="40">
 			</rect>
 		</svg>
-		<div id="Apellidos_bz">
-			<span>Apellidos</span>
+		<div id="Iniciales_bz">
+			<span>Iniciales</span>
 		</div>
-		<div id="Copado_Machuca_b">
-			<span>Copado Machuca</span>
+		<div id="Mancopmac_b">
+			<span>Mancopmac</span>
 		</div>
 	</div>
 	<div id="Focus_1_bb" class="Focus_1">
 		<svg class="Field_bb">
 			<rect id="Field_bb" rx="6" ry="6" x="0" y="0" width="360" height="40">
+			</rect>
+		</svg>
+		<div id="Apellidos_ba">
+			<span>Apellidos</span>
+		</div>
+		<div id="Copado_Machuca_ba">
+			<span>Copado Machuca</span>
+		</div>
+	</div>
+	<div id="Focus_1_bd" class="Focus_1">
+		<svg class="Field_bc">
+			<rect id="Field_bc" rx="6" ry="6" x="0" y="0" width="360" height="40">
 			</rect>
 		</svg>
 		<div id="Fecha_de_nacimiento_ba">
@@ -3554,40 +3574,28 @@ window.application = new Application();
 		<div id="LOGO_bb">
 			<span>LOGO</span>
 		</div>
-		<div id="INICIO_ba">
+		<div onclick="application.goToTargetView(event)" id="INICIO_bc">
 			<span>INICIO</span>
 		</div>
-		<div id="PROFESORES_ba">
+		<div id="PROFESORES_be">
 			<span>PROFESORES</span>
 		</div>
-		<div id="GRUPOS_ba">
+		<div id="GRUPOS_be">
 			<span>GRUPOS</span>
 		</div>
-		<img id="christopher-campbell-28567-uns_bb" src="christopher-campbell-28567-uns_bb.png" srcset="christopher-campbell-28567-uns_bb.png 1x, christopher-campbell-28567-uns_bb@2x.png 2x">
+		<img id="christopher-campbell-28567-uns_bf" src="images/christopher-campbell-28567-uns_bf.png" srcset="images/christopher-campbell-28567-uns_bf.png 1x, images/christopher-campbell-28567-uns_bf@2x.png 2x">
 			
-		<div id="ASIGNATURAS_bc">
+		<div id="ASIGNATURAS_bg">
 			<span>ASIGNATURAS</span>
 		</div>
-		<div id="COMPETENCIAS_be">
+		<div id="COMPETENCIAS_bh">
 			<span>COMPETENCIAS</span>
 		</div>
-		<div id="ADMINISTRADORES_be">
+		<div id="ADMINISTRADORES_bi">
 			<span>ADMINISTRADORES</span>
 		</div>
-		<div id="ALUMNOS_bf">
+		<div id="ALUMNOS_bj">
 			<span>ALUMNOS</span>
-		</div>
-	</div>
-	<div id="Focus_1_bg" class="Focus_1">
-		<svg class="Field_bh">
-			<rect id="Field_bh" rx="6" ry="6" x="0" y="0" width="360" height="40">
-			</rect>
-		</svg>
-		<div id="Contrasea_bi">
-			<span>Contraseña</span>
-		</div>
-		<div id="_bj">
-			<span>****************</span>
 		</div>
 	</div>
 	<div id="Focus_1_bk" class="Focus_1">
@@ -3595,31 +3603,43 @@ window.application = new Application();
 			<rect id="Field_bl" rx="6" ry="6" x="0" y="0" width="360" height="40">
 			</rect>
 		</svg>
-		<div id="Email_bm">
+		<div id="Contrasea_bm">
+			<span>Contraseña</span>
+		</div>
+		<div id="_bn">
+			<span>****************</span>
+		</div>
+	</div>
+	<div id="Focus_1_bo" class="Focus_1">
+		<svg class="Field_bp">
+			<rect id="Field_bp" rx="6" ry="6" x="0" y="0" width="360" height="40">
+			</rect>
+		</svg>
+		<div id="Email_bq">
 			<span>Email</span>
 		</div>
-		<div id="mancopmacuses_bn">
+		<div id="mancopmacuses_br">
 			<span>mancopmac@us.es</span>
 		</div>
 	</div>
-	<div id="Primary_Button_bo" class="Primary_Button">
-		<svg class="base_bp">
-			<rect id="base_bp" rx="6" ry="6" x="0" y="0" width="299" height="70">
+	<div onclick="application.goToTargetView(event)" id="Primary_Button_bs" class="Primary_Button">
+		<svg class="base_bt">
+			<rect id="base_bt" rx="6" ry="6" x="0" y="0" width="299" height="70">
 			</rect>
 		</svg>
-		<div id="Crear_bq">
+		<div id="Crear_bu">
 			<span>Crear</span>
 		</div>
 	</div>
-	<div id="Focus_1_bs" class="Focus_1">
-		<svg class="Field_bt">
-			<rect id="Field_bt" rx="6" ry="6" x="0" y="0" width="360" height="40">
+	<div id="Focus_1_bw" class="Focus_1">
+		<svg class="Field_be">
+			<rect id="Field_be" rx="6" ry="6" x="0" y="0" width="360" height="40">
 			</rect>
 		</svg>
-		<div id="Confirmar_contrasea_bt">
+		<div id="Confirmar_contrasea_bx">
 			<span>Confirmar contraseña</span>
 		</div>
-		<div id="_bu">
+		<div id="_by">
 			<span>****************</span>
 		</div>
 	</div>

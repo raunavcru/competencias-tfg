@@ -10,6 +10,7 @@
 		--web-view-name: Lista Administrador;
 		--web-view-id: Lista_Administrador;
 		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
 		--web-enable-deep-linking: true;
 	}
 	:root {
@@ -29,7 +30,18 @@
 		--web-view-name: Lista Administrador;
 		--web-view-id: Lista_Administrador;
 		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
 		--web-enable-deep-linking: true;
+	}
+	@keyframes fadein {
+	
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	
 	}
 	#Rectngulo_449_un {
 		fill: rgba(246,248,249,1);
@@ -84,6 +96,10 @@
 		overflow: visible;
 		width: 35px;
 		white-space: nowrap;
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: page;
+		--web-action-target: Home_admin.html;
+		cursor: pointer;
 		line-height: 20px;
 		margin-top: -4.5px;
 		text-align: left;
@@ -3945,6 +3961,10 @@
 		left: 1125px;
 		top: 101px;
 		overflow: visible;
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: page;
+		--web-action-target: Crear_Administrador.html;
+		cursor: pointer;
 	}
 	#base_i {
 		fill: rgba(250,105,128,1);
@@ -4010,9 +4030,9 @@
 		left: 13px;
 		top: 6px;
 		position: absolute;
-		overflow: hidden;
+		overflow: visible;
 		width: 115px;
-		height: 10px;
+		height: 23px;
 		line-height: 20px;
 		margin-top: -4.5px;
 		text-align: right;
@@ -4026,9 +4046,9 @@
 		left: 13px;
 		top: 36px;
 		position: absolute;
-		overflow: hidden;
+		overflow: visible;
 		width: 115px;
-		height: 10px;
+		height: 16px;
 		line-height: 20px;
 		margin-top: -4.5px;
 		text-align: right;
@@ -6892,7 +6912,7 @@ window.application = new Application();
 		<div id="LOGO_uq">
 			<span>LOGO</span>
 		</div>
-		<div id="INICIO_ur">
+		<div onclick="application.goToTargetView(event)" id="INICIO_ur">
 			<span>INICIO</span>
 		</div>
 		<div id="PROFESORES_us">
@@ -6901,7 +6921,7 @@ window.application = new Application();
 		<div id="GRUPOS_ut">
 			<span>GRUPOS</span>
 		</div>
-		<img id="christopher-campbell-28567-uns_uu" src="christopher-campbell-28567-uns_uu.png" srcset="christopher-campbell-28567-uns_uu.png 1x, christopher-campbell-28567-uns_uu@2x.png 2x">
+		<img id="christopher-campbell-28567-uns_uu" src="images/christopher-campbell-28567-uns_uu.png" srcset="images/christopher-campbell-28567-uns_uu.png 1x, images/christopher-campbell-28567-uns_uu@2x.png 2x">
 			
 		<div id="ASIGNATURAS_uv">
 			<span>ASIGNATURAS</span>
@@ -7845,7 +7865,7 @@ window.application = new Application();
 			<span>CREATED DATE</span>
 		</div>
 	</div>
-	<div id="Primary_Button_h" class="Primary_Button">
+	<div onclick="application.goToTargetView(event)" id="Primary_Button_h" class="Primary_Button">
 		<svg class="base_i">
 			<rect id="base_i" rx="6" ry="6" x="0" y="0" width="135" height="34">
 			</rect>

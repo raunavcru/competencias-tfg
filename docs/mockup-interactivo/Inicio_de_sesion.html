@@ -4,16 +4,17 @@
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Crear Evaluación</title>
+<title>Inicio de sesion</title>
 <style id="applicationStylesheet" type="text/css">
 	.mediaViewInfo {
-		--web-view-name: Crear Evaluación;
-		--web-view-id: Crear_Evaluacin;
+		--web-view-name: Inicio de sesion;
+		--web-view-id: Inicio_de_sesion;
 		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
 		--web-enable-deep-linking: true;
 	}
 	:root {
-		--web-view-ids: Crear_Evaluacin;
+		--web-view-ids: Inicio_de_sesion;
 	}
 	* {
 		margin: 0;
@@ -21,132 +22,28 @@
 		box-sizing: border-box;
 		border: none;
 	}
-	#Crear_Evaluacin {
+	#Inicio_de_sesion {
 		position: absolute;
 		width: 1440px;
 		height: 1000px;
 		overflow: hidden;
-		--web-view-name: Crear Evaluación;
-		--web-view-id: Crear_Evaluacin;
+		--web-view-name: Inicio de sesion;
+		--web-view-id: Inicio_de_sesion;
 		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
 		--web-enable-deep-linking: true;
 	}
-	#Rectngulo_450_duk {
-		fill: rgba(246,248,249,1);
+	@keyframes fadein {
+	
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	
 	}
-	.Rectngulo_450_duk {
-		position: absolute;
-		overflow: visible;
-		width: 1440px;
-		height: 950px;
-		left: 0px;
-		top: 50px;
-	}
-	#Primary_Button_dul {
-		position: absolute;
-		width: 299px;
-		height: 70px;
-		left: 571px;
-		top: 873px;
-		overflow: visible;
-	}
-	#base_dum {
-		fill: rgba(250,105,128,1);
-	}
-	.base_dum {
-		position: absolute;
-		overflow: visible;
-		width: 299px;
-		height: 70px;
-		left: 0px;
-		top: 0px;
-	}
-	#Crear_dun {
-		left: 124px;
-		top: 22px;
-		position: absolute;
-		overflow: visible;
-		width: 53px;
-		white-space: nowrap;
-		text-align: center;
-		font-family: Helvetica;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 20px;
-		color: rgba(255,255,255,1);
-	}
-	#Crear_evaluacion {
-		left: 583px;
-		top: 132px;
-		position: absolute;
-		overflow: visible;
-		width: 276px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 35px;
-		color: rgba(250,105,128,1);
-	}
-	#Focus_1_dup {
-		position: absolute;
-		width: 360px;
-		height: 61px;
-		left: 540px;
-		top: 350px;
-		overflow: visible;
-	}
-	#Field_duq {
-		fill: rgba(255,255,255,1);
-		stroke: rgba(250,105,128,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Field_duq {
-		position: absolute;
-		overflow: visible;
-		width: 360px;
-		height: 40px;
-		left: 0px;
-		top: 21px;
-	}
-	#Fecha_Inicio_1_Evaluacin {
-		left: 0px;
-		top: 0px;
-		position: absolute;
-		overflow: visible;
-		width: 157px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 13px;
-		color: rgba(250,105,128,1);
-	}
-	#ID15092020 {
-		left: 16px;
-		top: 35px;
-		position: absolute;
-		overflow: visible;
-		width: 67px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Header_-_Desktop_dut {
+	#Header_-_Desktop_r {
 		position: absolute;
 		width: 1440px;
 		height: 50px;
@@ -154,10 +51,10 @@
 		top: 0px;
 		overflow: visible;
 	}
-	#base_duu {
+	#base_s {
 		fill: rgba(246,248,249,1);
 	}
-	.base_duu {
+	.base_s {
 		position: absolute;
 		overflow: visible;
 		width: 1440px;
@@ -165,7 +62,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#LOGO_duv {
+	#LOGO_t {
 		left: 20px;
 		top: 18px;
 		position: absolute;
@@ -181,242 +78,101 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#INICIO_duw {
-		left: 605px;
-		top: 19px;
+	#Rectngulo_450_u {
+		fill: rgba(246,248,249,1);
+	}
+	.Rectngulo_450_u {
+		position: absolute;
+		overflow: visible;
+		width: 1440px;
+		height: 950px;
+		left: 0px;
+		top: 46px;
+	}
+	#Primary_Button_v {
+		position: absolute;
+		width: 299px;
+		height: 70px;
+		left: 571px;
+		top: 603px;
+		overflow: visible;
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: page;
+		--web-action-target: Home_profesor.html;
+		cursor: pointer;
+	}
+	#base_w {
+		fill: rgba(250,105,128,1);
+	}
+	.base_w {
+		position: absolute;
+		overflow: visible;
+		width: 299px;
+		height: 70px;
+		left: 0px;
+		top: 0px;
+	}
+	#Inicio_de_sesin_x {
+		left: 75px;
+		top: 22px;
+		position: absolute;
+		overflow: visible;
+		width: 151px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Helvetica;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(255,255,255,1);
+	}
+	#Acceso_a_la_aplicacin_y {
+		left: 540px;
+		top: 173px;
+		position: absolute;
+		overflow: visible;
+		width: 362px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 35px;
+		color: rgba(250,105,128,1);
+	}
+	#Focus_1 {
+		position: absolute;
+		width: 360px;
+		height: 61px;
+		left: 540px;
+		top: 320px;
+		overflow: visible;
+	}
+	#Field {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(250,105,128,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Field {
+		position: absolute;
+		overflow: visible;
+		width: 360px;
+		height: 40px;
+		left: 0px;
+		top: 21px;
+	}
+	#Email {
+		left: 0px;
+		top: 0px;
 		position: absolute;
 		overflow: visible;
 		width: 35px;
 		white-space: nowrap;
 		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Helvetica;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(52,54,56,1);
-	}
-	#PROFESORES_dux {
-		opacity: 0.5;
-		left: 1060px;
-		top: 18px;
-		position: absolute;
-		overflow: visible;
-		width: 77px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Helvetica;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(52,54,56,1);
-	}
-	#GRUPOS_duy {
-		opacity: 0.5;
-		left: 1178px;
-		top: 18px;
-		position: absolute;
-		overflow: visible;
-		width: 49px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Helvetica;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(52,54,56,1);
-	}
-	#christopher-campbell-28567-uns_duz {
-		position: absolute;
-		width: 30px;
-		height: 30px;
-		left: 1390px;
-		top: 10px;
-		overflow: visible;
-	}
-	#ASIGNATURAS_du {
-		opacity: 0.5;
-		left: 1268px;
-		top: 18px;
-		position: absolute;
-		overflow: visible;
-		width: 81px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Helvetica;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(52,54,56,1);
-	}
-	#COMPETENCIAS_du {
-		opacity: 0.5;
-		left: 831px;
-		top: 18px;
-		position: absolute;
-		overflow: visible;
-		width: 90px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Helvetica;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(52,54,56,1);
-	}
-	#ADMINISTRADORES_du {
-		opacity: 0.5;
-		left: 681px;
-		top: 18px;
-		position: absolute;
-		overflow: visible;
-		width: 109px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Helvetica;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(52,54,56,1);
-	}
-	#ALUMNOS_du {
-		opacity: 0.5;
-		left: 962px;
-		top: 18px;
-		position: absolute;
-		overflow: visible;
-		width: 57px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Helvetica;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(52,54,56,1);
-	}
-	#Error_Dropdown_du {
-		position: absolute;
-		width: 360px;
-		height: 63px;
-		left: 540px;
-		top: 185px;
-		overflow: visible;
-	}
-	#Field_du {
-		fill: rgba(255,255,255,1);
-		stroke: rgba(250,105,128,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Field_du {
-		position: absolute;
-		overflow: visible;
-		width: 360px;
-		height: 40px;
-		left: 0px;
-		top: 23px;
-	}
-	#Select_du {
-		left: 16px;
-		top: 35px;
-		position: absolute;
-		overflow: visible;
-		width: 50px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Helvetica;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(166,173,180,1);
-	}
-	#Tipo {
-		left: 0px;
-		top: 0px;
-		position: absolute;
-		overflow: visible;
-		width: 28px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Helvetica;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 13px;
-		color: rgba(255,77,77,1);
-	}
-	#dropdown_du {
-		position: absolute;
-		width: 10px;
-		height: 6px;
-		left: 334px;
-		top: 40px;
-		overflow: visible;
-	}
-	#dropdown_dva {
-		fill: rgba(166,173,180,1);
-	}
-	.dropdown_dva {
-		overflow: visible;
-		position: absolute;
-		width: 10px;
-		height: 6px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Focus_1_dva {
-		position: absolute;
-		width: 360px;
-		height: 61px;
-		left: 540px;
-		top: 434px;
-		overflow: visible;
-	}
-	#Field_dvb {
-		fill: rgba(255,255,255,1);
-		stroke: rgba(250,105,128,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Field_dvb {
-		position: absolute;
-		overflow: visible;
-		width: 360px;
-		height: 40px;
-		left: 0px;
-		top: 21px;
-	}
-	#Fecha_Fin_1_Evaluacin {
-		left: 0px;
-		top: 0px;
-		position: absolute;
-		overflow: visible;
-		width: 142px;
-		white-space: nowrap;
-		line-height: 20px;
 		margin-top: -3.5px;
 		text-align: left;
 		font-family: Acumin Pro;
@@ -425,12 +181,12 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#ID23122020 {
+	#linaadobecom_b {
 		left: 16px;
 		top: 35px;
 		position: absolute;
 		overflow: visible;
-		width: 66px;
+		width: 97px;
 		white-space: nowrap;
 		line-height: 20px;
 		margin-top: -3.5px;
@@ -441,15 +197,15 @@
 		font-size: 13px;
 		color: rgba(32,33,36,1);
 	}
-	#Focus_1_dve {
+	#Focus_1_a {
 		position: absolute;
 		width: 360px;
 		height: 61px;
 		left: 540px;
-		top: 518px;
+		top: 413px;
 		overflow: visible;
 	}
-	#Field_dvf {
+	#Field_a {
 		fill: rgba(255,255,255,1);
 		stroke: rgba(250,105,128,1);
 		stroke-width: 2px;
@@ -458,7 +214,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Field_dvf {
+	.Field_a {
 		position: absolute;
 		overflow: visible;
 		width: 360px;
@@ -466,12 +222,12 @@
 		left: 0px;
 		top: 21px;
 	}
-	#Fecha_Inicio_2_Evaluacin {
+	#Contrasea_ {
 		left: 0px;
 		top: 0px;
 		position: absolute;
 		overflow: visible;
-		width: 159px;
+		width: 71px;
 		white-space: nowrap;
 		line-height: 20px;
 		margin-top: -3.5px;
@@ -482,12 +238,12 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#ID07012021 {
+	#_a {
 		left: 16px;
 		top: 35px;
 		position: absolute;
 		overflow: visible;
-		width: 64px;
+		width: 84px;
 		white-space: nowrap;
 		line-height: 20px;
 		margin-top: -3.5px;
@@ -498,96 +254,15 @@
 		font-size: 13px;
 		color: rgba(32,33,36,1);
 	}
-	#Header_dvi {
-		position: absolute;
-		width: 360px;
-		height: 96px;
-		left: 540px;
-		top: 243px;
-		overflow: visible;
-	}
-	#dropdown_dvj {
-		position: absolute;
-		width: 360px;
-		height: 96px;
-		left: 0px;
-		top: 0px;
-		overflow: visible;
-	}
-	#Rectngulo_431_dvk {
-		fill: rgba(255,255,255,1);
-		stroke: rgba(52,54,56,1);
-		stroke-width: 1px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Rectngulo_431_dvk {
-		position: absolute;
-		overflow: visible;
-		width: 360px;
-		height: 96px;
-		left: 0px;
-		top: 0px;
-	}
-	#TRIMESTRAL {
-		left: 13px;
-		top: 6px;
-		position: absolute;
-		overflow: hidden;
-		width: 340px;
-		height: 10px;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: right;
-		font-family: Helvetica;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(52,54,56,1);
-	}
-	#NICA {
-		left: 13px;
-		top: 65px;
-		position: absolute;
-		overflow: hidden;
-		width: 340px;
-		height: 10px;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: right;
-		font-family: Helvetica;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(52,54,56,1);
-	}
-	#CUATRIMESTRAL {
-		left: 13px;
-		top: 35px;
-		position: absolute;
-		overflow: hidden;
-		width: 340px;
-		height: 10px;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: right;
-		font-family: Helvetica;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(52,54,56,1);
-	}
-	#Focus_1_dvo {
+	#Focus_1_a {
 		position: absolute;
 		width: 360px;
 		height: 61px;
 		left: 540px;
-		top: 602px;
+		top: 413px;
 		overflow: visible;
 	}
-	#Field_dvp {
+	#Field_a {
 		fill: rgba(255,255,255,1);
 		stroke: rgba(250,105,128,1);
 		stroke-width: 2px;
@@ -596,7 +271,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Field_dvp {
+	.Field_a {
 		position: absolute;
 		overflow: visible;
 		width: 360px;
@@ -604,12 +279,12 @@
 		left: 0px;
 		top: 21px;
 	}
-	#Fecha_Fin_2_Evaluacin {
+	#Contrasea_ {
 		left: 0px;
 		top: 0px;
 		position: absolute;
 		overflow: visible;
-		width: 144px;
+		width: 71px;
 		white-space: nowrap;
 		line-height: 20px;
 		margin-top: -3.5px;
@@ -620,126 +295,12 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#ID17042021 {
+	#_a {
 		left: 16px;
 		top: 35px;
 		position: absolute;
 		overflow: visible;
-		width: 64px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Focus_1_dvs {
-		position: absolute;
-		width: 360px;
-		height: 61px;
-		left: 540px;
-		top: 686px;
-		overflow: visible;
-	}
-	#Field_dvt {
-		fill: rgba(255,255,255,1);
-		stroke: rgba(250,105,128,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Field_dvt {
-		position: absolute;
-		overflow: visible;
-		width: 360px;
-		height: 40px;
-		left: 0px;
-		top: 21px;
-	}
-	#Fecha_Inicio_3_Evaluacin {
-		left: 0px;
-		top: 0px;
-		position: absolute;
-		overflow: visible;
-		width: 159px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 13px;
-		color: rgba(250,105,128,1);
-	}
-	#ID25042021 {
-		left: 16px;
-		top: 35px;
-		position: absolute;
-		overflow: visible;
-		width: 67px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Focus_1_dvw {
-		position: absolute;
-		width: 360px;
-		height: 61px;
-		left: 540px;
-		top: 770px;
-		overflow: visible;
-	}
-	#Field_dvx {
-		fill: rgba(255,255,255,1);
-		stroke: rgba(250,105,128,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Field_dvx {
-		position: absolute;
-		overflow: visible;
-		width: 360px;
-		height: 40px;
-		left: 0px;
-		top: 21px;
-	}
-	#Fecha_Fin_2_Evaluacin_dvy {
-		left: 0px;
-		top: 0px;
-		position: absolute;
-		overflow: visible;
-		width: 144px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 13px;
-		color: rgba(250,105,128,1);
-	}
-	#ID24062021 {
-		left: 16px;
-		top: 35px;
-		position: absolute;
-		overflow: visible;
-		width: 67px;
+		width: 84px;
 		white-space: nowrap;
 		line-height: 20px;
 		margin-top: -3.5px;
@@ -3591,160 +3152,66 @@ window.application = new Application();
 </script>
 </head>
 <body>
-<div id="Crear_Evaluacin">
-	<svg class="Rectngulo_450_duk">
-		<rect id="Rectngulo_450_duk" rx="0" ry="0" x="0" y="0" width="1440" height="950">
-		</rect>
-	</svg>
-	<div id="Primary_Button_dul" class="Primary_Button">
-		<svg class="base_dum">
-			<rect id="base_dum" rx="6" ry="6" x="0" y="0" width="299" height="70">
+<div id="Inicio_de_sesion">
+	<div id="Header_-_Desktop_r" class="Header___Desktop">
+		<svg class="base_s">
+			<rect id="base_s" rx="0" ry="0" x="0" y="0" width="1440" height="50">
 			</rect>
 		</svg>
-		<div id="Crear_dun">
-			<span>Crear</span>
-		</div>
-	</div>
-	<div id="Crear_evaluacion">
-		<span>Crear evaluacion</span>
-	</div>
-	<div id="Focus_1_dup" class="Focus_1">
-		<svg class="Field_duq">
-			<rect id="Field_duq" rx="6" ry="6" x="0" y="0" width="360" height="40">
-			</rect>
-		</svg>
-		<div id="Fecha_Inicio_1_Evaluacin">
-			<span>Fecha Inicio 1ª Evaluación</span>
-		</div>
-		<div id="ID15092020">
-			<span>15/09/2020</span>
-		</div>
-	</div>
-	<div id="Header_-_Desktop_dut" class="Header___Desktop">
-		<svg class="base_duu">
-			<rect id="base_duu" rx="0" ry="0" x="0" y="0" width="1440" height="50">
-			</rect>
-		</svg>
-		<div id="LOGO_duv">
+		<div id="LOGO_t">
 			<span>LOGO</span>
 		</div>
-		<div id="INICIO_duw">
-			<span>INICIO</span>
-		</div>
-		<div id="PROFESORES_dux">
-			<span>PROFESORES</span>
-		</div>
-		<div id="GRUPOS_duy">
-			<span>GRUPOS</span>
-		</div>
-		<img id="christopher-campbell-28567-uns_duz" src="christopher-campbell-28567-uns_duz.png" srcset="christopher-campbell-28567-uns_duz.png 1x, christopher-campbell-28567-uns_duz@2x.png 2x">
-			
-		<div id="ASIGNATURAS_du">
-			<span>ASIGNATURAS</span>
-		</div>
-		<div id="COMPETENCIAS_du">
-			<span>COMPETENCIAS</span>
-		</div>
-		<div id="ADMINISTRADORES_du">
-			<span>ADMINISTRADORES</span>
-		</div>
-		<div id="ALUMNOS_du">
-			<span>ALUMNOS</span>
-		</div>
 	</div>
-	<div id="Error_Dropdown_du" class="Error_Dropdown">
-		<svg class="Field_du">
-			<rect id="Field_du" rx="6" ry="6" x="0" y="0" width="360" height="40">
+	<svg class="Rectngulo_450_u">
+		<rect id="Rectngulo_450_u" rx="0" ry="0" x="0" y="0" width="1440" height="950">
+		</rect>
+	</svg>
+	<div onclick="application.goToTargetView(event)" id="Primary_Button_v" class="Primary_Button">
+		<svg class="base_w">
+			<rect id="base_w" rx="6" ry="6" x="0" y="0" width="299" height="70">
 			</rect>
 		</svg>
-		<div id="Select_du">
-			<span>Select…</span>
-		</div>
-		<div id="Tipo">
-			<span>Tipo</span>
-		</div>
-		<div id="dropdown_du" class="dropdown">
-			<svg class="dropdown_dva" viewBox="0 0 10 6">
-				<path id="dropdown_dva" d="M 5 6 C 4.699999809265137 6 4.5 5.900000095367432 4.300000190734863 5.699999809265137 L 0.3000001907348633 1.699999809265137 C -0.0999998152256012 1.299999833106995 -0.0999998152256012 0.6999998092651367 0.3000001907348633 0.2999998331069946 C 0.7000001668930054 -0.1000001430511475 1.300000190734863 -0.1000001728534698 1.700000166893005 0.2999998331069946 L 5 3.599999904632568 L 8.300000190734863 0.2999999523162842 C 8.699999809265137 -0.1000000536441803 9.300000190734863 -0.1000000536441803 9.699999809265137 0.2999999523162842 C 10.09999942779541 0.6999999284744263 10.09999942779541 1.299999952316284 9.699999809265137 1.699999928474426 L 5.699999809265137 5.699999809265137 C 5.5 5.900000095367432 5.300000190734863 6 5 6 Z">
-				</path>
-			</svg>
+		<div id="Inicio_de_sesin_x">
+			<span>Inicio de sesión</span>
 		</div>
 	</div>
-	<div id="Focus_1_dva" class="Focus_1">
-		<svg class="Field_dvb">
-			<rect id="Field_dvb" rx="6" ry="6" x="0" y="0" width="360" height="40">
+	<div id="Acceso_a_la_aplicacin_y">
+		<span>Acceso a la aplicación</span>
+	</div>
+	<div id="Focus_1" class="Focus_1">
+		<svg class="Field">
+			<rect id="Field" rx="6" ry="6" x="0" y="0" width="360" height="40">
 			</rect>
 		</svg>
-		<div id="Fecha_Fin_1_Evaluacin">
-			<span>Fecha Fin 1ª Evaluación</span>
+		<div id="Email">
+			<span>Email</span>
 		</div>
-		<div id="ID23122020">
-			<span>23/12/2020</span>
+		<div id="linaadobecom_b">
+			<span>lina@adobe.com</span>
 		</div>
 	</div>
-	<div id="Focus_1_dve" class="Focus_1">
-		<svg class="Field_dvf">
-			<rect id="Field_dvf" rx="6" ry="6" x="0" y="0" width="360" height="40">
+	<div id="Focus_1_a" class="Focus_1">
+		<svg class="Field_a">
+			<rect id="Field_a" rx="6" ry="6" x="0" y="0" width="360" height="40">
 			</rect>
 		</svg>
-		<div id="Fecha_Inicio_2_Evaluacin">
-			<span>Fecha Inicio 2ª Evaluación</span>
+		<div id="Contrasea_">
+			<span>Contraseña</span>
 		</div>
-		<div id="ID07012021">
-			<span>07/01/2021</span>
-		</div>
-	</div>
-	<div id="Header_dvi">
-		<div id="dropdown_dvj">
-			<svg class="Rectngulo_431_dvk">
-				<rect id="Rectngulo_431_dvk" rx="0" ry="0" x="0" y="0" width="360" height="96">
-				</rect>
-			</svg>
-			<div id="TRIMESTRAL">
-				<span>TRIMESTRAL</span>
-			</div>
-			<div id="NICA">
-				<span>ÚNICA</span>
-			</div>
-			<div id="CUATRIMESTRAL">
-				<span>CUATRIMESTRAL</span>
-			</div>
+		<div id="_a">
+			<span>****************</span>
 		</div>
 	</div>
-	<div id="Focus_1_dvo" class="Focus_1">
-		<svg class="Field_dvp">
-			<rect id="Field_dvp" rx="6" ry="6" x="0" y="0" width="360" height="40">
+	<div id="Focus_1_a" class="Focus_1">
+		<svg class="Field_a">
+			<rect id="Field_a" rx="6" ry="6" x="0" y="0" width="360" height="40">
 			</rect>
 		</svg>
-		<div id="Fecha_Fin_2_Evaluacin">
-			<span>Fecha Fin 2ª Evaluación</span>
+		<div id="Contrasea_">
+			<span>Contraseña</span>
 		</div>
-		<div id="ID17042021">
-			<span>17/04/2021</span>
-		</div>
-	</div>
-	<div id="Focus_1_dvs" class="Focus_1">
-		<svg class="Field_dvt">
-			<rect id="Field_dvt" rx="6" ry="6" x="0" y="0" width="360" height="40">
-			</rect>
-		</svg>
-		<div id="Fecha_Inicio_3_Evaluacin">
-			<span>Fecha Inicio 3ª Evaluación</span>
-		</div>
-		<div id="ID25042021">
-			<span>25/04/2021</span>
-		</div>
-	</div>
-	<div id="Focus_1_dvw" class="Focus_1">
-		<svg class="Field_dvx">
-			<rect id="Field_dvx" rx="6" ry="6" x="0" y="0" width="360" height="40">
-			</rect>
-		</svg>
-		<div id="Fecha_Fin_2_Evaluacin_dvy">
-			<span>Fecha Fin 2ª Evaluación</span>
-		</div>
-		<div id="ID24062021">
-			<span>24/06/2021</span>
+		<div id="_a">
+			<span>****************</span>
 		</div>
 	</div>
 </div>

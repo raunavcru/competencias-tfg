@@ -10,6 +10,7 @@
 		--web-view-name: Ver calificaciones de alumno (competencias) ;
 		--web-view-id: Ver_calificaciones_de_alumno_competencias_;
 		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
 		--web-enable-deep-linking: true;
 	}
 	:root {
@@ -29,12 +30,23 @@
 		--web-view-name: Ver calificaciones de alumno (competencias) ;
 		--web-view-id: Ver_calificaciones_de_alumno_competencias_;
 		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
 		--web-enable-deep-linking: true;
 	}
-	#Rectngulo_449_dzl {
+	@keyframes fadein {
+	
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	
+	}
+	#Rectngulo_449_drl {
 		fill: rgba(246,248,249,1);
 	}
-	.Rectngulo_449_dzl {
+	.Rectngulo_449_drl {
 		position: absolute;
 		overflow: visible;
 		width: 1440px;
@@ -42,7 +54,7 @@
 		left: 0px;
 		top: 50px;
 	}
-	#Grupo_21_dzm {
+	#Grupo_21_drm {
 		position: absolute;
 		width: 1440px;
 		height: 50px;
@@ -50,7 +62,7 @@
 		top: 0px;
 		overflow: visible;
 	}
-	#Header_-_Desktop_dzn {
+	#Header_-_Desktop_drn {
 		position: absolute;
 		width: 1440px;
 		height: 50px;
@@ -58,10 +70,10 @@
 		top: 0px;
 		overflow: visible;
 	}
-	#base_dzo {
+	#base_dro {
 		fill: rgba(246,248,249,1);
 	}
-	.base_dzo {
+	.base_dro {
 		position: absolute;
 		overflow: visible;
 		width: 1440px;
@@ -69,7 +81,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#LOGO_dzp {
+	#LOGO_drp {
 		left: 20px;
 		top: 18px;
 		position: absolute;
@@ -85,13 +97,17 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#INICIO_dzq {
+	#INICIO_drq {
 		left: 900px;
 		top: 19px;
 		position: absolute;
 		overflow: visible;
 		width: 35px;
 		white-space: nowrap;
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: page;
+		--web-action-target: Home_profesor.html;
+		cursor: pointer;
 		line-height: 20px;
 		margin-top: -4.5px;
 		text-align: left;
@@ -101,7 +117,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#MIS_GRUPOS_dzr {
+	#MIS_GRUPOS_drr {
 		opacity: 0.5;
 		left: 1139px;
 		top: 19px;
@@ -118,7 +134,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#christopher-campbell-28567-uns_dzs {
+	#christopher-campbell-28567-uns_drs {
 		position: absolute;
 		width: 30px;
 		height: 30px;
@@ -126,7 +142,7 @@
 		top: 10px;
 		overflow: visible;
 	}
-	#MIS_ASIGNATURAS_dzt {
+	#MIS_ASIGNATURAS_drt {
 		opacity: 0.5;
 		left: 1251px;
 		top: 19px;
@@ -151,7 +167,7 @@
 		top: 19px;
 		overflow: visible;
 	}
-	#MIS_ACTIVIDADES_dzv {
+	#MIS_ACTIVIDADES_drv {
 		opacity: 0.5;
 		left: 0px;
 		top: 0px;
@@ -168,7 +184,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#Calificaciones_Alberto_Souto_C_dzw {
+	#Calificaciones_Alberto_Souto_C_drw {
 		left: 446px;
 		top: 122px;
 		position: absolute;
@@ -196,7 +212,7 @@
 		font-size: 35px;
 		color: rgba(250,105,128,1);
 	}
-	#Primary_Button_dzy {
+	#Primary_Button_dry {
 		position: absolute;
 		width: 1239px;
 		height: 127px;
@@ -204,7 +220,7 @@
 		top: 286px;
 		overflow: visible;
 	}
-	#base_dzz {
+	#base_drz {
 		fill: transparent;
 		stroke: rgba(250,105,128,1);
 		stroke-width: 2px;
@@ -213,7 +229,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.base_dzz {
+	.base_drz {
 		position: absolute;
 		overflow: visible;
 		width: 1239px;
@@ -237,7 +253,7 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#-_dz {
+	#-_dr {
 		left: 197px;
 		top: 352px;
 		position: absolute;
@@ -251,7 +267,7 @@
 		font-size: 20px;
 		color: rgba(32,33,36,1);
 	}
-	#Focus_1_dz {
+	#Focus_1_dr {
 		position: absolute;
 		width: 118px;
 		height: 61px;
@@ -259,7 +275,7 @@
 		top: 323px;
 		overflow: visible;
 	}
-	#Field_dz {
+	#Field_dr {
 		fill: rgba(255,255,255,1);
 		stroke: rgba(250,105,128,1);
 		stroke-width: 2px;
@@ -268,7 +284,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Field_dz {
+	.Field_dr {
 		position: absolute;
 		overflow: visible;
 		width: 118px;
@@ -292,7 +308,7 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#Primary_Button_dz {
+	#Primary_Button_dr {
 		position: absolute;
 		width: 145px;
 		height: 42px;
@@ -300,10 +316,10 @@
 		top: 342px;
 		overflow: visible;
 	}
-	#base_dz {
+	#base_dr {
 		fill: rgba(250,105,128,1);
 	}
-	.base_dz {
+	.base_dr {
 		position: absolute;
 		overflow: visible;
 		width: 145px;
@@ -311,7 +327,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#Guardar_dz {
+	#Guardar_dr {
 		left: 50px;
 		top: 14px;
 		position: absolute;
@@ -327,7 +343,7 @@
 		font-size: 12px;
 		color: rgba(255,255,255,1);
 	}
-	#Primary_Button_da {
+	#Primary_Button_dsa {
 		position: absolute;
 		width: 1239px;
 		height: 154px;
@@ -335,7 +351,7 @@
 		top: 446px;
 		overflow: visible;
 	}
-	#base_da {
+	#base_dsa {
 		fill: transparent;
 		stroke: rgba(250,105,128,1);
 		stroke-width: 2px;
@@ -344,7 +360,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.base_da {
+	.base_dsa {
 		position: absolute;
 		overflow: visible;
 		width: 1239px;
@@ -368,7 +384,7 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#-_db {
+	#-_dsb {
 		left: 197px;
 		top: 529px;
 		position: absolute;
@@ -382,7 +398,7 @@
 		font-size: 20px;
 		color: rgba(32,33,36,1);
 	}
-	#Focus_1_dc {
+	#Focus_1_dsc {
 		position: absolute;
 		width: 118px;
 		height: 61px;
@@ -390,7 +406,7 @@
 		top: 500px;
 		overflow: visible;
 	}
-	#Field_dd {
+	#Field_dsd {
 		fill: rgba(255,255,255,1);
 		stroke: rgba(250,105,128,1);
 		stroke-width: 2px;
@@ -399,7 +415,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Field_dd {
+	.Field_dsd {
 		position: absolute;
 		overflow: visible;
 		width: 118px;
@@ -407,7 +423,7 @@
 		left: 0px;
 		top: 21px;
 	}
-	#Nota_de {
+	#Nota_dse {
 		left: 0px;
 		top: 0px;
 		position: absolute;
@@ -423,7 +439,7 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#Primary_Button_dg {
+	#Primary_Button_dsf {
 		position: absolute;
 		width: 145px;
 		height: 42px;
@@ -431,10 +447,10 @@
 		top: 519px;
 		overflow: visible;
 	}
-	#base_dg {
+	#base_dsg {
 		fill: rgba(250,105,128,1);
 	}
-	.base_dg {
+	.base_dsg {
 		position: absolute;
 		overflow: visible;
 		width: 145px;
@@ -442,7 +458,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#Guardar_dh {
+	#Guardar_dsh {
 		left: 50px;
 		top: 14px;
 		position: absolute;
@@ -458,7 +474,7 @@
 		font-size: 12px;
 		color: rgba(255,255,255,1);
 	}
-	#Calculado_di {
+	#Calculado_dsi {
 		left: 172px;
 		top: 328px;
 		position: absolute;
@@ -474,7 +490,7 @@
 		font-size: 12px;
 		color: rgba(250,105,128,1);
 	}
-	#Calculado_dj {
+	#Calculado_dsj {
 		left: 172px;
 		top: 505px;
 		position: absolute;
@@ -490,7 +506,7 @@
 		font-size: 12px;
 		color: rgba(250,105,128,1);
 	}
-	#-_dk {
+	#-_dsk {
 		left: 352px;
 		top: 352px;
 		position: absolute;
@@ -504,7 +520,7 @@
 		font-size: 20px;
 		color: rgba(32,33,36,1);
 	}
-	#Manual_dl {
+	#Manual_dsl {
 		left: 335px;
 		top: 328px;
 		position: absolute;
@@ -520,7 +536,7 @@
 		font-size: 12px;
 		color: rgba(250,105,128,1);
 	}
-	#-_dm {
+	#-_dsm {
 		left: 352px;
 		top: 529px;
 		position: absolute;
@@ -534,7 +550,7 @@
 		font-size: 20px;
 		color: rgba(32,33,36,1);
 	}
-	#Manual_dn {
+	#Manual_dsn {
 		left: 335px;
 		top: 505px;
 		position: absolute;
@@ -3392,119 +3408,119 @@ window.application = new Application();
 </head>
 <body>
 <div id="Ver_calificaciones_de_alumno_competencias_">
-	<svg class="Rectngulo_449_dzl">
-		<rect id="Rectngulo_449_dzl" rx="0" ry="0" x="0" y="0" width="1440" height="950">
+	<svg class="Rectngulo_449_drl">
+		<rect id="Rectngulo_449_drl" rx="0" ry="0" x="0" y="0" width="1440" height="950">
 		</rect>
 	</svg>
-	<div id="Grupo_21_dzm">
-		<div id="Header_-_Desktop_dzn" class="Header___Desktop">
-			<svg class="base_dzo">
-				<rect id="base_dzo" rx="0" ry="0" x="0" y="0" width="1440" height="50">
+	<div id="Grupo_21_drm">
+		<div id="Header_-_Desktop_drn" class="Header___Desktop">
+			<svg class="base_dro">
+				<rect id="base_dro" rx="0" ry="0" x="0" y="0" width="1440" height="50">
 				</rect>
 			</svg>
-			<div id="LOGO_dzp">
+			<div id="LOGO_drp">
 				<span>LOGO</span>
 			</div>
-			<div id="INICIO_dzq">
+			<div onclick="application.goToTargetView(event)" id="INICIO_drq">
 				<span>INICIO</span>
 			</div>
-			<div id="MIS_GRUPOS_dzr">
+			<div id="MIS_GRUPOS_drr">
 				<span>MIS GRUPOS</span>
 			</div>
-			<img id="christopher-campbell-28567-uns_dzs" src="christopher-campbell-28567-uns_dzs.png" srcset="christopher-campbell-28567-uns_dzs.png 1x, christopher-campbell-28567-uns_dzs@2x.png 2x">
+			<img id="christopher-campbell-28567-uns_drs" src="images/christopher-campbell-28567-uns_drs.png" srcset="images/christopher-campbell-28567-uns_drs.png 1x, images/christopher-campbell-28567-uns_drs@2x.png 2x">
 				
-			<div id="MIS_ASIGNATURAS_dzt">
+			<div id="MIS_ASIGNATURAS_drt">
 				<span>MIS ASIGNATURAS</span>
 			</div>
 		</div>
 		<div id="Componente_89__14" class="Componente_89___14">
-			<div id="MIS_ACTIVIDADES_dzv">
+			<div id="MIS_ACTIVIDADES_drv">
 				<span>MIS ACTIVIDADES</span>
 			</div>
 		</div>
 	</div>
-	<div id="Calificaciones_Alberto_Souto_C_dzw">
+	<div id="Calificaciones_Alberto_Souto_C_drw">
 		<span>Calificaciones Alberto Souto Cruz</span>
 	</div>
 	<div id="Competencias_Ejercicio_3">
 		<span>Competencias Ejercicio 3</span>
 	</div>
-	<div id="Primary_Button_dzy" class="Primary_Button">
-		<svg class="base_dzz">
-			<rect id="base_dzz" rx="6" ry="6" x="0" y="0" width="1239" height="127">
+	<div id="Primary_Button_dry" class="Primary_Button">
+		<svg class="base_drz">
+			<rect id="base_drz" rx="6" ry="6" x="0" y="0" width="1239" height="127">
 			</rect>
 		</svg>
 	</div>
 	<div id="Competencia_1_Conocimientos_pa">
 		<span>Competencia 1: </span><span style="color:rgba(32,33,36,1);">Conocimientos para la realización de mediciones, cálculos, valoraciones, tasaciones, estudios, informes, planificación de tareas y otros trabajos análogos de informática.</span>
 	</div>
-	<div id="-_dz">
+	<div id="-_dr">
 		<span>-</span>
 	</div>
-	<div id="Focus_1_dz" class="Focus_1">
-		<svg class="Field_dz">
-			<rect id="Field_dz" rx="6" ry="6" x="0" y="0" width="118" height="40">
+	<div id="Focus_1_dr" class="Focus_1">
+		<svg class="Field_dr">
+			<rect id="Field_dr" rx="6" ry="6" x="0" y="0" width="118" height="40">
 			</rect>
 		</svg>
 		<div id="Nota">
 			<span>Nota</span>
 		</div>
 	</div>
-	<div id="Primary_Button_dz" class="Primary_Button">
-		<svg class="base_dz">
-			<rect id="base_dz" rx="6" ry="6" x="0" y="0" width="145" height="42">
+	<div id="Primary_Button_dr" class="Primary_Button">
+		<svg class="base_dr">
+			<rect id="base_dr" rx="6" ry="6" x="0" y="0" width="145" height="42">
 			</rect>
 		</svg>
-		<div id="Guardar_dz">
+		<div id="Guardar_dr">
 			<span>Guardar</span>
 		</div>
 	</div>
-	<div id="Primary_Button_da" class="Primary_Button">
-		<svg class="base_da">
-			<rect id="base_da" rx="6" ry="6" x="0" y="0" width="1239" height="154">
+	<div id="Primary_Button_dsa" class="Primary_Button">
+		<svg class="base_dsa">
+			<rect id="base_dsa" rx="6" ry="6" x="0" y="0" width="1239" height="154">
 			</rect>
 		</svg>
 	</div>
 	<div id="Competencia_2_Capacidad_para_r">
 		<span>Competencia 2:</span><span style="color:rgba(32,33,36,1);"> Capacidad para resolver problemas con iniciativa, toma de decisiones, autonomía y creatividad. Capacidad para saber comunicar y transmitir los conocimientos, habilidades y <br/>destrezas de la profesión.</span>
 	</div>
-	<div id="-_db">
+	<div id="-_dsb">
 		<span>-</span>
 	</div>
-	<div id="Focus_1_dc" class="Focus_1">
-		<svg class="Field_dd">
-			<rect id="Field_dd" rx="6" ry="6" x="0" y="0" width="118" height="40">
+	<div id="Focus_1_dsc" class="Focus_1">
+		<svg class="Field_dsd">
+			<rect id="Field_dsd" rx="6" ry="6" x="0" y="0" width="118" height="40">
 			</rect>
 		</svg>
-		<div id="Nota_de">
+		<div id="Nota_dse">
 			<span>Nota</span>
 		</div>
 	</div>
-	<div id="Primary_Button_dg" class="Primary_Button">
-		<svg class="base_dg">
-			<rect id="base_dg" rx="6" ry="6" x="0" y="0" width="145" height="42">
+	<div id="Primary_Button_dsf" class="Primary_Button">
+		<svg class="base_dsg">
+			<rect id="base_dsg" rx="6" ry="6" x="0" y="0" width="145" height="42">
 			</rect>
 		</svg>
-		<div id="Guardar_dh">
+		<div id="Guardar_dsh">
 			<span>Guardar</span>
 		</div>
 	</div>
-	<div id="Calculado_di">
+	<div id="Calculado_dsi">
 		<span>Calculado</span>
 	</div>
-	<div id="Calculado_dj">
+	<div id="Calculado_dsj">
 		<span>Calculado</span>
 	</div>
-	<div id="-_dk">
+	<div id="-_dsk">
 		<span>-</span>
 	</div>
-	<div id="Manual_dl">
+	<div id="Manual_dsl">
 		<span>Manual</span>
 	</div>
-	<div id="-_dm">
+	<div id="-_dsm">
 		<span>-</span>
 	</div>
-	<div id="Manual_dn">
+	<div id="Manual_dsn">
 		<span>Manual</span>
 	</div>
 </div>

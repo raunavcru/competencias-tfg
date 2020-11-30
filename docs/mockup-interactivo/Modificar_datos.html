@@ -10,6 +10,7 @@
 		--web-view-name: Modificar datos;
 		--web-view-id: Modificar_datos;
 		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
 		--web-enable-deep-linking: true;
 	}
 	:root {
@@ -29,12 +30,23 @@
 		--web-view-name: Modificar datos;
 		--web-view-id: Modificar_datos;
 		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
 		--web-enable-deep-linking: true;
 	}
-	#Rectngulo_450_bya {
+	@keyframes fadein {
+	
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	
+	}
+	#Rectngulo_450_bye {
 		fill: rgba(246,248,249,1);
 	}
-	.Rectngulo_450_bya {
+	.Rectngulo_450_bye {
 		position: absolute;
 		overflow: visible;
 		width: 1440px;
@@ -42,7 +54,7 @@
 		left: 0px;
 		top: 50px;
 	}
-	#Primary_Button_byb {
+	#Primary_Button_byf {
 		position: absolute;
 		width: 299px;
 		height: 70px;
@@ -50,10 +62,10 @@
 		top: 665px;
 		overflow: visible;
 	}
-	#base_byc {
+	#base_byg {
 		fill: rgba(250,105,128,1);
 	}
-	.base_byc {
+	.base_byg {
 		position: absolute;
 		overflow: visible;
 		width: 299px;
@@ -89,7 +101,7 @@
 		font-size: 35px;
 		color: rgba(250,105,128,1);
 	}
-	#Focus_1_byf {
+	#Focus_1_byj {
 		position: absolute;
 		width: 360px;
 		height: 61px;
@@ -97,7 +109,7 @@
 		top: 219px;
 		overflow: visible;
 	}
-	#Field_byg {
+	#Field_byk {
 		fill: rgba(255,255,255,1);
 		stroke: rgba(250,105,128,1);
 		stroke-width: 2px;
@@ -106,7 +118,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Field_byg {
+	.Field_byk {
 		position: absolute;
 		overflow: visible;
 		width: 360px;
@@ -114,7 +126,7 @@
 		left: 0px;
 		top: 21px;
 	}
-	#Nombre_byh {
+	#Nombre_byl {
 		left: 0px;
 		top: 0px;
 		position: absolute;
@@ -146,7 +158,7 @@
 		font-size: 13px;
 		color: rgba(32,33,36,1);
 	}
-	#Focus_1_byj {
+	#Focus_1_byn {
 		position: absolute;
 		width: 360px;
 		height: 61px;
@@ -154,7 +166,7 @@
 		top: 546px;
 		overflow: visible;
 	}
-	#Field_byk {
+	#Field_byo {
 		fill: rgba(255,255,255,1);
 		stroke: rgba(250,105,128,1);
 		stroke-width: 2px;
@@ -163,7 +175,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Field_byk {
+	.Field_byo {
 		position: absolute;
 		overflow: visible;
 		width: 360px;
@@ -203,7 +215,7 @@
 		font-size: 13px;
 		color: rgba(32,33,36,1);
 	}
-	#Focus_1_byn {
+	#Focus_1_byr {
 		position: absolute;
 		width: 360px;
 		height: 61px;
@@ -211,7 +223,7 @@
 		top: 328px;
 		overflow: visible;
 	}
-	#Field_byo {
+	#Field_bys {
 		fill: rgba(255,255,255,1);
 		stroke: rgba(250,105,128,1);
 		stroke-width: 2px;
@@ -220,7 +232,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Field_byo {
+	.Field_bys {
 		position: absolute;
 		overflow: visible;
 		width: 360px;
@@ -260,7 +272,7 @@
 		font-size: 13px;
 		color: rgba(32,33,36,1);
 	}
-	#Focus_1_byr {
+	#Focus_1_byv {
 		position: absolute;
 		width: 360px;
 		height: 61px;
@@ -268,7 +280,7 @@
 		top: 437px;
 		overflow: visible;
 	}
-	#Field_bys {
+	#Field_byw {
 		fill: rgba(255,255,255,1);
 		stroke: rgba(250,105,128,1);
 		stroke-width: 2px;
@@ -277,7 +289,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Field_bys {
+	.Field_byw {
 		position: absolute;
 		overflow: visible;
 		width: 360px;
@@ -317,7 +329,7 @@
 		font-size: 13px;
 		color: rgba(32,33,36,1);
 	}
-	#Header_-_Desktop_byv {
+	#Header_-_Desktop_byz {
 		position: absolute;
 		width: 1440px;
 		height: 50px;
@@ -325,10 +337,10 @@
 		top: 0px;
 		overflow: visible;
 	}
-	#base_byw {
+	#base_by {
 		fill: rgba(246,248,249,1);
 	}
-	.base_byw {
+	.base_by {
 		position: absolute;
 		overflow: visible;
 		width: 1440px;
@@ -336,7 +348,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#LOGO_byx {
+	#LOGO_by {
 		left: 20px;
 		top: 18px;
 		position: absolute;
@@ -352,13 +364,17 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#INICIO_byy {
+	#INICIO_by {
 		left: 605px;
 		top: 19px;
 		position: absolute;
 		overflow: visible;
 		width: 35px;
 		white-space: nowrap;
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: page;
+		--web-action-target: Home_profesor.html;
+		cursor: pointer;
 		line-height: 20px;
 		margin-top: -4.5px;
 		text-align: left;
@@ -368,7 +384,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#PROFESORES_byz {
+	#PROFESORES_by {
 		opacity: 0.5;
 		left: 1060px;
 		top: 18px;
@@ -478,7 +494,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#Primary_Button_by {
+	#Primary_Button_bza {
 		position: absolute;
 		width: 205px;
 		height: 53px;
@@ -486,10 +502,10 @@
 		top: 800px;
 		overflow: visible;
 	}
-	#base_by {
+	#base_bzb {
 		fill: rgba(250,105,128,1);
 	}
-	.base_by {
+	.base_bzb {
 		position: absolute;
 		overflow: visible;
 		width: 205px;
@@ -3353,13 +3369,13 @@ window.application = new Application();
 </head>
 <body>
 <div id="Modificar_datos">
-	<svg class="Rectngulo_450_bya">
-		<rect id="Rectngulo_450_bya" rx="0" ry="0" x="0" y="0" width="1440" height="950">
+	<svg class="Rectngulo_450_bye">
+		<rect id="Rectngulo_450_bye" rx="0" ry="0" x="0" y="0" width="1440" height="950">
 		</rect>
 	</svg>
-	<div id="Primary_Button_byb" class="Primary_Button">
-		<svg class="base_byc">
-			<rect id="base_byc" rx="6" ry="6" x="0" y="0" width="299" height="70">
+	<div id="Primary_Button_byf" class="Primary_Button">
+		<svg class="base_byg">
+			<rect id="base_byg" rx="6" ry="6" x="0" y="0" width="299" height="70">
 			</rect>
 		</svg>
 		<div id="Modificar">
@@ -3369,21 +3385,21 @@ window.application = new Application();
 	<div id="Datos_de_usuario">
 		<span>Datos de usuario</span>
 	</div>
-	<div id="Focus_1_byf" class="Focus_1">
-		<svg class="Field_byg">
-			<rect id="Field_byg" rx="6" ry="6" x="0" y="0" width="360" height="40">
+	<div id="Focus_1_byj" class="Focus_1">
+		<svg class="Field_byk">
+			<rect id="Field_byk" rx="6" ry="6" x="0" y="0" width="360" height="40">
 			</rect>
 		</svg>
-		<div id="Nombre_byh">
+		<div id="Nombre_byl">
 			<span>Nombre</span>
 		</div>
 		<div id="Manuel">
 			<span>Manuel</span>
 		</div>
 	</div>
-	<div id="Focus_1_byj" class="Focus_1">
-		<svg class="Field_byk">
-			<rect id="Field_byk" rx="6" ry="6" x="0" y="0" width="360" height="40">
+	<div id="Focus_1_byn" class="Focus_1">
+		<svg class="Field_byo">
+			<rect id="Field_byo" rx="6" ry="6" x="0" y="0" width="360" height="40">
 			</rect>
 		</svg>
 		<div id="Iniciales">
@@ -3393,9 +3409,9 @@ window.application = new Application();
 			<span>Mancopmac</span>
 		</div>
 	</div>
-	<div id="Focus_1_byn" class="Focus_1">
-		<svg class="Field_byo">
-			<rect id="Field_byo" rx="6" ry="6" x="0" y="0" width="360" height="40">
+	<div id="Focus_1_byr" class="Focus_1">
+		<svg class="Field_bys">
+			<rect id="Field_bys" rx="6" ry="6" x="0" y="0" width="360" height="40">
 			</rect>
 		</svg>
 		<div id="Apellidos">
@@ -3405,9 +3421,9 @@ window.application = new Application();
 			<span>Copado Machuca</span>
 		</div>
 	</div>
-	<div id="Focus_1_byr" class="Focus_1">
-		<svg class="Field_bys">
-			<rect id="Field_bys" rx="6" ry="6" x="0" y="0" width="360" height="40">
+	<div id="Focus_1_byv" class="Focus_1">
+		<svg class="Field_byw">
+			<rect id="Field_byw" rx="6" ry="6" x="0" y="0" width="360" height="40">
 			</rect>
 		</svg>
 		<div id="Fecha_de_nacimiento">
@@ -3417,24 +3433,24 @@ window.application = new Application();
 			<span>29/07/1965</span>
 		</div>
 	</div>
-	<div id="Header_-_Desktop_byv" class="Header___Desktop">
-		<svg class="base_byw">
-			<rect id="base_byw" rx="0" ry="0" x="0" y="0" width="1440" height="50">
+	<div id="Header_-_Desktop_byz" class="Header___Desktop">
+		<svg class="base_by">
+			<rect id="base_by" rx="0" ry="0" x="0" y="0" width="1440" height="50">
 			</rect>
 		</svg>
-		<div id="LOGO_byx">
+		<div id="LOGO_by">
 			<span>LOGO</span>
 		</div>
-		<div id="INICIO_byy">
+		<div onclick="application.goToTargetView(event)" id="INICIO_by">
 			<span>INICIO</span>
 		</div>
-		<div id="PROFESORES_byz">
+		<div id="PROFESORES_by">
 			<span>PROFESORES</span>
 		</div>
 		<div id="GRUPOS_by">
 			<span>GRUPOS</span>
 		</div>
-		<img id="christopher-campbell-28567-uns_by" src="christopher-campbell-28567-uns_by.png" srcset="christopher-campbell-28567-uns_by.png 1x, christopher-campbell-28567-uns_by@2x.png 2x">
+		<img id="christopher-campbell-28567-uns_by" src="images/christopher-campbell-28567-uns_by.png" srcset="images/christopher-campbell-28567-uns_by.png 1x, images/christopher-campbell-28567-uns_by@2x.png 2x">
 			
 		<div id="ASIGNATURAS_by">
 			<span>ASIGNATURAS</span>
@@ -3449,9 +3465,9 @@ window.application = new Application();
 			<span>ALUMNOS</span>
 		</div>
 	</div>
-	<div id="Primary_Button_by" class="Primary_Button">
-		<svg class="base_by">
-			<rect id="base_by" rx="6" ry="6" x="0" y="0" width="205" height="53">
+	<div id="Primary_Button_bza" class="Primary_Button">
+		<svg class="base_bzb">
+			<rect id="base_bzb" rx="6" ry="6" x="0" y="0" width="205" height="53">
 			</rect>
 		</svg>
 		<div id="Modificar_contrsea">

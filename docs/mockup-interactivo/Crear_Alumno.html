@@ -10,6 +10,7 @@
 		--web-view-name: Crear Alumno;
 		--web-view-id: Crear_Alumno;
 		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
 		--web-enable-deep-linking: true;
 	}
 	:root {
@@ -29,12 +30,23 @@
 		--web-view-name: Crear Alumno;
 		--web-view-id: Crear_Alumno;
 		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
 		--web-enable-deep-linking: true;
 	}
-	#Rectngulo_450_bl {
+	@keyframes fadein {
+	
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	
+	}
+	#Rectngulo_450_bp {
 		fill: rgba(246,248,249,1);
 	}
-	.Rectngulo_450_bl {
+	.Rectngulo_450_bp {
 		position: absolute;
 		overflow: visible;
 		width: 1440px;
@@ -42,7 +54,7 @@
 		left: 0px;
 		top: 50px;
 	}
-	#Crear_alumno_bm {
+	#Crear_alumno_bq {
 		left: 610px;
 		top: 90px;
 		position: absolute;
@@ -56,69 +68,12 @@
 		font-size: 35px;
 		color: rgba(250,105,128,1);
 	}
-	#Focus_1_bn {
-		position: absolute;
-		width: 360px;
-		height: 61px;
-		left: 540px;
-		top: 165px;
-		overflow: visible;
-	}
-	#Field_bp {
-		fill: rgba(255,255,255,1);
-		stroke: rgba(250,105,128,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Field_bp {
-		position: absolute;
-		overflow: visible;
-		width: 360px;
-		height: 40px;
-		left: 0px;
-		top: 21px;
-	}
-	#Nombre_bp {
-		left: 0px;
-		top: 0px;
-		position: absolute;
-		overflow: visible;
-		width: 50px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 13px;
-		color: rgba(250,105,128,1);
-	}
-	#Manuel_bq {
-		left: 16px;
-		top: 35px;
-		position: absolute;
-		overflow: visible;
-		width: 43px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
 	#Focus_1_br {
 		position: absolute;
 		width: 360px;
 		height: 61px;
 		left: 540px;
-		top: 468px;
+		top: 165px;
 		overflow: visible;
 	}
 	#Field_bs {
@@ -138,12 +93,12 @@
 		left: 0px;
 		top: 21px;
 	}
-	#Iniciales_bt {
+	#Nombre_bt {
 		left: 0px;
 		top: 0px;
 		position: absolute;
 		overflow: visible;
-		width: 51px;
+		width: 50px;
 		white-space: nowrap;
 		line-height: 20px;
 		margin-top: -3.5px;
@@ -154,12 +109,12 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#Mancopmac_bu {
+	#Manuel_bu {
 		left: 16px;
 		top: 35px;
 		position: absolute;
 		overflow: visible;
-		width: 72px;
+		width: 43px;
 		white-space: nowrap;
 		line-height: 20px;
 		margin-top: -3.5px;
@@ -175,10 +130,10 @@
 		width: 360px;
 		height: 61px;
 		left: 540px;
-		top: 266px;
+		top: 468px;
 		overflow: visible;
 	}
-	#Field_bw {
+	#Field_bx {
 		fill: rgba(255,255,255,1);
 		stroke: rgba(250,105,128,1);
 		stroke-width: 2px;
@@ -187,7 +142,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Field_bw {
+	.Field_bx {
 		position: absolute;
 		overflow: visible;
 		width: 360px;
@@ -195,12 +150,12 @@
 		left: 0px;
 		top: 21px;
 	}
-	#Apellidos_bx {
+	#Iniciales_bx {
 		left: 0px;
 		top: 0px;
 		position: absolute;
 		overflow: visible;
-		width: 58px;
+		width: 51px;
 		white-space: nowrap;
 		line-height: 20px;
 		margin-top: -3.5px;
@@ -211,12 +166,12 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#Copado_Machuca_by {
+	#Mancopmac_by {
 		left: 16px;
 		top: 35px;
 		position: absolute;
 		overflow: visible;
-		width: 102px;
+		width: 72px;
 		white-space: nowrap;
 		line-height: 20px;
 		margin-top: -3.5px;
@@ -232,7 +187,7 @@
 		width: 360px;
 		height: 61px;
 		left: 540px;
-		top: 367px;
+		top: 266px;
 		overflow: visible;
 	}
 	#Field_b {
@@ -245,6 +200,63 @@
 		shape-rendering: auto;
 	}
 	.Field_b {
+		position: absolute;
+		overflow: visible;
+		width: 360px;
+		height: 40px;
+		left: 0px;
+		top: 21px;
+	}
+	#Apellidos_b {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 58px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 13px;
+		color: rgba(250,105,128,1);
+	}
+	#Copado_Machuca_b {
+		left: 16px;
+		top: 35px;
+		position: absolute;
+		overflow: visible;
+		width: 102px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Focus_1_ba {
+		position: absolute;
+		width: 360px;
+		height: 61px;
+		left: 540px;
+		top: 367px;
+		overflow: visible;
+	}
+	#Field_ba {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(250,105,128,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Field_ba {
 		position: absolute;
 		overflow: visible;
 		width: 360px;
@@ -319,13 +331,17 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#INICIO_b {
+	#INICIO_ba {
 		left: 605px;
 		top: 19px;
 		position: absolute;
 		overflow: visible;
 		width: 35px;
 		white-space: nowrap;
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: page;
+		--web-action-target: Home_admin.html;
+		cursor: pointer;
 		line-height: 20px;
 		margin-top: -4.5px;
 		text-align: left;
@@ -335,7 +351,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#PROFESORES_b {
+	#PROFESORES_bb {
 		opacity: 0.5;
 		left: 1060px;
 		top: 18px;
@@ -352,7 +368,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#GRUPOS_b {
+	#GRUPOS_bc {
 		opacity: 0.5;
 		left: 1177px;
 		top: 18px;
@@ -369,7 +385,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#christopher-campbell-28567-uns_b {
+	#christopher-campbell-28567-uns_be {
 		position: absolute;
 		width: 30px;
 		height: 30px;
@@ -377,7 +393,7 @@
 		top: 10px;
 		overflow: visible;
 	}
-	#ASIGNATURAS_ba {
+	#ASIGNATURAS_be {
 		opacity: 0.5;
 		left: 1268px;
 		top: 18px;
@@ -394,7 +410,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#COMPETENCIAS_bb {
+	#COMPETENCIAS_bf {
 		opacity: 0.5;
 		left: 831px;
 		top: 18px;
@@ -411,7 +427,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#ADMINISTRADORES_bc {
+	#ADMINISTRADORES_bg {
 		opacity: 0.5;
 		left: 681px;
 		top: 18px;
@@ -428,7 +444,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#ALUMNOS_be {
+	#ALUMNOS_bh {
 		opacity: 0.5;
 		left: 962px;
 		top: 18px;
@@ -445,7 +461,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#Focus_1_be {
+	#Focus_1_bi {
 		position: absolute;
 		width: 360px;
 		height: 61px;
@@ -453,7 +469,7 @@
 		top: 569px;
 		overflow: visible;
 	}
-	#Field_bf {
+	#Field_bj {
 		fill: rgba(255,255,255,1);
 		stroke: rgba(250,105,128,1);
 		stroke-width: 2px;
@@ -462,7 +478,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Field_bf {
+	.Field_bj {
 		position: absolute;
 		overflow: visible;
 		width: 360px;
@@ -470,7 +486,7 @@
 		left: 0px;
 		top: 21px;
 	}
-	#Email_bg {
+	#Email_bk {
 		left: 0px;
 		top: 0px;
 		position: absolute;
@@ -486,7 +502,7 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#mancopmacuses_bh {
+	#mancopmacuses_bl {
 		left: 16px;
 		top: 35px;
 		position: absolute;
@@ -502,18 +518,22 @@
 		font-size: 13px;
 		color: rgba(32,33,36,1);
 	}
-	#Primary_Button_bi {
+	#Primary_Button_bm {
 		position: absolute;
 		width: 299px;
 		height: 70px;
 		left: 571px;
 		top: 705px;
 		overflow: visible;
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: page;
+		--web-action-target: Lista_Alumno.html;
+		cursor: pointer;
 	}
-	#base_bj {
+	#base_bo {
 		fill: rgba(250,105,128,1);
 	}
-	.base_bj {
+	.base_bo {
 		position: absolute;
 		overflow: visible;
 		width: 299px;
@@ -521,7 +541,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#Crear_bk {
+	#Crear_bo {
 		left: 124px;
 		top: 22px;
 		position: absolute;
@@ -3377,52 +3397,52 @@ window.application = new Application();
 </head>
 <body>
 <div id="Crear_Alumno">
-	<svg class="Rectngulo_450_bl">
-		<rect id="Rectngulo_450_bl" rx="0" ry="0" x="0" y="0" width="1440" height="950">
+	<svg class="Rectngulo_450_bp">
+		<rect id="Rectngulo_450_bp" rx="0" ry="0" x="0" y="0" width="1440" height="950">
 		</rect>
 	</svg>
-	<div id="Crear_alumno_bm">
+	<div id="Crear_alumno_bq">
 		<span>Crear alumno</span>
-	</div>
-	<div id="Focus_1_bn" class="Focus_1">
-		<svg class="Field_bp">
-			<rect id="Field_bp" rx="6" ry="6" x="0" y="0" width="360" height="40">
-			</rect>
-		</svg>
-		<div id="Nombre_bp">
-			<span>Nombre</span>
-		</div>
-		<div id="Manuel_bq">
-			<span>Manuel</span>
-		</div>
 	</div>
 	<div id="Focus_1_br" class="Focus_1">
 		<svg class="Field_bs">
 			<rect id="Field_bs" rx="6" ry="6" x="0" y="0" width="360" height="40">
 			</rect>
 		</svg>
-		<div id="Iniciales_bt">
-			<span>Iniciales</span>
+		<div id="Nombre_bt">
+			<span>Nombre</span>
 		</div>
-		<div id="Mancopmac_bu">
-			<span>Mancopmac</span>
+		<div id="Manuel_bu">
+			<span>Manuel</span>
 		</div>
 	</div>
 	<div id="Focus_1_bv" class="Focus_1">
-		<svg class="Field_bw">
-			<rect id="Field_bw" rx="6" ry="6" x="0" y="0" width="360" height="40">
+		<svg class="Field_bx">
+			<rect id="Field_bx" rx="6" ry="6" x="0" y="0" width="360" height="40">
 			</rect>
 		</svg>
-		<div id="Apellidos_bx">
-			<span>Apellidos</span>
+		<div id="Iniciales_bx">
+			<span>Iniciales</span>
 		</div>
-		<div id="Copado_Machuca_by">
-			<span>Copado Machuca</span>
+		<div id="Mancopmac_by">
+			<span>Mancopmac</span>
 		</div>
 	</div>
 	<div id="Focus_1_b" class="Focus_1">
 		<svg class="Field_b">
 			<rect id="Field_b" rx="6" ry="6" x="0" y="0" width="360" height="40">
+			</rect>
+		</svg>
+		<div id="Apellidos_b">
+			<span>Apellidos</span>
+		</div>
+		<div id="Copado_Machuca_b">
+			<span>Copado Machuca</span>
+		</div>
+	</div>
+	<div id="Focus_1_ba" class="Focus_1">
+		<svg class="Field_ba">
+			<rect id="Field_ba" rx="6" ry="6" x="0" y="0" width="360" height="40">
 			</rect>
 		</svg>
 		<div id="Fecha_de_nacimiento_b">
@@ -3440,48 +3460,48 @@ window.application = new Application();
 		<div id="LOGO_ba">
 			<span>LOGO</span>
 		</div>
-		<div id="INICIO_b">
+		<div onclick="application.goToTargetView(event)" id="INICIO_ba">
 			<span>INICIO</span>
 		</div>
-		<div id="PROFESORES_b">
+		<div id="PROFESORES_bb">
 			<span>PROFESORES</span>
 		</div>
-		<div id="GRUPOS_b">
+		<div id="GRUPOS_bc">
 			<span>GRUPOS</span>
 		</div>
-		<img id="christopher-campbell-28567-uns_b" src="christopher-campbell-28567-uns_b.png" srcset="christopher-campbell-28567-uns_b.png 1x, christopher-campbell-28567-uns_b@2x.png 2x">
+		<img id="christopher-campbell-28567-uns_be" src="images/christopher-campbell-28567-uns_be.png" srcset="images/christopher-campbell-28567-uns_be.png 1x, images/christopher-campbell-28567-uns_be@2x.png 2x">
 			
-		<div id="ASIGNATURAS_ba">
+		<div id="ASIGNATURAS_be">
 			<span>ASIGNATURAS</span>
 		</div>
-		<div id="COMPETENCIAS_bb">
+		<div id="COMPETENCIAS_bf">
 			<span>COMPETENCIAS</span>
 		</div>
-		<div id="ADMINISTRADORES_bc">
+		<div id="ADMINISTRADORES_bg">
 			<span>ADMINISTRADORES</span>
 		</div>
-		<div id="ALUMNOS_be">
+		<div id="ALUMNOS_bh">
 			<span>ALUMNOS</span>
 		</div>
 	</div>
-	<div id="Focus_1_be" class="Focus_1">
-		<svg class="Field_bf">
-			<rect id="Field_bf" rx="6" ry="6" x="0" y="0" width="360" height="40">
+	<div id="Focus_1_bi" class="Focus_1">
+		<svg class="Field_bj">
+			<rect id="Field_bj" rx="6" ry="6" x="0" y="0" width="360" height="40">
 			</rect>
 		</svg>
-		<div id="Email_bg">
+		<div id="Email_bk">
 			<span>Email</span>
 		</div>
-		<div id="mancopmacuses_bh">
+		<div id="mancopmacuses_bl">
 			<span>mancopmac@us.es</span>
 		</div>
 	</div>
-	<div id="Primary_Button_bi" class="Primary_Button">
-		<svg class="base_bj">
-			<rect id="base_bj" rx="6" ry="6" x="0" y="0" width="299" height="70">
+	<div onclick="application.goToTargetView(event)" id="Primary_Button_bm" class="Primary_Button">
+		<svg class="base_bo">
+			<rect id="base_bo" rx="6" ry="6" x="0" y="0" width="299" height="70">
 			</rect>
 		</svg>
-		<div id="Crear_bk">
+		<div id="Crear_bo">
 			<span>Crear</span>
 		</div>
 	</div>

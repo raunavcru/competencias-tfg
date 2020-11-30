@@ -10,6 +10,7 @@
 		--web-view-name: Crear Asignatura;
 		--web-view-id: Crear_Asignatura;
 		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
 		--web-enable-deep-linking: true;
 	}
 	:root {
@@ -29,12 +30,23 @@
 		--web-view-name: Crear Asignatura;
 		--web-view-id: Crear_Asignatura;
 		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
 		--web-enable-deep-linking: true;
 	}
-	#Rectngulo_450_bdi {
+	@keyframes fadein {
+	
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	
+	}
+	#Rectngulo_450 {
 		fill: rgba(246,248,249,1);
 	}
-	.Rectngulo_450_bdi {
+	.Rectngulo_450 {
 		position: absolute;
 		overflow: visible;
 		width: 1440px;
@@ -42,18 +54,22 @@
 		left: 0px;
 		top: 50px;
 	}
-	#Primary_Button_bdj {
+	#Primary_Button {
 		position: absolute;
 		width: 299px;
 		height: 70px;
 		left: 571px;
 		top: 770px;
 		overflow: visible;
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: page;
+		--web-action-target: Lista_Asignatura.html;
+		cursor: pointer;
 	}
-	#base_bdk {
+	#base {
 		fill: rgba(250,105,128,1);
 	}
-	.base_bdk {
+	.base {
 		position: absolute;
 		overflow: visible;
 		width: 299px;
@@ -75,7 +91,7 @@
 		font-size: 20px;
 		color: rgba(255,255,255,1);
 	}
-	#Crear_asignatura_bdm {
+	#Crear_asignatura {
 		left: 584px;
 		top: 173px;
 		position: absolute;
@@ -89,7 +105,7 @@
 		font-size: 35px;
 		color: rgba(250,105,128,1);
 	}
-	#Focus_1_bdn {
+	#Focus_1 {
 		position: absolute;
 		width: 360px;
 		height: 61px;
@@ -97,7 +113,7 @@
 		top: 271px;
 		overflow: visible;
 	}
-	#Field_bdo {
+	#Field {
 		fill: rgba(255,255,255,1);
 		stroke: rgba(250,105,128,1);
 		stroke-width: 2px;
@@ -106,7 +122,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Field_bdo {
+	.Field {
 		position: absolute;
 		overflow: visible;
 		width: 360px;
@@ -146,7 +162,7 @@
 		font-size: 13px;
 		color: rgba(32,33,36,1);
 	}
-	#Focus_1_bdr {
+	#Focus_1_bp {
 		position: absolute;
 		width: 360px;
 		height: 97px;
@@ -154,7 +170,7 @@
 		top: 569px;
 		overflow: visible;
 	}
-	#Field_bds {
+	#Field_bq {
 		fill: rgba(255,255,255,1);
 		stroke: rgba(250,105,128,1);
 		stroke-width: 2px;
@@ -163,7 +179,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Field_bds {
+	.Field_bq {
 		position: absolute;
 		overflow: visible;
 		width: 360px;
@@ -203,7 +219,7 @@
 		font-size: 13px;
 		color: rgba(32,33,36,1);
 	}
-	#Header_-_Desktop_bdv {
+	#Header_-_Desktop {
 		position: absolute;
 		width: 1440px;
 		height: 50px;
@@ -211,10 +227,10 @@
 		top: 0px;
 		overflow: visible;
 	}
-	#base_bdw {
+	#base_bu {
 		fill: rgba(246,248,249,1);
 	}
-	.base_bdw {
+	.base_bu {
 		position: absolute;
 		overflow: visible;
 		width: 1440px;
@@ -222,7 +238,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#LOGO_bdx {
+	#LOGO {
 		left: 20px;
 		top: 18px;
 		position: absolute;
@@ -238,13 +254,17 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#INICIO_bdy {
+	#INICIO {
 		left: 605px;
 		top: 19px;
 		position: absolute;
 		overflow: visible;
 		width: 35px;
 		white-space: nowrap;
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: page;
+		--web-action-target: Home_admin.html;
+		cursor: pointer;
 		line-height: 20px;
 		margin-top: -4.5px;
 		text-align: left;
@@ -254,7 +274,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#PROFESORES_bdz {
+	#PROFESORES {
 		opacity: 0.5;
 		left: 1060px;
 		top: 18px;
@@ -271,7 +291,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#GRUPOS_bd {
+	#GRUPOS {
 		opacity: 0.5;
 		left: 1178px;
 		top: 18px;
@@ -288,7 +308,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#christopher-campbell-28567-uns_bd {
+	#christopher-campbell-28567-uns {
 		position: absolute;
 		width: 30px;
 		height: 30px;
@@ -296,7 +316,7 @@
 		top: 10px;
 		overflow: visible;
 	}
-	#ASIGNATURAS_bd {
+	#ASIGNATURAS {
 		opacity: 0.5;
 		left: 1268px;
 		top: 18px;
@@ -313,7 +333,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#COMPETENCIAS_bd {
+	#COMPETENCIAS {
 		opacity: 0.5;
 		left: 831px;
 		top: 18px;
@@ -330,7 +350,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#ADMINISTRADORES_bd {
+	#ADMINISTRADORES {
 		opacity: 0.5;
 		left: 681px;
 		top: 18px;
@@ -347,7 +367,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#ALUMNOS_bd {
+	#ALUMNOS {
 		opacity: 0.5;
 		left: 962px;
 		top: 18px;
@@ -372,7 +392,7 @@
 		top: 369px;
 		overflow: visible;
 	}
-	#Field_bd {
+	#Field_b {
 		fill: rgba(255,255,255,1);
 		stroke: rgba(250,105,128,1);
 		stroke-width: 2px;
@@ -381,7 +401,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Field_bd {
+	.Field_b {
 		position: absolute;
 		overflow: visible;
 		width: 360px;
@@ -421,7 +441,7 @@
 		font-size: 13px;
 		color: rgba(255,77,77,1);
 	}
-	#dropdown_bea {
+	#dropdown {
 		position: absolute;
 		width: 10px;
 		height: 6px;
@@ -429,10 +449,10 @@
 		top: 40px;
 		overflow: visible;
 	}
-	#dropdown_beb {
+	#dropdown_b {
 		fill: rgba(166,173,180,1);
 	}
-	.dropdown_beb {
+	.dropdown_b {
 		overflow: visible;
 		position: absolute;
 		width: 10px;
@@ -441,7 +461,7 @@
 		top: 0px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Error_Dropdown_bec {
+	#Error_Dropdown_ca {
 		position: absolute;
 		width: 360px;
 		height: 63px;
@@ -449,7 +469,7 @@
 		top: 469px;
 		overflow: visible;
 	}
-	#Field_bed {
+	#Field_cb {
 		fill: rgba(255,255,255,1);
 		stroke: rgba(250,105,128,1);
 		stroke-width: 2px;
@@ -458,7 +478,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Field_bed {
+	.Field_cb {
 		position: absolute;
 		overflow: visible;
 		width: 360px;
@@ -466,7 +486,7 @@
 		left: 0px;
 		top: 23px;
 	}
-	#Select_bee {
+	#Select_cc {
 		left: 16px;
 		top: 35px;
 		position: absolute;
@@ -498,7 +518,7 @@
 		font-size: 13px;
 		color: rgba(255,77,77,1);
 	}
-	#dropdown_beg {
+	#dropdown_ce {
 		position: absolute;
 		width: 10px;
 		height: 6px;
@@ -506,10 +526,10 @@
 		top: 40px;
 		overflow: visible;
 	}
-	#dropdown_beh {
+	#dropdown_cf {
 		fill: rgba(166,173,180,1);
 	}
-	.dropdown_beh {
+	.dropdown_cf {
 		overflow: visible;
 		position: absolute;
 		width: 10px;
@@ -3360,25 +3380,25 @@ window.application = new Application();
 </head>
 <body>
 <div id="Crear_Asignatura">
-	<svg class="Rectngulo_450_bdi">
-		<rect id="Rectngulo_450_bdi" rx="0" ry="0" x="0" y="0" width="1440" height="950">
+	<svg class="Rectngulo_450">
+		<rect id="Rectngulo_450" rx="0" ry="0" x="0" y="0" width="1440" height="950">
 		</rect>
 	</svg>
-	<div id="Primary_Button_bdj" class="Primary_Button">
-		<svg class="base_bdk">
-			<rect id="base_bdk" rx="6" ry="6" x="0" y="0" width="299" height="70">
+	<div onclick="application.goToTargetView(event)" id="Primary_Button" class="Primary_Button">
+		<svg class="base">
+			<rect id="base" rx="6" ry="6" x="0" y="0" width="299" height="70">
 			</rect>
 		</svg>
 		<div id="Crear">
 			<span>Crear</span>
 		</div>
 	</div>
-	<div id="Crear_asignatura_bdm">
+	<div id="Crear_asignatura">
 		<span>Crear asignatura</span>
 	</div>
-	<div id="Focus_1_bdn" class="Focus_1">
-		<svg class="Field_bdo">
-			<rect id="Field_bdo" rx="6" ry="6" x="0" y="0" width="360" height="40">
+	<div id="Focus_1" class="Focus_1">
+		<svg class="Field">
+			<rect id="Field" rx="6" ry="6" x="0" y="0" width="360" height="40">
 			</rect>
 		</svg>
 		<div id="Nombre">
@@ -3388,9 +3408,9 @@ window.application = new Application();
 			<span>Matemáticas</span>
 		</div>
 	</div>
-	<div id="Focus_1_bdr" class="Focus_1">
-		<svg class="Field_bds">
-			<rect id="Field_bds" rx="6" ry="6" x="0" y="0" width="360" height="76">
+	<div id="Focus_1_bp" class="Focus_1">
+		<svg class="Field_bq">
+			<rect id="Field_bq" rx="6" ry="6" x="0" y="0" width="360" height="76">
 			</rect>
 		</svg>
 		<div id="Descripcin">
@@ -3400,41 +3420,41 @@ window.application = new Application();
 			<span>Ciencia que estudia las propiedades de los números y<br/> las relaciones que se establecen entre ellos.</span>
 		</div>
 	</div>
-	<div id="Header_-_Desktop_bdv" class="Header___Desktop">
-		<svg class="base_bdw">
-			<rect id="base_bdw" rx="0" ry="0" x="0" y="0" width="1440" height="50">
+	<div id="Header_-_Desktop" class="Header___Desktop">
+		<svg class="base_bu">
+			<rect id="base_bu" rx="0" ry="0" x="0" y="0" width="1440" height="50">
 			</rect>
 		</svg>
-		<div id="LOGO_bdx">
+		<div id="LOGO">
 			<span>LOGO</span>
 		</div>
-		<div id="INICIO_bdy">
+		<div onclick="application.goToTargetView(event)" id="INICIO">
 			<span>INICIO</span>
 		</div>
-		<div id="PROFESORES_bdz">
+		<div id="PROFESORES">
 			<span>PROFESORES</span>
 		</div>
-		<div id="GRUPOS_bd">
+		<div id="GRUPOS">
 			<span>GRUPOS</span>
 		</div>
-		<img id="christopher-campbell-28567-uns_bd" src="christopher-campbell-28567-uns_bd.png" srcset="christopher-campbell-28567-uns_bd.png 1x, christopher-campbell-28567-uns_bd@2x.png 2x">
+		<img id="christopher-campbell-28567-uns" src="images/christopher-campbell-28567-uns.png" srcset="images/christopher-campbell-28567-uns.png 1x, images/christopher-campbell-28567-uns@2x.png 2x">
 			
-		<div id="ASIGNATURAS_bd">
+		<div id="ASIGNATURAS">
 			<span>ASIGNATURAS</span>
 		</div>
-		<div id="COMPETENCIAS_bd">
+		<div id="COMPETENCIAS">
 			<span>COMPETENCIAS</span>
 		</div>
-		<div id="ADMINISTRADORES_bd">
+		<div id="ADMINISTRADORES">
 			<span>ADMINISTRADORES</span>
 		</div>
-		<div id="ALUMNOS_bd">
+		<div id="ALUMNOS">
 			<span>ALUMNOS</span>
 		</div>
 	</div>
 	<div id="Error_Dropdown" class="Error_Dropdown">
-		<svg class="Field_bd">
-			<rect id="Field_bd" rx="6" ry="6" x="0" y="0" width="360" height="40">
+		<svg class="Field_b">
+			<rect id="Field_b" rx="6" ry="6" x="0" y="0" width="360" height="40">
 			</rect>
 		</svg>
 		<div id="Select">
@@ -3443,27 +3463,27 @@ window.application = new Application();
 		<div id="Curso">
 			<span>Curso</span>
 		</div>
-		<div id="dropdown_bea" class="dropdown">
-			<svg class="dropdown_beb" viewBox="0 0 10 6">
-				<path id="dropdown_beb" d="M 5 6 C 4.699999809265137 6 4.5 5.900000095367432 4.300000190734863 5.699999809265137 L 0.3000001907348633 1.699999809265137 C -0.0999998152256012 1.299999833106995 -0.0999998152256012 0.6999998092651367 0.3000001907348633 0.2999998331069946 C 0.7000001668930054 -0.1000001430511475 1.300000190734863 -0.1000001728534698 1.700000166893005 0.2999998331069946 L 5 3.599999904632568 L 8.300000190734863 0.2999999523162842 C 8.699999809265137 -0.1000000536441803 9.300000190734863 -0.1000000536441803 9.699999809265137 0.2999999523162842 C 10.09999942779541 0.6999999284744263 10.09999942779541 1.299999952316284 9.699999809265137 1.699999928474426 L 5.699999809265137 5.699999809265137 C 5.5 5.900000095367432 5.300000190734863 6 5 6 Z">
+		<div id="dropdown" class="dropdown">
+			<svg class="dropdown_b" viewBox="0 0 10 6">
+				<path id="dropdown_b" d="M 5 6 C 4.699999809265137 6 4.5 5.900000095367432 4.300000190734863 5.699999809265137 L 0.3000001907348633 1.699999809265137 C -0.0999998152256012 1.299999833106995 -0.0999998152256012 0.6999998092651367 0.3000001907348633 0.2999998331069946 C 0.7000001668930054 -0.1000001430511475 1.300000190734863 -0.1000001728534698 1.700000166893005 0.2999998331069946 L 5 3.599999904632568 L 8.300000190734863 0.2999999523162842 C 8.699999809265137 -0.1000000536441803 9.300000190734863 -0.1000000536441803 9.699999809265137 0.2999999523162842 C 10.09999942779541 0.6999999284744263 10.09999942779541 1.299999952316284 9.699999809265137 1.699999928474426 L 5.699999809265137 5.699999809265137 C 5.5 5.900000095367432 5.300000190734863 6 5 6 Z">
 				</path>
 			</svg>
 		</div>
 	</div>
-	<div id="Error_Dropdown_bec" class="Error_Dropdown">
-		<svg class="Field_bed">
-			<rect id="Field_bed" rx="6" ry="6" x="0" y="0" width="360" height="40">
+	<div id="Error_Dropdown_ca" class="Error_Dropdown">
+		<svg class="Field_cb">
+			<rect id="Field_cb" rx="6" ry="6" x="0" y="0" width="360" height="40">
 			</rect>
 		</svg>
-		<div id="Select_bee">
+		<div id="Select_cc">
 			<span>Select…</span>
 		</div>
 		<div id="Nivel">
 			<span>Nivel</span>
 		</div>
-		<div id="dropdown_beg" class="dropdown">
-			<svg class="dropdown_beh" viewBox="0 0 10 6">
-				<path id="dropdown_beh" d="M 5 6 C 4.699999809265137 6 4.5 5.900000095367432 4.300000190734863 5.699999809265137 L 0.3000001907348633 1.699999809265137 C -0.0999998152256012 1.299999833106995 -0.0999998152256012 0.6999998092651367 0.3000001907348633 0.2999998331069946 C 0.7000001668930054 -0.1000001430511475 1.300000190734863 -0.1000001728534698 1.700000166893005 0.2999998331069946 L 5 3.599999904632568 L 8.300000190734863 0.2999999523162842 C 8.699999809265137 -0.1000000536441803 9.300000190734863 -0.1000000536441803 9.699999809265137 0.2999999523162842 C 10.09999942779541 0.6999999284744263 10.09999942779541 1.299999952316284 9.699999809265137 1.699999928474426 L 5.699999809265137 5.699999809265137 C 5.5 5.900000095367432 5.300000190734863 6 5 6 Z">
+		<div id="dropdown_ce" class="dropdown">
+			<svg class="dropdown_cf" viewBox="0 0 10 6">
+				<path id="dropdown_cf" d="M 5 6 C 4.699999809265137 6 4.5 5.900000095367432 4.300000190734863 5.699999809265137 L 0.3000001907348633 1.699999809265137 C -0.0999998152256012 1.299999833106995 -0.0999998152256012 0.6999998092651367 0.3000001907348633 0.2999998331069946 C 0.7000001668930054 -0.1000001430511475 1.300000190734863 -0.1000001728534698 1.700000166893005 0.2999998331069946 L 5 3.599999904632568 L 8.300000190734863 0.2999999523162842 C 8.699999809265137 -0.1000000536441803 9.300000190734863 -0.1000000536441803 9.699999809265137 0.2999999523162842 C 10.09999942779541 0.6999999284744263 10.09999942779541 1.299999952316284 9.699999809265137 1.699999928474426 L 5.699999809265137 5.699999809265137 C 5.5 5.900000095367432 5.300000190734863 6 5 6 Z">
 				</path>
 			</svg>
 		</div>

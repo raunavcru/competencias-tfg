@@ -4,16 +4,17 @@
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Asignación de competencia a asignatura</title>
+<title>Asignacion de competencia a asignatura</title>
 <style id="applicationStylesheet" type="text/css">
 	.mediaViewInfo {
-		--web-view-name: Asignación de competencia a asignatura;
-		--web-view-id: Asignacin_de_competencia_a_asignatura;
+		--web-view-name: Asignacion de competencia a asignatura;
+		--web-view-id: Asignacion_de_competencia_a_asignatura;
 		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
 		--web-enable-deep-linking: true;
 	}
 	:root {
-		--web-view-ids: Asignacin_de_competencia_a_asignatura;
+		--web-view-ids: Asignacion_de_competencia_a_asignatura;
 	}
 	* {
 		margin: 0;
@@ -21,20 +22,31 @@
 		box-sizing: border-box;
 		border: none;
 	}
-	#Asignacin_de_competencia_a_asignatura {
+	#Asignacion_de_competencia_a_asignatura {
 		position: absolute;
 		width: 1440px;
 		height: 1000px;
 		overflow: hidden;
-		--web-view-name: Asignación de competencia a asignatura;
-		--web-view-id: Asignacin_de_competencia_a_asignatura;
+		--web-view-name: Asignacion de competencia a asignatura;
+		--web-view-id: Asignacion_de_competencia_a_asignatura;
 		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
 		--web-enable-deep-linking: true;
 	}
-	#Rectngulo_449_cq {
+	@keyframes fadein {
+	
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	
+	}
+	#Rectngulo_449_ctn {
 		fill: rgba(246,248,249,1);
 	}
-	.Rectngulo_449_cq {
+	.Rectngulo_449_ctn {
 		position: absolute;
 		overflow: visible;
 		width: 1440px;
@@ -42,7 +54,7 @@
 		left: 0px;
 		top: 50px;
 	}
-	#Header_-_Desktop_cr {
+	#Header_-_Desktop_cto {
 		position: absolute;
 		width: 1440px;
 		height: 50px;
@@ -50,10 +62,10 @@
 		top: 0px;
 		overflow: visible;
 	}
-	#base_ct {
+	#base_ctp {
 		fill: rgba(246,248,249,1);
 	}
-	.base_ct {
+	.base_ctp {
 		position: absolute;
 		overflow: visible;
 		width: 1440px;
@@ -61,7 +73,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#LOGO_ct {
+	#LOGO_ctq {
 		left: 20px;
 		top: 18px;
 		position: absolute;
@@ -77,13 +89,17 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#INICIO_cu {
+	#INICIO_ctr {
 		left: 605px;
 		top: 19px;
 		position: absolute;
 		overflow: visible;
 		width: 35px;
 		white-space: nowrap;
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: page;
+		--web-action-target: Home_admin.html;
+		cursor: pointer;
 		line-height: 20px;
 		margin-top: -4.5px;
 		text-align: left;
@@ -93,7 +109,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#PROFESORES_cv {
+	#PROFESORES_cts {
 		opacity: 0.5;
 		left: 1060px;
 		top: 18px;
@@ -110,7 +126,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#GRUPOS_cw {
+	#GRUPOS_ctt {
 		opacity: 0.5;
 		left: 1178px;
 		top: 18px;
@@ -127,7 +143,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#christopher-campbell-28567-uns_cx {
+	#christopher-campbell-28567-uns_ctu {
 		position: absolute;
 		width: 30px;
 		height: 30px;
@@ -135,7 +151,7 @@
 		top: 10px;
 		overflow: visible;
 	}
-	#ASIGNATURAS_cy {
+	#ASIGNATURAS_ctv {
 		opacity: 0.5;
 		left: 1268px;
 		top: 18px;
@@ -152,7 +168,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#COMPETENCIAS_cz {
+	#COMPETENCIAS_ctw {
 		opacity: 0.5;
 		left: 831px;
 		top: 18px;
@@ -169,7 +185,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#ADMINISTRADORES_c {
+	#ADMINISTRADORES_ctx {
 		opacity: 0.5;
 		left: 681px;
 		top: 18px;
@@ -186,7 +202,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#ALUMNOS_c {
+	#ALUMNOS_cty {
 		opacity: 0.5;
 		left: 962px;
 		top: 18px;
@@ -203,7 +219,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#List_Group_Desktop_c {
+	#List_Group_Desktop_ctz {
 		position: absolute;
 		width: 1080px;
 		height: 775px;
@@ -211,7 +227,7 @@
 		top: 225px;
 		overflow: visible;
 	}
-	#Item_ca {
+	#Item_cua {
 		position: absolute;
 		width: 1080px;
 		height: 746px;
@@ -219,7 +235,7 @@
 		top: 29px;
 		overflow: hidden;
 	}
-	#Item_cb {
+	#Item_cub {
 		position: absolute;
 		width: 1216px;
 		height: 116px;
@@ -227,10 +243,10 @@
 		top: 0px;
 		overflow: visible;
 	}
-	#Base_cs {
+	#Base_ct {
 		fill: rgba(255,255,255,1);
 	}
-	.Base_cs {
+	.Base_ct {
 		position: absolute;
 		overflow: visible;
 		width: 1080px;
@@ -238,10 +254,10 @@
 		left: 0px;
 		top: 0px;
 	}
-	#Avatar_ca {
+	#Avatar_ct {
 		fill: rgba(166,173,180,1);
 	}
-	.Avatar_ca {
+	.Avatar_ct {
 		position: absolute;
 		overflow: visible;
 		width: 32px;
@@ -249,267 +265,7 @@
 		left: 48px;
 		top: 12px;
 	}
-	#Lina_Bo_ca {
-		left: 88px;
-		top: 14px;
-		position: absolute;
-		overflow: visible;
-		width: 45px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Adobe_ca {
-		left: 392px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Tag_ca {
-		position: absolute;
-		width: 66px;
-		height: 24px;
-		left: 652px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_daa {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_daa {
-		position: absolute;
-		overflow: visible;
-		width: 66px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#POPULAR_cb {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 53px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_cc {
-		position: absolute;
-		width: 38px;
-		height: 24px;
-		left: 726px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dab {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dab {
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#NEW_cg {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 27px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_cj {
-		position: absolute;
-		width: 35px;
-		height: 24px;
-		left: 772px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dac {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dac {
-		position: absolute;
-		overflow: visible;
-		width: 35px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#JOB_ci {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 21px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#ID012_389_438_ck {
-		left: 523px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#ID09_Sep_2017_ck {
-		left: 855px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#linaadobecom_cl {
-		left: 88px;
-		top: 31px;
-		position: absolute;
-		overflow: visible;
-		width: 97px;
-		white-space: nowrap;
-		line-height: 23px;
-		margin-top: -5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(166,173,180,1);
-	}
-	#Checkbox_co {
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 16px;
-		top: 20px;
-		overflow: visible;
-	}
-	#Checkbox_cp {
-		fill: transparent;
-		stroke: rgba(235,237,237,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Checkbox_cp {
-		position: absolute;
-		overflow: visible;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-	}
-	#close_cr {
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 1208px;
-		top: 108px;
-		overflow: visible;
-	}
-	#close_cs {
-		fill: rgba(32,33,36,1);
-	}
-	.close_cs {
-		overflow: visible;
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Item_cr {
-		position: absolute;
-		width: 1216px;
-		height: 116px;
-		left: 0px;
-		top: 64px;
-		overflow: visible;
-	}
-	#Base_dad {
-		fill: rgba(255,255,255,1);
-	}
-	.Base_dad {
-		position: absolute;
-		overflow: visible;
-		width: 1080px;
-		height: 56px;
-		left: 0px;
-		top: 0px;
-	}
-	#Avatar_cr {
-		fill: rgba(166,173,180,1);
-	}
-	.Avatar_cr {
-		position: absolute;
-		overflow: visible;
-		width: 32px;
-		height: 32px;
-		left: 48px;
-		top: 12px;
-	}
-	#Lina_Bo_cs {
+	#Lina_Bo_ct {
 		left: 88px;
 		top: 14px;
 		position: absolute;
@@ -541,6 +297,1306 @@
 		font-size: 13px;
 		color: rgba(32,33,36,1);
 	}
+	#Tag_ct {
+		position: absolute;
+		width: 66px;
+		height: 24px;
+		left: 652px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_cua {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_cua {
+		position: absolute;
+		overflow: visible;
+		width: 66px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#POPULAR_ct {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 53px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Tag_cua {
+		position: absolute;
+		width: 38px;
+		height: 24px;
+		left: 726px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_cub {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_cub {
+		position: absolute;
+		overflow: visible;
+		width: 38px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#NEW_cub {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 27px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Tag_cuc {
+		position: absolute;
+		width: 35px;
+		height: 24px;
+		left: 772px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_cud {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_cud {
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#JOB_cue {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 21px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#ID012_389_438_cuf {
+		left: 523px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#ID09_Sep_2017_cug {
+		left: 855px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#linaadobecom_cuh {
+		left: 88px;
+		top: 31px;
+		position: absolute;
+		overflow: visible;
+		width: 97px;
+		white-space: nowrap;
+		line-height: 23px;
+		margin-top: -5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(166,173,180,1);
+	}
+	#Checkbox_cui {
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		left: 16px;
+		top: 20px;
+		overflow: visible;
+	}
+	#Checkbox_cuj {
+		fill: transparent;
+		stroke: rgba(235,237,237,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Checkbox_cuj {
+		position: absolute;
+		overflow: visible;
+		width: 16px;
+		height: 16px;
+		left: 0px;
+		top: 0px;
+	}
+	#close_cuk {
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 1208px;
+		top: 108px;
+		overflow: visible;
+	}
+	#close_cul {
+		fill: rgba(32,33,36,1);
+	}
+	.close_cul {
+		overflow: visible;
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Item_cum {
+		position: absolute;
+		width: 1216px;
+		height: 116px;
+		left: 0px;
+		top: 64px;
+		overflow: visible;
+	}
+	#Base_cun {
+		fill: rgba(255,255,255,1);
+	}
+	.Base_cun {
+		position: absolute;
+		overflow: visible;
+		width: 1080px;
+		height: 56px;
+		left: 0px;
+		top: 0px;
+	}
+	#Avatar_cuo {
+		fill: rgba(166,173,180,1);
+	}
+	.Avatar_cuo {
+		position: absolute;
+		overflow: visible;
+		width: 32px;
+		height: 32px;
+		left: 48px;
+		top: 12px;
+	}
+	#Lina_Bo_cup {
+		left: 88px;
+		top: 14px;
+		position: absolute;
+		overflow: visible;
+		width: 45px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Adobe_cuq {
+		left: 392px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 38px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Tag_cur {
+		position: absolute;
+		width: 66px;
+		height: 24px;
+		left: 652px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_cus {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_cus {
+		position: absolute;
+		overflow: visible;
+		width: 66px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#POPULAR_cut {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 53px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Tag_cuu {
+		position: absolute;
+		width: 38px;
+		height: 24px;
+		left: 726px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_cuv {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_cuv {
+		position: absolute;
+		overflow: visible;
+		width: 38px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#NEW_cuw {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 27px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Tag_cux {
+		position: absolute;
+		width: 35px;
+		height: 24px;
+		left: 772px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_cuy {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_cuy {
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#JOB_cuz {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 21px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#ID012_389_438_cu {
+		left: 523px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#ID09_Sep_2017_cu {
+		left: 855px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#linaadobecom_cu {
+		left: 88px;
+		top: 31px;
+		position: absolute;
+		overflow: visible;
+		width: 97px;
+		white-space: nowrap;
+		line-height: 23px;
+		margin-top: -5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(166,173,180,1);
+	}
+	#Checkbox_cu {
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		left: 16px;
+		top: 20px;
+		overflow: visible;
+	}
+	#Checkbox_cva {
+		fill: transparent;
+		stroke: rgba(235,237,237,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Checkbox_cva {
+		position: absolute;
+		overflow: visible;
+		width: 16px;
+		height: 16px;
+		left: 0px;
+		top: 0px;
+	}
+	#close_cu {
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 1208px;
+		top: 108px;
+		overflow: visible;
+	}
+	#close_cva {
+		fill: rgba(32,33,36,1);
+	}
+	.close_cva {
+		overflow: visible;
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Item_cu {
+		position: absolute;
+		width: 1216px;
+		height: 116px;
+		left: 0px;
+		top: 128px;
+		overflow: visible;
+	}
+	#Base_cu {
+		fill: rgba(255,255,255,1);
+	}
+	.Base_cu {
+		position: absolute;
+		overflow: visible;
+		width: 1080px;
+		height: 56px;
+		left: 0px;
+		top: 0px;
+	}
+	#Avatar_cu {
+		fill: rgba(166,173,180,1);
+	}
+	.Avatar_cu {
+		position: absolute;
+		overflow: visible;
+		width: 32px;
+		height: 32px;
+		left: 48px;
+		top: 12px;
+	}
+	#Lina_Bo_cva {
+		left: 88px;
+		top: 14px;
+		position: absolute;
+		overflow: visible;
+		width: 45px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Adobe_cvb {
+		left: 392px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 38px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Tag_cvc {
+		position: absolute;
+		width: 66px;
+		height: 24px;
+		left: 652px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_cvd {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_cvd {
+		position: absolute;
+		overflow: visible;
+		width: 66px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#POPULAR_cve {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 53px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Tag_cvf {
+		position: absolute;
+		width: 38px;
+		height: 24px;
+		left: 726px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_cvg {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_cvg {
+		position: absolute;
+		overflow: visible;
+		width: 38px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#NEW_cvh {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 27px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Tag_cvi {
+		position: absolute;
+		width: 35px;
+		height: 24px;
+		left: 772px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_cvj {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_cvj {
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#JOB_cvk {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 21px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#ID012_389_438_cvl {
+		left: 523px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#ID09_Sep_2017_cvm {
+		left: 855px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#linaadobecom_cvn {
+		left: 88px;
+		top: 31px;
+		position: absolute;
+		overflow: visible;
+		width: 97px;
+		white-space: nowrap;
+		line-height: 23px;
+		margin-top: -5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(166,173,180,1);
+	}
+	#Checkbox_cvo {
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		left: 16px;
+		top: 20px;
+		overflow: visible;
+	}
+	#Checkbox_cvp {
+		fill: transparent;
+		stroke: rgba(235,237,237,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Checkbox_cvp {
+		position: absolute;
+		overflow: visible;
+		width: 16px;
+		height: 16px;
+		left: 0px;
+		top: 0px;
+	}
+	#close_cvq {
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 1208px;
+		top: 108px;
+		overflow: visible;
+	}
+	#close_cvr {
+		fill: rgba(32,33,36,1);
+	}
+	.close_cvr {
+		overflow: visible;
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Item_cvs {
+		position: absolute;
+		width: 1216px;
+		height: 116px;
+		left: 0px;
+		top: 192px;
+		overflow: visible;
+	}
+	#Base_cvt {
+		fill: rgba(255,255,255,1);
+	}
+	.Base_cvt {
+		position: absolute;
+		overflow: visible;
+		width: 1080px;
+		height: 56px;
+		left: 0px;
+		top: 0px;
+	}
+	#Avatar_cvu {
+		fill: rgba(166,173,180,1);
+	}
+	.Avatar_cvu {
+		position: absolute;
+		overflow: visible;
+		width: 32px;
+		height: 32px;
+		left: 48px;
+		top: 12px;
+	}
+	#Lina_Bo_cvv {
+		left: 88px;
+		top: 14px;
+		position: absolute;
+		overflow: visible;
+		width: 45px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Company_Name_cvw {
+		left: 392px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 93px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Tag_cvx {
+		position: absolute;
+		width: 66px;
+		height: 24px;
+		left: 652px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_cvy {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_cvy {
+		position: absolute;
+		overflow: visible;
+		width: 66px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#POPULAR_cvz {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 53px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Tag_cv {
+		position: absolute;
+		width: 38px;
+		height: 24px;
+		left: 726px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_cv {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_cv {
+		position: absolute;
+		overflow: visible;
+		width: 38px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#NEW_cv {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 27px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Tag_cwa {
+		position: absolute;
+		width: 35px;
+		height: 24px;
+		left: 772px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_cwa {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_cwa {
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#JOB_cv {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 21px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#ID012_389_438_cv {
+		left: 523px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#ID09_Sep_2017_cv {
+		left: 855px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#linaadobecom_cv {
+		left: 88px;
+		top: 31px;
+		position: absolute;
+		overflow: visible;
+		width: 97px;
+		white-space: nowrap;
+		line-height: 23px;
+		margin-top: -5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(166,173,180,1);
+	}
+	#Checkbox_cv {
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		left: 16px;
+		top: 20px;
+		overflow: visible;
+	}
+	#Checkbox_cwa {
+		fill: transparent;
+		stroke: rgba(235,237,237,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Checkbox_cwa {
+		position: absolute;
+		overflow: visible;
+		width: 16px;
+		height: 16px;
+		left: 0px;
+		top: 0px;
+	}
+	#close_cwb {
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 1208px;
+		top: 108px;
+		overflow: visible;
+	}
+	#close_cwc {
+		fill: rgba(32,33,36,1);
+	}
+	.close_cwc {
+		overflow: visible;
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Item_cwd {
+		position: absolute;
+		width: 1216px;
+		height: 116px;
+		left: 0px;
+		top: 256px;
+		overflow: visible;
+	}
+	#Base_cwe {
+		fill: rgba(255,255,255,1);
+	}
+	.Base_cwe {
+		position: absolute;
+		overflow: visible;
+		width: 1080px;
+		height: 56px;
+		left: 0px;
+		top: 0px;
+	}
+	#Avatar_cwf {
+		fill: rgba(166,173,180,1);
+	}
+	.Avatar_cwf {
+		position: absolute;
+		overflow: visible;
+		width: 32px;
+		height: 32px;
+		left: 48px;
+		top: 12px;
+	}
+	#Lina_Bo_cwg {
+		left: 88px;
+		top: 14px;
+		position: absolute;
+		overflow: visible;
+		width: 45px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Adobe_cwh {
+		left: 392px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 38px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Tag_cwi {
+		position: absolute;
+		width: 66px;
+		height: 24px;
+		left: 652px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_cwj {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_cwj {
+		position: absolute;
+		overflow: visible;
+		width: 66px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#POPULAR_cwk {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 53px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Tag_cwl {
+		position: absolute;
+		width: 38px;
+		height: 24px;
+		left: 726px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_cwm {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_cwm {
+		position: absolute;
+		overflow: visible;
+		width: 38px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#NEW_cwn {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 27px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Tag_cwo {
+		position: absolute;
+		width: 35px;
+		height: 24px;
+		left: 772px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_cwp {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_cwp {
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#JOB_cwq {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 21px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#ID012_389_438_cwr {
+		left: 523px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#ID09_Sep_2017_cws {
+		left: 855px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#linaadobecom_cwt {
+		left: 88px;
+		top: 31px;
+		position: absolute;
+		overflow: visible;
+		width: 97px;
+		white-space: nowrap;
+		line-height: 23px;
+		margin-top: -5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(166,173,180,1);
+	}
+	#Checkbox_cwu {
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		left: 16px;
+		top: 20px;
+		overflow: visible;
+	}
+	#Checkbox_cwv {
+		fill: transparent;
+		stroke: rgba(235,237,237,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Checkbox_cwv {
+		position: absolute;
+		overflow: visible;
+		width: 16px;
+		height: 16px;
+		left: 0px;
+		top: 0px;
+	}
+	#close_cww {
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 1208px;
+		top: 108px;
+		overflow: visible;
+	}
+	#close_cwx {
+		fill: rgba(32,33,36,1);
+	}
+	.close_cwx {
+		overflow: visible;
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Item_cwy {
+		position: absolute;
+		width: 1216px;
+		height: 116px;
+		left: 0px;
+		top: 320px;
+		overflow: visible;
+	}
+	#Base_cwz {
+		fill: rgba(255,255,255,1);
+	}
+	.Base_cwz {
+		position: absolute;
+		overflow: visible;
+		width: 1080px;
+		height: 56px;
+		left: 0px;
+		top: 0px;
+	}
+	#Avatar_cw {
+		fill: rgba(166,173,180,1);
+	}
+	.Avatar_cw {
+		position: absolute;
+		overflow: visible;
+		width: 32px;
+		height: 32px;
+		left: 48px;
+		top: 12px;
+	}
+	#Lina_Bo_cw {
+		left: 88px;
+		top: 14px;
+		position: absolute;
+		overflow: visible;
+		width: 45px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Adobe_cw {
+		left: 392px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 38px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
 	#Tag_cw {
 		position: absolute;
 		width: 66px;
@@ -549,10 +1605,10 @@
 		top: 16px;
 		overflow: visible;
 	}
-	#Base_dae {
+	#Base_cw {
 		fill: rgba(246,248,249,1);
 	}
-	.Base_dae {
+	.Base_cw {
 		position: absolute;
 		overflow: visible;
 		width: 66px;
@@ -576,7 +1632,7 @@
 		font-size: 11px;
 		color: rgba(166,173,180,1);
 	}
-	#Tag_ck {
+	#Tag_cxa {
 		position: absolute;
 		width: 38px;
 		height: 24px;
@@ -584,10 +1640,1310 @@
 		top: 16px;
 		overflow: visible;
 	}
-	#Base_daf {
+	#Base_cxa {
 		fill: rgba(246,248,249,1);
 	}
-	.Base_daf {
+	.Base_cxa {
+		position: absolute;
+		overflow: visible;
+		width: 38px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#NEW_cw {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 27px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Tag_cxb {
+		position: absolute;
+		width: 35px;
+		height: 24px;
+		left: 772px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_cxb {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_cxb {
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#JOB_cxb {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 21px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#ID012_389_438_cxc {
+		left: 523px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#ID09_Sep_2017_cxd {
+		left: 855px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#linaadobecom_cxe {
+		left: 88px;
+		top: 31px;
+		position: absolute;
+		overflow: visible;
+		width: 97px;
+		white-space: nowrap;
+		line-height: 23px;
+		margin-top: -5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(166,173,180,1);
+	}
+	#Checkbox_cxf {
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		left: 16px;
+		top: 20px;
+		overflow: visible;
+	}
+	#Checkbox_cxg {
+		fill: transparent;
+		stroke: rgba(235,237,237,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Checkbox_cxg {
+		position: absolute;
+		overflow: visible;
+		width: 16px;
+		height: 16px;
+		left: 0px;
+		top: 0px;
+	}
+	#close_cxh {
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 1208px;
+		top: 108px;
+		overflow: visible;
+	}
+	#close_cxi {
+		fill: rgba(32,33,36,1);
+	}
+	.close_cxi {
+		overflow: visible;
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Item_cxj {
+		position: absolute;
+		width: 1216px;
+		height: 116px;
+		left: 0px;
+		top: 384px;
+		overflow: visible;
+	}
+	#Base_cxk {
+		fill: rgba(255,255,255,1);
+	}
+	.Base_cxk {
+		position: absolute;
+		overflow: visible;
+		width: 1080px;
+		height: 56px;
+		left: 0px;
+		top: 0px;
+	}
+	#Avatar_cxl {
+		fill: rgba(166,173,180,1);
+	}
+	.Avatar_cxl {
+		position: absolute;
+		overflow: visible;
+		width: 32px;
+		height: 32px;
+		left: 48px;
+		top: 12px;
+	}
+	#Lina_Bo_cxm {
+		left: 88px;
+		top: 14px;
+		position: absolute;
+		overflow: visible;
+		width: 45px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Adobe_cxn {
+		left: 392px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 38px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Tag_cxo {
+		position: absolute;
+		width: 66px;
+		height: 24px;
+		left: 652px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_cxp {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_cxp {
+		position: absolute;
+		overflow: visible;
+		width: 66px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#POPULAR_cxq {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 53px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Tag_cxr {
+		position: absolute;
+		width: 38px;
+		height: 24px;
+		left: 726px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_cxs {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_cxs {
+		position: absolute;
+		overflow: visible;
+		width: 38px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#NEW_cxt {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 27px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Tag_cxu {
+		position: absolute;
+		width: 35px;
+		height: 24px;
+		left: 772px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_cxv {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_cxv {
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#JOB_cxw {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 21px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#ID012_389_438_cxx {
+		left: 523px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#ID09_Sep_2017_cxy {
+		left: 855px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#linaadobecom_cxz {
+		left: 88px;
+		top: 31px;
+		position: absolute;
+		overflow: visible;
+		width: 97px;
+		white-space: nowrap;
+		line-height: 23px;
+		margin-top: -5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(166,173,180,1);
+	}
+	#Checkbox_cx {
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		left: 16px;
+		top: 20px;
+		overflow: visible;
+	}
+	#Checkbox_cya {
+		fill: transparent;
+		stroke: rgba(235,237,237,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Checkbox_cya {
+		position: absolute;
+		overflow: visible;
+		width: 16px;
+		height: 16px;
+		left: 0px;
+		top: 0px;
+	}
+	#close_cx {
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 1208px;
+		top: 108px;
+		overflow: visible;
+	}
+	#close_cya {
+		fill: rgba(32,33,36,1);
+	}
+	.close_cya {
+		overflow: visible;
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Item_cx {
+		position: absolute;
+		width: 1216px;
+		height: 116px;
+		left: 0px;
+		top: 448px;
+		overflow: visible;
+	}
+	#Base_cx {
+		fill: rgba(255,255,255,1);
+	}
+	.Base_cx {
+		position: absolute;
+		overflow: visible;
+		width: 1080px;
+		height: 56px;
+		left: 0px;
+		top: 0px;
+	}
+	#Avatar_cx {
+		fill: rgba(166,173,180,1);
+	}
+	.Avatar_cx {
+		position: absolute;
+		overflow: visible;
+		width: 32px;
+		height: 32px;
+		left: 48px;
+		top: 12px;
+	}
+	#Lina_Bo_cx {
+		left: 88px;
+		top: 14px;
+		position: absolute;
+		overflow: visible;
+		width: 45px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Adobe_cx {
+		left: 392px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 38px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Tag_cx {
+		position: absolute;
+		width: 66px;
+		height: 24px;
+		left: 652px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_cya {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_cya {
+		position: absolute;
+		overflow: visible;
+		width: 66px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#POPULAR_cyb {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 53px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Tag_cyc {
+		position: absolute;
+		width: 38px;
+		height: 24px;
+		left: 726px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_cyd {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_cyd {
+		position: absolute;
+		overflow: visible;
+		width: 38px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#NEW_cye {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 27px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Tag_cyf {
+		position: absolute;
+		width: 35px;
+		height: 24px;
+		left: 772px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_cyg {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_cyg {
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#JOB_cyh {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 21px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#ID012_389_438_cyi {
+		left: 523px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#ID09_Sep_2017_cyj {
+		left: 855px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#linaadobecom_cyk {
+		left: 88px;
+		top: 31px;
+		position: absolute;
+		overflow: visible;
+		width: 97px;
+		white-space: nowrap;
+		line-height: 23px;
+		margin-top: -5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(166,173,180,1);
+	}
+	#Checkbox_cyl {
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		left: 16px;
+		top: 20px;
+		overflow: visible;
+	}
+	#Checkbox_cym {
+		fill: transparent;
+		stroke: rgba(235,237,237,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Checkbox_cym {
+		position: absolute;
+		overflow: visible;
+		width: 16px;
+		height: 16px;
+		left: 0px;
+		top: 0px;
+	}
+	#close_cyn {
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 1208px;
+		top: 108px;
+		overflow: visible;
+	}
+	#close_cyo {
+		fill: rgba(32,33,36,1);
+	}
+	.close_cyo {
+		overflow: visible;
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Item_cyp {
+		position: absolute;
+		width: 1216px;
+		height: 116px;
+		left: 0px;
+		top: 512px;
+		overflow: visible;
+	}
+	#Base_cyq {
+		fill: rgba(255,255,255,1);
+	}
+	.Base_cyq {
+		position: absolute;
+		overflow: visible;
+		width: 1080px;
+		height: 56px;
+		left: 0px;
+		top: 0px;
+	}
+	#Avatar_cyr {
+		fill: rgba(166,173,180,1);
+	}
+	.Avatar_cyr {
+		position: absolute;
+		overflow: visible;
+		width: 32px;
+		height: 32px;
+		left: 48px;
+		top: 12px;
+	}
+	#Lina_Bo_cys {
+		left: 88px;
+		top: 14px;
+		position: absolute;
+		overflow: visible;
+		width: 45px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Adobe_cyt {
+		left: 392px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 38px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Tag_cyu {
+		position: absolute;
+		width: 66px;
+		height: 24px;
+		left: 652px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_cyv {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_cyv {
+		position: absolute;
+		overflow: visible;
+		width: 66px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#POPULAR_cyw {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 53px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Tag_cyx {
+		position: absolute;
+		width: 38px;
+		height: 24px;
+		left: 726px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_cyy {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_cyy {
+		position: absolute;
+		overflow: visible;
+		width: 38px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#NEW_cyz {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 27px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Tag_cy {
+		position: absolute;
+		width: 35px;
+		height: 24px;
+		left: 772px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_cy {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_cy {
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#JOB_cy {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 21px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#ID012_389_438_cy {
+		left: 523px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#ID09_Sep_2017_cy {
+		left: 855px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#linaadobecom_cy {
+		left: 88px;
+		top: 31px;
+		position: absolute;
+		overflow: visible;
+		width: 97px;
+		white-space: nowrap;
+		line-height: 23px;
+		margin-top: -5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(166,173,180,1);
+	}
+	#Checkbox_cy {
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		left: 16px;
+		top: 20px;
+		overflow: visible;
+	}
+	#Checkbox_cza {
+		fill: transparent;
+		stroke: rgba(235,237,237,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Checkbox_cza {
+		position: absolute;
+		overflow: visible;
+		width: 16px;
+		height: 16px;
+		left: 0px;
+		top: 0px;
+	}
+	#close_cy {
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 1208px;
+		top: 108px;
+		overflow: visible;
+	}
+	#close_cza {
+		fill: rgba(32,33,36,1);
+	}
+	.close_cza {
+		overflow: visible;
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Item_cza {
+		position: absolute;
+		width: 1216px;
+		height: 116px;
+		left: 0px;
+		top: 576px;
+		overflow: visible;
+	}
+	#Base_czb {
+		fill: rgba(255,255,255,1);
+	}
+	.Base_czb {
+		position: absolute;
+		overflow: visible;
+		width: 1080px;
+		height: 56px;
+		left: 0px;
+		top: 0px;
+	}
+	#Avatar_czc {
+		fill: rgba(166,173,180,1);
+	}
+	.Avatar_czc {
+		position: absolute;
+		overflow: visible;
+		width: 32px;
+		height: 32px;
+		left: 48px;
+		top: 12px;
+	}
+	#Lina_Bo_czd {
+		left: 88px;
+		top: 14px;
+		position: absolute;
+		overflow: visible;
+		width: 45px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Adobe_cze {
+		left: 392px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 38px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Tag_czf {
+		position: absolute;
+		width: 66px;
+		height: 24px;
+		left: 652px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_czg {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_czg {
+		position: absolute;
+		overflow: visible;
+		width: 66px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#POPULAR_czh {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 53px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Tag_czi {
+		position: absolute;
+		width: 38px;
+		height: 24px;
+		left: 726px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_czj {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_czj {
+		position: absolute;
+		overflow: visible;
+		width: 38px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#NEW_czk {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 27px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Tag_czl {
+		position: absolute;
+		width: 35px;
+		height: 24px;
+		left: 772px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_czm {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_czm {
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#JOB_czn {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 21px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#ID012_389_438_czo {
+		left: 523px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#ID09_Sep_2017_czp {
+		left: 855px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#linaadobecom_czq {
+		left: 88px;
+		top: 31px;
+		position: absolute;
+		overflow: visible;
+		width: 97px;
+		white-space: nowrap;
+		line-height: 23px;
+		margin-top: -5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(166,173,180,1);
+	}
+	#Checkbox_czr {
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		left: 16px;
+		top: 20px;
+		overflow: visible;
+	}
+	#Checkbox_czs {
+		fill: transparent;
+		stroke: rgba(235,237,237,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Checkbox_czs {
+		position: absolute;
+		overflow: visible;
+		width: 16px;
+		height: 16px;
+		left: 0px;
+		top: 0px;
+	}
+	#close_czt {
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 1208px;
+		top: 108px;
+		overflow: visible;
+	}
+	#close_czu {
+		fill: rgba(32,33,36,1);
+	}
+	.close_czu {
+		overflow: visible;
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Item_czv {
+		position: absolute;
+		width: 1216px;
+		height: 116px;
+		left: 0px;
+		top: 640px;
+		overflow: visible;
+	}
+	#Base_czw {
+		fill: rgba(255,255,255,1);
+	}
+	.Base_czw {
+		position: absolute;
+		overflow: visible;
+		width: 1080px;
+		height: 56px;
+		left: 0px;
+		top: 0px;
+	}
+	#Avatar_czx {
+		fill: rgba(166,173,180,1);
+	}
+	.Avatar_czx {
+		position: absolute;
+		overflow: visible;
+		width: 32px;
+		height: 32px;
+		left: 48px;
+		top: 12px;
+	}
+	#Lina_Bo_czy {
+		left: 88px;
+		top: 14px;
+		position: absolute;
+		overflow: visible;
+		width: 45px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Adobe_czz {
+		left: 392px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 38px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Tag_cz {
+		position: absolute;
+		width: 66px;
+		height: 24px;
+		left: 652px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_cb {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_cb {
+		position: absolute;
+		overflow: visible;
+		width: 66px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#POPULAR_cz {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 53px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Tag_ca {
+		position: absolute;
+		width: 38px;
+		height: 24px;
+		left: 726px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_ce {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_ce {
 		position: absolute;
 		overflow: visible;
 		width: 38px;
@@ -611,7 +2967,7 @@
 		font-size: 11px;
 		color: rgba(166,173,180,1);
 	}
-	#Tag_co {
+	#Tag_cb {
 		position: absolute;
 		width: 35px;
 		height: 24px;
@@ -619,10 +2975,10 @@
 		top: 16px;
 		overflow: visible;
 	}
-	#Base_dag {
+	#Base_ck {
 		fill: rgba(246,248,249,1);
 	}
-	.Base_dag {
+	.Base_ck {
 		position: absolute;
 		overflow: visible;
 		width: 35px;
@@ -630,7 +2986,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#JOB_ca {
+	#JOB_cz {
 		left: 6px;
 		top: 8px;
 		position: absolute;
@@ -646,7 +3002,7 @@
 		font-size: 11px;
 		color: rgba(166,173,180,1);
 	}
-	#ID012_389_438_ca {
+	#ID012_389_438_cz {
 		left: 523px;
 		top: 23px;
 		position: absolute;
@@ -663,526 +3019,6 @@
 		color: rgba(32,33,36,1);
 	}
 	#ID09_Sep_2017_ca {
-		left: 855px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#linaadobecom_ca {
-		left: 88px;
-		top: 31px;
-		position: absolute;
-		overflow: visible;
-		width: 97px;
-		white-space: nowrap;
-		line-height: 23px;
-		margin-top: -5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(166,173,180,1);
-	}
-	#Checkbox_ca {
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 16px;
-		top: 20px;
-		overflow: visible;
-	}
-	#Checkbox_cb {
-		fill: transparent;
-		stroke: rgba(235,237,237,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Checkbox_cb {
-		position: absolute;
-		overflow: visible;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-	}
-	#close_cb {
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 1208px;
-		top: 108px;
-		overflow: visible;
-	}
-	#close_cd {
-		fill: rgba(32,33,36,1);
-	}
-	.close_cd {
-		overflow: visible;
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Item_cd {
-		position: absolute;
-		width: 1216px;
-		height: 116px;
-		left: 0px;
-		top: 128px;
-		overflow: visible;
-	}
-	#Base_dah {
-		fill: rgba(255,255,255,1);
-	}
-	.Base_dah {
-		position: absolute;
-		overflow: visible;
-		width: 1080px;
-		height: 56px;
-		left: 0px;
-		top: 0px;
-	}
-	#Avatar_cc {
-		fill: rgba(166,173,180,1);
-	}
-	.Avatar_cc {
-		position: absolute;
-		overflow: visible;
-		width: 32px;
-		height: 32px;
-		left: 48px;
-		top: 12px;
-	}
-	#Lina_Bo_cd {
-		left: 88px;
-		top: 14px;
-		position: absolute;
-		overflow: visible;
-		width: 45px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Adobe_cf {
-		left: 392px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Tag_cq {
-		position: absolute;
-		width: 66px;
-		height: 24px;
-		left: 652px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dai {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dai {
-		position: absolute;
-		overflow: visible;
-		width: 66px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#POPULAR_ch {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 53px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_cs {
-		position: absolute;
-		width: 38px;
-		height: 24px;
-		left: 726px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_daj {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_daj {
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#NEW_ck {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 27px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_ct {
-		position: absolute;
-		width: 35px;
-		height: 24px;
-		left: 772px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dak {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dak {
-		position: absolute;
-		overflow: visible;
-		width: 35px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#JOB_co {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 21px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#ID012_389_438_co {
-		left: 523px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#ID09_Sep_2017_cp {
-		left: 855px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#linaadobecom_cs {
-		left: 88px;
-		top: 31px;
-		position: absolute;
-		overflow: visible;
-		width: 97px;
-		white-space: nowrap;
-		line-height: 23px;
-		margin-top: -5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(166,173,180,1);
-	}
-	#Checkbox_cs {
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 16px;
-		top: 20px;
-		overflow: visible;
-	}
-	#Checkbox_cu {
-		fill: transparent;
-		stroke: rgba(235,237,237,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Checkbox_cu {
-		position: absolute;
-		overflow: visible;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-	}
-	#close_cu {
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 1208px;
-		top: 108px;
-		overflow: visible;
-	}
-	#close_cv {
-		fill: rgba(32,33,36,1);
-	}
-	.close_cv {
-		overflow: visible;
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Item_cx {
-		position: absolute;
-		width: 1216px;
-		height: 116px;
-		left: 0px;
-		top: 192px;
-		overflow: visible;
-	}
-	#Base_dal {
-		fill: rgba(255,255,255,1);
-	}
-	.Base_dal {
-		position: absolute;
-		overflow: visible;
-		width: 1080px;
-		height: 56px;
-		left: 0px;
-		top: 0px;
-	}
-	#Avatar_cx {
-		fill: rgba(166,173,180,1);
-	}
-	.Avatar_cx {
-		position: absolute;
-		overflow: visible;
-		width: 32px;
-		height: 32px;
-		left: 48px;
-		top: 12px;
-	}
-	#Lina_Bo_cb {
-		left: 88px;
-		top: 14px;
-		position: absolute;
-		overflow: visible;
-		width: 45px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Company_Name_cz {
-		left: 392px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 93px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Tag_daa {
-		position: absolute;
-		width: 66px;
-		height: 24px;
-		left: 652px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dam {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dam {
-		position: absolute;
-		overflow: visible;
-		width: 66px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#POPULAR_cc {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 53px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_dab {
-		position: absolute;
-		width: 38px;
-		height: 24px;
-		left: 726px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dan {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dan {
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#NEW_ca {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 27px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_dac {
-		position: absolute;
-		width: 35px;
-		height: 24px;
-		left: 772px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dao {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dao {
-		position: absolute;
-		overflow: visible;
-		width: 35px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#JOB_cb {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 21px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#ID012_389_438_cb {
-		left: 523px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#ID09_Sep_2017_cb {
 		left: 855px;
 		top: 23px;
 		position: absolute;
@@ -1264,13 +3100,13 @@
 		width: 1216px;
 		height: 116px;
 		left: 0px;
-		top: 256px;
+		top: 704px;
 		overflow: visible;
 	}
-	#Base_dap {
+	#Base_co {
 		fill: rgba(255,255,255,1);
 	}
-	.Base_dap {
+	.Base_co {
 		position: absolute;
 		overflow: visible;
 		width: 1080px;
@@ -1321,7 +3157,7 @@
 		font-size: 13px;
 		color: rgba(32,33,36,1);
 	}
-	#Tag_dad {
+	#Tag_cl {
 		position: absolute;
 		width: 66px;
 		height: 24px;
@@ -1329,10 +3165,10 @@
 		top: 16px;
 		overflow: visible;
 	}
-	#Base_daq {
+	#Base_cs {
 		fill: rgba(246,248,249,1);
 	}
-	.Base_daq {
+	.Base_cs {
 		position: absolute;
 		overflow: visible;
 		width: 66px;
@@ -1356,7 +3192,7 @@
 		font-size: 11px;
 		color: rgba(166,173,180,1);
 	}
-	#Tag_dae {
+	#Tag_co {
 		position: absolute;
 		width: 38px;
 		height: 24px;
@@ -1364,10 +3200,10 @@
 		top: 16px;
 		overflow: visible;
 	}
-	#Base_dar {
+	#Base_daa {
 		fill: rgba(246,248,249,1);
 	}
-	.Base_dar {
+	.Base_daa {
 		position: absolute;
 		overflow: visible;
 		width: 38px;
@@ -1375,7 +3211,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#NEW_cq {
+	#NEW_cr {
 		left: 6px;
 		top: 8px;
 		position: absolute;
@@ -1391,7 +3227,7 @@
 		font-size: 11px;
 		color: rgba(166,173,180,1);
 	}
-	#Tag_daf {
+	#Tag_cr {
 		position: absolute;
 		width: 35px;
 		height: 24px;
@@ -1399,10 +3235,10 @@
 		top: 16px;
 		overflow: visible;
 	}
-	#Base_das {
+	#Base_dab {
 		fill: rgba(246,248,249,1);
 	}
-	.Base_das {
+	.Base_dab {
 		position: absolute;
 		overflow: visible;
 		width: 35px;
@@ -1410,7 +3246,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#JOB_cv {
+	#JOB_ct {
 		left: 6px;
 		top: 8px;
 		position: absolute;
@@ -1426,7 +3262,7 @@
 		font-size: 11px;
 		color: rgba(166,173,180,1);
 	}
-	#ID012_389_438_cv {
+	#ID012_389_438_cw {
 		left: 523px;
 		top: 23px;
 		position: absolute;
@@ -1442,7 +3278,7 @@
 		font-size: 13px;
 		color: rgba(32,33,36,1);
 	}
-	#ID09_Sep_2017_cv {
+	#ID09_Sep_2017_cw {
 		left: 855px;
 		top: 23px;
 		position: absolute;
@@ -1458,7 +3294,7 @@
 		font-size: 13px;
 		color: rgba(32,33,36,1);
 	}
-	#linaadobecom_cy {
+	#linaadobecom_cw {
 		left: 88px;
 		top: 31px;
 		position: absolute;
@@ -1474,7 +3310,7 @@
 		font-size: 13px;
 		color: rgba(166,173,180,1);
 	}
-	#Checkbox_cy {
+	#Checkbox_cz {
 		position: absolute;
 		width: 16px;
 		height: 16px;
@@ -1482,7 +3318,7 @@
 		top: 20px;
 		overflow: visible;
 	}
-	#Checkbox_cg {
+	#Checkbox_ca {
 		fill: transparent;
 		stroke: rgba(235,237,237,1);
 		stroke-width: 2px;
@@ -1491,7 +3327,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Checkbox_cg {
+	.Checkbox_ca {
 		position: absolute;
 		overflow: visible;
 		width: 16px;
@@ -1499,7 +3335,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#close_ci {
+	#close_cz {
 		position: absolute;
 		width: 8px;
 		height: 8px;
@@ -1507,1830 +3343,10 @@
 		top: 108px;
 		overflow: visible;
 	}
-	#close_ck {
+	#close_ca {
 		fill: rgba(32,33,36,1);
 	}
-	.close_ck {
-		overflow: visible;
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Item_cf {
-		position: absolute;
-		width: 1216px;
-		height: 116px;
-		left: 0px;
-		top: 320px;
-		overflow: visible;
-	}
-	#Base_dat {
-		fill: rgba(255,255,255,1);
-	}
-	.Base_dat {
-		position: absolute;
-		overflow: visible;
-		width: 1080px;
-		height: 56px;
-		left: 0px;
-		top: 0px;
-	}
-	#Avatar_cb {
-		fill: rgba(166,173,180,1);
-	}
-	.Avatar_cb {
-		position: absolute;
-		overflow: visible;
-		width: 32px;
-		height: 32px;
-		left: 48px;
-		top: 12px;
-	}
-	#Lina_Bo_cc {
-		left: 88px;
-		top: 14px;
-		position: absolute;
-		overflow: visible;
-		width: 45px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Adobe_cb {
-		left: 392px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Tag_dag {
-		position: absolute;
-		width: 66px;
-		height: 24px;
-		left: 652px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dau {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dau {
-		position: absolute;
-		overflow: visible;
-		width: 66px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#POPULAR_ce {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 53px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_dah {
-		position: absolute;
-		width: 38px;
-		height: 24px;
-		left: 726px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dav {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dav {
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#NEW_cb {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 27px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_dai {
-		position: absolute;
-		width: 35px;
-		height: 24px;
-		left: 772px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_daw {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_daw {
-		position: absolute;
-		overflow: visible;
-		width: 35px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#JOB_ce {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 21px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#ID012_389_438_cg {
-		left: 523px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#ID09_Sep_2017_cg {
-		left: 855px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#linaadobecom_ci {
-		left: 88px;
-		top: 31px;
-		position: absolute;
-		overflow: visible;
-		width: 97px;
-		white-space: nowrap;
-		line-height: 23px;
-		margin-top: -5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(166,173,180,1);
-	}
-	#Checkbox_ci {
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 16px;
-		top: 20px;
-		overflow: visible;
-	}
-	#Checkbox_cv {
-		fill: transparent;
-		stroke: rgba(235,237,237,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Checkbox_cv {
-		position: absolute;
-		overflow: visible;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-	}
-	#close_cx {
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 1208px;
-		top: 108px;
-		overflow: visible;
-	}
-	#close_cy {
-		fill: rgba(32,33,36,1);
-	}
-	.close_cy {
-		overflow: visible;
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Item_cm {
-		position: absolute;
-		width: 1216px;
-		height: 116px;
-		left: 0px;
-		top: 384px;
-		overflow: visible;
-	}
-	#Base_dax {
-		fill: rgba(255,255,255,1);
-	}
-	.Base_dax {
-		position: absolute;
-		overflow: visible;
-		width: 1080px;
-		height: 56px;
-		left: 0px;
-		top: 0px;
-	}
-	#Avatar_co {
-		fill: rgba(166,173,180,1);
-	}
-	.Avatar_co {
-		position: absolute;
-		overflow: visible;
-		width: 32px;
-		height: 32px;
-		left: 48px;
-		top: 12px;
-	}
-	#Lina_Bo_cq {
-		left: 88px;
-		top: 14px;
-		position: absolute;
-		overflow: visible;
-		width: 45px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Adobe_cq {
-		left: 392px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Tag_daj {
-		position: absolute;
-		width: 66px;
-		height: 24px;
-		left: 652px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_day {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_day {
-		position: absolute;
-		overflow: visible;
-		width: 66px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#POPULAR_ct {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 53px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_dak {
-		position: absolute;
-		width: 38px;
-		height: 24px;
-		left: 726px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_daz {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_daz {
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#NEW_cw {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 27px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_dal {
-		position: absolute;
-		width: 35px;
-		height: 24px;
-		left: 772px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dba {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dba {
-		position: absolute;
-		overflow: visible;
-		width: 35px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#JOB_cz {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 21px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#ID012_389_438_cc {
-		left: 523px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#ID09_Sep_2017_cd {
-		left: 855px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#linaadobecom_cd {
-		left: 88px;
-		top: 31px;
-		position: absolute;
-		overflow: visible;
-		width: 97px;
-		white-space: nowrap;
-		line-height: 23px;
-		margin-top: -5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(166,173,180,1);
-	}
-	#Checkbox_daa {
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 16px;
-		top: 20px;
-		overflow: visible;
-	}
-	#Checkbox_dab {
-		fill: transparent;
-		stroke: rgba(235,237,237,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Checkbox_dab {
-		position: absolute;
-		overflow: visible;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-	}
-	#close_daa {
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 1208px;
-		top: 108px;
-		overflow: visible;
-	}
-	#close_dab {
-		fill: rgba(32,33,36,1);
-	}
-	.close_dab {
-		overflow: visible;
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Item_ci {
-		position: absolute;
-		width: 1216px;
-		height: 116px;
-		left: 0px;
-		top: 448px;
-		overflow: visible;
-	}
-	#Base_dbb {
-		fill: rgba(255,255,255,1);
-	}
-	.Base_dbb {
-		position: absolute;
-		overflow: visible;
-		width: 1080px;
-		height: 56px;
-		left: 0px;
-		top: 0px;
-	}
-	#Avatar_cd {
-		fill: rgba(166,173,180,1);
-	}
-	.Avatar_cd {
-		position: absolute;
-		overflow: visible;
-		width: 32px;
-		height: 32px;
-		left: 48px;
-		top: 12px;
-	}
-	#Lina_Bo_cf {
-		left: 88px;
-		top: 14px;
-		position: absolute;
-		overflow: visible;
-		width: 45px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Adobe_cc {
-		left: 392px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Tag_dam {
-		position: absolute;
-		width: 66px;
-		height: 24px;
-		left: 652px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dbc {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dbc {
-		position: absolute;
-		overflow: visible;
-		width: 66px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#POPULAR_cf {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 53px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_dan {
-		position: absolute;
-		width: 38px;
-		height: 24px;
-		left: 726px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dbd {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dbd {
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#NEW_ch {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 27px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_dao {
-		position: absolute;
-		width: 35px;
-		height: 24px;
-		left: 772px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dbe {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dbe {
-		position: absolute;
-		overflow: visible;
-		width: 35px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#JOB_ck {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 21px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#ID012_389_438_cl {
-		left: 523px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#ID09_Sep_2017_cn {
-		left: 855px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#linaadobecom_cn {
-		left: 88px;
-		top: 31px;
-		position: absolute;
-		overflow: visible;
-		width: 97px;
-		white-space: nowrap;
-		line-height: 23px;
-		margin-top: -5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(166,173,180,1);
-	}
-	#Checkbox_dac {
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 16px;
-		top: 20px;
-		overflow: visible;
-	}
-	#Checkbox_dad {
-		fill: transparent;
-		stroke: rgba(235,237,237,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Checkbox_dad {
-		position: absolute;
-		overflow: visible;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-	}
-	#close_dac {
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 1208px;
-		top: 108px;
-		overflow: visible;
-	}
-	#close_dad {
-		fill: rgba(32,33,36,1);
-	}
-	.close_dad {
-		overflow: visible;
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Item_cs {
-		position: absolute;
-		width: 1216px;
-		height: 116px;
-		left: 0px;
-		top: 512px;
-		overflow: visible;
-	}
-	#Base_dbf {
-		fill: rgba(255,255,255,1);
-	}
-	.Base_dbf {
-		position: absolute;
-		overflow: visible;
-		width: 1080px;
-		height: 56px;
-		left: 0px;
-		top: 0px;
-	}
-	#Avatar_cu {
-		fill: rgba(166,173,180,1);
-	}
-	.Avatar_cu {
-		position: absolute;
-		overflow: visible;
-		width: 32px;
-		height: 32px;
-		left: 48px;
-		top: 12px;
-	}
-	#Lina_Bo_ch {
-		left: 88px;
-		top: 14px;
-		position: absolute;
-		overflow: visible;
-		width: 45px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Adobe_cw {
-		left: 392px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Tag_dap {
-		position: absolute;
-		width: 66px;
-		height: 24px;
-		left: 652px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dbg {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dbg {
-		position: absolute;
-		overflow: visible;
-		width: 66px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#POPULAR_cz {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 53px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_daq {
-		position: absolute;
-		width: 38px;
-		height: 24px;
-		left: 726px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dbh {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dbh {
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#NEW_cc {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 27px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_dar {
-		position: absolute;
-		width: 35px;
-		height: 24px;
-		left: 772px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dbi {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dbi {
-		position: absolute;
-		overflow: visible;
-		width: 35px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#JOB_cc {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 21px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#ID012_389_438_ce {
-		left: 523px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#ID09_Sep_2017_ce {
-		left: 855px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#linaadobecom_ce {
-		left: 88px;
-		top: 31px;
-		position: absolute;
-		overflow: visible;
-		width: 97px;
-		white-space: nowrap;
-		line-height: 23px;
-		margin-top: -5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(166,173,180,1);
-	}
-	#Checkbox_dae {
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 16px;
-		top: 20px;
-		overflow: visible;
-	}
-	#Checkbox_daf {
-		fill: transparent;
-		stroke: rgba(235,237,237,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Checkbox_daf {
-		position: absolute;
-		overflow: visible;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-	}
-	#close_dae {
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 1208px;
-		top: 108px;
-		overflow: visible;
-	}
-	#close_daf {
-		fill: rgba(32,33,36,1);
-	}
-	.close_daf {
-		overflow: visible;
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Item_ck {
-		position: absolute;
-		width: 1216px;
-		height: 116px;
-		left: 0px;
-		top: 576px;
-		overflow: visible;
-	}
-	#Base_dbj {
-		fill: rgba(255,255,255,1);
-	}
-	.Base_dbj {
-		position: absolute;
-		overflow: visible;
-		width: 1080px;
-		height: 56px;
-		left: 0px;
-		top: 0px;
-	}
-	#Avatar_cf {
-		fill: rgba(166,173,180,1);
-	}
-	.Avatar_cf {
-		position: absolute;
-		overflow: visible;
-		width: 32px;
-		height: 32px;
-		left: 48px;
-		top: 12px;
-	}
-	#Lina_Bo_ck {
-		left: 88px;
-		top: 14px;
-		position: absolute;
-		overflow: visible;
-		width: 45px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Adobe_ch {
-		left: 392px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Tag_das {
-		position: absolute;
-		width: 66px;
-		height: 24px;
-		left: 652px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dbk {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dbk {
-		position: absolute;
-		overflow: visible;
-		width: 66px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#POPULAR_ck {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 53px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_dat {
-		position: absolute;
-		width: 38px;
-		height: 24px;
-		left: 726px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dbl {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dbl {
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#NEW_co {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 27px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_dau {
-		position: absolute;
-		width: 35px;
-		height: 24px;
-		left: 772px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dbm {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dbm {
-		position: absolute;
-		overflow: visible;
-		width: 35px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#JOB_cq {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 21px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#ID012_389_438_cs {
-		left: 523px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#ID09_Sep_2017_cs {
-		left: 855px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#linaadobecom_cu {
-		left: 88px;
-		top: 31px;
-		position: absolute;
-		overflow: visible;
-		width: 97px;
-		white-space: nowrap;
-		line-height: 23px;
-		margin-top: -5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(166,173,180,1);
-	}
-	#Checkbox_dag {
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 16px;
-		top: 20px;
-		overflow: visible;
-	}
-	#Checkbox_dah {
-		fill: transparent;
-		stroke: rgba(235,237,237,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Checkbox_dah {
-		position: absolute;
-		overflow: visible;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-	}
-	#close_dag {
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 1208px;
-		top: 108px;
-		overflow: visible;
-	}
-	#close_dah {
-		fill: rgba(32,33,36,1);
-	}
-	.close_dah {
-		overflow: visible;
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Item_cy {
-		position: absolute;
-		width: 1216px;
-		height: 116px;
-		left: 0px;
-		top: 640px;
-		overflow: visible;
-	}
-	#Base_dbn {
-		fill: rgba(255,255,255,1);
-	}
-	.Base_dbn {
-		position: absolute;
-		overflow: visible;
-		width: 1080px;
-		height: 56px;
-		left: 0px;
-		top: 0px;
-	}
-	#Avatar_ch {
-		fill: rgba(166,173,180,1);
-	}
-	.Avatar_ch {
-		position: absolute;
-		overflow: visible;
-		width: 32px;
-		height: 32px;
-		left: 48px;
-		top: 12px;
-	}
-	#Lina_Bo_cm {
-		left: 88px;
-		top: 14px;
-		position: absolute;
-		overflow: visible;
-		width: 45px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Adobe_cd {
-		left: 392px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Tag_dav {
-		position: absolute;
-		width: 66px;
-		height: 24px;
-		left: 652px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dbo {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dbo {
-		position: absolute;
-		overflow: visible;
-		width: 66px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#POPULAR_cj {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 53px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_daw {
-		position: absolute;
-		width: 38px;
-		height: 24px;
-		left: 726px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dbp {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dbp {
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#NEW_cj {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 27px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_dax {
-		position: absolute;
-		width: 35px;
-		height: 24px;
-		left: 772px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dbq {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dbq {
-		position: absolute;
-		overflow: visible;
-		width: 35px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#JOB_cj {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 21px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#ID012_389_438_cp {
-		left: 523px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#ID09_Sep_2017_cl {
-		left: 855px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#linaadobecom_cg {
-		left: 88px;
-		top: 31px;
-		position: absolute;
-		overflow: visible;
-		width: 97px;
-		white-space: nowrap;
-		line-height: 23px;
-		margin-top: -5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(166,173,180,1);
-	}
-	#Checkbox_dai {
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 16px;
-		top: 20px;
-		overflow: visible;
-	}
-	#Checkbox_daj {
-		fill: transparent;
-		stroke: rgba(235,237,237,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Checkbox_daj {
-		position: absolute;
-		overflow: visible;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-	}
-	#close_dai {
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 1208px;
-		top: 108px;
-		overflow: visible;
-	}
-	#close_daj {
-		fill: rgba(32,33,36,1);
-	}
-	.close_daj {
-		overflow: visible;
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Item_cn {
-		position: absolute;
-		width: 1216px;
-		height: 116px;
-		left: 0px;
-		top: 704px;
-		overflow: visible;
-	}
-	#Base_dbr {
-		fill: rgba(255,255,255,1);
-	}
-	.Base_dbr {
-		position: absolute;
-		overflow: visible;
-		width: 1080px;
-		height: 56px;
-		left: 0px;
-		top: 0px;
-	}
-	#Avatar_cm {
-		fill: rgba(166,173,180,1);
-	}
-	.Avatar_cm {
-		position: absolute;
-		overflow: visible;
-		width: 32px;
-		height: 32px;
-		left: 48px;
-		top: 12px;
-	}
-	#Lina_Bo_cn {
-		left: 88px;
-		top: 14px;
-		position: absolute;
-		overflow: visible;
-		width: 45px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Adobe_cn {
-		left: 392px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Tag_day {
-		position: absolute;
-		width: 66px;
-		height: 24px;
-		left: 652px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dbs {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dbs {
-		position: absolute;
-		overflow: visible;
-		width: 66px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#POPULAR_cq {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 53px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_daz {
-		position: absolute;
-		width: 38px;
-		height: 24px;
-		left: 726px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dbt {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dbt {
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#NEW_ct {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 27px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_dba {
-		position: absolute;
-		width: 35px;
-		height: 24px;
-		left: 772px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dbu {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dbu {
-		position: absolute;
-		overflow: visible;
-		width: 35px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#JOB_cw {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 21px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#ID012_389_438_cy {
-		left: 523px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#ID09_Sep_2017_cy {
-		left: 855px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#linaadobecom_cz {
-		left: 88px;
-		top: 31px;
-		position: absolute;
-		overflow: visible;
-		width: 97px;
-		white-space: nowrap;
-		line-height: 23px;
-		margin-top: -5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(166,173,180,1);
-	}
-	#Checkbox_dak {
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 16px;
-		top: 20px;
-		overflow: visible;
-	}
-	#Checkbox_dal {
-		fill: transparent;
-		stroke: rgba(235,237,237,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Checkbox_dal {
-		position: absolute;
-		overflow: visible;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-	}
-	#close_dak {
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 1208px;
-		top: 108px;
-		overflow: visible;
-	}
-	#close_dal {
-		fill: rgba(32,33,36,1);
-	}
-	.close_dal {
+	.close_ca {
 		overflow: visible;
 		position: absolute;
 		width: 8px;
@@ -3433,7 +3449,7 @@
 		font-size: 35px;
 		color: rgba(250,105,128,1);
 	}
-	#Error_1_ca {
+	#Error_1_c {
 		position: absolute;
 		width: 867px;
 		height: 40px;
@@ -3441,7 +3457,7 @@
 		top: 148px;
 		overflow: visible;
 	}
-	#Field_cc {
+	#Field_c {
 		fill: rgba(255,255,255,1);
 		stroke: rgba(250,105,128,1);
 		stroke-width: 2px;
@@ -3450,7 +3466,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Field_cc {
+	.Field_c {
 		position: absolute;
 		overflow: visible;
 		width: 867px;
@@ -3458,7 +3474,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#Lina_Bo_co {
+	#Lina_Bo_ca {
 		left: 54px;
 		top: 12px;
 		position: absolute;
@@ -3474,7 +3490,7 @@
 		font-size: 13px;
 		color: rgba(32,33,36,1);
 	}
-	#Primary_Button_cd {
+	#Primary_Button_ca {
 		position: absolute;
 		width: 157px;
 		height: 40px;
@@ -3482,10 +3498,10 @@
 		top: 148px;
 		overflow: visible;
 	}
-	#base_ce {
+	#base_cb {
 		fill: rgba(250,105,128,1);
 	}
-	.base_ce {
+	.base_cb {
 		position: absolute;
 		overflow: visible;
 		width: 157px;
@@ -3493,7 +3509,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#Buscar_cf {
+	#Buscar_cc {
 		left: 52px;
 		top: 13px;
 		position: absolute;
@@ -3509,7 +3525,7 @@
 		font-size: 16px;
 		color: rgba(255,255,255,1);
 	}
-	#Arrow_Back_cy {
+	#Arrow_Back_cd {
 		transform: matrix(1,0,0,1,1224,273) rotate(180deg);
 		transform-origin: center;
 		position: absolute;
@@ -3519,10 +3535,10 @@
 		top: 0px;
 		overflow: visible;
 	}
-	#Arrow_Back_cz {
+	#Arrow_Back_ce {
 		fill: rgba(250,105,128,1);
 	}
-	.Arrow_Back_cz {
+	.Arrow_Back_ce {
 		overflow: visible;
 		position: absolute;
 		width: 16px;
@@ -3531,7 +3547,7 @@
 		top: 0px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Arrow_Back_daa {
+	#Arrow_Back_cf {
 		transform: matrix(1,0,0,1,1224,588) rotate(180deg);
 		transform-origin: center;
 		position: absolute;
@@ -3541,10 +3557,10 @@
 		top: 0px;
 		overflow: visible;
 	}
-	#Arrow_Back_dab {
+	#Arrow_Back_cg {
 		fill: rgba(250,105,128,1);
 	}
-	.Arrow_Back_dab {
+	.Arrow_Back_cg {
 		overflow: visible;
 		position: absolute;
 		width: 16px;
@@ -3553,7 +3569,7 @@
 		top: 0px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Arrow_Back_dac {
+	#Arrow_Back_ch {
 		transform: matrix(1,0,0,1,1224,525) rotate(180deg);
 		transform-origin: center;
 		position: absolute;
@@ -3563,10 +3579,10 @@
 		top: 0px;
 		overflow: visible;
 	}
-	#Arrow_Back_dad {
+	#Arrow_Back_ci {
 		fill: rgba(250,105,128,1);
 	}
-	.Arrow_Back_dad {
+	.Arrow_Back_ci {
 		overflow: visible;
 		position: absolute;
 		width: 16px;
@@ -3575,7 +3591,7 @@
 		top: 0px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Arrow_Back_dae {
+	#Arrow_Back_cj {
 		transform: matrix(1,0,0,1,1224,462) rotate(180deg);
 		transform-origin: center;
 		position: absolute;
@@ -3585,10 +3601,10 @@
 		top: 0px;
 		overflow: visible;
 	}
-	#Arrow_Back_daf {
+	#Arrow_Back_ck {
 		fill: rgba(250,105,128,1);
 	}
-	.Arrow_Back_daf {
+	.Arrow_Back_ck {
 		overflow: visible;
 		position: absolute;
 		width: 16px;
@@ -3597,7 +3613,7 @@
 		top: 0px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Arrow_Back_dag {
+	#Arrow_Back_cl {
 		transform: matrix(1,0,0,1,1224,399) rotate(180deg);
 		transform-origin: center;
 		position: absolute;
@@ -3607,10 +3623,10 @@
 		top: 0px;
 		overflow: visible;
 	}
-	#Arrow_Back_dah {
+	#Arrow_Back_cm {
 		fill: rgba(250,105,128,1);
 	}
-	.Arrow_Back_dah {
+	.Arrow_Back_cm {
 		overflow: visible;
 		position: absolute;
 		width: 16px;
@@ -3619,7 +3635,7 @@
 		top: 0px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Arrow_Back_dai {
+	#Arrow_Back_cn {
 		transform: matrix(1,0,0,1,1224,336) rotate(180deg);
 		transform-origin: center;
 		position: absolute;
@@ -3629,10 +3645,10 @@
 		top: 0px;
 		overflow: visible;
 	}
-	#Arrow_Back_daj {
+	#Arrow_Back_co {
 		fill: rgba(250,105,128,1);
 	}
-	.Arrow_Back_daj {
+	.Arrow_Back_co {
 		overflow: visible;
 		position: absolute;
 		width: 16px;
@@ -3641,7 +3657,7 @@
 		top: 0px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Arrow_Back_dak {
+	#Arrow_Back_cp {
 		transform: matrix(1,0,0,1,1224,777) rotate(180deg);
 		transform-origin: center;
 		position: absolute;
@@ -3651,10 +3667,10 @@
 		top: 0px;
 		overflow: visible;
 	}
-	#Arrow_Back_dal {
+	#Arrow_Back_cq {
 		fill: rgba(250,105,128,1);
 	}
-	.Arrow_Back_dal {
+	.Arrow_Back_cq {
 		overflow: visible;
 		position: absolute;
 		width: 16px;
@@ -3663,7 +3679,7 @@
 		top: 0px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Arrow_Back_dam {
+	#Arrow_Back_cr {
 		transform: matrix(1,0,0,1,1224,714) rotate(180deg);
 		transform-origin: center;
 		position: absolute;
@@ -3673,10 +3689,10 @@
 		top: 0px;
 		overflow: visible;
 	}
-	#Arrow_Back_dan {
+	#Arrow_Back_cs {
 		fill: rgba(250,105,128,1);
 	}
-	.Arrow_Back_dan {
+	.Arrow_Back_cs {
 		overflow: visible;
 		position: absolute;
 		width: 16px;
@@ -3685,7 +3701,7 @@
 		top: 0px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Arrow_Back_dao {
+	#Arrow_Back_ct {
 		transform: matrix(1,0,0,1,1224,651) rotate(180deg);
 		transform-origin: center;
 		position: absolute;
@@ -3695,10 +3711,10 @@
 		top: 0px;
 		overflow: visible;
 	}
-	#Arrow_Back_dap {
+	#Arrow_Back_cu {
 		fill: rgba(250,105,128,1);
 	}
-	.Arrow_Back_dap {
+	.Arrow_Back_cu {
 		overflow: visible;
 		position: absolute;
 		width: 16px;
@@ -3707,7 +3723,7 @@
 		top: 0px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Arrow_Back_daq {
+	#Arrow_Back_cv {
 		transform: matrix(1,0,0,1,1224,966) rotate(180deg);
 		transform-origin: center;
 		position: absolute;
@@ -3717,10 +3733,10 @@
 		top: 0px;
 		overflow: visible;
 	}
-	#Arrow_Back_dar {
+	#Arrow_Back_cw {
 		fill: rgba(250,105,128,1);
 	}
-	.Arrow_Back_dar {
+	.Arrow_Back_cw {
 		overflow: visible;
 		position: absolute;
 		width: 16px;
@@ -3729,7 +3745,7 @@
 		top: 0px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Arrow_Back_das {
+	#Arrow_Back_cx {
 		transform: matrix(1,0,0,1,1224,903) rotate(180deg);
 		transform-origin: center;
 		position: absolute;
@@ -3739,10 +3755,10 @@
 		top: 0px;
 		overflow: visible;
 	}
-	#Arrow_Back_dat {
+	#Arrow_Back_cy {
 		fill: rgba(250,105,128,1);
 	}
-	.Arrow_Back_dat {
+	.Arrow_Back_cy {
 		overflow: visible;
 		position: absolute;
 		width: 16px;
@@ -3751,7 +3767,7 @@
 		top: 0px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Arrow_Back_dau {
+	#Arrow_Back_cz {
 		transform: matrix(1,0,0,1,1224,840) rotate(180deg);
 		transform-origin: center;
 		position: absolute;
@@ -3761,10 +3777,10 @@
 		top: 0px;
 		overflow: visible;
 	}
-	#Arrow_Back_dav {
+	#Arrow_Back_c {
 		fill: rgba(250,105,128,1);
 	}
-	.Arrow_Back_dav {
+	.Arrow_Back_c {
 		overflow: visible;
 		position: absolute;
 		width: 16px;
@@ -6614,283 +6630,731 @@ window.application = new Application();
 </script>
 </head>
 <body>
-<div id="Asignacin_de_competencia_a_asignatura">
-	<svg class="Rectngulo_449_cq">
-		<rect id="Rectngulo_449_cq" rx="0" ry="0" x="0" y="0" width="1440" height="950">
+<div id="Asignacion_de_competencia_a_asignatura">
+	<svg class="Rectngulo_449_ctn">
+		<rect id="Rectngulo_449_ctn" rx="0" ry="0" x="0" y="0" width="1440" height="950">
 		</rect>
 	</svg>
-	<div id="Header_-_Desktop_cr" class="Header___Desktop">
-		<svg class="base_ct">
-			<rect id="base_ct" rx="0" ry="0" x="0" y="0" width="1440" height="50">
+	<div id="Header_-_Desktop_cto" class="Header___Desktop">
+		<svg class="base_ctp">
+			<rect id="base_ctp" rx="0" ry="0" x="0" y="0" width="1440" height="50">
 			</rect>
 		</svg>
-		<div id="LOGO_ct">
+		<div id="LOGO_ctq">
 			<span>LOGO</span>
 		</div>
-		<div id="INICIO_cu">
+		<div onclick="application.goToTargetView(event)" id="INICIO_ctr">
 			<span>INICIO</span>
 		</div>
-		<div id="PROFESORES_cv">
+		<div id="PROFESORES_cts">
 			<span>PROFESORES</span>
 		</div>
-		<div id="GRUPOS_cw">
+		<div id="GRUPOS_ctt">
 			<span>GRUPOS</span>
 		</div>
-		<img id="christopher-campbell-28567-uns_cx" src="christopher-campbell-28567-uns_cx.png" srcset="christopher-campbell-28567-uns_cx.png 1x, christopher-campbell-28567-uns_cx@2x.png 2x">
+		<img id="christopher-campbell-28567-uns_ctu" src="images/christopher-campbell-28567-uns_ctu.png" srcset="images/christopher-campbell-28567-uns_ctu.png 1x, images/christopher-campbell-28567-uns_ctu@2x.png 2x">
 			
-		<div id="ASIGNATURAS_cy">
+		<div id="ASIGNATURAS_ctv">
 			<span>ASIGNATURAS</span>
 		</div>
-		<div id="COMPETENCIAS_cz">
+		<div id="COMPETENCIAS_ctw">
 			<span>COMPETENCIAS</span>
 		</div>
-		<div id="ADMINISTRADORES_c">
+		<div id="ADMINISTRADORES_ctx">
 			<span>ADMINISTRADORES</span>
 		</div>
-		<div id="ALUMNOS_c">
+		<div id="ALUMNOS_cty">
 			<span>ALUMNOS</span>
 		</div>
 	</div>
-	<div id="List_Group_Desktop_c" class="List_Group_Desktop">
-		<div id="Item_ca">
-			<div id="Item_cb" class="Item">
-				<svg class="Base_cs">
-					<rect id="Base_cs" rx="0" ry="0" x="0" y="0" width="1080" height="56">
+	<div id="List_Group_Desktop_ctz" class="List_Group_Desktop">
+		<div id="Item_cua">
+			<div id="Item_cub" class="Item">
+				<svg class="Base_ct">
+					<rect id="Base_ct" rx="0" ry="0" x="0" y="0" width="1080" height="56">
 					</rect>
 				</svg>
-				<svg class="Avatar_ca">
-					<ellipse id="Avatar_ca" rx="16" ry="16" cx="16" cy="16">
+				<svg class="Avatar_ct">
+					<ellipse id="Avatar_ct" rx="16" ry="16" cx="16" cy="16">
 					</ellipse>
 				</svg>
-				<div id="Lina_Bo_ca">
-					<span>Lina Bo</span>
-				</div>
-				<div id="Adobe_ca">
-					<span>Adobe</span>
-				</div>
-				<div id="Tag_ca">
-					<svg class="Base_daa">
-						<rect id="Base_daa" rx="4" ry="4" x="0" y="0" width="66" height="24">
-						</rect>
-					</svg>
-					<div id="POPULAR_cb">
-						<span>POPULAR</span>
-					</div>
-				</div>
-				<div id="Tag_cc">
-					<svg class="Base_dab">
-						<rect id="Base_dab" rx="4" ry="4" x="0" y="0" width="38" height="24">
-						</rect>
-					</svg>
-					<div id="NEW_cg">
-						<span>NEW</span>
-					</div>
-				</div>
-				<div id="Tag_cj" class="Tag">
-					<svg class="Base_dac">
-						<rect id="Base_dac" rx="4" ry="4" x="0" y="0" width="35" height="24">
-						</rect>
-					</svg>
-					<div id="JOB_ci">
-						<span>JOB</span>
-					</div>
-				</div>
-				<div id="ID012_389_438_ck">
-					<span>012 389 438</span>
-				</div>
-				<div id="ID09_Sep_2017_ck">
-					<span>09 Sep 2017</span>
-				</div>
-				<div id="linaadobecom_cl">
-					<span>lina@adobe.com</span>
-				</div>
-				<div id="Checkbox_co" class="Checkbox">
-					<svg class="Checkbox_cp">
-						<rect id="Checkbox_cp" rx="3" ry="3" x="0" y="0" width="16" height="16">
-						</rect>
-					</svg>
-				</div>
-				<div id="close_cr" class="close">
-					<svg class="close_cs" viewBox="0 0 8 8">
-						<path id="close_cs" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
-						</path>
-					</svg>
-				</div>
-			</div>
-			<div id="Item_cr" class="Item">
-				<svg class="Base_dad">
-					<rect id="Base_dad" rx="0" ry="0" x="0" y="0" width="1080" height="56">
-					</rect>
-				</svg>
-				<svg class="Avatar_cr">
-					<ellipse id="Avatar_cr" rx="16" ry="16" cx="16" cy="16">
-					</ellipse>
-				</svg>
-				<div id="Lina_Bo_cs">
+				<div id="Lina_Bo_ct">
 					<span>Lina Bo</span>
 				</div>
 				<div id="Adobe_ct">
 					<span>Adobe</span>
 				</div>
+				<div id="Tag_ct">
+					<svg class="Base_cua">
+						<rect id="Base_cua" rx="4" ry="4" x="0" y="0" width="66" height="24">
+						</rect>
+					</svg>
+					<div id="POPULAR_ct">
+						<span>POPULAR</span>
+					</div>
+				</div>
+				<div id="Tag_cua">
+					<svg class="Base_cub">
+						<rect id="Base_cub" rx="4" ry="4" x="0" y="0" width="38" height="24">
+						</rect>
+					</svg>
+					<div id="NEW_cub">
+						<span>NEW</span>
+					</div>
+				</div>
+				<div id="Tag_cuc" class="Tag">
+					<svg class="Base_cud">
+						<rect id="Base_cud" rx="4" ry="4" x="0" y="0" width="35" height="24">
+						</rect>
+					</svg>
+					<div id="JOB_cue">
+						<span>JOB</span>
+					</div>
+				</div>
+				<div id="ID012_389_438_cuf">
+					<span>012 389 438</span>
+				</div>
+				<div id="ID09_Sep_2017_cug">
+					<span>09 Sep 2017</span>
+				</div>
+				<div id="linaadobecom_cuh">
+					<span>lina@adobe.com</span>
+				</div>
+				<div id="Checkbox_cui" class="Checkbox">
+					<svg class="Checkbox_cuj">
+						<rect id="Checkbox_cuj" rx="3" ry="3" x="0" y="0" width="16" height="16">
+						</rect>
+					</svg>
+				</div>
+				<div id="close_cuk" class="close">
+					<svg class="close_cul" viewBox="0 0 8 8">
+						<path id="close_cul" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
+						</path>
+					</svg>
+				</div>
+			</div>
+			<div id="Item_cum" class="Item">
+				<svg class="Base_cun">
+					<rect id="Base_cun" rx="0" ry="0" x="0" y="0" width="1080" height="56">
+					</rect>
+				</svg>
+				<svg class="Avatar_cuo">
+					<ellipse id="Avatar_cuo" rx="16" ry="16" cx="16" cy="16">
+					</ellipse>
+				</svg>
+				<div id="Lina_Bo_cup">
+					<span>Lina Bo</span>
+				</div>
+				<div id="Adobe_cuq">
+					<span>Adobe</span>
+				</div>
+				<div id="Tag_cur">
+					<svg class="Base_cus">
+						<rect id="Base_cus" rx="4" ry="4" x="0" y="0" width="66" height="24">
+						</rect>
+					</svg>
+					<div id="POPULAR_cut">
+						<span>POPULAR</span>
+					</div>
+				</div>
+				<div id="Tag_cuu">
+					<svg class="Base_cuv">
+						<rect id="Base_cuv" rx="4" ry="4" x="0" y="0" width="38" height="24">
+						</rect>
+					</svg>
+					<div id="NEW_cuw">
+						<span>NEW</span>
+					</div>
+				</div>
+				<div id="Tag_cux" class="Tag">
+					<svg class="Base_cuy">
+						<rect id="Base_cuy" rx="4" ry="4" x="0" y="0" width="35" height="24">
+						</rect>
+					</svg>
+					<div id="JOB_cuz">
+						<span>JOB</span>
+					</div>
+				</div>
+				<div id="ID012_389_438_cu">
+					<span>012 389 438</span>
+				</div>
+				<div id="ID09_Sep_2017_cu">
+					<span>09 Sep 2017</span>
+				</div>
+				<div id="linaadobecom_cu">
+					<span>lina@adobe.com</span>
+				</div>
+				<div id="Checkbox_cu" class="Checkbox">
+					<svg class="Checkbox_cva">
+						<rect id="Checkbox_cva" rx="3" ry="3" x="0" y="0" width="16" height="16">
+						</rect>
+					</svg>
+				</div>
+				<div id="close_cu" class="close">
+					<svg class="close_cva" viewBox="0 0 8 8">
+						<path id="close_cva" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
+						</path>
+					</svg>
+				</div>
+			</div>
+			<div id="Item_cu" class="Item">
+				<svg class="Base_cu">
+					<rect id="Base_cu" rx="0" ry="0" x="0" y="0" width="1080" height="56">
+					</rect>
+				</svg>
+				<svg class="Avatar_cu">
+					<ellipse id="Avatar_cu" rx="16" ry="16" cx="16" cy="16">
+					</ellipse>
+				</svg>
+				<div id="Lina_Bo_cva">
+					<span>Lina Bo</span>
+				</div>
+				<div id="Adobe_cvb">
+					<span>Adobe</span>
+				</div>
+				<div id="Tag_cvc">
+					<svg class="Base_cvd">
+						<rect id="Base_cvd" rx="4" ry="4" x="0" y="0" width="66" height="24">
+						</rect>
+					</svg>
+					<div id="POPULAR_cve">
+						<span>POPULAR</span>
+					</div>
+				</div>
+				<div id="Tag_cvf">
+					<svg class="Base_cvg">
+						<rect id="Base_cvg" rx="4" ry="4" x="0" y="0" width="38" height="24">
+						</rect>
+					</svg>
+					<div id="NEW_cvh">
+						<span>NEW</span>
+					</div>
+				</div>
+				<div id="Tag_cvi" class="Tag">
+					<svg class="Base_cvj">
+						<rect id="Base_cvj" rx="4" ry="4" x="0" y="0" width="35" height="24">
+						</rect>
+					</svg>
+					<div id="JOB_cvk">
+						<span>JOB</span>
+					</div>
+				</div>
+				<div id="ID012_389_438_cvl">
+					<span>012 389 438</span>
+				</div>
+				<div id="ID09_Sep_2017_cvm">
+					<span>09 Sep 2017</span>
+				</div>
+				<div id="linaadobecom_cvn">
+					<span>lina@adobe.com</span>
+				</div>
+				<div id="Checkbox_cvo" class="Checkbox">
+					<svg class="Checkbox_cvp">
+						<rect id="Checkbox_cvp" rx="3" ry="3" x="0" y="0" width="16" height="16">
+						</rect>
+					</svg>
+				</div>
+				<div id="close_cvq" class="close">
+					<svg class="close_cvr" viewBox="0 0 8 8">
+						<path id="close_cvr" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
+						</path>
+					</svg>
+				</div>
+			</div>
+			<div id="Item_cvs" class="Item">
+				<svg class="Base_cvt">
+					<rect id="Base_cvt" rx="0" ry="0" x="0" y="0" width="1080" height="56">
+					</rect>
+				</svg>
+				<svg class="Avatar_cvu">
+					<ellipse id="Avatar_cvu" rx="16" ry="16" cx="16" cy="16">
+					</ellipse>
+				</svg>
+				<div id="Lina_Bo_cvv">
+					<span>Lina Bo</span>
+				</div>
+				<div id="Company_Name_cvw">
+					<span>Company Name</span>
+				</div>
+				<div id="Tag_cvx">
+					<svg class="Base_cvy">
+						<rect id="Base_cvy" rx="4" ry="4" x="0" y="0" width="66" height="24">
+						</rect>
+					</svg>
+					<div id="POPULAR_cvz">
+						<span>POPULAR</span>
+					</div>
+				</div>
+				<div id="Tag_cv">
+					<svg class="Base_cv">
+						<rect id="Base_cv" rx="4" ry="4" x="0" y="0" width="38" height="24">
+						</rect>
+					</svg>
+					<div id="NEW_cv">
+						<span>NEW</span>
+					</div>
+				</div>
+				<div id="Tag_cwa" class="Tag">
+					<svg class="Base_cwa">
+						<rect id="Base_cwa" rx="4" ry="4" x="0" y="0" width="35" height="24">
+						</rect>
+					</svg>
+					<div id="JOB_cv">
+						<span>JOB</span>
+					</div>
+				</div>
+				<div id="ID012_389_438_cv">
+					<span>012 389 438</span>
+				</div>
+				<div id="ID09_Sep_2017_cv">
+					<span>09 Sep 2017</span>
+				</div>
+				<div id="linaadobecom_cv">
+					<span>lina@adobe.com</span>
+				</div>
+				<div id="Checkbox_cv" class="Checkbox">
+					<svg class="Checkbox_cwa">
+						<rect id="Checkbox_cwa" rx="3" ry="3" x="0" y="0" width="16" height="16">
+						</rect>
+					</svg>
+				</div>
+				<div id="close_cwb" class="close">
+					<svg class="close_cwc" viewBox="0 0 8 8">
+						<path id="close_cwc" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
+						</path>
+					</svg>
+				</div>
+			</div>
+			<div id="Item_cwd" class="Item">
+				<svg class="Base_cwe">
+					<rect id="Base_cwe" rx="0" ry="0" x="0" y="0" width="1080" height="56">
+					</rect>
+				</svg>
+				<svg class="Avatar_cwf">
+					<ellipse id="Avatar_cwf" rx="16" ry="16" cx="16" cy="16">
+					</ellipse>
+				</svg>
+				<div id="Lina_Bo_cwg">
+					<span>Lina Bo</span>
+				</div>
+				<div id="Adobe_cwh">
+					<span>Adobe</span>
+				</div>
+				<div id="Tag_cwi">
+					<svg class="Base_cwj">
+						<rect id="Base_cwj" rx="4" ry="4" x="0" y="0" width="66" height="24">
+						</rect>
+					</svg>
+					<div id="POPULAR_cwk">
+						<span>POPULAR</span>
+					</div>
+				</div>
+				<div id="Tag_cwl">
+					<svg class="Base_cwm">
+						<rect id="Base_cwm" rx="4" ry="4" x="0" y="0" width="38" height="24">
+						</rect>
+					</svg>
+					<div id="NEW_cwn">
+						<span>NEW</span>
+					</div>
+				</div>
+				<div id="Tag_cwo" class="Tag">
+					<svg class="Base_cwp">
+						<rect id="Base_cwp" rx="4" ry="4" x="0" y="0" width="35" height="24">
+						</rect>
+					</svg>
+					<div id="JOB_cwq">
+						<span>JOB</span>
+					</div>
+				</div>
+				<div id="ID012_389_438_cwr">
+					<span>012 389 438</span>
+				</div>
+				<div id="ID09_Sep_2017_cws">
+					<span>09 Sep 2017</span>
+				</div>
+				<div id="linaadobecom_cwt">
+					<span>lina@adobe.com</span>
+				</div>
+				<div id="Checkbox_cwu" class="Checkbox">
+					<svg class="Checkbox_cwv">
+						<rect id="Checkbox_cwv" rx="3" ry="3" x="0" y="0" width="16" height="16">
+						</rect>
+					</svg>
+				</div>
+				<div id="close_cww" class="close">
+					<svg class="close_cwx" viewBox="0 0 8 8">
+						<path id="close_cwx" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
+						</path>
+					</svg>
+				</div>
+			</div>
+			<div id="Item_cwy" class="Item">
+				<svg class="Base_cwz">
+					<rect id="Base_cwz" rx="0" ry="0" x="0" y="0" width="1080" height="56">
+					</rect>
+				</svg>
+				<svg class="Avatar_cw">
+					<ellipse id="Avatar_cw" rx="16" ry="16" cx="16" cy="16">
+					</ellipse>
+				</svg>
+				<div id="Lina_Bo_cw">
+					<span>Lina Bo</span>
+				</div>
+				<div id="Adobe_cw">
+					<span>Adobe</span>
+				</div>
 				<div id="Tag_cw">
-					<svg class="Base_dae">
-						<rect id="Base_dae" rx="4" ry="4" x="0" y="0" width="66" height="24">
+					<svg class="Base_cw">
+						<rect id="Base_cw" rx="4" ry="4" x="0" y="0" width="66" height="24">
 						</rect>
 					</svg>
 					<div id="POPULAR_cw">
 						<span>POPULAR</span>
 					</div>
 				</div>
-				<div id="Tag_ck">
-					<svg class="Base_daf">
-						<rect id="Base_daf" rx="4" ry="4" x="0" y="0" width="38" height="24">
+				<div id="Tag_cxa">
+					<svg class="Base_cxa">
+						<rect id="Base_cxa" rx="4" ry="4" x="0" y="0" width="38" height="24">
 						</rect>
 					</svg>
-					<div id="NEW_cz">
+					<div id="NEW_cw">
 						<span>NEW</span>
 					</div>
 				</div>
-				<div id="Tag_co" class="Tag">
-					<svg class="Base_dag">
-						<rect id="Base_dag" rx="4" ry="4" x="0" y="0" width="35" height="24">
+				<div id="Tag_cxb" class="Tag">
+					<svg class="Base_cxb">
+						<rect id="Base_cxb" rx="4" ry="4" x="0" y="0" width="35" height="24">
 						</rect>
 					</svg>
-					<div id="JOB_ca">
+					<div id="JOB_cxb">
 						<span>JOB</span>
 					</div>
 				</div>
-				<div id="ID012_389_438_ca">
+				<div id="ID012_389_438_cxc">
 					<span>012 389 438</span>
 				</div>
-				<div id="ID09_Sep_2017_ca">
+				<div id="ID09_Sep_2017_cxd">
 					<span>09 Sep 2017</span>
 				</div>
-				<div id="linaadobecom_ca">
+				<div id="linaadobecom_cxe">
 					<span>lina@adobe.com</span>
 				</div>
-				<div id="Checkbox_ca" class="Checkbox">
-					<svg class="Checkbox_cb">
-						<rect id="Checkbox_cb" rx="3" ry="3" x="0" y="0" width="16" height="16">
+				<div id="Checkbox_cxf" class="Checkbox">
+					<svg class="Checkbox_cxg">
+						<rect id="Checkbox_cxg" rx="3" ry="3" x="0" y="0" width="16" height="16">
 						</rect>
 					</svg>
 				</div>
-				<div id="close_cb" class="close">
-					<svg class="close_cd" viewBox="0 0 8 8">
-						<path id="close_cd" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
+				<div id="close_cxh" class="close">
+					<svg class="close_cxi" viewBox="0 0 8 8">
+						<path id="close_cxi" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
 						</path>
 					</svg>
 				</div>
 			</div>
-			<div id="Item_cd" class="Item">
-				<svg class="Base_dah">
-					<rect id="Base_dah" rx="0" ry="0" x="0" y="0" width="1080" height="56">
+			<div id="Item_cxj" class="Item">
+				<svg class="Base_cxk">
+					<rect id="Base_cxk" rx="0" ry="0" x="0" y="0" width="1080" height="56">
 					</rect>
 				</svg>
-				<svg class="Avatar_cc">
-					<ellipse id="Avatar_cc" rx="16" ry="16" cx="16" cy="16">
+				<svg class="Avatar_cxl">
+					<ellipse id="Avatar_cxl" rx="16" ry="16" cx="16" cy="16">
 					</ellipse>
 				</svg>
-				<div id="Lina_Bo_cd">
+				<div id="Lina_Bo_cxm">
 					<span>Lina Bo</span>
 				</div>
-				<div id="Adobe_cf">
+				<div id="Adobe_cxn">
 					<span>Adobe</span>
 				</div>
-				<div id="Tag_cq">
-					<svg class="Base_dai">
-						<rect id="Base_dai" rx="4" ry="4" x="0" y="0" width="66" height="24">
+				<div id="Tag_cxo">
+					<svg class="Base_cxp">
+						<rect id="Base_cxp" rx="4" ry="4" x="0" y="0" width="66" height="24">
 						</rect>
 					</svg>
-					<div id="POPULAR_ch">
+					<div id="POPULAR_cxq">
 						<span>POPULAR</span>
 					</div>
 				</div>
-				<div id="Tag_cs">
-					<svg class="Base_daj">
-						<rect id="Base_daj" rx="4" ry="4" x="0" y="0" width="38" height="24">
+				<div id="Tag_cxr">
+					<svg class="Base_cxs">
+						<rect id="Base_cxs" rx="4" ry="4" x="0" y="0" width="38" height="24">
 						</rect>
 					</svg>
-					<div id="NEW_ck">
+					<div id="NEW_cxt">
 						<span>NEW</span>
 					</div>
 				</div>
-				<div id="Tag_ct" class="Tag">
-					<svg class="Base_dak">
-						<rect id="Base_dak" rx="4" ry="4" x="0" y="0" width="35" height="24">
+				<div id="Tag_cxu" class="Tag">
+					<svg class="Base_cxv">
+						<rect id="Base_cxv" rx="4" ry="4" x="0" y="0" width="35" height="24">
 						</rect>
 					</svg>
-					<div id="JOB_co">
+					<div id="JOB_cxw">
 						<span>JOB</span>
 					</div>
 				</div>
-				<div id="ID012_389_438_co">
+				<div id="ID012_389_438_cxx">
 					<span>012 389 438</span>
 				</div>
-				<div id="ID09_Sep_2017_cp">
+				<div id="ID09_Sep_2017_cxy">
 					<span>09 Sep 2017</span>
 				</div>
-				<div id="linaadobecom_cs">
+				<div id="linaadobecom_cxz">
 					<span>lina@adobe.com</span>
 				</div>
-				<div id="Checkbox_cs" class="Checkbox">
-					<svg class="Checkbox_cu">
-						<rect id="Checkbox_cu" rx="3" ry="3" x="0" y="0" width="16" height="16">
+				<div id="Checkbox_cx" class="Checkbox">
+					<svg class="Checkbox_cya">
+						<rect id="Checkbox_cya" rx="3" ry="3" x="0" y="0" width="16" height="16">
 						</rect>
 					</svg>
 				</div>
-				<div id="close_cu" class="close">
-					<svg class="close_cv" viewBox="0 0 8 8">
-						<path id="close_cv" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
+				<div id="close_cx" class="close">
+					<svg class="close_cya" viewBox="0 0 8 8">
+						<path id="close_cya" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
 						</path>
 					</svg>
 				</div>
 			</div>
 			<div id="Item_cx" class="Item">
-				<svg class="Base_dal">
-					<rect id="Base_dal" rx="0" ry="0" x="0" y="0" width="1080" height="56">
+				<svg class="Base_cx">
+					<rect id="Base_cx" rx="0" ry="0" x="0" y="0" width="1080" height="56">
 					</rect>
 				</svg>
 				<svg class="Avatar_cx">
 					<ellipse id="Avatar_cx" rx="16" ry="16" cx="16" cy="16">
 					</ellipse>
 				</svg>
-				<div id="Lina_Bo_cb">
+				<div id="Lina_Bo_cx">
 					<span>Lina Bo</span>
 				</div>
-				<div id="Company_Name_cz">
-					<span>Company Name</span>
+				<div id="Adobe_cx">
+					<span>Adobe</span>
 				</div>
-				<div id="Tag_daa">
-					<svg class="Base_dam">
-						<rect id="Base_dam" rx="4" ry="4" x="0" y="0" width="66" height="24">
+				<div id="Tag_cx">
+					<svg class="Base_cya">
+						<rect id="Base_cya" rx="4" ry="4" x="0" y="0" width="66" height="24">
 						</rect>
 					</svg>
-					<div id="POPULAR_cc">
+					<div id="POPULAR_cyb">
 						<span>POPULAR</span>
 					</div>
 				</div>
-				<div id="Tag_dab">
-					<svg class="Base_dan">
-						<rect id="Base_dan" rx="4" ry="4" x="0" y="0" width="38" height="24">
+				<div id="Tag_cyc">
+					<svg class="Base_cyd">
+						<rect id="Base_cyd" rx="4" ry="4" x="0" y="0" width="38" height="24">
 						</rect>
 					</svg>
-					<div id="NEW_ca">
+					<div id="NEW_cye">
 						<span>NEW</span>
 					</div>
 				</div>
-				<div id="Tag_dac" class="Tag">
-					<svg class="Base_dao">
-						<rect id="Base_dao" rx="4" ry="4" x="0" y="0" width="35" height="24">
+				<div id="Tag_cyf" class="Tag">
+					<svg class="Base_cyg">
+						<rect id="Base_cyg" rx="4" ry="4" x="0" y="0" width="35" height="24">
 						</rect>
 					</svg>
-					<div id="JOB_cb">
+					<div id="JOB_cyh">
 						<span>JOB</span>
 					</div>
 				</div>
-				<div id="ID012_389_438_cb">
+				<div id="ID012_389_438_cyi">
 					<span>012 389 438</span>
 				</div>
-				<div id="ID09_Sep_2017_cb">
+				<div id="ID09_Sep_2017_cyj">
+					<span>09 Sep 2017</span>
+				</div>
+				<div id="linaadobecom_cyk">
+					<span>lina@adobe.com</span>
+				</div>
+				<div id="Checkbox_cyl" class="Checkbox">
+					<svg class="Checkbox_cym">
+						<rect id="Checkbox_cym" rx="3" ry="3" x="0" y="0" width="16" height="16">
+						</rect>
+					</svg>
+				</div>
+				<div id="close_cyn" class="close">
+					<svg class="close_cyo" viewBox="0 0 8 8">
+						<path id="close_cyo" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
+						</path>
+					</svg>
+				</div>
+			</div>
+			<div id="Item_cyp" class="Item">
+				<svg class="Base_cyq">
+					<rect id="Base_cyq" rx="0" ry="0" x="0" y="0" width="1080" height="56">
+					</rect>
+				</svg>
+				<svg class="Avatar_cyr">
+					<ellipse id="Avatar_cyr" rx="16" ry="16" cx="16" cy="16">
+					</ellipse>
+				</svg>
+				<div id="Lina_Bo_cys">
+					<span>Lina Bo</span>
+				</div>
+				<div id="Adobe_cyt">
+					<span>Adobe</span>
+				</div>
+				<div id="Tag_cyu">
+					<svg class="Base_cyv">
+						<rect id="Base_cyv" rx="4" ry="4" x="0" y="0" width="66" height="24">
+						</rect>
+					</svg>
+					<div id="POPULAR_cyw">
+						<span>POPULAR</span>
+					</div>
+				</div>
+				<div id="Tag_cyx">
+					<svg class="Base_cyy">
+						<rect id="Base_cyy" rx="4" ry="4" x="0" y="0" width="38" height="24">
+						</rect>
+					</svg>
+					<div id="NEW_cyz">
+						<span>NEW</span>
+					</div>
+				</div>
+				<div id="Tag_cy" class="Tag">
+					<svg class="Base_cy">
+						<rect id="Base_cy" rx="4" ry="4" x="0" y="0" width="35" height="24">
+						</rect>
+					</svg>
+					<div id="JOB_cy">
+						<span>JOB</span>
+					</div>
+				</div>
+				<div id="ID012_389_438_cy">
+					<span>012 389 438</span>
+				</div>
+				<div id="ID09_Sep_2017_cy">
+					<span>09 Sep 2017</span>
+				</div>
+				<div id="linaadobecom_cy">
+					<span>lina@adobe.com</span>
+				</div>
+				<div id="Checkbox_cy" class="Checkbox">
+					<svg class="Checkbox_cza">
+						<rect id="Checkbox_cza" rx="3" ry="3" x="0" y="0" width="16" height="16">
+						</rect>
+					</svg>
+				</div>
+				<div id="close_cy" class="close">
+					<svg class="close_cza" viewBox="0 0 8 8">
+						<path id="close_cza" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
+						</path>
+					</svg>
+				</div>
+			</div>
+			<div id="Item_cza" class="Item">
+				<svg class="Base_czb">
+					<rect id="Base_czb" rx="0" ry="0" x="0" y="0" width="1080" height="56">
+					</rect>
+				</svg>
+				<svg class="Avatar_czc">
+					<ellipse id="Avatar_czc" rx="16" ry="16" cx="16" cy="16">
+					</ellipse>
+				</svg>
+				<div id="Lina_Bo_czd">
+					<span>Lina Bo</span>
+				</div>
+				<div id="Adobe_cze">
+					<span>Adobe</span>
+				</div>
+				<div id="Tag_czf">
+					<svg class="Base_czg">
+						<rect id="Base_czg" rx="4" ry="4" x="0" y="0" width="66" height="24">
+						</rect>
+					</svg>
+					<div id="POPULAR_czh">
+						<span>POPULAR</span>
+					</div>
+				</div>
+				<div id="Tag_czi">
+					<svg class="Base_czj">
+						<rect id="Base_czj" rx="4" ry="4" x="0" y="0" width="38" height="24">
+						</rect>
+					</svg>
+					<div id="NEW_czk">
+						<span>NEW</span>
+					</div>
+				</div>
+				<div id="Tag_czl" class="Tag">
+					<svg class="Base_czm">
+						<rect id="Base_czm" rx="4" ry="4" x="0" y="0" width="35" height="24">
+						</rect>
+					</svg>
+					<div id="JOB_czn">
+						<span>JOB</span>
+					</div>
+				</div>
+				<div id="ID012_389_438_czo">
+					<span>012 389 438</span>
+				</div>
+				<div id="ID09_Sep_2017_czp">
+					<span>09 Sep 2017</span>
+				</div>
+				<div id="linaadobecom_czq">
+					<span>lina@adobe.com</span>
+				</div>
+				<div id="Checkbox_czr" class="Checkbox">
+					<svg class="Checkbox_czs">
+						<rect id="Checkbox_czs" rx="3" ry="3" x="0" y="0" width="16" height="16">
+						</rect>
+					</svg>
+				</div>
+				<div id="close_czt" class="close">
+					<svg class="close_czu" viewBox="0 0 8 8">
+						<path id="close_czu" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
+						</path>
+					</svg>
+				</div>
+			</div>
+			<div id="Item_czv" class="Item">
+				<svg class="Base_czw">
+					<rect id="Base_czw" rx="0" ry="0" x="0" y="0" width="1080" height="56">
+					</rect>
+				</svg>
+				<svg class="Avatar_czx">
+					<ellipse id="Avatar_czx" rx="16" ry="16" cx="16" cy="16">
+					</ellipse>
+				</svg>
+				<div id="Lina_Bo_czy">
+					<span>Lina Bo</span>
+				</div>
+				<div id="Adobe_czz">
+					<span>Adobe</span>
+				</div>
+				<div id="Tag_cz">
+					<svg class="Base_cb">
+						<rect id="Base_cb" rx="4" ry="4" x="0" y="0" width="66" height="24">
+						</rect>
+					</svg>
+					<div id="POPULAR_cz">
+						<span>POPULAR</span>
+					</div>
+				</div>
+				<div id="Tag_ca">
+					<svg class="Base_ce">
+						<rect id="Base_ce" rx="4" ry="4" x="0" y="0" width="38" height="24">
+						</rect>
+					</svg>
+					<div id="NEW_cz">
+						<span>NEW</span>
+					</div>
+				</div>
+				<div id="Tag_cb" class="Tag">
+					<svg class="Base_ck">
+						<rect id="Base_ck" rx="4" ry="4" x="0" y="0" width="35" height="24">
+						</rect>
+					</svg>
+					<div id="JOB_cz">
+						<span>JOB</span>
+					</div>
+				</div>
+				<div id="ID012_389_438_cz">
+					<span>012 389 438</span>
+				</div>
+				<div id="ID09_Sep_2017_ca">
 					<span>09 Sep 2017</span>
 				</div>
 				<div id="linaadobecom_cb">
@@ -6910,8 +7374,8 @@ window.application = new Application();
 				</div>
 			</div>
 			<div id="Item_ch" class="Item">
-				<svg class="Base_dap">
-					<rect id="Base_dap" rx="0" ry="0" x="0" y="0" width="1080" height="56">
+				<svg class="Base_co">
+					<rect id="Base_co" rx="0" ry="0" x="0" y="0" width="1080" height="56">
 					</rect>
 				</svg>
 				<svg class="Avatar_cj">
@@ -6924,499 +7388,51 @@ window.application = new Application();
 				<div id="Adobe_ck">
 					<span>Adobe</span>
 				</div>
-				<div id="Tag_dad">
-					<svg class="Base_daq">
-						<rect id="Base_daq" rx="4" ry="4" x="0" y="0" width="66" height="24">
+				<div id="Tag_cl">
+					<svg class="Base_cs">
+						<rect id="Base_cs" rx="4" ry="4" x="0" y="0" width="66" height="24">
 						</rect>
 					</svg>
 					<div id="POPULAR_co">
 						<span>POPULAR</span>
 					</div>
 				</div>
-				<div id="Tag_dae">
-					<svg class="Base_dar">
-						<rect id="Base_dar" rx="4" ry="4" x="0" y="0" width="38" height="24">
+				<div id="Tag_co">
+					<svg class="Base_daa">
+						<rect id="Base_daa" rx="4" ry="4" x="0" y="0" width="38" height="24">
 						</rect>
 					</svg>
-					<div id="NEW_cq">
+					<div id="NEW_cr">
 						<span>NEW</span>
 					</div>
 				</div>
-				<div id="Tag_daf" class="Tag">
-					<svg class="Base_das">
-						<rect id="Base_das" rx="4" ry="4" x="0" y="0" width="35" height="24">
+				<div id="Tag_cr" class="Tag">
+					<svg class="Base_dab">
+						<rect id="Base_dab" rx="4" ry="4" x="0" y="0" width="35" height="24">
 						</rect>
 					</svg>
-					<div id="JOB_cv">
+					<div id="JOB_ct">
 						<span>JOB</span>
 					</div>
 				</div>
-				<div id="ID012_389_438_cv">
+				<div id="ID012_389_438_cw">
 					<span>012 389 438</span>
 				</div>
-				<div id="ID09_Sep_2017_cv">
+				<div id="ID09_Sep_2017_cw">
 					<span>09 Sep 2017</span>
 				</div>
-				<div id="linaadobecom_cy">
+				<div id="linaadobecom_cw">
 					<span>lina@adobe.com</span>
 				</div>
-				<div id="Checkbox_cy" class="Checkbox">
-					<svg class="Checkbox_cg">
-						<rect id="Checkbox_cg" rx="3" ry="3" x="0" y="0" width="16" height="16">
+				<div id="Checkbox_cz" class="Checkbox">
+					<svg class="Checkbox_ca">
+						<rect id="Checkbox_ca" rx="3" ry="3" x="0" y="0" width="16" height="16">
 						</rect>
 					</svg>
 				</div>
-				<div id="close_ci" class="close">
-					<svg class="close_ck" viewBox="0 0 8 8">
-						<path id="close_ck" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
-						</path>
-					</svg>
-				</div>
-			</div>
-			<div id="Item_cf" class="Item">
-				<svg class="Base_dat">
-					<rect id="Base_dat" rx="0" ry="0" x="0" y="0" width="1080" height="56">
-					</rect>
-				</svg>
-				<svg class="Avatar_cb">
-					<ellipse id="Avatar_cb" rx="16" ry="16" cx="16" cy="16">
-					</ellipse>
-				</svg>
-				<div id="Lina_Bo_cc">
-					<span>Lina Bo</span>
-				</div>
-				<div id="Adobe_cb">
-					<span>Adobe</span>
-				</div>
-				<div id="Tag_dag">
-					<svg class="Base_dau">
-						<rect id="Base_dau" rx="4" ry="4" x="0" y="0" width="66" height="24">
-						</rect>
-					</svg>
-					<div id="POPULAR_ce">
-						<span>POPULAR</span>
-					</div>
-				</div>
-				<div id="Tag_dah">
-					<svg class="Base_dav">
-						<rect id="Base_dav" rx="4" ry="4" x="0" y="0" width="38" height="24">
-						</rect>
-					</svg>
-					<div id="NEW_cb">
-						<span>NEW</span>
-					</div>
-				</div>
-				<div id="Tag_dai" class="Tag">
-					<svg class="Base_daw">
-						<rect id="Base_daw" rx="4" ry="4" x="0" y="0" width="35" height="24">
-						</rect>
-					</svg>
-					<div id="JOB_ce">
-						<span>JOB</span>
-					</div>
-				</div>
-				<div id="ID012_389_438_cg">
-					<span>012 389 438</span>
-				</div>
-				<div id="ID09_Sep_2017_cg">
-					<span>09 Sep 2017</span>
-				</div>
-				<div id="linaadobecom_ci">
-					<span>lina@adobe.com</span>
-				</div>
-				<div id="Checkbox_ci" class="Checkbox">
-					<svg class="Checkbox_cv">
-						<rect id="Checkbox_cv" rx="3" ry="3" x="0" y="0" width="16" height="16">
-						</rect>
-					</svg>
-				</div>
-				<div id="close_cx" class="close">
-					<svg class="close_cy" viewBox="0 0 8 8">
-						<path id="close_cy" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
-						</path>
-					</svg>
-				</div>
-			</div>
-			<div id="Item_cm" class="Item">
-				<svg class="Base_dax">
-					<rect id="Base_dax" rx="0" ry="0" x="0" y="0" width="1080" height="56">
-					</rect>
-				</svg>
-				<svg class="Avatar_co">
-					<ellipse id="Avatar_co" rx="16" ry="16" cx="16" cy="16">
-					</ellipse>
-				</svg>
-				<div id="Lina_Bo_cq">
-					<span>Lina Bo</span>
-				</div>
-				<div id="Adobe_cq">
-					<span>Adobe</span>
-				</div>
-				<div id="Tag_daj">
-					<svg class="Base_day">
-						<rect id="Base_day" rx="4" ry="4" x="0" y="0" width="66" height="24">
-						</rect>
-					</svg>
-					<div id="POPULAR_ct">
-						<span>POPULAR</span>
-					</div>
-				</div>
-				<div id="Tag_dak">
-					<svg class="Base_daz">
-						<rect id="Base_daz" rx="4" ry="4" x="0" y="0" width="38" height="24">
-						</rect>
-					</svg>
-					<div id="NEW_cw">
-						<span>NEW</span>
-					</div>
-				</div>
-				<div id="Tag_dal" class="Tag">
-					<svg class="Base_dba">
-						<rect id="Base_dba" rx="4" ry="4" x="0" y="0" width="35" height="24">
-						</rect>
-					</svg>
-					<div id="JOB_cz">
-						<span>JOB</span>
-					</div>
-				</div>
-				<div id="ID012_389_438_cc">
-					<span>012 389 438</span>
-				</div>
-				<div id="ID09_Sep_2017_cd">
-					<span>09 Sep 2017</span>
-				</div>
-				<div id="linaadobecom_cd">
-					<span>lina@adobe.com</span>
-				</div>
-				<div id="Checkbox_daa" class="Checkbox">
-					<svg class="Checkbox_dab">
-						<rect id="Checkbox_dab" rx="3" ry="3" x="0" y="0" width="16" height="16">
-						</rect>
-					</svg>
-				</div>
-				<div id="close_daa" class="close">
-					<svg class="close_dab" viewBox="0 0 8 8">
-						<path id="close_dab" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
-						</path>
-					</svg>
-				</div>
-			</div>
-			<div id="Item_ci" class="Item">
-				<svg class="Base_dbb">
-					<rect id="Base_dbb" rx="0" ry="0" x="0" y="0" width="1080" height="56">
-					</rect>
-				</svg>
-				<svg class="Avatar_cd">
-					<ellipse id="Avatar_cd" rx="16" ry="16" cx="16" cy="16">
-					</ellipse>
-				</svg>
-				<div id="Lina_Bo_cf">
-					<span>Lina Bo</span>
-				</div>
-				<div id="Adobe_cc">
-					<span>Adobe</span>
-				</div>
-				<div id="Tag_dam">
-					<svg class="Base_dbc">
-						<rect id="Base_dbc" rx="4" ry="4" x="0" y="0" width="66" height="24">
-						</rect>
-					</svg>
-					<div id="POPULAR_cf">
-						<span>POPULAR</span>
-					</div>
-				</div>
-				<div id="Tag_dan">
-					<svg class="Base_dbd">
-						<rect id="Base_dbd" rx="4" ry="4" x="0" y="0" width="38" height="24">
-						</rect>
-					</svg>
-					<div id="NEW_ch">
-						<span>NEW</span>
-					</div>
-				</div>
-				<div id="Tag_dao" class="Tag">
-					<svg class="Base_dbe">
-						<rect id="Base_dbe" rx="4" ry="4" x="0" y="0" width="35" height="24">
-						</rect>
-					</svg>
-					<div id="JOB_ck">
-						<span>JOB</span>
-					</div>
-				</div>
-				<div id="ID012_389_438_cl">
-					<span>012 389 438</span>
-				</div>
-				<div id="ID09_Sep_2017_cn">
-					<span>09 Sep 2017</span>
-				</div>
-				<div id="linaadobecom_cn">
-					<span>lina@adobe.com</span>
-				</div>
-				<div id="Checkbox_dac" class="Checkbox">
-					<svg class="Checkbox_dad">
-						<rect id="Checkbox_dad" rx="3" ry="3" x="0" y="0" width="16" height="16">
-						</rect>
-					</svg>
-				</div>
-				<div id="close_dac" class="close">
-					<svg class="close_dad" viewBox="0 0 8 8">
-						<path id="close_dad" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
-						</path>
-					</svg>
-				</div>
-			</div>
-			<div id="Item_cs" class="Item">
-				<svg class="Base_dbf">
-					<rect id="Base_dbf" rx="0" ry="0" x="0" y="0" width="1080" height="56">
-					</rect>
-				</svg>
-				<svg class="Avatar_cu">
-					<ellipse id="Avatar_cu" rx="16" ry="16" cx="16" cy="16">
-					</ellipse>
-				</svg>
-				<div id="Lina_Bo_ch">
-					<span>Lina Bo</span>
-				</div>
-				<div id="Adobe_cw">
-					<span>Adobe</span>
-				</div>
-				<div id="Tag_dap">
-					<svg class="Base_dbg">
-						<rect id="Base_dbg" rx="4" ry="4" x="0" y="0" width="66" height="24">
-						</rect>
-					</svg>
-					<div id="POPULAR_cz">
-						<span>POPULAR</span>
-					</div>
-				</div>
-				<div id="Tag_daq">
-					<svg class="Base_dbh">
-						<rect id="Base_dbh" rx="4" ry="4" x="0" y="0" width="38" height="24">
-						</rect>
-					</svg>
-					<div id="NEW_cc">
-						<span>NEW</span>
-					</div>
-				</div>
-				<div id="Tag_dar" class="Tag">
-					<svg class="Base_dbi">
-						<rect id="Base_dbi" rx="4" ry="4" x="0" y="0" width="35" height="24">
-						</rect>
-					</svg>
-					<div id="JOB_cc">
-						<span>JOB</span>
-					</div>
-				</div>
-				<div id="ID012_389_438_ce">
-					<span>012 389 438</span>
-				</div>
-				<div id="ID09_Sep_2017_ce">
-					<span>09 Sep 2017</span>
-				</div>
-				<div id="linaadobecom_ce">
-					<span>lina@adobe.com</span>
-				</div>
-				<div id="Checkbox_dae" class="Checkbox">
-					<svg class="Checkbox_daf">
-						<rect id="Checkbox_daf" rx="3" ry="3" x="0" y="0" width="16" height="16">
-						</rect>
-					</svg>
-				</div>
-				<div id="close_dae" class="close">
-					<svg class="close_daf" viewBox="0 0 8 8">
-						<path id="close_daf" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
-						</path>
-					</svg>
-				</div>
-			</div>
-			<div id="Item_ck" class="Item">
-				<svg class="Base_dbj">
-					<rect id="Base_dbj" rx="0" ry="0" x="0" y="0" width="1080" height="56">
-					</rect>
-				</svg>
-				<svg class="Avatar_cf">
-					<ellipse id="Avatar_cf" rx="16" ry="16" cx="16" cy="16">
-					</ellipse>
-				</svg>
-				<div id="Lina_Bo_ck">
-					<span>Lina Bo</span>
-				</div>
-				<div id="Adobe_ch">
-					<span>Adobe</span>
-				</div>
-				<div id="Tag_das">
-					<svg class="Base_dbk">
-						<rect id="Base_dbk" rx="4" ry="4" x="0" y="0" width="66" height="24">
-						</rect>
-					</svg>
-					<div id="POPULAR_ck">
-						<span>POPULAR</span>
-					</div>
-				</div>
-				<div id="Tag_dat">
-					<svg class="Base_dbl">
-						<rect id="Base_dbl" rx="4" ry="4" x="0" y="0" width="38" height="24">
-						</rect>
-					</svg>
-					<div id="NEW_co">
-						<span>NEW</span>
-					</div>
-				</div>
-				<div id="Tag_dau" class="Tag">
-					<svg class="Base_dbm">
-						<rect id="Base_dbm" rx="4" ry="4" x="0" y="0" width="35" height="24">
-						</rect>
-					</svg>
-					<div id="JOB_cq">
-						<span>JOB</span>
-					</div>
-				</div>
-				<div id="ID012_389_438_cs">
-					<span>012 389 438</span>
-				</div>
-				<div id="ID09_Sep_2017_cs">
-					<span>09 Sep 2017</span>
-				</div>
-				<div id="linaadobecom_cu">
-					<span>lina@adobe.com</span>
-				</div>
-				<div id="Checkbox_dag" class="Checkbox">
-					<svg class="Checkbox_dah">
-						<rect id="Checkbox_dah" rx="3" ry="3" x="0" y="0" width="16" height="16">
-						</rect>
-					</svg>
-				</div>
-				<div id="close_dag" class="close">
-					<svg class="close_dah" viewBox="0 0 8 8">
-						<path id="close_dah" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
-						</path>
-					</svg>
-				</div>
-			</div>
-			<div id="Item_cy" class="Item">
-				<svg class="Base_dbn">
-					<rect id="Base_dbn" rx="0" ry="0" x="0" y="0" width="1080" height="56">
-					</rect>
-				</svg>
-				<svg class="Avatar_ch">
-					<ellipse id="Avatar_ch" rx="16" ry="16" cx="16" cy="16">
-					</ellipse>
-				</svg>
-				<div id="Lina_Bo_cm">
-					<span>Lina Bo</span>
-				</div>
-				<div id="Adobe_cd">
-					<span>Adobe</span>
-				</div>
-				<div id="Tag_dav">
-					<svg class="Base_dbo">
-						<rect id="Base_dbo" rx="4" ry="4" x="0" y="0" width="66" height="24">
-						</rect>
-					</svg>
-					<div id="POPULAR_cj">
-						<span>POPULAR</span>
-					</div>
-				</div>
-				<div id="Tag_daw">
-					<svg class="Base_dbp">
-						<rect id="Base_dbp" rx="4" ry="4" x="0" y="0" width="38" height="24">
-						</rect>
-					</svg>
-					<div id="NEW_cj">
-						<span>NEW</span>
-					</div>
-				</div>
-				<div id="Tag_dax" class="Tag">
-					<svg class="Base_dbq">
-						<rect id="Base_dbq" rx="4" ry="4" x="0" y="0" width="35" height="24">
-						</rect>
-					</svg>
-					<div id="JOB_cj">
-						<span>JOB</span>
-					</div>
-				</div>
-				<div id="ID012_389_438_cp">
-					<span>012 389 438</span>
-				</div>
-				<div id="ID09_Sep_2017_cl">
-					<span>09 Sep 2017</span>
-				</div>
-				<div id="linaadobecom_cg">
-					<span>lina@adobe.com</span>
-				</div>
-				<div id="Checkbox_dai" class="Checkbox">
-					<svg class="Checkbox_daj">
-						<rect id="Checkbox_daj" rx="3" ry="3" x="0" y="0" width="16" height="16">
-						</rect>
-					</svg>
-				</div>
-				<div id="close_dai" class="close">
-					<svg class="close_daj" viewBox="0 0 8 8">
-						<path id="close_daj" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
-						</path>
-					</svg>
-				</div>
-			</div>
-			<div id="Item_cn" class="Item">
-				<svg class="Base_dbr">
-					<rect id="Base_dbr" rx="0" ry="0" x="0" y="0" width="1080" height="56">
-					</rect>
-				</svg>
-				<svg class="Avatar_cm">
-					<ellipse id="Avatar_cm" rx="16" ry="16" cx="16" cy="16">
-					</ellipse>
-				</svg>
-				<div id="Lina_Bo_cn">
-					<span>Lina Bo</span>
-				</div>
-				<div id="Adobe_cn">
-					<span>Adobe</span>
-				</div>
-				<div id="Tag_day">
-					<svg class="Base_dbs">
-						<rect id="Base_dbs" rx="4" ry="4" x="0" y="0" width="66" height="24">
-						</rect>
-					</svg>
-					<div id="POPULAR_cq">
-						<span>POPULAR</span>
-					</div>
-				</div>
-				<div id="Tag_daz">
-					<svg class="Base_dbt">
-						<rect id="Base_dbt" rx="4" ry="4" x="0" y="0" width="38" height="24">
-						</rect>
-					</svg>
-					<div id="NEW_ct">
-						<span>NEW</span>
-					</div>
-				</div>
-				<div id="Tag_dba" class="Tag">
-					<svg class="Base_dbu">
-						<rect id="Base_dbu" rx="4" ry="4" x="0" y="0" width="35" height="24">
-						</rect>
-					</svg>
-					<div id="JOB_cw">
-						<span>JOB</span>
-					</div>
-				</div>
-				<div id="ID012_389_438_cy">
-					<span>012 389 438</span>
-				</div>
-				<div id="ID09_Sep_2017_cy">
-					<span>09 Sep 2017</span>
-				</div>
-				<div id="linaadobecom_cz">
-					<span>lina@adobe.com</span>
-				</div>
-				<div id="Checkbox_dak" class="Checkbox">
-					<svg class="Checkbox_dal">
-						<rect id="Checkbox_dal" rx="3" ry="3" x="0" y="0" width="16" height="16">
-						</rect>
-					</svg>
-				</div>
-				<div id="close_dak" class="close">
-					<svg class="close_dal" viewBox="0 0 8 8">
-						<path id="close_dal" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
+				<div id="close_cz" class="close">
+					<svg class="close_ca" viewBox="0 0 8 8">
+						<path id="close_ca" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
 						</path>
 					</svg>
 				</div>
@@ -7441,93 +7457,93 @@ window.application = new Application();
 	<div id="Asignacin_de_competencia_a_asi">
 		<span>Asignación de competencia a asignatura</span>
 	</div>
-	<div id="Error_1_ca" class="Error_1">
-		<svg class="Field_cc">
-			<rect id="Field_cc" rx="6" ry="6" x="0" y="0" width="867" height="40">
+	<div id="Error_1_c" class="Error_1">
+		<svg class="Field_c">
+			<rect id="Field_c" rx="6" ry="6" x="0" y="0" width="867" height="40">
 			</rect>
 		</svg>
-		<div id="Lina_Bo_co">
+		<div id="Lina_Bo_ca">
 			<span>Lina Bo</span>
 		</div>
 	</div>
-	<div id="Primary_Button_cd" class="Primary_Button">
-		<svg class="base_ce">
-			<rect id="base_ce" rx="6" ry="6" x="0" y="0" width="157" height="40">
+	<div id="Primary_Button_ca" class="Primary_Button">
+		<svg class="base_cb">
+			<rect id="base_cb" rx="6" ry="6" x="0" y="0" width="157" height="40">
 			</rect>
 		</svg>
-		<div id="Buscar_cf">
+		<div id="Buscar_cc">
 			<span>Buscar</span>
 		</div>
 	</div>
-	<div id="Arrow_Back_cy" class="Arrow_Back">
-		<svg class="Arrow_Back_cz" viewBox="0 0 16 16">
-			<path id="Arrow_Back_cz" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
+	<div id="Arrow_Back_cd" class="Arrow_Back">
+		<svg class="Arrow_Back_ce" viewBox="0 0 16 16">
+			<path id="Arrow_Back_ce" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
 			</path>
 		</svg>
 	</div>
-	<div id="Arrow_Back_daa" class="Arrow_Back">
-		<svg class="Arrow_Back_dab" viewBox="0 0 16 16">
-			<path id="Arrow_Back_dab" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
+	<div id="Arrow_Back_cf" class="Arrow_Back">
+		<svg class="Arrow_Back_cg" viewBox="0 0 16 16">
+			<path id="Arrow_Back_cg" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
 			</path>
 		</svg>
 	</div>
-	<div id="Arrow_Back_dac" class="Arrow_Back">
-		<svg class="Arrow_Back_dad" viewBox="0 0 16 16">
-			<path id="Arrow_Back_dad" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
+	<div id="Arrow_Back_ch" class="Arrow_Back">
+		<svg class="Arrow_Back_ci" viewBox="0 0 16 16">
+			<path id="Arrow_Back_ci" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
 			</path>
 		</svg>
 	</div>
-	<div id="Arrow_Back_dae" class="Arrow_Back">
-		<svg class="Arrow_Back_daf" viewBox="0 0 16 16">
-			<path id="Arrow_Back_daf" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
+	<div id="Arrow_Back_cj" class="Arrow_Back">
+		<svg class="Arrow_Back_ck" viewBox="0 0 16 16">
+			<path id="Arrow_Back_ck" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
 			</path>
 		</svg>
 	</div>
-	<div id="Arrow_Back_dag" class="Arrow_Back">
-		<svg class="Arrow_Back_dah" viewBox="0 0 16 16">
-			<path id="Arrow_Back_dah" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
+	<div id="Arrow_Back_cl" class="Arrow_Back">
+		<svg class="Arrow_Back_cm" viewBox="0 0 16 16">
+			<path id="Arrow_Back_cm" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
 			</path>
 		</svg>
 	</div>
-	<div id="Arrow_Back_dai" class="Arrow_Back">
-		<svg class="Arrow_Back_daj" viewBox="0 0 16 16">
-			<path id="Arrow_Back_daj" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
+	<div id="Arrow_Back_cn" class="Arrow_Back">
+		<svg class="Arrow_Back_co" viewBox="0 0 16 16">
+			<path id="Arrow_Back_co" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
 			</path>
 		</svg>
 	</div>
-	<div id="Arrow_Back_dak" class="Arrow_Back">
-		<svg class="Arrow_Back_dal" viewBox="0 0 16 16">
-			<path id="Arrow_Back_dal" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
+	<div id="Arrow_Back_cp" class="Arrow_Back">
+		<svg class="Arrow_Back_cq" viewBox="0 0 16 16">
+			<path id="Arrow_Back_cq" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
 			</path>
 		</svg>
 	</div>
-	<div id="Arrow_Back_dam" class="Arrow_Back">
-		<svg class="Arrow_Back_dan" viewBox="0 0 16 16">
-			<path id="Arrow_Back_dan" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
+	<div id="Arrow_Back_cr" class="Arrow_Back">
+		<svg class="Arrow_Back_cs" viewBox="0 0 16 16">
+			<path id="Arrow_Back_cs" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
 			</path>
 		</svg>
 	</div>
-	<div id="Arrow_Back_dao" class="Arrow_Back">
-		<svg class="Arrow_Back_dap" viewBox="0 0 16 16">
-			<path id="Arrow_Back_dap" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
+	<div id="Arrow_Back_ct" class="Arrow_Back">
+		<svg class="Arrow_Back_cu" viewBox="0 0 16 16">
+			<path id="Arrow_Back_cu" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
 			</path>
 		</svg>
 	</div>
-	<div id="Arrow_Back_daq" class="Arrow_Back">
-		<svg class="Arrow_Back_dar" viewBox="0 0 16 16">
-			<path id="Arrow_Back_dar" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
+	<div id="Arrow_Back_cv" class="Arrow_Back">
+		<svg class="Arrow_Back_cw" viewBox="0 0 16 16">
+			<path id="Arrow_Back_cw" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
 			</path>
 		</svg>
 	</div>
-	<div id="Arrow_Back_das" class="Arrow_Back">
-		<svg class="Arrow_Back_dat" viewBox="0 0 16 16">
-			<path id="Arrow_Back_dat" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
+	<div id="Arrow_Back_cx" class="Arrow_Back">
+		<svg class="Arrow_Back_cy" viewBox="0 0 16 16">
+			<path id="Arrow_Back_cy" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
 			</path>
 		</svg>
 	</div>
-	<div id="Arrow_Back_dau" class="Arrow_Back">
-		<svg class="Arrow_Back_dav" viewBox="0 0 16 16">
-			<path id="Arrow_Back_dav" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
+	<div id="Arrow_Back_cz" class="Arrow_Back">
+		<svg class="Arrow_Back_c" viewBox="0 0 16 16">
+			<path id="Arrow_Back_c" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
 			</path>
 		</svg>
 	</div>

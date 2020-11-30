@@ -4,16 +4,17 @@
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lista Evaluación</title>
+<title>Crear Evaluacion</title>
 <style id="applicationStylesheet" type="text/css">
 	.mediaViewInfo {
-		--web-view-name: Lista Evaluación;
-		--web-view-id: Lista_Evaluacin;
+		--web-view-name: Crear Evaluacion;
+		--web-view-id: Crear_Evaluacion;
 		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
 		--web-enable-deep-linking: true;
 	}
 	:root {
-		--web-view-ids: Lista_Evaluacin;
+		--web-view-ids: Crear_Evaluacion;
 	}
 	* {
 		margin: 0;
@@ -21,20 +22,31 @@
 		box-sizing: border-box;
 		border: none;
 	}
-	#Lista_Evaluacin {
+	#Crear_Evaluacion {
 		position: absolute;
 		width: 1440px;
 		height: 1000px;
 		overflow: hidden;
-		--web-view-name: Lista Evaluación;
-		--web-view-id: Lista_Evaluacin;
+		--web-view-name: Crear Evaluacion;
+		--web-view-id: Crear_Evaluacion;
 		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
 		--web-enable-deep-linking: true;
 	}
-	#Rectngulo_449_dpa {
+	@keyframes fadein {
+	
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	
+	}
+	#Rectngulo_450_dmk {
 		fill: rgba(246,248,249,1);
 	}
-	.Rectngulo_449_dpa {
+	.Rectngulo_450_dmk {
 		position: absolute;
 		overflow: visible;
 		width: 1440px;
@@ -42,2163 +54,115 @@
 		left: 0px;
 		top: 50px;
 	}
-	#List_Group_Desktop_dpb {
-		position: absolute;
-		width: 1080px;
-		height: 470px;
-		left: 180px;
-		top: 243px;
-		overflow: visible;
-	}
-	#Item_dpc {
-		position: absolute;
-		width: 1080px;
-		height: 441px;
-		left: 0px;
-		top: 29px;
-		overflow: hidden;
-	}
-	#Item_dpd {
-		position: absolute;
-		width: 1216px;
-		height: 116px;
-		left: 0px;
-		top: 0px;
-		overflow: visible;
-	}
-	#Base_dpe {
-		fill: rgba(255,255,255,1);
-	}
-	.Base_dpe {
-		position: absolute;
-		overflow: visible;
-		width: 1080px;
-		height: 56px;
-		left: 0px;
-		top: 0px;
-	}
-	#Avatar_dpf {
-		fill: rgba(166,173,180,1);
-	}
-	.Avatar_dpf {
-		position: absolute;
-		overflow: visible;
-		width: 32px;
-		height: 32px;
-		left: 48px;
-		top: 12px;
-	}
-	#Lina_Bo_dpg {
-		left: 88px;
-		top: 14px;
-		position: absolute;
-		overflow: visible;
-		width: 45px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Adobe_dph {
-		left: 392px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Tag_dpi {
-		position: absolute;
-		width: 66px;
-		height: 24px;
-		left: 652px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dpj {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dpj {
-		position: absolute;
-		overflow: visible;
-		width: 66px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#POPULAR_dpk {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 53px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_dpl {
-		position: absolute;
-		width: 38px;
-		height: 24px;
-		left: 726px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dpm {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dpm {
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#NEW_dpn {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 27px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_dpo {
-		position: absolute;
-		width: 35px;
-		height: 24px;
-		left: 772px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dpp {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dpp {
-		position: absolute;
-		overflow: visible;
-		width: 35px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#JOB_dpq {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 21px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#ID012_389_438_dpr {
-		left: 523px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#ID09_Sep_2017_dps {
-		left: 855px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#linaadobecom_dpt {
-		left: 88px;
-		top: 31px;
-		position: absolute;
-		overflow: visible;
-		width: 97px;
-		white-space: nowrap;
-		line-height: 23px;
-		margin-top: -5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(166,173,180,1);
-	}
-	#More_dpu {
-		position: absolute;
-		width: 18px;
-		height: 4px;
-		left: 1042px;
-		top: 26px;
-		overflow: visible;
-	}
-	#More_dpv {
-		fill: rgba(32,33,36,1);
-	}
-	.More_dpv {
-		overflow: visible;
-		position: absolute;
-		width: 18px;
-		height: 4px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Checkbox_dpw {
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 16px;
-		top: 20px;
-		overflow: visible;
-	}
-	#Checkbox_dpx {
-		fill: transparent;
-		stroke: rgba(235,237,237,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Checkbox_dpx {
-		position: absolute;
-		overflow: visible;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-	}
-	#close_dpy {
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 1208px;
-		top: 108px;
-		overflow: visible;
-	}
-	#close_dpz {
-		fill: rgba(32,33,36,1);
-	}
-	.close_dpz {
-		overflow: visible;
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Item_dp {
-		position: absolute;
-		width: 1216px;
-		height: 116px;
-		left: 0px;
-		top: 64px;
-		overflow: visible;
-	}
-	#Base_dqa {
-		fill: rgba(255,255,255,1);
-	}
-	.Base_dqa {
-		position: absolute;
-		overflow: visible;
-		width: 1080px;
-		height: 56px;
-		left: 0px;
-		top: 0px;
-	}
-	#Avatar_dp {
-		fill: rgba(166,173,180,1);
-	}
-	.Avatar_dp {
-		position: absolute;
-		overflow: visible;
-		width: 32px;
-		height: 32px;
-		left: 48px;
-		top: 12px;
-	}
-	#Lina_Bo_dp {
-		left: 88px;
-		top: 14px;
-		position: absolute;
-		overflow: visible;
-		width: 45px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Adobe_dp {
-		left: 392px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Tag_dp {
-		position: absolute;
-		width: 66px;
-		height: 24px;
-		left: 652px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dqb {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dqb {
-		position: absolute;
-		overflow: visible;
-		width: 66px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#POPULAR_dp {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 53px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_dqa {
-		position: absolute;
-		width: 38px;
-		height: 24px;
-		left: 726px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dqc {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dqc {
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#NEW_dqa {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 27px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_dqb {
-		position: absolute;
-		width: 35px;
-		height: 24px;
-		left: 772px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dqd {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dqd {
-		position: absolute;
-		overflow: visible;
-		width: 35px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#JOB_dqd {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 21px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#ID012_389_438_dqe {
-		left: 523px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#ID09_Sep_2017_dqf {
-		left: 855px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#linaadobecom_dqg {
-		left: 88px;
-		top: 31px;
-		position: absolute;
-		overflow: visible;
-		width: 97px;
-		white-space: nowrap;
-		line-height: 23px;
-		margin-top: -5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(166,173,180,1);
-	}
-	#More_dqh {
-		position: absolute;
-		width: 18px;
-		height: 4px;
-		left: 1042px;
-		top: 26px;
-		overflow: visible;
-	}
-	#More_dqi {
-		fill: rgba(32,33,36,1);
-	}
-	.More_dqi {
-		overflow: visible;
-		position: absolute;
-		width: 18px;
-		height: 4px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Checkbox_dqj {
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 16px;
-		top: 20px;
-		overflow: visible;
-	}
-	#Checkbox_dqk {
-		fill: transparent;
-		stroke: rgba(235,237,237,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Checkbox_dqk {
-		position: absolute;
-		overflow: visible;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-	}
-	#close_dql {
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 1208px;
-		top: 108px;
-		overflow: visible;
-	}
-	#close_dqm {
-		fill: rgba(32,33,36,1);
-	}
-	.close_dqm {
-		overflow: visible;
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Item_dqn {
-		position: absolute;
-		width: 1216px;
-		height: 116px;
-		left: 0px;
-		top: 128px;
-		overflow: visible;
-	}
-	#Base_dqo {
-		fill: rgba(255,255,255,1);
-	}
-	.Base_dqo {
-		position: absolute;
-		overflow: visible;
-		width: 1080px;
-		height: 56px;
-		left: 0px;
-		top: 0px;
-	}
-	#Avatar_dqp {
-		fill: rgba(166,173,180,1);
-	}
-	.Avatar_dqp {
-		position: absolute;
-		overflow: visible;
-		width: 32px;
-		height: 32px;
-		left: 48px;
-		top: 12px;
-	}
-	#Lina_Bo_dqq {
-		left: 88px;
-		top: 14px;
-		position: absolute;
-		overflow: visible;
-		width: 45px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Adobe_dqr {
-		left: 392px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Tag_dqs {
-		position: absolute;
-		width: 66px;
-		height: 24px;
-		left: 652px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dqt {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dqt {
-		position: absolute;
-		overflow: visible;
-		width: 66px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#POPULAR_dqu {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 53px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_dqv {
-		position: absolute;
-		width: 38px;
-		height: 24px;
-		left: 726px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dqw {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dqw {
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#NEW_dqx {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 27px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_dqy {
-		position: absolute;
-		width: 35px;
-		height: 24px;
-		left: 772px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dqz {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dqz {
-		position: absolute;
-		overflow: visible;
-		width: 35px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#JOB_dq {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 21px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#ID012_389_438_dq {
-		left: 523px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#ID09_Sep_2017_dq {
-		left: 855px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#linaadobecom_dq {
-		left: 88px;
-		top: 31px;
-		position: absolute;
-		overflow: visible;
-		width: 97px;
-		white-space: nowrap;
-		line-height: 23px;
-		margin-top: -5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(166,173,180,1);
-	}
-	#More_dq {
-		position: absolute;
-		width: 18px;
-		height: 4px;
-		left: 1042px;
-		top: 26px;
-		overflow: visible;
-	}
-	#More_dra {
-		fill: rgba(32,33,36,1);
-	}
-	.More_dra {
-		overflow: visible;
-		position: absolute;
-		width: 18px;
-		height: 4px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Checkbox_dq {
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 16px;
-		top: 20px;
-		overflow: visible;
-	}
-	#Checkbox_dra {
-		fill: transparent;
-		stroke: rgba(235,237,237,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Checkbox_dra {
-		position: absolute;
-		overflow: visible;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-	}
-	#close_dq {
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 1208px;
-		top: 108px;
-		overflow: visible;
-	}
-	#close_dra {
-		fill: rgba(32,33,36,1);
-	}
-	.close_dra {
-		overflow: visible;
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Item_dra {
-		position: absolute;
-		width: 1216px;
-		height: 116px;
-		left: 0px;
-		top: 192px;
-		overflow: visible;
-	}
-	#Base_drb {
-		fill: rgba(255,255,255,1);
-	}
-	.Base_drb {
-		position: absolute;
-		overflow: visible;
-		width: 1080px;
-		height: 56px;
-		left: 0px;
-		top: 0px;
-	}
-	#Avatar_drc {
-		fill: rgba(166,173,180,1);
-	}
-	.Avatar_drc {
-		position: absolute;
-		overflow: visible;
-		width: 32px;
-		height: 32px;
-		left: 48px;
-		top: 12px;
-	}
-	#Lina_Bo_drd {
-		left: 88px;
-		top: 14px;
-		position: absolute;
-		overflow: visible;
-		width: 45px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Company_Name_dre {
-		left: 392px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 93px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Tag_drf {
-		position: absolute;
-		width: 66px;
-		height: 24px;
-		left: 652px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_drg {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_drg {
-		position: absolute;
-		overflow: visible;
-		width: 66px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#POPULAR_drh {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 53px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_dri {
-		position: absolute;
-		width: 38px;
-		height: 24px;
-		left: 726px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_drj {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_drj {
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#NEW_drk {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 27px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_drl {
-		position: absolute;
-		width: 35px;
-		height: 24px;
-		left: 772px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_drm {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_drm {
-		position: absolute;
-		overflow: visible;
-		width: 35px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#JOB_drn {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 21px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#ID012_389_438_dro {
-		left: 523px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#ID09_Sep_2017_drp {
-		left: 855px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#linaadobecom_drq {
-		left: 88px;
-		top: 31px;
-		position: absolute;
-		overflow: visible;
-		width: 97px;
-		white-space: nowrap;
-		line-height: 23px;
-		margin-top: -5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(166,173,180,1);
-	}
-	#More_drr {
-		position: absolute;
-		width: 18px;
-		height: 4px;
-		left: 1042px;
-		top: 26px;
-		overflow: visible;
-	}
-	#More_drs {
-		fill: rgba(32,33,36,1);
-	}
-	.More_drs {
-		overflow: visible;
-		position: absolute;
-		width: 18px;
-		height: 4px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Checkbox_drt {
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 16px;
-		top: 20px;
-		overflow: visible;
-	}
-	#Checkbox_dru {
-		fill: transparent;
-		stroke: rgba(235,237,237,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Checkbox_dru {
-		position: absolute;
-		overflow: visible;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-	}
-	#close_drv {
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 1208px;
-		top: 108px;
-		overflow: visible;
-	}
-	#close_drw {
-		fill: rgba(32,33,36,1);
-	}
-	.close_drw {
-		overflow: visible;
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Item_drx {
-		position: absolute;
-		width: 1216px;
-		height: 116px;
-		left: 0px;
-		top: 256px;
-		overflow: visible;
-	}
-	#Base_dry {
-		fill: rgba(255,255,255,1);
-	}
-	.Base_dry {
-		position: absolute;
-		overflow: visible;
-		width: 1080px;
-		height: 56px;
-		left: 0px;
-		top: 0px;
-	}
-	#Avatar_drz {
-		fill: rgba(166,173,180,1);
-	}
-	.Avatar_drz {
-		position: absolute;
-		overflow: visible;
-		width: 32px;
-		height: 32px;
-		left: 48px;
-		top: 12px;
-	}
-	#Lina_Bo_dr {
-		left: 88px;
-		top: 14px;
-		position: absolute;
-		overflow: visible;
-		width: 45px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Adobe_dr {
-		left: 392px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Tag_dsa {
-		position: absolute;
-		width: 66px;
-		height: 24px;
-		left: 652px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dr {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dr {
-		position: absolute;
-		overflow: visible;
-		width: 66px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#POPULAR_dr {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 53px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_dsb {
-		position: absolute;
-		width: 38px;
-		height: 24px;
-		left: 726px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dsa {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dsa {
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#NEW_dr {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 27px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_dsc {
-		position: absolute;
-		width: 35px;
-		height: 24px;
-		left: 772px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dsb {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dsb {
-		position: absolute;
-		overflow: visible;
-		width: 35px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#JOB_dsa {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 21px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#ID012_389_438_dsb {
-		left: 523px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#ID09_Sep_2017_dsc {
-		left: 855px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#linaadobecom_dsd {
-		left: 88px;
-		top: 31px;
-		position: absolute;
-		overflow: visible;
-		width: 97px;
-		white-space: nowrap;
-		line-height: 23px;
-		margin-top: -5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(166,173,180,1);
-	}
-	#More_dse {
-		position: absolute;
-		width: 18px;
-		height: 4px;
-		left: 1042px;
-		top: 26px;
-		overflow: visible;
-	}
-	#More_dsf {
-		fill: rgba(32,33,36,1);
-	}
-	.More_dsf {
-		overflow: visible;
-		position: absolute;
-		width: 18px;
-		height: 4px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Checkbox_dsg {
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 16px;
-		top: 20px;
-		overflow: visible;
-	}
-	#Checkbox_dsh {
-		fill: transparent;
-		stroke: rgba(235,237,237,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Checkbox_dsh {
-		position: absolute;
-		overflow: visible;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-	}
-	#close_dsi {
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 1208px;
-		top: 108px;
-		overflow: visible;
-	}
-	#close_dsj {
-		fill: rgba(32,33,36,1);
-	}
-	.close_dsj {
-		overflow: visible;
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Item_dsk {
-		position: absolute;
-		width: 1216px;
-		height: 116px;
-		left: 0px;
-		top: 320px;
-		overflow: visible;
-	}
-	#Base_dsl {
-		fill: rgba(255,255,255,1);
-	}
-	.Base_dsl {
-		position: absolute;
-		overflow: visible;
-		width: 1080px;
-		height: 56px;
-		left: 0px;
-		top: 0px;
-	}
-	#Avatar_dsm {
-		fill: rgba(166,173,180,1);
-	}
-	.Avatar_dsm {
-		position: absolute;
-		overflow: visible;
-		width: 32px;
-		height: 32px;
-		left: 48px;
-		top: 12px;
-	}
-	#Lina_Bo_dsn {
-		left: 88px;
-		top: 14px;
-		position: absolute;
-		overflow: visible;
-		width: 45px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Adobe_dso {
-		left: 392px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Tag_dsp {
-		position: absolute;
-		width: 66px;
-		height: 24px;
-		left: 652px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dsq {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dsq {
-		position: absolute;
-		overflow: visible;
-		width: 66px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#POPULAR_dsr {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 53px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_dss {
-		position: absolute;
-		width: 38px;
-		height: 24px;
-		left: 726px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dst {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dst {
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#NEW_dsu {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 27px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_dsv {
-		position: absolute;
-		width: 35px;
-		height: 24px;
-		left: 772px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dsw {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dsw {
-		position: absolute;
-		overflow: visible;
-		width: 35px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#JOB_dsx {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 21px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#ID012_389_438_dsy {
-		left: 523px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#ID09_Sep_2017_dsz {
-		left: 855px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#linaadobecom_ds {
-		left: 88px;
-		top: 31px;
-		position: absolute;
-		overflow: visible;
-		width: 97px;
-		white-space: nowrap;
-		line-height: 23px;
-		margin-top: -5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(166,173,180,1);
-	}
-	#More_ds {
-		position: absolute;
-		width: 18px;
-		height: 4px;
-		left: 1042px;
-		top: 26px;
-		overflow: visible;
-	}
-	#More_dta {
-		fill: rgba(32,33,36,1);
-	}
-	.More_dta {
-		overflow: visible;
-		position: absolute;
-		width: 18px;
-		height: 4px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Checkbox_ds {
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 16px;
-		top: 20px;
-		overflow: visible;
-	}
-	#Checkbox_dta {
-		fill: transparent;
-		stroke: rgba(235,237,237,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Checkbox_dta {
-		position: absolute;
-		overflow: visible;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-	}
-	#close_ds {
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 1208px;
-		top: 108px;
-		overflow: visible;
-	}
-	#close_dta {
-		fill: rgba(32,33,36,1);
-	}
-	.close_dta {
-		overflow: visible;
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Item_ds {
-		position: absolute;
-		width: 1216px;
-		height: 116px;
-		left: 0px;
-		top: 384px;
-		overflow: visible;
-	}
-	#Base_dta {
-		fill: rgba(255,255,255,1);
-	}
-	.Base_dta {
-		position: absolute;
-		overflow: visible;
-		width: 1080px;
-		height: 56px;
-		left: 0px;
-		top: 0px;
-	}
-	#Avatar_ds {
-		fill: rgba(166,173,180,1);
-	}
-	.Avatar_ds {
-		position: absolute;
-		overflow: visible;
-		width: 32px;
-		height: 32px;
-		left: 48px;
-		top: 12px;
-	}
-	#Lina_Bo_dta {
-		left: 88px;
-		top: 14px;
-		position: absolute;
-		overflow: visible;
-		width: 45px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Adobe_dtb {
-		left: 392px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Tag_dtc {
-		position: absolute;
-		width: 66px;
-		height: 24px;
-		left: 652px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dtd {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dtd {
-		position: absolute;
-		overflow: visible;
-		width: 66px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#POPULAR_dte {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 53px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_dtf {
-		position: absolute;
-		width: 38px;
-		height: 24px;
-		left: 726px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dtg {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dtg {
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#NEW_dth {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 27px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_dti {
-		position: absolute;
-		width: 35px;
-		height: 24px;
-		left: 772px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_dtj {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_dtj {
-		position: absolute;
-		overflow: visible;
-		width: 35px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#JOB_dtk {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 21px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#ID012_389_438_dtl {
-		left: 523px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#ID09_Sep_2017_dtm {
-		left: 855px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#linaadobecom_dtn {
-		left: 88px;
-		top: 31px;
-		position: absolute;
-		overflow: visible;
-		width: 97px;
-		white-space: nowrap;
-		line-height: 23px;
-		margin-top: -5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(166,173,180,1);
-	}
-	#More_dto {
-		position: absolute;
-		width: 18px;
-		height: 4px;
-		left: 1042px;
-		top: 26px;
-		overflow: visible;
-	}
-	#More_dtp {
-		fill: rgba(32,33,36,1);
-	}
-	.More_dtp {
-		overflow: visible;
-		position: absolute;
-		width: 18px;
-		height: 4px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Checkbox_dtq {
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 16px;
-		top: 20px;
-		overflow: visible;
-	}
-	#Checkbox_dtr {
-		fill: transparent;
-		stroke: rgba(235,237,237,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Checkbox_dtr {
-		position: absolute;
-		overflow: visible;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-	}
-	#close_dts {
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 1208px;
-		top: 108px;
-		overflow: visible;
-	}
-	#close_dtt {
-		fill: rgba(32,33,36,1);
-	}
-	.close_dtt {
-		overflow: visible;
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#BASIC_INFO_dtu {
-		left: 48px;
-		top: 0px;
-		position: absolute;
-		overflow: visible;
-		width: 63px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Helvetica;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#COMPANY_dtv {
-		left: 389px;
-		top: 0px;
-		position: absolute;
-		overflow: visible;
-		width: 56px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Helvetica;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#PHONE_dtw {
-		left: 522px;
-		top: 0px;
-		position: absolute;
-		overflow: visible;
-		width: 40px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Helvetica;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#TAGS_dtx {
-		left: 651px;
-		top: 0px;
-		position: absolute;
-		overflow: visible;
-		width: 30px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Helvetica;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#CREATED_DATE_dty {
-		left: 851px;
-		top: 0px;
-		position: absolute;
-		overflow: visible;
-		width: 84px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Helvetica;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Header_dtz {
-		position: absolute;
-		width: 135px;
-		height: 58px;
-		left: 1125px;
-		top: 328px;
-		overflow: visible;
-	}
-	#dropdown_dt {
-		position: absolute;
-		width: 135px;
-		height: 58px;
-		left: 0px;
-		top: 0px;
-		overflow: visible;
-	}
-	#Rectngulo_431_dt {
-		fill: rgba(255,255,255,1);
-		stroke: rgba(52,54,56,1);
-		stroke-width: 1px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Rectngulo_431_dt {
-		position: absolute;
-		overflow: visible;
-		width: 135px;
-		height: 58px;
-		left: 0px;
-		top: 0px;
-	}
-	#MODIFICAR_dt {
-		left: 13px;
-		top: 6px;
-		position: absolute;
-		overflow: hidden;
-		width: 115px;
-		height: 10px;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: right;
-		font-family: Helvetica;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(52,54,56,1);
-	}
-	#ELIMINAR_dt {
-		left: 13px;
-		top: 36px;
-		position: absolute;
-		overflow: hidden;
-		width: 115px;
-		height: 10px;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: right;
-		font-family: Helvetica;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(52,54,56,1);
-	}
-	#Primary_Button_dt {
-		position: absolute;
-		width: 188px;
-		height: 34px;
-		left: 1072px;
-		top: 100px;
-		overflow: visible;
-	}
-	#base_dt {
+	#Primary_Button_dml {
+		position: absolute;
+		width: 299px;
+		height: 70px;
+		left: 571px;
+		top: 873px;
+		overflow: visible;
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: page;
+		--web-action-target: Lista_Evaluacion.html;
+		cursor: pointer;
+	}
+	#base_dmm {
 		fill: rgba(250,105,128,1);
 	}
-	.base_dt {
+	.base_dmm {
 		position: absolute;
 		overflow: visible;
-		width: 188px;
-		height: 34px;
+		width: 299px;
+		height: 70px;
 		left: 0px;
 		top: 0px;
 	}
-	#Crear_evaluacin {
-		left: 30px;
-		top: 9px;
+	#Crear_dmn {
+		left: 124px;
+		top: 22px;
 		position: absolute;
 		overflow: visible;
-		width: 129px;
+		width: 53px;
 		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -2px;
 		text-align: center;
 		font-family: Helvetica;
 		font-style: normal;
 		font-weight: bold;
-		font-size: 16px;
+		font-size: 20px;
 		color: rgba(255,255,255,1);
 	}
-	#Header_-_Desktop_dt {
+	#Crear_evaluacion {
+		left: 583px;
+		top: 132px;
+		position: absolute;
+		overflow: visible;
+		width: 276px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 35px;
+		color: rgba(250,105,128,1);
+	}
+	#Focus_1_dmp {
+		position: absolute;
+		width: 360px;
+		height: 61px;
+		left: 540px;
+		top: 350px;
+		overflow: visible;
+	}
+	#Field_dmq {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(250,105,128,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Field_dmq {
+		position: absolute;
+		overflow: visible;
+		width: 360px;
+		height: 40px;
+		left: 0px;
+		top: 21px;
+	}
+	#Fecha_Inicio_1_Evaluacin {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 157px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 13px;
+		color: rgba(250,105,128,1);
+	}
+	#ID15092020 {
+		left: 16px;
+		top: 35px;
+		position: absolute;
+		overflow: visible;
+		width: 67px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Header_-_Desktop_dmt {
 		position: absolute;
 		width: 1440px;
 		height: 50px;
@@ -2206,10 +170,10 @@
 		top: 0px;
 		overflow: visible;
 	}
-	#base_dua {
+	#base_dmu {
 		fill: rgba(246,248,249,1);
 	}
-	.base_dua {
+	.base_dmu {
 		position: absolute;
 		overflow: visible;
 		width: 1440px;
@@ -2217,7 +181,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#LOGO_dt {
+	#LOGO_dmv {
 		left: 20px;
 		top: 18px;
 		position: absolute;
@@ -2233,13 +197,17 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#INICIO_dua {
+	#INICIO_dmw {
 		left: 605px;
 		top: 19px;
 		position: absolute;
 		overflow: visible;
 		width: 35px;
 		white-space: nowrap;
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: page;
+		--web-action-target: Home_admin.html;
+		cursor: pointer;
 		line-height: 20px;
 		margin-top: -4.5px;
 		text-align: left;
@@ -2249,7 +217,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#PROFESORES_dub {
+	#PROFESORES_dmx {
 		opacity: 0.5;
 		left: 1060px;
 		top: 18px;
@@ -2266,7 +234,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#GRUPOS_duc {
+	#GRUPOS_dmy {
 		opacity: 0.5;
 		left: 1178px;
 		top: 18px;
@@ -2283,7 +251,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#christopher-campbell-28567-uns_dud {
+	#christopher-campbell-28567-uns_dmz {
 		position: absolute;
 		width: 30px;
 		height: 30px;
@@ -2291,7 +259,7 @@
 		top: 10px;
 		overflow: visible;
 	}
-	#ASIGNATURAS_due {
+	#ASIGNATURAS_dm {
 		opacity: 0.5;
 		left: 1268px;
 		top: 18px;
@@ -2308,7 +276,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#COMPETENCIAS_duf {
+	#COMPETENCIAS_dm {
 		opacity: 0.5;
 		left: 831px;
 		top: 18px;
@@ -2325,7 +293,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#ADMINISTRADORES_dug {
+	#ADMINISTRADORES_dm {
 		opacity: 0.5;
 		left: 681px;
 		top: 18px;
@@ -2342,7 +310,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#ALUMNOS_duh {
+	#ALUMNOS_dm {
 		opacity: 0.5;
 		left: 962px;
 		top: 18px;
@@ -2358,6 +326,449 @@
 		font-weight: bold;
 		font-size: 11px;
 		color: rgba(52,54,56,1);
+	}
+	#Error_Dropdown_dm {
+		position: absolute;
+		width: 360px;
+		height: 63px;
+		left: 540px;
+		top: 185px;
+		overflow: visible;
+	}
+	#Field_dm {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(250,105,128,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Field_dm {
+		position: absolute;
+		overflow: visible;
+		width: 360px;
+		height: 40px;
+		left: 0px;
+		top: 23px;
+	}
+	#Select_dm {
+		left: 16px;
+		top: 35px;
+		position: absolute;
+		overflow: visible;
+		width: 50px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Helvetica;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(166,173,180,1);
+	}
+	#Tipo {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 28px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Helvetica;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 13px;
+		color: rgba(255,77,77,1);
+	}
+	#dropdown_dm {
+		position: absolute;
+		width: 10px;
+		height: 6px;
+		left: 334px;
+		top: 40px;
+		overflow: visible;
+	}
+	#dropdown_dna {
+		fill: rgba(166,173,180,1);
+	}
+	.dropdown_dna {
+		overflow: visible;
+		position: absolute;
+		width: 10px;
+		height: 6px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Focus_1_dna {
+		position: absolute;
+		width: 360px;
+		height: 61px;
+		left: 540px;
+		top: 434px;
+		overflow: visible;
+	}
+	#Field_dnb {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(250,105,128,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Field_dnb {
+		position: absolute;
+		overflow: visible;
+		width: 360px;
+		height: 40px;
+		left: 0px;
+		top: 21px;
+	}
+	#Fecha_Fin_1_Evaluacin {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 142px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 13px;
+		color: rgba(250,105,128,1);
+	}
+	#ID23122020 {
+		left: 16px;
+		top: 35px;
+		position: absolute;
+		overflow: visible;
+		width: 66px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Focus_1_dne {
+		position: absolute;
+		width: 360px;
+		height: 61px;
+		left: 540px;
+		top: 518px;
+		overflow: visible;
+	}
+	#Field_dnf {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(250,105,128,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Field_dnf {
+		position: absolute;
+		overflow: visible;
+		width: 360px;
+		height: 40px;
+		left: 0px;
+		top: 21px;
+	}
+	#Fecha_Inicio_2_Evaluacin {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 159px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 13px;
+		color: rgba(250,105,128,1);
+	}
+	#ID07012021 {
+		left: 16px;
+		top: 35px;
+		position: absolute;
+		overflow: visible;
+		width: 64px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Header_dni {
+		position: absolute;
+		width: 360px;
+		height: 96px;
+		left: 540px;
+		top: 243px;
+		overflow: visible;
+	}
+	#dropdown_dnj {
+		position: absolute;
+		width: 360px;
+		height: 96px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Rectngulo_431_dnk {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(52,54,56,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectngulo_431_dnk {
+		position: absolute;
+		overflow: visible;
+		width: 360px;
+		height: 96px;
+		left: 0px;
+		top: 0px;
+	}
+	#TRIMESTRAL {
+		left: 13px;
+		top: 6px;
+		position: absolute;
+		overflow: visible;
+		width: 340px;
+		height: 24px;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: right;
+		font-family: Helvetica;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(52,54,56,1);
+	}
+	#NICA {
+		left: 13px;
+		top: 65px;
+		position: absolute;
+		overflow: visible;
+		width: 340px;
+		height: 18px;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: right;
+		font-family: Helvetica;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(52,54,56,1);
+	}
+	#CUATRIMESTRAL {
+		left: 13px;
+		top: 35px;
+		position: absolute;
+		overflow: visible;
+		width: 340px;
+		height: 23px;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: right;
+		font-family: Helvetica;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(52,54,56,1);
+	}
+	#Focus_1_dno {
+		position: absolute;
+		width: 360px;
+		height: 61px;
+		left: 540px;
+		top: 602px;
+		overflow: visible;
+	}
+	#Field_dnp {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(250,105,128,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Field_dnp {
+		position: absolute;
+		overflow: visible;
+		width: 360px;
+		height: 40px;
+		left: 0px;
+		top: 21px;
+	}
+	#Fecha_Fin_2_Evaluacin {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 144px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 13px;
+		color: rgba(250,105,128,1);
+	}
+	#ID17042021 {
+		left: 16px;
+		top: 35px;
+		position: absolute;
+		overflow: visible;
+		width: 64px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Focus_1_dns {
+		position: absolute;
+		width: 360px;
+		height: 61px;
+		left: 540px;
+		top: 686px;
+		overflow: visible;
+	}
+	#Field_dnt {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(250,105,128,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Field_dnt {
+		position: absolute;
+		overflow: visible;
+		width: 360px;
+		height: 40px;
+		left: 0px;
+		top: 21px;
+	}
+	#Fecha_Inicio_3_Evaluacin {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 159px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 13px;
+		color: rgba(250,105,128,1);
+	}
+	#ID25042021 {
+		left: 16px;
+		top: 35px;
+		position: absolute;
+		overflow: visible;
+		width: 67px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Focus_1_dnw {
+		position: absolute;
+		width: 360px;
+		height: 61px;
+		left: 540px;
+		top: 770px;
+		overflow: visible;
+	}
+	#Field_dnx {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(250,105,128,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Field_dnx {
+		position: absolute;
+		overflow: visible;
+		width: 360px;
+		height: 40px;
+		left: 0px;
+		top: 21px;
+	}
+	#Fecha_Fin_2_Evaluacin_dny {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 144px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 13px;
+		color: rgba(250,105,128,1);
+	}
+	#ID24062021 {
+		left: 16px;
+		top: 35px;
+		position: absolute;
+		overflow: visible;
+		width: 67px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
 	}
 </style>
 <script id="applicationScript">
@@ -5200,573 +3611,160 @@ window.application = new Application();
 </script>
 </head>
 <body>
-<div id="Lista_Evaluacin">
-	<svg class="Rectngulo_449_dpa">
-		<rect id="Rectngulo_449_dpa" rx="0" ry="0" x="0" y="0" width="1440" height="950">
+<div id="Crear_Evaluacion">
+	<svg class="Rectngulo_450_dmk">
+		<rect id="Rectngulo_450_dmk" rx="0" ry="0" x="0" y="0" width="1440" height="950">
 		</rect>
 	</svg>
-	<div id="List_Group_Desktop_dpb" class="List_Group_Desktop">
-		<div id="Item_dpc">
-			<div id="Item_dpd" class="Item">
-				<svg class="Base_dpe">
-					<rect id="Base_dpe" rx="0" ry="0" x="0" y="0" width="1080" height="56">
-					</rect>
-				</svg>
-				<svg class="Avatar_dpf">
-					<ellipse id="Avatar_dpf" rx="16" ry="16" cx="16" cy="16">
-					</ellipse>
-				</svg>
-				<div id="Lina_Bo_dpg">
-					<span>Lina Bo</span>
-				</div>
-				<div id="Adobe_dph">
-					<span>Adobe</span>
-				</div>
-				<div id="Tag_dpi">
-					<svg class="Base_dpj">
-						<rect id="Base_dpj" rx="4" ry="4" x="0" y="0" width="66" height="24">
-						</rect>
-					</svg>
-					<div id="POPULAR_dpk">
-						<span>POPULAR</span>
-					</div>
-				</div>
-				<div id="Tag_dpl">
-					<svg class="Base_dpm">
-						<rect id="Base_dpm" rx="4" ry="4" x="0" y="0" width="38" height="24">
-						</rect>
-					</svg>
-					<div id="NEW_dpn">
-						<span>NEW</span>
-					</div>
-				</div>
-				<div id="Tag_dpo" class="Tag">
-					<svg class="Base_dpp">
-						<rect id="Base_dpp" rx="4" ry="4" x="0" y="0" width="35" height="24">
-						</rect>
-					</svg>
-					<div id="JOB_dpq">
-						<span>JOB</span>
-					</div>
-				</div>
-				<div id="ID012_389_438_dpr">
-					<span>012 389 438</span>
-				</div>
-				<div id="ID09_Sep_2017_dps">
-					<span>09 Sep 2017</span>
-				</div>
-				<div id="linaadobecom_dpt">
-					<span>lina@adobe.com</span>
-				</div>
-				<div id="More_dpu" class="More">
-					<svg class="More_dpv" viewBox="-749 856 18 4">
-						<path id="More_dpv" d="M -735.0003051757813 857.9996948242188 C -735.0003051757813 856.8954467773438 -734.1047973632813 855.9999389648438 -732.9996337890625 855.9999389648438 C -731.8953247070313 855.9999389648438 -730.9998168945313 856.8954467773438 -730.9998168945313 857.9996948242188 C -730.9998168945313 859.1049194335938 -731.8953247070313 860.0004272460938 -732.9996337890625 860.0004272460938 C -734.1047973632813 860.0004272460938 -735.0003051757813 859.1049194335938 -735.0003051757813 857.9996948242188 Z M -741.9996337890625 857.9996948242188 C -741.9996337890625 856.8954467773438 -741.1041259765625 855.9999389648438 -739.9998168945313 855.9999389648438 C -738.8955078125 855.9999389648438 -738 856.8954467773438 -738 857.9996948242188 C -738 859.1049194335938 -738.8955078125 860.0004272460938 -739.9998168945313 860.0004272460938 C -741.1041259765625 860.0004272460938 -741.9996337890625 859.1049194335938 -741.9996337890625 857.9996948242188 Z M -748.9998168945313 857.9996948242188 C -748.9998168945313 856.8954467773438 -748.1043090820313 855.9999389648438 -747 855.9999389648438 C -745.8956909179688 855.9999389648438 -745.000244140625 856.8954467773438 -745.000244140625 857.9996948242188 C -745.000244140625 859.1049194335938 -745.8956909179688 860.0004272460938 -747 860.0004272460938 C -748.1043090820313 860.0004272460938 -748.9998168945313 859.1049194335938 -748.9998168945313 857.9996948242188 Z">
-						</path>
-					</svg>
-				</div>
-				<div id="Checkbox_dpw" class="Checkbox">
-					<svg class="Checkbox_dpx">
-						<rect id="Checkbox_dpx" rx="3" ry="3" x="0" y="0" width="16" height="16">
-						</rect>
-					</svg>
-				</div>
-				<div id="close_dpy" class="close">
-					<svg class="close_dpz" viewBox="0 0 8 8">
-						<path id="close_dpz" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
-						</path>
-					</svg>
-				</div>
-			</div>
-			<div id="Item_dp" class="Item">
-				<svg class="Base_dqa">
-					<rect id="Base_dqa" rx="0" ry="0" x="0" y="0" width="1080" height="56">
-					</rect>
-				</svg>
-				<svg class="Avatar_dp">
-					<ellipse id="Avatar_dp" rx="16" ry="16" cx="16" cy="16">
-					</ellipse>
-				</svg>
-				<div id="Lina_Bo_dp">
-					<span>Lina Bo</span>
-				</div>
-				<div id="Adobe_dp">
-					<span>Adobe</span>
-				</div>
-				<div id="Tag_dp">
-					<svg class="Base_dqb">
-						<rect id="Base_dqb" rx="4" ry="4" x="0" y="0" width="66" height="24">
-						</rect>
-					</svg>
-					<div id="POPULAR_dp">
-						<span>POPULAR</span>
-					</div>
-				</div>
-				<div id="Tag_dqa">
-					<svg class="Base_dqc">
-						<rect id="Base_dqc" rx="4" ry="4" x="0" y="0" width="38" height="24">
-						</rect>
-					</svg>
-					<div id="NEW_dqa">
-						<span>NEW</span>
-					</div>
-				</div>
-				<div id="Tag_dqb" class="Tag">
-					<svg class="Base_dqd">
-						<rect id="Base_dqd" rx="4" ry="4" x="0" y="0" width="35" height="24">
-						</rect>
-					</svg>
-					<div id="JOB_dqd">
-						<span>JOB</span>
-					</div>
-				</div>
-				<div id="ID012_389_438_dqe">
-					<span>012 389 438</span>
-				</div>
-				<div id="ID09_Sep_2017_dqf">
-					<span>09 Sep 2017</span>
-				</div>
-				<div id="linaadobecom_dqg">
-					<span>lina@adobe.com</span>
-				</div>
-				<div id="More_dqh" class="More">
-					<svg class="More_dqi" viewBox="-749 856 18 4">
-						<path id="More_dqi" d="M -735.0003051757813 857.9996948242188 C -735.0003051757813 856.8954467773438 -734.1047973632813 855.9999389648438 -732.9996337890625 855.9999389648438 C -731.8953247070313 855.9999389648438 -730.9998168945313 856.8954467773438 -730.9998168945313 857.9996948242188 C -730.9998168945313 859.1049194335938 -731.8953247070313 860.0004272460938 -732.9996337890625 860.0004272460938 C -734.1047973632813 860.0004272460938 -735.0003051757813 859.1049194335938 -735.0003051757813 857.9996948242188 Z M -741.9996337890625 857.9996948242188 C -741.9996337890625 856.8954467773438 -741.1041259765625 855.9999389648438 -739.9998168945313 855.9999389648438 C -738.8955078125 855.9999389648438 -738 856.8954467773438 -738 857.9996948242188 C -738 859.1049194335938 -738.8955078125 860.0004272460938 -739.9998168945313 860.0004272460938 C -741.1041259765625 860.0004272460938 -741.9996337890625 859.1049194335938 -741.9996337890625 857.9996948242188 Z M -748.9998168945313 857.9996948242188 C -748.9998168945313 856.8954467773438 -748.1043090820313 855.9999389648438 -747 855.9999389648438 C -745.8956909179688 855.9999389648438 -745.000244140625 856.8954467773438 -745.000244140625 857.9996948242188 C -745.000244140625 859.1049194335938 -745.8956909179688 860.0004272460938 -747 860.0004272460938 C -748.1043090820313 860.0004272460938 -748.9998168945313 859.1049194335938 -748.9998168945313 857.9996948242188 Z">
-						</path>
-					</svg>
-				</div>
-				<div id="Checkbox_dqj" class="Checkbox">
-					<svg class="Checkbox_dqk">
-						<rect id="Checkbox_dqk" rx="3" ry="3" x="0" y="0" width="16" height="16">
-						</rect>
-					</svg>
-				</div>
-				<div id="close_dql" class="close">
-					<svg class="close_dqm" viewBox="0 0 8 8">
-						<path id="close_dqm" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
-						</path>
-					</svg>
-				</div>
-			</div>
-			<div id="Item_dqn" class="Item">
-				<svg class="Base_dqo">
-					<rect id="Base_dqo" rx="0" ry="0" x="0" y="0" width="1080" height="56">
-					</rect>
-				</svg>
-				<svg class="Avatar_dqp">
-					<ellipse id="Avatar_dqp" rx="16" ry="16" cx="16" cy="16">
-					</ellipse>
-				</svg>
-				<div id="Lina_Bo_dqq">
-					<span>Lina Bo</span>
-				</div>
-				<div id="Adobe_dqr">
-					<span>Adobe</span>
-				</div>
-				<div id="Tag_dqs">
-					<svg class="Base_dqt">
-						<rect id="Base_dqt" rx="4" ry="4" x="0" y="0" width="66" height="24">
-						</rect>
-					</svg>
-					<div id="POPULAR_dqu">
-						<span>POPULAR</span>
-					</div>
-				</div>
-				<div id="Tag_dqv">
-					<svg class="Base_dqw">
-						<rect id="Base_dqw" rx="4" ry="4" x="0" y="0" width="38" height="24">
-						</rect>
-					</svg>
-					<div id="NEW_dqx">
-						<span>NEW</span>
-					</div>
-				</div>
-				<div id="Tag_dqy" class="Tag">
-					<svg class="Base_dqz">
-						<rect id="Base_dqz" rx="4" ry="4" x="0" y="0" width="35" height="24">
-						</rect>
-					</svg>
-					<div id="JOB_dq">
-						<span>JOB</span>
-					</div>
-				</div>
-				<div id="ID012_389_438_dq">
-					<span>012 389 438</span>
-				</div>
-				<div id="ID09_Sep_2017_dq">
-					<span>09 Sep 2017</span>
-				</div>
-				<div id="linaadobecom_dq">
-					<span>lina@adobe.com</span>
-				</div>
-				<div id="More_dq" class="More">
-					<svg class="More_dra" viewBox="-749 856 18 4">
-						<path id="More_dra" d="M -735.0003051757813 857.9996948242188 C -735.0003051757813 856.8954467773438 -734.1047973632813 855.9999389648438 -732.9996337890625 855.9999389648438 C -731.8953247070313 855.9999389648438 -730.9998168945313 856.8954467773438 -730.9998168945313 857.9996948242188 C -730.9998168945313 859.1049194335938 -731.8953247070313 860.0004272460938 -732.9996337890625 860.0004272460938 C -734.1047973632813 860.0004272460938 -735.0003051757813 859.1049194335938 -735.0003051757813 857.9996948242188 Z M -741.9996337890625 857.9996948242188 C -741.9996337890625 856.8954467773438 -741.1041259765625 855.9999389648438 -739.9998168945313 855.9999389648438 C -738.8955078125 855.9999389648438 -738 856.8954467773438 -738 857.9996948242188 C -738 859.1049194335938 -738.8955078125 860.0004272460938 -739.9998168945313 860.0004272460938 C -741.1041259765625 860.0004272460938 -741.9996337890625 859.1049194335938 -741.9996337890625 857.9996948242188 Z M -748.9998168945313 857.9996948242188 C -748.9998168945313 856.8954467773438 -748.1043090820313 855.9999389648438 -747 855.9999389648438 C -745.8956909179688 855.9999389648438 -745.000244140625 856.8954467773438 -745.000244140625 857.9996948242188 C -745.000244140625 859.1049194335938 -745.8956909179688 860.0004272460938 -747 860.0004272460938 C -748.1043090820313 860.0004272460938 -748.9998168945313 859.1049194335938 -748.9998168945313 857.9996948242188 Z">
-						</path>
-					</svg>
-				</div>
-				<div id="Checkbox_dq" class="Checkbox">
-					<svg class="Checkbox_dra">
-						<rect id="Checkbox_dra" rx="3" ry="3" x="0" y="0" width="16" height="16">
-						</rect>
-					</svg>
-				</div>
-				<div id="close_dq" class="close">
-					<svg class="close_dra" viewBox="0 0 8 8">
-						<path id="close_dra" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
-						</path>
-					</svg>
-				</div>
-			</div>
-			<div id="Item_dra" class="Item">
-				<svg class="Base_drb">
-					<rect id="Base_drb" rx="0" ry="0" x="0" y="0" width="1080" height="56">
-					</rect>
-				</svg>
-				<svg class="Avatar_drc">
-					<ellipse id="Avatar_drc" rx="16" ry="16" cx="16" cy="16">
-					</ellipse>
-				</svg>
-				<div id="Lina_Bo_drd">
-					<span>Lina Bo</span>
-				</div>
-				<div id="Company_Name_dre">
-					<span>Company Name</span>
-				</div>
-				<div id="Tag_drf">
-					<svg class="Base_drg">
-						<rect id="Base_drg" rx="4" ry="4" x="0" y="0" width="66" height="24">
-						</rect>
-					</svg>
-					<div id="POPULAR_drh">
-						<span>POPULAR</span>
-					</div>
-				</div>
-				<div id="Tag_dri">
-					<svg class="Base_drj">
-						<rect id="Base_drj" rx="4" ry="4" x="0" y="0" width="38" height="24">
-						</rect>
-					</svg>
-					<div id="NEW_drk">
-						<span>NEW</span>
-					</div>
-				</div>
-				<div id="Tag_drl" class="Tag">
-					<svg class="Base_drm">
-						<rect id="Base_drm" rx="4" ry="4" x="0" y="0" width="35" height="24">
-						</rect>
-					</svg>
-					<div id="JOB_drn">
-						<span>JOB</span>
-					</div>
-				</div>
-				<div id="ID012_389_438_dro">
-					<span>012 389 438</span>
-				</div>
-				<div id="ID09_Sep_2017_drp">
-					<span>09 Sep 2017</span>
-				</div>
-				<div id="linaadobecom_drq">
-					<span>lina@adobe.com</span>
-				</div>
-				<div id="More_drr" class="More">
-					<svg class="More_drs" viewBox="-749 856 18 4">
-						<path id="More_drs" d="M -735.0003051757813 857.9996948242188 C -735.0003051757813 856.8954467773438 -734.1047973632813 855.9999389648438 -732.9996337890625 855.9999389648438 C -731.8953247070313 855.9999389648438 -730.9998168945313 856.8954467773438 -730.9998168945313 857.9996948242188 C -730.9998168945313 859.1049194335938 -731.8953247070313 860.0004272460938 -732.9996337890625 860.0004272460938 C -734.1047973632813 860.0004272460938 -735.0003051757813 859.1049194335938 -735.0003051757813 857.9996948242188 Z M -741.9996337890625 857.9996948242188 C -741.9996337890625 856.8954467773438 -741.1041259765625 855.9999389648438 -739.9998168945313 855.9999389648438 C -738.8955078125 855.9999389648438 -738 856.8954467773438 -738 857.9996948242188 C -738 859.1049194335938 -738.8955078125 860.0004272460938 -739.9998168945313 860.0004272460938 C -741.1041259765625 860.0004272460938 -741.9996337890625 859.1049194335938 -741.9996337890625 857.9996948242188 Z M -748.9998168945313 857.9996948242188 C -748.9998168945313 856.8954467773438 -748.1043090820313 855.9999389648438 -747 855.9999389648438 C -745.8956909179688 855.9999389648438 -745.000244140625 856.8954467773438 -745.000244140625 857.9996948242188 C -745.000244140625 859.1049194335938 -745.8956909179688 860.0004272460938 -747 860.0004272460938 C -748.1043090820313 860.0004272460938 -748.9998168945313 859.1049194335938 -748.9998168945313 857.9996948242188 Z">
-						</path>
-					</svg>
-				</div>
-				<div id="Checkbox_drt" class="Checkbox">
-					<svg class="Checkbox_dru">
-						<rect id="Checkbox_dru" rx="3" ry="3" x="0" y="0" width="16" height="16">
-						</rect>
-					</svg>
-				</div>
-				<div id="close_drv" class="close">
-					<svg class="close_drw" viewBox="0 0 8 8">
-						<path id="close_drw" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
-						</path>
-					</svg>
-				</div>
-			</div>
-			<div id="Item_drx" class="Item">
-				<svg class="Base_dry">
-					<rect id="Base_dry" rx="0" ry="0" x="0" y="0" width="1080" height="56">
-					</rect>
-				</svg>
-				<svg class="Avatar_drz">
-					<ellipse id="Avatar_drz" rx="16" ry="16" cx="16" cy="16">
-					</ellipse>
-				</svg>
-				<div id="Lina_Bo_dr">
-					<span>Lina Bo</span>
-				</div>
-				<div id="Adobe_dr">
-					<span>Adobe</span>
-				</div>
-				<div id="Tag_dsa">
-					<svg class="Base_dr">
-						<rect id="Base_dr" rx="4" ry="4" x="0" y="0" width="66" height="24">
-						</rect>
-					</svg>
-					<div id="POPULAR_dr">
-						<span>POPULAR</span>
-					</div>
-				</div>
-				<div id="Tag_dsb">
-					<svg class="Base_dsa">
-						<rect id="Base_dsa" rx="4" ry="4" x="0" y="0" width="38" height="24">
-						</rect>
-					</svg>
-					<div id="NEW_dr">
-						<span>NEW</span>
-					</div>
-				</div>
-				<div id="Tag_dsc" class="Tag">
-					<svg class="Base_dsb">
-						<rect id="Base_dsb" rx="4" ry="4" x="0" y="0" width="35" height="24">
-						</rect>
-					</svg>
-					<div id="JOB_dsa">
-						<span>JOB</span>
-					</div>
-				</div>
-				<div id="ID012_389_438_dsb">
-					<span>012 389 438</span>
-				</div>
-				<div id="ID09_Sep_2017_dsc">
-					<span>09 Sep 2017</span>
-				</div>
-				<div id="linaadobecom_dsd">
-					<span>lina@adobe.com</span>
-				</div>
-				<div id="More_dse" class="More">
-					<svg class="More_dsf" viewBox="-749 856 18 4">
-						<path id="More_dsf" d="M -735.0003051757813 857.9996948242188 C -735.0003051757813 856.8954467773438 -734.1047973632813 855.9999389648438 -732.9996337890625 855.9999389648438 C -731.8953247070313 855.9999389648438 -730.9998168945313 856.8954467773438 -730.9998168945313 857.9996948242188 C -730.9998168945313 859.1049194335938 -731.8953247070313 860.0004272460938 -732.9996337890625 860.0004272460938 C -734.1047973632813 860.0004272460938 -735.0003051757813 859.1049194335938 -735.0003051757813 857.9996948242188 Z M -741.9996337890625 857.9996948242188 C -741.9996337890625 856.8954467773438 -741.1041259765625 855.9999389648438 -739.9998168945313 855.9999389648438 C -738.8955078125 855.9999389648438 -738 856.8954467773438 -738 857.9996948242188 C -738 859.1049194335938 -738.8955078125 860.0004272460938 -739.9998168945313 860.0004272460938 C -741.1041259765625 860.0004272460938 -741.9996337890625 859.1049194335938 -741.9996337890625 857.9996948242188 Z M -748.9998168945313 857.9996948242188 C -748.9998168945313 856.8954467773438 -748.1043090820313 855.9999389648438 -747 855.9999389648438 C -745.8956909179688 855.9999389648438 -745.000244140625 856.8954467773438 -745.000244140625 857.9996948242188 C -745.000244140625 859.1049194335938 -745.8956909179688 860.0004272460938 -747 860.0004272460938 C -748.1043090820313 860.0004272460938 -748.9998168945313 859.1049194335938 -748.9998168945313 857.9996948242188 Z">
-						</path>
-					</svg>
-				</div>
-				<div id="Checkbox_dsg" class="Checkbox">
-					<svg class="Checkbox_dsh">
-						<rect id="Checkbox_dsh" rx="3" ry="3" x="0" y="0" width="16" height="16">
-						</rect>
-					</svg>
-				</div>
-				<div id="close_dsi" class="close">
-					<svg class="close_dsj" viewBox="0 0 8 8">
-						<path id="close_dsj" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
-						</path>
-					</svg>
-				</div>
-			</div>
-			<div id="Item_dsk" class="Item">
-				<svg class="Base_dsl">
-					<rect id="Base_dsl" rx="0" ry="0" x="0" y="0" width="1080" height="56">
-					</rect>
-				</svg>
-				<svg class="Avatar_dsm">
-					<ellipse id="Avatar_dsm" rx="16" ry="16" cx="16" cy="16">
-					</ellipse>
-				</svg>
-				<div id="Lina_Bo_dsn">
-					<span>Lina Bo</span>
-				</div>
-				<div id="Adobe_dso">
-					<span>Adobe</span>
-				</div>
-				<div id="Tag_dsp">
-					<svg class="Base_dsq">
-						<rect id="Base_dsq" rx="4" ry="4" x="0" y="0" width="66" height="24">
-						</rect>
-					</svg>
-					<div id="POPULAR_dsr">
-						<span>POPULAR</span>
-					</div>
-				</div>
-				<div id="Tag_dss">
-					<svg class="Base_dst">
-						<rect id="Base_dst" rx="4" ry="4" x="0" y="0" width="38" height="24">
-						</rect>
-					</svg>
-					<div id="NEW_dsu">
-						<span>NEW</span>
-					</div>
-				</div>
-				<div id="Tag_dsv" class="Tag">
-					<svg class="Base_dsw">
-						<rect id="Base_dsw" rx="4" ry="4" x="0" y="0" width="35" height="24">
-						</rect>
-					</svg>
-					<div id="JOB_dsx">
-						<span>JOB</span>
-					</div>
-				</div>
-				<div id="ID012_389_438_dsy">
-					<span>012 389 438</span>
-				</div>
-				<div id="ID09_Sep_2017_dsz">
-					<span>09 Sep 2017</span>
-				</div>
-				<div id="linaadobecom_ds">
-					<span>lina@adobe.com</span>
-				</div>
-				<div id="More_ds" class="More">
-					<svg class="More_dta" viewBox="-749 856 18 4">
-						<path id="More_dta" d="M -735.0003051757813 857.9996948242188 C -735.0003051757813 856.8954467773438 -734.1047973632813 855.9999389648438 -732.9996337890625 855.9999389648438 C -731.8953247070313 855.9999389648438 -730.9998168945313 856.8954467773438 -730.9998168945313 857.9996948242188 C -730.9998168945313 859.1049194335938 -731.8953247070313 860.0004272460938 -732.9996337890625 860.0004272460938 C -734.1047973632813 860.0004272460938 -735.0003051757813 859.1049194335938 -735.0003051757813 857.9996948242188 Z M -741.9996337890625 857.9996948242188 C -741.9996337890625 856.8954467773438 -741.1041259765625 855.9999389648438 -739.9998168945313 855.9999389648438 C -738.8955078125 855.9999389648438 -738 856.8954467773438 -738 857.9996948242188 C -738 859.1049194335938 -738.8955078125 860.0004272460938 -739.9998168945313 860.0004272460938 C -741.1041259765625 860.0004272460938 -741.9996337890625 859.1049194335938 -741.9996337890625 857.9996948242188 Z M -748.9998168945313 857.9996948242188 C -748.9998168945313 856.8954467773438 -748.1043090820313 855.9999389648438 -747 855.9999389648438 C -745.8956909179688 855.9999389648438 -745.000244140625 856.8954467773438 -745.000244140625 857.9996948242188 C -745.000244140625 859.1049194335938 -745.8956909179688 860.0004272460938 -747 860.0004272460938 C -748.1043090820313 860.0004272460938 -748.9998168945313 859.1049194335938 -748.9998168945313 857.9996948242188 Z">
-						</path>
-					</svg>
-				</div>
-				<div id="Checkbox_ds" class="Checkbox">
-					<svg class="Checkbox_dta">
-						<rect id="Checkbox_dta" rx="3" ry="3" x="0" y="0" width="16" height="16">
-						</rect>
-					</svg>
-				</div>
-				<div id="close_ds" class="close">
-					<svg class="close_dta" viewBox="0 0 8 8">
-						<path id="close_dta" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
-						</path>
-					</svg>
-				</div>
-			</div>
-			<div id="Item_ds" class="Item">
-				<svg class="Base_dta">
-					<rect id="Base_dta" rx="0" ry="0" x="0" y="0" width="1080" height="56">
-					</rect>
-				</svg>
-				<svg class="Avatar_ds">
-					<ellipse id="Avatar_ds" rx="16" ry="16" cx="16" cy="16">
-					</ellipse>
-				</svg>
-				<div id="Lina_Bo_dta">
-					<span>Lina Bo</span>
-				</div>
-				<div id="Adobe_dtb">
-					<span>Adobe</span>
-				</div>
-				<div id="Tag_dtc">
-					<svg class="Base_dtd">
-						<rect id="Base_dtd" rx="4" ry="4" x="0" y="0" width="66" height="24">
-						</rect>
-					</svg>
-					<div id="POPULAR_dte">
-						<span>POPULAR</span>
-					</div>
-				</div>
-				<div id="Tag_dtf">
-					<svg class="Base_dtg">
-						<rect id="Base_dtg" rx="4" ry="4" x="0" y="0" width="38" height="24">
-						</rect>
-					</svg>
-					<div id="NEW_dth">
-						<span>NEW</span>
-					</div>
-				</div>
-				<div id="Tag_dti" class="Tag">
-					<svg class="Base_dtj">
-						<rect id="Base_dtj" rx="4" ry="4" x="0" y="0" width="35" height="24">
-						</rect>
-					</svg>
-					<div id="JOB_dtk">
-						<span>JOB</span>
-					</div>
-				</div>
-				<div id="ID012_389_438_dtl">
-					<span>012 389 438</span>
-				</div>
-				<div id="ID09_Sep_2017_dtm">
-					<span>09 Sep 2017</span>
-				</div>
-				<div id="linaadobecom_dtn">
-					<span>lina@adobe.com</span>
-				</div>
-				<div id="More_dto" class="More">
-					<svg class="More_dtp" viewBox="-749 856 18 4">
-						<path id="More_dtp" d="M -735.0003051757813 857.9996948242188 C -735.0003051757813 856.8954467773438 -734.1047973632813 855.9999389648438 -732.9996337890625 855.9999389648438 C -731.8953247070313 855.9999389648438 -730.9998168945313 856.8954467773438 -730.9998168945313 857.9996948242188 C -730.9998168945313 859.1049194335938 -731.8953247070313 860.0004272460938 -732.9996337890625 860.0004272460938 C -734.1047973632813 860.0004272460938 -735.0003051757813 859.1049194335938 -735.0003051757813 857.9996948242188 Z M -741.9996337890625 857.9996948242188 C -741.9996337890625 856.8954467773438 -741.1041259765625 855.9999389648438 -739.9998168945313 855.9999389648438 C -738.8955078125 855.9999389648438 -738 856.8954467773438 -738 857.9996948242188 C -738 859.1049194335938 -738.8955078125 860.0004272460938 -739.9998168945313 860.0004272460938 C -741.1041259765625 860.0004272460938 -741.9996337890625 859.1049194335938 -741.9996337890625 857.9996948242188 Z M -748.9998168945313 857.9996948242188 C -748.9998168945313 856.8954467773438 -748.1043090820313 855.9999389648438 -747 855.9999389648438 C -745.8956909179688 855.9999389648438 -745.000244140625 856.8954467773438 -745.000244140625 857.9996948242188 C -745.000244140625 859.1049194335938 -745.8956909179688 860.0004272460938 -747 860.0004272460938 C -748.1043090820313 860.0004272460938 -748.9998168945313 859.1049194335938 -748.9998168945313 857.9996948242188 Z">
-						</path>
-					</svg>
-				</div>
-				<div id="Checkbox_dtq" class="Checkbox">
-					<svg class="Checkbox_dtr">
-						<rect id="Checkbox_dtr" rx="3" ry="3" x="0" y="0" width="16" height="16">
-						</rect>
-					</svg>
-				</div>
-				<div id="close_dts" class="close">
-					<svg class="close_dtt" viewBox="0 0 8 8">
-						<path id="close_dtt" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
-						</path>
-					</svg>
-				</div>
-			</div>
-		</div>
-		<div id="BASIC_INFO_dtu">
-			<span>BASIC INFO</span>
-		</div>
-		<div id="COMPANY_dtv">
-			<span>COMPANY</span>
-		</div>
-		<div id="PHONE_dtw">
-			<span>PHONE</span>
-		</div>
-		<div id="TAGS_dtx">
-			<span>TAGS</span>
-		</div>
-		<div id="CREATED_DATE_dty">
-			<span>CREATED DATE</span>
-		</div>
-	</div>
-	<div id="Header_dtz">
-		<div id="dropdown_dt">
-			<svg class="Rectngulo_431_dt">
-				<rect id="Rectngulo_431_dt" rx="0" ry="0" x="0" y="0" width="135" height="58">
-				</rect>
-			</svg>
-			<div id="MODIFICAR_dt">
-				<span>MODIFICAR</span>
-			</div>
-			<div id="ELIMINAR_dt">
-				<span>ELIMINAR</span>
-			</div>
-		</div>
-	</div>
-	<div id="Primary_Button_dt" class="Primary_Button">
-		<svg class="base_dt">
-			<rect id="base_dt" rx="6" ry="6" x="0" y="0" width="188" height="34">
+	<div onclick="application.goToTargetView(event)" id="Primary_Button_dml" class="Primary_Button">
+		<svg class="base_dmm">
+			<rect id="base_dmm" rx="6" ry="6" x="0" y="0" width="299" height="70">
 			</rect>
 		</svg>
-		<div id="Crear_evaluacin">
-			<span>Crear evaluación</span>
+		<div id="Crear_dmn">
+			<span>Crear</span>
 		</div>
 	</div>
-	<div id="Header_-_Desktop_dt" class="Header___Desktop">
-		<svg class="base_dua">
-			<rect id="base_dua" rx="0" ry="0" x="0" y="0" width="1440" height="50">
+	<div id="Crear_evaluacion">
+		<span>Crear evaluacion</span>
+	</div>
+	<div id="Focus_1_dmp" class="Focus_1">
+		<svg class="Field_dmq">
+			<rect id="Field_dmq" rx="6" ry="6" x="0" y="0" width="360" height="40">
 			</rect>
 		</svg>
-		<div id="LOGO_dt">
+		<div id="Fecha_Inicio_1_Evaluacin">
+			<span>Fecha Inicio 1ª Evaluación</span>
+		</div>
+		<div id="ID15092020">
+			<span>15/09/2020</span>
+		</div>
+	</div>
+	<div id="Header_-_Desktop_dmt" class="Header___Desktop">
+		<svg class="base_dmu">
+			<rect id="base_dmu" rx="0" ry="0" x="0" y="0" width="1440" height="50">
+			</rect>
+		</svg>
+		<div id="LOGO_dmv">
 			<span>LOGO</span>
 		</div>
-		<div id="INICIO_dua">
+		<div onclick="application.goToTargetView(event)" id="INICIO_dmw">
 			<span>INICIO</span>
 		</div>
-		<div id="PROFESORES_dub">
+		<div id="PROFESORES_dmx">
 			<span>PROFESORES</span>
 		</div>
-		<div id="GRUPOS_duc">
+		<div id="GRUPOS_dmy">
 			<span>GRUPOS</span>
 		</div>
-		<img id="christopher-campbell-28567-uns_dud" src="christopher-campbell-28567-uns_dud.png" srcset="christopher-campbell-28567-uns_dud.png 1x, christopher-campbell-28567-uns_dud@2x.png 2x">
+		<img id="christopher-campbell-28567-uns_dmz" src="images/christopher-campbell-28567-uns_dmz.png" srcset="images/christopher-campbell-28567-uns_dmz.png 1x, images/christopher-campbell-28567-uns_dmz@2x.png 2x">
 			
-		<div id="ASIGNATURAS_due">
+		<div id="ASIGNATURAS_dm">
 			<span>ASIGNATURAS</span>
 		</div>
-		<div id="COMPETENCIAS_duf">
+		<div id="COMPETENCIAS_dm">
 			<span>COMPETENCIAS</span>
 		</div>
-		<div id="ADMINISTRADORES_dug">
+		<div id="ADMINISTRADORES_dm">
 			<span>ADMINISTRADORES</span>
 		</div>
-		<div id="ALUMNOS_duh">
+		<div id="ALUMNOS_dm">
 			<span>ALUMNOS</span>
+		</div>
+	</div>
+	<div id="Error_Dropdown_dm" class="Error_Dropdown">
+		<svg class="Field_dm">
+			<rect id="Field_dm" rx="6" ry="6" x="0" y="0" width="360" height="40">
+			</rect>
+		</svg>
+		<div id="Select_dm">
+			<span>Select…</span>
+		</div>
+		<div id="Tipo">
+			<span>Tipo</span>
+		</div>
+		<div id="dropdown_dm" class="dropdown">
+			<svg class="dropdown_dna" viewBox="0 0 10 6">
+				<path id="dropdown_dna" d="M 5 6 C 4.699999809265137 6 4.5 5.900000095367432 4.300000190734863 5.699999809265137 L 0.3000001907348633 1.699999809265137 C -0.0999998152256012 1.299999833106995 -0.0999998152256012 0.6999998092651367 0.3000001907348633 0.2999998331069946 C 0.7000001668930054 -0.1000001430511475 1.300000190734863 -0.1000001728534698 1.700000166893005 0.2999998331069946 L 5 3.599999904632568 L 8.300000190734863 0.2999999523162842 C 8.699999809265137 -0.1000000536441803 9.300000190734863 -0.1000000536441803 9.699999809265137 0.2999999523162842 C 10.09999942779541 0.6999999284744263 10.09999942779541 1.299999952316284 9.699999809265137 1.699999928474426 L 5.699999809265137 5.699999809265137 C 5.5 5.900000095367432 5.300000190734863 6 5 6 Z">
+				</path>
+			</svg>
+		</div>
+	</div>
+	<div id="Focus_1_dna" class="Focus_1">
+		<svg class="Field_dnb">
+			<rect id="Field_dnb" rx="6" ry="6" x="0" y="0" width="360" height="40">
+			</rect>
+		</svg>
+		<div id="Fecha_Fin_1_Evaluacin">
+			<span>Fecha Fin 1ª Evaluación</span>
+		</div>
+		<div id="ID23122020">
+			<span>23/12/2020</span>
+		</div>
+	</div>
+	<div id="Focus_1_dne" class="Focus_1">
+		<svg class="Field_dnf">
+			<rect id="Field_dnf" rx="6" ry="6" x="0" y="0" width="360" height="40">
+			</rect>
+		</svg>
+		<div id="Fecha_Inicio_2_Evaluacin">
+			<span>Fecha Inicio 2ª Evaluación</span>
+		</div>
+		<div id="ID07012021">
+			<span>07/01/2021</span>
+		</div>
+	</div>
+	<div id="Header_dni">
+		<div id="dropdown_dnj">
+			<svg class="Rectngulo_431_dnk">
+				<rect id="Rectngulo_431_dnk" rx="0" ry="0" x="0" y="0" width="360" height="96">
+				</rect>
+			</svg>
+			<div id="TRIMESTRAL">
+				<span>TRIMESTRAL</span>
+			</div>
+			<div id="NICA">
+				<span>ÚNICA</span>
+			</div>
+			<div id="CUATRIMESTRAL">
+				<span>CUATRIMESTRAL</span>
+			</div>
+		</div>
+	</div>
+	<div id="Focus_1_dno" class="Focus_1">
+		<svg class="Field_dnp">
+			<rect id="Field_dnp" rx="6" ry="6" x="0" y="0" width="360" height="40">
+			</rect>
+		</svg>
+		<div id="Fecha_Fin_2_Evaluacin">
+			<span>Fecha Fin 2ª Evaluación</span>
+		</div>
+		<div id="ID17042021">
+			<span>17/04/2021</span>
+		</div>
+	</div>
+	<div id="Focus_1_dns" class="Focus_1">
+		<svg class="Field_dnt">
+			<rect id="Field_dnt" rx="6" ry="6" x="0" y="0" width="360" height="40">
+			</rect>
+		</svg>
+		<div id="Fecha_Inicio_3_Evaluacin">
+			<span>Fecha Inicio 3ª Evaluación</span>
+		</div>
+		<div id="ID25042021">
+			<span>25/04/2021</span>
+		</div>
+	</div>
+	<div id="Focus_1_dnw" class="Focus_1">
+		<svg class="Field_dnx">
+			<rect id="Field_dnx" rx="6" ry="6" x="0" y="0" width="360" height="40">
+			</rect>
+		</svg>
+		<div id="Fecha_Fin_2_Evaluacin_dny">
+			<span>Fecha Fin 2ª Evaluación</span>
+		</div>
+		<div id="ID24062021">
+			<span>24/06/2021</span>
 		</div>
 	</div>
 </div>

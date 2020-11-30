@@ -10,6 +10,7 @@
 		--web-view-name: Crear Administrador;
 		--web-view-id: Crear_Administrador;
 		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
 		--web-enable-deep-linking: true;
 	}
 	:root {
@@ -29,12 +30,23 @@
 		--web-view-name: Crear Administrador;
 		--web-view-id: Crear_Administrador;
 		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
 		--web-enable-deep-linking: true;
 	}
-	#Rectngulo_450_bzb {
+	@keyframes fadein {
+	
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	
+	}
+	#Rectngulo_450_bzf {
 		fill: rgba(246,248,249,1);
 	}
-	.Rectngulo_450_bzb {
+	.Rectngulo_450_bzf {
 		position: absolute;
 		overflow: visible;
 		width: 1440px;
@@ -56,69 +68,12 @@
 		font-size: 35px;
 		color: rgba(250,105,128,1);
 	}
-	#Focus_1_bzd {
-		position: absolute;
-		width: 360px;
-		height: 61px;
-		left: 540px;
-		top: 165px;
-		overflow: visible;
-	}
-	#Field_bze {
-		fill: rgba(255,255,255,1);
-		stroke: rgba(250,105,128,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Field_bze {
-		position: absolute;
-		overflow: visible;
-		width: 360px;
-		height: 40px;
-		left: 0px;
-		top: 21px;
-	}
-	#Nombre_bzf {
-		left: 0px;
-		top: 0px;
-		position: absolute;
-		overflow: visible;
-		width: 50px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 13px;
-		color: rgba(250,105,128,1);
-	}
-	#Manuel_bzg {
-		left: 16px;
-		top: 35px;
-		position: absolute;
-		overflow: visible;
-		width: 43px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
 	#Focus_1_bzh {
 		position: absolute;
 		width: 360px;
 		height: 61px;
 		left: 540px;
-		top: 468px;
+		top: 165px;
 		overflow: visible;
 	}
 	#Field_bzi {
@@ -138,12 +93,12 @@
 		left: 0px;
 		top: 21px;
 	}
-	#Iniciales_bzj {
+	#Nombre_bzj {
 		left: 0px;
 		top: 0px;
 		position: absolute;
 		overflow: visible;
-		width: 51px;
+		width: 50px;
 		white-space: nowrap;
 		line-height: 20px;
 		margin-top: -3.5px;
@@ -154,12 +109,12 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#Mancopmac_bzk {
+	#Manuel_bzk {
 		left: 16px;
 		top: 35px;
 		position: absolute;
 		overflow: visible;
-		width: 72px;
+		width: 43px;
 		white-space: nowrap;
 		line-height: 20px;
 		margin-top: -3.5px;
@@ -175,7 +130,7 @@
 		width: 360px;
 		height: 61px;
 		left: 540px;
-		top: 266px;
+		top: 468px;
 		overflow: visible;
 	}
 	#Field_bzm {
@@ -195,12 +150,12 @@
 		left: 0px;
 		top: 21px;
 	}
-	#Apellidos_bzn {
+	#Iniciales_bzn {
 		left: 0px;
 		top: 0px;
 		position: absolute;
 		overflow: visible;
-		width: 58px;
+		width: 51px;
 		white-space: nowrap;
 		line-height: 20px;
 		margin-top: -3.5px;
@@ -211,12 +166,12 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#Copado_Machuca_bzo {
+	#Mancopmac_bzo {
 		left: 16px;
 		top: 35px;
 		position: absolute;
 		overflow: visible;
-		width: 102px;
+		width: 72px;
 		white-space: nowrap;
 		line-height: 20px;
 		margin-top: -3.5px;
@@ -232,7 +187,7 @@
 		width: 360px;
 		height: 61px;
 		left: 540px;
-		top: 367px;
+		top: 266px;
 		overflow: visible;
 	}
 	#Field_bzq {
@@ -252,7 +207,64 @@
 		left: 0px;
 		top: 21px;
 	}
-	#Fecha_de_nacimiento_bzr {
+	#Apellidos_bzr {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 58px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 13px;
+		color: rgba(250,105,128,1);
+	}
+	#Copado_Machuca_bzs {
+		left: 16px;
+		top: 35px;
+		position: absolute;
+		overflow: visible;
+		width: 102px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Focus_1_bzt {
+		position: absolute;
+		width: 360px;
+		height: 61px;
+		left: 540px;
+		top: 367px;
+		overflow: visible;
+	}
+	#Field_bzu {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(250,105,128,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Field_bzu {
+		position: absolute;
+		overflow: visible;
+		width: 360px;
+		height: 40px;
+		left: 0px;
+		top: 21px;
+	}
+	#Fecha_de_nacimiento_bzv {
 		left: 0px;
 		top: 0px;
 		position: absolute;
@@ -268,7 +280,7 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#ID29071965_bzs {
+	#ID29071965_bzw {
 		left: 16px;
 		top: 35px;
 		position: absolute;
@@ -284,7 +296,7 @@
 		font-size: 13px;
 		color: rgba(32,33,36,1);
 	}
-	#Header_-_Desktop_bzt {
+	#Header_-_Desktop_bzx {
 		position: absolute;
 		width: 1440px;
 		height: 50px;
@@ -292,10 +304,10 @@
 		top: 0px;
 		overflow: visible;
 	}
-	#base_bzu {
+	#base_bzy {
 		fill: rgba(246,248,249,1);
 	}
-	.base_bzu {
+	.base_bzy {
 		position: absolute;
 		overflow: visible;
 		width: 1440px;
@@ -303,7 +315,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#LOGO_bzv {
+	#LOGO_bzz {
 		left: 20px;
 		top: 18px;
 		position: absolute;
@@ -319,13 +331,17 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#INICIO_bzw {
+	#INICIO_bz {
 		left: 605px;
 		top: 19px;
 		position: absolute;
 		overflow: visible;
 		width: 35px;
 		white-space: nowrap;
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: page;
+		--web-action-target: Home_admin.html;
+		cursor: pointer;
 		line-height: 20px;
 		margin-top: -4.5px;
 		text-align: left;
@@ -335,7 +351,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#PROFESORES_bzx {
+	#PROFESORES_bz {
 		opacity: 0.5;
 		left: 1060px;
 		top: 18px;
@@ -352,7 +368,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#GRUPOS_bzy {
+	#GRUPOS_bz {
 		opacity: 0.5;
 		left: 1177px;
 		top: 18px;
@@ -369,7 +385,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#christopher-campbell-28567-uns_bzz {
+	#christopher-campbell-28567-uns_bz {
 		position: absolute;
 		width: 30px;
 		height: 30px;
@@ -470,7 +486,7 @@
 		left: 0px;
 		top: 21px;
 	}
-	#Contrasea_bz {
+	#Contrasea_ba {
 		left: 0px;
 		top: 0px;
 		position: absolute;
@@ -486,7 +502,7 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#_bz {
+	#_bb {
 		left: 16px;
 		top: 35px;
 		position: absolute;
@@ -502,7 +518,7 @@
 		font-size: 13px;
 		color: rgba(32,33,36,1);
 	}
-	#Focus_1_ba {
+	#Focus_1_bc {
 		position: absolute;
 		width: 360px;
 		height: 61px;
@@ -510,7 +526,7 @@
 		top: 569px;
 		overflow: visible;
 	}
-	#Field_ba {
+	#Field_bd {
 		fill: rgba(255,255,255,1);
 		stroke: rgba(250,105,128,1);
 		stroke-width: 2px;
@@ -519,7 +535,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Field_ba {
+	.Field_bd {
 		position: absolute;
 		overflow: visible;
 		width: 360px;
@@ -527,7 +543,7 @@
 		left: 0px;
 		top: 21px;
 	}
-	#Email_ba {
+	#Email_be {
 		left: 0px;
 		top: 0px;
 		position: absolute;
@@ -559,18 +575,22 @@
 		font-size: 13px;
 		color: rgba(32,33,36,1);
 	}
-	#Primary_Button_bd {
+	#Primary_Button_bg {
 		position: absolute;
 		width: 299px;
 		height: 70px;
 		left: 571px;
 		top: 872px;
 		overflow: visible;
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: page;
+		--web-action-target: Lista_Administrador.html;
+		cursor: pointer;
 	}
-	#base_bd {
+	#base_bh {
 		fill: rgba(250,105,128,1);
 	}
-	.base_bd {
+	.base_bh {
 		position: absolute;
 		overflow: visible;
 		width: 299px;
@@ -578,7 +598,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#Crear_be {
+	#Crear_bi {
 		left: 124px;
 		top: 22px;
 		position: absolute;
@@ -592,7 +612,7 @@
 		font-size: 20px;
 		color: rgba(255,255,255,1);
 	}
-	#Focus_1_bf {
+	#Focus_1_bj {
 		position: absolute;
 		width: 360px;
 		height: 61px;
@@ -600,7 +620,7 @@
 		top: 771px;
 		overflow: visible;
 	}
-	#Field_bg {
+	#Field_bk {
 		fill: rgba(255,255,255,1);
 		stroke: rgba(250,105,128,1);
 		stroke-width: 2px;
@@ -609,7 +629,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Field_bg {
+	.Field_bk {
 		position: absolute;
 		overflow: visible;
 		width: 360px;
@@ -633,7 +653,7 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#_bi {
+	#_bm {
 		left: 16px;
 		top: 35px;
 		position: absolute;
@@ -3491,35 +3511,23 @@ window.application = new Application();
 </head>
 <body>
 <div id="Crear_Administrador">
-	<svg class="Rectngulo_450_bzb">
-		<rect id="Rectngulo_450_bzb" rx="0" ry="0" x="0" y="0" width="1440" height="950">
+	<svg class="Rectngulo_450_bzf">
+		<rect id="Rectngulo_450_bzf" rx="0" ry="0" x="0" y="0" width="1440" height="950">
 		</rect>
 	</svg>
 	<div id="Crear_administrador">
 		<span>Crear administrador</span>
-	</div>
-	<div id="Focus_1_bzd" class="Focus_1">
-		<svg class="Field_bze">
-			<rect id="Field_bze" rx="6" ry="6" x="0" y="0" width="360" height="40">
-			</rect>
-		</svg>
-		<div id="Nombre_bzf">
-			<span>Nombre</span>
-		</div>
-		<div id="Manuel_bzg">
-			<span>Manuel</span>
-		</div>
 	</div>
 	<div id="Focus_1_bzh" class="Focus_1">
 		<svg class="Field_bzi">
 			<rect id="Field_bzi" rx="6" ry="6" x="0" y="0" width="360" height="40">
 			</rect>
 		</svg>
-		<div id="Iniciales_bzj">
-			<span>Iniciales</span>
+		<div id="Nombre_bzj">
+			<span>Nombre</span>
 		</div>
-		<div id="Mancopmac_bzk">
-			<span>Mancopmac</span>
+		<div id="Manuel_bzk">
+			<span>Manuel</span>
 		</div>
 	</div>
 	<div id="Focus_1_bzl" class="Focus_1">
@@ -3527,11 +3535,11 @@ window.application = new Application();
 			<rect id="Field_bzm" rx="6" ry="6" x="0" y="0" width="360" height="40">
 			</rect>
 		</svg>
-		<div id="Apellidos_bzn">
-			<span>Apellidos</span>
+		<div id="Iniciales_bzn">
+			<span>Iniciales</span>
 		</div>
-		<div id="Copado_Machuca_bzo">
-			<span>Copado Machuca</span>
+		<div id="Mancopmac_bzo">
+			<span>Mancopmac</span>
 		</div>
 	</div>
 	<div id="Focus_1_bzp" class="Focus_1">
@@ -3539,31 +3547,43 @@ window.application = new Application();
 			<rect id="Field_bzq" rx="6" ry="6" x="0" y="0" width="360" height="40">
 			</rect>
 		</svg>
-		<div id="Fecha_de_nacimiento_bzr">
+		<div id="Apellidos_bzr">
+			<span>Apellidos</span>
+		</div>
+		<div id="Copado_Machuca_bzs">
+			<span>Copado Machuca</span>
+		</div>
+	</div>
+	<div id="Focus_1_bzt" class="Focus_1">
+		<svg class="Field_bzu">
+			<rect id="Field_bzu" rx="6" ry="6" x="0" y="0" width="360" height="40">
+			</rect>
+		</svg>
+		<div id="Fecha_de_nacimiento_bzv">
 			<span>Fecha de nacimiento</span>
 		</div>
-		<div id="ID29071965_bzs">
+		<div id="ID29071965_bzw">
 			<span>29/07/1965</span>
 		</div>
 	</div>
-	<div id="Header_-_Desktop_bzt" class="Header___Desktop">
-		<svg class="base_bzu">
-			<rect id="base_bzu" rx="0" ry="0" x="0" y="0" width="1440" height="50">
+	<div id="Header_-_Desktop_bzx" class="Header___Desktop">
+		<svg class="base_bzy">
+			<rect id="base_bzy" rx="0" ry="0" x="0" y="0" width="1440" height="50">
 			</rect>
 		</svg>
-		<div id="LOGO_bzv">
+		<div id="LOGO_bzz">
 			<span>LOGO</span>
 		</div>
-		<div id="INICIO_bzw">
+		<div onclick="application.goToTargetView(event)" id="INICIO_bz">
 			<span>INICIO</span>
 		</div>
-		<div id="PROFESORES_bzx">
+		<div id="PROFESORES_bz">
 			<span>PROFESORES</span>
 		</div>
-		<div id="GRUPOS_bzy">
+		<div id="GRUPOS_bz">
 			<span>GRUPOS</span>
 		</div>
-		<img id="christopher-campbell-28567-uns_bzz" src="christopher-campbell-28567-uns_bzz.png" srcset="christopher-campbell-28567-uns_bzz.png 1x, christopher-campbell-28567-uns_bzz@2x.png 2x">
+		<img id="christopher-campbell-28567-uns_bz" src="images/christopher-campbell-28567-uns_bz.png" srcset="images/christopher-campbell-28567-uns_bz.png 1x, images/christopher-campbell-28567-uns_bz@2x.png 2x">
 			
 		<div id="ASIGNATURAS_bz">
 			<span>ASIGNATURAS</span>
@@ -3583,43 +3603,43 @@ window.application = new Application();
 			<rect id="Field_bz" rx="6" ry="6" x="0" y="0" width="360" height="40">
 			</rect>
 		</svg>
-		<div id="Contrasea_bz">
+		<div id="Contrasea_ba">
 			<span>Contraseña</span>
 		</div>
-		<div id="_bz">
+		<div id="_bb">
 			<span>****************</span>
 		</div>
 	</div>
-	<div id="Focus_1_ba" class="Focus_1">
-		<svg class="Field_ba">
-			<rect id="Field_ba" rx="6" ry="6" x="0" y="0" width="360" height="40">
+	<div id="Focus_1_bc" class="Focus_1">
+		<svg class="Field_bd">
+			<rect id="Field_bd" rx="6" ry="6" x="0" y="0" width="360" height="40">
 			</rect>
 		</svg>
-		<div id="Email_ba">
+		<div id="Email_be">
 			<span>Email</span>
 		</div>
 		<div id="mancopmacuses">
 			<span>mancopmac@us.es</span>
 		</div>
 	</div>
-	<div id="Primary_Button_bd" class="Primary_Button">
-		<svg class="base_bd">
-			<rect id="base_bd" rx="6" ry="6" x="0" y="0" width="299" height="70">
+	<div onclick="application.goToTargetView(event)" id="Primary_Button_bg" class="Primary_Button">
+		<svg class="base_bh">
+			<rect id="base_bh" rx="6" ry="6" x="0" y="0" width="299" height="70">
 			</rect>
 		</svg>
-		<div id="Crear_be">
+		<div id="Crear_bi">
 			<span>Crear</span>
 		</div>
 	</div>
-	<div id="Focus_1_bf" class="Focus_1">
-		<svg class="Field_bg">
-			<rect id="Field_bg" rx="6" ry="6" x="0" y="0" width="360" height="40">
+	<div id="Focus_1_bj" class="Focus_1">
+		<svg class="Field_bk">
+			<rect id="Field_bk" rx="6" ry="6" x="0" y="0" width="360" height="40">
 			</rect>
 		</svg>
 		<div id="Confirmar_contrasea">
 			<span>Confirmar contraseña</span>
 		</div>
-		<div id="_bi">
+		<div id="_bm">
 			<span>****************</span>
 		</div>
 	</div>

@@ -4,16 +4,17 @@
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Asignación de alumno a grupo</title>
+<title>Lista Evaluacion</title>
 <style id="applicationStylesheet" type="text/css">
 	.mediaViewInfo {
-		--web-view-name: Asignación de alumno a grupo;
-		--web-view-id: Asignacin_de_alumno_a_grupo;
+		--web-view-name: Lista Evaluacion;
+		--web-view-id: Lista_Evaluacion;
 		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
 		--web-enable-deep-linking: true;
 	}
 	:root {
-		--web-view-ids: Asignacin_de_alumno_a_grupo;
+		--web-view-ids: Lista_Evaluacion;
 	}
 	* {
 		margin: 0;
@@ -21,20 +22,31 @@
 		box-sizing: border-box;
 		border: none;
 	}
-	#Asignacin_de_alumno_a_grupo {
+	#Lista_Evaluacion {
 		position: absolute;
 		width: 1440px;
 		height: 1000px;
 		overflow: hidden;
-		--web-view-name: Asignación de alumno a grupo;
-		--web-view-id: Asignacin_de_alumno_a_grupo;
+		--web-view-name: Lista Evaluacion;
+		--web-view-id: Lista_Evaluacion;
 		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
 		--web-enable-deep-linking: true;
 	}
-	#Rectngulo_449_bpb {
+	@keyframes fadein {
+	
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	
+	}
+	#Rectngulo_449_dha {
 		fill: rgba(246,248,249,1);
 	}
-	.Rectngulo_449_bpb {
+	.Rectngulo_449_dha {
 		position: absolute;
 		overflow: visible;
 		width: 1440px;
@@ -42,18 +54,2178 @@
 		left: 0px;
 		top: 50px;
 	}
-	#Header_-_Desktop_bpc {
+	#List_Group_Desktop_dhb {
 		position: absolute;
-		width: 1440px;
-		height: 50px;
+		width: 1080px;
+		height: 470px;
+		left: 180px;
+		top: 243px;
+		overflow: visible;
+	}
+	#Item_dhc {
+		position: absolute;
+		width: 1080px;
+		height: 441px;
+		left: 0px;
+		top: 29px;
+		overflow: hidden;
+	}
+	#Item_dhd {
+		position: absolute;
+		width: 1216px;
+		height: 116px;
 		left: 0px;
 		top: 0px;
 		overflow: visible;
 	}
-	#base_bpd {
+	#Base_dhe {
+		fill: rgba(255,255,255,1);
+	}
+	.Base_dhe {
+		position: absolute;
+		overflow: visible;
+		width: 1080px;
+		height: 56px;
+		left: 0px;
+		top: 0px;
+	}
+	#Avatar_dhf {
+		fill: rgba(166,173,180,1);
+	}
+	.Avatar_dhf {
+		position: absolute;
+		overflow: visible;
+		width: 32px;
+		height: 32px;
+		left: 48px;
+		top: 12px;
+	}
+	#Lina_Bo_dhg {
+		left: 88px;
+		top: 14px;
+		position: absolute;
+		overflow: visible;
+		width: 45px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Adobe_dhh {
+		left: 392px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 38px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Tag_dhi {
+		position: absolute;
+		width: 66px;
+		height: 24px;
+		left: 652px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_dhj {
 		fill: rgba(246,248,249,1);
 	}
-	.base_bpd {
+	.Base_dhj {
+		position: absolute;
+		overflow: visible;
+		width: 66px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#POPULAR_dhk {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 53px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Tag_dhl {
+		position: absolute;
+		width: 38px;
+		height: 24px;
+		left: 726px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_dhm {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_dhm {
+		position: absolute;
+		overflow: visible;
+		width: 38px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#NEW_dhn {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 27px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Tag_dho {
+		position: absolute;
+		width: 35px;
+		height: 24px;
+		left: 772px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_dhp {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_dhp {
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#JOB_dhq {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 21px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#ID012_389_438_dhr {
+		left: 523px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#ID09_Sep_2017_dhs {
+		left: 855px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#linaadobecom_dht {
+		left: 88px;
+		top: 31px;
+		position: absolute;
+		overflow: visible;
+		width: 97px;
+		white-space: nowrap;
+		line-height: 23px;
+		margin-top: -5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(166,173,180,1);
+	}
+	#More_dhu {
+		position: absolute;
+		width: 18px;
+		height: 4px;
+		left: 1042px;
+		top: 26px;
+		overflow: visible;
+	}
+	#More_dhv {
+		fill: rgba(32,33,36,1);
+	}
+	.More_dhv {
+		overflow: visible;
+		position: absolute;
+		width: 18px;
+		height: 4px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Checkbox_dhw {
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		left: 16px;
+		top: 20px;
+		overflow: visible;
+	}
+	#Checkbox_dhx {
+		fill: transparent;
+		stroke: rgba(235,237,237,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Checkbox_dhx {
+		position: absolute;
+		overflow: visible;
+		width: 16px;
+		height: 16px;
+		left: 0px;
+		top: 0px;
+	}
+	#close_dhy {
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 1208px;
+		top: 108px;
+		overflow: visible;
+	}
+	#close_dhz {
+		fill: rgba(32,33,36,1);
+	}
+	.close_dhz {
+		overflow: visible;
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Item_dh {
+		position: absolute;
+		width: 1216px;
+		height: 116px;
+		left: 0px;
+		top: 64px;
+		overflow: visible;
+	}
+	#Base_dia {
+		fill: rgba(255,255,255,1);
+	}
+	.Base_dia {
+		position: absolute;
+		overflow: visible;
+		width: 1080px;
+		height: 56px;
+		left: 0px;
+		top: 0px;
+	}
+	#Avatar_dh {
+		fill: rgba(166,173,180,1);
+	}
+	.Avatar_dh {
+		position: absolute;
+		overflow: visible;
+		width: 32px;
+		height: 32px;
+		left: 48px;
+		top: 12px;
+	}
+	#Lina_Bo_dh {
+		left: 88px;
+		top: 14px;
+		position: absolute;
+		overflow: visible;
+		width: 45px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Adobe_dh {
+		left: 392px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 38px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Tag_dh {
+		position: absolute;
+		width: 66px;
+		height: 24px;
+		left: 652px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_dib {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_dib {
+		position: absolute;
+		overflow: visible;
+		width: 66px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#POPULAR_dh {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 53px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Tag_dia {
+		position: absolute;
+		width: 38px;
+		height: 24px;
+		left: 726px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_dic {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_dic {
+		position: absolute;
+		overflow: visible;
+		width: 38px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#NEW_dia {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 27px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Tag_dib {
+		position: absolute;
+		width: 35px;
+		height: 24px;
+		left: 772px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_did {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_did {
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#JOB_did {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 21px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#ID012_389_438_die {
+		left: 523px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#ID09_Sep_2017_dif {
+		left: 855px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#linaadobecom_dig {
+		left: 88px;
+		top: 31px;
+		position: absolute;
+		overflow: visible;
+		width: 97px;
+		white-space: nowrap;
+		line-height: 23px;
+		margin-top: -5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(166,173,180,1);
+	}
+	#More_dih {
+		position: absolute;
+		width: 18px;
+		height: 4px;
+		left: 1042px;
+		top: 26px;
+		overflow: visible;
+	}
+	#More_dii {
+		fill: rgba(32,33,36,1);
+	}
+	.More_dii {
+		overflow: visible;
+		position: absolute;
+		width: 18px;
+		height: 4px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Checkbox_dij {
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		left: 16px;
+		top: 20px;
+		overflow: visible;
+	}
+	#Checkbox_dik {
+		fill: transparent;
+		stroke: rgba(235,237,237,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Checkbox_dik {
+		position: absolute;
+		overflow: visible;
+		width: 16px;
+		height: 16px;
+		left: 0px;
+		top: 0px;
+	}
+	#close_dil {
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 1208px;
+		top: 108px;
+		overflow: visible;
+	}
+	#close_dim {
+		fill: rgba(32,33,36,1);
+	}
+	.close_dim {
+		overflow: visible;
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Item_din {
+		position: absolute;
+		width: 1216px;
+		height: 116px;
+		left: 0px;
+		top: 128px;
+		overflow: visible;
+	}
+	#Base_dio {
+		fill: rgba(255,255,255,1);
+	}
+	.Base_dio {
+		position: absolute;
+		overflow: visible;
+		width: 1080px;
+		height: 56px;
+		left: 0px;
+		top: 0px;
+	}
+	#Avatar_dip {
+		fill: rgba(166,173,180,1);
+	}
+	.Avatar_dip {
+		position: absolute;
+		overflow: visible;
+		width: 32px;
+		height: 32px;
+		left: 48px;
+		top: 12px;
+	}
+	#Lina_Bo_diq {
+		left: 88px;
+		top: 14px;
+		position: absolute;
+		overflow: visible;
+		width: 45px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Adobe_dir {
+		left: 392px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 38px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Tag_dis {
+		position: absolute;
+		width: 66px;
+		height: 24px;
+		left: 652px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_dit {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_dit {
+		position: absolute;
+		overflow: visible;
+		width: 66px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#POPULAR_diu {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 53px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Tag_div {
+		position: absolute;
+		width: 38px;
+		height: 24px;
+		left: 726px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_diw {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_diw {
+		position: absolute;
+		overflow: visible;
+		width: 38px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#NEW_dix {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 27px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Tag_diy {
+		position: absolute;
+		width: 35px;
+		height: 24px;
+		left: 772px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_diz {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_diz {
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#JOB_di {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 21px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#ID012_389_438_di {
+		left: 523px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#ID09_Sep_2017_di {
+		left: 855px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#linaadobecom_di {
+		left: 88px;
+		top: 31px;
+		position: absolute;
+		overflow: visible;
+		width: 97px;
+		white-space: nowrap;
+		line-height: 23px;
+		margin-top: -5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(166,173,180,1);
+	}
+	#More_di {
+		position: absolute;
+		width: 18px;
+		height: 4px;
+		left: 1042px;
+		top: 26px;
+		overflow: visible;
+	}
+	#More_dja {
+		fill: rgba(32,33,36,1);
+	}
+	.More_dja {
+		overflow: visible;
+		position: absolute;
+		width: 18px;
+		height: 4px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Checkbox_di {
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		left: 16px;
+		top: 20px;
+		overflow: visible;
+	}
+	#Checkbox_dja {
+		fill: transparent;
+		stroke: rgba(235,237,237,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Checkbox_dja {
+		position: absolute;
+		overflow: visible;
+		width: 16px;
+		height: 16px;
+		left: 0px;
+		top: 0px;
+	}
+	#close_di {
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 1208px;
+		top: 108px;
+		overflow: visible;
+	}
+	#close_dja {
+		fill: rgba(32,33,36,1);
+	}
+	.close_dja {
+		overflow: visible;
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Item_dja {
+		position: absolute;
+		width: 1216px;
+		height: 116px;
+		left: 0px;
+		top: 192px;
+		overflow: visible;
+	}
+	#Base_djb {
+		fill: rgba(255,255,255,1);
+	}
+	.Base_djb {
+		position: absolute;
+		overflow: visible;
+		width: 1080px;
+		height: 56px;
+		left: 0px;
+		top: 0px;
+	}
+	#Avatar_djc {
+		fill: rgba(166,173,180,1);
+	}
+	.Avatar_djc {
+		position: absolute;
+		overflow: visible;
+		width: 32px;
+		height: 32px;
+		left: 48px;
+		top: 12px;
+	}
+	#Lina_Bo_djd {
+		left: 88px;
+		top: 14px;
+		position: absolute;
+		overflow: visible;
+		width: 45px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Company_Name_dje {
+		left: 392px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 93px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Tag_djf {
+		position: absolute;
+		width: 66px;
+		height: 24px;
+		left: 652px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_djg {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_djg {
+		position: absolute;
+		overflow: visible;
+		width: 66px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#POPULAR_djh {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 53px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Tag_dji {
+		position: absolute;
+		width: 38px;
+		height: 24px;
+		left: 726px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_djj {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_djj {
+		position: absolute;
+		overflow: visible;
+		width: 38px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#NEW_djk {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 27px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Tag_djl {
+		position: absolute;
+		width: 35px;
+		height: 24px;
+		left: 772px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_djm {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_djm {
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#JOB_djn {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 21px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#ID012_389_438_djo {
+		left: 523px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#ID09_Sep_2017_djp {
+		left: 855px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#linaadobecom_djq {
+		left: 88px;
+		top: 31px;
+		position: absolute;
+		overflow: visible;
+		width: 97px;
+		white-space: nowrap;
+		line-height: 23px;
+		margin-top: -5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(166,173,180,1);
+	}
+	#More_djr {
+		position: absolute;
+		width: 18px;
+		height: 4px;
+		left: 1042px;
+		top: 26px;
+		overflow: visible;
+	}
+	#More_djs {
+		fill: rgba(32,33,36,1);
+	}
+	.More_djs {
+		overflow: visible;
+		position: absolute;
+		width: 18px;
+		height: 4px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Checkbox_djt {
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		left: 16px;
+		top: 20px;
+		overflow: visible;
+	}
+	#Checkbox_dju {
+		fill: transparent;
+		stroke: rgba(235,237,237,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Checkbox_dju {
+		position: absolute;
+		overflow: visible;
+		width: 16px;
+		height: 16px;
+		left: 0px;
+		top: 0px;
+	}
+	#close_djv {
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 1208px;
+		top: 108px;
+		overflow: visible;
+	}
+	#close_djw {
+		fill: rgba(32,33,36,1);
+	}
+	.close_djw {
+		overflow: visible;
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Item_djx {
+		position: absolute;
+		width: 1216px;
+		height: 116px;
+		left: 0px;
+		top: 256px;
+		overflow: visible;
+	}
+	#Base_djy {
+		fill: rgba(255,255,255,1);
+	}
+	.Base_djy {
+		position: absolute;
+		overflow: visible;
+		width: 1080px;
+		height: 56px;
+		left: 0px;
+		top: 0px;
+	}
+	#Avatar_djz {
+		fill: rgba(166,173,180,1);
+	}
+	.Avatar_djz {
+		position: absolute;
+		overflow: visible;
+		width: 32px;
+		height: 32px;
+		left: 48px;
+		top: 12px;
+	}
+	#Lina_Bo_dka {
+		left: 88px;
+		top: 14px;
+		position: absolute;
+		overflow: visible;
+		width: 45px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Adobe_dj {
+		left: 392px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 38px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Tag_dj {
+		position: absolute;
+		width: 66px;
+		height: 24px;
+		left: 652px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_dj {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_dj {
+		position: absolute;
+		overflow: visible;
+		width: 66px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#POPULAR_dj {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 53px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Tag_dka {
+		position: absolute;
+		width: 38px;
+		height: 24px;
+		left: 726px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_dka {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_dka {
+		position: absolute;
+		overflow: visible;
+		width: 38px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#NEW_dj {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 27px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Tag_dkb {
+		position: absolute;
+		width: 35px;
+		height: 24px;
+		left: 772px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_dkb {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_dkb {
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#JOB_dka {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 21px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#ID012_389_438_dkb {
+		left: 523px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#ID09_Sep_2017_dkc {
+		left: 855px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#linaadobecom_dkd {
+		left: 88px;
+		top: 31px;
+		position: absolute;
+		overflow: visible;
+		width: 97px;
+		white-space: nowrap;
+		line-height: 23px;
+		margin-top: -5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(166,173,180,1);
+	}
+	#More_dke {
+		position: absolute;
+		width: 18px;
+		height: 4px;
+		left: 1042px;
+		top: 26px;
+		overflow: visible;
+	}
+	#More_dkf {
+		fill: rgba(32,33,36,1);
+	}
+	.More_dkf {
+		overflow: visible;
+		position: absolute;
+		width: 18px;
+		height: 4px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Checkbox_dkg {
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		left: 16px;
+		top: 20px;
+		overflow: visible;
+	}
+	#Checkbox_dkh {
+		fill: transparent;
+		stroke: rgba(235,237,237,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Checkbox_dkh {
+		position: absolute;
+		overflow: visible;
+		width: 16px;
+		height: 16px;
+		left: 0px;
+		top: 0px;
+	}
+	#close_dki {
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 1208px;
+		top: 108px;
+		overflow: visible;
+	}
+	#close_dkj {
+		fill: rgba(32,33,36,1);
+	}
+	.close_dkj {
+		overflow: visible;
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Item_dkk {
+		position: absolute;
+		width: 1216px;
+		height: 116px;
+		left: 0px;
+		top: 320px;
+		overflow: visible;
+	}
+	#Base_dkl {
+		fill: rgba(255,255,255,1);
+	}
+	.Base_dkl {
+		position: absolute;
+		overflow: visible;
+		width: 1080px;
+		height: 56px;
+		left: 0px;
+		top: 0px;
+	}
+	#Avatar_dkm {
+		fill: rgba(166,173,180,1);
+	}
+	.Avatar_dkm {
+		position: absolute;
+		overflow: visible;
+		width: 32px;
+		height: 32px;
+		left: 48px;
+		top: 12px;
+	}
+	#Lina_Bo_dkn {
+		left: 88px;
+		top: 14px;
+		position: absolute;
+		overflow: visible;
+		width: 45px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Adobe_dko {
+		left: 392px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 38px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Tag_dkp {
+		position: absolute;
+		width: 66px;
+		height: 24px;
+		left: 652px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_dkq {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_dkq {
+		position: absolute;
+		overflow: visible;
+		width: 66px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#POPULAR_dkr {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 53px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Tag_dks {
+		position: absolute;
+		width: 38px;
+		height: 24px;
+		left: 726px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_dkt {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_dkt {
+		position: absolute;
+		overflow: visible;
+		width: 38px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#NEW_dku {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 27px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Tag_dkv {
+		position: absolute;
+		width: 35px;
+		height: 24px;
+		left: 772px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_dkw {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_dkw {
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#JOB_dkx {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 21px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#ID012_389_438_dky {
+		left: 523px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#ID09_Sep_2017_dkz {
+		left: 855px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#linaadobecom_dk {
+		left: 88px;
+		top: 31px;
+		position: absolute;
+		overflow: visible;
+		width: 97px;
+		white-space: nowrap;
+		line-height: 23px;
+		margin-top: -5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(166,173,180,1);
+	}
+	#More_dk {
+		position: absolute;
+		width: 18px;
+		height: 4px;
+		left: 1042px;
+		top: 26px;
+		overflow: visible;
+	}
+	#More_dla {
+		fill: rgba(32,33,36,1);
+	}
+	.More_dla {
+		overflow: visible;
+		position: absolute;
+		width: 18px;
+		height: 4px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Checkbox_dk {
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		left: 16px;
+		top: 20px;
+		overflow: visible;
+	}
+	#Checkbox_dla {
+		fill: transparent;
+		stroke: rgba(235,237,237,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Checkbox_dla {
+		position: absolute;
+		overflow: visible;
+		width: 16px;
+		height: 16px;
+		left: 0px;
+		top: 0px;
+	}
+	#close_dk {
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 1208px;
+		top: 108px;
+		overflow: visible;
+	}
+	#close_dla {
+		fill: rgba(32,33,36,1);
+	}
+	.close_dla {
+		overflow: visible;
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Item_dk {
+		position: absolute;
+		width: 1216px;
+		height: 116px;
+		left: 0px;
+		top: 384px;
+		overflow: visible;
+	}
+	#Base_dk {
+		fill: rgba(255,255,255,1);
+	}
+	.Base_dk {
+		position: absolute;
+		overflow: visible;
+		width: 1080px;
+		height: 56px;
+		left: 0px;
+		top: 0px;
+	}
+	#Avatar_dk {
+		fill: rgba(166,173,180,1);
+	}
+	.Avatar_dk {
+		position: absolute;
+		overflow: visible;
+		width: 32px;
+		height: 32px;
+		left: 48px;
+		top: 12px;
+	}
+	#Lina_Bo_dla {
+		left: 88px;
+		top: 14px;
+		position: absolute;
+		overflow: visible;
+		width: 45px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Adobe_dlb {
+		left: 392px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 38px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#Tag_dlc {
+		position: absolute;
+		width: 66px;
+		height: 24px;
+		left: 652px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_dld {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_dld {
+		position: absolute;
+		overflow: visible;
+		width: 66px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#POPULAR_dle {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 53px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Tag_dlf {
+		position: absolute;
+		width: 38px;
+		height: 24px;
+		left: 726px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_dlg {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_dlg {
+		position: absolute;
+		overflow: visible;
+		width: 38px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#NEW_dlh {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 27px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Tag_dli {
+		position: absolute;
+		width: 35px;
+		height: 24px;
+		left: 772px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Base_dlj {
+		fill: rgba(246,248,249,1);
+	}
+	.Base_dlj {
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#JOB_dlk {
+		left: 6px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 21px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#ID012_389_438_dll {
+		left: 523px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#ID09_Sep_2017_dlm {
+		left: 855px;
+		top: 23px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(32,33,36,1);
+	}
+	#linaadobecom_dln {
+		left: 88px;
+		top: 31px;
+		position: absolute;
+		overflow: visible;
+		width: 97px;
+		white-space: nowrap;
+		line-height: 23px;
+		margin-top: -5px;
+		text-align: left;
+		font-family: Acumin Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(166,173,180,1);
+	}
+	#More_dlo {
+		position: absolute;
+		width: 18px;
+		height: 4px;
+		left: 1042px;
+		top: 26px;
+		overflow: visible;
+	}
+	#More_dlp {
+		fill: rgba(32,33,36,1);
+	}
+	.More_dlp {
+		overflow: visible;
+		position: absolute;
+		width: 18px;
+		height: 4px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Checkbox_dlq {
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		left: 16px;
+		top: 20px;
+		overflow: visible;
+	}
+	#Checkbox_dlr {
+		fill: transparent;
+		stroke: rgba(235,237,237,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Checkbox_dlr {
+		position: absolute;
+		overflow: visible;
+		width: 16px;
+		height: 16px;
+		left: 0px;
+		top: 0px;
+	}
+	#close_dls {
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 1208px;
+		top: 108px;
+		overflow: visible;
+	}
+	#close_dlt {
+		fill: rgba(32,33,36,1);
+	}
+	.close_dlt {
+		overflow: visible;
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#BASIC_INFO_dlu {
+		left: 48px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 63px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Helvetica;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#COMPANY_dlv {
+		left: 389px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 56px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Helvetica;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#PHONE_dlw {
+		left: 522px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 40px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Helvetica;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#TAGS_dlx {
+		left: 651px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 30px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Helvetica;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#CREATED_DATE_dly {
+		left: 851px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 84px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: left;
+		font-family: Helvetica;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(166,173,180,1);
+	}
+	#Header_dlz {
+		position: absolute;
+		width: 135px;
+		height: 58px;
+		left: 1125px;
+		top: 328px;
+		overflow: visible;
+	}
+	#dropdown_dl {
+		position: absolute;
+		width: 135px;
+		height: 58px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Rectngulo_431_dl {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(52,54,56,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectngulo_431_dl {
+		position: absolute;
+		overflow: visible;
+		width: 135px;
+		height: 58px;
+		left: 0px;
+		top: 0px;
+	}
+	#MODIFICAR_dl {
+		left: 13px;
+		top: 6px;
+		position: absolute;
+		overflow: visible;
+		width: 115px;
+		height: 18px;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: right;
+		font-family: Helvetica;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(52,54,56,1);
+	}
+	#ELIMINAR_dl {
+		left: 13px;
+		top: 36px;
+		position: absolute;
+		overflow: visible;
+		width: 115px;
+		height: 17px;
+		line-height: 20px;
+		margin-top: -4.5px;
+		text-align: right;
+		font-family: Helvetica;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(52,54,56,1);
+	}
+	#Primary_Button_dl {
+		position: absolute;
+		width: 188px;
+		height: 34px;
+		left: 1072px;
+		top: 100px;
+		overflow: visible;
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: page;
+		--web-action-target: Crear_Evaluacion.html;
+		cursor: pointer;
+	}
+	#base_dl {
+		fill: rgba(250,105,128,1);
+	}
+	.base_dl {
+		position: absolute;
+		overflow: visible;
+		width: 188px;
+		height: 34px;
+		left: 0px;
+		top: 0px;
+	}
+	#Crear_evaluacin {
+		left: 30px;
+		top: 9px;
+		position: absolute;
+		overflow: visible;
+		width: 129px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -2px;
+		text-align: center;
+		font-family: Helvetica;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 16px;
+		color: rgba(255,255,255,1);
+	}
+	#Header_-_Desktop_dl {
+		position: absolute;
+		width: 1440px;
+		height: 50px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#base_dma {
+		fill: rgba(246,248,249,1);
+	}
+	.base_dma {
 		position: absolute;
 		overflow: visible;
 		width: 1440px;
@@ -61,7 +2233,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#LOGO_bpe {
+	#LOGO_dl {
 		left: 20px;
 		top: 18px;
 		position: absolute;
@@ -77,13 +2249,17 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#INICIO_bpf {
+	#INICIO_dma {
 		left: 605px;
 		top: 19px;
 		position: absolute;
 		overflow: visible;
 		width: 35px;
 		white-space: nowrap;
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: page;
+		--web-action-target: Home_admin.html;
+		cursor: pointer;
 		line-height: 20px;
 		margin-top: -4.5px;
 		text-align: left;
@@ -93,7 +2269,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#PROFESORES_bpg {
+	#PROFESORES_dmb {
 		opacity: 0.5;
 		left: 1060px;
 		top: 18px;
@@ -110,7 +2286,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#GRUPOS_bph {
+	#GRUPOS_dmc {
 		opacity: 0.5;
 		left: 1178px;
 		top: 18px;
@@ -127,7 +2303,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#christopher-campbell-28567-uns_bpi {
+	#christopher-campbell-28567-uns_dmd {
 		position: absolute;
 		width: 30px;
 		height: 30px;
@@ -135,7 +2311,7 @@
 		top: 10px;
 		overflow: visible;
 	}
-	#ASIGNATURAS_bpj {
+	#ASIGNATURAS_dme {
 		opacity: 0.5;
 		left: 1268px;
 		top: 18px;
@@ -152,7 +2328,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#COMPETENCIAS_bpk {
+	#COMPETENCIAS_dmf {
 		opacity: 0.5;
 		left: 831px;
 		top: 18px;
@@ -169,7 +2345,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#ADMINISTRADORES_bpl {
+	#ADMINISTRADORES_dmg {
 		opacity: 0.5;
 		left: 681px;
 		top: 18px;
@@ -186,7 +2362,7 @@
 		font-size: 11px;
 		color: rgba(52,54,56,1);
 	}
-	#ALUMNOS_bpm {
+	#ALUMNOS_dmh {
 		opacity: 0.5;
 		left: 962px;
 		top: 18px;
@@ -202,3576 +2378,6 @@
 		font-weight: bold;
 		font-size: 11px;
 		color: rgba(52,54,56,1);
-	}
-	#List_Group_Desktop_bpn {
-		position: absolute;
-		width: 1080px;
-		height: 775px;
-		left: 180px;
-		top: 225px;
-		overflow: visible;
-	}
-	#Item_bpo {
-		position: absolute;
-		width: 1080px;
-		height: 746px;
-		left: 0px;
-		top: 29px;
-		overflow: hidden;
-	}
-	#Item_bpp {
-		position: absolute;
-		width: 1216px;
-		height: 116px;
-		left: 0px;
-		top: 0px;
-		overflow: visible;
-	}
-	#Base_bpq {
-		fill: rgba(255,255,255,1);
-	}
-	.Base_bpq {
-		position: absolute;
-		overflow: visible;
-		width: 1080px;
-		height: 56px;
-		left: 0px;
-		top: 0px;
-	}
-	#Avatar_bpr {
-		fill: rgba(166,173,180,1);
-	}
-	.Avatar_bpr {
-		position: absolute;
-		overflow: visible;
-		width: 32px;
-		height: 32px;
-		left: 48px;
-		top: 12px;
-	}
-	#Lina_Bo_bps {
-		left: 88px;
-		top: 14px;
-		position: absolute;
-		overflow: visible;
-		width: 45px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Adobe_bpt {
-		left: 392px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Tag_bpu {
-		position: absolute;
-		width: 66px;
-		height: 24px;
-		left: 652px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_bpv {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_bpv {
-		position: absolute;
-		overflow: visible;
-		width: 66px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#POPULAR_bpw {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 53px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_bpx {
-		position: absolute;
-		width: 38px;
-		height: 24px;
-		left: 726px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_bpy {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_bpy {
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#NEW_bpz {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 27px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_bp {
-		position: absolute;
-		width: 35px;
-		height: 24px;
-		left: 772px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_bp {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_bp {
-		position: absolute;
-		overflow: visible;
-		width: 35px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#JOB_bp {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 21px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#ID012_389_438_bp {
-		left: 523px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#ID09_Sep_2017_bp {
-		left: 855px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#linaadobecom_bp {
-		left: 88px;
-		top: 31px;
-		position: absolute;
-		overflow: visible;
-		width: 97px;
-		white-space: nowrap;
-		line-height: 23px;
-		margin-top: -5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(166,173,180,1);
-	}
-	#Checkbox_bp {
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 16px;
-		top: 20px;
-		overflow: visible;
-	}
-	#Checkbox_bqa {
-		fill: transparent;
-		stroke: rgba(235,237,237,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Checkbox_bqa {
-		position: absolute;
-		overflow: visible;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-	}
-	#close_bp {
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 1208px;
-		top: 108px;
-		overflow: visible;
-	}
-	#close_bqa {
-		fill: rgba(32,33,36,1);
-	}
-	.close_bqa {
-		overflow: visible;
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Item_bqa {
-		position: absolute;
-		width: 1216px;
-		height: 116px;
-		left: 0px;
-		top: 64px;
-		overflow: visible;
-	}
-	#Base_bqb {
-		fill: rgba(255,255,255,1);
-	}
-	.Base_bqb {
-		position: absolute;
-		overflow: visible;
-		width: 1080px;
-		height: 56px;
-		left: 0px;
-		top: 0px;
-	}
-	#Avatar_bqc {
-		fill: rgba(166,173,180,1);
-	}
-	.Avatar_bqc {
-		position: absolute;
-		overflow: visible;
-		width: 32px;
-		height: 32px;
-		left: 48px;
-		top: 12px;
-	}
-	#Lina_Bo_bqd {
-		left: 88px;
-		top: 14px;
-		position: absolute;
-		overflow: visible;
-		width: 45px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Adobe_bqe {
-		left: 392px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Tag_bqf {
-		position: absolute;
-		width: 66px;
-		height: 24px;
-		left: 652px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_bqg {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_bqg {
-		position: absolute;
-		overflow: visible;
-		width: 66px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#POPULAR_bqh {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 53px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_bqi {
-		position: absolute;
-		width: 38px;
-		height: 24px;
-		left: 726px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_bqj {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_bqj {
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#NEW_bqk {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 27px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_bql {
-		position: absolute;
-		width: 35px;
-		height: 24px;
-		left: 772px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_bqm {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_bqm {
-		position: absolute;
-		overflow: visible;
-		width: 35px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#JOB_bqn {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 21px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#ID012_389_438_bqo {
-		left: 523px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#ID09_Sep_2017_bqp {
-		left: 855px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#linaadobecom_bqq {
-		left: 88px;
-		top: 31px;
-		position: absolute;
-		overflow: visible;
-		width: 97px;
-		white-space: nowrap;
-		line-height: 23px;
-		margin-top: -5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(166,173,180,1);
-	}
-	#Checkbox_bqr {
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 16px;
-		top: 20px;
-		overflow: visible;
-	}
-	#Checkbox_bqs {
-		fill: transparent;
-		stroke: rgba(235,237,237,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Checkbox_bqs {
-		position: absolute;
-		overflow: visible;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-	}
-	#close_bqt {
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 1208px;
-		top: 108px;
-		overflow: visible;
-	}
-	#close_bqu {
-		fill: rgba(32,33,36,1);
-	}
-	.close_bqu {
-		overflow: visible;
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Item_bqv {
-		position: absolute;
-		width: 1216px;
-		height: 116px;
-		left: 0px;
-		top: 128px;
-		overflow: visible;
-	}
-	#Base_bqw {
-		fill: rgba(255,255,255,1);
-	}
-	.Base_bqw {
-		position: absolute;
-		overflow: visible;
-		width: 1080px;
-		height: 56px;
-		left: 0px;
-		top: 0px;
-	}
-	#Avatar_bqx {
-		fill: rgba(166,173,180,1);
-	}
-	.Avatar_bqx {
-		position: absolute;
-		overflow: visible;
-		width: 32px;
-		height: 32px;
-		left: 48px;
-		top: 12px;
-	}
-	#Lina_Bo_bqy {
-		left: 88px;
-		top: 14px;
-		position: absolute;
-		overflow: visible;
-		width: 45px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Adobe_bqz {
-		left: 392px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Tag_bq {
-		position: absolute;
-		width: 66px;
-		height: 24px;
-		left: 652px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_bq {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_bq {
-		position: absolute;
-		overflow: visible;
-		width: 66px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#POPULAR_bq {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 53px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_bra {
-		position: absolute;
-		width: 38px;
-		height: 24px;
-		left: 726px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_bra {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_bra {
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#NEW_bq {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 27px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_brb {
-		position: absolute;
-		width: 35px;
-		height: 24px;
-		left: 772px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_brb {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_brb {
-		position: absolute;
-		overflow: visible;
-		width: 35px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#JOB_bq {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 21px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#ID012_389_438_bq {
-		left: 523px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#ID09_Sep_2017_bra {
-		left: 855px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#linaadobecom_brb {
-		left: 88px;
-		top: 31px;
-		position: absolute;
-		overflow: visible;
-		width: 97px;
-		white-space: nowrap;
-		line-height: 23px;
-		margin-top: -5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(166,173,180,1);
-	}
-	#Checkbox_brc {
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 16px;
-		top: 20px;
-		overflow: visible;
-	}
-	#Checkbox_brd {
-		fill: transparent;
-		stroke: rgba(235,237,237,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Checkbox_brd {
-		position: absolute;
-		overflow: visible;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-	}
-	#close_bre {
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 1208px;
-		top: 108px;
-		overflow: visible;
-	}
-	#close_brf {
-		fill: rgba(32,33,36,1);
-	}
-	.close_brf {
-		overflow: visible;
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Item_brg {
-		position: absolute;
-		width: 1216px;
-		height: 116px;
-		left: 0px;
-		top: 192px;
-		overflow: visible;
-	}
-	#Base_brh {
-		fill: rgba(255,255,255,1);
-	}
-	.Base_brh {
-		position: absolute;
-		overflow: visible;
-		width: 1080px;
-		height: 56px;
-		left: 0px;
-		top: 0px;
-	}
-	#Avatar_bri {
-		fill: rgba(166,173,180,1);
-	}
-	.Avatar_bri {
-		position: absolute;
-		overflow: visible;
-		width: 32px;
-		height: 32px;
-		left: 48px;
-		top: 12px;
-	}
-	#Lina_Bo_brj {
-		left: 88px;
-		top: 14px;
-		position: absolute;
-		overflow: visible;
-		width: 45px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Company_Name_brk {
-		left: 392px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 93px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Tag_brl {
-		position: absolute;
-		width: 66px;
-		height: 24px;
-		left: 652px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_brm {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_brm {
-		position: absolute;
-		overflow: visible;
-		width: 66px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#POPULAR_brn {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 53px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_bro {
-		position: absolute;
-		width: 38px;
-		height: 24px;
-		left: 726px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_brp {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_brp {
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#NEW_brq {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 27px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_brr {
-		position: absolute;
-		width: 35px;
-		height: 24px;
-		left: 772px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_brs {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_brs {
-		position: absolute;
-		overflow: visible;
-		width: 35px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#JOB_brt {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 21px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#ID012_389_438_bru {
-		left: 523px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#ID09_Sep_2017_brv {
-		left: 855px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#linaadobecom_brw {
-		left: 88px;
-		top: 31px;
-		position: absolute;
-		overflow: visible;
-		width: 97px;
-		white-space: nowrap;
-		line-height: 23px;
-		margin-top: -5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(166,173,180,1);
-	}
-	#Checkbox_brx {
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 16px;
-		top: 20px;
-		overflow: visible;
-	}
-	#Checkbox_bry {
-		fill: transparent;
-		stroke: rgba(235,237,237,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Checkbox_bry {
-		position: absolute;
-		overflow: visible;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-	}
-	#close_brz {
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 1208px;
-		top: 108px;
-		overflow: visible;
-	}
-	#close_br {
-		fill: rgba(32,33,36,1);
-	}
-	.close_br {
-		overflow: visible;
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Item_br {
-		position: absolute;
-		width: 1216px;
-		height: 116px;
-		left: 0px;
-		top: 256px;
-		overflow: visible;
-	}
-	#Base_br {
-		fill: rgba(255,255,255,1);
-	}
-	.Base_br {
-		position: absolute;
-		overflow: visible;
-		width: 1080px;
-		height: 56px;
-		left: 0px;
-		top: 0px;
-	}
-	#Avatar_br {
-		fill: rgba(166,173,180,1);
-	}
-	.Avatar_br {
-		position: absolute;
-		overflow: visible;
-		width: 32px;
-		height: 32px;
-		left: 48px;
-		top: 12px;
-	}
-	#Lina_Bo_br {
-		left: 88px;
-		top: 14px;
-		position: absolute;
-		overflow: visible;
-		width: 45px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Adobe_br {
-		left: 392px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Tag_br {
-		position: absolute;
-		width: 66px;
-		height: 24px;
-		left: 652px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_bsa {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_bsa {
-		position: absolute;
-		overflow: visible;
-		width: 66px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#POPULAR_br {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 53px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_bsa {
-		position: absolute;
-		width: 38px;
-		height: 24px;
-		left: 726px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_bsb {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_bsb {
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#NEW_bsb {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 27px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_bsc {
-		position: absolute;
-		width: 35px;
-		height: 24px;
-		left: 772px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_bsd {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_bsd {
-		position: absolute;
-		overflow: visible;
-		width: 35px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#JOB_bse {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 21px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#ID012_389_438_bsf {
-		left: 523px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#ID09_Sep_2017_bsg {
-		left: 855px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#linaadobecom_bsh {
-		left: 88px;
-		top: 31px;
-		position: absolute;
-		overflow: visible;
-		width: 97px;
-		white-space: nowrap;
-		line-height: 23px;
-		margin-top: -5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(166,173,180,1);
-	}
-	#Checkbox_bsi {
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 16px;
-		top: 20px;
-		overflow: visible;
-	}
-	#Checkbox_bsj {
-		fill: transparent;
-		stroke: rgba(235,237,237,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Checkbox_bsj {
-		position: absolute;
-		overflow: visible;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-	}
-	#close_bsk {
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 1208px;
-		top: 108px;
-		overflow: visible;
-	}
-	#close_bsl {
-		fill: rgba(32,33,36,1);
-	}
-	.close_bsl {
-		overflow: visible;
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Item_bsm {
-		position: absolute;
-		width: 1216px;
-		height: 116px;
-		left: 0px;
-		top: 320px;
-		overflow: visible;
-	}
-	#Base_bsn {
-		fill: rgba(255,255,255,1);
-	}
-	.Base_bsn {
-		position: absolute;
-		overflow: visible;
-		width: 1080px;
-		height: 56px;
-		left: 0px;
-		top: 0px;
-	}
-	#Avatar_bso {
-		fill: rgba(166,173,180,1);
-	}
-	.Avatar_bso {
-		position: absolute;
-		overflow: visible;
-		width: 32px;
-		height: 32px;
-		left: 48px;
-		top: 12px;
-	}
-	#Lina_Bo_bsp {
-		left: 88px;
-		top: 14px;
-		position: absolute;
-		overflow: visible;
-		width: 45px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Adobe_bsq {
-		left: 392px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Tag_bsr {
-		position: absolute;
-		width: 66px;
-		height: 24px;
-		left: 652px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_bss {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_bss {
-		position: absolute;
-		overflow: visible;
-		width: 66px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#POPULAR_bst {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 53px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_bsu {
-		position: absolute;
-		width: 38px;
-		height: 24px;
-		left: 726px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_bsv {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_bsv {
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#NEW_bsw {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 27px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_bsx {
-		position: absolute;
-		width: 35px;
-		height: 24px;
-		left: 772px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_bsy {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_bsy {
-		position: absolute;
-		overflow: visible;
-		width: 35px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#JOB_bsz {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 21px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#ID012_389_438_bs {
-		left: 523px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#ID09_Sep_2017_bs {
-		left: 855px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#linaadobecom_bs {
-		left: 88px;
-		top: 31px;
-		position: absolute;
-		overflow: visible;
-		width: 97px;
-		white-space: nowrap;
-		line-height: 23px;
-		margin-top: -5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(166,173,180,1);
-	}
-	#Checkbox_bs {
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 16px;
-		top: 20px;
-		overflow: visible;
-	}
-	#Checkbox_bta {
-		fill: transparent;
-		stroke: rgba(235,237,237,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Checkbox_bta {
-		position: absolute;
-		overflow: visible;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-	}
-	#close_bs {
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 1208px;
-		top: 108px;
-		overflow: visible;
-	}
-	#close_bta {
-		fill: rgba(32,33,36,1);
-	}
-	.close_bta {
-		overflow: visible;
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Item_bs {
-		position: absolute;
-		width: 1216px;
-		height: 116px;
-		left: 0px;
-		top: 384px;
-		overflow: visible;
-	}
-	#Base_bs {
-		fill: rgba(255,255,255,1);
-	}
-	.Base_bs {
-		position: absolute;
-		overflow: visible;
-		width: 1080px;
-		height: 56px;
-		left: 0px;
-		top: 0px;
-	}
-	#Avatar_bs {
-		fill: rgba(166,173,180,1);
-	}
-	.Avatar_bs {
-		position: absolute;
-		overflow: visible;
-		width: 32px;
-		height: 32px;
-		left: 48px;
-		top: 12px;
-	}
-	#Lina_Bo_bta {
-		left: 88px;
-		top: 14px;
-		position: absolute;
-		overflow: visible;
-		width: 45px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Adobe_btb {
-		left: 392px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Tag_btc {
-		position: absolute;
-		width: 66px;
-		height: 24px;
-		left: 652px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_btd {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_btd {
-		position: absolute;
-		overflow: visible;
-		width: 66px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#POPULAR_bte {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 53px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_btf {
-		position: absolute;
-		width: 38px;
-		height: 24px;
-		left: 726px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_btg {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_btg {
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#NEW_bth {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 27px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_bti {
-		position: absolute;
-		width: 35px;
-		height: 24px;
-		left: 772px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_btj {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_btj {
-		position: absolute;
-		overflow: visible;
-		width: 35px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#JOB_btk {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 21px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#ID012_389_438_btl {
-		left: 523px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#ID09_Sep_2017_btm {
-		left: 855px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#linaadobecom_btn {
-		left: 88px;
-		top: 31px;
-		position: absolute;
-		overflow: visible;
-		width: 97px;
-		white-space: nowrap;
-		line-height: 23px;
-		margin-top: -5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(166,173,180,1);
-	}
-	#Checkbox_bto {
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 16px;
-		top: 20px;
-		overflow: visible;
-	}
-	#Checkbox_btp {
-		fill: transparent;
-		stroke: rgba(235,237,237,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Checkbox_btp {
-		position: absolute;
-		overflow: visible;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-	}
-	#close_btq {
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 1208px;
-		top: 108px;
-		overflow: visible;
-	}
-	#close_btr {
-		fill: rgba(32,33,36,1);
-	}
-	.close_btr {
-		overflow: visible;
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Item_bts {
-		position: absolute;
-		width: 1216px;
-		height: 116px;
-		left: 0px;
-		top: 448px;
-		overflow: visible;
-	}
-	#Base_btt {
-		fill: rgba(255,255,255,1);
-	}
-	.Base_btt {
-		position: absolute;
-		overflow: visible;
-		width: 1080px;
-		height: 56px;
-		left: 0px;
-		top: 0px;
-	}
-	#Avatar_btu {
-		fill: rgba(166,173,180,1);
-	}
-	.Avatar_btu {
-		position: absolute;
-		overflow: visible;
-		width: 32px;
-		height: 32px;
-		left: 48px;
-		top: 12px;
-	}
-	#Lina_Bo_btv {
-		left: 88px;
-		top: 14px;
-		position: absolute;
-		overflow: visible;
-		width: 45px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Adobe_btw {
-		left: 392px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Tag_btx {
-		position: absolute;
-		width: 66px;
-		height: 24px;
-		left: 652px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_bty {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_bty {
-		position: absolute;
-		overflow: visible;
-		width: 66px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#POPULAR_btz {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 53px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_bt {
-		position: absolute;
-		width: 38px;
-		height: 24px;
-		left: 726px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_bt {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_bt {
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#NEW_bt {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 27px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_bua {
-		position: absolute;
-		width: 35px;
-		height: 24px;
-		left: 772px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_bua {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_bua {
-		position: absolute;
-		overflow: visible;
-		width: 35px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#JOB_bt {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 21px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#ID012_389_438_bt {
-		left: 523px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#ID09_Sep_2017_bt {
-		left: 855px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#linaadobecom_bt {
-		left: 88px;
-		top: 31px;
-		position: absolute;
-		overflow: visible;
-		width: 97px;
-		white-space: nowrap;
-		line-height: 23px;
-		margin-top: -5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(166,173,180,1);
-	}
-	#Checkbox_bt {
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 16px;
-		top: 20px;
-		overflow: visible;
-	}
-	#Checkbox_bua {
-		fill: transparent;
-		stroke: rgba(235,237,237,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Checkbox_bua {
-		position: absolute;
-		overflow: visible;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-	}
-	#close_bub {
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 1208px;
-		top: 108px;
-		overflow: visible;
-	}
-	#close_buc {
-		fill: rgba(32,33,36,1);
-	}
-	.close_buc {
-		overflow: visible;
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Item_bud {
-		position: absolute;
-		width: 1216px;
-		height: 116px;
-		left: 0px;
-		top: 512px;
-		overflow: visible;
-	}
-	#Base_bue {
-		fill: rgba(255,255,255,1);
-	}
-	.Base_bue {
-		position: absolute;
-		overflow: visible;
-		width: 1080px;
-		height: 56px;
-		left: 0px;
-		top: 0px;
-	}
-	#Avatar_buf {
-		fill: rgba(166,173,180,1);
-	}
-	.Avatar_buf {
-		position: absolute;
-		overflow: visible;
-		width: 32px;
-		height: 32px;
-		left: 48px;
-		top: 12px;
-	}
-	#Lina_Bo_bug {
-		left: 88px;
-		top: 14px;
-		position: absolute;
-		overflow: visible;
-		width: 45px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Adobe_buh {
-		left: 392px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Tag_bui {
-		position: absolute;
-		width: 66px;
-		height: 24px;
-		left: 652px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_buj {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_buj {
-		position: absolute;
-		overflow: visible;
-		width: 66px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#POPULAR_buk {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 53px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_bul {
-		position: absolute;
-		width: 38px;
-		height: 24px;
-		left: 726px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_bum {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_bum {
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#NEW_bun {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 27px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_buo {
-		position: absolute;
-		width: 35px;
-		height: 24px;
-		left: 772px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_bup {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_bup {
-		position: absolute;
-		overflow: visible;
-		width: 35px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#JOB_buq {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 21px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#ID012_389_438_bur {
-		left: 523px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#ID09_Sep_2017_bus {
-		left: 855px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#linaadobecom_but {
-		left: 88px;
-		top: 31px;
-		position: absolute;
-		overflow: visible;
-		width: 97px;
-		white-space: nowrap;
-		line-height: 23px;
-		margin-top: -5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(166,173,180,1);
-	}
-	#Checkbox_buu {
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 16px;
-		top: 20px;
-		overflow: visible;
-	}
-	#Checkbox_buv {
-		fill: transparent;
-		stroke: rgba(235,237,237,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Checkbox_buv {
-		position: absolute;
-		overflow: visible;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-	}
-	#close_buw {
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 1208px;
-		top: 108px;
-		overflow: visible;
-	}
-	#close_bux {
-		fill: rgba(32,33,36,1);
-	}
-	.close_bux {
-		overflow: visible;
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Item_buy {
-		position: absolute;
-		width: 1216px;
-		height: 116px;
-		left: 0px;
-		top: 576px;
-		overflow: visible;
-	}
-	#Base_buz {
-		fill: rgba(255,255,255,1);
-	}
-	.Base_buz {
-		position: absolute;
-		overflow: visible;
-		width: 1080px;
-		height: 56px;
-		left: 0px;
-		top: 0px;
-	}
-	#Avatar_bu {
-		fill: rgba(166,173,180,1);
-	}
-	.Avatar_bu {
-		position: absolute;
-		overflow: visible;
-		width: 32px;
-		height: 32px;
-		left: 48px;
-		top: 12px;
-	}
-	#Lina_Bo_bu {
-		left: 88px;
-		top: 14px;
-		position: absolute;
-		overflow: visible;
-		width: 45px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Adobe_bu {
-		left: 392px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Tag_bu {
-		position: absolute;
-		width: 66px;
-		height: 24px;
-		left: 652px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_bu {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_bu {
-		position: absolute;
-		overflow: visible;
-		width: 66px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#POPULAR_bu {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 53px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_bva {
-		position: absolute;
-		width: 38px;
-		height: 24px;
-		left: 726px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_bva {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_bva {
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#NEW_bu {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 27px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_bvb {
-		position: absolute;
-		width: 35px;
-		height: 24px;
-		left: 772px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_bvb {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_bvb {
-		position: absolute;
-		overflow: visible;
-		width: 35px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#JOB_bvb {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 21px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#ID012_389_438_bvc {
-		left: 523px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#ID09_Sep_2017_bvd {
-		left: 855px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#linaadobecom_bve {
-		left: 88px;
-		top: 31px;
-		position: absolute;
-		overflow: visible;
-		width: 97px;
-		white-space: nowrap;
-		line-height: 23px;
-		margin-top: -5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(166,173,180,1);
-	}
-	#Checkbox_bvf {
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 16px;
-		top: 20px;
-		overflow: visible;
-	}
-	#Checkbox_bvg {
-		fill: transparent;
-		stroke: rgba(235,237,237,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Checkbox_bvg {
-		position: absolute;
-		overflow: visible;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-	}
-	#close_bvh {
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 1208px;
-		top: 108px;
-		overflow: visible;
-	}
-	#close_bvi {
-		fill: rgba(32,33,36,1);
-	}
-	.close_bvi {
-		overflow: visible;
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Item_bvj {
-		position: absolute;
-		width: 1216px;
-		height: 116px;
-		left: 0px;
-		top: 640px;
-		overflow: visible;
-	}
-	#Base_bvk {
-		fill: rgba(255,255,255,1);
-	}
-	.Base_bvk {
-		position: absolute;
-		overflow: visible;
-		width: 1080px;
-		height: 56px;
-		left: 0px;
-		top: 0px;
-	}
-	#Avatar_bvl {
-		fill: rgba(166,173,180,1);
-	}
-	.Avatar_bvl {
-		position: absolute;
-		overflow: visible;
-		width: 32px;
-		height: 32px;
-		left: 48px;
-		top: 12px;
-	}
-	#Lina_Bo_bvm {
-		left: 88px;
-		top: 14px;
-		position: absolute;
-		overflow: visible;
-		width: 45px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Adobe_bvn {
-		left: 392px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Tag_bvo {
-		position: absolute;
-		width: 66px;
-		height: 24px;
-		left: 652px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_bvp {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_bvp {
-		position: absolute;
-		overflow: visible;
-		width: 66px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#POPULAR_bvq {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 53px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_bvr {
-		position: absolute;
-		width: 38px;
-		height: 24px;
-		left: 726px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_bvs {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_bvs {
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#NEW_bvt {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 27px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_bvu {
-		position: absolute;
-		width: 35px;
-		height: 24px;
-		left: 772px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_bvv {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_bvv {
-		position: absolute;
-		overflow: visible;
-		width: 35px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#JOB_bvw {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 21px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#ID012_389_438_bvx {
-		left: 523px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#ID09_Sep_2017_bvy {
-		left: 855px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#linaadobecom_bvz {
-		left: 88px;
-		top: 31px;
-		position: absolute;
-		overflow: visible;
-		width: 97px;
-		white-space: nowrap;
-		line-height: 23px;
-		margin-top: -5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(166,173,180,1);
-	}
-	#Checkbox_bv {
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 16px;
-		top: 20px;
-		overflow: visible;
-	}
-	#Checkbox_bwa {
-		fill: transparent;
-		stroke: rgba(235,237,237,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Checkbox_bwa {
-		position: absolute;
-		overflow: visible;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-	}
-	#close_bv {
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 1208px;
-		top: 108px;
-		overflow: visible;
-	}
-	#close_bwa {
-		fill: rgba(32,33,36,1);
-	}
-	.close_bwa {
-		overflow: visible;
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Item_bv {
-		position: absolute;
-		width: 1216px;
-		height: 116px;
-		left: 0px;
-		top: 704px;
-		overflow: visible;
-	}
-	#Base_bv {
-		fill: rgba(255,255,255,1);
-	}
-	.Base_bv {
-		position: absolute;
-		overflow: visible;
-		width: 1080px;
-		height: 56px;
-		left: 0px;
-		top: 0px;
-	}
-	#Avatar_bv {
-		fill: rgba(166,173,180,1);
-	}
-	.Avatar_bv {
-		position: absolute;
-		overflow: visible;
-		width: 32px;
-		height: 32px;
-		left: 48px;
-		top: 12px;
-	}
-	#Lina_Bo_bv {
-		left: 88px;
-		top: 14px;
-		position: absolute;
-		overflow: visible;
-		width: 45px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Adobe_bv {
-		left: 392px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Tag_bv {
-		position: absolute;
-		width: 66px;
-		height: 24px;
-		left: 652px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_bwa {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_bwa {
-		position: absolute;
-		overflow: visible;
-		width: 66px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#POPULAR_bwb {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 53px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_bwc {
-		position: absolute;
-		width: 38px;
-		height: 24px;
-		left: 726px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_bwd {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_bwd {
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#NEW_bwe {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 27px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Tag_bwf {
-		position: absolute;
-		width: 35px;
-		height: 24px;
-		left: 772px;
-		top: 16px;
-		overflow: visible;
-	}
-	#Base_bwg {
-		fill: rgba(246,248,249,1);
-	}
-	.Base_bwg {
-		position: absolute;
-		overflow: visible;
-		width: 35px;
-		height: 24px;
-		left: 0px;
-		top: 0px;
-	}
-	#JOB_bwh {
-		left: 6px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 21px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#ID012_389_438_bwi {
-		left: 523px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#ID09_Sep_2017_bwj {
-		left: 855px;
-		top: 23px;
-		position: absolute;
-		overflow: visible;
-		width: 69px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#linaadobecom_bwk {
-		left: 88px;
-		top: 31px;
-		position: absolute;
-		overflow: visible;
-		width: 97px;
-		white-space: nowrap;
-		line-height: 23px;
-		margin-top: -5px;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(166,173,180,1);
-	}
-	#Checkbox_bwl {
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 16px;
-		top: 20px;
-		overflow: visible;
-	}
-	#Checkbox_bwm {
-		fill: transparent;
-		stroke: rgba(235,237,237,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Checkbox_bwm {
-		position: absolute;
-		overflow: visible;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-	}
-	#close_bwn {
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 1208px;
-		top: 108px;
-		overflow: visible;
-	}
-	#close_bwo {
-		fill: rgba(32,33,36,1);
-	}
-	.close_bwo {
-		overflow: visible;
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#BASIC_INFO_bwp {
-		left: 48px;
-		top: 0px;
-		position: absolute;
-		overflow: visible;
-		width: 63px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Helvetica;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#COMPANY_bwq {
-		left: 389px;
-		top: 0px;
-		position: absolute;
-		overflow: visible;
-		width: 56px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Helvetica;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#PHONE_bwr {
-		left: 522px;
-		top: 0px;
-		position: absolute;
-		overflow: visible;
-		width: 40px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Helvetica;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#TAGS_bws {
-		left: 651px;
-		top: 0px;
-		position: absolute;
-		overflow: visible;
-		width: 30px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Helvetica;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#CREATED_DATE_bwt {
-		left: 851px;
-		top: 0px;
-		position: absolute;
-		overflow: visible;
-		width: 84px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4.5px;
-		text-align: left;
-		font-family: Helvetica;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 11px;
-		color: rgba(166,173,180,1);
-	}
-	#Asignacin_de_alumnos_a_grupo {
-		left: 464px;
-		top: 87px;
-		position: absolute;
-		overflow: visible;
-		width: 513px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Acumin Pro;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 35px;
-		color: rgba(250,105,128,1);
-	}
-	#Error_1_bwv {
-		position: absolute;
-		width: 867px;
-		height: 40px;
-		left: 177px;
-		top: 148px;
-		overflow: visible;
-	}
-	#Field_bww {
-		fill: rgba(255,255,255,1);
-		stroke: rgba(250,105,128,1);
-		stroke-width: 2px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Field_bww {
-		position: absolute;
-		overflow: visible;
-		width: 867px;
-		height: 40px;
-		left: 0px;
-		top: 0px;
-	}
-	#Lina_Bo_bwx {
-		left: 54px;
-		top: 12px;
-		position: absolute;
-		overflow: visible;
-		width: 45px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -3.5px;
-		text-align: left;
-		font-family: Helvetica;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(32,33,36,1);
-	}
-	#Primary_Button_bwy {
-		position: absolute;
-		width: 157px;
-		height: 40px;
-		left: 1103px;
-		top: 148px;
-		overflow: visible;
-	}
-	#base_bwz {
-		fill: rgba(250,105,128,1);
-	}
-	.base_bwz {
-		position: absolute;
-		overflow: visible;
-		width: 157px;
-		height: 40px;
-		left: 0px;
-		top: 0px;
-	}
-	#Buscar {
-		left: 52px;
-		top: 13px;
-		position: absolute;
-		overflow: visible;
-		width: 55px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -2px;
-		text-align: center;
-		font-family: Helvetica;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 16px;
-		color: rgba(255,255,255,1);
-	}
-	#Arrow_Back {
-		transform: matrix(1,0,0,1,1224,273) rotate(180deg);
-		transform-origin: center;
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-		overflow: visible;
-	}
-	#Arrow_Back_bw {
-		fill: rgba(250,105,128,1);
-	}
-	.Arrow_Back_bw {
-		overflow: visible;
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Arrow_Back_bxa {
-		transform: matrix(1,0,0,1,1224,588) rotate(180deg);
-		transform-origin: center;
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-		overflow: visible;
-	}
-	#Arrow_Back_bxb {
-		fill: rgba(250,105,128,1);
-	}
-	.Arrow_Back_bxb {
-		overflow: visible;
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Arrow_Back_bxc {
-		transform: matrix(1,0,0,1,1224,525) rotate(180deg);
-		transform-origin: center;
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-		overflow: visible;
-	}
-	#Arrow_Back_bxd {
-		fill: rgba(250,105,128,1);
-	}
-	.Arrow_Back_bxd {
-		overflow: visible;
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Arrow_Back_bxe {
-		transform: matrix(1,0,0,1,1224,462) rotate(180deg);
-		transform-origin: center;
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-		overflow: visible;
-	}
-	#Arrow_Back_bxf {
-		fill: rgba(250,105,128,1);
-	}
-	.Arrow_Back_bxf {
-		overflow: visible;
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Arrow_Back_bxg {
-		transform: matrix(1,0,0,1,1224,399) rotate(180deg);
-		transform-origin: center;
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-		overflow: visible;
-	}
-	#Arrow_Back_bxh {
-		fill: rgba(250,105,128,1);
-	}
-	.Arrow_Back_bxh {
-		overflow: visible;
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Arrow_Back_bxi {
-		transform: matrix(1,0,0,1,1224,336) rotate(180deg);
-		transform-origin: center;
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-		overflow: visible;
-	}
-	#Arrow_Back_bxj {
-		fill: rgba(250,105,128,1);
-	}
-	.Arrow_Back_bxj {
-		overflow: visible;
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Arrow_Back_bxk {
-		transform: matrix(1,0,0,1,1224,777) rotate(180deg);
-		transform-origin: center;
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-		overflow: visible;
-	}
-	#Arrow_Back_bxl {
-		fill: rgba(250,105,128,1);
-	}
-	.Arrow_Back_bxl {
-		overflow: visible;
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Arrow_Back_bxm {
-		transform: matrix(1,0,0,1,1224,714) rotate(180deg);
-		transform-origin: center;
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-		overflow: visible;
-	}
-	#Arrow_Back_bxn {
-		fill: rgba(250,105,128,1);
-	}
-	.Arrow_Back_bxn {
-		overflow: visible;
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Arrow_Back_bxo {
-		transform: matrix(1,0,0,1,1224,651) rotate(180deg);
-		transform-origin: center;
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-		overflow: visible;
-	}
-	#Arrow_Back_bxp {
-		fill: rgba(250,105,128,1);
-	}
-	.Arrow_Back_bxp {
-		overflow: visible;
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Arrow_Back_bxq {
-		transform: matrix(1,0,0,1,1224,966) rotate(180deg);
-		transform-origin: center;
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-		overflow: visible;
-	}
-	#Arrow_Back_bxr {
-		fill: rgba(250,105,128,1);
-	}
-	.Arrow_Back_bxr {
-		overflow: visible;
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Arrow_Back_bxs {
-		transform: matrix(1,0,0,1,1224,903) rotate(180deg);
-		transform-origin: center;
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-		overflow: visible;
-	}
-	#Arrow_Back_bxt {
-		fill: rgba(250,105,128,1);
-	}
-	.Arrow_Back_bxt {
-		overflow: visible;
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Arrow_Back_bxu {
-		transform: matrix(1,0,0,1,1224,840) rotate(180deg);
-		transform-origin: center;
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-		overflow: visible;
-	}
-	#Arrow_Back_bxv {
-		fill: rgba(250,105,128,1);
-	}
-	.Arrow_Back_bxv {
-		overflow: visible;
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		left: 0px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
 	}
 </style>
 <script id="applicationScript">
@@ -6614,922 +5220,574 @@ window.application = new Application();
 </script>
 </head>
 <body>
-<div id="Asignacin_de_alumno_a_grupo">
-	<svg class="Rectngulo_449_bpb">
-		<rect id="Rectngulo_449_bpb" rx="0" ry="0" x="0" y="0" width="1440" height="950">
+<div id="Lista_Evaluacion">
+	<svg class="Rectngulo_449_dha">
+		<rect id="Rectngulo_449_dha" rx="0" ry="0" x="0" y="0" width="1440" height="950">
 		</rect>
 	</svg>
-	<div id="Header_-_Desktop_bpc" class="Header___Desktop">
-		<svg class="base_bpd">
-			<rect id="base_bpd" rx="0" ry="0" x="0" y="0" width="1440" height="50">
-			</rect>
-		</svg>
-		<div id="LOGO_bpe">
-			<span>LOGO</span>
-		</div>
-		<div id="INICIO_bpf">
-			<span>INICIO</span>
-		</div>
-		<div id="PROFESORES_bpg">
-			<span>PROFESORES</span>
-		</div>
-		<div id="GRUPOS_bph">
-			<span>GRUPOS</span>
-		</div>
-		<img id="christopher-campbell-28567-uns_bpi" src="christopher-campbell-28567-uns_bpi.png" srcset="christopher-campbell-28567-uns_bpi.png 1x, christopher-campbell-28567-uns_bpi@2x.png 2x">
-			
-		<div id="ASIGNATURAS_bpj">
-			<span>ASIGNATURAS</span>
-		</div>
-		<div id="COMPETENCIAS_bpk">
-			<span>COMPETENCIAS</span>
-		</div>
-		<div id="ADMINISTRADORES_bpl">
-			<span>ADMINISTRADORES</span>
-		</div>
-		<div id="ALUMNOS_bpm">
-			<span>ALUMNOS</span>
-		</div>
-	</div>
-	<div id="List_Group_Desktop_bpn" class="List_Group_Desktop">
-		<div id="Item_bpo">
-			<div id="Item_bpp" class="Item">
-				<svg class="Base_bpq">
-					<rect id="Base_bpq" rx="0" ry="0" x="0" y="0" width="1080" height="56">
+	<div id="List_Group_Desktop_dhb" class="List_Group_Desktop">
+		<div id="Item_dhc">
+			<div id="Item_dhd" class="Item">
+				<svg class="Base_dhe">
+					<rect id="Base_dhe" rx="0" ry="0" x="0" y="0" width="1080" height="56">
 					</rect>
 				</svg>
-				<svg class="Avatar_bpr">
-					<ellipse id="Avatar_bpr" rx="16" ry="16" cx="16" cy="16">
+				<svg class="Avatar_dhf">
+					<ellipse id="Avatar_dhf" rx="16" ry="16" cx="16" cy="16">
 					</ellipse>
 				</svg>
-				<div id="Lina_Bo_bps">
+				<div id="Lina_Bo_dhg">
 					<span>Lina Bo</span>
 				</div>
-				<div id="Adobe_bpt">
+				<div id="Adobe_dhh">
 					<span>Adobe</span>
 				</div>
-				<div id="Tag_bpu">
-					<svg class="Base_bpv">
-						<rect id="Base_bpv" rx="4" ry="4" x="0" y="0" width="66" height="24">
+				<div id="Tag_dhi">
+					<svg class="Base_dhj">
+						<rect id="Base_dhj" rx="4" ry="4" x="0" y="0" width="66" height="24">
 						</rect>
 					</svg>
-					<div id="POPULAR_bpw">
+					<div id="POPULAR_dhk">
 						<span>POPULAR</span>
 					</div>
 				</div>
-				<div id="Tag_bpx">
-					<svg class="Base_bpy">
-						<rect id="Base_bpy" rx="4" ry="4" x="0" y="0" width="38" height="24">
+				<div id="Tag_dhl">
+					<svg class="Base_dhm">
+						<rect id="Base_dhm" rx="4" ry="4" x="0" y="0" width="38" height="24">
 						</rect>
 					</svg>
-					<div id="NEW_bpz">
+					<div id="NEW_dhn">
 						<span>NEW</span>
 					</div>
 				</div>
-				<div id="Tag_bp" class="Tag">
-					<svg class="Base_bp">
-						<rect id="Base_bp" rx="4" ry="4" x="0" y="0" width="35" height="24">
+				<div id="Tag_dho" class="Tag">
+					<svg class="Base_dhp">
+						<rect id="Base_dhp" rx="4" ry="4" x="0" y="0" width="35" height="24">
 						</rect>
 					</svg>
-					<div id="JOB_bp">
+					<div id="JOB_dhq">
 						<span>JOB</span>
 					</div>
 				</div>
-				<div id="ID012_389_438_bp">
+				<div id="ID012_389_438_dhr">
 					<span>012 389 438</span>
 				</div>
-				<div id="ID09_Sep_2017_bp">
+				<div id="ID09_Sep_2017_dhs">
 					<span>09 Sep 2017</span>
 				</div>
-				<div id="linaadobecom_bp">
+				<div id="linaadobecom_dht">
 					<span>lina@adobe.com</span>
 				</div>
-				<div id="Checkbox_bp" class="Checkbox">
-					<svg class="Checkbox_bqa">
-						<rect id="Checkbox_bqa" rx="3" ry="3" x="0" y="0" width="16" height="16">
+				<div id="More_dhu" class="More">
+					<svg class="More_dhv" viewBox="-749 856 18 4">
+						<path id="More_dhv" d="M -735.0003051757813 857.9996948242188 C -735.0003051757813 856.8954467773438 -734.1047973632813 855.9999389648438 -732.9996337890625 855.9999389648438 C -731.8953247070313 855.9999389648438 -730.9998168945313 856.8954467773438 -730.9998168945313 857.9996948242188 C -730.9998168945313 859.1049194335938 -731.8953247070313 860.0004272460938 -732.9996337890625 860.0004272460938 C -734.1047973632813 860.0004272460938 -735.0003051757813 859.1049194335938 -735.0003051757813 857.9996948242188 Z M -741.9996337890625 857.9996948242188 C -741.9996337890625 856.8954467773438 -741.1041259765625 855.9999389648438 -739.9998168945313 855.9999389648438 C -738.8955078125 855.9999389648438 -738 856.8954467773438 -738 857.9996948242188 C -738 859.1049194335938 -738.8955078125 860.0004272460938 -739.9998168945313 860.0004272460938 C -741.1041259765625 860.0004272460938 -741.9996337890625 859.1049194335938 -741.9996337890625 857.9996948242188 Z M -748.9998168945313 857.9996948242188 C -748.9998168945313 856.8954467773438 -748.1043090820313 855.9999389648438 -747 855.9999389648438 C -745.8956909179688 855.9999389648438 -745.000244140625 856.8954467773438 -745.000244140625 857.9996948242188 C -745.000244140625 859.1049194335938 -745.8956909179688 860.0004272460938 -747 860.0004272460938 C -748.1043090820313 860.0004272460938 -748.9998168945313 859.1049194335938 -748.9998168945313 857.9996948242188 Z">
+						</path>
+					</svg>
+				</div>
+				<div id="Checkbox_dhw" class="Checkbox">
+					<svg class="Checkbox_dhx">
+						<rect id="Checkbox_dhx" rx="3" ry="3" x="0" y="0" width="16" height="16">
 						</rect>
 					</svg>
 				</div>
-				<div id="close_bp" class="close">
-					<svg class="close_bqa" viewBox="0 0 8 8">
-						<path id="close_bqa" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
+				<div id="close_dhy" class="close">
+					<svg class="close_dhz" viewBox="0 0 8 8">
+						<path id="close_dhz" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
 						</path>
 					</svg>
 				</div>
 			</div>
-			<div id="Item_bqa" class="Item">
-				<svg class="Base_bqb">
-					<rect id="Base_bqb" rx="0" ry="0" x="0" y="0" width="1080" height="56">
+			<div id="Item_dh" class="Item">
+				<svg class="Base_dia">
+					<rect id="Base_dia" rx="0" ry="0" x="0" y="0" width="1080" height="56">
 					</rect>
 				</svg>
-				<svg class="Avatar_bqc">
-					<ellipse id="Avatar_bqc" rx="16" ry="16" cx="16" cy="16">
+				<svg class="Avatar_dh">
+					<ellipse id="Avatar_dh" rx="16" ry="16" cx="16" cy="16">
 					</ellipse>
 				</svg>
-				<div id="Lina_Bo_bqd">
+				<div id="Lina_Bo_dh">
 					<span>Lina Bo</span>
 				</div>
-				<div id="Adobe_bqe">
+				<div id="Adobe_dh">
 					<span>Adobe</span>
 				</div>
-				<div id="Tag_bqf">
-					<svg class="Base_bqg">
-						<rect id="Base_bqg" rx="4" ry="4" x="0" y="0" width="66" height="24">
+				<div id="Tag_dh">
+					<svg class="Base_dib">
+						<rect id="Base_dib" rx="4" ry="4" x="0" y="0" width="66" height="24">
 						</rect>
 					</svg>
-					<div id="POPULAR_bqh">
+					<div id="POPULAR_dh">
 						<span>POPULAR</span>
 					</div>
 				</div>
-				<div id="Tag_bqi">
-					<svg class="Base_bqj">
-						<rect id="Base_bqj" rx="4" ry="4" x="0" y="0" width="38" height="24">
+				<div id="Tag_dia">
+					<svg class="Base_dic">
+						<rect id="Base_dic" rx="4" ry="4" x="0" y="0" width="38" height="24">
 						</rect>
 					</svg>
-					<div id="NEW_bqk">
+					<div id="NEW_dia">
 						<span>NEW</span>
 					</div>
 				</div>
-				<div id="Tag_bql" class="Tag">
-					<svg class="Base_bqm">
-						<rect id="Base_bqm" rx="4" ry="4" x="0" y="0" width="35" height="24">
+				<div id="Tag_dib" class="Tag">
+					<svg class="Base_did">
+						<rect id="Base_did" rx="4" ry="4" x="0" y="0" width="35" height="24">
 						</rect>
 					</svg>
-					<div id="JOB_bqn">
+					<div id="JOB_did">
 						<span>JOB</span>
 					</div>
 				</div>
-				<div id="ID012_389_438_bqo">
+				<div id="ID012_389_438_die">
 					<span>012 389 438</span>
 				</div>
-				<div id="ID09_Sep_2017_bqp">
+				<div id="ID09_Sep_2017_dif">
 					<span>09 Sep 2017</span>
 				</div>
-				<div id="linaadobecom_bqq">
+				<div id="linaadobecom_dig">
 					<span>lina@adobe.com</span>
 				</div>
-				<div id="Checkbox_bqr" class="Checkbox">
-					<svg class="Checkbox_bqs">
-						<rect id="Checkbox_bqs" rx="3" ry="3" x="0" y="0" width="16" height="16">
+				<div id="More_dih" class="More">
+					<svg class="More_dii" viewBox="-749 856 18 4">
+						<path id="More_dii" d="M -735.0003051757813 857.9996948242188 C -735.0003051757813 856.8954467773438 -734.1047973632813 855.9999389648438 -732.9996337890625 855.9999389648438 C -731.8953247070313 855.9999389648438 -730.9998168945313 856.8954467773438 -730.9998168945313 857.9996948242188 C -730.9998168945313 859.1049194335938 -731.8953247070313 860.0004272460938 -732.9996337890625 860.0004272460938 C -734.1047973632813 860.0004272460938 -735.0003051757813 859.1049194335938 -735.0003051757813 857.9996948242188 Z M -741.9996337890625 857.9996948242188 C -741.9996337890625 856.8954467773438 -741.1041259765625 855.9999389648438 -739.9998168945313 855.9999389648438 C -738.8955078125 855.9999389648438 -738 856.8954467773438 -738 857.9996948242188 C -738 859.1049194335938 -738.8955078125 860.0004272460938 -739.9998168945313 860.0004272460938 C -741.1041259765625 860.0004272460938 -741.9996337890625 859.1049194335938 -741.9996337890625 857.9996948242188 Z M -748.9998168945313 857.9996948242188 C -748.9998168945313 856.8954467773438 -748.1043090820313 855.9999389648438 -747 855.9999389648438 C -745.8956909179688 855.9999389648438 -745.000244140625 856.8954467773438 -745.000244140625 857.9996948242188 C -745.000244140625 859.1049194335938 -745.8956909179688 860.0004272460938 -747 860.0004272460938 C -748.1043090820313 860.0004272460938 -748.9998168945313 859.1049194335938 -748.9998168945313 857.9996948242188 Z">
+						</path>
+					</svg>
+				</div>
+				<div id="Checkbox_dij" class="Checkbox">
+					<svg class="Checkbox_dik">
+						<rect id="Checkbox_dik" rx="3" ry="3" x="0" y="0" width="16" height="16">
 						</rect>
 					</svg>
 				</div>
-				<div id="close_bqt" class="close">
-					<svg class="close_bqu" viewBox="0 0 8 8">
-						<path id="close_bqu" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
+				<div id="close_dil" class="close">
+					<svg class="close_dim" viewBox="0 0 8 8">
+						<path id="close_dim" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
 						</path>
 					</svg>
 				</div>
 			</div>
-			<div id="Item_bqv" class="Item">
-				<svg class="Base_bqw">
-					<rect id="Base_bqw" rx="0" ry="0" x="0" y="0" width="1080" height="56">
+			<div id="Item_din" class="Item">
+				<svg class="Base_dio">
+					<rect id="Base_dio" rx="0" ry="0" x="0" y="0" width="1080" height="56">
 					</rect>
 				</svg>
-				<svg class="Avatar_bqx">
-					<ellipse id="Avatar_bqx" rx="16" ry="16" cx="16" cy="16">
+				<svg class="Avatar_dip">
+					<ellipse id="Avatar_dip" rx="16" ry="16" cx="16" cy="16">
 					</ellipse>
 				</svg>
-				<div id="Lina_Bo_bqy">
+				<div id="Lina_Bo_diq">
 					<span>Lina Bo</span>
 				</div>
-				<div id="Adobe_bqz">
+				<div id="Adobe_dir">
 					<span>Adobe</span>
 				</div>
-				<div id="Tag_bq">
-					<svg class="Base_bq">
-						<rect id="Base_bq" rx="4" ry="4" x="0" y="0" width="66" height="24">
+				<div id="Tag_dis">
+					<svg class="Base_dit">
+						<rect id="Base_dit" rx="4" ry="4" x="0" y="0" width="66" height="24">
 						</rect>
 					</svg>
-					<div id="POPULAR_bq">
+					<div id="POPULAR_diu">
 						<span>POPULAR</span>
 					</div>
 				</div>
-				<div id="Tag_bra">
-					<svg class="Base_bra">
-						<rect id="Base_bra" rx="4" ry="4" x="0" y="0" width="38" height="24">
+				<div id="Tag_div">
+					<svg class="Base_diw">
+						<rect id="Base_diw" rx="4" ry="4" x="0" y="0" width="38" height="24">
 						</rect>
 					</svg>
-					<div id="NEW_bq">
+					<div id="NEW_dix">
 						<span>NEW</span>
 					</div>
 				</div>
-				<div id="Tag_brb" class="Tag">
-					<svg class="Base_brb">
-						<rect id="Base_brb" rx="4" ry="4" x="0" y="0" width="35" height="24">
+				<div id="Tag_diy" class="Tag">
+					<svg class="Base_diz">
+						<rect id="Base_diz" rx="4" ry="4" x="0" y="0" width="35" height="24">
 						</rect>
 					</svg>
-					<div id="JOB_bq">
+					<div id="JOB_di">
 						<span>JOB</span>
 					</div>
 				</div>
-				<div id="ID012_389_438_bq">
+				<div id="ID012_389_438_di">
 					<span>012 389 438</span>
 				</div>
-				<div id="ID09_Sep_2017_bra">
+				<div id="ID09_Sep_2017_di">
 					<span>09 Sep 2017</span>
 				</div>
-				<div id="linaadobecom_brb">
+				<div id="linaadobecom_di">
 					<span>lina@adobe.com</span>
 				</div>
-				<div id="Checkbox_brc" class="Checkbox">
-					<svg class="Checkbox_brd">
-						<rect id="Checkbox_brd" rx="3" ry="3" x="0" y="0" width="16" height="16">
+				<div id="More_di" class="More">
+					<svg class="More_dja" viewBox="-749 856 18 4">
+						<path id="More_dja" d="M -735.0003051757813 857.9996948242188 C -735.0003051757813 856.8954467773438 -734.1047973632813 855.9999389648438 -732.9996337890625 855.9999389648438 C -731.8953247070313 855.9999389648438 -730.9998168945313 856.8954467773438 -730.9998168945313 857.9996948242188 C -730.9998168945313 859.1049194335938 -731.8953247070313 860.0004272460938 -732.9996337890625 860.0004272460938 C -734.1047973632813 860.0004272460938 -735.0003051757813 859.1049194335938 -735.0003051757813 857.9996948242188 Z M -741.9996337890625 857.9996948242188 C -741.9996337890625 856.8954467773438 -741.1041259765625 855.9999389648438 -739.9998168945313 855.9999389648438 C -738.8955078125 855.9999389648438 -738 856.8954467773438 -738 857.9996948242188 C -738 859.1049194335938 -738.8955078125 860.0004272460938 -739.9998168945313 860.0004272460938 C -741.1041259765625 860.0004272460938 -741.9996337890625 859.1049194335938 -741.9996337890625 857.9996948242188 Z M -748.9998168945313 857.9996948242188 C -748.9998168945313 856.8954467773438 -748.1043090820313 855.9999389648438 -747 855.9999389648438 C -745.8956909179688 855.9999389648438 -745.000244140625 856.8954467773438 -745.000244140625 857.9996948242188 C -745.000244140625 859.1049194335938 -745.8956909179688 860.0004272460938 -747 860.0004272460938 C -748.1043090820313 860.0004272460938 -748.9998168945313 859.1049194335938 -748.9998168945313 857.9996948242188 Z">
+						</path>
+					</svg>
+				</div>
+				<div id="Checkbox_di" class="Checkbox">
+					<svg class="Checkbox_dja">
+						<rect id="Checkbox_dja" rx="3" ry="3" x="0" y="0" width="16" height="16">
 						</rect>
 					</svg>
 				</div>
-				<div id="close_bre" class="close">
-					<svg class="close_brf" viewBox="0 0 8 8">
-						<path id="close_brf" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
+				<div id="close_di" class="close">
+					<svg class="close_dja" viewBox="0 0 8 8">
+						<path id="close_dja" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
 						</path>
 					</svg>
 				</div>
 			</div>
-			<div id="Item_brg" class="Item">
-				<svg class="Base_brh">
-					<rect id="Base_brh" rx="0" ry="0" x="0" y="0" width="1080" height="56">
+			<div id="Item_dja" class="Item">
+				<svg class="Base_djb">
+					<rect id="Base_djb" rx="0" ry="0" x="0" y="0" width="1080" height="56">
 					</rect>
 				</svg>
-				<svg class="Avatar_bri">
-					<ellipse id="Avatar_bri" rx="16" ry="16" cx="16" cy="16">
+				<svg class="Avatar_djc">
+					<ellipse id="Avatar_djc" rx="16" ry="16" cx="16" cy="16">
 					</ellipse>
 				</svg>
-				<div id="Lina_Bo_brj">
+				<div id="Lina_Bo_djd">
 					<span>Lina Bo</span>
 				</div>
-				<div id="Company_Name_brk">
+				<div id="Company_Name_dje">
 					<span>Company Name</span>
 				</div>
-				<div id="Tag_brl">
-					<svg class="Base_brm">
-						<rect id="Base_brm" rx="4" ry="4" x="0" y="0" width="66" height="24">
+				<div id="Tag_djf">
+					<svg class="Base_djg">
+						<rect id="Base_djg" rx="4" ry="4" x="0" y="0" width="66" height="24">
 						</rect>
 					</svg>
-					<div id="POPULAR_brn">
+					<div id="POPULAR_djh">
 						<span>POPULAR</span>
 					</div>
 				</div>
-				<div id="Tag_bro">
-					<svg class="Base_brp">
-						<rect id="Base_brp" rx="4" ry="4" x="0" y="0" width="38" height="24">
+				<div id="Tag_dji">
+					<svg class="Base_djj">
+						<rect id="Base_djj" rx="4" ry="4" x="0" y="0" width="38" height="24">
 						</rect>
 					</svg>
-					<div id="NEW_brq">
+					<div id="NEW_djk">
 						<span>NEW</span>
 					</div>
 				</div>
-				<div id="Tag_brr" class="Tag">
-					<svg class="Base_brs">
-						<rect id="Base_brs" rx="4" ry="4" x="0" y="0" width="35" height="24">
+				<div id="Tag_djl" class="Tag">
+					<svg class="Base_djm">
+						<rect id="Base_djm" rx="4" ry="4" x="0" y="0" width="35" height="24">
 						</rect>
 					</svg>
-					<div id="JOB_brt">
+					<div id="JOB_djn">
 						<span>JOB</span>
 					</div>
 				</div>
-				<div id="ID012_389_438_bru">
+				<div id="ID012_389_438_djo">
 					<span>012 389 438</span>
 				</div>
-				<div id="ID09_Sep_2017_brv">
+				<div id="ID09_Sep_2017_djp">
 					<span>09 Sep 2017</span>
 				</div>
-				<div id="linaadobecom_brw">
+				<div id="linaadobecom_djq">
 					<span>lina@adobe.com</span>
 				</div>
-				<div id="Checkbox_brx" class="Checkbox">
-					<svg class="Checkbox_bry">
-						<rect id="Checkbox_bry" rx="3" ry="3" x="0" y="0" width="16" height="16">
+				<div id="More_djr" class="More">
+					<svg class="More_djs" viewBox="-749 856 18 4">
+						<path id="More_djs" d="M -735.0003051757813 857.9996948242188 C -735.0003051757813 856.8954467773438 -734.1047973632813 855.9999389648438 -732.9996337890625 855.9999389648438 C -731.8953247070313 855.9999389648438 -730.9998168945313 856.8954467773438 -730.9998168945313 857.9996948242188 C -730.9998168945313 859.1049194335938 -731.8953247070313 860.0004272460938 -732.9996337890625 860.0004272460938 C -734.1047973632813 860.0004272460938 -735.0003051757813 859.1049194335938 -735.0003051757813 857.9996948242188 Z M -741.9996337890625 857.9996948242188 C -741.9996337890625 856.8954467773438 -741.1041259765625 855.9999389648438 -739.9998168945313 855.9999389648438 C -738.8955078125 855.9999389648438 -738 856.8954467773438 -738 857.9996948242188 C -738 859.1049194335938 -738.8955078125 860.0004272460938 -739.9998168945313 860.0004272460938 C -741.1041259765625 860.0004272460938 -741.9996337890625 859.1049194335938 -741.9996337890625 857.9996948242188 Z M -748.9998168945313 857.9996948242188 C -748.9998168945313 856.8954467773438 -748.1043090820313 855.9999389648438 -747 855.9999389648438 C -745.8956909179688 855.9999389648438 -745.000244140625 856.8954467773438 -745.000244140625 857.9996948242188 C -745.000244140625 859.1049194335938 -745.8956909179688 860.0004272460938 -747 860.0004272460938 C -748.1043090820313 860.0004272460938 -748.9998168945313 859.1049194335938 -748.9998168945313 857.9996948242188 Z">
+						</path>
+					</svg>
+				</div>
+				<div id="Checkbox_djt" class="Checkbox">
+					<svg class="Checkbox_dju">
+						<rect id="Checkbox_dju" rx="3" ry="3" x="0" y="0" width="16" height="16">
 						</rect>
 					</svg>
 				</div>
-				<div id="close_brz" class="close">
-					<svg class="close_br" viewBox="0 0 8 8">
-						<path id="close_br" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
+				<div id="close_djv" class="close">
+					<svg class="close_djw" viewBox="0 0 8 8">
+						<path id="close_djw" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
 						</path>
 					</svg>
 				</div>
 			</div>
-			<div id="Item_br" class="Item">
-				<svg class="Base_br">
-					<rect id="Base_br" rx="0" ry="0" x="0" y="0" width="1080" height="56">
+			<div id="Item_djx" class="Item">
+				<svg class="Base_djy">
+					<rect id="Base_djy" rx="0" ry="0" x="0" y="0" width="1080" height="56">
 					</rect>
 				</svg>
-				<svg class="Avatar_br">
-					<ellipse id="Avatar_br" rx="16" ry="16" cx="16" cy="16">
+				<svg class="Avatar_djz">
+					<ellipse id="Avatar_djz" rx="16" ry="16" cx="16" cy="16">
 					</ellipse>
 				</svg>
-				<div id="Lina_Bo_br">
+				<div id="Lina_Bo_dka">
 					<span>Lina Bo</span>
 				</div>
-				<div id="Adobe_br">
+				<div id="Adobe_dj">
 					<span>Adobe</span>
 				</div>
-				<div id="Tag_br">
-					<svg class="Base_bsa">
-						<rect id="Base_bsa" rx="4" ry="4" x="0" y="0" width="66" height="24">
+				<div id="Tag_dj">
+					<svg class="Base_dj">
+						<rect id="Base_dj" rx="4" ry="4" x="0" y="0" width="66" height="24">
 						</rect>
 					</svg>
-					<div id="POPULAR_br">
+					<div id="POPULAR_dj">
 						<span>POPULAR</span>
 					</div>
 				</div>
-				<div id="Tag_bsa">
-					<svg class="Base_bsb">
-						<rect id="Base_bsb" rx="4" ry="4" x="0" y="0" width="38" height="24">
+				<div id="Tag_dka">
+					<svg class="Base_dka">
+						<rect id="Base_dka" rx="4" ry="4" x="0" y="0" width="38" height="24">
 						</rect>
 					</svg>
-					<div id="NEW_bsb">
+					<div id="NEW_dj">
 						<span>NEW</span>
 					</div>
 				</div>
-				<div id="Tag_bsc" class="Tag">
-					<svg class="Base_bsd">
-						<rect id="Base_bsd" rx="4" ry="4" x="0" y="0" width="35" height="24">
+				<div id="Tag_dkb" class="Tag">
+					<svg class="Base_dkb">
+						<rect id="Base_dkb" rx="4" ry="4" x="0" y="0" width="35" height="24">
 						</rect>
 					</svg>
-					<div id="JOB_bse">
+					<div id="JOB_dka">
 						<span>JOB</span>
 					</div>
 				</div>
-				<div id="ID012_389_438_bsf">
+				<div id="ID012_389_438_dkb">
 					<span>012 389 438</span>
 				</div>
-				<div id="ID09_Sep_2017_bsg">
+				<div id="ID09_Sep_2017_dkc">
 					<span>09 Sep 2017</span>
 				</div>
-				<div id="linaadobecom_bsh">
+				<div id="linaadobecom_dkd">
 					<span>lina@adobe.com</span>
 				</div>
-				<div id="Checkbox_bsi" class="Checkbox">
-					<svg class="Checkbox_bsj">
-						<rect id="Checkbox_bsj" rx="3" ry="3" x="0" y="0" width="16" height="16">
+				<div id="More_dke" class="More">
+					<svg class="More_dkf" viewBox="-749 856 18 4">
+						<path id="More_dkf" d="M -735.0003051757813 857.9996948242188 C -735.0003051757813 856.8954467773438 -734.1047973632813 855.9999389648438 -732.9996337890625 855.9999389648438 C -731.8953247070313 855.9999389648438 -730.9998168945313 856.8954467773438 -730.9998168945313 857.9996948242188 C -730.9998168945313 859.1049194335938 -731.8953247070313 860.0004272460938 -732.9996337890625 860.0004272460938 C -734.1047973632813 860.0004272460938 -735.0003051757813 859.1049194335938 -735.0003051757813 857.9996948242188 Z M -741.9996337890625 857.9996948242188 C -741.9996337890625 856.8954467773438 -741.1041259765625 855.9999389648438 -739.9998168945313 855.9999389648438 C -738.8955078125 855.9999389648438 -738 856.8954467773438 -738 857.9996948242188 C -738 859.1049194335938 -738.8955078125 860.0004272460938 -739.9998168945313 860.0004272460938 C -741.1041259765625 860.0004272460938 -741.9996337890625 859.1049194335938 -741.9996337890625 857.9996948242188 Z M -748.9998168945313 857.9996948242188 C -748.9998168945313 856.8954467773438 -748.1043090820313 855.9999389648438 -747 855.9999389648438 C -745.8956909179688 855.9999389648438 -745.000244140625 856.8954467773438 -745.000244140625 857.9996948242188 C -745.000244140625 859.1049194335938 -745.8956909179688 860.0004272460938 -747 860.0004272460938 C -748.1043090820313 860.0004272460938 -748.9998168945313 859.1049194335938 -748.9998168945313 857.9996948242188 Z">
+						</path>
+					</svg>
+				</div>
+				<div id="Checkbox_dkg" class="Checkbox">
+					<svg class="Checkbox_dkh">
+						<rect id="Checkbox_dkh" rx="3" ry="3" x="0" y="0" width="16" height="16">
 						</rect>
 					</svg>
 				</div>
-				<div id="close_bsk" class="close">
-					<svg class="close_bsl" viewBox="0 0 8 8">
-						<path id="close_bsl" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
+				<div id="close_dki" class="close">
+					<svg class="close_dkj" viewBox="0 0 8 8">
+						<path id="close_dkj" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
 						</path>
 					</svg>
 				</div>
 			</div>
-			<div id="Item_bsm" class="Item">
-				<svg class="Base_bsn">
-					<rect id="Base_bsn" rx="0" ry="0" x="0" y="0" width="1080" height="56">
+			<div id="Item_dkk" class="Item">
+				<svg class="Base_dkl">
+					<rect id="Base_dkl" rx="0" ry="0" x="0" y="0" width="1080" height="56">
 					</rect>
 				</svg>
-				<svg class="Avatar_bso">
-					<ellipse id="Avatar_bso" rx="16" ry="16" cx="16" cy="16">
+				<svg class="Avatar_dkm">
+					<ellipse id="Avatar_dkm" rx="16" ry="16" cx="16" cy="16">
 					</ellipse>
 				</svg>
-				<div id="Lina_Bo_bsp">
+				<div id="Lina_Bo_dkn">
 					<span>Lina Bo</span>
 				</div>
-				<div id="Adobe_bsq">
+				<div id="Adobe_dko">
 					<span>Adobe</span>
 				</div>
-				<div id="Tag_bsr">
-					<svg class="Base_bss">
-						<rect id="Base_bss" rx="4" ry="4" x="0" y="0" width="66" height="24">
+				<div id="Tag_dkp">
+					<svg class="Base_dkq">
+						<rect id="Base_dkq" rx="4" ry="4" x="0" y="0" width="66" height="24">
 						</rect>
 					</svg>
-					<div id="POPULAR_bst">
+					<div id="POPULAR_dkr">
 						<span>POPULAR</span>
 					</div>
 				</div>
-				<div id="Tag_bsu">
-					<svg class="Base_bsv">
-						<rect id="Base_bsv" rx="4" ry="4" x="0" y="0" width="38" height="24">
+				<div id="Tag_dks">
+					<svg class="Base_dkt">
+						<rect id="Base_dkt" rx="4" ry="4" x="0" y="0" width="38" height="24">
 						</rect>
 					</svg>
-					<div id="NEW_bsw">
+					<div id="NEW_dku">
 						<span>NEW</span>
 					</div>
 				</div>
-				<div id="Tag_bsx" class="Tag">
-					<svg class="Base_bsy">
-						<rect id="Base_bsy" rx="4" ry="4" x="0" y="0" width="35" height="24">
+				<div id="Tag_dkv" class="Tag">
+					<svg class="Base_dkw">
+						<rect id="Base_dkw" rx="4" ry="4" x="0" y="0" width="35" height="24">
 						</rect>
 					</svg>
-					<div id="JOB_bsz">
+					<div id="JOB_dkx">
 						<span>JOB</span>
 					</div>
 				</div>
-				<div id="ID012_389_438_bs">
+				<div id="ID012_389_438_dky">
 					<span>012 389 438</span>
 				</div>
-				<div id="ID09_Sep_2017_bs">
+				<div id="ID09_Sep_2017_dkz">
 					<span>09 Sep 2017</span>
 				</div>
-				<div id="linaadobecom_bs">
+				<div id="linaadobecom_dk">
 					<span>lina@adobe.com</span>
 				</div>
-				<div id="Checkbox_bs" class="Checkbox">
-					<svg class="Checkbox_bta">
-						<rect id="Checkbox_bta" rx="3" ry="3" x="0" y="0" width="16" height="16">
+				<div id="More_dk" class="More">
+					<svg class="More_dla" viewBox="-749 856 18 4">
+						<path id="More_dla" d="M -735.0003051757813 857.9996948242188 C -735.0003051757813 856.8954467773438 -734.1047973632813 855.9999389648438 -732.9996337890625 855.9999389648438 C -731.8953247070313 855.9999389648438 -730.9998168945313 856.8954467773438 -730.9998168945313 857.9996948242188 C -730.9998168945313 859.1049194335938 -731.8953247070313 860.0004272460938 -732.9996337890625 860.0004272460938 C -734.1047973632813 860.0004272460938 -735.0003051757813 859.1049194335938 -735.0003051757813 857.9996948242188 Z M -741.9996337890625 857.9996948242188 C -741.9996337890625 856.8954467773438 -741.1041259765625 855.9999389648438 -739.9998168945313 855.9999389648438 C -738.8955078125 855.9999389648438 -738 856.8954467773438 -738 857.9996948242188 C -738 859.1049194335938 -738.8955078125 860.0004272460938 -739.9998168945313 860.0004272460938 C -741.1041259765625 860.0004272460938 -741.9996337890625 859.1049194335938 -741.9996337890625 857.9996948242188 Z M -748.9998168945313 857.9996948242188 C -748.9998168945313 856.8954467773438 -748.1043090820313 855.9999389648438 -747 855.9999389648438 C -745.8956909179688 855.9999389648438 -745.000244140625 856.8954467773438 -745.000244140625 857.9996948242188 C -745.000244140625 859.1049194335938 -745.8956909179688 860.0004272460938 -747 860.0004272460938 C -748.1043090820313 860.0004272460938 -748.9998168945313 859.1049194335938 -748.9998168945313 857.9996948242188 Z">
+						</path>
+					</svg>
+				</div>
+				<div id="Checkbox_dk" class="Checkbox">
+					<svg class="Checkbox_dla">
+						<rect id="Checkbox_dla" rx="3" ry="3" x="0" y="0" width="16" height="16">
 						</rect>
 					</svg>
 				</div>
-				<div id="close_bs" class="close">
-					<svg class="close_bta" viewBox="0 0 8 8">
-						<path id="close_bta" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
+				<div id="close_dk" class="close">
+					<svg class="close_dla" viewBox="0 0 8 8">
+						<path id="close_dla" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
 						</path>
 					</svg>
 				</div>
 			</div>
-			<div id="Item_bs" class="Item">
-				<svg class="Base_bs">
-					<rect id="Base_bs" rx="0" ry="0" x="0" y="0" width="1080" height="56">
+			<div id="Item_dk" class="Item">
+				<svg class="Base_dk">
+					<rect id="Base_dk" rx="0" ry="0" x="0" y="0" width="1080" height="56">
 					</rect>
 				</svg>
-				<svg class="Avatar_bs">
-					<ellipse id="Avatar_bs" rx="16" ry="16" cx="16" cy="16">
+				<svg class="Avatar_dk">
+					<ellipse id="Avatar_dk" rx="16" ry="16" cx="16" cy="16">
 					</ellipse>
 				</svg>
-				<div id="Lina_Bo_bta">
+				<div id="Lina_Bo_dla">
 					<span>Lina Bo</span>
 				</div>
-				<div id="Adobe_btb">
+				<div id="Adobe_dlb">
 					<span>Adobe</span>
 				</div>
-				<div id="Tag_btc">
-					<svg class="Base_btd">
-						<rect id="Base_btd" rx="4" ry="4" x="0" y="0" width="66" height="24">
+				<div id="Tag_dlc">
+					<svg class="Base_dld">
+						<rect id="Base_dld" rx="4" ry="4" x="0" y="0" width="66" height="24">
 						</rect>
 					</svg>
-					<div id="POPULAR_bte">
+					<div id="POPULAR_dle">
 						<span>POPULAR</span>
 					</div>
 				</div>
-				<div id="Tag_btf">
-					<svg class="Base_btg">
-						<rect id="Base_btg" rx="4" ry="4" x="0" y="0" width="38" height="24">
+				<div id="Tag_dlf">
+					<svg class="Base_dlg">
+						<rect id="Base_dlg" rx="4" ry="4" x="0" y="0" width="38" height="24">
 						</rect>
 					</svg>
-					<div id="NEW_bth">
+					<div id="NEW_dlh">
 						<span>NEW</span>
 					</div>
 				</div>
-				<div id="Tag_bti" class="Tag">
-					<svg class="Base_btj">
-						<rect id="Base_btj" rx="4" ry="4" x="0" y="0" width="35" height="24">
+				<div id="Tag_dli" class="Tag">
+					<svg class="Base_dlj">
+						<rect id="Base_dlj" rx="4" ry="4" x="0" y="0" width="35" height="24">
 						</rect>
 					</svg>
-					<div id="JOB_btk">
+					<div id="JOB_dlk">
 						<span>JOB</span>
 					</div>
 				</div>
-				<div id="ID012_389_438_btl">
+				<div id="ID012_389_438_dll">
 					<span>012 389 438</span>
 				</div>
-				<div id="ID09_Sep_2017_btm">
+				<div id="ID09_Sep_2017_dlm">
 					<span>09 Sep 2017</span>
 				</div>
-				<div id="linaadobecom_btn">
+				<div id="linaadobecom_dln">
 					<span>lina@adobe.com</span>
 				</div>
-				<div id="Checkbox_bto" class="Checkbox">
-					<svg class="Checkbox_btp">
-						<rect id="Checkbox_btp" rx="3" ry="3" x="0" y="0" width="16" height="16">
-						</rect>
-					</svg>
-				</div>
-				<div id="close_btq" class="close">
-					<svg class="close_btr" viewBox="0 0 8 8">
-						<path id="close_btr" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
+				<div id="More_dlo" class="More">
+					<svg class="More_dlp" viewBox="-749 856 18 4">
+						<path id="More_dlp" d="M -735.0003051757813 857.9996948242188 C -735.0003051757813 856.8954467773438 -734.1047973632813 855.9999389648438 -732.9996337890625 855.9999389648438 C -731.8953247070313 855.9999389648438 -730.9998168945313 856.8954467773438 -730.9998168945313 857.9996948242188 C -730.9998168945313 859.1049194335938 -731.8953247070313 860.0004272460938 -732.9996337890625 860.0004272460938 C -734.1047973632813 860.0004272460938 -735.0003051757813 859.1049194335938 -735.0003051757813 857.9996948242188 Z M -741.9996337890625 857.9996948242188 C -741.9996337890625 856.8954467773438 -741.1041259765625 855.9999389648438 -739.9998168945313 855.9999389648438 C -738.8955078125 855.9999389648438 -738 856.8954467773438 -738 857.9996948242188 C -738 859.1049194335938 -738.8955078125 860.0004272460938 -739.9998168945313 860.0004272460938 C -741.1041259765625 860.0004272460938 -741.9996337890625 859.1049194335938 -741.9996337890625 857.9996948242188 Z M -748.9998168945313 857.9996948242188 C -748.9998168945313 856.8954467773438 -748.1043090820313 855.9999389648438 -747 855.9999389648438 C -745.8956909179688 855.9999389648438 -745.000244140625 856.8954467773438 -745.000244140625 857.9996948242188 C -745.000244140625 859.1049194335938 -745.8956909179688 860.0004272460938 -747 860.0004272460938 C -748.1043090820313 860.0004272460938 -748.9998168945313 859.1049194335938 -748.9998168945313 857.9996948242188 Z">
 						</path>
 					</svg>
 				</div>
-			</div>
-			<div id="Item_bts" class="Item">
-				<svg class="Base_btt">
-					<rect id="Base_btt" rx="0" ry="0" x="0" y="0" width="1080" height="56">
-					</rect>
-				</svg>
-				<svg class="Avatar_btu">
-					<ellipse id="Avatar_btu" rx="16" ry="16" cx="16" cy="16">
-					</ellipse>
-				</svg>
-				<div id="Lina_Bo_btv">
-					<span>Lina Bo</span>
-				</div>
-				<div id="Adobe_btw">
-					<span>Adobe</span>
-				</div>
-				<div id="Tag_btx">
-					<svg class="Base_bty">
-						<rect id="Base_bty" rx="4" ry="4" x="0" y="0" width="66" height="24">
-						</rect>
-					</svg>
-					<div id="POPULAR_btz">
-						<span>POPULAR</span>
-					</div>
-				</div>
-				<div id="Tag_bt">
-					<svg class="Base_bt">
-						<rect id="Base_bt" rx="4" ry="4" x="0" y="0" width="38" height="24">
-						</rect>
-					</svg>
-					<div id="NEW_bt">
-						<span>NEW</span>
-					</div>
-				</div>
-				<div id="Tag_bua" class="Tag">
-					<svg class="Base_bua">
-						<rect id="Base_bua" rx="4" ry="4" x="0" y="0" width="35" height="24">
-						</rect>
-					</svg>
-					<div id="JOB_bt">
-						<span>JOB</span>
-					</div>
-				</div>
-				<div id="ID012_389_438_bt">
-					<span>012 389 438</span>
-				</div>
-				<div id="ID09_Sep_2017_bt">
-					<span>09 Sep 2017</span>
-				</div>
-				<div id="linaadobecom_bt">
-					<span>lina@adobe.com</span>
-				</div>
-				<div id="Checkbox_bt" class="Checkbox">
-					<svg class="Checkbox_bua">
-						<rect id="Checkbox_bua" rx="3" ry="3" x="0" y="0" width="16" height="16">
+				<div id="Checkbox_dlq" class="Checkbox">
+					<svg class="Checkbox_dlr">
+						<rect id="Checkbox_dlr" rx="3" ry="3" x="0" y="0" width="16" height="16">
 						</rect>
 					</svg>
 				</div>
-				<div id="close_bub" class="close">
-					<svg class="close_buc" viewBox="0 0 8 8">
-						<path id="close_buc" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
-						</path>
-					</svg>
-				</div>
-			</div>
-			<div id="Item_bud" class="Item">
-				<svg class="Base_bue">
-					<rect id="Base_bue" rx="0" ry="0" x="0" y="0" width="1080" height="56">
-					</rect>
-				</svg>
-				<svg class="Avatar_buf">
-					<ellipse id="Avatar_buf" rx="16" ry="16" cx="16" cy="16">
-					</ellipse>
-				</svg>
-				<div id="Lina_Bo_bug">
-					<span>Lina Bo</span>
-				</div>
-				<div id="Adobe_buh">
-					<span>Adobe</span>
-				</div>
-				<div id="Tag_bui">
-					<svg class="Base_buj">
-						<rect id="Base_buj" rx="4" ry="4" x="0" y="0" width="66" height="24">
-						</rect>
-					</svg>
-					<div id="POPULAR_buk">
-						<span>POPULAR</span>
-					</div>
-				</div>
-				<div id="Tag_bul">
-					<svg class="Base_bum">
-						<rect id="Base_bum" rx="4" ry="4" x="0" y="0" width="38" height="24">
-						</rect>
-					</svg>
-					<div id="NEW_bun">
-						<span>NEW</span>
-					</div>
-				</div>
-				<div id="Tag_buo" class="Tag">
-					<svg class="Base_bup">
-						<rect id="Base_bup" rx="4" ry="4" x="0" y="0" width="35" height="24">
-						</rect>
-					</svg>
-					<div id="JOB_buq">
-						<span>JOB</span>
-					</div>
-				</div>
-				<div id="ID012_389_438_bur">
-					<span>012 389 438</span>
-				</div>
-				<div id="ID09_Sep_2017_bus">
-					<span>09 Sep 2017</span>
-				</div>
-				<div id="linaadobecom_but">
-					<span>lina@adobe.com</span>
-				</div>
-				<div id="Checkbox_buu" class="Checkbox">
-					<svg class="Checkbox_buv">
-						<rect id="Checkbox_buv" rx="3" ry="3" x="0" y="0" width="16" height="16">
-						</rect>
-					</svg>
-				</div>
-				<div id="close_buw" class="close">
-					<svg class="close_bux" viewBox="0 0 8 8">
-						<path id="close_bux" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
-						</path>
-					</svg>
-				</div>
-			</div>
-			<div id="Item_buy" class="Item">
-				<svg class="Base_buz">
-					<rect id="Base_buz" rx="0" ry="0" x="0" y="0" width="1080" height="56">
-					</rect>
-				</svg>
-				<svg class="Avatar_bu">
-					<ellipse id="Avatar_bu" rx="16" ry="16" cx="16" cy="16">
-					</ellipse>
-				</svg>
-				<div id="Lina_Bo_bu">
-					<span>Lina Bo</span>
-				</div>
-				<div id="Adobe_bu">
-					<span>Adobe</span>
-				</div>
-				<div id="Tag_bu">
-					<svg class="Base_bu">
-						<rect id="Base_bu" rx="4" ry="4" x="0" y="0" width="66" height="24">
-						</rect>
-					</svg>
-					<div id="POPULAR_bu">
-						<span>POPULAR</span>
-					</div>
-				</div>
-				<div id="Tag_bva">
-					<svg class="Base_bva">
-						<rect id="Base_bva" rx="4" ry="4" x="0" y="0" width="38" height="24">
-						</rect>
-					</svg>
-					<div id="NEW_bu">
-						<span>NEW</span>
-					</div>
-				</div>
-				<div id="Tag_bvb" class="Tag">
-					<svg class="Base_bvb">
-						<rect id="Base_bvb" rx="4" ry="4" x="0" y="0" width="35" height="24">
-						</rect>
-					</svg>
-					<div id="JOB_bvb">
-						<span>JOB</span>
-					</div>
-				</div>
-				<div id="ID012_389_438_bvc">
-					<span>012 389 438</span>
-				</div>
-				<div id="ID09_Sep_2017_bvd">
-					<span>09 Sep 2017</span>
-				</div>
-				<div id="linaadobecom_bve">
-					<span>lina@adobe.com</span>
-				</div>
-				<div id="Checkbox_bvf" class="Checkbox">
-					<svg class="Checkbox_bvg">
-						<rect id="Checkbox_bvg" rx="3" ry="3" x="0" y="0" width="16" height="16">
-						</rect>
-					</svg>
-				</div>
-				<div id="close_bvh" class="close">
-					<svg class="close_bvi" viewBox="0 0 8 8">
-						<path id="close_bvi" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
-						</path>
-					</svg>
-				</div>
-			</div>
-			<div id="Item_bvj" class="Item">
-				<svg class="Base_bvk">
-					<rect id="Base_bvk" rx="0" ry="0" x="0" y="0" width="1080" height="56">
-					</rect>
-				</svg>
-				<svg class="Avatar_bvl">
-					<ellipse id="Avatar_bvl" rx="16" ry="16" cx="16" cy="16">
-					</ellipse>
-				</svg>
-				<div id="Lina_Bo_bvm">
-					<span>Lina Bo</span>
-				</div>
-				<div id="Adobe_bvn">
-					<span>Adobe</span>
-				</div>
-				<div id="Tag_bvo">
-					<svg class="Base_bvp">
-						<rect id="Base_bvp" rx="4" ry="4" x="0" y="0" width="66" height="24">
-						</rect>
-					</svg>
-					<div id="POPULAR_bvq">
-						<span>POPULAR</span>
-					</div>
-				</div>
-				<div id="Tag_bvr">
-					<svg class="Base_bvs">
-						<rect id="Base_bvs" rx="4" ry="4" x="0" y="0" width="38" height="24">
-						</rect>
-					</svg>
-					<div id="NEW_bvt">
-						<span>NEW</span>
-					</div>
-				</div>
-				<div id="Tag_bvu" class="Tag">
-					<svg class="Base_bvv">
-						<rect id="Base_bvv" rx="4" ry="4" x="0" y="0" width="35" height="24">
-						</rect>
-					</svg>
-					<div id="JOB_bvw">
-						<span>JOB</span>
-					</div>
-				</div>
-				<div id="ID012_389_438_bvx">
-					<span>012 389 438</span>
-				</div>
-				<div id="ID09_Sep_2017_bvy">
-					<span>09 Sep 2017</span>
-				</div>
-				<div id="linaadobecom_bvz">
-					<span>lina@adobe.com</span>
-				</div>
-				<div id="Checkbox_bv" class="Checkbox">
-					<svg class="Checkbox_bwa">
-						<rect id="Checkbox_bwa" rx="3" ry="3" x="0" y="0" width="16" height="16">
-						</rect>
-					</svg>
-				</div>
-				<div id="close_bv" class="close">
-					<svg class="close_bwa" viewBox="0 0 8 8">
-						<path id="close_bwa" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
-						</path>
-					</svg>
-				</div>
-			</div>
-			<div id="Item_bv" class="Item">
-				<svg class="Base_bv">
-					<rect id="Base_bv" rx="0" ry="0" x="0" y="0" width="1080" height="56">
-					</rect>
-				</svg>
-				<svg class="Avatar_bv">
-					<ellipse id="Avatar_bv" rx="16" ry="16" cx="16" cy="16">
-					</ellipse>
-				</svg>
-				<div id="Lina_Bo_bv">
-					<span>Lina Bo</span>
-				</div>
-				<div id="Adobe_bv">
-					<span>Adobe</span>
-				</div>
-				<div id="Tag_bv">
-					<svg class="Base_bwa">
-						<rect id="Base_bwa" rx="4" ry="4" x="0" y="0" width="66" height="24">
-						</rect>
-					</svg>
-					<div id="POPULAR_bwb">
-						<span>POPULAR</span>
-					</div>
-				</div>
-				<div id="Tag_bwc">
-					<svg class="Base_bwd">
-						<rect id="Base_bwd" rx="4" ry="4" x="0" y="0" width="38" height="24">
-						</rect>
-					</svg>
-					<div id="NEW_bwe">
-						<span>NEW</span>
-					</div>
-				</div>
-				<div id="Tag_bwf" class="Tag">
-					<svg class="Base_bwg">
-						<rect id="Base_bwg" rx="4" ry="4" x="0" y="0" width="35" height="24">
-						</rect>
-					</svg>
-					<div id="JOB_bwh">
-						<span>JOB</span>
-					</div>
-				</div>
-				<div id="ID012_389_438_bwi">
-					<span>012 389 438</span>
-				</div>
-				<div id="ID09_Sep_2017_bwj">
-					<span>09 Sep 2017</span>
-				</div>
-				<div id="linaadobecom_bwk">
-					<span>lina@adobe.com</span>
-				</div>
-				<div id="Checkbox_bwl" class="Checkbox">
-					<svg class="Checkbox_bwm">
-						<rect id="Checkbox_bwm" rx="3" ry="3" x="0" y="0" width="16" height="16">
-						</rect>
-					</svg>
-				</div>
-				<div id="close_bwn" class="close">
-					<svg class="close_bwo" viewBox="0 0 8 8">
-						<path id="close_bwo" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
+				<div id="close_dls" class="close">
+					<svg class="close_dlt" viewBox="0 0 8 8">
+						<path id="close_dlt" d="M 5.400000095367432 4 L 7.699999809265137 1.700000047683716 C 8.09999942779541 1.300000071525574 8.09999942779541 0.7000000476837158 7.699999809265137 0.3000000715255737 C 7.300000190734863 -0.09999990463256836 6.699999809265137 -0.09999993443489075 6.299999713897705 0.3000000715255737 L 4 2.599999904632568 L 1.700000047683716 0.300000011920929 C 1.300000071525574 -0.09999999403953552 0.7000000476837158 -0.09999999403953552 0.3000000715255737 0.300000011920929 C -0.09999990463256836 0.7000000476837158 -0.09999993443489075 1.299999952316284 0.3000000715255737 1.700000047683716 L 2.599999904632568 4 L 0.300000011920929 6.300000190734863 C -0.09999999403953552 6.700000286102295 -0.09999999403953552 7.300000190734863 0.300000011920929 7.700000286102295 C 0.5 7.900000095367432 0.699999988079071 8 1 8 C 1.299999952316284 8 1.5 7.900000095367432 1.700000047683716 7.699999809265137 L 4 5.400000095367432 L 6.300000190734863 7.699999809265137 C 6.5 7.900000095367432 6.699999809265137 8 7 8 C 7.300000190734863 8 7.5 7.900000095367432 7.699999809265137 7.699999809265137 C 8.09999942779541 7.299999713897705 8.09999942779541 6.699999809265137 7.699999809265137 6.299999713897705 L 5.400000095367432 4 Z">
 						</path>
 					</svg>
 				</div>
 			</div>
 		</div>
-		<div id="BASIC_INFO_bwp">
+		<div id="BASIC_INFO_dlu">
 			<span>BASIC INFO</span>
 		</div>
-		<div id="COMPANY_bwq">
+		<div id="COMPANY_dlv">
 			<span>COMPANY</span>
 		</div>
-		<div id="PHONE_bwr">
+		<div id="PHONE_dlw">
 			<span>PHONE</span>
 		</div>
-		<div id="TAGS_bws">
+		<div id="TAGS_dlx">
 			<span>TAGS</span>
 		</div>
-		<div id="CREATED_DATE_bwt">
+		<div id="CREATED_DATE_dly">
 			<span>CREATED DATE</span>
 		</div>
 	</div>
-	<div id="Asignacin_de_alumnos_a_grupo">
-		<span>Asignación de alumnos a grupo</span>
-	</div>
-	<div id="Error_1_bwv" class="Error_1">
-		<svg class="Field_bww">
-			<rect id="Field_bww" rx="6" ry="6" x="0" y="0" width="867" height="40">
-			</rect>
-		</svg>
-		<div id="Lina_Bo_bwx">
-			<span>Lina Bo</span>
+	<div id="Header_dlz">
+		<div id="dropdown_dl">
+			<svg class="Rectngulo_431_dl">
+				<rect id="Rectngulo_431_dl" rx="0" ry="0" x="0" y="0" width="135" height="58">
+				</rect>
+			</svg>
+			<div id="MODIFICAR_dl">
+				<span>MODIFICAR</span>
+			</div>
+			<div id="ELIMINAR_dl">
+				<span>ELIMINAR</span>
+			</div>
 		</div>
 	</div>
-	<div id="Primary_Button_bwy" class="Primary_Button">
-		<svg class="base_bwz">
-			<rect id="base_bwz" rx="6" ry="6" x="0" y="0" width="157" height="40">
+	<div onclick="application.goToTargetView(event)" id="Primary_Button_dl" class="Primary_Button">
+		<svg class="base_dl">
+			<rect id="base_dl" rx="6" ry="6" x="0" y="0" width="188" height="34">
 			</rect>
 		</svg>
-		<div id="Buscar">
-			<span>Buscar</span>
+		<div id="Crear_evaluacin">
+			<span>Crear evaluación</span>
 		</div>
 	</div>
-	<div id="Arrow_Back" class="Arrow_Back">
-		<svg class="Arrow_Back_bw" viewBox="0 0 16 16">
-			<path id="Arrow_Back_bw" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
-			</path>
+	<div id="Header_-_Desktop_dl" class="Header___Desktop">
+		<svg class="base_dma">
+			<rect id="base_dma" rx="0" ry="0" x="0" y="0" width="1440" height="50">
+			</rect>
 		</svg>
-	</div>
-	<div id="Arrow_Back_bxa" class="Arrow_Back">
-		<svg class="Arrow_Back_bxb" viewBox="0 0 16 16">
-			<path id="Arrow_Back_bxb" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
-			</path>
-		</svg>
-	</div>
-	<div id="Arrow_Back_bxc" class="Arrow_Back">
-		<svg class="Arrow_Back_bxd" viewBox="0 0 16 16">
-			<path id="Arrow_Back_bxd" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
-			</path>
-		</svg>
-	</div>
-	<div id="Arrow_Back_bxe" class="Arrow_Back">
-		<svg class="Arrow_Back_bxf" viewBox="0 0 16 16">
-			<path id="Arrow_Back_bxf" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
-			</path>
-		</svg>
-	</div>
-	<div id="Arrow_Back_bxg" class="Arrow_Back">
-		<svg class="Arrow_Back_bxh" viewBox="0 0 16 16">
-			<path id="Arrow_Back_bxh" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
-			</path>
-		</svg>
-	</div>
-	<div id="Arrow_Back_bxi" class="Arrow_Back">
-		<svg class="Arrow_Back_bxj" viewBox="0 0 16 16">
-			<path id="Arrow_Back_bxj" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
-			</path>
-		</svg>
-	</div>
-	<div id="Arrow_Back_bxk" class="Arrow_Back">
-		<svg class="Arrow_Back_bxl" viewBox="0 0 16 16">
-			<path id="Arrow_Back_bxl" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
-			</path>
-		</svg>
-	</div>
-	<div id="Arrow_Back_bxm" class="Arrow_Back">
-		<svg class="Arrow_Back_bxn" viewBox="0 0 16 16">
-			<path id="Arrow_Back_bxn" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
-			</path>
-		</svg>
-	</div>
-	<div id="Arrow_Back_bxo" class="Arrow_Back">
-		<svg class="Arrow_Back_bxp" viewBox="0 0 16 16">
-			<path id="Arrow_Back_bxp" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
-			</path>
-		</svg>
-	</div>
-	<div id="Arrow_Back_bxq" class="Arrow_Back">
-		<svg class="Arrow_Back_bxr" viewBox="0 0 16 16">
-			<path id="Arrow_Back_bxr" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
-			</path>
-		</svg>
-	</div>
-	<div id="Arrow_Back_bxs" class="Arrow_Back">
-		<svg class="Arrow_Back_bxt" viewBox="0 0 16 16">
-			<path id="Arrow_Back_bxt" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
-			</path>
-		</svg>
-	</div>
-	<div id="Arrow_Back_bxu" class="Arrow_Back">
-		<svg class="Arrow_Back_bxv" viewBox="0 0 16 16">
-			<path id="Arrow_Back_bxv" d="M 16 7 L 3.799999952316284 7 L 9.399999618530273 1.399999976158142 L 8 0 L 0 8 L 8 16 L 9.399999618530273 14.60000038146973 L 3.799999952316284 9 L 16 9 L 16 7 Z">
-			</path>
-		</svg>
+		<div id="LOGO_dl">
+			<span>LOGO</span>
+		</div>
+		<div onclick="application.goToTargetView(event)" id="INICIO_dma">
+			<span>INICIO</span>
+		</div>
+		<div id="PROFESORES_dmb">
+			<span>PROFESORES</span>
+		</div>
+		<div id="GRUPOS_dmc">
+			<span>GRUPOS</span>
+		</div>
+		<img id="christopher-campbell-28567-uns_dmd" src="images/christopher-campbell-28567-uns_dmd.png" srcset="images/christopher-campbell-28567-uns_dmd.png 1x, images/christopher-campbell-28567-uns_dmd@2x.png 2x">
+			
+		<div id="ASIGNATURAS_dme">
+			<span>ASIGNATURAS</span>
+		</div>
+		<div id="COMPETENCIAS_dmf">
+			<span>COMPETENCIAS</span>
+		</div>
+		<div id="ADMINISTRADORES_dmg">
+			<span>ADMINISTRADORES</span>
+		</div>
+		<div id="ALUMNOS_dmh">
+			<span>ALUMNOS</span>
+		</div>
 	</div>
 </div>
 </body>
