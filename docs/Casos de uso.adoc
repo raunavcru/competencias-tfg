@@ -1,4 +1,9 @@
 == Casos de Uso
+Para poder ver los casos de uso de manera interactiva vaya al siguiente enlace:
+
+* link:mockup-interactivo\Home_admin.html#livereload[Administrador]
+
+* link:mockup-interactivo\Home_profesor.html#livereload[Profesor]
 
 |===
 | **CU-00** Listado de alumnos.
