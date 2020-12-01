@@ -16,7 +16,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
  4.El administrador obtiene el listado de alumnos.
 
-|image::mockups/Inicio-de-sesión.png[]
 
 |===
 |===
@@ -39,7 +38,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 6.El administrador crea un alumno.
 
 
-|image::mockups/Inicio-de-sesión.png[]
 
 |===
 |===
@@ -61,8 +59,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 6.El administrador edita un alumno.
 
-|image::mockups/Inicio-de-sesión.png[]
-
 |===
 |===
 | **CU-00**  Eliminación de alumnos.
@@ -83,7 +79,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 6.El administrador elimina un alumno.
 
-|image::mockups/Inicio-de-sesión.png[]
 
 |===
 |===
@@ -100,7 +95,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 4.El administrador obtiene el listado de profesores.
 
-|image::mockups/Inicio-de-sesión.png[]
 
 |===
 |===
@@ -122,7 +116,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 6.El administrador crea un profesor.
 
-|image::mockups/Inicio-de-sesión.png[]
 
 |===
 |===
@@ -144,7 +137,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 6.El administrador edita un profesor.
 
-|image::mockups/Inicio-de-sesión.png[]
 
 |===
 |===
@@ -166,7 +158,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 6.El administrador elimina un profesor.
 
-|image::mockups/Inicio-de-sesión.png[]
 
 |===
 |===
@@ -184,7 +175,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 4.El administrador obtiene el listado de grupos de clase.
 
-|image::mockups/Inicio-de-sesión.png[]
 
 |===
 |===
@@ -207,15 +197,12 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 6.El administrador crea un grupo de clase.
 
-|image::mockups/Inicio-de-sesión.png[]
 
 |===
 |===
 | **CU-00**  Edición de Grupos de clase.
 
-| Descripción: 
-
-| El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la edición de un grupo de clase_.
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la edición de un grupo de clase_.
 
 | Secuencia normal:
 
@@ -231,15 +218,12 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 6.El administrador edita un grupo de clase.
 
-|image::mockups/Inicio-de-sesión.png[]
 
 |===
 |===
 |**CU-00**  Eliminación de Grupos de clase.
 
-| Descripción: 
-
-El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de un grupos de clase.
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de un grupos de clase.
 
 | Secuencia normal:
 
@@ -255,14 +239,12 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 6. El administrador elimina un grupo de clase.
 
-|image::mockups/Inicio-de-sesión.png[]
 
 |===
 |===
 | **CU-00**  Asignar alumnos a sus respectivos grupos de clase.
 
-|Descripción: 
-El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador asignar alumnos a sus respectivos grupos de clase_.
+|Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador asignar alumnos a sus respectivos grupos de clase_.
 
 |Secuencia normal:
 
@@ -280,14 +262,12 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 7.El administrador solicita la asignación de un alumno.
 
-|image::mockups/Inicio-de-sesión.png[]
 
 |===
 |===
 | **CU-00**   Asignar profesores a un grupo de clase.
 
-|Descripción:
-El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador asignar profesores a un grupo de clase_.
+|Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador asignar profesores a un grupo de clase_.
 
 | Secuencia normal:
 
@@ -305,14 +285,12 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 7.El administrador solicita la asignación de un profesor.
 
-|image::mockups/Inicio-de-sesión.png[]
 
 |===
 |===
 |**CU-00** Listado de asignaturas.
 
-|Descripción:
-El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de asignaturas_.
+|Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de asignaturas_.
 
 |Secuencia normal
 
@@ -324,7 +302,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 4.El administrador obtiene el listado de asignaturas.
 
-|image::mockups/Inicio-de-sesión.png[]
 
 |===
 |===
@@ -347,7 +324,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 6.El administrador crea una asignatura.
 
-|image::mockups/Inicio-de-sesión.png[]
 
 |===
 |===
@@ -370,15 +346,12 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 6.El administrador edita una asignatura.
 
-|image::mockups/Inicio-de-sesión.png[]
 
 |===
 |===
 | **CU-00**  Eliminación de asignaturas.
 
-|Descripción:
-
-El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de una asignatura.
+|Descripción:El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de una asignatura.
 
 |Secuencia normal:
 
@@ -394,7 +367,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 6.El administrador elimina una asignatura.
 
-|image::mockups/Inicio-de-sesión.png[]
 
 |===
 |===
@@ -419,8 +391,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 7.El administrador solicita la asignación de una asignatura.
 
-|image::mockups/Inicio-de-sesión.png[]
-
 |===
 |===
 |**CU-00**  Asignar asignatura a profesores.
@@ -444,7 +414,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 7.El administrador solicita la asignación de una asignatura.
 
-|image::mockups/Inicio-de-sesión.png[]
 
 |===
 |===
@@ -462,8 +431,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
  3.El administrador solicita la lista de competencias.
 
  4.El administrador obtiene el listado de competencias.
-
-|image::mockups/Inicio-de-sesión.png[]
 
 |===
 |===
@@ -486,8 +453,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 6.El administrador crea una competencia.
 
 
-|image::mockups/Inicio-de-sesión.png[]
-
 |===
 |===
 | **CU-00**  Edición de competencias.
@@ -508,7 +473,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 6.El administrador edita una competencia.
 
-|image::mockups/Inicio-de-sesión.png[]
 
 |===
 |===
@@ -530,7 +494,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 6.El administrador elimina una competencia.
 
-|image::mockups/Inicio-de-sesión.png[]
 
 |===
 |===
@@ -554,7 +517,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 5.El administrador asigna la competencia de una asignatura.
 
-|image::mockups/Inicio-de-sesión.png[]
 
 |===
 |===
@@ -572,8 +534,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
  3.El administrador solicita la lista de administradores.
 
  4.El administrador obtiene el listado de administradores.
-
-|image::mockups/Inicio-de-sesión.png[]
 
 |===
 |===
@@ -596,7 +556,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 6.El administrador crea un administrador.
 
 
-|image::mockups/Inicio-de-sesión.png[]
 
 |===
 |===
@@ -618,7 +577,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 6.El administrador elimina un administrador.
 
-|image::mockups/Inicio-de-sesión.png[]
 
 |===
 |===
@@ -640,7 +598,24 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 6.El administrador edita un usuario.
 
-|image::mockups/Inicio-de-sesión.png[]
+|===
+
+|===
+| **CU-00**  Listar sus grupos de clase.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite listar sus grupos de clase_.
+
+|Secuencia normal:
+
+1.El profesor desea listar sus grupos de clase.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de sus grupos de clase.
+
+4.El profesor obtiene el listado de sus grupos de clase.
+
+5.El profesor obtiene el listado de sus grupos de clase.
 
 |===
 
