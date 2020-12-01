@@ -615,8 +615,328 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 4.El profesor obtiene el listado de sus grupos de clase.
 
-5.El profesor obtiene el listado de sus grupos de clase.
 
 |===
 
+|===
+| **CU-00**  Listar sus asignaturas.
 
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite listar sus asignaturas_.
+
+|Secuencia normal:
+
+1.El profesor desea listar sus asignaturas.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de sus asignaturas.
+
+4.El profesor obtiene el listado de sus asignaturas.
+
+
+|===
+
+|===
+| **CU-00**  Listar las competencias de una asignatura.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite listar las competencias de una asignatura_.
+
+|Secuencia normal:
+
+1.El profesor desea listar las competencias de una asignatura.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de competencias de una asignatura.
+
+4.El profesor obtiene el listado de competencias de una asignatura.
+
+|===
+
+|===
+| **CU-00**  Listar sus alumnos.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite listar sus alumnos_.
+
+|Secuencia normal:
+
+1.El profesor desea listar sus alumnos.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de sus alumnos.
+
+4.El profesor obtiene el listado de sus alumnos.
+
+|===
+
+|===
+| **CU-00**  Listar actividades.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite actividades_.
+
+|Secuencia normal:
+
+1.El profesor desea listar actividades.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de actividades.
+
+4.El profesor obtiene el listado de actividades.
+
+|===
+
+|===
+| **CU-00**  Creación de actividades.
+
+|Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la creación de una actividad_.
+
+| Secuencia normal:
+
+1.El profesor desea crear una actividad.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de sus grupos.
+
+4.El profesor obtiene el listado de sus grupos.
+
+5.El profesor solicita las actividades de un grupo.
+
+6.El profesor obtiene las actividades de un grupo.
+
+7.El profesor crea una actividad.
+
+|===
+|===
+| **CU-00**  Edición de una actividad.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la edición de una actividad_.
+
+|Secuencia normal:
+
+1.El profesor desea editar una actividad.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de sus grupos.
+
+4.El profesor obtiene el listado de sus grupos.
+
+5.El profesor solicita las actividades de un grupo.
+
+6.El profesor obtiene las actividades de un grupo.
+
+7.El profesor solicita los detalles de la actividad.
+ 
+8.El profesor obtiene los detalles de la actividad.
+
+9.El profesor edita una actividad.
+
+|===
+|===
+| **CU-00**  Eliminación de una actividad.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la eliminación de una actividad_.
+
+| Secuencia normal:
+
+1.El profesor desea editar una actividad.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de sus grupos.
+
+4.El profesor obtiene el listado de sus grupos.
+
+5.El profesor solicita las actividades de un grupo.
+
+6.El profesor obtiene las actividades de un grupo.
+
+7.El profesor solicita los detalles de la actividad.
+ 
+8.El profesor obtiene los detalles de la actividad.
+
+9.El profesor elimina una actividad.
+
+|===
+|===
+| **CU-00**  Ver las calificaciones de un alumno.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite ver las calificaciones de un alumno_.
+
+|Secuencia normal:
+
+1.El profesor desea ver las calificaciones de un alumno.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de sus grupos.
+
+4.El profesor obtiene el listado de sus grupos.
+
+5.El profesor solicita la lista de alumnos de ese grupo.
+
+6.El profesor obtiene la lista de alumnos de ese grupo.
+
+7.El profesor ve las califiaciones de un alumno.
+
+|===
+
+|===
+| **CU-00**  Creación de ejercicios.
+
+|Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la creación de un ejercicio_.
+
+| Secuencia normal:
+
+1.El profesor desea crear un ejercicio.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de sus grupos.
+
+4.El profesor obtiene el listado de sus grupos.
+
+5.El profesor solicita las actividades de un grupo.
+
+6.El profesor obtiene las actividades de un grupo.
+
+7.El profesor solicita los detalles de la actividad.
+ 
+8.El profesor obtiene los detalles de la actividad.
+
+9.El profesor crea un ejercicio.
+
+|===
+|===
+| **CU-00**  Edición de un ejercicio.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la edición de un ejercicio_.
+
+|Secuencia normal:
+
+1.El profesor desea editar un ejercicio.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de sus grupos.
+
+4.El profesor obtiene el listado de sus grupos.
+
+5.El profesor solicita las actividades de un grupo.
+
+6.El profesor obtiene las actividades de un grupo.
+
+7.El profesor solicita los detalles de la actividad.
+ 
+8.El profesor obtiene los detalles de la actividad.
+
+9.El profesor edita un ejercicio.
+
+|===
+|===
+| **CU-00**  Eliminación de un ejercicio.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la eliminación de un ejericio_.
+
+| Secuencia normal:
+
+1.El profesor desea eliminar un ejercicio.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de sus grupos.
+
+4.El profesor obtiene el listado de sus grupos.
+
+5.El profesor solicita las actividades de un grupo.
+
+6.El profesor obtiene las actividades de un grupo.
+
+7.El profesor solicita los detalles de la actividad.
+ 
+8.El profesor obtiene los detalles de la actividad.
+
+9.El profesor elimina un ejercicio.
+
+|===
+|===
+| **CU-00**  Asignar competencias a un ejercicio con una intensidad.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la asignar competencias a un ejercicio con una intensidad_.
+
+| Secuencia normal:
+
+1.El profesor desea asignar competencias a un ejercicio con una intensidad.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de sus grupos.
+
+4.El profesor obtiene el listado de sus grupos.
+
+5.El profesor solicita las actividades de un grupo.
+
+6.El profesor obtiene las actividades de un grupo.
+
+7.El profesor solicita los detalles de la actividad.
+ 
+8.El profesor obtiene los detalles de la actividad.
+
+9.El profesor solicita modificar un ejercicio.
+
+10.El profesor asigna una competencia a un ejercicio con una intensidad.
+
+|===
+|===
+| **CU-00**  Puntuar las evaluaciones, las actividades, los ejercicios y las competencias.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite puntuar las evaluaciones, las actividades, los ejercicios y las competencias_.
+
+| Secuencia normal:
+
+1.El profesor desea puntuar las evaluaciones, las actividades, los ejercicios y las competencias.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de sus grupos.
+
+4.El profesor obtiene el listado de sus grupos.
+
+5.El profesor solicita la lista de alumnos de ese grupo.
+
+6.El profesor obtiene la lista de alumnos de ese grupo.
+
+7.El profesor solicita ver las calificaciones.
+
+8.El profesor obtiene las calificaciones.
+
+9.El profesor solicita calificar las actividades.
+
+10.El profesor solicita calificar los ejercicios.
+
+11.El profesor solicita calificar las competencias.
+
+12.El profesor puntúa las competencias.
+
+13.El profesor obtiene las calificaciones de las competencias, ejercicios y actividades y evaluación.
+
+|===
+|===
+| **CU-00**  Modificar sus datos de usuario.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite modificar sus datos de usuario_.
+
+| Secuencia normal:
+
+1.El profesor desea modificar sus datos de usuario.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la modificación sus datos de usuario.
+
+4.El profesor modifica sus datos de usuario.
+
+|===
