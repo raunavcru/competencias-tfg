@@ -35,7 +35,7 @@
 |
 |===
 
-== Herramientas  image:./images/icons/herramienta.png[25,25]
+== Herramientas  image:./images/icons/herramienta.png[20,20]
 
 |===
 |**Adobe XD**
