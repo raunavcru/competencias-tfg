@@ -1,0 +1,31 @@
+== Justificaiones
+
+=== Tecnologías
+
+==== Django
+
+==== Materialize 
+
+==== PostgreSQL
+
+==== Travis
+
+==== Sonarcloud
+
+==== Asciidoc 
+
+=== Herramientas
+
+==== Adobe XD
+
+==== Clockify
+
+==== Github
+
+==== Jira
+
+==== Slack
+
+
+
+
