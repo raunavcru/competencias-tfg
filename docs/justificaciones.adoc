@@ -1,5 +1,5 @@
 
-== Justificaciones
+= Justificaciones
 
 == Tecnologías image:./images/icons/tecnologia.png[17,17]
 
