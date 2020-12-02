@@ -36,11 +36,11 @@
 == Herramientas  image:./images/icons/herramienta.png[17,17]
 
 |===
-
 |**Adobe XD**
 
 |Elegimos Adobe XD por la gran versatilidad en sus apartados para la realización de Mockups para el proyecto. Dada a su gran facilidad de uso y sus múltiples plantillas, su elección fue en nuestra opinión lo más recomendable.
 Como también ha sido usado para la creaciñon de dos Mockups interactivos
+
 |===
 
 |===
