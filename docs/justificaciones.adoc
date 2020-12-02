@@ -1,9 +1,7 @@
 
 == Justificaiones
-|===
-|**Tecnologías**
-|
-|===
+
+=== Tecnologías image:./images/icons/tecnologia.png[17,17]
 
 |===
 |**Django**
