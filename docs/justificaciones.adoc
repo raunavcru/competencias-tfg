@@ -20,7 +20,7 @@
 
 |===
 |**Heroku**
-|
+|Es una plataforma en nube gratuita que hemos utilizado anteriormente que está recomendada cuando se usa junto a Django y PostgreSQL.
 |===
 
 |===
@@ -30,7 +30,7 @@
 
 |===
 |**Sonarcloud**
-|
+|Nos va a permitir analizar el código de nuestra aplicación de forma automática conectándose a GitHub mediante Travis.
 |===
 
 |===
