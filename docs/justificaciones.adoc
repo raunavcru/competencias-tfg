@@ -10,7 +10,7 @@
 
 |===
 |**Materialize**
-|
+|Materialize es framework dispuesto a facilitar el diseño web en todo tipo de escenarios, escritorio o móvil. Habiendo sido recomendada y después de haber pasado por un proceso de selección, su amplia gama de posibilidades y recursos, junto a su facilidad de uso, fue sin duda el detonante de su elección.
 |===
 
 |===
@@ -26,7 +26,6 @@
 |===
 |**Travis**
 |Es una herramienta de integración continua que hemos usado en varias asignaturas que nos va a permitir ejecuatar nuestros test y comprobar si han surgido fallos al añadir código al repositorio, además vamos a poder conectarlo con SonarCloud.
-
 |===
 
 |===
@@ -61,12 +60,13 @@
 
 |===
 |**Github**
-|
+|Poco que decir en este apartado, GitHub es la plataforma de control de versiones más utilizada. Dado su conocimiento de uso por parte de los miembros del grupo de trabajo, decidimos sin dudarlo su elección.
 |===
 
 |===
 |**Jira**
-|
+|Jira es una herramienta de gran utilidad para equipos de todo tipo. Siendo también de gran ayuda para gestión de trabajo en todo tipo de casos, y en especial para el desarrollo software.
+Con todo esto y con el conocimiento de que se usa en entornos laborales de grandes empresas como Everis, decidimos utilizarla y aprender como funciona.
 |===
 
 |===
