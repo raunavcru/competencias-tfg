@@ -5,7 +5,7 @@
 
 |===
 |**Django**
-|
+|Es un framework de Python muy completo y con una buena documentación. Tenemos experiencia en él, ya que lo hemos utilizado en otras asignaturas, y nos gustaría seguir aprendiendo y adquir experiencia en Django para nuestro futuro profesional. Otra posibilidad en NodeJs, con el tenemos menos experiencia, y parte de su funcionalidad viene de módulos que no están tan bien documentados con Django.
 |===
 
 |===
@@ -15,7 +15,7 @@
 
 |===
 |**PostgreSQL**
-|
+|Es una base de datos SQL gratuita diseñada para ambientes de alto volumen. Tenemos experiencia en esta base de datos por varias aignaturas. Además dispone de una herramienta gráfica muy útil que facilita mucho su utilización.
 |===
 
 |===
@@ -25,7 +25,7 @@
 
 |===
 |**Travis**
-|Es una herramienta de integración continua que hemos usado en varias asignaturas que nos va a permitir ejecuatar nuestros test y comprobar si han surgido fallos al añadir código al repositorio, además vamos a poder conectarlo con SonarCloud.
+|Es una herramienta de integración continua que hemos usado en varias asignaturas que nos va a permitir ejecutar nuestros test y comprobar si han surgido fallos al añadir código al repositorio, además vamos a poder conectarlo con SonarCloud.
 
 |===
 
@@ -36,7 +36,7 @@
 
 |===
 |**Asciidoc** 
-|La forma más habitual de redactar sería en formato Word, pero veíamos necesario que toda la documnetación estuviese junto al código. Por eso, elegimos Asciicoc, que nos permite redactar nuestros documentos de forma personalizada con un lenguaje sencillo y fácil de aprender.
+|La forma más habitual de redactar sería en formato Word, pero veíamos necesario que toda la documentación estuviese junto al código. Por eso, elegimos Asciicoc, que nos permite redactar nuestros documentos de forma personalizada con un lenguaje sencillo y fácil de aprender.
 |===
 
 == Herramientas  image:./images/icons/herramienta.png[Icono,17,17]
@@ -55,7 +55,7 @@
 
 |===
 |**Clockify**
-|Nos permite medir nuestro gasto temporal en nuestras de manera sencilla. Existen muchas herramientas de este tipo, pero esta es la que más hemos utilizado, y nos sirve perfectamente para nuestro trabajo. 
+|Nos permite medir nuestro gasto temporal en nuestras tareas de manera sencilla. Existen muchas herramientas de este tipo, pero esta es la que más hemos utilizado, y nos sirve perfectamente para nuestro trabajo. 
 |===
 
 
