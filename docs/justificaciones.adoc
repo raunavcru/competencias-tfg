@@ -20,7 +20,7 @@
 
 |===
 |**Travis**
-|
+|Es una herramienta de integración continua que hemos usado en varias asignaturas que nos va a permitir ejecuatar nuestros test y comprobar si han surgido fallos al añadir código al repositorio, además vamos a poder conectarlo con SonarCloud.
 |===
 
 |===
@@ -65,5 +65,5 @@
 
 |===
 |**Slack**
-|
+|Es una herramienta de comunicación que se usa en nuestro entorno profesional, además es mucho más formal que Whatsapp o Telegram, que se mezcla el trabajo con conversaciones informales.
 |===
