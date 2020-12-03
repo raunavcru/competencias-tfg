@@ -19,8 +19,14 @@
 |===
 
 |===
+|**Heroku**
+|
+|===
+
+|===
 |**Travis**
 |Es una herramienta de integración continua que hemos usado en varias asignaturas que nos va a permitir ejecuatar nuestros test y comprobar si han surgido fallos al añadir código al repositorio, además vamos a poder conectarlo con SonarCloud.
+
 |===
 
 |===
