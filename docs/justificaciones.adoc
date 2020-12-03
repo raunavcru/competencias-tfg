@@ -5,17 +5,17 @@
 
 |===
 |**Django**
-|Es un framework de Python muy completo y con una buena documentación. Tenemos experiencia en él, ya que lo hemos utilizado en otras asignaturas, y nos gustaría seguir aprendiendo y adquir experiencia en Django para nuestro futuro profesional. Otra posibilidad en NodeJs, con el tenemos menos experiencia, y parte de su funcionalidad viene de módulos que no están tan bien documentados con Django.
+|Es un framework de Python muy completo y con una buena documentación. Tenemos experiencia en él, ya que lo hemos utilizado en otras asignaturas, y nos gustaría seguir aprendiendo y adquirir experiencia en Django para nuestro futuro profesional. Otra posibilidad en NodeJs, con el tenemos menos experiencia, y parte de su funcionalidad viene de módulos que no están tan bien documentados con Django.
 |===
 
 |===
 |**Materialize**
-|Materialize es framework dispuesto a facilitar el diseño web en todo tipo de escenarios, escritorio o móvil. Habiendo sido recomendada y después de haber pasado por un proceso de selección, su amplia gama de posibilidades y recursos, junto a su facilidad de uso, fue sin duda el detonante de su elección.
+|Materialize es un framework dispuesto a facilitar el diseño web en todo tipo de escenarios, escritorio o móvil. Habiendo sido recomendada y después de haber pasado por un proceso de selección, su amplia gama de posibilidades y recursos, junto a su facilidad de uso, fue sin duda el detonante de su elección.
 |===
 
 |===
 |**PostgreSQL**
-|Es una base de datos SQL gratuita diseñada para ambientes de alto volumen. Tenemos experiencia en esta base de datos por varias aignaturas. Además dispone de una herramienta gráfica muy útil que facilita mucho su utilización.
+|Es una base de datos SQL gratuita diseñada para ambientes de alto volumen. Tenemos experiencia en esta base de datos por varias asignaturas. Además dispone de una herramienta gráfica muy útil que facilita mucho su utilización.
 |===
 
 |===
@@ -25,7 +25,7 @@
 
 |===
 |**Travis**
-|Es una herramienta de integración continua que hemos usado en varias asignaturas que nos va a permitir ejecuatar nuestros test y comprobar si han surgido fallos al añadir código al repositorio, además vamos a poder conectarlo con SonarCloud.
+|Es una herramienta de integración continua que hemos usado en varias asignaturas que nos va a permitir ejecutar nuestros test y comprobar si han surgido fallos al añadir código al repositorio, además vamos a poder conectarlo con SonarCloud.
 |===
 
 |===
@@ -49,7 +49,7 @@
 
 |===
 |**Visual Studio Code**
-|Es un editor de código desarrollado por Microsoft y que está siendo muy usado estos últimos años. Nos permite programar en múltiples lenguajes de forma personalizada con las numerosas extensiones que acompañan al editor. Además implementa una consola de depuración y está vinculado directamente con Git. Lo elegimos, aparte de los puntos anteriores, porque tenemos experiencia en el y es fácil de usar.
+|Es un editor de código desarrollado por Microsoft y que está siendo muy usado estos últimos años. Nos permite programar en múltiples lenguajes de forma personalizada con las numerosas extensiones que acompañan al editor. Además implementa una consola de depuración y está vinculado directamente con Git. Lo elegimos, aparte de los puntos anteriores, porque tenemos experiencia en él y es fácil de usar.
 |===
 
 |===
