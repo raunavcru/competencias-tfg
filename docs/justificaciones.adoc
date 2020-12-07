@@ -6,6 +6,13 @@
 |===
 |**Django**
 |Es un framework de Python muy completo y con una buena documentación. Tenemos experiencia en él, ya que lo hemos utilizado en otras asignaturas, y nos gustaría seguir aprendiendo y adquirir experiencia en Django para nuestro futuro profesional. Otra posibilidad en NodeJs, con el tenemos menos experiencia, y parte de su funcionalidad viene de módulos que no están tan bien documentados con Django.
+|Alternativas
+|Existen otros frameworks de Python como:
+* Flask.
+* Bottle.
+* Pyramid.
+
+Bottle y Flask son microframework mucho más simples que Django y se utiliza para proyectos más sencillos que el nuestro.
 |===
 
 |===
