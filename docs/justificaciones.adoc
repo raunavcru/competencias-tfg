@@ -7,7 +7,7 @@
 |===
 |**Django**
 |Es un framework de Python muy completo y con una buena documentación. Tenemos experiencia en él, ya que lo hemos utilizado en otras asignaturas, y nos gustaría seguir aprendiendo y adquirir experiencia en Django para nuestro futuro profesional. 
-|**Alternativas**
+|Alternativas
 |Existen otros frameworks de Python como:
 
 * Flask.
@@ -21,10 +21,20 @@ Pyramid es una buena opción, mucho más ligero que Django, esto provoca que sea
 NodeJs es otra buena alternativa. Es un framework que está creciendo continuamente en popularidad con multitud de librerías que lo nutren. Esto también juega en su contra, ya que NodeJs no dispone de una reputación tan sólida, ni unas librerías externas tan bien documentadas como Django. Tampoco dispone de un sistema sólido de seguridad como el que tiene Django, el cual, es muy fácil de implementar. En otro apartado, Django permite una velocidad de desarrollo muy alta, algo de lo que no dispone NodeJs, por lo que la elección de este último extendería más la etapa de desarrollo, y lo haría menos económico.
 |===
 
-
+[cols="5a"]
 |===
 |**Materialize**
 |Materialize es un framework dispuesto a facilitar el diseño web en todo tipo de escenarios, escritorio o móvil. Habiendo sido recomendada y después de haber pasado por un proceso de selección, su amplia gama de posibilidades y recursos, junto a su facilidad de uso, fue sin duda el detonante de su elección.
+|Alternativas
+|Existen algunas alternativas como:
+
+* Boostrap
+* Foundation
+
+Materialize es un framework CSS basado en la normativa Material design, la cual esta enfocada en la visualización del sistema operativo Android, web y en cualquier otra plataforma. La creación de esta normativa por parte de Google hace que sea algo con lo que los usuarios están más familiarizados a usar, cosas que los otros framework no tienen.
+Es de esperar que su soporte.
+
+Materialize no necesita jQuery para su uso, aunque puedes usarlo si así lo deseas.
 |===
 
 |===
