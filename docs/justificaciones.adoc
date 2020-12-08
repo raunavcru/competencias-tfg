@@ -68,7 +68,9 @@ Gráficamente Materialize esta muy por encima de Boostrap o Foundation, gracias 
 
 |===
 |**Asciidoc** 
-|La forma más habitual de redactar sería en formato Word, pero veíamos necesario que toda la documentación estuviese junto al código. Por eso, elegimos Asciicoc, que nos permite redactar nuestros documentos de forma personalizada con un lenguaje sencillo y fácil de aprender.
+|La forma más habitual de redactar sería en formato Word, pero veíamos necesario que toda la documentación estuviese junto al código. Por eso, elegimos Asciidoc, que nos permite redactar nuestros documentos de forma personalizada con un lenguaje sencillo y fácil de aprender.
+|Alternativa
+|Como segunda opción tenemos a Markdown, un lenguaje de marcado ligero más extendido que Asciidoc, por lo que hay muchas más herramientas que lo soportan. Al contrario que Asciidoc, carece de un estándar, por lo que al redactar algo con una ligera complejidad, cada herramienta puede interpretarlo de distinta forma.
 |===
 
 == Herramientas  image:./images/icons/herramienta.png[Icono,17,17]
