@@ -3,11 +3,13 @@
 
 == Tecnologías image:./images/icons/tecnologia.png[Icono,17,17]
 
+[cols="5a"]
 |===
 |**Django**
 |Es un framework de Python muy completo y con una buena documentación. Tenemos experiencia en él, ya que lo hemos utilizado en otras asignaturas, y nos gustaría seguir aprendiendo y adquirir experiencia en Django para nuestro futuro profesional. Otra posibilidad en NodeJs, con el tenemos menos experiencia, y parte de su funcionalidad viene de módulos que no están tan bien documentados con Django.
 |Alternativas
-|Existen otros frameworks de Python como:
+Existen otros frameworks de Python como:
+
 * Flask.
 * Bottle.
 * Pyramid.
