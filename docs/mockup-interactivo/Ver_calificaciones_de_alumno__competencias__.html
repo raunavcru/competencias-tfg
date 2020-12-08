@@ -166,6 +166,10 @@
 		left: 994px;
 		top: 19px;
 		overflow: visible;
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: page;
+		--web-action-target: Mis_actividades.html;
+		cursor: pointer;
 	}
 	#MIS_ACTIVIDADES {
 		opacity: 0.5;
@@ -220,7 +224,7 @@
 		top: 286px;
 		overflow: visible;
 	}
-	#base_bu {
+	#base_bw {
 		fill: transparent;
 		stroke: rgba(250,105,128,1);
 		stroke-width: 2px;
@@ -229,7 +233,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.base_bu {
+	.base_bw {
 		position: absolute;
 		overflow: visible;
 		width: 1239px;
@@ -406,7 +410,7 @@
 		top: 500px;
 		overflow: visible;
 	}
-	#Field_b {
+	#Field_ca {
 		fill: rgba(255,255,255,1);
 		stroke: rgba(250,105,128,1);
 		stroke-width: 2px;
@@ -415,7 +419,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Field_b {
+	.Field_ca {
 		position: absolute;
 		overflow: visible;
 		width: 118px;
@@ -423,7 +427,7 @@
 		left: 0px;
 		top: 21px;
 	}
-	#Nota_b {
+	#Nota_cb {
 		left: 0px;
 		top: 0px;
 		position: absolute;
@@ -439,7 +443,7 @@
 		font-size: 13px;
 		color: rgba(250,105,128,1);
 	}
-	#Primary_Button_cb {
+	#Primary_Button_cc {
 		position: absolute;
 		width: 145px;
 		height: 42px;
@@ -447,10 +451,10 @@
 		top: 519px;
 		overflow: visible;
 	}
-	#base_cb {
+	#base_cd {
 		fill: rgba(250,105,128,1);
 	}
-	.base_cb {
+	.base_cd {
 		position: absolute;
 		overflow: visible;
 		width: 145px;
@@ -458,7 +462,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#Guardar_cc {
+	#Guardar_ce {
 		left: 50px;
 		top: 14px;
 		position: absolute;
@@ -473,98 +477,6 @@
 		font-weight: bold;
 		font-size: 12px;
 		color: rgba(255,255,255,1);
-	}
-	#Calculado {
-		left: 172px;
-		top: 328px;
-		position: absolute;
-		overflow: visible;
-		width: 58px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4px;
-		text-align: left;
-		font-family: Helvetica;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 12px;
-		color: rgba(250,105,128,1);
-	}
-	#Calculado_ce {
-		left: 172px;
-		top: 505px;
-		position: absolute;
-		overflow: visible;
-		width: 58px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4px;
-		text-align: left;
-		font-family: Helvetica;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 12px;
-		color: rgba(250,105,128,1);
-	}
-	#-_cf {
-		left: 352px;
-		top: 352px;
-		position: absolute;
-		overflow: visible;
-		width: 8px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Helvetica;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 20px;
-		color: rgba(32,33,36,1);
-	}
-	#Manual {
-		left: 335px;
-		top: 328px;
-		position: absolute;
-		overflow: visible;
-		width: 42px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4px;
-		text-align: left;
-		font-family: Helvetica;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 12px;
-		color: rgba(250,105,128,1);
-	}
-	#-_ch {
-		left: 352px;
-		top: 529px;
-		position: absolute;
-		overflow: visible;
-		width: 8px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Helvetica;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 20px;
-		color: rgba(32,33,36,1);
-	}
-	#Manual_ci {
-		left: 335px;
-		top: 505px;
-		position: absolute;
-		overflow: visible;
-		width: 42px;
-		white-space: nowrap;
-		line-height: 20px;
-		margin-top: -4px;
-		text-align: left;
-		font-family: Helvetica;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 12px;
-		color: rgba(250,105,128,1);
 	}
 </style>
 <script id="applicationScript">
@@ -3433,7 +3345,7 @@ window.application = new Application();
 				<span>MIS ASIGNATURAS</span>
 			</div>
 		</div>
-		<div id="Componente_89__14" class="Componente_89___14">
+		<div onclick="application.goToTargetView(event)" id="Componente_89__14" class="Componente_89___14">
 			<div id="MIS_ACTIVIDADES">
 				<span>MIS ACTIVIDADES</span>
 			</div>
@@ -3446,8 +3358,8 @@ window.application = new Application();
 		<span>Competencias Ejercicio 3</span>
 	</div>
 	<div id="Primary_Button" class="Primary_Button">
-		<svg class="base_bu">
-			<rect id="base_bu" rx="6" ry="6" x="0" y="0" width="1239" height="127">
+		<svg class="base_bw">
+			<rect id="base_bw" rx="6" ry="6" x="0" y="0" width="1239" height="127">
 			</rect>
 		</svg>
 	</div>
@@ -3488,40 +3400,22 @@ window.application = new Application();
 		<span>-</span>
 	</div>
 	<div id="Focus_1_b" class="Focus_1">
-		<svg class="Field_b">
-			<rect id="Field_b" rx="6" ry="6" x="0" y="0" width="118" height="40">
+		<svg class="Field_ca">
+			<rect id="Field_ca" rx="6" ry="6" x="0" y="0" width="118" height="40">
 			</rect>
 		</svg>
-		<div id="Nota_b">
+		<div id="Nota_cb">
 			<span>Nota</span>
 		</div>
 	</div>
-	<div id="Primary_Button_cb" class="Primary_Button">
-		<svg class="base_cb">
-			<rect id="base_cb" rx="6" ry="6" x="0" y="0" width="145" height="42">
+	<div id="Primary_Button_cc" class="Primary_Button">
+		<svg class="base_cd">
+			<rect id="base_cd" rx="6" ry="6" x="0" y="0" width="145" height="42">
 			</rect>
 		</svg>
-		<div id="Guardar_cc">
+		<div id="Guardar_ce">
 			<span>Guardar</span>
 		</div>
-	</div>
-	<div id="Calculado">
-		<span>Calculado</span>
-	</div>
-	<div id="Calculado_ce">
-		<span>Calculado</span>
-	</div>
-	<div id="-_cf">
-		<span>-</span>
-	</div>
-	<div id="Manual">
-		<span>Manual</span>
-	</div>
-	<div id="-_ch">
-		<span>-</span>
-	</div>
-	<div id="Manual_ci">
-		<span>Manual</span>
 	</div>
 </div>
 </body>
