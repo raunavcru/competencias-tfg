@@ -7,7 +7,7 @@
 |===
 |**Django**
 |Es un framework de Python muy completo y con una buena documentación. Tenemos experiencia en él, ya que lo hemos utilizado en otras asignaturas, y nos gustaría seguir aprendiendo y adquirir experiencia en Django para nuestro futuro profesional. 
-|Alternativas
+|**Alternativas**
 |Existen otros frameworks de Python como:
 
 * Flask.
@@ -18,9 +18,9 @@ Bottle y Flask son microframework mucho más simples que Django y se utilizan pa
 
 Pyramid es una buena opción, mucho más ligero que Django, esto provoca que sea menos completo. Django no necesita otras librerías para el desarrollo de la aplicación, al contrario que Pyramid, que aparte del enrutamiento y la autenticación, necesita librerías externas.
 
-NodeJs es otra buena alternativa. Es un framework que está creciendo continuamente en popularidad con multitud de librerías que nutren al framework. Esto también juega en su contra, ya que NodeJs no dispone de una reputación tan sólida como Django, y sus librerías externas no están tan bien documentadas como Django. Tampoco dispone de un sistema sólido de seguridad de Django que es muy fácil de implementar. Además, Django permite una velocidad de desarrollo muy alta de la que no dispone NodeJs, por lo que la elección de este último extendería más la etapa de desarrollo y lo haría menos económico
-.
+NodeJs es otra buena alternativa. Es un framework que está creciendo continuamente en popularidad con multitud de librerías que lo nutren. Esto también juega en su contra, ya que NodeJs no dispone de una reputación tan sólida, ni unas librerías externas tan bien documentadas como Django. Tampoco dispone de un sistema sólido de seguridad como el que tiene Django, el cual, es muy fácil de implementar. En otro apartado, Django permite una velocidad de desarrollo muy alta, algo de lo que no dispone NodeJs, por lo que la elección de este último extendería más la etapa de desarrollo, y lo haría menos económico.
 |===
+
 
 |===
 |**Materialize**
