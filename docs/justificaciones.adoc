@@ -42,7 +42,7 @@ Una de los puntos negativos por parte de Boostrap son los problemas entre versi�
 
 A diferencia de sus alternativas, Materialize tiene una gran documentación, la cual, es más fácil de de entender para alguien que acaba de empezar, así como una amplia cantidad de ejemplos visuales.
 
-Gráficamente Materialize esta muy por encima de Boostrap o Foundation, gracias a sus variedades de color y a sus componentes adicionales.
+Gráficamente Materialize esta muy por encima de Boostrap o Foundation, debido a sus variedades de color y a sus componentes adicionales.
 
 |===
 
