@@ -51,9 +51,21 @@ Gráficamente Materialize esta muy por encima de Boostrap o Foundation, debido a
 |Es una base de datos SQL gratuita diseñada para ambientes de alto volumen. Tenemos experiencia en esta base de datos por varias asignaturas. Además dispone de una herramienta gráfica muy útil que facilita mucho su utilización.
 |===
 
+[cols="5a"]
 |===
 |**Heroku**
 |Es una plataforma en nube gratuita que hemos utilizado anteriormente que está recomendada cuando se usa junto a Django y PostgreSQL.
+|Alternativas
+|Existen algunas alternativas como:
+
+* AWS
+* Firebase
+
+A diferencia de la versión gratuita de Firebase, la cual, es bastante simple, teniendo limitaciones en el espacio de almacenamiento y el número de usuarios simultáneos. Por tanto, para trabajar con ella de manera profesional, deberás pagar, en cambio, Heroku es gratuito para aplicaciones de poco consumo.
+
+Comparandola con Heroku, AWS no es una apto para personas principiantes, ya que la complejidad del mismo es bastante elevada.
+
+En comparación con las alternativas expuestas, Heroku permite desplegar versiones, rollbacks, gestionar dependencias, como también desarrollar casi con cualquier lenguaje de programación: Java, Ruby, NodeJS…
 |===
 
 |===
@@ -61,9 +73,19 @@ Gráficamente Materialize esta muy por encima de Boostrap o Foundation, debido a
 |Es una herramienta de integración continua que hemos usado en varias asignaturas que nos va a permitir ejecutar nuestros test y comprobar si han surgido fallos al añadir código al repositorio, además vamos a poder conectarlo con SonarCloud.
 |===
 
+[cols="5a"]
 |===
 |**Sonarcloud**
 |Nos va a permitir analizar el código de nuestra aplicación de forma automática conectándose a GitHub mediante Travis.
+|Alternativas
+|Existen algunas alternativas como:
+
+* Codacy
+* SonarQube
+
+A diferencia de Sonarcloud Codacy no tiene soporte para Git privado o Azure DevOps git.
+
+SonarQube tienen un mantenimiento de código más costoso, haciendo que sea necesario invertir más tiempo, así como generar "falsos positivos".
 |===
 
 |===
