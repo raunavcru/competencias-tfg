@@ -56,10 +56,10 @@ Gráficamente Materialize esta muy por encima de Boostrap o Foundation, debido a
 * MySQL
 * MariaDB
 
-MySQL es la opción más extendida, pero su licencia puede ser un problema, ya que está sujeta a las decisiones de Oracle. La segunda alternativa es MariaDB, un fork de MySQL de código abierto. La gran diferencia de PostgreSQL con esta última, como hemos comentado anteriormente, es que está pensada para alto volumen. Este ha sido el origen de nuestra elección.  
+MySQL es la opción más extendida, pero su licencia puede ser un problema, ya que está sujeta a las decisiones de Oracle. La segunda alternativa es MariaDB, un fork de MySQL de código abierto. La gran diferencia de PostgreSQL con esta última, como hemos comentado anteriormente, es que está pensada para alto volumen. Este ha sido el origen de nuestra elección.    
 |===
 
-[cols="5a"]
+[cols="6a"]
 |===
 |**Heroku**
 |Es una plataforma en nube gratuita que hemos utilizado anteriormente que está recomendada cuando se usa junto a Django y PostgreSQL.
@@ -79,9 +79,11 @@ En comparación con las alternativas expuestas, Heroku permite desplegar version
 |===
 |**Travis**
 |Es una herramienta de integración continua que hemos usado en varias asignaturas que nos va a permitir ejecutar nuestros test y comprobar si han surgido fallos al añadir código al repositorio, además vamos a poder conectarlo con SonarCloud.
+|Alternativa
+|La segunda opción es Jekins. El mayor ventaja que podemos destacar de Travis frente Jenkins es no qué necesita ningún tipo de instalación, solo se configura un solo archivo y se puede utilizar a la perfección.
 |===
 
-[cols="5a"]
+[cols="6a"]
 |===
 |**Sonarcloud**
 |Nos va a permitir analizar el código de nuestra aplicación de forma automática conectándose a GitHub mediante Travis.
