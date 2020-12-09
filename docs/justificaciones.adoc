@@ -56,7 +56,7 @@ Gráficamente Materialize esta muy por encima de Boostrap o Foundation, debido a
 * MySQL
 * MariaDB
 
-MySQL es la opción más extendida, pero su licencia puede ser un problema, ya que está sujeta a las decisiones de Oracle. La segunda alternativa es MariaDB, un fork de MySQL de código abierto. La gran diferencia de PostgreSQL con esta última, como hemos comentado anteriormente, es que está pensada para alto volumen. Este ha sido el origen de nuestra elección.    
+MySQL es la opción más extendida, pero su licencia puede ser un problema, ya que está sujeta a las decisiones de Oracle. La segunda alternativa es MariaDB, un fork de MySQL de código abierto. La gran diferencia de PostgreSQL con esta última, como hemos comentado anteriormente, es que está pensada para alto volumen. Este ha sido el origen de nuestra elección.  
 |===
 
 |===
