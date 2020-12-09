@@ -945,3 +945,79 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 4.El profesor modifica sus datos de usuario.
 
 |===
+
+|===
+| **CU-45**  Generar informe de un grupo completo.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite generar informe de un grupo completo_.
+
+| Secuencia normal:
+
+1.El profesor desea generar informe de un grupo completo.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de grupos de clase.
+
+4.El profesor obtiene el listado de grupos de clase.
+
+5.El profesor solicita la lista de alumnos.
+
+6.El profesor obtiene el listado de alumnos.
+
+5.El profesor solicita el informe.
+
+6.El profesor exporta el informe.
+
+|===
+
+|===
+| **CU-46**  Generar informe de un alumno.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite generar informe de un alumno_.
+
+| Secuencia normal:
+
+1.El profesor desea generar informe de un alumno.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de grupos de clase.
+
+4.El profesor obtiene el listado de grupos de clase.
+
+5.El profesor solicita la lista de alumnos.
+
+6.El profesor obtiene el listado de alumnos.
+
+7.El profesor ve las califiaciones de un alumno.
+
+8.El profesor exporta el informe.
+
+|===
+
+
+|===
+| **CU-47**  Ver competencias de un alumno.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite ver las competencias de un alumno_.
+
+| Secuencia normal:
+
+1.El profesor desea ver las competencias de un alumno.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de grupos de clase.
+
+4.El profesor obtiene el listado de grupos de clase.
+
+5.El profesor solicita la lista de alumnos.
+
+6.El profesor obtiene el listado de alumnos.
+
+7.El profesor solicita las competencias de un alumno.
+
+8.El profesor obtiene las competencias de un alumno.
+
+|===
