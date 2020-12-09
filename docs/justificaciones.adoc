@@ -51,12 +51,12 @@ Gráficamente Materialize esta muy por encima de Boostrap o Foundation, debido a
 |**PostgreSQL**
 |Es una base de datos SQL gratuita diseñada para ambientes de alto volumen. Tenemos experiencia en esta base de datos por varias asignaturas. Además dispone de una herramienta gráfica muy útil que facilita mucho su utilización.
 |Alternativas
-|Existen otras laternativas como:
+|Existen otras alternativas como:
 
 * MySQL
 * MariaDB
 
-MySQL es la opción más extendida, pero su licencia puede ser un problema, ya que está sujeta a las desiciones de Oracle. La segunda alternativa es MariaDB, un fork de MySQL de código abierto. La gran diferencia de PostgreSQL con esta última, como hemos comentado anteriormente, es que pensada para alto volumen. Este ha sido el origen de nuestra elección.  
+MySQL es la opción más extendida, pero su licencia puede ser un problema, ya que está sujeta a las decisiones de Oracle. La segunda alternativa es MariaDB, un fork de MySQL de código abierto. La gran diferencia de PostgreSQL con esta última, como hemos comentado anteriormente, es que está pensada para alto volumen. Este ha sido el origen de nuestra elección.    
 |===
 
 |===
