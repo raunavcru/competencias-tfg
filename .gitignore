@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
+settings.cpython-39.pyc
 
 ## C extensions
 *.so
