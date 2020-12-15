@@ -10,7 +10,7 @@ global:
   - PGPORT=5432
 before_install:
   - sudo service postgresql stop
-  - sudo apt install -yq --no-install-suggests --no-install-recommends postgresql-13-postgis-3.0-scripts postgresql-13 postgresql-client-13 postgresql-13-postgis-3.0
+  - sudo apt install -yq --no-install-suggests --no-install-recommends postgresql-13-postgis-3-scripts postgresql-13 postgresql-client-13 postgresql-13-postgis-3
   - sed -e 's/^port.*/port = 5432/' /etc/postgresql/13/main/postgresql.conf > postgresql.conf
   - sudo chown postgres postgresql.conf
   - sudo mv postgresql.conf /etc/postgresql/13/main
