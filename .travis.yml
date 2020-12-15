@@ -13,6 +13,7 @@ install:
   - pip install -r requirements.txt
 before_script:
   - cp ./Corrige/settings.py ./Corrige/local_settings.py
+  - export PATH="/usr/lib/postgresql/13/bin:$PATH"
   - psql -U postgres -c "CREATE USER Kelsier WITH PASSWORD 'Kelsier'"
   - psql -U postgres -c "ALTER USER Kelsier SUPERUSER"
   - psql -U postgres -c "CREATE DATABASE corrige OWNER Kelsier"
