@@ -26,3 +26,4 @@ branches:
   only:
     - master
     - dev
+    - Feat/s2/configurar proyecto
