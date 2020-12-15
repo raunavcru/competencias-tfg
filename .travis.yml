@@ -8,13 +8,6 @@ env:
   - DJANGO=3.1.4 DB=postgres
 global:
   - PGPORT=5432
-addons:
-  postgresql: "13"
-  apt:
-    packages:
-      - postgresql-13
-      - postgresql-client-13
-      - postgresql-13-postgis-3.1
 before_install:
   - sudo service postgresql stop
   - sudo apt-get --yes remove postgresql-13-postgis-3.1
@@ -36,7 +29,12 @@ before_script:
   - psql -U postgres -c "CREATE DATABASE corrige OWNER Kelsier"
   - python manage.py makemigrations
   - python manage.py migrate
-
+addons:
+  postgresql: "13"
+  apt:
+    packages:
+      - postgresql-13
+      - postgresql-client-13
 branches:
   only:
     - master
