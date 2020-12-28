@@ -28,12 +28,17 @@ before_script:
   - python manage.py migrate
 script:
   - travis_wait 20 python manage.py test
+  - sonar-scanner
 addons:
   postgresql: "13"
   apt:
     packages:
       - postgresql-13
       - postgresql-client-13
+  sonarcloud:
+    organization: "raunavcru"
+    token:
+      secure: "**************************" 
 branches:
   only:
     - master
