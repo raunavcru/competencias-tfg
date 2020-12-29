@@ -1,5 +1,25 @@
 # competencias-tfg
 
+## Instalación
+- Intalación de Python3:
+    https://www.python.org/downloads/
+- Ejecutamos el siguiente comando:
+    pip install virtualenvwrapper-win
+- Creamos el entorno virtual:
+    mkvirtualenv <NombreEntorno>
+- Accedemos al entorno:
+    workon <NombreEntorno>:
+- Instalamos el archivo requirements.txt
+    pip install -r requirements.txt
+- Instalamos PostgresSQL:
+    https://www.postgresql.org/download/
+- Ejecutamos el siguiente comando:
+    py manage.py migrate
+- Creamos el super usuario:
+    py manage.py createsuperuser
+- Ejecutamos el servidor:
+    py manage.py runserver
+
 ## Ramas
 Ramas por defecto:
 - master
