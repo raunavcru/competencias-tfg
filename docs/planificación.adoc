@@ -69,8 +69,7 @@ Sprint 2: 29 de Enero al 25 de Febrero. (4)
 === **Sprint 3**: 26 de Febrero al 25 del Marzo.        
 [grid=cols]
 |===
-
-| Semana 1: 26 de Febrero al 4 de Marzo | Semana 2: 5 de Marzo al 11 de Marzo | Semana 3: 12 de Marzo al 18 de Marzo | Semana 4:  19 de Marzo al 25 de Marzo      
+|Semana 1: 26 de Febrero al 4 de Marzo |Semana 2: 5 de Marzo al 11 de Marzo |Semana 3: 12 de Marzo al 18 de Marzo |Semana 4:  19 de Marzo al 25 de Marzo      
 
 | CU-30 Listar sus grupos de clase.
 | CU-36 Edición de una actividad.       
