@@ -41,30 +41,42 @@ Una vez realizado cada Sprint se verá reflejado en el proyecto como un incrimen
 
 |===
 
-Sprint 2: 29 de Enero al 25 de Febrero. (4)
-    Semana 1: 29 de Enero al 4 de Febrero
-        CU-13 Asignar alumnos a sus respectivos grupos de clase.
-        CU-14 Asignar profesores a un grupo de clase.
-        CU-15 Listado de asignaturas.
-        CU-16 Creación de asignaturas.
-        CU-17 Edición de asignaturas.
-        CU-18 Eliminación de asignaturas.
-    Semana 2: 5 de Febrero al 11 de Febrero
-        CU-19 Asignar una asignatura a grupos de clase.
-        CU-20 Asignar asignatura a profesores.
-        CU-21 Listado de competencias.
-        CU-22 Creación de competencias.
-        CU-23 Edición de competencias.
-        CU-24 Eliminación de competencias.
-    Semana 3: 12 de Febrero al 18 de Febrero
-        CU-25 Asignación de competencias.
-        CU-26 Listado de administradores.
-        CU-27 Creación de administradores.
-        CU-28 Eliminación de administradores.
-        CU-29 Edición de usuarios.
-    Semana 4: 19 de Febrero al 25 de Febrero
-        Despliegue de la versión 0.2
-        Replanificación.
+=== **Sprint 2**: 29 de Enero al 25 de Febrero.        
+[grid=cols]
+|===
+|Semana 1: 29 de Enero al 4 de Febrero |Semana 2: 5 de Febrero al 11 de Febrero |Semana 3: 12 de Febrero al 18 de Febrero |Semana 4:  19 de Febrero al 25 de Febrero
+
+| CU-13 Asignar alumnos a sus respectivos grupos de clase.
+| CU-19 Asignar una asignatura a grupos de clase.
+| CU-25 Asignación de competencias.
+| Despliegue de la versión 0.2
+
+| CU-14 Asignar profesores a un grupo de clase.
+| CU-20 Asignar asignatura a profesores.
+| CU-26 Listado de administradores.
+| Replanificación.
+
+| CU-15 Listado de asignaturas.
+| CU-21 Listado de competencias.
+| CU-27 Creación de administradores.
+|
+
+| CU-16 Creación de asignaturas.
+| CU-22 Creación de competencias.
+| CU-28 Eliminación de administradores.
+|
+
+| CU-17 Edición de asignaturas.
+| CU-23 Edición de competencias.
+| CU-29 Edición de usuarios.
+|
+
+| CU-18 Eliminación de asignaturas.
+| CU-24 Eliminación de competencias.
+|
+|
+
+|===
 
 === **Sprint 3**: 26 de Febrero al 25 del Marzo.        
 [grid=cols]
