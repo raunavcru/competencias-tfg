@@ -1,0 +1,121 @@
+Sprint: 1 por mes
+Terminar 30 de abril
+4 sprints.
+Cada sprint tendrá su versión correspondiente en el proyecto, empezando por la versión 0.1. Para que así se puedan ver en cada momento los avances del proyecto por sprint.
+
+Sprint 1: 1 de Enero al 28 de Enero. (4)
+    Semana 1: 1 de Enero al 7  de Enero
+        Modelo de datos.
+        Populate
+        CU-01 Listado de alumnos.
+        CU-02 Creación de alumnos.
+        CU-05 Listado de profesores.
+        CU-06 Creación de profesores.
+    Semana 2: 8 de Enero al 14 de Enero
+        CU-03 Edición de alumnos.
+        CU-04 Eliminación de alumnos.
+        CU-07 Edición de profesores.
+        CU-08 Eliminación de profesores.
+    Semena 3: 15 de Enero al 21 de Enero
+        Populate v2.
+        CU-09 Listado de Grupos de clase.
+        CU-10 Creación de Grupos de clase.
+        CU-11 Edición de Grupos de clase.
+        CU-12 Eliminación de Grupos de clase.
+    Semana 4: 22 de Enero al 28 de Enero
+        Despliegue de la versión 0.1
+
+
+
+
+Sprint 2: 29 de Enero al 25 de Febrero. (4)
+    CU-13 Asignar alumnos a sus respectivos grupos de clase.
+    CU-14 Asignar profesores a un grupo de clase.
+    CU-15 Listado de asignaturas.
+    CU-16 Creación de asignaturas.
+    CU-17 Edición de asignaturas.
+    CU-18 Eliminación de asignaturas.
+    CU-19 Asignar una asignatura a grupos de clase.
+    CU-20 Asignar asignatura a profesores.
+    CU-21 Listado de competencias.
+    CU-22 Creación de competencias.
+    CU-23 Edición de competencias.
+    CU-24 Eliminación de competencias.
+    CU-25 Asignación de competencias.
+    CU-26 Listado de administradores.
+    CU-27 Creación de administradores.
+    CU-28 Eliminación de administradores.
+    CU-29 Edición de usuarios.
+Sprint 3: 26 de Febrero al 25 del Marzo (4)
+    CU-30 Listar sus grupos de clase.
+    CU-31 Listar sus asignaturas.
+    CU-32 Listar las competencias de una asignatura.
+    CU-33 Listar sus alumnos.
+    CU-34 Listar actividades.
+    CU-35 Creación de actividades.
+    CU-36 Edición de una actividad.
+    CU-37 Eliminación de una actividad.
+    CU-38 Ver las calificaciones de un alumno.
+    CU-39 Creación de ejercicios.
+    CU-40 Edición de un ejercicio.
+    CU-41 Eliminación de un ejercicio.
+    CU-42 Asignar competencias a un ejercicio con una intensidad.
+Sprint 4: 26 de Marzo al 29 de Abril (4)
+    CU-43 Puntuar las evaluaciones, las actividades, los ejercicios y las competencias.
+    CU-44 Modificar sus datos de usuario.
+    CU-45 Generar informe de un grupo completo.
+    CU-46 Generar informe de un alumno.
+    CU-47 Ver competencias de un alumno.
+    Responsive.
+
+30 de Abril al 20 de Mayo.
+
+
+Casos de uso:
+CU-01 Listado de alumnos.
+CU-02 Creación de alumnos.
+CU-03 Edición de alumnos.
+CU-04 Eliminación de alumnos.
+CU-05 Listado de profesores.
+CU-06 Creación de profesores.
+CU-07 Edición de profesores.
+CU-08 Eliminación de profesores.
+CU-09 Listado de Grupos de clase.
+CU-10 Creación de Grupos de clase.
+CU-11 Edición de Grupos de clase.
+CU-12 Eliminación de Grupos de clase.
+CU-13 Asignar alumnos a sus respectivos grupos de clase.
+CU-14 Asignar profesores a un grupo de clase.
+CU-15 Listado de asignaturas.
+CU-16 Creación de asignaturas.
+CU-17 Edición de asignaturas.
+CU-18 Eliminación de asignaturas.
+CU-19 Asignar una asignatura a grupos de clase.
+CU-20 Asignar asignatura a profesores.
+CU-21 Listado de competencias.
+CU-22 Creación de competencias.
+CU-23 Edición de competencias.
+CU-24 Eliminación de competencias.
+CU-25 Asignación de competencias.
+CU-26 Listado de administradores.
+CU-27 Creación de administradores.
+CU-28 Eliminación de administradores.
+CU-29 Edición de usuarios.
+CU-30 Listar sus grupos de clase.
+CU-31 Listar sus asignaturas.
+CU-32 Listar las competencias de una asignatura.
+CU-33 Listar sus alumnos.
+CU-34 Listar actividades.
+CU-35 Creación de actividades.
+CU-36 Edición de una actividad.
+CU-37 Eliminación de una actividad.
+CU-38 Ver las calificaciones de un alumno.
+CU-39 Creación de ejercicios.
+CU-40 Edición de un ejercicio.
+CU-41 Eliminación de un ejercicio.
+CU-42 Asignar competencias a un ejercicio con una intensidad.
+CU-43 Puntuar las evaluaciones, las actividades, los ejercicios y las competencias.
+CU-44 Modificar sus datos de usuario.
+CU-45 Generar informe de un grupo completo.
+CU-46 Generar informe de un alumno.
+CU-47 Ver competencias de un alumno.
