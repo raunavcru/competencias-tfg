@@ -1,0 +1,40 @@
+dist: xenial
+language: python
+python: 
+  - "3.9.1"
+services:
+  - postgresql
+env:
+  - DJANGO=3.1.4 DB=postgres
+global:
+  - PGPORT=5432
+before_install:
+  - sudo service postgresql stop
+  - sudo apt install -yq --no-install-suggests --no-install-recommends postgresql-13-postgis-3-scripts postgresql-13 postgresql-client-13 postgresql-13-postgis-3
+  - sed -e 's/^port.*/port = 5432/' /etc/postgresql/13/main/postgresql.conf > postgresql.conf
+  - sudo chown postgres postgresql.conf
+  - sudo mv postgresql.conf /etc/postgresql/13/main
+  - sudo cp /etc/postgresql/{10,13}/main/pg_hba.conf
+  - sudo service postgresql restart 13
+  - cd Corrige
+install:
+  - pip install -r requirements.txt
+before_script:
+  - cp ./Corrige/settings.py ./Corrige/local_settings.py
+  - export PATH="/usr/lib/postgresql/13/bin:$PATH"
+  - sudo -u postgres createuser Kelsier
+  - sudo -u postgres createdb corrige -O Kelsier
+  - python manage.py makemigrations
+  - python manage.py migrate
+script:
+  - travis_wait 20 python manage.py test
+addons:
+  postgresql: "13"
+  apt:
+    packages:
+      - postgresql-13
+      - postgresql-client-13
+branches:
+  only:
+    - master
+    - dev
