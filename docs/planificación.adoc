@@ -5,7 +5,7 @@ La planificación se realizara mediante Scrum, constituidos en nuestro caso por 
 Una vez realizado cada Sprint se verá reflejado en el proyecto como un incrimento en el versionado del mismo, para que así se puedan ver los cambios y avances del mismo.
 
 === **Sprint 1**: 1 de Enero al 28 de Enero.
-[width=100%]
+[%autowidth.stretch]
 [grid=cols]
 |===
 ^.>s|Semana 1: 1 de Enero al 7 de Enero
