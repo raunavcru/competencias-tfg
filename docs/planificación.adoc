@@ -29,14 +29,9 @@ Una vez realizado cada Sprint se verá reflejado en el proyecto como un incrimen
 | CU-11 Edición de Grupos de clase.
 |
 
-| CU-02 Creación de alumnos.
-|
-| CU-12 Eliminación de Grupos de clase.
-|
-
 | CU-05 Listado de profesores.
 |
-|
+| CU-12 Eliminación de Grupos de clase.
 |
 
 | CU-06 Creación de profesores.
