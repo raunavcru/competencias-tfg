@@ -1,6 +1,6 @@
 == Planificación
 
-La planificación se realizara mediante Scrum, constituidos en nuestro caso por cuatro Sprints, que no son más que una seriede tiempo prefijado con el fin de crear un incremento utilizable y potencialmente entregable. A lo largo del desarrollo de nuestro proyecto habrá Sprints consecutivos, divididos en meses y estos a su vez en semanas con duración constante. Todo esto con el fin de empezar el día 1 de Enero y terminar el día 30 de Abril.
+La planificación se realizara mediante Scrum, constituidos en nuestro caso por cuatro Sprints, que no son más que una serie de tiempo prefijado con el fin de crear un incremento utilizable y potencialmente entregable. A lo largo del desarrollo de nuestro proyecto habrá Sprints consecutivos, divididos en meses y estos a su vez en semanas con duración constante. Todo esto con el fin de empezar el día 1 de Enero y terminar el día 30 de Abril.
 
 Una vez realizado cada Sprint se verá reflejado en el proyecto como un incrimento en el versionado del mismo, para que así se puedan ver los cambios y avances del mismo.
 
@@ -38,9 +38,9 @@ Una vez realizado cada Sprint se verá reflejado en el proyecto como un incrimen
 |        
 |        
 |        
-|  
 
 |===
+
 Sprint 2: 29 de Enero al 25 de Febrero. (4)
     Semana 1: 29 de Enero al 4 de Febrero
         CU-13 Asignar alumnos a sus respectivos grupos de clase.
@@ -65,30 +65,44 @@ Sprint 2: 29 de Enero al 25 de Febrero. (4)
     Semana 4: 19 de Febrero al 25 de Febrero
         Despliegue de la versión 0.2
         Replanificación.
-  
-Sprint 3: 26 de Febrero al 25 del Marzo (4)
-    Semana 1: 26 de Febrero al 4 de Marzo
-        CU-30 Listar sus grupos de clase.
-        CU-31 Listar sus asignaturas.
-        CU-32 Listar las competencias de una asignatura.
-        CU-33 Listar sus alumnos.
-        CU-34 Listar actividades.
-        CU-35 Creación de actividades.
-    Semana 2: 5 de Abril al 11 de Marzo
-        CU-36 Edición de una actividad.
-        CU-37 Eliminación de una actividad.
-        CU-39 Creación de ejercicios.
-        CU-40 Edición de un ejercicio.
-        CU-41 Eliminación de un ejercicio.
-        Responsive.
-    Semana 3: 12 de Marzo al 18 de Marzo
-        CU-42 Asignar competencias a un ejercicio con una intensidad.
-        CU-38 Ver las calificaciones de un alumno.
-        CU-44 Modificar sus datos de usuario.
-        Responsive.
-    Semana 4: 19 de Marzo al 25 de Marzo
-        Despliegue de la versión 0.3
-        Replanificación.
+
+=== **Sprint 3**: 26 de Febrero al 25 del Marzo.        
+[grid=cols]
+|===
+
+| Semana 1: 26 de Febrero al 4 de Marzo | Semana 2: 5 de Marzo al 11 de Marzo | Semana 3: 12 de Marzo al 18 de Marzo | Semana 4:  19 de Marzo al 25 de Marzo      
+
+| CU-30 Listar sus grupos de clase.
+| CU-36 Edición de una actividad.       
+| CU-42 Asignar competencias a un ejercicio con una intensidad.       
+| Despliegue de la versión 0.3       
+
+| CU-31 Listar sus asignaturas.
+| CU-37 Eliminación de una actividad.       
+| CU-38 Ver las calificaciones de un alumno.       
+| Replanificación.       
+
+| CU-32 Listar las competencias de una asignatura.
+| CU-39 Creación de ejercicios.       
+| CU-44 Modificar sus datos de usuario.       
+|        
+
+| CU-33 Listar sus alumnos.
+| CU-40 Edición de un ejercicio.       
+| Responsive.       
+|        
+
+| CU-34 Listar actividades.
+| CU-41 Eliminación de un ejercicio.       
+|        
+|        
+
+| CU-35 Creación de actividades.
+| Responsive.       
+|        
+| 
+
+|===      
 
 Sprint 4: 26 de Marzo al 29 de Abril (5)
     Semana 1: 26 de Marzo al 1 de Abril
