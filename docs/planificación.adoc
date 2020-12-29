@@ -9,7 +9,6 @@ Una vez realizado cada Sprint se verá reflejado en el proyecto como un incrimen
 [grid=cols]
 |===
 ^.>s|Semana 1: 1 de Enero al 7 de Enero
-|
 | Modelo de datos.
 | Populate v1.
 |        CU-01 Listado de alumnos.
