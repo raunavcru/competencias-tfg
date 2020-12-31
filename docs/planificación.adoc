@@ -11,64 +11,64 @@ Una vez realizado cada Sprint se verá reflejado en el proyecto como un incremen
 
 | Modelo de datos. 
 
-[3 de Enero]
+_[3 de Enero]_
 | CU-03 Edición de alumnos. 
 
-[11 de Enero]
+_[11 de Enero]_
 | Populate v2. 
 
-[20 de Enero]
+_[20 de Enero]_
 | Despliegue de la versión 0.1 
 
-[25 de Enero]
+_[25 de Enero]_
 
 | Populate v1. 
 
-[7 de Enero]
+_[7 de Enero]_
 | CU-04 Eliminación de alumnos. 
 
-[13 de Enero]
+_[13 de Enero]_
 | CU-09 Listado de Grupos de clase. 
 
-[16 de Enero]
+_[16 de Enero]_
 | Replanificación. 
 
-[27 de Enero]
+_[27 de Enero]_
 
 | CU-01 Listado de alumnos. 
 
-[4 de Enero]
+_[4 de Enero]_
 | CU-07 Edición de profesores. 
 
-[11 de Enero]
+_[11 de Enero]_
 | CU-10 Creación de Grupos de clase. 
 
-[18 de Enero]
+_[18 de Enero]_
 |
 
 | CU-02 Creación de alumnos. 
 
-[5 de Enero]
+_[5 de Enero]_
 | CU-08 Eliminación de profesores. 
 
-[13 de Enero]
+_[13 de Enero]_
 | CU-11 Edición de Grupos de clase. 
 
-[19 de Enero]
+_[19 de Enero]_
 |
 
 | CU-05 Listado de profesores. 
 
-[4 de Enero]
+_[4 de Enero]_
 |
 | CU-12 Eliminación de Grupos de clase. 
 
-[20 de Enero]
+_[20 de Enero]_
 |
 
 | CU-06 Creación de profesores. 
 
-[5 de Enero]
+_[5 de Enero]_
 |        
 |        
 |        
