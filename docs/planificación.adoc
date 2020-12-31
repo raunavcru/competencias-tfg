@@ -9,32 +9,66 @@ Una vez realizado cada Sprint se verá reflejado en el proyecto como un incremen
 |===
 |Semana 1: 1 de Enero al 7 de Enero |Semana 2: 8 de Enero al 14 de Enero |Semana 3: 15 de Enero al 21 de Enero |Semana 4: 22 de Enero al 28 de Enero
 
-| Modelo de datos. [3 de Enero]
-| CU-03 Edición de alumnos. [11 de Enero]
-| Populate v2. [20 de Enero]
-| Despliegue de la versión 0.1 [25 de Enero]
+| Modelo de datos. 
 
-| Populate v1. [7 de Enero]
-| CU-04 Eliminación de alumnos. [13 de Enero]
-| CU-09 Listado de Grupos de clase. [16 de Enero]
-| Replanificación. [27 de Enero]
+[3 de Enero]
+| CU-03 Edición de alumnos. 
 
-| CU-01 Listado de alumnos. [4 de Enero]
-| CU-07 Edición de profesores. [11 de Enero]
-| CU-10 Creación de Grupos de clase. [18 de Enero]
+[11 de Enero]
+| Populate v2. 
+
+[20 de Enero]
+| Despliegue de la versión 0.1 
+
+[25 de Enero]
+
+| Populate v1. 
+
+[7 de Enero]
+| CU-04 Eliminación de alumnos. 
+
+[13 de Enero]
+| CU-09 Listado de Grupos de clase. 
+
+[16 de Enero]
+| Replanificación. 
+
+[27 de Enero]
+
+| CU-01 Listado de alumnos. 
+
+[4 de Enero]
+| CU-07 Edición de profesores. 
+
+[11 de Enero]
+| CU-10 Creación de Grupos de clase. 
+
+[18 de Enero]
 |
 
-| CU-02 Creación de alumnos. [5 de Enero]
-| CU-08 Eliminación de profesores. [13 de Enero]
-| CU-11 Edición de Grupos de clase. [19 de Enero]
+| CU-02 Creación de alumnos. 
+
+[5 de Enero]
+| CU-08 Eliminación de profesores. 
+
+[13 de Enero]
+| CU-11 Edición de Grupos de clase. 
+
+[19 de Enero]
 |
 
-| CU-05 Listado de profesores. [4 de Enero]
+| CU-05 Listado de profesores. 
+
+[4 de Enero]
 |
-| CU-12 Eliminación de Grupos de clase. [20 de Enero]
+| CU-12 Eliminación de Grupos de clase. 
+
+[20 de Enero]
 |
 
-| CU-06 Creación de profesores. [5 de Enero]
+| CU-06 Creación de profesores. 
+
+[5 de Enero]
 |        
 |        
 |        
