@@ -18,7 +18,7 @@ _[11 de Enero]_
 | Populate v2. 
 
 _[20 de Enero]_
-| Despliegue de la versión 0.1 
+| Despliegue de la versión 0.1.
 
 _[25 de Enero]_
 
@@ -80,33 +80,71 @@ _[5 de Enero]_
 |===
 |Semana 1: 29 de Enero al 4 de Febrero |Semana 2: 5 de Febrero al 11 de Febrero |Semana 3: 12 de Febrero al 18 de Febrero |Semana 4:  19 de Febrero al 25 de Febrero
 
-| CU-13 Asignar alumnos a sus respectivos grupos de clase.
+| CU-13 Asignar alumnos a sus respectivos grupos de clase. 
+
+_[1 de Febrero]_
 | CU-19 Asignar una asignatura a grupos de clase.
+
+_[8 de Febrero]_
 | CU-25 Asignación de competencias.
-| Despliegue de la versión 0.2
+
+_[17 de Febrero]_
+| Despliegue de la versión 0.2.
+
+_[22 de Febrero]_
 
 | CU-14 Asignar profesores a un grupo de clase.
+
+_[4 de Febrero]_
 | CU-20 Asignar asignatura a profesores.
+
+_[11 de Febrero]_
 | CU-26 Listado de administradores.
+
+_[13 de Febrero]_
 | Replanificación.
 
+_[24 de Febrero]_
+
 | CU-15 Listado de asignaturas.
+
+_[30 de Febrero]_
 | CU-21 Listado de competencias.
+
+_[6 de Febrero]_
 | CU-27 Creación de administradores.
+
+_[15 de Febrero]_
 |
 
 | CU-16 Creación de asignaturas.
+
+_[1 de Febrero]_
 | CU-22 Creación de competencias.
+
+_[8 de Febrero]_
 | CU-28 Eliminación de administradores.
+
+_[16 de Febrero]_
 |
 
 | CU-17 Edición de asignaturas.
+
+_[3 de Febrero]_
 | CU-23 Edición de competencias.
+
+_[10 de Febrero]_
 | CU-29 Edición de usuarios.
+
+_[18 de Febrero]_
 |
 
 | CU-18 Eliminación de asignaturas.
+
+_[4 de Febrero]_
 | CU-24 Eliminación de competencias.
+
+_[11 de Febrero]_
 |
 |
 
@@ -118,32 +156,68 @@ _[5 de Enero]_
 |Semana 1: 26 de Febrero al 4 de Marzo |Semana 2: 5 de Marzo al 11 de Marzo |Semana 3: 12 de Marzo al 18 de Marzo |Semana 4:  19 de Marzo al 25 de Marzo      
 
 | CU-30 Listar sus grupos de clase.
-| CU-36 Edición de una actividad.       
-| CU-42 Asignar competencias a un ejercicio con una intensidad.       
-| Despliegue de la versión 0.3       
+
+_[27 de Febrero]_
+| CU-36 Edición de una actividad.
+
+_[7 de Marzo]_
+| CU-42 Asignar competencias a un ejercicio con una intensidad.
+
+_[14 de Marzo]_
+| Despliegue de la versión 0.3  
+
+_[22 de Marzo]_
 
 | CU-31 Listar sus asignaturas.
-| CU-37 Eliminación de una actividad.       
-| CU-38 Ver las calificaciones de un alumno.       
-| Replanificación.       
 
+_[1 de Marzo]_
+| CU-37 Eliminación de una actividad. 
+
+_[8 de Marzo]_
+| CU-38 Ver las calificaciones de un alumno.   
+
+_[15 de Marzo]_
+| Replanificación. 
+
+_[24 de Marzo]_
 | CU-32 Listar las competencias de una asignatura.
-| CU-39 Creación de ejercicios.       
-| CU-44 Modificar sus datos de usuario.       
+
+_[3 de Marzo]_
+| CU-39 Creación de ejercicios.
+
+_[7 de Marzo]_
+| CU-44 Modificar sus datos de usuario.  
+
+_[16 de Marzo]_
 |        
 
 | CU-33 Listar sus alumnos.
-| CU-40 Edición de un ejercicio.       
-| Responsive.       
+
+_[27 de Febrero]_
+| CU-40 Edición de un ejercicio. 
+
+_[9 de Marzo]_
+| Responsive. 
+
+_[18 de Marzo]_
 |        
 
 | CU-34 Listar actividades.
-| CU-41 Eliminación de un ejercicio.       
+
+_[1 de Marzo]_
+
+| CU-41 Eliminación de un ejercicio. 
+
+_[10 de Marzo]_
 |        
 |        
 
 | CU-35 Creación de actividades.
-| Responsive.       
+
+_[3 de Marzo]_
+| Responsive.
+
+_[11 de Marzo]_
 |        
 | 
 
@@ -152,28 +226,45 @@ _[5 de Enero]_
 === Sprint 4: 26 de Marzo al 29 de Abril.        
 [grid=cols]
 |===
-|Semana 1: 26 de Marzo al 1 de Abril |Semana 2:  de Abril al 8 de Abril |Semana 3: 9 de Abril al 15 de Abril |Semana 4:  16 de Abril al 22 de Abril |Semana 5:  23 de Abril al 29 de Abril   
+|Semana 1: 26 de Marzo al 1 de Abril |Semana 2: 2 de Abril al 8 de Abril |Semana 3: 9 de Abril al 15 de Abril |Semana 4:  16 de Abril al 22 de Abril |Semana 5:  23 de Abril al 29 de Abril   
 
 | CU-43 Puntuar las evaluaciones, las actividades, los ejercicios y las competencias.
-| CU-45 Generar informe de un grupo completo.     
-| Responsive.       
+
+_[31 de Marzo]_
+| CU-45 Generar informe de un grupo completo.   
+
+_[6 de Abril]_
+| Responsive. 
+
+_[15 de Abril]_
 | Responsive.
+
+_[22 de Abril]_
 | Despliegue de la versión 1.0
 
+_[26 de Abril]_
 | Responsive. 
-| CU-46 Generar informe de un alumno.     
+
+_[1 de Abril]_
+| CU-46 Generar informe de un alumno.
+
+_[8 de Abril]_
 |        
 |
 |
 
 | 
-| CU-47 Ver competencias de un alumno.     
+| CU-47 Ver competencias de un alumno. 
+
+_[5 de Abril]_
 |        
 |
 |
 
 | 
-| Responsive.     
+| Responsive.
+
+_[8 de Abril]_
 |        
 |
 |
