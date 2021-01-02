@@ -141,3 +141,111 @@ class Evaluation_mark(Common):
     
     def __str__(self):
         return self.mark
+
+
+class Activity_mark(Common):
+    mark = models.DecimalField('mark', max_digits=2, decimal_places=2)
+
+    manual_mark = models.DecimalField('manual_mark', max_digits=2, decimal_places=2)
+
+    class Meta:
+        verbose_name = 'Activity_mark'
+        verbose_name_plural = 'Activity_marks'
+    
+    def __str__(self):
+        return self.mark
+
+class Student(Common):
+    name = models.CharField(("name"), max_length=100)
+
+    surame = models.CharField(("surname"), max_length=100)
+
+    birthdate = models.DateField('birthdate')
+
+    initials = models.CharField(("initials"), max_length=10)
+
+    class Meta:
+        verbose_name = 'Student'
+        verbose_name_plural = 'Students'
+    
+    def __str__(self):
+        return self.surame + ' ' self.name
+
+class Exercise(Common):
+    weight = models.DecimalField('weight', max_digits=2, decimal_places=2)
+
+    statement = models.CharField(("statement"), max_length=50)
+
+    class Meta:
+        verbose_name = 'Exercise'
+        verbose_name_plural = 'Exercises'
+    
+    def __str__(self):
+        return self.statement
+
+
+
+class Exercise_mark(Common):
+    mark = models.DecimalField('mark', max_digits=2, decimal_places=2)
+
+    manual_mark = models.DecimalField('manual_mark', max_digits=2, decimal_places=2)
+
+    class Meta:
+        verbose_name = 'Exercise_mark'
+        verbose_name_plural = 'Exercise_marks'
+    
+    def __str__(self):
+        return self.mark
+
+class Exercise_competence(Common):
+    intensity = models.DecimalField('intensity', max_digits=2, decimal_places=2)
+
+    weight = models.DecimalField('weight', max_digits=2, decimal_places=2)
+
+    class Meta:
+        verbose_name = 'Exercise_competence'
+        verbose_name_plural = 'Exercise_competences'
+    
+    def __str__(self):
+        return self.intensity + ' ' + self.weight
+
+
+class Competence(Common):
+    code = models.CharField(("code"), max_length=50)
+
+    name = models.CharField(("name"), max_length=100)
+
+    description = models.CharField(("description"), max_length=100)
+
+    subject_weight = models.DecimalField('subject_weight', max_digits=2, decimal_places=2)
+
+    weight = models.DecimalField('weight', max_digits=2, decimal_places=2)
+
+    level = models.PositiveIntegerField('level', max_digits=3)
+
+    class Meta:
+        verbose_name = 'Competence'
+        verbose_name_plural = 'Competences'
+    
+    def __str__(self):
+        return self.name
+
+class Competence_mark(Common):
+    mark = models.DecimalField('mark', max_digits=2, decimal_places=2)
+
+    class Meta:
+        verbose_name = 'Competence_mark'
+        verbose_name_plural = 'Competence_marks'
+    
+    def __str__(self):
+        return self.mark
+
+class Competence_evaluation(Common):
+    mark = models.DecimalField('mark', max_digits=2, decimal_places=2)
+
+    class Meta:
+        verbose_name = 'Competence_evaluation'
+        verbose_name_plural = 'Competence_evaluations'
+    
+    def __str__(self):
+        return self.mark
