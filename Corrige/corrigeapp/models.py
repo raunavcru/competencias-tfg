@@ -34,7 +34,7 @@ class Profile(models.Model):
 
     initials = models.CharField(("initials"), max_length=9)
 
-    role = models.CharField(("role"))
+    role = models.CharField(("role"), max_length=50)
 
     class Meta:
         verbose_name = 'Profile'
@@ -43,7 +43,48 @@ class Profile(models.Model):
     def __str__(self):
         return self.user.username + ' profile'
 
+class Competence(Common):
+    code = models.CharField(("code"), max_length=50)
+
+    name = models.CharField(("name"), max_length=100)
+
+    description = models.CharField(("description"), max_length=100)
+
+    subject_weight = models.DecimalField('subject_weight', max_digits=3, decimal_places=2)
+
+    weight = models.DecimalField('weight', max_digits=3, decimal_places=2)
+
+    level = models.PositiveIntegerField('level')
+
+    parent = models.ForeignKey('self', on_delete=models.CASCADE, related_name='competence_parent')
+
+    class Meta:
+        verbose_name = 'Competence'
+        verbose_name_plural = 'Competences'
+    
+    def __str__(self):
+        return self.name
+
+class Subject(Common):
+    name = models.CharField(("name"), max_length=100)
+
+    level = models.CharField(("level"), max_length=50)
+
+    grade = models.CharField(("grade"), max_length=50)
+
+    description = models.CharField(("description"), max_length=100)
+
+    competences = models.ManyToManyField(Competence, "competences", verbose_name=("competences_subject"))
+
+    class Meta:
+        verbose_name = 'Subject'
+        verbose_name_plural = 'Subjects'
+
+    def __str__(self):
+        return self.name + ' ' + self.level + ' ' + self.grade
+
 class Teacher(Profile):
+    subjects = models.ManyToManyField(Subject, "subjects", verbose_name=("subjects_teacher"))
 
     class Meta:
         verbose_name = 'Teacher'
@@ -61,22 +102,6 @@ class Administrator(Profile):
     def __str__(self):
         return self.user.username + ' admin profile'
 
-class Subject(Common):
-    name = models.CharField(("name"), max_length=100)
-
-    level = models.CharField(("level"), max_length=50)
-
-    grade = models.CharField(("grade"), max_length=50)
-
-    description = models.CharField(("description"), max_length=100)
-
-    class Meta:
-        verbose_name = 'Subject'
-        verbose_name_plural = 'Subjects'
-
-    def __str__(self):
-        return self.name + ' ' + self.level + ' ' + self.grade
-
 class Evaluation(Common):
     name = models.CharField(("name"), max_length=50)
 
@@ -88,12 +113,32 @@ class Evaluation(Common):
 
     period = models.CharField(("period"), max_length=50)
 
+    parent = models.ForeignKey('self', on_delete=models.CASCADE, related_name='evaluation_parent')
+
+    subject = models.ForeignKey(Subject, on_delete=models.CASCADE, related_name='subject_evaluation')
+
     class Meta:
         verbose_name = 'Evaluation'
         verbose_name_plural = 'Evaluations'
     
     def __str__(self):
         return self.name + ' ' + self.period
+
+class Student(Common):
+    name = models.CharField(("name"), max_length=100)
+
+    surname = models.CharField(("surname"), max_length=100)
+
+    birthdate = models.DateField('birthdate')
+
+    initials = models.CharField(("initials"), max_length=10)
+
+    class Meta:
+        verbose_name = 'Student'
+        verbose_name_plural = 'Students'
+    
+    def __str__(self):
+        return self.surname + ' ' + self.name
 
 class Set(Common):
     name = models.CharField(("name"), max_length=50)
@@ -103,6 +148,14 @@ class Set(Common):
     grade = models.CharField(("grade"), max_length=50)
 
     line = models.CharField(("line"), max_length=50)
+
+    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE, related_name='teacher_set')
+
+    subject = models.ForeignKey(Subject, on_delete=models.CASCADE, related_name='subject_set')
+
+    evaluation = models.ForeignKey(Evaluation, on_delete=models.CASCADE, related_name='evaluation_set')
+
+    students = models.ManyToManyField(Student, "student", verbose_name=("students_set"))
 
     class Meta:
         verbose_name = 'Set'
@@ -114,9 +167,15 @@ class Set(Common):
 class Activity(Common):
     date = models.DateField('date')
 
-    weight = models.DecimalField('weight', max_digits=1, decimal_places=2)
+    weight = models.DecimalField('weight', max_digits=3, decimal_places=2)
 
     is_recovery = models.BooleanField(("is_recovery"))
+
+    set_activity = models.ForeignKey(Set, on_delete=models.CASCADE, related_name='set_activity')
+
+    evaluation = models.ForeignKey(Evaluation, on_delete=models.CASCADE, related_name='evaluation_activity')
+
+    subject = models.ForeignKey(Subject, on_delete=models.CASCADE, related_name='subject_activity')
 
     class Meta:
         verbose_name = 'Activity'
@@ -129,11 +188,15 @@ class Activity(Common):
             return self.date + ' activity'
 
 class Evaluation_mark(Common):
-    mark = models.DecimalField('mark', max_digits=2, decimal_places=2)
+    mark = models.DecimalField('mark', max_digits=4, decimal_places=2)
 
-    manual_mark = models.DecimalField('manual_mark', max_digits=2, decimal_places=2)
+    manual_mark = models.DecimalField('manual_mark', max_digits=4, decimal_places=2)
 
     evaluation_type = models.CharField(("evaluation_type"), max_length=50)
+
+    evaluation = models.ForeignKey(Evaluation, on_delete=models.CASCADE, related_name='evaluation_evaluation_mark')
+
+    student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='student_evaluation_mark')
 
     class Meta:
         verbose_name = 'Evaluation_mark'
@@ -144,9 +207,13 @@ class Evaluation_mark(Common):
 
 
 class Activity_mark(Common):
-    mark = models.DecimalField('mark', max_digits=2, decimal_places=2)
+    mark = models.DecimalField('mark', max_digits=4, decimal_places=2)
 
-    manual_mark = models.DecimalField('manual_mark', max_digits=2, decimal_places=2)
+    manual_mark = models.DecimalField('manual_mark', max_digits=4, decimal_places=2)
+
+    activity = models.ForeignKey(Activity, on_delete=models.CASCADE, related_name='activity_activity_mark')
+
+    student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='student_activity_mark')
 
     class Meta:
         verbose_name = 'Activity_mark'
@@ -155,26 +222,12 @@ class Activity_mark(Common):
     def __str__(self):
         return self.mark
 
-class Student(Common):
-    name = models.CharField(("name"), max_length=100)
-
-    surame = models.CharField(("surname"), max_length=100)
-
-    birthdate = models.DateField('birthdate')
-
-    initials = models.CharField(("initials"), max_length=10)
-
-    class Meta:
-        verbose_name = 'Student'
-        verbose_name_plural = 'Students'
-    
-    def __str__(self):
-        return self.surame + ' ' self.name
-
 class Exercise(Common):
-    weight = models.DecimalField('weight', max_digits=2, decimal_places=2)
+    weight = models.DecimalField('weight', max_digits=3, decimal_places=2)
 
     statement = models.CharField(("statement"), max_length=50)
+
+    activity = models.ForeignKey(Activity, on_delete=models.CASCADE, related_name='activity_exercise')
 
     class Meta:
         verbose_name = 'Exercise'
@@ -186,9 +239,13 @@ class Exercise(Common):
 
 
 class Exercise_mark(Common):
-    mark = models.DecimalField('mark', max_digits=2, decimal_places=2)
+    mark = models.DecimalField('mark', max_digits=4, decimal_places=2)
 
-    manual_mark = models.DecimalField('manual_mark', max_digits=2, decimal_places=2)
+    manual_mark = models.DecimalField('manual_mark', max_digits=4, decimal_places=2)
+
+    exercise = models.ForeignKey(Exercise, on_delete=models.CASCADE, related_name='exercise_exercise_mark')
+
+    student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='student_exercise_mark')
 
     class Meta:
         verbose_name = 'Exercise_mark'
@@ -198,9 +255,13 @@ class Exercise_mark(Common):
         return self.mark
 
 class Exercise_competence(Common):
-    intensity = models.DecimalField('intensity', max_digits=2, decimal_places=2)
+    intensity = models.DecimalField('intensity', max_digits=3, decimal_places=2)
 
-    weight = models.DecimalField('weight', max_digits=2, decimal_places=2)
+    weight = models.DecimalField('weight', max_digits=3, decimal_places=2)
+
+    exercise = models.ForeignKey(Exercise, on_delete=models.CASCADE, related_name='exercise_exercise_competence')
+
+    competence = models.ForeignKey(Competence, on_delete=models.CASCADE, related_name='competence_exercise_competence')
 
     class Meta:
         verbose_name = 'Exercise_competence'
@@ -210,28 +271,12 @@ class Exercise_competence(Common):
         return self.intensity + ' ' + self.weight
 
 
-class Competence(Common):
-    code = models.CharField(("code"), max_length=50)
-
-    name = models.CharField(("name"), max_length=100)
-
-    description = models.CharField(("description"), max_length=100)
-
-    subject_weight = models.DecimalField('subject_weight', max_digits=2, decimal_places=2)
-
-    weight = models.DecimalField('weight', max_digits=2, decimal_places=2)
-
-    level = models.PositiveIntegerField('level', max_digits=3)
-
-    class Meta:
-        verbose_name = 'Competence'
-        verbose_name_plural = 'Competences'
-    
-    def __str__(self):
-        return self.name
-
 class Competence_mark(Common):
-    mark = models.DecimalField('mark', max_digits=2, decimal_places=2)
+    mark = models.DecimalField('mark', max_digits=4, decimal_places=2)
+
+    competence = models.ForeignKey(Competence, on_delete=models.CASCADE, related_name='competence_competence_mark')
+
+    student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='student_competence_mark')
 
     class Meta:
         verbose_name = 'Competence_mark'
@@ -241,7 +286,11 @@ class Competence_mark(Common):
         return self.mark
 
 class Competence_evaluation(Common):
-    mark = models.DecimalField('mark', max_digits=2, decimal_places=2)
+    mark = models.DecimalField('mark', max_digits=4, decimal_places=2)
+
+    competence = models.ForeignKey(Competence, on_delete=models.CASCADE, related_name='competence_competence_evaluation')
+
+    student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='student_competence_evaluation')
 
     class Meta:
         verbose_name = 'Competence_evaluation'
