@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h4 class="centered">Listado de profesores</h4>
+        <table class="striped">
+            {% for object in profesor_list %}
+                    <thead>
+                    <tr>
+                        <th>Email</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <td>{{object.email}}</td>
+                    </tr>
+                    </tbody>
+            {% endfor %}
+        </table>
+
+{% endblock %}
