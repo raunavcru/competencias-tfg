@@ -1,21 +1,27 @@
-{% extends 'base.html' %}
+
 {% block content %}
 
     <h4 class="centered">Listado de profesores</h4>
         <table class="striped">
-            {% for object in profesor_list %}
-                    <thead>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Iniciales</th>
+                    <th>Fecha de nacimiento</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for object in teacher_list %}
                     <tr>
-                        <th>Email</th>
+                        <td>{{object.user.last_name}}, {{object.user.first_name}}</td>
+                        <td>{{object.initials}}</td>
+                        <td>{{object.user.birthdate}}</td>
+                        <td>{{object.user.email}}</td>
                     </tr>
-                    </thead>
+                {% endfor %}
 
-                    <tbody>
-                    <tr>
-                        <td>{{object.email}}</td>
-                    </tr>
-                    </tbody>
-            {% endfor %}
+            </tbody>
         </table>
 
 {% endblock %}
