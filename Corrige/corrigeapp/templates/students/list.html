@@ -1,9 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div>Lista de alumnos</div>
-    {% for object in student_list %}
-        <p>
-            {{object.name}}
-        </p>
-    {% endfor %}
+
+    <h4 class="centered">Listado de alumnos</h4>
+        <table class="striped">
+            {% for object in student_list %}
+                    <thead>
+                    <tr>
+                        <th>Surname</th>
+                        <th>Name</th>
+                        <th>Birthday</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <td>{{object.surname}}</td>
+                        <td>{{object.name}}</td>
+                        <td>{{object.birthdate}}</td>
+                        <td><i class="material-icons">send</i></td>
+                    </tr>
+                    </tbody>
+            {% endfor %}
+        </table>
+
 {% endblock %}

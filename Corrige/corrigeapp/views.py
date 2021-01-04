@@ -11,3 +11,5 @@ class StudentsListView(generic.ListView):
     def get_queryset(self):
         queryset = models.Student.objects.all()
         return queryset
+
+
