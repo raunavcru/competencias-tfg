@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div>Lista de alumnos</div>
+    {% for object in student_list %}
+        <p>
+            {{object.name}}
+        </p>
+    {% endfor %}
+{% endblock %}
