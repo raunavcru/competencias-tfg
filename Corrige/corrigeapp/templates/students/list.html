@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h4 class="centered">Listado de alumnos</h4>
+        <table class="striped">
+            <caption></caption>
+            {% for object in student_list %}
+                    <thead>
+                    <tr>
+                        <th id="surname">Surname</th>
+                        <th id="name">Name</th>
+                        <th id="birthdate">Birthday</th>
+                        <th id="button"></th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <td>{{object.surname}}</td>
+                        <td>{{object.name}}</td>
+                        <td>{{object.birthdate}}</td>
+                        <td><em class="material-icons">send</em></td>
+                    </tr>
+                    </tbody>
+            {% endfor %}
+        </table>
+
+{% endblock %}
