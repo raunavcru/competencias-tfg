@@ -1,0 +1,28 @@
+
+{% block content %}
+
+    <h4 class="centered">Listado de profesores</h4>
+        <table class="striped">
+            <caption></caption>
+            <thead>
+                <tr>
+                    <th id="name">Nombre</th>
+                    <th id="initials">Iniciales</th>
+                    <th id="birthdate">Fecha de nacimiento</th>
+                    <th id="email">Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for object in teacher_list %}
+                    <tr>
+                        <td>{{object.user.last_name}}, {{object.user.first_name}}</td>
+                        <td>{{object.initials}}</td>
+                        <td>{{object.user.birthdate}}</td>
+                        <td>{{object.user.email}}</td>
+                    </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+
+{% endblock %}
