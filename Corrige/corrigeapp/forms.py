@@ -8,6 +8,7 @@ from django.utils.timezone import now
 User = get_user_model()
 
 class TeacherCreateForm(UserCreationForm):
+    
     first_name = forms.CharField(required=True)
     last_name = forms.CharField(required=True)
     username = forms.CharField(required=True)
