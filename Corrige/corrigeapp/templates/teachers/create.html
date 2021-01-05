@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+    <form class="" id="" method="post" action="{% url 'teachers_create' %}">
+        {% csrf_token %}
+        <div class="">{{form.first_name}}</div>
+        <div class="">{{form.first_name.errors}}</div>
+        <div class="">{{form.last_name}}</div>
+        <div class="">{{form.last_name.errors}}</div>
+        <div class="">{{form.username}}</div>
+        <div class="">{{form.username.errors}}</div>
+        <div class="">{{form.email}}</div>
+        <div class="">{{form.email.errors}}</div>
+        <div class="">{{form.birthdate}}</div>
+        <div class="">{{form.birthdate.errors}}</div>
+        <div class="">{{form.initials}}</div>
+        <div class="">{{form.initials.errors}}</div>
+        <div class="">{{form.password1}}</div>
+        <div class="">{{form.password1.errors}}</div>
+        <div class="">{{form.password2}}</div>
+        <div class="">{{form.password2.errors}}</div>
+        <button type="submit"> Enviar </button>
+    </form>
+{% endblock %}
