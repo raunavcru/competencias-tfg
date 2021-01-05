@@ -1,23 +1,69 @@
 {% extends 'base.html' %}
 {% block content %}
-    <form class="" id="" method="post" action="{% url 'teachers_create' %}">
+<div class="row">
+    <form class="col s12" id="form-create-teacher" method="post" action="{% url 'teachers_create' %}">
         {% csrf_token %}
-        <div class="">{{form.first_name}}</div>
-        <div class="">{{form.first_name.errors}}</div>
-        <div class="">{{form.last_name}}</div>
-        <div class="">{{form.last_name.errors}}</div>
-        <div class="">{{form.username}}</div>
-        <div class="">{{form.username.errors}}</div>
-        <div class="">{{form.email}}</div>
-        <div class="">{{form.email.errors}}</div>
-        <div class="">{{form.birthdate}}</div>
-        <div class="">{{form.birthdate.errors}}</div>
-        <div class="">{{form.initials}}</div>
-        <div class="">{{form.initials.errors}}</div>
-        <div class="">{{form.password1}}</div>
-        <div class="">{{form.password1.errors}}</div>
-        <div class="">{{form.password2}}</div>
-        <div class="">{{form.password2.errors}}</div>
-        <button type="submit"> Enviar </button>
+        <div class="row">
+            <div class="input-field col s4">
+                <p>First Name</p>
+                {{form.first_name}}
+                {{form.first_name.errors}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s4">
+                <p>Last Name</p>
+                {{form.last_name}}
+                {{form.last_name.errors}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s4">
+                <p>Birthdate</p>
+                {{form.birthdate}}
+                {{form.birthdate.errors}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s4">
+                <p>Initials</p>
+                {{form.initials}}
+                {{form.initials.errors}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s4">
+                <p>Email</p>
+                {{form.email}}
+                {{form.email.errors}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s4">
+                <p>Username</p>
+                {{form.username}}
+                {{form.username.errors}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s4">
+                <p>Password</p>
+                {{form.password1}}
+                {{form.password1.errors}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s4">
+                <p>Confirm assword</p>
+                {{form.password2}}
+                {{form.password2.errors}}
+            </div>
+        </div>
+        <div class="row">
+            <button class="btn waves-effect" type="submit" name="action">Submit
+                <i class="large material-icons right"><i >send</i></i>
+            </button>
+        </div>
     </form>
+</div>
 {% endblock %}

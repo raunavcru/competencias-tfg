@@ -9,7 +9,8 @@ User = get_user_model()
 
 class TeacherCreateForm(UserCreationForm):
     
-    first_name = forms.CharField(required=True)
+    first_name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Alberto', 'id': 'first_name-create-teacher'}))
     last_name = forms.CharField(required=True)
     username = forms.CharField(required=True)
     email = forms.EmailField(required=True)
