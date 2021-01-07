@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+    <form class="col s12" id="form-create-students" method="post" action="{% url 'students_create' %}">
+        {% csrf_token %}
+        <div class="row">
+            <div class="input-field col s4">
+                <p>Name</p>
+                {{form.name}}
+                {{form.name.errors}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s4">
+                <p>SurName</p>
+                {{form.surname}}
+                {{form.surname.errors}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s4">
+                <p>Birthdate</p>
+                {{form.birthdate}}
+                {{form.birthdate.errors}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s4">
+                <p>Initials</p>
+                {{form.initials}}
+                {{form.initials.errors}}
+            </div>
+        </div>
+        <div class="row">
+            <button class="btn waves-effect" type="submit" name="action">Submit
+                <i class="large material-icons right"><i >send</i></i>
+            </button>
+        </div>
+    </form>
+</div>
+{% endblock %}

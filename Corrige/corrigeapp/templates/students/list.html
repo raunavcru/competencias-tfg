@@ -4,16 +4,15 @@
     <h4 class="centered">Listado de alumnos</h4>
         <table class="striped">
             <caption></caption>
-            {% for object in student_list %}
-                    <thead>
+                <thead>
                     <tr>
                         <th id="surname">Surname</th>
                         <th id="name">Name</th>
                         <th id="birthdate">Birthday</th>
                         <th id="button"></th>
                     </tr>
-                    </thead>
-
+                </thead>
+            {% for object in student_list %}
                     <tbody>
                     <tr>
                         <td>{{object.surname}}</td>
