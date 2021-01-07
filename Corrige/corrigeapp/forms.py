@@ -4,7 +4,7 @@ from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm, Us
 from django.core.exceptions import ValidationError
 from django.utils.timezone import now
 
-from . import model
+from . import models
 
 User = get_user_model()
 
@@ -31,7 +31,8 @@ class TeacherCreateForm(UserCreationForm):
             'initials',
             'password1',
             'password2'
-    
+        )
+        
     def clean_birthdate(self):
         birthdate = self.cleaned_data.get('birthdate')
         if birthdate >= now().date():
