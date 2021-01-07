@@ -5,6 +5,7 @@ from django.urls import reverse, reverse_lazy
 from . import forms
 from . import models
 
+
 class StudentsListView(generic.ListView):
     model = models.Student
     template_name = 'students/list.html'
@@ -25,6 +26,7 @@ class TeachersListView(generic.ListView):
         queryset = models.Teacher.objects.all()
         return queryset
 
+
 class TeacherCreateView(generic.CreateView):
     form_class = forms.TeacherCreateForm
     template_name = "teachers/create.html"
@@ -37,3 +39,9 @@ class TeacherCreateView(generic.CreateView):
         profile = models.Teacher.objects.create(user=user, birthdate=birthdate, initials=initials, role='TEACHER')
         profile.save()
         return super(TeacherCreateView, self).form_valid(form)
+
+class StudentCreateView(generic.CreateView):
+    form_class = forms.StudentCreateForm
+    template_name = "students/create.html"
+    success_url = reverse_lazy('students_list')
+
