@@ -15,6 +15,16 @@ class StudentsListView(generic.ListView):
         queryset = models.Student.objects.all()
         return queryset
 
+class StudentCreateView(generic.CreateView):
+    form_class = forms.StudentCreateForm
+    template_name = "students/create.html"
+    success_url = reverse_lazy('students_list')
+
+class StudentUpdateView(generic.UpdateView):
+    model = models.Student
+    form_class = forms.StudentCreateForm
+    template_name = "students/create.html"
+    success_url = reverse_lazy('students_list')
 
 class TeachersListView(generic.ListView):
     model = models.Teacher
@@ -39,14 +49,3 @@ class TeacherCreateView(generic.CreateView):
         profile = models.Teacher.objects.create(user=user, birthdate=birthdate, initials=initials, role='TEACHER')
         profile.save()
         return super(TeacherCreateView, self).form_valid(form)
-
-class StudentCreateView(generic.CreateView):
-    form_class = forms.StudentCreateForm
-    template_name = "students/create.html"
-    success_url = reverse_lazy('students_list')
-
-
-class StudentUpdateView(generic.CreateView):
-    form_class = forms.StudentCreateForm
-    template_name = "students/create.html"
-    success_url = reverse_lazy('students_list')
