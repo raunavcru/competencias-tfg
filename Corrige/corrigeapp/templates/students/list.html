@@ -18,7 +18,7 @@
                         <td>{{object.surname}}</td>
                         <td>{{object.name}}</td>
                         <td>{{object.birthdate}}</td>
-                        <td><em class="material-icons">send</em></td>
+                        <td><a href="{% url 'students_update' object.pk %}">Editar</a></td>
                     </tr>
                     </tbody>
             {% endfor %}
