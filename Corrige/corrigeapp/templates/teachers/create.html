@@ -1,69 +1,86 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="row">
-    <form class="col s12" id="form-create-teacher" method="post" action="{% url 'teachers_create' %}">
-        {% csrf_token %}
-        <div class="row">
-            <div class="input-field col s4">
-                <p>First Name</p>
-                {{form.first_name}}
-                {{form.first_name.errors}}
+    {% if request.get_full_path == '/teachers/create' %}
+        <form class="col s12" id="form-create-teacher" method="post" action="{% url 'teachers_create' %}">
+    {% else %}
+        <form class="col s12" id="form-create-teacher" method="post" action="{% url 'teachers_update' object.pk %}">
+    {% endif %}
+            {% csrf_token %}
+            <div class="row">
+                <div class="input-field col s4">
+                    <p>First Name</p>
+                    {{form.first_name}}
+                    {{form.first_name.errors}}
+
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s4">
-                <p>Last Name</p>
-                {{form.last_name}}
-                {{form.last_name.errors}}
+            <div class="row">
+                <div class="input-field col s4">
+                    <p>Last Name</p>
+                    {{form.last_name}}
+                    {{form.last_name.errors}}
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s4">
-                <p>Birthdate</p>
-                {{form.birthdate}}
-                {{form.birthdate.errors}}
+            <div class="row">
+                <div class="input-field col s4">
+                    <p>Birthdate</p>
+                    {% if request.get_full_path == '/teachers/create' %}
+                        {{form.birthdate}}
+                        {{form.birthdate.errors}}
+                    {% else %}
+                        {{teacher_form.birthdate}}
+                        {{teacher_form.birthdate.errors}}
+                    {% endif %}
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s4">
-                <p>Initials</p>
-                {{form.initials}}
-                {{form.initials.errors}}
+            <div class="row">
+                <div class="input-field col s4">
+                    <p>Initials</p>
+                    {% if request.get_full_path == '/teachers/create' %}
+                        {{form.initials}}
+                        {{form.initials.errors}}
+                    {% else %}
+                        {{teacher_form.initials}}
+                        {{teacher_form.initials.errors}}
+                    {% endif %}
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s4">
-                <p>Email</p>
-                {{form.email}}
-                {{form.email.errors}}
+            <div class="row">
+                <div class="input-field col s4">
+                    <p>Email</p>
+                    {{form.email}}
+                    {{form.email.errors}}
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s4">
-                <p>Username</p>
-                {{form.username}}
-                {{form.username.errors}}
+            {% if request.get_full_path == '/teachers/create' %}
+                <div class="row">
+                    <div class="input-field col s4">
+                        <p>Username</p>
+                        {{form.username}}
+                        {{form.username.errors}}
+                    </div>
+                </div> 
+                <div class="row">
+                    <div class="input-field col s4">
+                        <p>Password</p>
+                        {{form.password1}}
+                        {{form.password1.errors}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s4">
+                        <p>Confirm password</p>
+                        {{form.password2}}
+                        {{form.password2.errors}}
+                    </div>
+                </div>
+            {% endif %}   
+            <div class="row">
+                <button class="btn waves-effect" type="submit" name="action">Submit
+                    <i class="large material-icons right"><i >send</i></i>
+                </button>
             </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s4">
-                <p>Password</p>
-                {{form.password1}}
-                {{form.password1.errors}}
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s4">
-                <p>Confirm assword</p>
-                {{form.password2}}
-                {{form.password2.errors}}
-            </div>
-        </div>
-        <div class="row">
-            <button class="btn waves-effect" type="submit" name="action">Submit
-                <i class="large material-icons right"><i >send</i></i>
-            </button>
-        </div>
-    </form>
+        </form>
 </div>
 {% endblock %}

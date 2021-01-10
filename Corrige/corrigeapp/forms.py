@@ -8,6 +8,31 @@ from . import models
 
 User = get_user_model()
 
+class StudentCreateForm(forms.ModelForm):
+    
+    name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Raúl', 'id': 'first_name-create-student'}))
+    surname = forms.CharField(required=True)
+    birthdate = forms.DateField(required=True)
+    initials = forms.CharField(required=True)
+
+    class Meta:
+        model = models.Student
+        fields = (
+            'name',
+            'surname',
+            'birthdate',
+            'initials',
+
+        )
+
+    def clean_birthdate(self):
+        birthdate = self.cleaned_data.get('birthdate')
+        if birthdate >= now().date():
+            raise ValidationError(
+                'La fecha de cumpleaños debe ser en el pasado')
+        return birthdate
+
 class TeacherCreateForm(UserCreationForm):
     
     first_name = forms.CharField(required=True, widget=forms.TextInput(
@@ -46,33 +71,28 @@ class TeacherCreateForm(UserCreationForm):
         if exist:
             raise ValidationError('Usuario ya registrado')
         return username
-          
-class StudentCreateForm(forms.ModelForm):
-    
-    name = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': 'Raúl', 'id': 'first_name-create-student'}))
-    surname = forms.CharField(required=True)
+        
+class TeacherUpdateForm(forms.ModelForm):
     birthdate = forms.DateField(required=True)
     initials = forms.CharField(required=True)
 
     class Meta:
-        model = models.Student
+        model = models.Teacher
         fields = (
-            'name',
-            'surname',
             'birthdate',
             'initials',
+        )   
 
-        )
+class UserUpdateForm(forms.ModelForm):
+    first_name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Alberto', 'id': 'first_name-create-teacher'}))
+    last_name = forms.CharField(required=True)
+    email = forms.EmailField(required=True)
 
-    def clean_birthdate(self):
-        birthdate = self.cleaned_data.get('birthdate')
-        if birthdate >= now().date():
-            raise ValidationError(
-                'La fecha de cumpleaños debe ser en el pasado')
-        return birthdate
-
-
-    
-    
-
+    class Meta:
+        model = User
+        fields = (
+            'first_name',
+            'last_name',
+            'email',
+        )   
