@@ -19,6 +19,16 @@ class StudentsListView(generic.ListView):
         queryset = models.Student.objects.all()
         return queryset
 
+class StudentCreateView(generic.CreateView):
+    form_class = forms.StudentCreateForm
+    template_name = "students/create.html"
+    success_url = reverse_lazy('students_list')
+
+class StudentUpdateView(generic.UpdateView):
+    model = models.Student
+    form_class = forms.StudentCreateForm
+    template_name = "students/create.html"
+    success_url = reverse_lazy('students_list')
 
 class TeachersListView(generic.ListView):
     model = models.Teacher
@@ -71,8 +81,15 @@ class TeacherUpdateView(generic.UpdateView):
         if form.is_valid() and teacher_form.is_valid():
             user = form.save()
             teacher_form.save(user)
-
             return redirect(self.get_success_url())
         else:
             return self.render_to_response(
                 self.get_context_data(form=form, profile_form=teacher_form))
+
+class StudentDeleteView(generic.DeleteView):
+    template_name = 'students/delete.html'
+    model = models.Student
+    success_url = reverse_lazy('students_list')
+        return super(TeacherCreateView, self).form_valid(form)
+
+
