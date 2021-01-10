@@ -19,7 +19,7 @@
                         <td>{{object.surname}}</td>
                         <td>{{object.name}}</td>
                         <td>{{object.birthdate}}</td>
-                        <td><em class="material-icons" style="color:#1e88e5">send</em></td>
+                        <td><button type="button" onclick="location.href='{% url 'students_update' object.pk %}'">Editar</td>
                         <td  class=" dropdown-trigger" onclick="location.href='{% url 'students_delete' object.pk %}'"><em class="material-icons" style="color:#e53935">delete</em></td>
                     </tr>
                     </tbody>

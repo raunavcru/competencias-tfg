@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
+{% if request.get_full_path == '/students/create' %}
 <div class="row">
     <form class="col s12" id="form-create-students" method="post" action="{% url 'students_create' %}">
+{% else %}
+<div class="row"></div>
+    <form class="col s12" id="form-update-students" method="post" action="{% url 'students_update' object.pk %}">
+{% endif %}
         {% csrf_token %}
         <div class="row">
             <div class="input-field col s4">
@@ -31,11 +36,19 @@
                 {{form.initials.errors}}
             </div>
         </div>
+        {% if request.get_full_path == '/students/create' %}
         <div class="row">
-            <button class="btn waves-effect" type="submit" name="action">Submit
+            <button class="btn waves-effect" type="submit" name="action">Crear
                 <i class="large material-icons right"><i >send</i></i>
             </button>
         </div>
+        {% else %}
+        <div class="row">
+            <button class="btn waves-effect" type="submit" name="action">Editar
+                <i class="large material-icons right"><i >send</i></i>
+            </button>
+        </div>
+        {% endif %}
     </form>
 </div>
 {% endblock %}
