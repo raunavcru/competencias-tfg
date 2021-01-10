@@ -2,23 +2,25 @@
 {% block content %}
 
     <h4 class="centered">Listado de alumnos</h4>
-        <table class="striped">
+        <table class="striped grey lighten-2">
             <caption></caption>
                 <thead>
                     <tr>
                         <th id="surname">Surname</th>
                         <th id="name">Name</th>
                         <th id="birthdate">Birthday</th>
-                        <th id="button"></th>
+                        <th id="button">Editar</th>
+                        <th id="delete" >Borrar</th>
                     </tr>
                 </thead>
             {% for object in student_list %}
                     <tbody>
-                    <tr>
+                    <tr class="center">
                         <td>{{object.surname}}</td>
                         <td>{{object.name}}</td>
                         <td>{{object.birthdate}}</td>
                         <td><button type="button" onclick="location.href='{% url 'students_update' object.pk %}'">Editar</td>
+                        <td  class=" dropdown-trigger" onclick="location.href='{% url 'students_delete' object.pk %}'"><em class="material-icons" style="color:#e53935">delete</em></td>
                     </tr>
                     </tbody>
             {% endfor %}
