@@ -5,6 +5,15 @@ from django.urls import reverse, reverse_lazy
 from . import forms
 from . import models
 
+class StudentCreateView(generic.CreateView):
+    form_class = forms.StudentCreateForm
+    template_name = "students/create.html"
+    success_url = reverse_lazy('students_list')
+
+class StudentDeleteView(generic.DeleteView):
+    template_name = 'students/delete.html'
+    model = models.Student
+    success_url = reverse_lazy('students_list')
 
 class StudentsListView(generic.ListView):
     model = models.Student
@@ -15,27 +24,11 @@ class StudentsListView(generic.ListView):
         queryset = models.Student.objects.all()
         return queryset
 
-class StudentCreateView(generic.CreateView):
-    form_class = forms.StudentCreateForm
-    template_name = "students/create.html"
-    success_url = reverse_lazy('students_list')
-
 class StudentUpdateView(generic.UpdateView):
     model = models.Student
     form_class = forms.StudentCreateForm
     template_name = "students/create.html"
     success_url = reverse_lazy('students_list')
-
-class TeachersListView(generic.ListView):
-    model = models.Teacher
-    template_name = 'teachers/list.html'
-    context_object_name = 'teacher_list'
-
-
-    def get_queryset(self):
-        queryset = models.Teacher.objects.all()
-        return queryset
-
 
 class TeacherCreateView(generic.CreateView):
     form_class = forms.TeacherCreateForm
@@ -49,14 +42,12 @@ class TeacherCreateView(generic.CreateView):
         profile = models.Teacher.objects.create(user=user, birthdate=birthdate, initials=initials, role='TEACHER')
         profile.save()
         return super(TeacherCreateView, self).form_valid(form)
+        
+class TeachersListView(generic.ListView):
+    model = models.Teacher
+    template_name = 'teachers/list.html'
+    context_object_name = 'teacher_list'
 
-class StudentCreateView(generic.CreateView):
-    form_class = forms.StudentCreateForm
-    template_name = "students/create.html"
-    success_url = reverse_lazy('students_list')
-
-class StudentDeleteView(generic.DeleteView):
-    template_name = 'students/delete.html'
-    model = models.Student
-    success_url = reverse_lazy('students_list')
-
+    def get_queryset(self):
+        queryset = models.Teacher.objects.all()
+        return queryset
