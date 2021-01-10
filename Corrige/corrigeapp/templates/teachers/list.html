@@ -19,6 +19,7 @@
                         <td>{{object.initials}}</td>
                         <td>{{object.birthdate}}</td>
                         <td>{{object.user.email}}</td>
+                        <td><button type="button" onclick="location.href='{% url 'teachers_update' object.pk %}'">Editar</td>
                     </tr>
                 {% endfor %}
 
