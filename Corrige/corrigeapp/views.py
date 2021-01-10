@@ -47,14 +47,6 @@ class TeacherDeleteView(generic.DeleteView):
     model = models.Teacher
     template_name = 'teachers/confirm_delete.html'
 
-    def post(self, request, *args, **kwargs):
-        teacher_pk = self.kwargs.get('pk')
-        teacher = models.Teacher.objects.get(pk=teacher_pk)
-        teacher.user.delete()
-        teacher.delete()
-
-        return redirect('teachers_list')
-
 class TeachersListView(generic.ListView):
     model = models.Teacher
     template_name = 'teachers/list.html'
@@ -63,3 +55,43 @@ class TeachersListView(generic.ListView):
     def get_queryset(self):
         queryset = models.Teacher.objects.all()
         return queryset
+        
+class TeacherUpdateView(generic.UpdateView):
+    model = models.User
+    form_class = forms.UserUpdateForm
+    teacher_form_class = forms.TeacherUpdateForm
+    template_name = "teachers/create.html"
+    success_url = reverse_lazy('teachers_list')
+
+    def get_context_data(self, **kwargs):
+        context = super(TeacherUpdateView, self).get_context_data(**kwargs)
+        context['teacher_form'] = self.teacher_form_class(instance=self.object.profile)
+
+        return context
+
+    def get_object(self):
+        teacher_pk = self.kwargs.get('pk')
+        teacher = models.Teacher.objects.get(pk=teacher_pk)
+        teacher_user = teacher.user
+        return teacher_user
+
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        form = self.form_class(request.POST, instance=self.object)
+        teacher_form = self.teacher_form_class(
+            request.POST, instance=self.object.profile)
+        if form.is_valid() and teacher_form.is_valid():
+            user = form.save()
+            teacher_form.save(user)
+            return redirect(self.get_success_url())
+        else:
+            return self.render_to_response(
+                self.get_context_data(form=form, profile_form=teacher_form))
+
+    def post(self, request, *args, **kwargs):
+        teacher_pk = self.kwargs.get('pk')
+        teacher = models.Teacher.objects.get(pk=teacher_pk)
+        teacher.user.delete()
+        teacher.delete()
+
+        return redirect('teachers_list')
