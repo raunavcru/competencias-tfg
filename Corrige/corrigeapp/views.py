@@ -91,4 +91,3 @@ class StudentDeleteView(generic.DeleteView):
     model = models.Student
     success_url = reverse_lazy('students_list')
 
-
