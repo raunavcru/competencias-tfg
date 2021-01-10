@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import generic
 from django.urls import reverse, reverse_lazy
 
@@ -42,7 +42,19 @@ class TeacherCreateView(generic.CreateView):
         profile = models.Teacher.objects.create(user=user, birthdate=birthdate, initials=initials, role='TEACHER')
         profile.save()
         return super(TeacherCreateView, self).form_valid(form)
-        
+
+class TeacherDeleteView(generic.DeleteView):
+    model = models.Teacher
+    template_name = 'teachers/confirm_delete.html'
+
+    def post(self, request, *args, **kwargs):
+        teacher_pk = self.kwargs.get('pk')
+        teacher = models.Teacher.objects.get(pk=teacher_pk)
+        teacher.user.delete()
+        teacher.delete()
+
+        return redirect('teachers_list')
+
 class TeachersListView(generic.ListView):
     model = models.Teacher
     template_name = 'teachers/list.html'
