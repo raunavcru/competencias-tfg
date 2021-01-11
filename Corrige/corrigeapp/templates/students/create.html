@@ -1,54 +1,71 @@
 {% extends 'base.html' %}
 {% block content %}
-{% if request.get_full_path == '/students/create' %}
-<div class="row">
-    <form class="col s12" id="form-create-students" method="post" action="{% url 'students_create' %}">
-{% else %}
-<div class="row"></div>
-    <form class="col s12" id="form-update-students" method="post" action="{% url 'students_update' object.pk %}">
-{% endif %}
-        {% csrf_token %}
-        <div class="row">
-            <div class="input-field col s4">
-                <p>Name</p>
-                {{form.name}}
-                {{form.name.errors}}
+<div id="form-generic" class="container">
+    <divclass="row">
+        <div class="grid-example col s11 offset-s1">
+            <div class="center-form">
+            {% if request.get_full_path == '/students/create' %}
+                <form class="col s12" id="form-create-students" method="post" action="{% url 'students_create' %}">
+            {% else %}
+                <form class="col s12" id="form-update-students" method="post" action="{% url 'students_update' object.pk %}">
+            {% endif %}
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="grid-example col s6">
+                            <div class="validate-input">
+                                <label>Name</label>
+                                {{form.name}}
+                                <div class="form-errors">
+                                    {{ form.name.errors }}
+                                </div>
+                            </div>
+                        </div>
+                    <div class="grid-example col s6">
+                            <div class="validate-input">
+                                <label>Surname</label>
+                                {{form.surname}}
+                                <div class="form-errors">
+                                    {{ form.surnamename.errors }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="grid-example col s6">
+                            <div class="validate-input">
+                                <label>Birthdate</label>
+                                {{form.birthdate}}
+                                <div class="form-errors">
+                                    {{ form.birthdate.errors }}
+                                </div>
+                            </div>
+                        </div>
+                    <div class="grid-example col s6">
+                            <div class="validate-input">
+                                <label>Initials</label>
+                                {{form.initials}}
+                                <div class="form-errors">
+                                    {{ form.initials.errors }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% if request.get_full_path == '/students/create' %}
+                    <div class="row">
+                        <button class="btn waves-effect" type="submit" name="action">Crear
+                            <i class="large material-icons right"><i >send</i></i>
+                        </button>
+                    </div>
+                    {% else %}
+                    <div class="row">
+                        <button class="btn waves-effect right" type="submit" name="action">Editar
+                            <i class="large material-icons right"><i >send</i></i>
+                        </button>
+                    </div>
+                    {% endif %}
+                </form>
             </div>
         </div>
-        <div class="row">
-            <div class="input-field col s4">
-                <p>SurName</p>
-                {{form.surname}}
-                {{form.surname.errors}}
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s4">
-                <p>Birthdate</p>
-                {{form.birthdate}}
-                {{form.birthdate.errors}}
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s4">
-                <p>Initials</p>
-                {{form.initials}}
-                {{form.initials.errors}}
-            </div>
-        </div>
-        {% if request.get_full_path == '/students/create' %}
-        <div class="row">
-            <button class="btn waves-effect" type="submit" name="action">Crear
-                <i class="large material-icons right"><i >send</i></i>
-            </button>
-        </div>
-        {% else %}
-        <div class="row">
-            <button class="btn waves-effect" type="submit" name="action">Editar
-                <i class="large material-icons right"><i >send</i></i>
-            </button>
-        </div>
-        {% endif %}
-    </form>
+    </div>
 </div>
 {% endblock %}

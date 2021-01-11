@@ -2,7 +2,7 @@
 {% block content %}
 
     <h4 class="centered">Listado de alumnos</h4>
-        <table class="striped grey lighten-2">
+        <table class="centered highlight">
             <caption></caption>
                 <thead>
                     <tr>
@@ -19,8 +19,8 @@
                         <td>{{object.surname}}</td>
                         <td>{{object.name}}</td>
                         <td>{{object.birthdate}}</td>
-                        <td><button type="button" onclick="location.href='{% url 'students_update' object.pk %}'">Editar</td>
-                        <td  class=" dropdown-trigger" onclick="location.href='{% url 'students_delete' object.pk %}'"><em class="material-icons" style="color:#e53935">delete</em></td>
+                        <td class="center dropdown-trigger" type="button" onclick="location.href='{% url 'students_update' object.pk %}'"><em class="material-icons" style="color:#e53935">send</em></td>
+                        <td class="center dropdown-trigger" onclick="location.href='{% url 'students_delete' object.pk %}'"><em class="material-icons" style="color:#e53935">delete</em></td>
                     </tr>
                     </tbody>
             {% endfor %}

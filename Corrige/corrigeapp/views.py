@@ -59,5 +59,3 @@ class StudentDeleteView(generic.DeleteView):
     template_name = 'students/delete.html'
     model = models.Student
     success_url = reverse_lazy('students_list')
-        return super(TeacherCreateView, self).form_valid(form)
-
