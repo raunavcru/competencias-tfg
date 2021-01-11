@@ -13,10 +13,10 @@
 <body id="body-font" class="grey lighten-4">
     <nav class="pink lighten-3">
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo" style="padding-left:15px">Corrige <em class="material-icons center" class="purple lighten-3">book</em></a>
+        <img class="logo" src="{% static 'images/corrige-white.png' %}" alt="corrige" width="140" height="70">            
             <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right:15px;">
                 <li><a href="#">Home</a></li>
-                <li><a href="students/list.html">Alumnos</a></li>
+                <li><a href="{% url 'students_list' %}">Alumnos</a></li>
                 <li><a href="#">About Us</a></li>
             </ul>
         </div>

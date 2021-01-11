@@ -11,7 +11,9 @@
             {% endif %}
                     {% csrf_token %}
                     <div class="row">
-                        <div class="grid-example col s6">
+                        <div class="grid-example col s2">
+                        </div>
+                        <div class="grid-example col s3">
                             <div class="validate-input">
                                 <label>Name</label>
                                 {{form.name}}
@@ -20,7 +22,7 @@
                                 </div>
                             </div>
                         </div>
-                    <div class="grid-example col s6">
+                        <div class="grid-example col s5">
                             <div class="validate-input">
                                 <label>Surname</label>
                                 {{form.surname}}
@@ -31,7 +33,9 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="grid-example col s6">
+                        <div class="grid-example col s2">
+                        </div>
+                        <div class="grid-example col s8">
                             <div class="validate-input">
                                 <label>Birthdate</label>
                                 {{form.birthdate}}
@@ -40,7 +44,11 @@
                                 </div>
                             </div>
                         </div>
-                    <div class="grid-example col s6">
+                    </div>
+                    <div class="row">
+                        <div class="grid-example col s2">
+                        </div> 
+                        <div class="grid-example col s8">
                             <div class="validate-input">
                                 <label>Initials</label>
                                 {{form.initials}}

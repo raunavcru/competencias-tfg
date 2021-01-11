@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 
     <h4 class="centered">Listado de alumnos</h4>
+
         <table class="centered highlight">
             <caption></caption>
                 <thead>
@@ -19,11 +21,12 @@
                         <td>{{object.surname}}</td>
                         <td>{{object.name}}</td>
                         <td>{{object.birthdate}}</td>
-                        <td class="center dropdown-trigger" type="button" onclick="location.href='{% url 'students_update' object.pk %}'"><em class="material-icons" style="color:#e53935">send</em></td>
+                        <td class="dropdown-trigger" type="button" onclick="location.href='{% url 'students_update' object.pk %}'"><em class="material-icons" style="color:#29b6f6">send</em></td>
                         <td class="center dropdown-trigger" onclick="location.href='{% url 'students_delete' object.pk %}'"><em class="material-icons" style="color:#e53935">delete</em></td>
                     </tr>
                     </tbody>
             {% endfor %}
         </table>
-
 {% endblock %}
+
+
