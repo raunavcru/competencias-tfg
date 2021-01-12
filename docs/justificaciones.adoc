@@ -53,9 +53,10 @@ A diferencia de sus alternativas, Materialize tiene una gran documentación, la 
 Gráficamente Materialize esta muy por encima de Boostrap o Foundation, debido a su variedad de color y a sus componentes adicionales.
 
 |Referencias
-|* http://www.rafelsanso.com/bootstrap-vs-material-design/
- * https://stackshare.io/stackups/foundation-vs-materialize#:~:text=You%20can%20quickly%20prototype%20and,framework%20based%20on%20Material%20Design.
- * https://www.slant.co/versus/505/521/~foundation_vs_materialize
+|
+* http://www.rafelsanso.com/bootstrap-vs-material-design/
+* https://stackshare.io/stackups/foundation-vs-materialize#:~:text=You%20can%20quickly%20prototype%20and,framework%20based%20on%20Material%20Design.
+* https://www.slant.co/versus/505/521/~foundation_vs_materialize
 
 |===
 
@@ -89,8 +90,9 @@ Comparándola con Heroku, AWS no es apto para personas principiantes, ya que la 
 En comparación con las alternativas expuestas, Heroku permite desplegar versiones, rollbacks, gestionar dependencias, como también desarrollar casi con cualquier lenguaje de programación: Java, Ruby, NodeJS…
 
 |Referencias
-|* https://stackshare.io/stackups/firebase-vs-heroku
-|* https://rubygarage.org/blog/heroku-vs-amazon-web-services
+|
+* https://stackshare.io/stackups/firebase-vs-heroku
+* https://rubygarage.org/blog/heroku-vs-amazon-web-services
 |===
 
 |===
@@ -100,8 +102,9 @@ En comparación con las alternativas expuestas, Heroku permite desplegar version
 |La segunda opción es Jenkins. El mayor ventaja que podemos destacar de Travis frente Jenkins es no que necesita ningún tipo de instalación, solo se configura un solo archivo y se puede utilizar a la perfección.
 
 |Referencias
-|* https://www.guru99.com/jenkins-vs-travis.html
-|* https://www.lambdatest.com/blog/travis-ci-vs-jenkins/
+|
+* https://www.guru99.com/jenkins-vs-travis.html
+* https://www.lambdatest.com/blog/travis-ci-vs-jenkins/
 |===
 
 [cols="6a"]
@@ -119,7 +122,8 @@ A diferencia de Sonarcloud Codacy no tiene soporte para Git privado o Azure DevO
 SonarQube tienen un mantenimiento de código más costoso, haciendo que sea necesario invertir más tiempo, así como generar "falsos positivos".
 
 |Referencias
-|* https://stackshare.io/stackups/codacy-vs-codebeat-vs-sonarqube
+|
+* https://stackshare.io/stackups/codacy-vs-codebeat-vs-sonarqube
 * https://stackshare.io/stackups/codacy-vs-sonarqube
 |===
 
