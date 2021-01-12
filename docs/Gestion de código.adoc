@@ -16,9 +16,9 @@ Códigos de rama (<codigo_rama>):
 * fix/      (bug fix)
 * hotfix/   (bug fixes en producción)
 * refactor/ (refactorización de código)
-* docs/      (cambios de documentación)
+* docs/     (cambios de documentación)
 * test/     (añadir o refactorizar tests)
-* release/  (nueva realise)
+* release/  (nueva release)
 
 Cógigos de sprint (<codigo_sprint>):
 
@@ -26,4 +26,16 @@ Cógigos de sprint (<codigo_sprint>):
 * s1/s2/s3/s4   (sprints 1, 2, 3, 4 respectivamente)
 * sd            (tras la finalización del desarrollo, realización de memoria)
 
-Nombre de las tareas (<nombre_tarea>): Nombre especificado en Jira, o abreviación. Por ejemplo, CU-07 Edición de profesores, o simplemente, CU-07.
+Nombre de las tareas (<nombre_tarea>): Nombre especificado en Jira, o abreviación. Por ejemplo, CU-07 Edición de profesores, o simplemente, CU-07. Se pueden añadir varias tareas separadas por &.
+
+== Gestión de commits
+Los commits deben seguir el siguiente patrón: [<tipo_commit>] <nombre_commit>. Además se puede añadir una descripción opcionalmente.
+
+Tipo de commit (<tipo_commit>):
+
+* feat      (nueva feature)
+* fix       (bug fix)
+* refactor  (refactorización de código)
+* doc       (cambios de documentación)
+* test      (añadir o refactorizar tests)
+* release   (nueva release)
