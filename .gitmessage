@@ -1,0 +1,13 @@
+[tipo_commit] Encabezado
+Descripción del mensaje
+
+## Los commits deben seguir el siguiente patrón: [<tipo_commit>] <nombre_commit>. Además se puede añadir una descripción opcionalmente.
+
+## Tipo de commit (<tipo_commit>):
+
+## feat (nueva feature)
+## fix (bug fix)
+## refactor (refactorización de código)
+## doc (cambios de documentación)
+## test (añadir o refactorizar tests)
+## release (nueva release)
