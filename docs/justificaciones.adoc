@@ -19,6 +19,14 @@ Bottle y Flask son microframework mucho más simples que Django y se utilizan pa
 Pyramid es una buena opción, mucho más ligero que Django, esto provoca que sea menos completo. Django no necesita otras librerías para el desarrollo de la aplicación, al contrario que Pyramid, que aparte del enrutamiento y la autenticación, necesita librerías externas.
 
 NodeJs es otra buena alternativa. Es un framework que está creciendo continuamente en popularidad con multitud de librerías que lo nutren. Esto también juega en su contra, ya que NodeJs no dispone de una reputación tan sólida, ni unas librerías externas tan bien documentadas como Django. Tampoco dispone de un sistema sólido de seguridad como el que tiene Django, el cual, es muy fácil de implementar. En otro apartado, Django permite una velocidad de desarrollo muy alta, algo de lo que no dispone NodeJs, por lo que la elección de este último extendería más la etapa de desarrollo, y lo haría menos económico.
+|Referencias
+|
+* https://www.monocubed.com/django-vs-node-js/
+* https://www.upgrad.com/blog/django-vs-nodejs-difference-between-django-and-nodejs/
+* https://openwebinars.net/blog/los-4-mejores-frameworks-para-aplicaciones-de-python/
+* http://ccbv.co.uk/
+* https://insights.stackoverflow.com/survey/2019#technology
+* https://insights.stackoverflow.com/survey/2020#technology-programming-scripting-and-markup-languages-all-respondents
 |===
 
 [cols="5a"]
