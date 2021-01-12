@@ -42,3 +42,5 @@ Tipo de commit (<tipo_commit>):
 
 == Pull requests
 Para añadir funcionalidad a la rama *dev* se abrirá una pull request. El que haya desarrollado la funcionalidad se asignará a la pull request y asignará al compañero como revisor. Para que la pull request se de como válida debe de pasar el control y análisis de Travis y Sonarcloud, además del visto bueno del revisor. 
+
+Una vez que se haya hecho merge a dev, la rama se eliminará.
