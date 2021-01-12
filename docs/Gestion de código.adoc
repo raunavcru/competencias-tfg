@@ -2,8 +2,8 @@
 
 == Gestión de ramas
 Ramas por defecto:
-- master
-- dev
+* master
+* dev
 
 En la rama **dev** se incluirán todas las ramas de desarrollo con *pull requests*. La rama **master** solo se podrán añadir desde la rama **dev**, para incluir la release. 
 
@@ -29,7 +29,7 @@ Cógigos de sprint (<codigo_sprint>):
 Nombre de las tareas (<nombre_tarea>): Nombre especificado en Jira, o abreviación. Por ejemplo, CU-07 Edición de profesores, o simplemente, CU-07. Se pueden añadir varias tareas separadas por &.
 
 == Gestión de commits
-Los commits deben seguir el siguiente patrón: [<tipo_commit>] <nombre_commit>. Además se puede añadir una descripción opcionalmente.
+Los commits deben seguir el siguiente patrón: *[<tipo_commit>] <nombre_commit>*. Además se puede añadir una descripción opcionalmente.
 
 Tipo de commit (<tipo_commit>):
 
