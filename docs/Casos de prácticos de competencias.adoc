@@ -1,20 +1,29 @@
+== Casos de prácticos de competencias
+
 [grid=cols]
 |===
-| |Nombre en la apliación |Enseñanza primaria/ESO/Bachillerato |Títulos universitarios
+| |Nombre en la aplicación |Enseñanza primaria/ESO/Bachillerato |Títulos universitarios
 
 | Nivel 1
 | Competencias concretas
-|
-| Competencias Básicas
+| Estándares de aprendizaje
+| Competencias básicas
 
 | Nivel 2
 | Competencias específicas
 |
-| Competencias Generales
+| Competencias generales
 
 | Nivel 3
 | Competencias generales
-|
+| Competencias clave
 | Competencias específicas
 
 |===
+
+=== Referencias
+
+* https://www.boe.es/buscar/act.php?id=BOE-A-2015-738
+* https://www.us.es/estudiar/que-estudiar/oferta-de-grados/grado-en-ingenieria-informatica-ingenieria-del-software/2050009
+* https://www.us.es/estudiar/que-estudiar/oferta-de-grados/grado-en-ingenieria-informatica-ingenieria-del-software/2050012
+* http://www.juntadeandalucia.es/educacion/descargasrecursos/curriculo-primaria/pdf/PDF/textocompleto.pdf
