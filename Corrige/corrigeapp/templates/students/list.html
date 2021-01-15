@@ -11,20 +11,20 @@
                         <th id="surname">Surname</th>
                         <th id="name">Name</th>
                         <th id="birthdate">Birthday</th>
-                        <th class="center" id="button">Editar</th>
-                        <th class="center" id="delete" >Borrar</th>
+                        <th class="center" id="button">Edit</th>
+                        <th class="center" id="delete" >Delete</th>
                     </tr>
                 </thead>
             {% for object in student_list %}
                     <tbody>
-                    <tr class="center">
-                        <td><i class="material-icons" style="color:#BBBBBB">account_circle</i></td>
-                        <td>{{object.surname}}</td>
-                        <td>{{object.name}}</td>
-                        <td>{{object.birthdate}}</td>
-                        <td class="center dropdown-trigger" type="button" onclick="location.href='{% url 'students_update' object.pk %}'"><em class="material-icons" style="color:#29b6f6">create</em></td>
-                        <td class="center dropdown-trigger" onclick="location.href='{% url 'students_delete' object.pk %}'"><em class="material-icons" style="color:#e53935">delete</em></td>
-                    </tr>
+                        <tr class="center">
+                            <td><i class="material-icons" style="color:#BBBBBB">account_circle</i></td>
+                            <td>{{object.surname}}</td>
+                            <td>{{object.name}}</td>
+                            <td>{{object.birthdate}}</td>
+                            <td class="center dropdown-trigger" type="button" onclick="location.href='{% url 'students_update' object.pk %}'"><em class="material-icons" style="color:#29b6f6">create</em></td>
+                            <td class="center dropdown-trigger" onclick="location.href='{% url 'students_delete' object.pk %}'"><em class="material-icons" style="color:#e53935">delete</em></td>
+                        </tr>
                     </tbody>
             {% endfor %}
         </table>
