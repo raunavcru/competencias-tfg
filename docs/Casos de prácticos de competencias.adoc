@@ -7,23 +7,24 @@
 | Nivel 1
 | Competencias concretas
 | Estándares de aprendizaje
-| Competencias básicas
+| 
 
 | Nivel 2
 | Competencias específicas
-|
-| Competencias generales
+| Criterios de evaluación
+| Competencias generales y específicas
 
 | Nivel 3
 | Competencias generales
 | Competencias clave
-| Competencias específicas
+| Competencias básicas
 
 |===
 
 === Referencias
 
-* https://www.boe.es/buscar/act.php?id=BOE-A-2015-738
-* https://www.us.es/estudiar/que-estudiar/oferta-de-grados/grado-en-ingenieria-informatica-ingenieria-del-software/2050009
-* https://www.us.es/estudiar/que-estudiar/oferta-de-grados/grado-en-ingenieria-informatica-ingenieria-del-software/2050012
+* https://www.boe.es/diario_boe/txt.php?id=BOE-A-2014-2222
+* https://www.boe.es/boe/dias/2020/12/30/pdfs/BOE-A-2020-17264.pdf
+* https://www.us.es/estudiar/que-estudiar/oferta-de-grados/grado-en-ingenieria-informatica-ingenieria-del-software
+* https://www.us.es/estudiar/que-estudiar/oferta-de-grados/grado-en-pedagogia
 * http://www.juntadeandalucia.es/educacion/descargasrecursos/curriculo-primaria/pdf/PDF/textocompleto.pdf
