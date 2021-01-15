@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="container">
+<div  id="top-bot" class="container">
     <form action="{% url 'students_delete' object.pk %}" method="post">
         {% csrf_token %}
-        <h1 class="title-delete flow-text">¿Estás seguro de que quieres eliminar el studiante <a>{{object.name}} {{object.surname}}</a>?</h1>
+        <h1 class="center title-delete flow-text">¿Estás seguro de que quieres eliminar el estudiante <a>{{object.name}} {{object.surname}}</a>?</h1>
 
         <div class="center">
-            <button class="waves-effect waves-light btn-large button-delete delete-yes" type="submit">Sí</button>
-            <a href="{% url 'students_list'%}" class="waves-effect waves-light btn-large button-delete">No</a>
+            <a style="border-radius:5px; background-color:#BBBBBB" href="{% url 'students_list'%}" class="waves-effect waves-light btn-large button-delete">Cancelar</a>
+            <button style="border-radius:5px; background-color:#f05060" class="waves-effect waves-light btn-large button-delete delete-yes" type="submit">Borrar</button>
         </div>
     </form>
 </div>

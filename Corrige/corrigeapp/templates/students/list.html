@@ -1,32 +1,38 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-
     <h4 class="centered">Listado de alumnos</h4>
-
-        <table class="centered highlight">
+        <table class="highlight">
             <caption></caption>
                 <thead>
                     <tr>
+                        <th></th>
                         <th id="surname">Surname</th>
                         <th id="name">Name</th>
                         <th id="birthdate">Birthday</th>
-                        <th id="button">Editar</th>
-                        <th id="delete" >Borrar</th>
+                        <th class="center" id="button">Editar</th>
+                        <th class="center" id="delete" >Borrar</th>
                     </tr>
                 </thead>
             {% for object in student_list %}
                     <tbody>
                     <tr class="center">
+                        <td><i class="material-icons" style="color:#BBBBBB">account_circle</i></td>
                         <td>{{object.surname}}</td>
                         <td>{{object.name}}</td>
                         <td>{{object.birthdate}}</td>
-                        <td class="dropdown-trigger" type="button" onclick="location.href='{% url 'students_update' object.pk %}'"><em class="material-icons" style="color:#29b6f6">send</em></td>
+                        <td class="center dropdown-trigger" type="button" onclick="location.href='{% url 'students_update' object.pk %}'"><em class="material-icons" style="color:#29b6f6">create</em></td>
                         <td class="center dropdown-trigger" onclick="location.href='{% url 'students_delete' object.pk %}'"><em class="material-icons" style="color:#e53935">delete</em></td>
                     </tr>
                     </tbody>
             {% endfor %}
         </table>
 {% endblock %}
+
+  <!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
+  <!-- Modal Structure -->
+
 
 
