@@ -96,4 +96,3 @@ class TeacherUpdateView(generic.UpdateView):
             return self.render_to_response(
                 self.get_context_data(form=form, profile_form=teacher_form))
 
-    

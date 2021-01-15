@@ -1,3 +1,13 @@
-body{
+#form-generic{
+    padding-top: 120px;
+}
+
+.padding-left-logo{
+    padding-left: 30px;
     background-color: red;
+}
+
+#top-bot{
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
