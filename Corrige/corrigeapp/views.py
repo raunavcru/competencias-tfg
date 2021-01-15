@@ -47,6 +47,14 @@ class TeacherDeleteView(generic.DeleteView):
     model = models.Teacher
     template_name = 'teachers/confirm_delete.html'
 
+    def post(self, request, *args, **kwargs):
+        teacher_pk = self.kwargs.get('pk')
+        teacher = models.Teacher.objects.get(pk=teacher_pk)
+        teacher.user.delete()
+        teacher.delete()
+
+        return redirect('teachers_list')
+
 class TeachersListView(generic.ListView):
     model = models.Teacher
     template_name = 'teachers/list.html'
@@ -88,10 +96,4 @@ class TeacherUpdateView(generic.UpdateView):
             return self.render_to_response(
                 self.get_context_data(form=form, profile_form=teacher_form))
 
-    def post(self, request, *args, **kwargs):
-        teacher_pk = self.kwargs.get('pk')
-        teacher = models.Teacher.objects.get(pk=teacher_pk)
-        teacher.user.delete()
-        teacher.delete()
-
-        return redirect('teachers_list')
+    
