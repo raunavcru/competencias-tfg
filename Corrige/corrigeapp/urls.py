@@ -10,4 +10,6 @@ urlpatterns = [
     path('teachers/<int:pk>/delete', views.TeacherDeleteView.as_view(), name='teachers_delete'),
     path('teachers/list', views.TeachersListView.as_view(), name = 'teachers_list'),
     path('teachers/<int:pk>/update', views.TeacherUpdateView.as_view(), name = 'teachers_update'),
+    path('sets/list', views.SetsListView.as_view(), name = 'sets_list'),
+    path('sets/<int:pk>/delete', views.SetDeleteView.as_view(), name='sets_delete'),
 ]
