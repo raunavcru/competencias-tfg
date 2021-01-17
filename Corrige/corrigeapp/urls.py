@@ -12,6 +12,7 @@ urlpatterns = [
     path('teachers/<int:pk>/update', views.TeacherUpdateView.as_view(), name = 'teachers_update'),
     path('teachers/create', views.TeacherCreateView.as_view(), name = 'teachers_create'),
     path('sets/create', views.SetCreateView.as_view(), name = 'sets_create'),
+    path('sets/<int:pk>/update', views.SetUpdateView.as_view(), name = 'sets_update'),
     path('sets/list', views.SetsListView.as_view(), name = 'sets_list'),
     path('sets/<int:pk>/delete', views.SetDeleteView.as_view(), name='sets_delete'),
 ]

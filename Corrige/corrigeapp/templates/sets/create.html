@@ -7,7 +7,7 @@
             {% if request.get_full_path == '/sets/create' %}
                 <form class="col s12" id="form-create-students" method="post" action="{% url 'sets_create' %}">
             {% else %}
-
+                <form class="col s12" id="form-update-students" method="post" action="{% url 'sets_update' object.pk %}">
             {% endif %}
                     {% csrf_token %}
                     <div class="row">
@@ -24,7 +24,7 @@
                         </div>
                         <div class="grid-example col s5">
                             <div class="validate-input">
-                                <label>level</label>
+                                <label>Level</label>
                                 {{form.level}}
                                 <div class="form-errors">
                                     {{ form.level.errors }}
@@ -37,7 +37,7 @@
                         </div>
                         <div class="grid-example col s3">
                             <div class="validate-input">
-                                <label>grade</label>
+                                <label>Grade</label>
                                 {{form.grade}}
                                 <div class="form-errors">
                                     {{ form.grade.errors }}
@@ -46,7 +46,7 @@
                         </div>
                         <div class="grid-example col s5">
                             <div class="validate-input">
-                                <label>line</label>
+                                <label>Line</label>
                                 {{form.line}}
                                 <div class="form-errors">
                                     {{ form.line.errors }}
@@ -55,20 +55,26 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="grid-example col s12">
-                            <label>teacher</label>
+                        <div class="grid-example col s2">
+                        </div>
+                        <div class="grid-example col s8">
+                            <label>Teacher</label>
                                 {{form.teacher}}
                         </div>
                     </div>
                     <div class="row">
-                        <div class="grid-example col s12">
-                            <label>subject</label>
+                        <div class="grid-example col s2">
+                        </div>
+                        <div class="grid-example col s8">
+                            <label>Subject</label>
                                 {{form.subject}}
                         </div>
                     </div>
                     <div class="row">
-                        <div class="grid-example col s12">
-                            <label>evaluation</label>
+                        <div class="grid-example col s2">
+                        </div>
+                        <div class="grid-example col s8">
+                            <label>Evaluation</label>
                                 {{form.evaluation}}
                         </div>
                     </div>

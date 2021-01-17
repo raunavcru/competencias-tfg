@@ -114,3 +114,9 @@ class SetCreateView(generic.CreateView):
     form_class = forms.SetCreateForm
     template_name = "sets/create.html"
     success_url = reverse_lazy('sets_list')
+
+class SetUpdateView(generic.UpdateView):
+    model = models.Set
+    form_class = forms.SetCreateForm
+    template_name = "sets/create.html"
+    success_url = reverse_lazy('sets_list')
