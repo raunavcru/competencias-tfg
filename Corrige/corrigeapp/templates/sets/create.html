@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% block content %}
+<div id="form-generic" class="container">
+    <divclass="row">
+        <div class="grid-example col s11 offset-s1">
+            <div class="center-form">
+            {% if request.get_full_path == '/sets/create' %}
+                <form class="col s12" id="form-create-students" method="post" action="{% url 'sets_create' %}">
+            {% else %}
+
+            {% endif %}
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="grid-example col s2">
+                        </div>
+                        <div class="grid-example col s3">
+                            <div class="validate-input">
+                                <label>Name</label>
+                                {{form.name}}
+                                <div class="form-errors">
+                                    {{ form.name.errors }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-example col s5">
+                            <div class="validate-input">
+                                <label>level</label>
+                                {{form.level}}
+                                <div class="form-errors">
+                                    {{ form.level.errors }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="grid-example col s2">
+                        </div>
+                        <div class="grid-example col s3">
+                            <div class="validate-input">
+                                <label>grade</label>
+                                {{form.grade}}
+                                <div class="form-errors">
+                                    {{ form.grade.errors }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-example col s5">
+                            <div class="validate-input">
+                                <label>line</label>
+                                {{form.line}}
+                                <div class="form-errors">
+                                    {{ form.line.errors }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="grid-example col s12">
+                            <label>teacher</label>
+                                {{form.teacher}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="grid-example col s12">
+                            <label>subject</label>
+                                {{form.subject}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="grid-example col s12">
+                            <label>evaluation</label>
+                                {{form.evaluation}}
+                        </div>
+                    </div>
+                    {% if request.get_full_path == '/sets/create' %}
+                    <div class="row">
+                        <button class="btn waves-effect right" type="submit" name="action">Create
+                            <i class="large material-icons right"><i >send</i></i>
+                        </button>
+                    </div>
+                    {% else %}
+                    <div class="row">
+                        <button class="btn waves-effect right" style="background-color:#29b6f6" type="submit" name="action">Edit
+                            <i class="large material-icons right"><i >send</i></i>
+                        </button>
+                    </div>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

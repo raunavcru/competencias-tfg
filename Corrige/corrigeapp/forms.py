@@ -8,6 +8,10 @@ from . import models
 
 User = get_user_model()
 
+teachers = models.Teacher.objects.all()
+subjects = models.Subject.objects.all()
+evaluations = models.Evaluation.objects.all()
+
 class StudentCreateForm(forms.ModelForm):
     
     name = forms.CharField(required=True, widget=forms.TextInput(
@@ -96,3 +100,25 @@ class UserUpdateForm(forms.ModelForm):
             'last_name',
             'email',
         )   
+
+class SetCreateForm(forms.ModelForm):
+    
+    name = forms.CharField(required=True)
+    level = forms.CharField(required=True)
+    grade = forms.CharField(required=True)
+    line = forms.CharField(required=True)
+    teacher = forms.ModelChoiceField(teachers, empty_label=None)
+    subject = forms.ModelChoiceField(subjects, empty_label=None)
+    evaluation = forms.ModelChoiceField(evaluations, empty_label=None)
+
+    class Meta:
+        model = models.Set
+        fields = (
+            'name',
+            'level',
+            'grade',
+            'line',
+            'teacher',
+            'subject',
+            'evaluation',
+        )      

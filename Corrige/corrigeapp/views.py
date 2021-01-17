@@ -109,3 +109,8 @@ class SetDeleteView(generic.DeleteView):
     template_name = 'sets/delete.html'
     model = models.Set
     success_url = reverse_lazy('sets_list')
+
+class SetCreateView(generic.CreateView):
+    form_class = forms.SetCreateForm
+    template_name = "sets/create.html"
+    success_url = reverse_lazy('sets_list')
