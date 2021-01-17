@@ -4,7 +4,7 @@ from django.utils.crypto import get_random_string
 from django.utils.timezone import now
 from faker import Faker
 
-from corrigeapp.models import Student, Teacher, Administrator, Competence
+from corrigeapp.models import Student, Teacher, Administrator, Competence, Subject
 
 import random
 import json
@@ -17,15 +17,14 @@ USER_PKS = range(1, 10)
 STUDENT_PKS = range(1, 11)
 
 
-
 def run():
     management.call_command('flush', interactive=False)
 
     seed_users()
     seed_profiles()
     seed_students()
-    seed_competences_level3()
-    seed_competences_level2()
+    seed_competences()
+    seed_subjects()
 
     students = Student.objects.all()
     students.delete()
@@ -38,6 +37,9 @@ def run():
 
     competences = Competence.objects.all()
     competences.delete()
+
+    subjects = Subject.objects.all()
+    subjects.delete()
 
     with open('initial_data/initial_data.json', 'w') as file:
         file.write(json.dumps(POPULATE, indent=4))
@@ -135,9 +137,12 @@ def seed_students():
         }
         POPULATE.append(student)
 
-def seed_competences_level3():
+def seed_competences():
+    competence_pk = 1
+
+    ## Level 3
     competence = {
-        'pk': 1,
+        'pk': competence_pk,
         'model': 'corrigeapp.Competence',
         'fields': {
                 'code': 'CC1',
@@ -147,8 +152,11 @@ def seed_competences_level3():
             }
     }
     POPULATE.append(competence)
+    competence_pk += 1
+
+    ## Level 3
     competence = {
-        'pk': 2,
+        'pk': competence_pk,
         'model': 'corrigeapp.Competence',
         'fields': {
                 'code': 'CC2',
@@ -158,8 +166,11 @@ def seed_competences_level3():
             }
     }
     POPULATE.append(competence)
+    competence_pk += 1
+
+    ## Level 3
     competence = {
-        'pk': 3,
+        'pk': competence_pk,
         'model': 'corrigeapp.Competence',
         'fields': {
                 'code': 'CC3',
@@ -169,8 +180,11 @@ def seed_competences_level3():
             }
     }
     POPULATE.append(competence)
+    competence_pk += 1
+
+    ## Level 3
     competence = {
-        'pk': 4,
+        'pk': competence_pk,
         'model': 'corrigeapp.Competence',
         'fields': {
                 'code': 'CC4',
@@ -180,8 +194,11 @@ def seed_competences_level3():
             }
     }
     POPULATE.append(competence)
+    competence_pk += 1
+
+    ## Level 3 =====================================================================================
     competence = {
-        'pk': 5,
+        'pk': competence_pk,
         'model': 'corrigeapp.Competence',
         'fields': {
                 'code': 'CC5',
@@ -191,8 +208,74 @@ def seed_competences_level3():
             }
     }
     POPULATE.append(competence)
+    competence_level3_pk = competence_pk
+    competence_pk += 1
+    ## Level 2
     competence = {
-        'pk': 6,
+        'pk': competence_pk,
+        'model': 'corrigeapp.Competence',
+        'fields': {
+                'code': 'CS1',
+                'name': 'Obtener información concreta y relevante sobre hechos o fenómenos previamente delimitados, utilizando diferentes fuentes (directas e indirectas).',
+                'description': 'Obtener información concreta y relevante sobre hechos o fenómenos previamente delimitados, utilizando diferentes fuentes (directas e indirectas).',
+                'weight': 0.15,
+                'level': 2,
+                'parent': competence_level3_pk,
+        }
+    }
+    POPULATE.append(competence)
+    competence_level2_pk = competence_pk
+    competence_pk += 1
+    ## Level 1
+    competence = {
+        'pk': competence_pk,
+        'model': 'corrigeapp.Competence',
+        'fields': {
+                'code': 'CS1.1',
+                'name': 'Busca, selecciona y organiza información concreta y relevante, la analiza, obtiene conclusiones, reflexiona acerca del proceso seguido y lo comunica oralmente y/o por escrito.',
+                'description': 'Busca, selecciona y organiza información concreta y relevante, la analiza, obtiene conclusiones, reflexiona acerca del proceso seguido y lo comunica oralmente y/o por escrito.',
+                'weight': 0.15,
+                'level': 1,
+                'parent': competence_level2_pk,
+        }
+    }
+    POPULATE.append(competence)
+    competence_pk += 1
+    ## Level 2
+    competence = {
+        'pk': competence_pk,
+        'model': 'corrigeapp.Competence',
+        'fields': {
+                'code': 'CS2',
+                'name': 'Utilizar las tecnologías de la información y la comunicación para obtener información aprender y expresar contenidos sobre Ciencias Sociales.',
+                'description': 'Utilizar las tecnologías de la información y la comunicación para obtener información aprender y expresar contenidos sobre Ciencias Sociales.',
+                'weight': 0.3,
+                'level': 2,
+                'parent': competence_level3_pk,
+        }
+    }
+    POPULATE.append(competence)
+    competence_level2_pk = competence_pk
+    competence_pk += 1
+    ## Level 1
+    competence = {
+        'pk': competence_pk,
+        'model': 'corrigeapp.Competence',
+        'fields': {
+                'code': 'CS2.1',
+                'name': 'Utiliza la tecnologías de la información y la comunicación (Internet, blogs, redes sociales…) para elaborar trabajos con la terminología adecuada a los temas tratados.',
+                'description': 'Utiliza la tecnologías de la información y la comunicación (Internet, blogs, redes sociales…) para elaborar trabajos con la terminología adecuada a los temas tratados.',
+                'weight': 0.15,
+                'level': 1,
+                'parent': competence_level2_pk,
+        }
+    }
+    POPULATE.append(competence)
+    competence_pk += 1
+
+    ## Level 3
+    competence = {
+        'pk': competence_pk,
         'model': 'corrigeapp.Competence',
         'fields': {
                 'code': 'CC6',
@@ -202,8 +285,11 @@ def seed_competences_level3():
             }
     }
     POPULATE.append(competence)
+    competence_pk += 1
+
+    ## Level 3
     competence = {
-        'pk': 7,
+        'pk': competence_pk,
         'model': 'corrigeapp.Competence',
         'fields': {
                 'code': 'CC7',
@@ -213,18 +299,23 @@ def seed_competences_level3():
             }
     }
     POPULATE.append(competence)
+    competence_pk += 1
 
-def seed_competences_level2():    
-    competence = {
-        'pk': 8,
-        'model': 'corrigeapp.Competence',
+def seed_subjects():
+    subject_pk = 1
+    competencels = []
+
+    competencels = [5,6,7,8,9]
+    subject = {
+        'pk': subject_pk,
+        'model': 'corrigeapp.Subject',
         'fields': {
-                'code': 'CS1',
-                'name': 'Obtener información concreta y relevante sobre hechos o fenómenos previamente delimitados, utilizando diferentes fuentes (directas e indirectas).',
-                'description': 'Obtener información concreta y relevante sobre hechos o fenómenos previamente delimitados, utilizando diferentes fuentes (directas e indirectas).',
-                'weight': 0.15,
-                'level': 2,
-                'parent': 5,
-        }
+                'name': 'Ciencias sociales',
+                'level': '5º',
+                'grade': 'Primaria',
+                'description': 'Ciencias sociales',
+                'competences': competencels, 
+            }
     }
-    POPULATE.append(competence)
+    POPULATE.append(subject)
+    subject_pk += 1
