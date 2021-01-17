@@ -4,7 +4,7 @@ from django.utils.crypto import get_random_string
 from django.utils.timezone import now
 from faker import Faker
 
-from corrigeapp.models import Student, Teacher, Administrator
+from corrigeapp.models import Student, Teacher, Administrator, Competence
 
 import random
 import json
@@ -24,6 +24,8 @@ def run():
     seed_users()
     seed_profiles()
     seed_students()
+    seed_competences_level3()
+    seed_competences_level2()
 
     students = Student.objects.all()
     students.delete()
@@ -33,6 +35,9 @@ def run():
 
     admins = Administrator.objects.all()
     admins.delete()
+
+    competences = Competence.objects.all()
+    competences.delete()
 
     with open('initial_data/initial_data.json', 'w') as file:
         file.write(json.dumps(POPULATE, indent=4))
@@ -129,7 +134,97 @@ def seed_students():
             }
         }
         POPULATE.append(student)
-            
-        
 
-        
+def seed_competences_level3():
+    competence = {
+        'pk': 1,
+        'model': 'corrigeapp.Competence',
+        'fields': {
+                'code': 'CC1',
+                'name': 'Comunicación lingüística',
+                'description': 'Comunicación lingüística.',
+                'level': 3,
+            }
+    }
+    POPULATE.append(competence)
+    competence = {
+        'pk': 2,
+        'model': 'corrigeapp.Competence',
+        'fields': {
+                'code': 'CC2',
+                'name': 'Competencia matemática y competencias básicas en ciencia y tecnología',
+                'description': 'Competencia matemática y competencias básicas en ciencia y tecnología.',
+                'level': 3,
+            }
+    }
+    POPULATE.append(competence)
+    competence = {
+        'pk': 3,
+        'model': 'corrigeapp.Competence',
+        'fields': {
+                'code': 'CC3',
+                'name': 'Competencia digital',
+                'description': 'Competencia digital.',
+                'level': 3,
+            }
+    }
+    POPULATE.append(competence)
+    competence = {
+        'pk': 4,
+        'model': 'corrigeapp.Competence',
+        'fields': {
+                'code': 'CC4',
+                'name': 'Aprender a aprender',
+                'description': 'Aprender a aprender.',
+                'level': 3,
+            }
+    }
+    POPULATE.append(competence)
+    competence = {
+        'pk': 5,
+        'model': 'corrigeapp.Competence',
+        'fields': {
+                'code': 'CC5',
+                'name': 'Competencias sociales y cívicas',
+                'description': 'Competencias sociales y cívicas.',
+                'level': 3,
+            }
+    }
+    POPULATE.append(competence)
+    competence = {
+        'pk': 6,
+        'model': 'corrigeapp.Competence',
+        'fields': {
+                'code': 'CC6',
+                'name': 'Sentido de la iniciativa y espíritu emprendedor',
+                'description': 'Sentido de iniciativa y espíritu emprendedor.',
+                'level': 3,
+            }
+    }
+    POPULATE.append(competence)
+    competence = {
+        'pk': 7,
+        'model': 'corrigeapp.Competence',
+        'fields': {
+                'code': 'CC7',
+                'name': 'Conciencia y expresiones culturales',
+                'description': 'Conciencia y expresiones culturales.',
+                'level': 3,
+            }
+    }
+    POPULATE.append(competence)
+
+def seed_competences_level2():    
+    competence = {
+        'pk': 8,
+        'model': 'corrigeapp.Competence',
+        'fields': {
+                'code': 'CS1',
+                'name': 'Obtener información concreta y relevante sobre hechos o fenómenos previamente delimitados, utilizando diferentes fuentes (directas e indirectas).',
+                'description': 'Obtener información concreta y relevante sobre hechos o fenómenos previamente delimitados, utilizando diferentes fuentes (directas e indirectas).',
+                'weight': 0.15,
+                'level': 2,
+                'parent': 5,
+        }
+    }
+    POPULATE.append(competence)
