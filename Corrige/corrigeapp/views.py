@@ -1,9 +1,20 @@
 from django.shortcuts import render, redirect
 from django.views import generic
 from django.urls import reverse, reverse_lazy
+from dal import autocomplete
+
 
 from . import forms
 from . import models
+
+class TeacherAutocomplete(autocomplete.Select2QuerySetView):
+    def get_queryset(self):
+        qs = models.Teacher.objects.all()
+
+        if self.q:
+            qs = qs.filter(name__istartswith=self.q)
+
+        return qs
 
 class StudentCreateView(generic.CreateView):
     form_class = forms.StudentCreateForm
