@@ -124,6 +124,3 @@ class SetCreateForm(forms.ModelForm):
             'subject',
             'evaluation',
         )
-        widgets = {
-            'teacher': autocomplete.ModelSelect2(url='autocomplete_teachers')
-        } 
