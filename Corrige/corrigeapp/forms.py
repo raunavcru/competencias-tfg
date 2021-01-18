@@ -3,6 +3,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm, UserChangeForm, UserCreationForm
 from django.core.exceptions import ValidationError
 from django.utils.timezone import now
+from dal import autocomplete
 
 from . import models
 
@@ -107,7 +108,8 @@ class SetCreateForm(forms.ModelForm):
     level = forms.CharField(required=True)
     grade = forms.CharField(required=True)
     line = forms.CharField(required=True)
-    teacher = forms.ModelChoiceField(teachers, empty_label=None)
+    teacher = forms.ModelChoiceField(queryset = models.Teacher.objects.all(),
+        widget = autocomplete.ModelSelect2(url='autocomplete_teachers'))
     subject = forms.ModelChoiceField(subjects, empty_label=None)
     evaluation = forms.ModelChoiceField(evaluations, empty_label=None)
 
@@ -121,4 +123,7 @@ class SetCreateForm(forms.ModelForm):
             'teacher',
             'subject',
             'evaluation',
-        )      
+        )
+        widgets = {
+            'teacher': autocomplete.ModelSelect2(url='autocomplete_teachers')
+        } 

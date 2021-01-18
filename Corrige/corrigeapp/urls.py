@@ -2,6 +2,7 @@ from django.urls import path, re_path
 from . import views
 
 urlpatterns = [
+    path('autocomplete/teachers', views.TeacherAutocomplete.as_view(), name = 'autocomplete_teachers'),
     path('students/list', views.StudentsListView.as_view(), name = 'students_list'),
     path('students/create', views.StudentCreateView.as_view(), name = 'students_create'),
     path('students/<int:pk>/delete', views.StudentDeleteView.as_view(), name='students_delete'),
@@ -15,4 +16,5 @@ urlpatterns = [
     path('sets/<int:pk>/update', views.SetUpdateView.as_view(), name = 'sets_update'),
     path('sets/list', views.SetsListView.as_view(), name = 'sets_list'),
     path('sets/<int:pk>/delete', views.SetDeleteView.as_view(), name='sets_delete'),
+
 ]
