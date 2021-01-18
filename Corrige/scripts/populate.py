@@ -4,7 +4,7 @@ from django.utils.crypto import get_random_string
 from django.utils.timezone import now
 from faker import Faker
 
-from corrigeapp.models import Student, Teacher, Administrator, Competence, Subject
+from corrigeapp.models import Student, Teacher, Administrator, Competence, Subject, Evaluation, Set
 
 import random
 import json
@@ -12,9 +12,8 @@ import json
 DATE_FORMAT = '%Y-%m-%d %H:%M:%S%z'
 FAKE = Faker('es_ES')
 POPULATE = []
-ROLE_CHOICE = ['TEACHER', 'ADMIN']
-USER_PKS = range(1, 10)
-STUDENT_PKS = range(1, 11)
+USER_PKS = range(2, 10)
+STUDENT_PKS = range(1, 30)
 
 
 def run():
@@ -22,9 +21,15 @@ def run():
 
     seed_users()
     seed_profiles()
+    seed_admins()
     seed_students()
     seed_competences()
     seed_subjects()
+    seed_evaluations()
+    seed_sets()
+
+    sets = Set.objects.all()
+    sets.delete()
 
     students = Student.objects.all()
     students.delete()
@@ -40,6 +45,9 @@ def run():
 
     subjects = Subject.objects.all()
     subjects.delete()
+
+    evaluations = Evaluation.objects.all()
+    evaluations.delete()
 
     with open('initial_data/initial_data.json', 'w') as file:
         file.write(json.dumps(POPULATE, indent=4))
@@ -73,50 +81,73 @@ def seed_users():
 
 def seed_profiles():
     for user_pk in USER_PKS:
-        role = random.choice(ROLE_CHOICE)
-        if role == 'TEACHER':
-            teacher = {
-                'pk': user_pk,
-                'model': 'corrigeapp.TEACHER',
-                'fields': {
-                    'profile_ptr_id': user_pk,
-                }
+        
+        teacher = {
+            'pk': user_pk,
+            'model': 'corrigeapp.TEACHER',
+            'fields': {
+                'profile_ptr_id': user_pk,
             }
-            POPULATE.append(teacher)
+        }
+        POPULATE.append(teacher)
 
-            profile = {
-                'pk': user_pk,
-                'model': 'corrigeapp.PROFILE',
-                'fields': {
-                    'birthdate': '1980-01-01',
-                    'initials': get_random_string(length=3).upper(),
-                    'role': 'TEACHER',
-                    'user': user_pk,
-                }
+        profile = {
+            'pk': user_pk,
+            'model': 'corrigeapp.PROFILE',
+            'fields': {
+                'birthdate': '1980-01-01',
+                'initials': get_random_string(length=3).upper(),
+                'role': 'TEACHER',
+                'user': user_pk,
             }
-            POPULATE.append(profile)
-            
-        else:
-            admin = {
-                'pk': user_pk,
-                'model': 'corrigeapp.ADMINISTRATOR',
-                'fields': {
-                    'profile_ptr_id': user_pk,
-                }
-            }
-            POPULATE.append(admin) 
+        }
+        POPULATE.append(profile)
 
-            profile = {
-                'pk': user_pk,
-                'model': 'corrigeapp.PROFILE',
-                'fields': {
-                    'birthdate': '1980-01-01',
-                    'initials': get_random_string(length=3).upper(),
-                    'role': 'ADMIN',
-                    'user': user_pk,
-                }
-            }
-            POPULATE.append(profile)
+def seed_admins():
+    profile = FAKE.profile()
+    names = profile['name'].split(' ')
+    first_name = names[0]
+    last_name = names[1]
+
+    fields = {
+        'password': make_password(profile['username']),
+        'is_superuser': False,
+        'username': profile['username'],
+        'first_name': first_name,
+        'last_name': last_name,
+        'email': profile['mail'],
+        'is_staff': False,
+        'date_joined': now().strftime(DATE_FORMAT),
+    }
+
+    user = {
+        'pk': 1,
+        'model': 'auth.User',
+        'fields': fields
+    }
+
+    POPULATE.append(user)
+    admin = {
+        'pk': 1,
+        'model': 'corrigeapp.ADMINISTRATOR',
+        'fields': {
+            'profile_ptr_id': 1,
+        }
+    }
+    POPULATE.append(admin)
+
+    profile = {
+        'pk': 1,
+        'model': 'corrigeapp.PROFILE',
+        'fields': {
+            'birthdate': '1980-01-01',
+            'initials': get_random_string(length=3).upper(),
+            'role': 'ADMINISTRATOR',
+            'user': 1,
+        }
+    }
+    POPULATE.append(profile)           
+        
 
 def seed_students():
     for pk in STUDENT_PKS:
@@ -310,12 +341,147 @@ def seed_subjects():
         'pk': subject_pk,
         'model': 'corrigeapp.Subject',
         'fields': {
-                'name': 'Ciencias sociales',
+                'name': 'Ciencias Sociales',
                 'level': '5º',
                 'grade': 'Primaria',
-                'description': 'Ciencias sociales',
+                'description': 'Ciencias Sociales',
                 'competences': competencels, 
             }
     }
     POPULATE.append(subject)
     subject_pk += 1
+    competencels = []
+    subject = {
+        'pk': subject_pk,
+        'model': 'corrigeapp.Subject',
+        'fields': {
+                'name': 'Lengua Castellana y Literatura',
+                'level': '5º',
+                'grade': 'Primaria',
+                'description': 'Lengua Castellana y Literatura',
+                'competences': competencels, 
+            }
+    }
+    POPULATE.append(subject)
+    subject_pk += 1
+    competencels = []
+    subject = {
+        'pk': subject_pk,
+        'model': 'corrigeapp.Subject',
+        'fields': {
+                'name': 'Matemáticas',
+                'level': '5º',
+                'grade': 'Primaria',
+                'description': 'Matemáticas',
+                'competences': competencels, 
+            }
+    }
+    POPULATE.append(subject)
+    subject_pk += 1
+    competencels = []
+    subject = {
+        'pk': subject_pk,
+        'model': 'corrigeapp.Subject',
+        'fields': {
+                'name': 'Valores Sociales y Cívicos',
+                'level': '5º',
+                'grade': 'Primaria',
+                'description': 'Valores Sociales y Cívicos',
+                'competences': competencels, 
+            }
+    }
+    POPULATE.append(subject)
+    subject_pk += 1
+    competencels = []
+    subject = {
+        'pk': subject_pk,
+        'model': 'corrigeapp.Subject',
+        'fields': {
+                'name': 'Educación Plástica',
+                'level': '5º',
+                'grade': 'Primaria',
+                'description': 'Educación Plástica',
+                'competences': competencels, 
+            }
+    }
+    POPULATE.append(subject)
+    subject_pk += 1
+    competencels = []
+    subject = {
+        'pk': subject_pk,
+        'model': 'corrigeapp.Subject',
+        'fields': {
+                'name': 'Educación Musical',
+                'level': '5º',
+                'grade': 'Primaria',
+                'description': 'Educación Musical',
+                'competences': competencels, 
+            }
+    }
+    POPULATE.append(subject)
+    subject_pk += 1
+    competencels = []
+    subject = {
+        'pk': subject_pk,
+        'model': 'corrigeapp.Subject',
+        'fields': {
+                'name': 'Segunda Lengua Extranjera',
+                'level': '5º',
+                'grade': 'Primaria',
+                'description': 'Segunda Lengua Extranjera',
+                'competences': competencels, 
+            }
+    }
+    POPULATE.append(subject)
+    subject_pk += 1
+    competencels = []
+    subject = {
+        'pk': subject_pk,
+        'model': 'corrigeapp.Subject',
+        'fields': {
+                'name': 'Educación Física',
+                'level': '5º',
+                'grade': 'Primaria',
+                'description': 'Educación Física',
+                'competences': competencels, 
+            }
+    }
+    POPULATE.append(subject)
+    subject_pk += 1
+
+def seed_evaluations():
+    evaluation = {
+        'pk': 1,
+        'model': 'corrigeapp.Evaluation',
+        'fields': {
+                'name': 'Matemáticas 5º Primaria Final',
+                'start_date': '1980-01-01',
+                'end_date': '1980-01-01',
+                'is_final': True,
+                'period': 'Final',
+                'subject': 3,
+            }
+    }
+    POPULATE.append(evaluation)
+
+def seed_sets():
+    students = []
+
+    for n in STUDENT_PKS:
+        students.append(n)
+
+    set_obj = {
+        'pk': 1,
+        'model': 'corrigeapp.Set',
+        'fields': {
+                'name': 'Matemáticas 5ºA Primaria',
+                'level': '5º',
+                'grade': 'Primaria',
+                'line': 'A',
+                'teacher': 2,
+                'subject': 3,
+                'evaluation': 1,
+                'students': students,
+            }
+    }
+    POPULATE.append(set_obj)

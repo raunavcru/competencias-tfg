@@ -113,7 +113,7 @@ class Evaluation(Common):
 
     period = models.CharField(("period"), max_length=50)
 
-    parent = models.ForeignKey('self', on_delete=models.CASCADE, related_name='evaluation_parent')
+    parent = models.ForeignKey('self', on_delete=models.CASCADE, related_name='evaluation_parent', blank=True, null=True)
 
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE, related_name='subject_evaluation')
 
