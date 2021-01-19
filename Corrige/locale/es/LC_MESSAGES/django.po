@@ -32,7 +32,7 @@ msgstr "Lista de profesores"
 
 #: .\corrigeapp\templates\teachers\list.html:12
 msgid "Surname"
-msgstr ""
+msgstr "Apellidos"
 
 #: .\corrigeapp\templates\teachers\list.html:13
 msgid "Name"
