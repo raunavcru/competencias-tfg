@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-19 15:34+0100\n"
+"POT-Creation-Date: 2021-01-19 19:10+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,6 +25,19 @@ msgstr ""
 #: .\Corrige\local_settings.py:120 .\Corrige\settings.py:120
 msgid "Spanish"
 msgstr ""
+
+#: .\corrigeapp\templates\teachers\confirm_delete.html:7
+msgid "Are you sure about deleting the teacher "
+msgstr "¿Estás seguro de que quieres eliminar el profesor "
+
+#: .\corrigeapp\templates\teachers\confirm_delete.html:10
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: .\corrigeapp\templates\teachers\confirm_delete.html:11
+#: .\corrigeapp\templates\teachers\list.html:18
+msgid "Delete"
+msgstr "Borrar"
 
 #: .\corrigeapp\templates\teachers\create.html:19
 #: .\corrigeapp\templates\teachers\list.html:13
@@ -72,7 +85,3 @@ msgstr "Editar"
 #: .\corrigeapp\templates\teachers\list.html:5
 msgid "List of teachers"
 msgstr "Lista de profesores"
-
-#: .\corrigeapp\templates\teachers\list.html:18
-msgid "Delete"
-msgstr "Borrar"
