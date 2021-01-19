@@ -4,6 +4,7 @@ from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm, Us
 from django.core.exceptions import ValidationError
 from django.utils.timezone import now
 from dal import autocomplete
+from django.contrib.auth.hashers import check_password
 
 from . import models
 
@@ -28,9 +29,29 @@ class StudentCreateForm(forms.ModelForm):
             'surname',
             'birthdate',
             'initials',
-
         )
 
+    def clean_initials(self):
+        initials = self.cleaned_data.get('initials')
+        if len(initials) > 9:
+            raise ValidationError(
+                'El tamaño de las iniciales no puede ser mayor que 9')
+        return initials
+
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
+        if len(name) > 100:
+            raise ValidationError(
+                'El tamaño del nombre no puede ser mayor que 100')
+        return name
+
+    def clean_surname(self):
+        surname = self.cleaned_data.get('surname')
+        if len(surname) > 100:
+            raise ValidationError(
+                'El tamaño del apellido no puede ser mayor que 100')
+        return surname
+    
     def clean_birthdate(self):
         birthdate = self.cleaned_data.get('birthdate')
         if birthdate >= now().date():
@@ -62,6 +83,36 @@ class TeacherCreateForm(UserCreationForm):
             'password1',
             'password2'
         )
+
+
+    def clean_initials(self):
+        initials = self.cleaned_data.get('initials')
+        if len(initials) > 9:
+            raise ValidationError(
+                'El tamaño de las iniciales no puede ser mayor que 9')
+        return initials
+
+    def clean_first_name(self):
+        first_name = self.cleaned_data.get('first_name')
+        if len(first_name) > 100:
+            raise ValidationError(
+                'El tamaño del nombre no puede ser mayor que 100')
+        return first_name
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if not email:
+            raise ValidationError('El email es necesario')
+        elif User.objects.filter(email=email).exists():
+            raise ValidationError('El email ya existe')
+        return email
+
+    def clean_last_name(self):
+        last_name = self.cleaned_data.get('last_name')
+        if len(last_name) > 100:
+            raise ValidationError(
+                'El tamaño del apellido no puede ser mayor que 100')
+        return last_name
         
     def clean_birthdate(self):
         birthdate = self.cleaned_data.get('birthdate')
@@ -88,6 +139,21 @@ class TeacherUpdateForm(forms.ModelForm):
             'initials',
         )   
 
+    def clean_birthdate(self):
+        birthdate = self.cleaned_data.get('birthdate')
+        if birthdate >= now().date():
+            raise ValidationError(
+                'La fecha de cumpleaños debe ser en el pasado')
+        return birthdate
+
+    def clean_initials(self):
+        initials = self.cleaned_data.get('initials')
+        if len(initials) > 9:
+            raise ValidationError(
+                'El tamaño de las iniciales no puede ser mayor que 9')
+        return initials
+
+    
 class UserUpdateForm(forms.ModelForm):
     first_name = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': 'Alberto', 'id': 'first_name-create-teacher'}))
@@ -101,6 +167,28 @@ class UserUpdateForm(forms.ModelForm):
             'last_name',
             'email',
         )   
+
+    def clean_first_name(self):
+        first_name = self.cleaned_data.get('first_name')
+        if len(first_name) > 100:
+            raise ValidationError(
+                'El tamaño del nombre no puede ser mayor que 100')
+        return first_name
+
+    def clean_last_name(self):
+        last_name = self.cleaned_data.get('last_name')
+        if len(last_name) > 100:
+            raise ValidationError(
+                'El tamaño del apellido no puede ser mayor que 100')
+        return last_name
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if not email:
+            raise ValidationError('El email es necesario')
+        elif User.objects.filter(email=email).exists():
+            raise ValidationError('El email ya existe')
+        return email
 
 class SetCreateForm(forms.ModelForm):
     
@@ -124,3 +212,31 @@ class SetCreateForm(forms.ModelForm):
             'subject',
             'evaluation',
         )
+
+    def clean_grade(self):
+        grade = self.cleaned_data.get('grade')
+        if len(grade) > 50:
+            raise ValidationError(
+                'El tamaño del grado no puede ser mayor que 50')
+        return line
+
+    def clean_level(self):
+        level = self.cleaned_data.get('level')
+        if len(level) > 50:
+            raise ValidationError(
+                'El tamaño del nivel no puede ser mayor que 50')
+        return line
+
+    def clean_line(self):
+        line = self.cleaned_data.get('line')
+        if len(line) > 50:
+            raise ValidationError(
+                'El tamaño de la línea no puede ser mayor que 50')
+        return line
+
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
+        if len(name) > 100:
+            raise ValidationError(
+                'El tamaño del nombre no puede ser mayor que 100')
+        return name
