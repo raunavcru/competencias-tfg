@@ -46,17 +46,17 @@ class Profile(models.Model):
 class Competence(Common):
     code = models.CharField(("code"), max_length=50)
 
-    name = models.CharField(("name"), max_length=100)
+    name = models.CharField(("name"), max_length=300)
 
-    description = models.CharField(("description"), max_length=100)
+    description = models.CharField(("description"), max_length=300)
 
-    subject_weight = models.DecimalField('subject_weight', max_digits=3, decimal_places=2)
+    subject_weight = models.DecimalField('subject_weight', max_digits=3, decimal_places=2, blank=True, null=True)
 
-    weight = models.DecimalField('weight', max_digits=3, decimal_places=2)
+    weight = models.DecimalField('weight', max_digits=3, decimal_places=2, blank=True, null=True)
 
     level = models.PositiveIntegerField('level')
 
-    parent = models.ForeignKey('self', on_delete=models.CASCADE, related_name='competence_parent')
+    parent = models.ForeignKey('self', on_delete=models.CASCADE, related_name='competence_parent', blank=True, null=True)
 
     class Meta:
         verbose_name = 'Competence'
@@ -113,7 +113,7 @@ class Evaluation(Common):
 
     period = models.CharField(("period"), max_length=50)
 
-    parent = models.ForeignKey('self', on_delete=models.CASCADE, related_name='evaluation_parent')
+    parent = models.ForeignKey('self', on_delete=models.CASCADE, related_name='evaluation_parent', blank=True, null=True)
 
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE, related_name='subject_evaluation')
 
