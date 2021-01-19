@@ -1,2 +1,0 @@
-msgid "List of teachers"
-msgstr "Listado de profesores"
