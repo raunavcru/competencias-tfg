@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-19 15:13+0100\n"
+"POT-Creation-Date: 2021-01-19 15:34+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,29 +26,52 @@ msgstr ""
 msgid "Spanish"
 msgstr ""
 
-#: .\corrigeapp\templates\teachers\list.html:5
-msgid "List of teachers"
-msgstr "Lista de profesores"
-
-#: .\corrigeapp\templates\teachers\list.html:12
-msgid "Surname"
-msgstr "Apellidos"
-
+#: .\corrigeapp\templates\teachers\create.html:19
 #: .\corrigeapp\templates\teachers\list.html:13
 msgid "Name"
 msgstr "Nombre"
 
-#: .\corrigeapp\templates\teachers\list.html:14
-msgid "Initials"
-msgstr "Iniciales"
+#: .\corrigeapp\templates\teachers\create.html:28
+#: .\corrigeapp\templates\teachers\list.html:12
+msgid "Surname"
+msgstr "Apellidos"
 
+#: .\corrigeapp\templates\teachers\create.html:41
 #: .\corrigeapp\templates\teachers\list.html:15
 msgid "Birthday"
 msgstr "Fecha de nacimiento"
 
+#: .\corrigeapp\templates\teachers\create.html:55
+#: .\corrigeapp\templates\teachers\list.html:14
+msgid "Initials"
+msgstr "Iniciales"
+
+#: .\corrigeapp\templates\teachers\create.html:85
+#, fuzzy
+#| msgid "Surname"
+msgid "Username"
+msgstr "Nombre de usuario"
+
+#: .\corrigeapp\templates\teachers\create.html:96
+msgid "Password"
+msgstr "Contraseña"
+
+#: .\corrigeapp\templates\teachers\create.html:107
+msgid "Confirm Password"
+msgstr "Confirmar Contraseña"
+
+#: .\corrigeapp\templates\teachers\create.html:117
+msgid "Create"
+msgstr "Crear"
+
+#: .\corrigeapp\templates\teachers\create.html:123
 #: .\corrigeapp\templates\teachers\list.html:17
 msgid "Edit"
 msgstr "Editar"
+
+#: .\corrigeapp\templates\teachers\list.html:5
+msgid "List of teachers"
+msgstr "Lista de profesores"
 
 #: .\corrigeapp\templates\teachers\list.html:18
 msgid "Delete"
