@@ -126,6 +126,16 @@ class SetCreateView(generic.CreateView):
     template_name = "sets/create.html"
     success_url = reverse_lazy('sets_list')
 
+    def render_to_response(self, context, **response_kwargs):
+        context['teachers'] = models.Teacher.objects.all()
+        response_kwargs.setdefault('content_type', self.content_type)
+        return self.response_class(
+            request=self.request,
+            template=self.get_template_names(),
+            context=context,
+            using=self.template_engine,
+            **response_kwargs)
+
 class SetUpdateView(generic.UpdateView):
     model = models.Set
     form_class = forms.SetCreateForm

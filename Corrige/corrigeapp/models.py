@@ -91,7 +91,7 @@ class Teacher(Profile):
         verbose_name_plural = 'Teachers'
 
     def __str__(self):
-        return self.user.username + ' teacher profile'
+        return self.user.last_name + ', ' + self.user.first_name
 
 class Administrator(Profile):
 

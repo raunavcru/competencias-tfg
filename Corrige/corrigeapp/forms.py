@@ -196,8 +196,8 @@ class SetCreateForm(forms.ModelForm):
     level = forms.CharField(required=True)
     grade = forms.CharField(required=True)
     line = forms.CharField(required=True)
-    teacher = forms.ModelChoiceField(queryset = models.Teacher.objects.all(),
-        widget = autocomplete.ModelSelect2(url='autocomplete_teachers'))
+    teacher = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'class': "input-field autocomplete ", 'id': "autocomplete-input"}))
     subject = forms.ModelChoiceField(subjects, empty_label=None)
     evaluation = forms.ModelChoiceField(evaluations, empty_label=None)
 
@@ -212,7 +212,7 @@ class SetCreateForm(forms.ModelForm):
             'subject',
             'evaluation',
         )
-
+        
     def clean_grade(self):
         grade = self.cleaned_data.get('grade')
         if len(grade) > 50:
