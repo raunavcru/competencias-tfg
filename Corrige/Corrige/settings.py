@@ -134,6 +134,12 @@ LOCALE_PATHS = (
     os.path.join(BASE_DIR, "locale"),
 )
 
+# Date
+
+DATE_INPUT_FORMATS = [
+    '%d/%m/%Y',
+]
+
 # Login 
 
 LOGIN_URL = '/auth/login/'
