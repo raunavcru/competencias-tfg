@@ -218,14 +218,14 @@ class SetCreateForm(forms.ModelForm):
         if len(grade) > 50:
             raise ValidationError(
                 'El tamaño del grado no puede ser mayor que 50')
-        return line
+        return grade
 
     def clean_level(self):
         level = self.cleaned_data.get('level')
         if len(level) > 50:
             raise ValidationError(
                 'El tamaño del nivel no puede ser mayor que 50')
-        return line
+        return level
 
     def clean_line(self):
         line = self.cleaned_data.get('line')

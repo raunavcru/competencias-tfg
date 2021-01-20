@@ -4,7 +4,6 @@ from dal import autocomplete
 from . import models
 
 urlpatterns = [
-    path('autocomplete/teachers', autocomplete.Select2QuerySetView.as_view(model = models.Teacher), name = 'autocomplete_teachers'),
     path('students/list', views.StudentsListView.as_view(), name = 'students_list'),
     path('students/create', views.StudentCreateView.as_view(), name = 'students_create'),
     path('students/<int:pk>/delete', views.StudentDeleteView.as_view(), name='students_delete'),

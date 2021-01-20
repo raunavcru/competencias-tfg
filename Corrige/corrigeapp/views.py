@@ -127,7 +127,11 @@ class SetCreateView(generic.CreateView):
     success_url = reverse_lazy('sets_list')
 
     def render_to_response(self, context, **response_kwargs):
-        context['teachers'] = models.Teacher.objects.all()
+        teachers = models.Teacher.objects.all()
+        teachers_username = []
+        for t in range(0,len(teachers)):
+            teachers_username.append(teachers[t].user.username)
+        context['teachers'] = teachers_username
         response_kwargs.setdefault('content_type', self.content_type)
         return self.response_class(
             request=self.request,
