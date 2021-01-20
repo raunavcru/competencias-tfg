@@ -9,24 +9,6 @@
         $('select').formSelect();
       });
     </script>
-    <script>//Autocompletado
-
-        document.addEventListener('DOMContentLoaded', function () {
-
-        var options = {
-            data: {
-        {% for l in teachers%}
-        "{{ l }}": null,
-            {% endfor %}
-
-            }
-        }
-        var elems = document.querySelectorAll('.autocomplete');
-        var instances = M.Autocomplete.init(elems, options);
-        instances.close();
-
-        });
-    </script>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">

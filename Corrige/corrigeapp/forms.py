@@ -196,8 +196,7 @@ class SetCreateForm(forms.ModelForm):
     level = forms.CharField(required=True)
     grade = forms.CharField(required=True)
     line = forms.CharField(required=True)
-    teacher = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'class': "input-field autocomplete ", 'id': "autocomplete-input"}))
+    teacher = forms.ModelChoiceField(teachers, empty_label=None)
     subject = forms.ModelChoiceField(subjects, empty_label=None)
     evaluation = forms.ModelChoiceField(evaluations, empty_label=None)
 

@@ -1,20 +1,10 @@
+from django.contrib.auth import get_user_model
 from django.shortcuts import render, redirect
 from django.views import generic
 from django.urls import reverse, reverse_lazy
-from dal import autocomplete
-
 
 from . import forms
 from . import models
-
-class TeacherAutocomplete(autocomplete.Select2QuerySetView):
-    def get_queryset(self):
-        qs = models.Teacher.objects.all()
-
-        if self.q:
-            qs = qs.filter(name__istartswith=self.q)
-
-        return qs
 
 class StudentCreateView(generic.CreateView):
     form_class = forms.StudentCreateForm
@@ -125,20 +115,6 @@ class SetCreateView(generic.CreateView):
     form_class = forms.SetCreateForm
     template_name = "sets/create.html"
     success_url = reverse_lazy('sets_list')
-
-    def render_to_response(self, context, **response_kwargs):
-        teachers = models.Teacher.objects.all()
-        teachers_username = []
-        for t in range(0,len(teachers)):
-            teachers_username.append(teachers[t].user.username)
-        context['teachers'] = teachers_username
-        response_kwargs.setdefault('content_type', self.content_type)
-        return self.response_class(
-            request=self.request,
-            template=self.get_template_names(),
-            context=context,
-            using=self.template_engine,
-            **response_kwargs)
 
 class SetUpdateView(generic.UpdateView):
     model = models.Set
