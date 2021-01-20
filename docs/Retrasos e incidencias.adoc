@@ -1,0 +1,17 @@
+= Retrasos
+
+[grid=cols]
+[cols=3*,options="header"]
+|===
+|Tarea
+|Fecha prevista
+|Fecha realizado
+
+|CU-02 Creación de alumnos.
+|5 de Enero
+|7 de Enero
+
+|CU-09 Listado de Grupos de clase.
+|16 de Enero
+|17 de Enero
+|===
