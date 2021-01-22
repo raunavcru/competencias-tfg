@@ -37,10 +37,9 @@ class StudentCreateForm(forms.ModelForm):
 
     def clean_initials(self):
         initials = self.cleaned_data.get('initials')
-        message = 'El tamaño de las iniciales no puede ser mayor que 9'
         if len(initials) > 9:
             raise ValidationError(
-                message)
+                MESSAGE_INITIALS)
         return initials
 
     def clean_name(self):
@@ -92,17 +91,16 @@ class TeacherCreateForm(UserCreationForm):
 
     def clean_initials(self):
         initials = self.cleaned_data.get('initials')
-        message = 'El tamaño de las iniciales no puede ser mayor que 9'
         if len(initials) > 9:
             raise ValidationError(
-                message)
+                MESSAGE_INITIALS)
         return initials
 
     def clean_first_name(self):
         first_name = self.cleaned_data.get('first_name')
         if len(first_name) > 100:
             raise ValidationError(
-                'El tamaño del nombre no puede ser mayor que 100')
+                MESSAGE_NAME)
         return first_name
 
     def clean_email(self):
@@ -117,14 +115,14 @@ class TeacherCreateForm(UserCreationForm):
         last_name = self.cleaned_data.get('last_name')
         if len(last_name) > 100:
             raise ValidationError(
-                'El tamaño del apellido no puede ser mayor que 100')
+                MESSAGE_SURNAME)
         return last_name
         
     def clean_birthdate(self):
         birthdate = self.cleaned_data.get('birthdate')
         if birthdate >= now().date():
             raise ValidationError(
-                'La fecha de cumpleaños debe ser en el pasado')
+                MESSAGE_BIRTHDATE)
         return birthdate
 
     def clean_username(self):
@@ -149,7 +147,7 @@ class TeacherUpdateForm(forms.ModelForm):
         birthdate = self.cleaned_data.get('birthdate')
         if birthdate >= now().date():
             raise ValidationError(
-                'La fecha de cumpleaños debe ser en el pasado')
+                MESSAGE_BIRTHDATE)
         return birthdate
 
     def clean_initials(self):
@@ -179,14 +177,14 @@ class UserUpdateForm(forms.ModelForm):
         first_name = self.cleaned_data.get('first_name')
         if len(first_name) > 100:
             raise ValidationError(
-                'El tamaño del nombre no puede ser mayor que 100')
+                MESSAGE_NAME)
         return first_name
 
     def clean_last_name(self):
         last_name = self.cleaned_data.get('last_name')
         if len(last_name) > 100:
             raise ValidationError(
-                'El tamaño del apellido no puede ser mayor que 100')
+                MESSAGE_SURNAME)
         return last_name
 
     def clean_email(self):
@@ -244,5 +242,5 @@ class SetCreateForm(forms.ModelForm):
         name = self.cleaned_data.get('name')
         if len(name) > 100:
             raise ValidationError(
-                'El tamaño del nombre no puede ser mayor que 100')
+                MESSAGE_NAME)
         return name
