@@ -33,9 +33,10 @@ class StudentCreateForm(forms.ModelForm):
 
     def clean_initials(self):
         initials = self.cleaned_data.get('initials')
+        message = 'El tamaño de las iniciales no puede ser mayor que 9'
         if len(initials) > 9:
             raise ValidationError(
-                'El tamaño de las iniciales no puede ser mayor que 9')
+                message)
         return initials
 
     def clean_name(self):
@@ -87,9 +88,10 @@ class TeacherCreateForm(UserCreationForm):
 
     def clean_initials(self):
         initials = self.cleaned_data.get('initials')
+        message = 'El tamaño de las iniciales no puede ser mayor que 9'
         if len(initials) > 9:
             raise ValidationError(
-                'El tamaño de las iniciales no puede ser mayor que 9')
+                message)
         return initials
 
     def clean_first_name(self):
@@ -148,9 +150,10 @@ class TeacherUpdateForm(forms.ModelForm):
 
     def clean_initials(self):
         initials = self.cleaned_data.get('initials')
+        message = 'El tamaño de las iniciales no puede ser mayor que 9'
         if len(initials) > 9:
             raise ValidationError(
-                'El tamaño de las iniciales no puede ser mayor que 9')
+                message)
         return initials
 
     
