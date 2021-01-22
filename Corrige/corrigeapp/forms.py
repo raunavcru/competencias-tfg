@@ -3,7 +3,6 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm, UserChangeForm, UserCreationForm
 from django.core.exceptions import ValidationError
 from django.utils.timezone import now
-from dal import autocomplete
 from django.contrib.auth.hashers import check_password
 
 from . import models
@@ -13,6 +12,11 @@ User = get_user_model()
 teachers = models.Teacher.objects.all()
 subjects = models.Subject.objects.all()
 evaluations = models.Evaluation.objects.all()
+
+MESSAGE_INITIALS = 'El tamaño de las iniciales no puede ser mayor que 9'
+MESSAGE_NAME = 'El tamaño del nombre no puede ser mayor que 100'
+MESSAGE_SURNAME = 'El tamaño del apellido no puede ser mayor que 100'
+MESSAGE_BIRTHDATE = 'La fecha de cumpleaños debe ser en el pasado'
 
 class StudentCreateForm(forms.ModelForm):
     
@@ -43,21 +47,21 @@ class StudentCreateForm(forms.ModelForm):
         name = self.cleaned_data.get('name')
         if len(name) > 100:
             raise ValidationError(
-                'El tamaño del nombre no puede ser mayor que 100')
+                MESSAGE_NAME)
         return name
 
     def clean_surname(self):
         surname = self.cleaned_data.get('surname')
         if len(surname) > 100:
             raise ValidationError(
-                'El tamaño del apellido no puede ser mayor que 100')
+                MESSAGE_NAME)
         return surname
     
     def clean_birthdate(self):
         birthdate = self.cleaned_data.get('birthdate')
         if birthdate >= now().date():
             raise ValidationError(
-                'La fecha de cumpleaños debe ser en el pasado')
+                MESSAGE_BIRTHDATE)
         return birthdate
 
 class TeacherCreateForm(UserCreationForm):
@@ -150,10 +154,10 @@ class TeacherUpdateForm(forms.ModelForm):
 
     def clean_initials(self):
         initials = self.cleaned_data.get('initials')
-        message = 'El tamaño de las iniciales no puede ser mayor que 9'
+        
         if len(initials) > 9:
             raise ValidationError(
-                message)
+                MESSAGE_INITIALS)
         return initials
 
     
