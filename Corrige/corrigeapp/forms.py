@@ -231,6 +231,7 @@ class SetCreateForm(forms.ModelForm):
                 'El tamaño del nivel no puede ser mayor que 50')
         return level
 
+
     def clean_line(self):
         line = self.cleaned_data.get('line')
         if len(line) > 50:
