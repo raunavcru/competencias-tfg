@@ -2,11 +2,11 @@
 {% load static %}
 {% block content %}
 
-<div class="center-block"> 
-<img class="logo centered" src="{% static 'images/rosa.png' %}" alt="corrige" width="" height="">  
+<div class="centrado" style="margin: 1rem; padding: 1rem; text-align: center;"> 
+    <img class="logo centered" src="{% static 'images/rosa.png' %}" alt="corrige" width="400" height="200">  
 </div>
 
-<div class"center-block">
-<p>Bienvenido {{user.username}}</p>
+<div class"center-block" style="margin: 1rem; padding: 1rem; text-align: center;">
+<h3>Bienvenido {{user.username}}</h3>
 </div>
 {% endblock %}

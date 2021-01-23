@@ -11,8 +11,6 @@
     </script>
     <!-- Compiled and minified CSS -->
     <link rel="shortcut icon" href="{% static 'images/ico.ico' %}" />
-    <link rel="stylesheet" href="{% static 'css/materialize.css'%}" />
-    <link rel="stylesheet" href="{% static 'css/materialize.min.css'%}" />
     <link rel="stylesheet" href="{% static 'css/main.css'%}" />
     <link rel="stylesheet" href="{% static 'css/materialize.css'%}" />
     <link rel="stylesheet" href="{% static 'css/materialize.min.css'%}">
@@ -21,7 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verum</title>
 </head>
-<body id="body-font" class="grey lighten-4">
+<body class="grey lighten-4"  style="font-family:Helvetica; ">
     <nav class="pink lighten-3">
         <div class="nav-wrapper">
         <img class="logo" src="{% static 'images/blanco.png' %}" alt="corrige" width="120" height="60">            
@@ -34,7 +32,7 @@
                 {% else%}
                 <li><a href="{% url 'home'%}">Home</a></li>
                 <li><a href="#">About Us</a></li>
-                <li><a href="{% url 'login'%}" class="pink lighten-2 waves-effect waves-light btn-small">Login</a></li>
+                <li><a href="{% url 'login'%}" class="teal lighten-2 waves-effect waves-light btn-small">Login</a></li>
                 {% endif %}
             </ul>
         </div>
