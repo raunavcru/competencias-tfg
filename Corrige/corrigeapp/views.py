@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 from django.shortcuts import render, redirect
 from django.views import generic
 from django.urls import reverse, reverse_lazy
@@ -97,3 +98,27 @@ class TeacherUpdateView(generic.UpdateView):
             return self.render_to_response(
                 self.get_context_data(form=form, profile_form=teacher_form))
 
+class SetsListView(generic.ListView):
+    model = models.Set
+    template_name = 'sets/list.html'
+    context_object_name = 'set_list'
+
+    def get_queryset(self):
+        queryset = models.Set.objects.all()
+        return queryset
+
+class SetDeleteView(generic.DeleteView):
+    template_name = 'sets/delete.html'
+    model = models.Set
+    success_url = reverse_lazy('sets_list')
+
+class SetCreateView(generic.CreateView):
+    form_class = forms.SetCreateForm
+    template_name = "sets/create.html"
+    success_url = reverse_lazy('sets_list')
+
+class SetUpdateView(generic.UpdateView):
+    model = models.Set
+    form_class = forms.SetCreateForm
+    template_name = "sets/create.html"
+    success_url = reverse_lazy('sets_list')

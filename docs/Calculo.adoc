@@ -1,0 +1,9 @@
+== Cálculo
+
+Existen muchas formas de realizar el calculo de las notas, y dado que no podemos implemetarlos todos, se implementará de tal forma que sea posible añadir nueva funcionalidad para el cálculo. Por defecto se podrán elegir estos tipos de cálculo:
+
+* Media ponderada sin recuperación.
+Se calculará mediante la media ponderada de todas las notas con pesos normalizados.
+
+* Media ponderada con recuperación.
+Si no hay recuperaciones se realizará como la especificada en el anterior punto, pero se ha creado una recupración, la nota estará definida por la nota de la recuperación.

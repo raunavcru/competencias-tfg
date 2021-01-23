@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div  id="top-bot" class="container">
+    <form action="{% url 'sets_delete' object.pk %}" method="post">
+        {% csrf_token %}
+        <h1 class="center title-delete flow-text">¿Estás seguro de que quieres eliminar el grupo <a>{{object.name}}</a>?</h1>
+
+        <div class="center">
+            <a style="border-radius:5px; background-color:#BBBBBB" href="{% url 'sets_list'%}" class="waves-effect waves-light btn-large button-delete">Cancelar</a>
+            <button style="border-radius:5px; background-color:#f05060" class="waves-effect waves-light btn-large button-delete delete-yes" type="submit">Borrar</button>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}
