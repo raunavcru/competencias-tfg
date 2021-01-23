@@ -157,7 +157,6 @@ class TeacherUpdateForm(forms.ModelForm):
             raise ValidationError(
                 MESSAGE_INITIALS)
         return initials
-
     
 class UserUpdateForm(forms.ModelForm):
     first_name = forms.CharField(required=True, widget=forms.TextInput(
@@ -172,6 +171,7 @@ class UserUpdateForm(forms.ModelForm):
             'last_name',
             'email',
         )   
+
 
     def clean_first_name(self):
         first_name = self.cleaned_data.get('first_name')
@@ -245,3 +245,18 @@ class SetCreateForm(forms.ModelForm):
             raise ValidationError(
                 MESSAGE_NAME)
         return name
+
+class LoginForm(AuthenticationForm):
+    username = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': "usuario o email"}))
+    password = forms.CharField(required=True, widget=forms.PasswordInput(
+        attrs={'placeholder': "contraseña"}))
+
+    class Meta:
+        model = User
+        fields = (
+            'username',
+            'password',
+        )
+
+
