@@ -1,20 +1,21 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 {% block content %} 
-    <h4 class="centered">Listado de profesores</h4>
+    <h4 class="centered">{% trans "List of teachers" %}</h4>
     <a style="border-radius:5px" href="{% url 'teachers_create'%}" class="right dropdown-trigger"  ><em class="material-icons">person_add</em></a>
         <table class="highlight">
             <caption></caption>
                 <thead>
                     <tr>
                         <th id=""></th>
-                        <th id="surname">Surname</th>
-                        <th id="name">Name</th>
-                        <th id="initials">Initials</th>
-                        <th id="birthdate">Birthday</th>
+                        <th id="surname">{% trans "Surname" %}</th>
+                        <th id="name">{% trans "Name" %}</th>
+                        <th id="initials">{% trans "Initials" %}</th>
+                        <th id="birthdate">{% trans "Birthdate" %}</th>
                         <th id="email">Email</th>
-                        <th class="center" id="button">Edit</th>
-                        <th class="center" id="delete" >Delete</th>
+                        <th class="center" id="button">{% trans "Edit" %}</th>
+                        <th class="center" id="delete" >{% trans "Delete" %}</th>
                     </tr>
                 </thead>
                 {% for object in teacher_list %}
