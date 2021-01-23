@@ -2,6 +2,7 @@ from django.contrib.auth import get_user_model
 from django.shortcuts import render, redirect
 from django.views import generic
 from django.urls import reverse, reverse_lazy
+from django.utils.translation import activate
 
 from . import forms
 from . import models
