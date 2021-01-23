@@ -4,10 +4,10 @@
     <divclass="row">
         <div class="grid-example col s11 offset-s1">
             <div class="center-form">
-            {% if request.get_full_path == '/students/create' %}
-                <form class="col s12" id="form-create-students" method="post" action="{% url 'students_create' %}">
+            {% if request.get_full_path == '/sets/create' %}
+                <form class="col s12" id="form-create-students" method="post" action="{% url 'sets_create' %}">
             {% else %}
-                <form class="col s12" id="form-update-students" method="post" action="{% url 'students_update' object.pk %}">
+                <form class="col s12" id="form-update-students" method="post" action="{% url 'sets_update' object.pk %}">
             {% endif %}
                     {% csrf_token %}
                     <div class="row">
@@ -24,10 +24,32 @@
                         </div>
                         <div class="grid-example col s5">
                             <div class="validate-input">
-                                <label>Surname</label>
-                                {{form.surname}}
+                                <label>Level</label>
+                                {{form.level}}
                                 <div class="form-errors">
-                                    {{ form.surname.errors }}
+                                    {{ form.level.errors }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="grid-example col s2">
+                        </div>
+                        <div class="grid-example col s3">
+                            <div class="validate-input">
+                                <label>Grade</label>
+                                {{form.grade}}
+                                <div class="form-errors">
+                                    {{ form.grade.errors }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-example col s5">
+                            <div class="validate-input">
+                                <label>Line</label>
+                                {{form.line}}
+                                <div class="form-errors">
+                                    {{ form.line.errors }}
                                 </div>
                             </div>
                         </div>
@@ -36,38 +58,36 @@
                         <div class="grid-example col s2">
                         </div>
                         <div class="grid-example col s8">
-                            <div class="validate-input">
-                                <label>Birthdate</label>
-                                {{form.birthdate}}
-                                <div class="form-errors">
-                                    {{ form.birthdate.errors }}
-                                </div>
-                            </div>
+                            <label>Teacher</label>
+                                {{form.teacher}}
                         </div>
                     </div>
                     <div class="row">
                         <div class="grid-example col s2">
-                        </div> 
+                        </div>
                         <div class="grid-example col s8">
-                            <div class="validate-input">
-                                <label>Initials</label>
-                                {{form.initials}}
-                                <div class="form-errors">
-                                    {{ form.initials.errors }}
-                                </div>
-                            </div>
+                            <label>Subject</label>
+                                {{form.subject}}
                         </div>
                     </div>
-                    {% if request.get_full_path == '/students/create' %}
+                    <div class="row">
+                        <div class="grid-example col s2">
+                        </div>
+                        <div class="grid-example col s8">
+                            <label>Evaluation</label>
+                                {{form.evaluation}}
+                        </div>
+                    </div>
+                    {% if request.get_full_path == '/sets/create' %}
                     <div class="row">
                         <button class="btn waves-effect right" type="submit" name="action">Create
-                            <i class="large material-icons right"><i >send</i></i>
+                            <i class="large material-icons right"><i>send</i></i>
                         </button>
                     </div>
                     {% else %}
                     <div class="row">
                         <button class="btn waves-effect right" style="background-color:#29b6f6" type="submit" name="action">Edit
-                            <i class="large material-icons right"><i >send</i></i>
+                            <i class="large material-icons right"><i>send</i></i>
                         </button>
                     </div>
                     {% endif %}
@@ -76,4 +96,5 @@
         </div>
     </div>
 </div>
+{{form.media}}
 {% endblock %}
