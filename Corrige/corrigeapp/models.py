@@ -91,7 +91,7 @@ class Teacher(Profile):
         verbose_name_plural = 'Teachers'
 
     def __str__(self):
-        return self.user.username + ' teacher profile'
+        return self.user.last_name + ', ' + self.user.first_name
 
 class Administrator(Profile):
 
@@ -155,7 +155,7 @@ class Set(Common):
 
     evaluation = models.ForeignKey(Evaluation, on_delete=models.CASCADE, related_name='evaluation_set')
 
-    students = models.ManyToManyField(Student, "student", verbose_name=("students_set"))
+    students = models.ManyToManyField(Student, "student", verbose_name=("students_set"), blank=True)
 
     class Meta:
         verbose_name = 'Set'
