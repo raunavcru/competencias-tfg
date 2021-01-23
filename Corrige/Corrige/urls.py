@@ -22,6 +22,7 @@ from corrigeapp.forms import LoginForm
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('i18n/', include('django.conf.urls.i18n')),
     path('auth/login', views.LoginView.as_view(authentication_form=LoginForm), name='login'),
     path('', include('corrigeapp.urls')),
 ]
