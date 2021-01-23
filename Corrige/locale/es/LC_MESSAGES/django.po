@@ -133,12 +133,6 @@ msgstr "Lista de estudiantes"
 msgid "Are you sure about deleting the teacher "
 msgstr "¿Estás seguro de que quieres eliminar el profesor "
 
-#: .\corrigeapp\templates\teachers\create.html:41
-#, fuzzy
-#| msgid "Birthdate"
-msgid "Birthday"
-msgstr "Fecha de nacimiento"
-
 #: .\corrigeapp\templates\teachers\create.html:85
 msgid "Username"
 msgstr "Nombre de usuario"
