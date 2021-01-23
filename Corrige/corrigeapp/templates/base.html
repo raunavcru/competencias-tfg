@@ -18,16 +18,20 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Verum</title>
 </head>
 <body id="body-font" class="grey lighten-4">
     <nav class="pink lighten-3">
         <div class="nav-wrapper">
-        <img class="logo" src="{% static 'images/corrige-white.png' %}" alt="corrige" width="140" height="70">            
+        <img class="logo" src="{% static 'images/blanco.png' %}" alt="corrige" width="120" height="60">            
             <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right:15px;">
-                <li><a href="#">Home</a></li>
+                <li><a href="{% url 'home'%}">Home</a></li>
+                {% if user.is_authenticated %}
                 <li><a href="{% url 'students_list' %}">Alumnos</a></li>
+                <li><a href="{% url 'students_list' %}">Logout</a></li>
+                {% endif %}
                 <li><a href="#">About Us</a></li>
+                <li><a href="{% url 'login'%}">Login</a></li>
             </ul>
         </div>
     </nav>

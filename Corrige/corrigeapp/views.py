@@ -6,6 +6,9 @@ from django.urls import reverse, reverse_lazy
 from . import forms
 from . import models
 
+class HomeView(generic.TemplateView):
+    template_name = 'home.html'
+
 class StudentCreateView(generic.CreateView):
     form_class = forms.StudentCreateForm
     template_name = "students/create.html"

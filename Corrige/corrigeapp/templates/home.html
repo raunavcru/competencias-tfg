@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="center-block"> 
+<img class="logo centered" src="{% static 'images/rosa.png' %}" alt="corrige" width="" height="">  
+</div>
+
+<div class"center-block">
+<p>Bienvenido {{user.username}}</p>
+</div>
+{% endblock %}
