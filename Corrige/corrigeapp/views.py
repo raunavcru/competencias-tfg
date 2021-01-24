@@ -10,6 +10,9 @@ from . import forms
 from . import models
 from . import services
 
+class HomeView(generic.TemplateView):
+    template_name = 'home.html'
+
 @method_decorator(login_required, name='dispatch')
 class StudentCreateView(generic.CreateView):
     form_class = forms.StudentCreateForm

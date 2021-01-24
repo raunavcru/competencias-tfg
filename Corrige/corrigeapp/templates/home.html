@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="centrado"> 
+    <img class="logo centered" src="{% static 'images/rosa.png' %}" alt="corrige" width="400" height="200">  
+</div>
+
+<div class="centrado">
+<h3>Bienvenido {{user.username}}</h3>
+</div>
+
+<script>
+  $(document).ready(function(){
+    $('.parallax').parallax();
+  });
+</script>
+
+{% endblock %}

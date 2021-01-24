@@ -10,27 +10,45 @@
       });
     </script>
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="{% static 'css/materialize.css'%}" />
-    <link rel="stylesheet" href="{% static 'css/materialize.min.css'%}" />
+    <link rel="shortcut icon" href="{% static 'images/ico.ico' %}" />
     <link rel="stylesheet" href="{% static 'css/main.css'%}" />
     <link rel="stylesheet" href="{% static 'css/materialize.css'%}" />
     <link rel="stylesheet" href="{% static 'css/materialize.min.css'%}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Verum</title>
 </head>
-<body id="body-font" class="grey lighten-4">
+<body class="grey lighten-4">
     <nav class="pink lighten-3">
         <div class="nav-wrapper">
-        <img class="logo" src="{% static 'images/corrige-white.png' %}" alt="corrige" width="140" height="70">            
+        <img class="logo" src="{% static 'images/blanco.png' %}" alt="corrige" width="120" height="60">            
             <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right:15px;">
-                <li><a href="#">Home</a></li>
+                <li><a href="{% url 'home'%}">Home</a></li>
+                {% if user.profile.role == "ADMINISTRATOR" %} 
+                <li><a href="#">Administradores</a></li>
+                <li><a href="#">Competencias</a></li>
                 <li><a href="{% url 'students_list' %}">Alumnos</a></li>
-                <li><a href="#">About Us</a></li>
+                <li><a href="{% url 'teachers_list' %}">Profesores</a></li>
+                <li><a href="{% url 'sets_list' %}">Grupos</a></li>
+                <li><a href="#">Asignaturas</a></li>
+                <li><a class="dropdown-trigger" href="#!" data-beloworigin="true" data-target="dropdown1"><i class="material-icons left">account_circle arrow_drop_down</i></a></li>
+                {% elif user.profile.role == "TEACHER" %}
+                <li><a href="#">Mis Actividades</a></li>
+                <li><a href="#">Mis grupos</a></li>
+                <li><a href="#">Mis Asignaturas</a></li>
+                <li><a class="dropdown-trigger" href="#!" data-beloworigin="true" data-target="dropdown1"><i class="material-icons left">account_circle arrow_drop_down</i></a></li>
+                {% else %}
+                <li><a href="{% url 'login'%}" class="teal lighten-2 waves-effect waves-light btn-small">Login</a></li>
+                {% endif %}
             </ul>
         </div>
     </nav>
+
+    <ul id="dropdown1" class="dropdown-content grey lighten-4">
+        <li><a href="#!" style="color:black">Profile</a></li>
+        <li><a href="{% url 'logout'%}" style="color:black">Logout</a></li>
+    </ul>
     <div class="container">
 
 
@@ -38,6 +56,16 @@
     {% endblock %}
 
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.dropdown-trigger');
+            var options ={
+                alignement: 'center',
+                inDuration: 1000,
+            }
+            var instances = M.Dropdown.init(elems, options);
+        });
+    </script>
 
     <script src="{% static 'js/materialize.js' %}"></script>
     <script src="{% static 'js/materialize.min.js' %}"></script>

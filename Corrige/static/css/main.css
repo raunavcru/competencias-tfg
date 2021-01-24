@@ -11,3 +11,9 @@
     padding-top: 50px;
     padding-bottom: 50px;
 }
+
+.centrado{
+    margin: 1rem; 
+    padding: 1rem; 
+    text-align: center;
+}
