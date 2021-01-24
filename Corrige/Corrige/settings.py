@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import get_language
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -138,6 +139,12 @@ LOCALE_PATHS = (
 
 DATE_INPUT_FORMATS = [
     '%d/%m/%Y',
+    '%m/%d/%Y',
+]
+
+if get_language() == 'en':
+    DATE_INPUT_FORMATS = [
+    '%m/%d/%Y',
 ]
 
 # Login 

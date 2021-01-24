@@ -1,9 +1,10 @@
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user_model
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-from django.views import generic
 from django.urls import reverse, reverse_lazy
-from django.utils.translation import activate
+from django.utils.decorators import method_decorator
+from django.utils.translation import activate, get_language
+from django.views import generic
 
 from . import forms
 from . import models
