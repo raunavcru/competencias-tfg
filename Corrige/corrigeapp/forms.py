@@ -44,7 +44,7 @@ class StudentCreateForm(forms.ModelForm):
         super(StudentCreateForm, self).__init__(*args, **kwargs)
         if get_language() == 'en':
             self.fields['birthdate'].widget.attrs['placeholder'] = DATE_PLACEHOLDER_EN
-            self.fields['birthdate'].widget.format = settings.DATE_INPUT_FORMATS[1]
+            self.fields['birthdate'].widget.format = settings.DATE_INPUT_FORMATS[0]
 
 
     class Meta:

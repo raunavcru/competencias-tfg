@@ -139,7 +139,6 @@ LOCALE_PATHS = (
 
 DATE_INPUT_FORMATS = [
     '%d/%m/%Y',
-    '%m/%d/%Y',
 ]
 
 if get_language() == 'en':
