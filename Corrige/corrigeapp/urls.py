@@ -3,6 +3,7 @@ from . import views
 from . import models
 
 urlpatterns = [
+    path('404', views.not_impl.as_view(), name = '404'),
     path('students/list', views.StudentsListView.as_view(), name = 'students_list'),
     path('students/create', views.StudentCreateView.as_view(), name = 'students_create'),
     path('students/<int:pk>/delete', views.StudentDeleteView.as_view(), name='students_delete'),

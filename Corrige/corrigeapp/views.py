@@ -209,3 +209,7 @@ class SetUpdateView(generic.UpdateView):
             return super(SetUpdateView, self).get(self, request, *args, **kwargs)
         else:
             return redirect('/')
+
+
+class not_impl(generic.TemplateView):
+    template_name = "not_impl.html"
