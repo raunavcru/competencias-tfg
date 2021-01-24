@@ -24,14 +24,21 @@
         <div class="nav-wrapper">
         <img class="logo" src="{% static 'images/blanco.png' %}" alt="corrige" width="120" height="60">            
             <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right:15px;">
-                {% if user.is_authenticated %}
                 <li><a href="{% url 'home'%}">Home</a></li>
+                {% if user.profile.role == "ADMINISTRATOR" %} 
+                <li><a href="#">Administradores</a></li>
+                <li><a href="#">Competencias</a></li>
                 <li><a href="{% url 'students_list' %}">Alumnos</a></li>
-                <li><a href="#">About Us</a></li>
+                <li><a href="{% url 'teachers_list' %}">Profesores</a></li>
+                <li><a href="{% url 'sets_list' %}">Grupos</a></li>
+                <li><a href="#">Asignaturas</a></li>
                 <li><a class="dropdown-trigger" href="#!" data-beloworigin="true" data-target="dropdown1"><i class="material-icons left">account_circle arrow_drop_down</i></a></li>
-                {% else%}
-                <li><a href="{% url 'home'%}">Home</a></li>
-                <li><a href="#">About Us</a></li>
+                {% elif user.profile.role == "TEACHER" %}
+                <li><a href="#">Mis Actividades</a></li>
+                <li><a href="#">Mis grupos</a></li>
+                <li><a href="#">Mis Asignaturas</a></li>
+                <li><a class="dropdown-trigger" href="#!" data-beloworigin="true" data-target="dropdown1"><i class="material-icons left">account_circle arrow_drop_down</i></a></li>
+                {% else %}
                 <li><a href="{% url 'login'%}" class="teal lighten-2 waves-effect waves-light btn-small">Login</a></li>
                 {% endif %}
             </ul>
