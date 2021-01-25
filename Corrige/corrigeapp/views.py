@@ -130,31 +130,25 @@ class TeacherUpdateView(generic.UpdateView):
     success_url = reverse_lazy('teachers_list')
 
     def get(self, request, *args, **kwargs):
-        print(self.request.user)
         if services.UserService().is_admin(request.user):
             return super(TeacherUpdateView, self).get(self, request, *args, **kwargs)
         else:
             return redirect('/')
 
     def get_context_data(self, **kwargs):
-        print(self.request.user)
         context = super(TeacherUpdateView, self).get_context_data(**kwargs)
         context['teacher_form'] = self.teacher_form_class(instance=self.object.profile)
-        print(context)
         print(self.request.user)
 
         return context
 
     def get_object(self):
-        print(self.request.user)
         teacher_pk = self.kwargs.get('pk')
         teacher = models.Teacher.objects.get(pk=teacher_pk)
         teacher_user = teacher.user
-        print(self.request.user)
         return teacher_user
 
     def post(self, request, *args, **kwargs):
-        print(self.request.user)
         self.object = self.get_object()
         form = self.form_class(request.POST, instance=self.object)
         teacher_form = self.teacher_form_class(

@@ -252,14 +252,6 @@ class UserUpdateForm(forms.ModelForm):
                 MESSAGE_SURNAME)
         return last_name
 
-    def clean_email(self):
-        email = self.cleaned_data.get('email')
-        if not email:
-            raise ValidationError('El email es necesario')
-        elif User.objects.filter(email=email).exists():
-            raise ValidationError('El email ya existe')
-        return email
-
 class SetCreateForm(forms.ModelForm):
     
     name = forms.CharField(required=True)
