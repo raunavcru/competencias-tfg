@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-23 12:50+0100\n"
+"POT-Creation-Date: 2021-01-25 13:10+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,17 +18,84 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\Corrige\local_settings.py:119 .\Corrige\settings.py:119
+#: .\Corrige\local_settings.py:120 .\Corrige\settings.py:120
 msgid "English"
 msgstr ""
 
-#: .\Corrige\local_settings.py:120 .\Corrige\settings.py:120
+#: .\Corrige\local_settings.py:121 .\Corrige\settings.py:121
 msgid "Spanish"
 msgstr ""
 
+#: .\corrigeapp\templates\base.html:28
+msgid "Home"
+msgstr "Inicio"
+
+#: .\corrigeapp\templates\base.html:30
+msgid "Administrators"
+msgstr "Administratores"
+
+#: .\corrigeapp\templates\base.html:31
+msgid "Competences"
+msgstr "Competencias"
+
+#: .\corrigeapp\templates\base.html:32
+msgid "Students"
+msgstr "Alumnos"
+
+#: .\corrigeapp\templates\base.html:33
+msgid "Teachers"
+msgstr "Profesor"
+
+#: .\corrigeapp\templates\base.html:34
+msgid "Sets"
+msgstr "Grupos"
+
+#: .\corrigeapp\templates\base.html:35
+msgid "Subjects"
+msgstr "Asignaturas"
+
+#: .\corrigeapp\templates\base.html:38
+msgid "My Activities"
+msgstr "Mis actividades"
+
+#: .\corrigeapp\templates\base.html:39
+msgid "My Sets"
+msgstr "Mis grupos"
+
+#: .\corrigeapp\templates\base.html:40
+msgid "My Subjects"
+msgstr "Mis asignaturas"
+
+#: .\corrigeapp\templates\base.html:43
 #: .\corrigeapp\templates\registration\login.html:10
 msgid "Login"
 msgstr "Inicio de sesión"
+
+#: .\corrigeapp\templates\base.html:50
+msgid "Profile"
+msgstr "Perfil"
+
+#: .\corrigeapp\templates\base.html:51
+msgid "Logout"
+msgstr "Cerrar sesión"
+
+#: .\corrigeapp\templates\home.html:10
+msgid "Welcome"
+msgstr "Bienvenido"
+
+#: .\corrigeapp\templates\registration\login.html:17
+#: .\corrigeapp\templates\teachers\create.html:85
+msgid "Username"
+msgstr "Nombre de usuario"
+
+#: .\corrigeapp\templates\registration\login.html:27
+#: .\corrigeapp\templates\teachers\create.html:96
+msgid "Password"
+msgstr "Contraseña"
+
+#: .\corrigeapp\templates\registration\login.html:36
+msgid "Enter"
+msgstr "Entrar"
 
 #: .\corrigeapp\templates\sets\create.html:19
 #: .\corrigeapp\templates\sets\list.html:12
@@ -85,10 +152,13 @@ msgstr "Editar"
 msgid "Are you sure about deleting the set "
 msgstr "¿Estás seguro de que quieres eliminar el profesor "
 
-#: .\corrigeapp\templates\sets\list.html:5
-msgid "List of sets"
-msgstr "Lista de grupos"
+#: .\corrigeapp\templates\sets\delete.html:11
+#: .\corrigeapp\templates\students\delete.html:12
+#: .\corrigeapp\templates\teachers\confirm_delete.html:11
+msgid "Cancel"
+msgstr "Cancelar"
 
+#: .\corrigeapp\templates\sets\delete.html:13
 #: .\corrigeapp\templates\sets\list.html:17
 #: .\corrigeapp\templates\students\delete.html:15
 #: .\corrigeapp\templates\students\list.html:16
@@ -96,6 +166,10 @@ msgstr "Lista de grupos"
 #: .\corrigeapp\templates\teachers\list.html:18
 msgid "Delete"
 msgstr "Borrar"
+
+#: .\corrigeapp\templates\sets\list.html:5
+msgid "List of sets"
+msgstr "Lista de grupos"
 
 #: .\corrigeapp\templates\students\create.html:28
 #: .\corrigeapp\templates\students\list.html:12
@@ -106,6 +180,7 @@ msgstr "Apellidos"
 
 #: .\corrigeapp\templates\students\create.html:41
 #: .\corrigeapp\templates\students\list.html:14
+#: .\corrigeapp\templates\teachers\create.html:41
 #: .\corrigeapp\templates\teachers\list.html:15
 msgid "Birthdate"
 msgstr "Fecha de nacimiento"
@@ -120,11 +195,6 @@ msgstr "Iniciales"
 msgid "Are you sure about deleting the student "
 msgstr "¿Estás seguro de que quieres eliminar el estudiante "
 
-#: .\corrigeapp\templates\students\delete.html:12
-#: .\corrigeapp\templates\teachers\confirm_delete.html:11
-msgid "Cancel"
-msgstr "Cancelar"
-
 #: .\corrigeapp\templates\students\list.html:5
 msgid "List of students"
 msgstr "Lista de estudiantes"
@@ -132,14 +202,6 @@ msgstr "Lista de estudiantes"
 #: .\corrigeapp\templates\teachers\confirm_delete.html:8
 msgid "Are you sure about deleting the teacher "
 msgstr "¿Estás seguro de que quieres eliminar el profesor "
-
-#: .\corrigeapp\templates\teachers\create.html:85
-msgid "Username"
-msgstr "Nombre de usuario"
-
-#: .\corrigeapp\templates\teachers\create.html:96
-msgid "Password"
-msgstr "Contraseña"
 
 #: .\corrigeapp\templates\teachers\create.html:107
 msgid "Confirm Password"

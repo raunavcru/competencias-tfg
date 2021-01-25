@@ -7,14 +7,14 @@
 			<form class="login100-form form-eventshow login validate-form" id="login-res" method="POST" action="{% url 'login' %}">
 				{% csrf_token %}
 				<h2 style="text-align:center; padding-bottom:70px;">
-					Iniciar Sesión
+					{% trans "Login" %}
 				</h2>
 				    <div class="row" data-validate="Valid email is required: ex@abc.xyz">
 						<div class="grid-example col s4">
 						</div>
 							<div class="grid-example col s4">
 								<div class="validate-input">
-								<label>Username</label>
+								<label>{% trans "Username" %}</label>
 								{{form.username}}
 								</div>
 						</div>
@@ -24,7 +24,7 @@
 						</div>
 							<div class="grid-example col s4">
 								<div class="validate-input">
-								<label>Password</label>
+								<label>{% trans "Password" %}</label>
 								{{form.password}}
 								</div>
 								<div class="form-errors">
@@ -33,7 +33,7 @@
 						</div>
                     </div>
 				<div class="row" style="padding-right:250px;">
-                        <button class="btn waves-effect right" type="submit" name="action">Entrar
+                        <button class="btn waves-effect right" type="submit" name="action">{% trans "Enter" %}
                             <i class="large material-icons right"><i >send</i></i>
                         </button>
                 </div>
