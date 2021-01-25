@@ -25,7 +25,8 @@ before_script:
   - sudo -u postgres psql
   - CREATE USER Kelsier WITH PASSWORD 'Kelsier';
   - ALTER USER Kelsier WITH SUPERUSER;
-  - CREATEDB corrige -O Kelsier
+  - CREATEDB corrige -O Kelsier;
+  - \q
   - python manage.py makemigrations
   - python manage.py migrate
   - python manage.py runscript populate
