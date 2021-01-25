@@ -1,0 +1,839 @@
+[
+    {
+        "pk": 2,
+        "model": "auth.User",
+        "fields": {
+            "password": "pbkdf2_sha256$216000$z3Q8rZzNaKks$WFpZ2/7q9dKxalecRBG/Jy4OYzdo+4YKUaXcOvURuEg=",
+            "is_superuser": false,
+            "username": "ligiaperalta",
+            "first_name": "Andr\u00e9s",
+            "last_name": "Felipe",
+            "email": "smacias@yahoo.com",
+            "is_staff": false,
+            "date_joined": "2021-01-18 18:40:11+0000"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "auth.User",
+        "fields": {
+            "password": "pbkdf2_sha256$216000$Dim3domt8ak0$+sUPHxdiFmUYE+aE5PKkyEozIRsLmoPKjvw1c1oWA14=",
+            "is_superuser": false,
+            "username": "francoursula",
+            "first_name": "Claudia",
+            "last_name": "Maribel",
+            "email": "ujodar@yahoo.com",
+            "is_staff": false,
+            "date_joined": "2021-01-18 18:40:12+0000"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "auth.User",
+        "fields": {
+            "password": "pbkdf2_sha256$216000$Mk55eNcHWICX$Zyv8KBb0dZX4BckZkNcMQF3nCvpr00euM7PPRo9gKnE=",
+            "is_superuser": false,
+            "username": "tcastello",
+            "first_name": "Leire",
+            "last_name": "Sans",
+            "email": "candelaria57@yahoo.com",
+            "is_staff": false,
+            "date_joined": "2021-01-18 18:40:12+0000"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "auth.User",
+        "fields": {
+            "password": "pbkdf2_sha256$216000$ES6cUjzRdkyV$0W9uzRC+HeR+sv9noTlEQuDLyw7csuK2NJBCU3RiHww=",
+            "is_superuser": false,
+            "username": "dflores",
+            "first_name": "Leandro",
+            "last_name": "Ballesteros",
+            "email": "marina89@hotmail.com",
+            "is_staff": false,
+            "date_joined": "2021-01-18 18:40:12+0000"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "auth.User",
+        "fields": {
+            "password": "pbkdf2_sha256$216000$JOZz2oKyZ7vD$8pdyeTeR+9/skEobjLg5B7312oSL2tCuHuvaggiG2dI=",
+            "is_superuser": false,
+            "username": "fmata",
+            "first_name": "Eva",
+            "last_name": "Arnal",
+            "email": "maria-pilar45@yahoo.com",
+            "is_staff": false,
+            "date_joined": "2021-01-18 18:40:12+0000"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "auth.User",
+        "fields": {
+            "password": "pbkdf2_sha256$216000$SVC4qiaGN8Ta$uoMgzwK0ySx5xnuoJFSciuRDKG7d6wFldIgDTP4BTbc=",
+            "is_superuser": false,
+            "username": "escribanocelestino",
+            "first_name": "Primitivo",
+            "last_name": "Gallardo",
+            "email": "palaulucia@gmail.com",
+            "is_staff": false,
+            "date_joined": "2021-01-18 18:40:12+0000"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "auth.User",
+        "fields": {
+            "password": "pbkdf2_sha256$216000$8L2ghNuPpdWe$B28fZIW3MX9pohFtU8vmYKrHcq/peagHTtIxvsAxEzU=",
+            "is_superuser": false,
+            "username": "jodararmando",
+            "first_name": "Sof\u00eda",
+            "last_name": "Sureda",
+            "email": "jennyagusti@gmail.com",
+            "is_staff": false,
+            "date_joined": "2021-01-18 18:40:12+0000"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "auth.User",
+        "fields": {
+            "password": "pbkdf2_sha256$216000$dxGhxep96LMn$dkm3oGIG5KWlCUwmPcbZ/zTU3SFWKC0NuqDe4zgbabA=",
+            "is_superuser": false,
+            "username": "morcillomamen",
+            "first_name": "Antonia",
+            "last_name": "de",
+            "email": "irma91@gmail.com",
+            "is_staff": false,
+            "date_joined": "2021-01-18 18:40:12+0000"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "corrigeapp.TEACHER",
+        "fields": {
+            "profile_ptr_id": 2
+        }
+    },
+    {
+        "pk": 2,
+        "model": "corrigeapp.PROFILE",
+        "fields": {
+            "birthdate": "1980-01-01",
+            "initials": "2PK",
+            "role": "TEACHER",
+            "user": 2
+        }
+    },
+    {
+        "pk": 3,
+        "model": "corrigeapp.TEACHER",
+        "fields": {
+            "profile_ptr_id": 3
+        }
+    },
+    {
+        "pk": 3,
+        "model": "corrigeapp.PROFILE",
+        "fields": {
+            "birthdate": "1980-01-01",
+            "initials": "C7E",
+            "role": "TEACHER",
+            "user": 3
+        }
+    },
+    {
+        "pk": 4,
+        "model": "corrigeapp.TEACHER",
+        "fields": {
+            "profile_ptr_id": 4
+        }
+    },
+    {
+        "pk": 4,
+        "model": "corrigeapp.PROFILE",
+        "fields": {
+            "birthdate": "1980-01-01",
+            "initials": "CTO",
+            "role": "TEACHER",
+            "user": 4
+        }
+    },
+    {
+        "pk": 5,
+        "model": "corrigeapp.TEACHER",
+        "fields": {
+            "profile_ptr_id": 5
+        }
+    },
+    {
+        "pk": 5,
+        "model": "corrigeapp.PROFILE",
+        "fields": {
+            "birthdate": "1980-01-01",
+            "initials": "LOL",
+            "role": "TEACHER",
+            "user": 5
+        }
+    },
+    {
+        "pk": 6,
+        "model": "corrigeapp.TEACHER",
+        "fields": {
+            "profile_ptr_id": 6
+        }
+    },
+    {
+        "pk": 6,
+        "model": "corrigeapp.PROFILE",
+        "fields": {
+            "birthdate": "1980-01-01",
+            "initials": "SZE",
+            "role": "TEACHER",
+            "user": 6
+        }
+    },
+    {
+        "pk": 7,
+        "model": "corrigeapp.TEACHER",
+        "fields": {
+            "profile_ptr_id": 7
+        }
+    },
+    {
+        "pk": 7,
+        "model": "corrigeapp.PROFILE",
+        "fields": {
+            "birthdate": "1980-01-01",
+            "initials": "27N",
+            "role": "TEACHER",
+            "user": 7
+        }
+    },
+    {
+        "pk": 8,
+        "model": "corrigeapp.TEACHER",
+        "fields": {
+            "profile_ptr_id": 8
+        }
+    },
+    {
+        "pk": 8,
+        "model": "corrigeapp.PROFILE",
+        "fields": {
+            "birthdate": "1980-01-01",
+            "initials": "RSI",
+            "role": "TEACHER",
+            "user": 8
+        }
+    },
+    {
+        "pk": 9,
+        "model": "corrigeapp.TEACHER",
+        "fields": {
+            "profile_ptr_id": 9
+        }
+    },
+    {
+        "pk": 9,
+        "model": "corrigeapp.PROFILE",
+        "fields": {
+            "birthdate": "1980-01-01",
+            "initials": "E4B",
+            "role": "TEACHER",
+            "user": 9
+        }
+    },
+    {
+        "pk": 1,
+        "model": "auth.User",
+        "fields": {
+            "password": "pbkdf2_sha256$216000$ixUTnSXcygNI$yC2Q7eyTFugzfIjGCA/RhJZfXTwrP2yBoB+KPhMhVZE=",
+            "is_superuser": false,
+            "username": "vvalcarcel",
+            "first_name": "Jose",
+            "last_name": "Ram\u00f3n",
+            "email": "jenarosalva@gmail.com",
+            "is_staff": false,
+            "date_joined": "2021-01-18 18:40:12+0000"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "corrigeapp.ADMINISTRATOR",
+        "fields": {
+            "profile_ptr_id": 1
+        }
+    },
+    {
+        "pk": 1,
+        "model": "corrigeapp.PROFILE",
+        "fields": {
+            "birthdate": "1980-01-01",
+            "initials": "ERD",
+            "role": "ADMINISTRATOR",
+            "user": 1
+        }
+    },
+    {
+        "pk": 1,
+        "model": "corrigeapp.Student",
+        "fields": {
+            "name": "Isaac",
+            "surname": "Laguna",
+            "birthdate": "1980-01-01",
+            "initials": "VTH"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "corrigeapp.Student",
+        "fields": {
+            "name": "Roberta",
+            "surname": "Gir\u00f3n",
+            "birthdate": "1980-01-01",
+            "initials": "NET"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "corrigeapp.Student",
+        "fields": {
+            "name": "Paca",
+            "surname": "Beltr\u00e1n",
+            "birthdate": "1980-01-01",
+            "initials": "A9J"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "corrigeapp.Student",
+        "fields": {
+            "name": "Horacio",
+            "surname": "Alberdi",
+            "birthdate": "1980-01-01",
+            "initials": "YZA"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "corrigeapp.Student",
+        "fields": {
+            "name": "Amando",
+            "surname": "Redondo",
+            "birthdate": "1980-01-01",
+            "initials": "T8W"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "corrigeapp.Student",
+        "fields": {
+            "name": "Zacar\u00edas",
+            "surname": "Rosell\u00f3",
+            "birthdate": "1980-01-01",
+            "initials": "FRO"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "corrigeapp.Student",
+        "fields": {
+            "name": "Gala",
+            "surname": "Maestre",
+            "birthdate": "1980-01-01",
+            "initials": "CN1"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "corrigeapp.Student",
+        "fields": {
+            "name": "Catalina",
+            "surname": "Vall\u00e9s",
+            "birthdate": "1980-01-01",
+            "initials": "8ED"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "corrigeapp.Student",
+        "fields": {
+            "name": "Diego",
+            "surname": "Mendiz\u00e1bal",
+            "birthdate": "1980-01-01",
+            "initials": "RPI"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "corrigeapp.Student",
+        "fields": {
+            "name": "Florentino",
+            "surname": "Gasc\u00f3n",
+            "birthdate": "1980-01-01",
+            "initials": "WAJ"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "corrigeapp.Student",
+        "fields": {
+            "name": "Fabi\u00e1n",
+            "surname": "del",
+            "birthdate": "1980-01-01",
+            "initials": "EEE"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "corrigeapp.Student",
+        "fields": {
+            "name": "Adelia",
+            "surname": "Pedraza",
+            "birthdate": "1980-01-01",
+            "initials": "FEX"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "corrigeapp.Student",
+        "fields": {
+            "name": "Mar\u00eda",
+            "surname": "Del",
+            "birthdate": "1980-01-01",
+            "initials": "KPU"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "corrigeapp.Student",
+        "fields": {
+            "name": "Jordi",
+            "surname": "Paredes",
+            "birthdate": "1980-01-01",
+            "initials": "QQV"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "corrigeapp.Student",
+        "fields": {
+            "name": "Consuelo",
+            "surname": "Alcalde-Colomer",
+            "birthdate": "1980-01-01",
+            "initials": "CAE"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "corrigeapp.Student",
+        "fields": {
+            "name": "Azucena",
+            "surname": "Castells",
+            "birthdate": "1980-01-01",
+            "initials": "3HY"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "corrigeapp.Student",
+        "fields": {
+            "name": "Mariana",
+            "surname": "Hilda",
+            "birthdate": "1980-01-01",
+            "initials": "WKF"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "corrigeapp.Student",
+        "fields": {
+            "name": "Santos",
+            "surname": "Catal\u00e1",
+            "birthdate": "1980-01-01",
+            "initials": "GP0"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "corrigeapp.Student",
+        "fields": {
+            "name": "Armando",
+            "surname": "Bravo",
+            "birthdate": "1980-01-01",
+            "initials": "BK2"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "corrigeapp.Student",
+        "fields": {
+            "name": "Primitiva",
+            "surname": "Rivera",
+            "birthdate": "1980-01-01",
+            "initials": "HHE"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "corrigeapp.Student",
+        "fields": {
+            "name": "Anunciaci\u00f3n",
+            "surname": "Montesinos",
+            "birthdate": "1980-01-01",
+            "initials": "J2L"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "corrigeapp.Student",
+        "fields": {
+            "name": "Primitiva",
+            "surname": "Gual",
+            "birthdate": "1980-01-01",
+            "initials": "H0O"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "corrigeapp.Student",
+        "fields": {
+            "name": "Amada",
+            "surname": "Ang\u00e9lica",
+            "birthdate": "1980-01-01",
+            "initials": "P6O"
+        }
+    },
+    {
+        "pk": 24,
+        "model": "corrigeapp.Student",
+        "fields": {
+            "name": "Modesta",
+            "surname": "C\u00e1rdenas-Cortina",
+            "birthdate": "1980-01-01",
+            "initials": "PYB"
+        }
+    },
+    {
+        "pk": 25,
+        "model": "corrigeapp.Student",
+        "fields": {
+            "name": "Aristides",
+            "surname": "Eliseo",
+            "birthdate": "1980-01-01",
+            "initials": "UYT"
+        }
+    },
+    {
+        "pk": 26,
+        "model": "corrigeapp.Student",
+        "fields": {
+            "name": "Olalla",
+            "surname": "Sol\u00eds",
+            "birthdate": "1980-01-01",
+            "initials": "RVP"
+        }
+    },
+    {
+        "pk": 27,
+        "model": "corrigeapp.Student",
+        "fields": {
+            "name": "Francisco",
+            "surname": "Jose",
+            "birthdate": "1980-01-01",
+            "initials": "BU1"
+        }
+    },
+    {
+        "pk": 28,
+        "model": "corrigeapp.Student",
+        "fields": {
+            "name": "Samuel",
+            "surname": "Parra-Pati\u00f1o",
+            "birthdate": "1980-01-01",
+            "initials": "FK8"
+        }
+    },
+    {
+        "pk": 29,
+        "model": "corrigeapp.Student",
+        "fields": {
+            "name": "Jacobo",
+            "surname": "de",
+            "birthdate": "1980-01-01",
+            "initials": "MB6"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "corrigeapp.Competence",
+        "fields": {
+            "code": "CC1",
+            "name": "Comunicaci\u00f3n ling\u00fc\u00edstica",
+            "description": "Comunicaci\u00f3n ling\u00fc\u00edstica.",
+            "level": 3
+        }
+    },
+    {
+        "pk": 2,
+        "model": "corrigeapp.Competence",
+        "fields": {
+            "code": "CC2",
+            "name": "Competencia matem\u00e1tica y competencias b\u00e1sicas en ciencia y tecnolog\u00eda",
+            "description": "Competencia matem\u00e1tica y competencias b\u00e1sicas en ciencia y tecnolog\u00eda.",
+            "level": 3
+        }
+    },
+    {
+        "pk": 3,
+        "model": "corrigeapp.Competence",
+        "fields": {
+            "code": "CC3",
+            "name": "Competencia digital",
+            "description": "Competencia digital.",
+            "level": 3
+        }
+    },
+    {
+        "pk": 4,
+        "model": "corrigeapp.Competence",
+        "fields": {
+            "code": "CC4",
+            "name": "Aprender a aprender",
+            "description": "Aprender a aprender.",
+            "level": 3
+        }
+    },
+    {
+        "pk": 5,
+        "model": "corrigeapp.Competence",
+        "fields": {
+            "code": "CC5",
+            "name": "Competencias sociales y c\u00edvicas",
+            "description": "Competencias sociales y c\u00edvicas.",
+            "level": 3
+        }
+    },
+    {
+        "pk": 6,
+        "model": "corrigeapp.Competence",
+        "fields": {
+            "code": "CS1",
+            "name": "Obtener informaci\u00f3n concreta y relevante sobre hechos o fen\u00f3menos previamente delimitados, utilizando diferentes fuentes (directas e indirectas).",
+            "description": "Obtener informaci\u00f3n concreta y relevante sobre hechos o fen\u00f3menos previamente delimitados, utilizando diferentes fuentes (directas e indirectas).",
+            "weight": 0.15,
+            "level": 2,
+            "parent": 5
+        }
+    },
+    {
+        "pk": 7,
+        "model": "corrigeapp.Competence",
+        "fields": {
+            "code": "CS1.1",
+            "name": "Busca, selecciona y organiza informaci\u00f3n concreta y relevante, la analiza, obtiene conclusiones, reflexiona acerca del proceso seguido y lo comunica oralmente y/o por escrito.",
+            "description": "Busca, selecciona y organiza informaci\u00f3n concreta y relevante, la analiza, obtiene conclusiones, reflexiona acerca del proceso seguido y lo comunica oralmente y/o por escrito.",
+            "weight": 0.15,
+            "level": 1,
+            "parent": 6
+        }
+    },
+    {
+        "pk": 8,
+        "model": "corrigeapp.Competence",
+        "fields": {
+            "code": "CS2",
+            "name": "Utilizar las tecnolog\u00edas de la informaci\u00f3n y la comunicaci\u00f3n para obtener informaci\u00f3n aprender y expresar contenidos sobre Ciencias Sociales.",
+            "description": "Utilizar las tecnolog\u00edas de la informaci\u00f3n y la comunicaci\u00f3n para obtener informaci\u00f3n aprender y expresar contenidos sobre Ciencias Sociales.",
+            "weight": 0.3,
+            "level": 2,
+            "parent": 5
+        }
+    },
+    {
+        "pk": 9,
+        "model": "corrigeapp.Competence",
+        "fields": {
+            "code": "CS2.1",
+            "name": "Utiliza la tecnolog\u00edas de la informaci\u00f3n y la comunicaci\u00f3n (Internet, blogs, redes sociales\u2026) para elaborar trabajos con la terminolog\u00eda adecuada a los temas tratados.",
+            "description": "Utiliza la tecnolog\u00edas de la informaci\u00f3n y la comunicaci\u00f3n (Internet, blogs, redes sociales\u2026) para elaborar trabajos con la terminolog\u00eda adecuada a los temas tratados.",
+            "weight": 0.15,
+            "level": 1,
+            "parent": 8
+        }
+    },
+    {
+        "pk": 10,
+        "model": "corrigeapp.Competence",
+        "fields": {
+            "code": "CC6",
+            "name": "Sentido de la iniciativa y esp\u00edritu emprendedor",
+            "description": "Sentido de iniciativa y esp\u00edritu emprendedor.",
+            "level": 3
+        }
+    },
+    {
+        "pk": 11,
+        "model": "corrigeapp.Competence",
+        "fields": {
+            "code": "CC7",
+            "name": "Conciencia y expresiones culturales",
+            "description": "Conciencia y expresiones culturales.",
+            "level": 3
+        }
+    },
+    {
+        "pk": 1,
+        "model": "corrigeapp.Subject",
+        "fields": {
+            "name": "Ciencias Sociales",
+            "level": "5\u00ba",
+            "grade": "Primaria",
+            "description": "Ciencias Sociales",
+            "competences": [
+                5,
+                6,
+                7,
+                8,
+                9
+            ]
+        }
+    },
+    {
+        "pk": 2,
+        "model": "corrigeapp.Subject",
+        "fields": {
+            "name": "Lengua Castellana y Literatura",
+            "level": "5\u00ba",
+            "grade": "Primaria",
+            "description": "Lengua Castellana y Literatura",
+            "competences": []
+        }
+    },
+    {
+        "pk": 3,
+        "model": "corrigeapp.Subject",
+        "fields": {
+            "name": "Matem\u00e1ticas",
+            "level": "5\u00ba",
+            "grade": "Primaria",
+            "description": "Matem\u00e1ticas",
+            "competences": []
+        }
+    },
+    {
+        "pk": 4,
+        "model": "corrigeapp.Subject",
+        "fields": {
+            "name": "Valores Sociales y C\u00edvicos",
+            "level": "5\u00ba",
+            "grade": "Primaria",
+            "description": "Valores Sociales y C\u00edvicos",
+            "competences": []
+        }
+    },
+    {
+        "pk": 5,
+        "model": "corrigeapp.Subject",
+        "fields": {
+            "name": "Educaci\u00f3n Pl\u00e1stica",
+            "level": "5\u00ba",
+            "grade": "Primaria",
+            "description": "Educaci\u00f3n Pl\u00e1stica",
+            "competences": []
+        }
+    },
+    {
+        "pk": 6,
+        "model": "corrigeapp.Subject",
+        "fields": {
+            "name": "Educaci\u00f3n Musical",
+            "level": "5\u00ba",
+            "grade": "Primaria",
+            "description": "Educaci\u00f3n Musical",
+            "competences": []
+        }
+    },
+    {
+        "pk": 7,
+        "model": "corrigeapp.Subject",
+        "fields": {
+            "name": "Segunda Lengua Extranjera",
+            "level": "5\u00ba",
+            "grade": "Primaria",
+            "description": "Segunda Lengua Extranjera",
+            "competences": []
+        }
+    },
+    {
+        "pk": 8,
+        "model": "corrigeapp.Subject",
+        "fields": {
+            "name": "Educaci\u00f3n F\u00edsica",
+            "level": "5\u00ba",
+            "grade": "Primaria",
+            "description": "Educaci\u00f3n F\u00edsica",
+            "competences": []
+        }
+    },
+    {
+        "pk": 1,
+        "model": "corrigeapp.Evaluation",
+        "fields": {
+            "name": "Matem\u00e1ticas 5\u00ba Primaria Final",
+            "start_date": "1980-01-01",
+            "end_date": "1980-01-01",
+            "is_final": true,
+            "period": "Final",
+            "subject": 3
+        }
+    },
+    {
+        "pk": 1,
+        "model": "corrigeapp.Set",
+        "fields": {
+            "name": "Matem\u00e1ticas 5\u00baA Primaria",
+            "level": "5\u00ba",
+            "grade": "Primaria",
+            "line": "A",
+            "teacher": 2,
+            "subject": 3,
+            "evaluation": 1,
+            "students": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+            ]
+        }
+    }
+]
