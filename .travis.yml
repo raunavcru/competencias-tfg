@@ -39,4 +39,3 @@ addons:
 branches:
   only:
     - release/s1/Despliegue-0.1
-
