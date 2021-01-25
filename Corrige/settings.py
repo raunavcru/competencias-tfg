@@ -12,8 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import get_language
 import os
-import dj_database_url
-from decouple import config
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -190,4 +189,6 @@ STATICFILES_DIRS = (
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
 STATIC_URL = '/static/'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+
+django_heroku.settings(locals())
