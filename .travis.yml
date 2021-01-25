@@ -22,7 +22,7 @@ install:
 before_script:
   - cp ./Corrige/settings.py ./Corrige/local_settings.py
   - export PATH="/usr/lib/postgresql/13/bin:$PATH"
-  - psql -c 'create user Kelsier with password superuser "Kelsier";' -U postgres
+  - psql -c 'create role Kelsier superuser with password "Kelsier";' -U postgres
   - psql -c 'create database corrige -o Kelsier;' -U postgres
   - CREATEDB corrige -O Kelsier;
   - \q
