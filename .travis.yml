@@ -22,8 +22,8 @@ install:
 before_script:
   - cp ./Corrige/settings.py ./Corrige/local_settings.py
   - export PATH="/usr/lib/postgresql/13/bin:$PATH"
-  - sudo -i -u postgres createuser Kelsier 
-  - sudo -i -u postgres createdb corrige -O Kelsier
+  - psql -c 'create user Kelsier with password 'Kelsier';' -U postgres
+  - psql -c 'create database corrige -o Kelsier;' -U postgres
   - CREATEDB corrige -O Kelsier;
   - \q
   - python manage.py makemigrations
