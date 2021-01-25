@@ -119,7 +119,7 @@ class TeacherCreateForm(UserCreationForm):
     password2 = forms.CharField(required=True)
 
     def __init__(self, *args, **kwargs):
-        super(StudentCreateForm, self).__init__(*args, **kwargs)
+        super(TeacherCreateForm, self).__init__(*args, **kwargs)
         if get_language() == 'en':
             self.fields['birthdate'].widget.attrs['placeholder'] = DATE_PLACEHOLDER_EN
             self.fields['birthdate'].widget.format = settings.DATE_INPUT_FORMATS[0]
@@ -208,11 +208,11 @@ class TeacherUpdateForm(forms.ModelForm):
     initials = forms.CharField(required=True)
 
     def __init__(self, *args, **kwargs):
-        super(StudentCreateForm, self).__init__(*args, **kwargs)
+        super(TeacherUpdateForm, self).__init__(*args, **kwargs)
         if get_language() == 'en':
             self.fields['birthdate'].widget.attrs['placeholder'] = DATE_PLACEHOLDER_EN
             self.fields['birthdate'].widget.format = settings.DATE_INPUT_FORMATS[0]
-            
+
     class Meta:
         model = models.Teacher
         fields = (
