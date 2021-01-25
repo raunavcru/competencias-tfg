@@ -78,6 +78,22 @@ def seed_users():
         }
 
         POPULATE.append(user)
+    
+    superuser = {
+            'pk': 45,
+            'model': 'auth.User',
+            'fields': {
+                'password': make_password('Kelsier'),
+                'is_superuser': True,
+                'username': 'Kelsier',
+                'first_name': 'Kelsier',
+                'last_name': 'Kelsier',
+                'email': 'Kelsier@gmail.com',
+                'is_staff': False,
+                'date_joined': now().strftime(DATE_FORMAT),
+            }
+        }
+
 
 def seed_profiles():
     for user_pk in USER_PKS:
