@@ -39,6 +39,5 @@ addons:
       - postgresql-client-13
 branches:
   only:
-    - master
-    - dev
-    
+    - release/s1/Despliegue-0.1
+
