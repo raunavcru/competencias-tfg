@@ -13,6 +13,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import get_language
 import os
 import django_heroku
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -111,16 +112,7 @@ LOGGING = {
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'corrige',
-        'USER': 'Kelsier',
-        'PASSWORD': 'Kelsier',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
+DATABASES['default'] =  dj_database_url.config()
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
