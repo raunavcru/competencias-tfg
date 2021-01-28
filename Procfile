@@ -1,1 +1,1 @@
-web: gunicorn Corrige.wsgi --log.file -
+web: gunicorn Corrige.wsgi --log-file -
