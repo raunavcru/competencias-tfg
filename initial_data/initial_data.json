@@ -3,112 +3,112 @@
         "pk": 2,
         "model": "auth.User",
         "fields": {
-            "password": "pbkdf2_sha256$216000$z3Q8rZzNaKks$WFpZ2/7q9dKxalecRBG/Jy4OYzdo+4YKUaXcOvURuEg=",
+            "password": "pbkdf2_sha256$216000$Al2ONk9m8UA7$05Fw7gY7wse0iMkBJVtvql1x2axCp0+lw/AuhMwlPcY=",
             "is_superuser": false,
-            "username": "ligiaperalta",
-            "first_name": "Andr\u00e9s",
-            "last_name": "Felipe",
-            "email": "smacias@yahoo.com",
+            "username": "donatomiguel",
+            "first_name": "Esteban",
+            "last_name": "Merino",
+            "email": "icapdevila@gmail.com",
             "is_staff": false,
-            "date_joined": "2021-01-18 18:40:11+0000"
+            "date_joined": "2021-01-28 10:55:23+0000"
         }
     },
     {
         "pk": 3,
         "model": "auth.User",
         "fields": {
-            "password": "pbkdf2_sha256$216000$Dim3domt8ak0$+sUPHxdiFmUYE+aE5PKkyEozIRsLmoPKjvw1c1oWA14=",
+            "password": "pbkdf2_sha256$216000$ZzB92oOuEwgA$BLXzpfmZ83FDGWFFp9xeZFDtN/G4FX+e3j7kgsOBVjc=",
             "is_superuser": false,
-            "username": "francoursula",
-            "first_name": "Claudia",
-            "last_name": "Maribel",
-            "email": "ujodar@yahoo.com",
+            "username": "isidorobeltran",
+            "first_name": "Emperatriz",
+            "last_name": "Moles",
+            "email": "lupe08@hotmail.com",
             "is_staff": false,
-            "date_joined": "2021-01-18 18:40:12+0000"
+            "date_joined": "2021-01-28 10:55:23+0000"
         }
     },
     {
         "pk": 4,
         "model": "auth.User",
         "fields": {
-            "password": "pbkdf2_sha256$216000$Mk55eNcHWICX$Zyv8KBb0dZX4BckZkNcMQF3nCvpr00euM7PPRo9gKnE=",
+            "password": "pbkdf2_sha256$216000$NDC8l08C9fBL$xCxVrk/sVx5t0zUq709eFtt6741Mv6T4rMIJUfaMwb4=",
             "is_superuser": false,
-            "username": "tcastello",
-            "first_name": "Leire",
-            "last_name": "Sans",
-            "email": "candelaria57@yahoo.com",
+            "username": "bernatberta",
+            "first_name": "Amalia",
+            "last_name": "Garz\u00f3n",
+            "email": "galangilberto@yahoo.com",
             "is_staff": false,
-            "date_joined": "2021-01-18 18:40:12+0000"
+            "date_joined": "2021-01-28 10:55:23+0000"
         }
     },
     {
         "pk": 5,
         "model": "auth.User",
         "fields": {
-            "password": "pbkdf2_sha256$216000$ES6cUjzRdkyV$0W9uzRC+HeR+sv9noTlEQuDLyw7csuK2NJBCU3RiHww=",
+            "password": "pbkdf2_sha256$216000$dffKp5R2EaQz$nZMQSnzkAV2c2O0kVq9b5AIE93eEguNVH5kxF5G9EiE=",
             "is_superuser": false,
-            "username": "dflores",
-            "first_name": "Leandro",
-            "last_name": "Ballesteros",
-            "email": "marina89@hotmail.com",
+            "username": "cortinateo",
+            "first_name": "Che",
+            "last_name": "Figuerola",
+            "email": "titobaeza@gmail.com",
             "is_staff": false,
-            "date_joined": "2021-01-18 18:40:12+0000"
+            "date_joined": "2021-01-28 10:55:23+0000"
         }
     },
     {
         "pk": 6,
         "model": "auth.User",
         "fields": {
-            "password": "pbkdf2_sha256$216000$JOZz2oKyZ7vD$8pdyeTeR+9/skEobjLg5B7312oSL2tCuHuvaggiG2dI=",
+            "password": "pbkdf2_sha256$216000$U4dyi00WL38r$qoh998UJSf64Pr1FCqhX0cmU/AKfRoBVB7jWCqhfZTY=",
             "is_superuser": false,
-            "username": "fmata",
-            "first_name": "Eva",
-            "last_name": "Arnal",
-            "email": "maria-pilar45@yahoo.com",
+            "username": "gabriel08",
+            "first_name": "Ignacio",
+            "last_name": "Escribano",
+            "email": "marc72@hotmail.com",
             "is_staff": false,
-            "date_joined": "2021-01-18 18:40:12+0000"
+            "date_joined": "2021-01-28 10:55:23+0000"
         }
     },
     {
         "pk": 7,
         "model": "auth.User",
         "fields": {
-            "password": "pbkdf2_sha256$216000$SVC4qiaGN8Ta$uoMgzwK0ySx5xnuoJFSciuRDKG7d6wFldIgDTP4BTbc=",
+            "password": "pbkdf2_sha256$216000$FnbIEMlwEXwC$/4IyE/1+MctzmszV2K9HyN7pqPuyBIcIhGcKMt1yQVw=",
             "is_superuser": false,
-            "username": "escribanocelestino",
-            "first_name": "Primitivo",
-            "last_name": "Gallardo",
-            "email": "palaulucia@gmail.com",
+            "username": "zchacon",
+            "first_name": "Crist\u00f3bal",
+            "last_name": "Roca",
+            "email": "federicobautista@gmail.com",
             "is_staff": false,
-            "date_joined": "2021-01-18 18:40:12+0000"
+            "date_joined": "2021-01-28 10:55:23+0000"
         }
     },
     {
         "pk": 8,
         "model": "auth.User",
         "fields": {
-            "password": "pbkdf2_sha256$216000$8L2ghNuPpdWe$B28fZIW3MX9pohFtU8vmYKrHcq/peagHTtIxvsAxEzU=",
+            "password": "pbkdf2_sha256$216000$z9zy7YAnOvL7$5Kxd3IlhDsS1jli5U9Vk6VGRgn2gx6SzcqlQ0LFk7cQ=",
             "is_superuser": false,
-            "username": "jodararmando",
-            "first_name": "Sof\u00eda",
-            "last_name": "Sureda",
-            "email": "jennyagusti@gmail.com",
+            "username": "acostacasemiro",
+            "first_name": "Ester",
+            "last_name": "Teruel",
+            "email": "pinolvalentina@gmail.com",
             "is_staff": false,
-            "date_joined": "2021-01-18 18:40:12+0000"
+            "date_joined": "2021-01-28 10:55:23+0000"
         }
     },
     {
         "pk": 9,
         "model": "auth.User",
         "fields": {
-            "password": "pbkdf2_sha256$216000$dxGhxep96LMn$dkm3oGIG5KWlCUwmPcbZ/zTU3SFWKC0NuqDe4zgbabA=",
+            "password": "pbkdf2_sha256$216000$oD5sy7bhA9Xb$p1ArUp+bWPbsr+XsP3OM+EMGEoJGteBiaIpI2jwAILY=",
             "is_superuser": false,
-            "username": "morcillomamen",
-            "first_name": "Antonia",
-            "last_name": "de",
-            "email": "irma91@gmail.com",
+            "username": "wpardo",
+            "first_name": "Moreno",
+            "last_name": "Teruel-Garmendia",
+            "email": "solcrespo@gmail.com",
             "is_staff": false,
-            "date_joined": "2021-01-18 18:40:12+0000"
+            "date_joined": "2021-01-28 10:55:24+0000"
         }
     },
     {
@@ -123,7 +123,7 @@
         "model": "corrigeapp.PROFILE",
         "fields": {
             "birthdate": "1980-01-01",
-            "initials": "2PK",
+            "initials": "LC4",
             "role": "TEACHER",
             "user": 2
         }
@@ -140,7 +140,7 @@
         "model": "corrigeapp.PROFILE",
         "fields": {
             "birthdate": "1980-01-01",
-            "initials": "C7E",
+            "initials": "S9N",
             "role": "TEACHER",
             "user": 3
         }
@@ -157,7 +157,7 @@
         "model": "corrigeapp.PROFILE",
         "fields": {
             "birthdate": "1980-01-01",
-            "initials": "CTO",
+            "initials": "BEN",
             "role": "TEACHER",
             "user": 4
         }
@@ -174,7 +174,7 @@
         "model": "corrigeapp.PROFILE",
         "fields": {
             "birthdate": "1980-01-01",
-            "initials": "LOL",
+            "initials": "WUF",
             "role": "TEACHER",
             "user": 5
         }
@@ -191,7 +191,7 @@
         "model": "corrigeapp.PROFILE",
         "fields": {
             "birthdate": "1980-01-01",
-            "initials": "SZE",
+            "initials": "CBZ",
             "role": "TEACHER",
             "user": 6
         }
@@ -208,7 +208,7 @@
         "model": "corrigeapp.PROFILE",
         "fields": {
             "birthdate": "1980-01-01",
-            "initials": "27N",
+            "initials": "ZOD",
             "role": "TEACHER",
             "user": 7
         }
@@ -225,7 +225,7 @@
         "model": "corrigeapp.PROFILE",
         "fields": {
             "birthdate": "1980-01-01",
-            "initials": "RSI",
+            "initials": "3XD",
             "role": "TEACHER",
             "user": 8
         }
@@ -242,7 +242,7 @@
         "model": "corrigeapp.PROFILE",
         "fields": {
             "birthdate": "1980-01-01",
-            "initials": "E4B",
+            "initials": "ETW",
             "role": "TEACHER",
             "user": 9
         }
@@ -251,14 +251,14 @@
         "pk": 1,
         "model": "auth.User",
         "fields": {
-            "password": "pbkdf2_sha256$216000$ixUTnSXcygNI$yC2Q7eyTFugzfIjGCA/RhJZfXTwrP2yBoB+KPhMhVZE=",
+            "password": "pbkdf2_sha256$216000$Lx3JCSVZtqRq$IiVkLGctP4R1lVWzM/u/jXLzAn4+u75KF53XYwRL/6E=",
             "is_superuser": false,
-            "username": "vvalcarcel",
-            "first_name": "Jose",
-            "last_name": "Ram\u00f3n",
-            "email": "jenarosalva@gmail.com",
+            "username": "qgomez",
+            "first_name": "Paulina",
+            "last_name": "Pablo",
+            "email": "genovevarico@hotmail.com",
             "is_staff": false,
-            "date_joined": "2021-01-18 18:40:12+0000"
+            "date_joined": "2021-01-28 10:55:24+0000"
         }
     },
     {
@@ -273,7 +273,7 @@
         "model": "corrigeapp.PROFILE",
         "fields": {
             "birthdate": "1980-01-01",
-            "initials": "ERD",
+            "initials": "95K",
             "role": "ADMINISTRATOR",
             "user": 1
         }
@@ -282,290 +282,290 @@
         "pk": 1,
         "model": "corrigeapp.Student",
         "fields": {
-            "name": "Isaac",
-            "surname": "Laguna",
+            "name": "Amado",
+            "surname": "Amancio",
             "birthdate": "1980-01-01",
-            "initials": "VTH"
+            "initials": "ZXE"
         }
     },
     {
         "pk": 2,
         "model": "corrigeapp.Student",
         "fields": {
-            "name": "Roberta",
-            "surname": "Gir\u00f3n",
+            "name": "Te\u00f3fila",
+            "surname": "Mesa",
             "birthdate": "1980-01-01",
-            "initials": "NET"
+            "initials": "UWC"
         }
     },
     {
         "pk": 3,
         "model": "corrigeapp.Student",
         "fields": {
-            "name": "Paca",
-            "surname": "Beltr\u00e1n",
+            "name": "Lupe",
+            "surname": "Fajardo",
             "birthdate": "1980-01-01",
-            "initials": "A9J"
+            "initials": "UXP"
         }
     },
     {
         "pk": 4,
         "model": "corrigeapp.Student",
         "fields": {
-            "name": "Horacio",
-            "surname": "Alberdi",
+            "name": "Gustavo",
+            "surname": "Vizca\u00edno",
             "birthdate": "1980-01-01",
-            "initials": "YZA"
+            "initials": "0FB"
         }
     },
     {
         "pk": 5,
         "model": "corrigeapp.Student",
         "fields": {
-            "name": "Amando",
-            "surname": "Redondo",
+            "name": "Santiago",
+            "surname": "Palau",
             "birthdate": "1980-01-01",
-            "initials": "T8W"
+            "initials": "E9S"
         }
     },
     {
         "pk": 6,
         "model": "corrigeapp.Student",
         "fields": {
-            "name": "Zacar\u00edas",
-            "surname": "Rosell\u00f3",
+            "name": "Domitila",
+            "surname": "Villalobos-Alegria",
             "birthdate": "1980-01-01",
-            "initials": "FRO"
+            "initials": "67G"
         }
     },
     {
         "pk": 7,
         "model": "corrigeapp.Student",
         "fields": {
-            "name": "Gala",
-            "surname": "Maestre",
+            "name": "Jose",
+            "surname": "Angel",
             "birthdate": "1980-01-01",
-            "initials": "CN1"
+            "initials": "LI1"
         }
     },
     {
         "pk": 8,
         "model": "corrigeapp.Student",
         "fields": {
-            "name": "Catalina",
-            "surname": "Vall\u00e9s",
+            "name": "Isidora",
+            "surname": "C\u00e1rdenas",
             "birthdate": "1980-01-01",
-            "initials": "8ED"
+            "initials": "6GE"
         }
     },
     {
         "pk": 9,
         "model": "corrigeapp.Student",
         "fields": {
-            "name": "Diego",
-            "surname": "Mendiz\u00e1bal",
+            "name": "Adoraci\u00f3n",
+            "surname": "Lupe",
             "birthdate": "1980-01-01",
-            "initials": "RPI"
+            "initials": "HOU"
         }
     },
     {
         "pk": 10,
         "model": "corrigeapp.Student",
         "fields": {
-            "name": "Florentino",
-            "surname": "Gasc\u00f3n",
+            "name": "Lope",
+            "surname": "Carri\u00f3n",
             "birthdate": "1980-01-01",
-            "initials": "WAJ"
+            "initials": "6SK"
         }
     },
     {
         "pk": 11,
         "model": "corrigeapp.Student",
         "fields": {
-            "name": "Fabi\u00e1n",
-            "surname": "del",
+            "name": "Pancho",
+            "surname": "Fabio",
             "birthdate": "1980-01-01",
-            "initials": "EEE"
+            "initials": "S8S"
         }
     },
     {
         "pk": 12,
         "model": "corrigeapp.Student",
         "fields": {
-            "name": "Adelia",
-            "surname": "Pedraza",
+            "name": "Jose",
+            "surname": "Carlos",
             "birthdate": "1980-01-01",
-            "initials": "FEX"
+            "initials": "S9Y"
         }
     },
     {
         "pk": 13,
         "model": "corrigeapp.Student",
         "fields": {
-            "name": "Mar\u00eda",
-            "surname": "Del",
+            "name": "Rodrigo",
+            "surname": "del",
             "birthdate": "1980-01-01",
-            "initials": "KPU"
+            "initials": "MQD"
         }
     },
     {
         "pk": 14,
         "model": "corrigeapp.Student",
         "fields": {
-            "name": "Jordi",
-            "surname": "Paredes",
+            "name": "Humberto",
+            "surname": "Lerma",
             "birthdate": "1980-01-01",
-            "initials": "QQV"
+            "initials": "FZD"
         }
     },
     {
         "pk": 15,
         "model": "corrigeapp.Student",
         "fields": {
-            "name": "Consuelo",
-            "surname": "Alcalde-Colomer",
+            "name": "Griselda",
+            "surname": "Iglesia",
             "birthdate": "1980-01-01",
-            "initials": "CAE"
+            "initials": "4L3"
         }
     },
     {
         "pk": 16,
         "model": "corrigeapp.Student",
         "fields": {
-            "name": "Azucena",
-            "surname": "Castells",
+            "name": "Julio",
+            "surname": "C\u00e9sar",
             "birthdate": "1980-01-01",
-            "initials": "3HY"
+            "initials": "LHO"
         }
     },
     {
         "pk": 17,
         "model": "corrigeapp.Student",
         "fields": {
-            "name": "Mariana",
-            "surname": "Hilda",
+            "name": "Baltasar",
+            "surname": "del",
             "birthdate": "1980-01-01",
-            "initials": "WKF"
+            "initials": "XPQ"
         }
     },
     {
         "pk": 18,
         "model": "corrigeapp.Student",
         "fields": {
-            "name": "Santos",
-            "surname": "Catal\u00e1",
+            "name": "Anselma",
+            "surname": "Pera",
             "birthdate": "1980-01-01",
-            "initials": "GP0"
+            "initials": "IG2"
         }
     },
     {
         "pk": 19,
         "model": "corrigeapp.Student",
         "fields": {
-            "name": "Armando",
-            "surname": "Bravo",
+            "name": "In\u00e9s",
+            "surname": "Palomo",
             "birthdate": "1980-01-01",
-            "initials": "BK2"
+            "initials": "9TA"
         }
     },
     {
         "pk": 20,
         "model": "corrigeapp.Student",
         "fields": {
-            "name": "Primitiva",
-            "surname": "Rivera",
+            "name": "Rufina",
+            "surname": "Tenorio",
             "birthdate": "1980-01-01",
-            "initials": "HHE"
+            "initials": "IRQ"
         }
     },
     {
         "pk": 21,
         "model": "corrigeapp.Student",
         "fields": {
-            "name": "Anunciaci\u00f3n",
-            "surname": "Montesinos",
+            "name": "Erasmo",
+            "surname": "Raya-Torrecilla",
             "birthdate": "1980-01-01",
-            "initials": "J2L"
+            "initials": "R0M"
         }
     },
     {
         "pk": 22,
         "model": "corrigeapp.Student",
         "fields": {
-            "name": "Primitiva",
-            "surname": "Gual",
+            "name": "Amando",
+            "surname": "del",
             "birthdate": "1980-01-01",
-            "initials": "H0O"
+            "initials": "NZF"
         }
     },
     {
         "pk": 23,
         "model": "corrigeapp.Student",
         "fields": {
-            "name": "Amada",
-            "surname": "Ang\u00e9lica",
+            "name": "Telmo",
+            "surname": "Delgado-Torrents",
             "birthdate": "1980-01-01",
-            "initials": "P6O"
+            "initials": "KIN"
         }
     },
     {
         "pk": 24,
         "model": "corrigeapp.Student",
         "fields": {
-            "name": "Modesta",
-            "surname": "C\u00e1rdenas-Cortina",
+            "name": "Dafne",
+            "surname": "Quintana",
             "birthdate": "1980-01-01",
-            "initials": "PYB"
+            "initials": "BJE"
         }
     },
     {
         "pk": 25,
         "model": "corrigeapp.Student",
         "fields": {
-            "name": "Aristides",
-            "surname": "Eliseo",
+            "name": "Ana",
+            "surname": "Bel\u00e9n",
             "birthdate": "1980-01-01",
-            "initials": "UYT"
+            "initials": "DEJ"
         }
     },
     {
         "pk": 26,
         "model": "corrigeapp.Student",
         "fields": {
-            "name": "Olalla",
-            "surname": "Sol\u00eds",
+            "name": "Alejo",
+            "surname": "Josu\u00e9",
             "birthdate": "1980-01-01",
-            "initials": "RVP"
+            "initials": "HHG"
         }
     },
     {
         "pk": 27,
         "model": "corrigeapp.Student",
         "fields": {
-            "name": "Francisco",
-            "surname": "Jose",
+            "name": "Coral",
+            "surname": "Novoa",
             "birthdate": "1980-01-01",
-            "initials": "BU1"
+            "initials": "IYR"
         }
     },
     {
         "pk": 28,
         "model": "corrigeapp.Student",
         "fields": {
-            "name": "Samuel",
-            "surname": "Parra-Pati\u00f1o",
+            "name": "Gema",
+            "surname": "Olivares",
             "birthdate": "1980-01-01",
-            "initials": "FK8"
+            "initials": "UFF"
         }
     },
     {
         "pk": 29,
         "model": "corrigeapp.Student",
         "fields": {
-            "name": "Jacobo",
-            "surname": "de",
+            "name": "Lucho",
+            "surname": "Bayo",
             "birthdate": "1980-01-01",
-            "initials": "MB6"
+            "initials": "PEV"
         }
     },
     {
