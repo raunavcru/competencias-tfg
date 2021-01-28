@@ -42,5 +42,5 @@ branches:
 deploy:
   provider: heroku
   api_key:
-    secure: "21a6710d-e1fa-4a20-90ba-3955de9fb059"
+    secure: API_KEY_HEROKU
      on: release/s1/Despliegue-0.1
