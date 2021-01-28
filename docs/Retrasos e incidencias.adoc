@@ -23,3 +23,18 @@
 | 27 de Enero
 | 28 de Enero
 |===
+
+= Incidencias
+
+[grid=cols]
+[cols=2*,options="header"]
+|===
+|Tarea
+|Fecha de la incidencia
+
+| Añadir CRUD de evaluaciones
+| 28 de Enero
+
+| Reordenación casos de uso
+| 28 de Enero
+|===
