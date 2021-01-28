@@ -39,8 +39,3 @@ addons:
 branches:
   only:
     - release/s1/Despliegue-0.1
-deploy:
-  provider: heroku
-  app: verumapp
-  on: 
-    branch: release/s1/Despliegue-0.1
