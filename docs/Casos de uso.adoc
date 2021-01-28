@@ -270,30 +270,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-14**   Asignar profesores a un grupo de clase.
-
-|Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador asignar profesores a un grupo de clase_.
-
-| Secuencia normal:
-
-1.El adminsitrador desea asignar asignar profesores a un grupo de clase.
-
-2.El sistema solicita las credenciales para identificarse.
-
-3.El administrador solicita la lista de grupos de clase.
-
-4.El administrador obtiene el listado de grupos de clase.
-
-5.El administrador solicita la lista de profesores no inscritos.
-
-6.El administrador obtiene la lista de profesores no inscritos.
-
-7.El administrador solicita la asignación de un profesor.
-
-
-|===
-|===
-|**CU-15** Listado de asignaturas.
+|**CU-14** Listado de asignaturas.
 
 |Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de asignaturas_.
 
@@ -310,7 +287,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-16**  Creación de asignaturas.
+| **CU-15**  Creación de asignaturas.
 
 |Descripción: 
 El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de una asignatura_.
@@ -332,7 +309,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-|**CU-17**  Edición de asignaturas.
+|**CU-16**  Edición de asignaturas.
 
 | Descripción:
 El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la edición de una asignatura_.
@@ -354,7 +331,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-18**  Eliminación de asignaturas.
+| **CU-17**  Eliminación de asignaturas.
 
 |Descripción:El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de una asignatura.
 
@@ -375,30 +352,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-19**  Asignar una asignatura a grupos de clase.
-
-| Descripción: 
-El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador asignar una asignatura a grupos de clase_.
-
-|Secuencia normal:
-
-1.El adminsitrador desea asignar una asignatura a grupos de clase.
-
-2.El sistema solicita las credenciales para identificarse.
-
-3.El administrador solicita la lista de grupos de clase.
-
-4.El administrador obtiene el listado de grupos de clase.
-
-5.El administrador solicita la lista de asignaturas no inscritas.
-
-6.El administrador obtiene la lista de asignaturas no inscritas.
-
-7.El administrador solicita la asignación de una asignatura.
-
-|===
-|===
-|**CU-20**  Asignar asignatura a profesores.
+|**CU-18**  Asignar asignatura a profesores.
 
 | Descripción: 
 El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador asignar una asignatura a un profesor_.
@@ -422,7 +376,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-21** Listado de competencias.
+| **CU-19** Listado de competencias.
 
 | Descripción:
 El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de competencias_.
@@ -439,7 +393,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-22**  Creación de competencias.
+| **CU-20**  Creación de competencias.
 
 |Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de una competencia_.
 
@@ -460,7 +414,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-23**  Edición de competencias.
+| **CU-21**  Edición de competencias.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la edición de una competencia_.
 
@@ -481,7 +435,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-24**  Eliminación de competencias.
+| **CU-22**  Eliminación de competencias.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de una competencia_.
 
@@ -502,7 +456,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-25**  Asignación de competencias.
+| **CU-23**  Asignación de competencias.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la asignación de competencias a una asignatura_.
 
@@ -525,7 +479,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-26** Listado de administradores.
+| **CU-24** Listado de administradores.
 
 | Descripción:
 El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de administradores_.
@@ -542,7 +496,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-27**  Creación de administradores.
+| **CU-25**  Creación de administradores.
 
 |Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de un nuevo administrador_.
 
@@ -564,7 +518,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-28**  Eliminación de administradores.
+| **CU-26**  Eliminación de administradores.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de un administrador_.
 
@@ -585,7 +539,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-29**  Edición de usuarios.
+| **CU-27**  Edición de usuarios.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la edición de un usuario.
 
@@ -606,7 +560,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 
 |===
-| **CU-30**  Listar sus grupos de clase.
+| **CU-28**  Listar sus grupos de clase.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite listar sus grupos de clase_.
 
@@ -624,7 +578,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 
 |===
-| **CU-31**  Listar sus asignaturas.
+| **CU-29**  Listar sus asignaturas.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite listar sus asignaturas_.
 
@@ -642,7 +596,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 
 |===
-| **CU-32**  Listar las competencias de una asignatura.
+| **CU-30**  Listar las competencias de una asignatura.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite listar las competencias de una asignatura_.
 
@@ -659,7 +613,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 
 |===
-| **CU-33**  Listar sus alumnos.
+| **CU-31**  Listar sus alumnos.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite listar sus alumnos_.
 
@@ -676,7 +630,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 
 |===
-| **CU-34**  Listar actividades.
+| **CU-32**  Listar actividades.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite actividades_.
 
@@ -693,7 +647,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 
 |===
-| **CU-35**  Creación de actividades.
+| **CU-33**  Creación de actividades.
 
 |Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la creación de una actividad_.
 
@@ -715,7 +669,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-36**  Edición de una actividad.
+| **CU-34**  Edición de una actividad.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la edición de una actividad_.
 
@@ -741,7 +695,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-37**  Eliminación de una actividad.
+| **CU-35**  Eliminación de una actividad.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la eliminación de una actividad_.
 
@@ -767,7 +721,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-38**  Ver las calificaciones de un alumno.
+| **CU-36**  Ver las calificaciones de un alumno.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite ver las calificaciones de un alumno_.
 
@@ -790,7 +744,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 
 |===
-| **CU-39**  Creación de ejercicios.
+| **CU-37**  Creación de ejercicios.
 
 |Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la creación de un ejercicio_.
 
@@ -816,7 +770,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-40**  Edición de un ejercicio.
+| **CU-38**  Edición de un ejercicio.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la edición de un ejercicio_.
 
@@ -842,7 +796,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-41**  Eliminación de un ejercicio.
+| **CU-39**  Eliminación de un ejercicio.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la eliminación de un ejericio_.
 
@@ -868,7 +822,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-42**  Asignar competencias a un ejercicio con una intensidad.
+| **CU-40**  Asignar competencias a un ejercicio con una intensidad.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la asignar competencias a un ejercicio con una intensidad_.
 
@@ -896,7 +850,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-43**  Puntuar las evaluaciones, las actividades, los ejercicios y las competencias.
+| **CU-41**  Puntuar las evaluaciones, las actividades, los ejercicios y las competencias.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite puntuar las evaluaciones, las actividades, los ejercicios y las competencias_.
 
@@ -930,7 +884,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-44**  Modificar sus datos de usuario.
+| **CU-42**  Modificar sus datos de usuario.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite modificar sus datos de usuario_.
 
@@ -947,7 +901,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 
 |===
-| **CU-45**  Generar informe de un grupo completo.
+| **CU-43**  Generar informe de un grupo completo.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite generar informe de un grupo completo_.
 
@@ -972,7 +926,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 
 |===
-| **CU-46**  Generar informe de un alumno.
+| **CU-44**  Generar informe de un alumno.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite generar informe de un alumno_.
 
@@ -998,7 +952,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 
 |===
-| **CU-47**  Ver competencias de un alumno.
+| **CU-45**  Ver competencias de un alumno.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite ver las competencias de un alumno_.
 
@@ -1019,5 +973,86 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 7.El profesor solicita las competencias de un alumno.
 
 8.El profesor obtiene las competencias de un alumno.
+
+|===
+
+|===
+| **CU-46**  Creación de evaluaciones.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de una evaluación_.
+
+|Secuencia normal:
+
+1.El adminsitrador desea crear una evaluación.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de evaluaciones.
+
+4.El administrador obtiene el listado de evaluaciones.
+
+5.El administrador solicita crear una evaluación.
+
+6.El administrador crea una evaluación.
+
+
+|===
+|===
+| **CU-47**  Edición de evaluaciones.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la edición de una evaluación_.
+
+| Secuencia normal:
+
+1.El adminsitrador desea editar una evaluacion.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de evaluaciones.
+
+4.El administrador obtiene el listado de evaluaciones.
+
+5.El administrador solicita la edición una evaluación.
+
+6.El administrador edita una evaluación.
+
+
+|===
+|===
+| **CU-48**  Eliminación de evaluaciones.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de una evaluación_.
+
+| Secuencia normal:
+
+1.El adminsitrador desea eliminar una evaluación.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de evaluaciones.
+
+4.El administrador obtiene el listado de evaluaciones.
+
+5.El administrador solicita la eliminación una evaluación.
+
+6.El administrador elimina una evaluación.
+
+
+|===
+|===
+| **CU-49** Listado de evaluaciones.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de las evaluaciones_.
+
+|Secuencia normal:
+
+1.El adminsitrador desea obtener la lista de evaluaciones.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de grupos de clase.
+
+4.El administrador obtiene el listado de evaluaciones.
+
 
 |===
