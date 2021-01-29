@@ -130,7 +130,7 @@ _[15 de Febrero]_
 
 | CU-14 Listado de asignaturas.
 
-_[30 de Febrero]_
+_[30 de Enero]_
 | CU-19 Listado de competencias.
 
 _[6 de Febrero]_
