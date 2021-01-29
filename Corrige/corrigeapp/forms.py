@@ -345,3 +345,31 @@ class LoginForm(AuthenticationForm):
         )
 
 
+class EvaluationUpdateForm(forms.ModelForm):
+    
+    name = forms.CharField(required=True)
+    start_date = forms.DateField(required=True, 
+        input_formats=settings.DATE_INPUT_FORMATS, 
+        widget=forms.DateInput(
+            format=settings.DATE_INPUT_FORMATS[0],
+            attrs={'placeholder': DATE_PLACEHOLDER}
+        )
+    )
+    end_date = forms.DateField(required=True, 
+        input_formats=settings.DATE_INPUT_FORMATS, 
+        widget=forms.DateInput(
+            format=settings.DATE_INPUT_FORMATS[0],
+            attrs={'placeholder': DATE_PLACEHOLDER}
+        )
+    )
+    subject = forms.ModelChoiceField(subjects, empty_label=None)
+
+    class Meta:
+        model = models.Evaluation
+        fields = (
+            'name',
+            'start_date',
+            'end_date',
+            'subject',
+        )
+

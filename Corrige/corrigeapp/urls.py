@@ -19,9 +19,9 @@ urlpatterns = [
     path('sets/list', views.SetsListView.as_view(), name = 'sets_list'),
     path('sets/<int:pk>/delete', views.SetDeleteView.as_view(), name='sets_delete'),
 
-    path('evalautions/create', views.EvaluationCreateView.as_view(), name = 'evalautions_create'),
-    path('evalautions/list', views.EvaluationsListView.as_view(), name = 'evalautions_list'),
-    path('evalautions/<int:pk>/delete', views.EvaluationDeleteView.as_view(), name='evalautions_delete'),
-    path('evalautions/<int:pk>/update', views.EvaluationUpdateView.as_view(), name = 'evalautions_update'),
+    path('evaluations/create', views.EvaluationCreateView.as_view(), name = 'evaluations_create'),
+    path('evaluations/list', views.EvaluationsListView.as_view(), name = 'evaluations_list'),
+    path('evaluations/<int:pk>/delete', views.EvaluationDeleteView.as_view(), name='evaluations_delete'),
+    path('evaluations/<int:pk>/update', views.EvaluationUpdateView.as_view(), name = 'evaluations_update'),
 
 ]

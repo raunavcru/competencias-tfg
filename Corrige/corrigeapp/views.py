@@ -248,8 +248,8 @@ class EvaluationDeleteView(generic.DeleteView):
 
 @method_decorator(login_required, name='dispatch')
 class EvaluationCreateView(generic.CreateView):
-    form_class = forms.EvaluationCreateForm
-    template_name = "evalautions/create.html"
+    form_class = forms.EvaluationUpdateForm
+    template_name = "evaluations/update.html"
     success_url = reverse_lazy('evaluations_list')
 
     def get(self, request, *args, **kwargs):
@@ -258,15 +258,26 @@ class EvaluationCreateView(generic.CreateView):
         else:
             return redirect('/')
 
+    def form_valid(self, form):
+        evaluation_form = form.save(commit=False)
+        evaluation = models.Evaluation.objects.create(name=evaluation_form.name, start_date=evaluation_form.start_date, end_date=evaluation_form.end_date,
+            is_final=True, period="Final", subject=evaluation_form.subject)
+        print(evaluation)
+        evaluation.save()
+
+        return redirect('evaluations_list')
+    
+
 @method_decorator(login_required, name='dispatch')
-class EvalautionUpdateView(generic.UpdateView):
-    model = models.Evalaution
-    form_class = forms.EvalautionCreateForm
-    template_name = "evalautions/create.html"
+class EvaluationUpdateView(generic.UpdateView):
+    model = models.Evaluation
+    form_class = forms.EvaluationUpdateForm
+    template_name = "evaluations/update.html"
     success_url = reverse_lazy('evaluations_list')
 
     def get(self, request, *args, **kwargs):
         if services.UserService().is_admin(request.user):
-            return super(EvalautionUpdateView, self).get(self, request, *args, **kwargs)
+            return super(EvaluationUpdateView, self).get(self, request, *args, **kwargs)
         else:
             return redirect('/')
+    
