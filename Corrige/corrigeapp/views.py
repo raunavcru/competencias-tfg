@@ -42,6 +42,8 @@ class StudentsListView(generic.ListView):
     model = models.Student
     template_name = 'students/list.html'
     context_object_name = 'student_list'
+    paginate_by = 5
+
 
     def get(self, request, *args, **kwargs):
         if services.UserService().is_admin(request.user):
@@ -110,6 +112,7 @@ class TeachersListView(generic.ListView):
     model = models.Teacher
     template_name = 'teachers/list.html'
     context_object_name = 'teacher_list'
+    paginate_by = 5
 
     def get(self, request, *args, **kwargs):
         if services.UserService().is_admin(request.user):
@@ -166,6 +169,7 @@ class SetsListView(generic.ListView):
     model = models.Set
     template_name = 'sets/list.html'
     context_object_name = 'set_list'
+    paginate_by = 5
 
     def get(self, request, *args, **kwargs):
         if services.UserService().is_admin(request.user):
