@@ -217,3 +217,56 @@ class SetUpdateView(generic.UpdateView):
 
 class not_impl(generic.TemplateView):
     template_name = "not_impl.html"
+
+@method_decorator(login_required, name='dispatch')
+class EvaluationsListView(generic.ListView):
+    model = models.Evaluation
+    template_name = 'evaluations/list.html'
+    context_object_name = 'evaluations_list'
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            return super(EvaluationsListView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_queryset(self):
+        queryset = models.Evaluation.objects.all()
+        return queryset
+
+@method_decorator(login_required, name='dispatch')
+class EvaluationDeleteView(generic.DeleteView):
+    template_name = 'evaluations/delete.html'
+    model = models.Evaluation
+    success_url = reverse_lazy('evaluations_list')
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            return super(EvaluationDeleteView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+@method_decorator(login_required, name='dispatch')
+class EvaluationCreateView(generic.CreateView):
+    form_class = forms.EvaluationCreateForm
+    template_name = "evalautions/create.html"
+    success_url = reverse_lazy('evaluations_list')
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            return super(EvaluationCreateView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+@method_decorator(login_required, name='dispatch')
+class EvalautionUpdateView(generic.UpdateView):
+    model = models.Evalaution
+    form_class = forms.EvalautionCreateForm
+    template_name = "evalautions/create.html"
+    success_url = reverse_lazy('evaluations_list')
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            return super(EvalautionUpdateView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
