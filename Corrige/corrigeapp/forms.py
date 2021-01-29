@@ -345,3 +345,62 @@ class LoginForm(AuthenticationForm):
         )
 
 
+class SubjectCreateForm(forms.ModelForm):
+    
+    name = forms.CharField(required=True)
+    level = forms.CharField(required=True)
+    grade = forms.CharField(required=True)
+    description = forms.CharField(required=True)
+
+    class Meta:
+        model = models.Subject
+        fields = (
+            'name',
+            'level',
+            'grade',
+            'description',
+        )
+        
+    def clean_grade(self):
+        grade = self.cleaned_data.get('grade')
+        if len(grade) > 50:
+            if get_language() == 'en':
+                raise ValidationError(
+                    'Grade can not be longer of 50 characters')
+            else:
+                raise ValidationError(
+                    'El tamaño del grado no puede ser mayor que 50')
+        return grade
+
+    def clean_level(self):
+        level = self.cleaned_data.get('level')
+        if len(level) > 50:
+            if get_language() == 'en':
+                raise ValidationError(
+                    'Level can not be longer of 50 characters')
+            else:
+                raise ValidationError(
+                    'El tamaño del nivel no puede ser mayor que 50')
+        return level
+
+    def clean_description(self):
+        description = self.cleaned_data.get('description')
+        if len(description) > 100:
+            if get_language() == 'en':
+                raise ValidationError(
+                    'Description can not be longer of 100 characters')
+            else:
+                raise ValidationError(
+                    'El tamaño de la descripcioçón no puede ser mayor que 100')
+        return description
+
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
+        if len(name) > 100:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_NAME_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_NAME)
+        return name
