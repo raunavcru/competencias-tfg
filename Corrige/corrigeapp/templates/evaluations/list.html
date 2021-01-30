@@ -10,6 +10,7 @@
                     <tr>
                         <th id=""></th>
                         <th id="name">{% trans "Name" %}</th>
+                        <th id="period">{% trans "Period" %}</th>
                         <th id="star_date">{% trans "Star date" %}</th>
                         <th id="end_date">{% trans "End_date" %}</th>
                         <th id="subject">{% trans "Subject" %}</th>
@@ -22,6 +23,7 @@
                         <tr class="center">
                             <td><i class="material-icons" style="color:#BBBBBB">account_circle</i></td>
                             <td>{{object.name}}</td>
+                            <td>{{object.period}}</td>
                             <td>{{object.start_date}}</td>
                             <td>{{object.end_date}}</td>
                             <td>{{object.subject}}</td>

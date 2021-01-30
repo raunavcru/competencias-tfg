@@ -231,7 +231,7 @@ class EvaluationsListView(generic.ListView):
             return redirect('/')
 
     def get_queryset(self):
-        queryset = models.Evaluation.objects.all()
+        queryset = models.Evaluation.objects.all().order_by('name','subject', 'parent', 'start_date')
         return queryset
 
 @method_decorator(login_required, name='dispatch')
@@ -248,7 +248,7 @@ class EvaluationDeleteView(generic.DeleteView):
 
 @method_decorator(login_required, name='dispatch')
 class EvaluationCreateView(generic.CreateView):
-    form_class = forms.EvaluationUpdateForm
+    form_class = forms.EvaluationCreateForm
     template_name = "evaluations/update.html"
     success_url = reverse_lazy('evaluations_list')
 
@@ -259,11 +259,27 @@ class EvaluationCreateView(generic.CreateView):
             return redirect('/')
 
     def form_valid(self, form):
-        evaluation_form = form.save(commit=False)
-        evaluation = models.Evaluation.objects.create(name=evaluation_form.name, start_date=evaluation_form.start_date, end_date=evaluation_form.end_date,
-            is_final=True, period="Final", subject=evaluation_form.subject)
-        print(evaluation)
+        name = form.cleaned_data.get('name')
+        start_date = form.cleaned_data.get('start_date')
+        end_date_1 = form.cleaned_data.get('end_date_1')
+        start_date_2 = form.cleaned_data.get('start_date_2')
+        end_date_2 = form.cleaned_data.get('end_date_2')
+        start_date_3 = form.cleaned_data.get('start_date_3')
+        end_date = form.cleaned_data.get('end_date')
+        subject = form.cleaned_data.get('subject')
+
+        evaluation = form.save(commit=False)
+        evaluation.is_final=True
         evaluation.save()
+        evaluation1 = models.Evaluation.objects.create(name=name, start_date=start_date, end_date=end_date_1,
+            is_final=False, period="1st", subject=subject, parent=evaluation)
+        evaluation1.save()
+        evaluation2 = models.Evaluation.objects.create(name=name, start_date=start_date_2, end_date=end_date_2,
+            is_final=False, period="2nd", subject=subject, parent=evaluation)
+        evaluation2.save()
+        evaluation3 = models.Evaluation.objects.create(name=name, start_date=start_date_3, end_date=end_date,
+            is_final=False, period="3rd", subject=subject, parent=evaluation)
+        evaluation3.save()
 
         return redirect('evaluations_list')
     
