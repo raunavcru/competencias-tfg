@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-25 13:10+0100\n"
+"POT-Creation-Date: 2021-01-30 11:51+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,58 +30,82 @@ msgstr ""
 msgid "Home"
 msgstr "Inicio"
 
-#: .\corrigeapp\templates\base.html:30
+#: .\corrigeapp\templates\base.html:31
 msgid "Administrators"
 msgstr "Administratores"
 
-#: .\corrigeapp\templates\base.html:31
+#: .\corrigeapp\templates\base.html:32
 msgid "Competences"
 msgstr "Competencias"
 
-#: .\corrigeapp\templates\base.html:32
+#: .\corrigeapp\templates\base.html:33
 msgid "Students"
 msgstr "Alumnos"
 
-#: .\corrigeapp\templates\base.html:33
+#: .\corrigeapp\templates\base.html:34
 msgid "Teachers"
 msgstr "Profesor"
 
-#: .\corrigeapp\templates\base.html:34
+#: .\corrigeapp\templates\base.html:35
 msgid "Sets"
 msgstr "Grupos"
 
-#: .\corrigeapp\templates\base.html:35
+#: .\corrigeapp\templates\base.html:36
 msgid "Subjects"
 msgstr "Asignaturas"
 
-#: .\corrigeapp\templates\base.html:38
+#: .\corrigeapp\templates\base.html:39
 msgid "My Activities"
 msgstr "Mis actividades"
 
-#: .\corrigeapp\templates\base.html:39
+#: .\corrigeapp\templates\base.html:40
 msgid "My Sets"
 msgstr "Mis grupos"
 
-#: .\corrigeapp\templates\base.html:40
+#: .\corrigeapp\templates\base.html:41
 msgid "My Subjects"
 msgstr "Mis asignaturas"
 
-#: .\corrigeapp\templates\base.html:43
+#: .\corrigeapp\templates\base.html:45
 #: .\corrigeapp\templates\registration\login.html:10
 msgid "Login"
 msgstr "Inicio de sesión"
 
-#: .\corrigeapp\templates\base.html:50
+#: .\corrigeapp\templates\base.html:52
 msgid "Profile"
 msgstr "Perfil"
 
-#: .\corrigeapp\templates\base.html:51
+#: .\corrigeapp\templates\base.html:53
 msgid "Logout"
 msgstr "Cerrar sesión"
 
-#: .\corrigeapp\templates\home.html:10
+#: .\corrigeapp\templates\home.html:11
 msgid "Welcome"
 msgstr "Bienvenido"
+
+#: .\corrigeapp\templates\paginate.html:5
+msgid "first"
+msgstr "primera"
+
+#: .\corrigeapp\templates\paginate.html:6
+msgid "previous"
+msgstr "anterior"
+
+#: .\corrigeapp\templates\paginate.html:10
+msgid "Page"
+msgstr "Página"
+
+#: .\corrigeapp\templates\paginate.html:10
+msgid "of"
+msgstr "de"
+
+#: .\corrigeapp\templates\paginate.html:14
+msgid "next"
+msgstr "siguiente"
+
+#: .\corrigeapp\templates\paginate.html:15
+msgid "last"
+msgstr "última"
 
 #: .\corrigeapp\templates\registration\login.html:17
 #: .\corrigeapp\templates\teachers\create.html:85
@@ -101,6 +125,8 @@ msgstr "Entrar"
 #: .\corrigeapp\templates\sets\list.html:12
 #: .\corrigeapp\templates\students\create.html:19
 #: .\corrigeapp\templates\students\list.html:13
+#: .\corrigeapp\templates\subjects\create.html:19
+#: .\corrigeapp\templates\subjects\list.html:12
 #: .\corrigeapp\templates\teachers\create.html:19
 #: .\corrigeapp\templates\teachers\list.html:13
 msgid "Name"
@@ -108,11 +134,15 @@ msgstr "Nombre"
 
 #: .\corrigeapp\templates\sets\create.html:28
 #: .\corrigeapp\templates\sets\list.html:13
+#: .\corrigeapp\templates\subjects\create.html:32
+#: .\corrigeapp\templates\subjects\list.html:13
 msgid "Level"
 msgstr "Nivel"
 
 #: .\corrigeapp\templates\sets\create.html:41
 #: .\corrigeapp\templates\sets\list.html:14
+#: .\corrigeapp\templates\subjects\create.html:41
+#: .\corrigeapp\templates\subjects\list.html:14
 msgid "Grade"
 msgstr "Grado"
 
@@ -135,6 +165,7 @@ msgstr "Evaluación"
 
 #: .\corrigeapp\templates\sets\create.html:84
 #: .\corrigeapp\templates\students\create.html:64
+#: .\corrigeapp\templates\subjects\create.html:64
 #: .\corrigeapp\templates\teachers\create.html:117
 msgid "Create"
 msgstr "Crear"
@@ -143,6 +174,8 @@ msgstr "Crear"
 #: .\corrigeapp\templates\sets\list.html:16
 #: .\corrigeapp\templates\students\create.html:70
 #: .\corrigeapp\templates\students\list.html:15
+#: .\corrigeapp\templates\subjects\create.html:70
+#: .\corrigeapp\templates\subjects\list.html:16
 #: .\corrigeapp\templates\teachers\create.html:123
 #: .\corrigeapp\templates\teachers\list.html:17
 msgid "Edit"
@@ -150,10 +183,11 @@ msgstr "Editar"
 
 #: .\corrigeapp\templates\sets\delete.html:8
 msgid "Are you sure about deleting the set "
-msgstr "¿Estás seguro de que quieres eliminar el profesor "
+msgstr "¿Estás seguro de que quieres eliminar el grupo "
 
 #: .\corrigeapp\templates\sets\delete.html:11
 #: .\corrigeapp\templates\students\delete.html:12
+#: .\corrigeapp\templates\subjects\delete.html:11
 #: .\corrigeapp\templates\teachers\confirm_delete.html:11
 msgid "Cancel"
 msgstr "Cancelar"
@@ -162,6 +196,8 @@ msgstr "Cancelar"
 #: .\corrigeapp\templates\sets\list.html:17
 #: .\corrigeapp\templates\students\delete.html:15
 #: .\corrigeapp\templates\students\list.html:16
+#: .\corrigeapp\templates\subjects\delete.html:12
+#: .\corrigeapp\templates\subjects\list.html:17
 #: .\corrigeapp\templates\teachers\confirm_delete.html:12
 #: .\corrigeapp\templates\teachers\list.html:18
 msgid "Delete"
@@ -198,6 +234,23 @@ msgstr "¿Estás seguro de que quieres eliminar el estudiante "
 #: .\corrigeapp\templates\students\list.html:5
 msgid "List of students"
 msgstr "Lista de estudiantes"
+
+#: .\corrigeapp\templates\subjects\create.html:54
+#: .\corrigeapp\templates\subjects\list.html:15
+msgid "Description"
+msgstr "Descripción"
+
+#: .\corrigeapp\templates\subjects\delete.html:8
+msgid "Are you sure about deleting the subject "
+msgstr "¿Estás seguro de que quieres eliminar la asignatura "
+
+#: .\corrigeapp\templates\subjects\list.html:5
+msgid "List of subjects"
+msgstr "Lista de asignaturas"
+
+#: .\corrigeapp\templates\subjects\list.html:6
+msgid "Create subject"
+msgstr "Crear asignatura"
 
 #: .\corrigeapp\templates\teachers\confirm_delete.html:8
 msgid "Are you sure about deleting the teacher "
