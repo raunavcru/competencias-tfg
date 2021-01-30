@@ -227,6 +227,7 @@ class EvaluationsListView(generic.ListView):
     model = models.Evaluation
     template_name = 'evaluations/list.html'
     context_object_name = 'evaluations_list'
+    paginate_by = 8
 
     def get(self, request, *args, **kwargs):
         if services.UserService().is_admin(request.user):
@@ -245,10 +246,23 @@ class EvaluationDeleteView(generic.DeleteView):
     success_url = reverse_lazy('evaluations_list')
 
     def get(self, request, *args, **kwargs):
-        if services.UserService().is_admin(request.user):
+        evaluation_pk = self.kwargs.get('pk')
+        parent = models.Evaluation.objects.get(pk=evaluation_pk)
+        if services.UserService().is_admin(request.user) and parent.is_final:
             return super(EvaluationDeleteView, self).get(self, request, *args, **kwargs)
         else:
             return redirect('/')
+    
+    def delete(self, request, *args, **kwargs):
+        evaluation_pk = self.kwargs.get('pk')
+        parent = models.Evaluation.objects.get(pk=evaluation_pk)
+        if parent.is_final:
+            evaluations = models.Evaluation.objects.filter(parent=parent).delete()
+            parent.delete()
+            return redirect('evaluations_list')
+        else:
+            return redirect('/')
+
 
 @method_decorator(login_required, name='dispatch')
 class EvaluationCreateView(generic.CreateView):
@@ -274,6 +288,7 @@ class EvaluationCreateView(generic.CreateView):
 
         evaluation = form.save(commit=False)
         evaluation.is_final=True
+        evaluation.period = "Final"
         evaluation.save()
         evaluation1 = models.Evaluation.objects.create(name=name, start_date=start_date, end_date=end_date_1,
             is_final=False, period="1st", subject=subject, parent=evaluation)

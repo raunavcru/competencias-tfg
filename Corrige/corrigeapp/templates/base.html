@@ -30,6 +30,7 @@
                     {% if request.user.profile.role == "ADMINISTRATOR" %} 
                     <li><a href="#">{% trans "Administrators" %}</a></li>
                     <li><a href="#">{% trans "Competences" %}</a></li>
+                    <li><a href="{% url 'evaluations_list' %}">{% trans "Evaluations" %}</a></li>
                     <li><a href="{% url 'students_list' %}">{% trans "Students" %}</a></li>
                     <li><a href="{% url 'teachers_list' %}">{% trans "Teachers" %}</a></li>
                     <li><a href="{% url 'sets_list' %}">{% trans "Sets" %}</a></li>
