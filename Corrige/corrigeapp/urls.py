@@ -18,6 +18,11 @@ urlpatterns = [
     path('sets/<int:pk>/update', views.SetUpdateView.as_view(), name = 'sets_update'),
     path('sets/list', views.SetsListView.as_view(), name = 'sets_list'),
     path('sets/<int:pk>/delete', views.SetDeleteView.as_view(), name='sets_delete'),
+    path('subjects/list', views.SubjectsListView.as_view(), name = 'subjects_list'),
+    path('subjects/create', views.SubjectCreateView.as_view(), name = 'subjects_create'),
+    path('subjects/<int:pk>/delete', views.SubjectsDeleteView.as_view(), name='subjects_delete'),
+    path('subjects/<int:pk>/update', views.SubjectsUpdateView.as_view(), name = 'subjects_update'),
+
 
     path('evaluations/create', views.EvaluationCreateView.as_view(), name = 'evaluations_create'),
     path('evaluations/list', views.EvaluationsListView.as_view(), name = 'evaluations_list'),
