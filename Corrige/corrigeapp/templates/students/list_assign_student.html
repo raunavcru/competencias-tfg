@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %} 
+    <h4 class="centered">{% trans "List of assigned students" %}</h4>
+        <table class="highlight">
+            <caption></caption>
+                <thead>
+                    <tr>
+                        <th id=""></th>
+                        <th id="surname">{% trans "Surname" %}</th>
+                        <th id="name">{% trans "Name" %}</th>
+                        <th id="birthdate">{% trans "Birthdate" %}</th>
+                        <th class="center" id="button">{% trans "Delete" %}</th>
+                    </tr>
+                </thead>
+            {% for o in object_list  %}
+                    <tbody>
+                        <tr class="center">
+                            <td><i class="material-icons" style="color:#BBBBBB">account_circle</i></td>
+                            <td>{{o.surname}}</td>
+                            <td>{{o.name}}</td>
+                            <td>{{o.birthdate}}</td>
+                        </tr>
+                    </tbody>
+            {% endfor %}
+        </table>
+    {% include 'paginate.html' %}
+
+    <h4 class="centered">{% trans "List of not assigned students" %}</h4>
+        <table class="highlight">
+            <caption></caption>
+                <thead>
+                    <tr>
+                        <th id=""></th>
+                        <th id="surname">{% trans "Surname" %}</th>
+                        <th id="name">{% trans "Name" %}</th>
+                        <th id="birthdate">{% trans "Birthdate" %}</th>
+                        <th class="center" id="button">{% trans "Assign" %}</th>
+                    </tr>
+                </thead>
+            {% for o in other_students %}
+                    <tbody>
+                        <tr class="center">
+                            <td><i class="material-icons" style="color:#BBBBBB">account_circle</i></td>
+                            <td>{{o.surname}}</td>
+                            <td>{{o.name}}</td>
+                            <td>{{o.birthdate}}</td>
+                        </tr>
+                    </tbody>
+            {% endfor %}
+        </table>
+    {% include 'paginate2.html' %}
+
+{% endblock %}
+
+  <!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
+  <!-- Modal Structure -->
+
+
+
