@@ -257,7 +257,7 @@ class EvaluationDeleteView(generic.DeleteView):
         evaluation_pk = self.kwargs.get('pk')
         parent = models.Evaluation.objects.get(pk=evaluation_pk)
         if parent.is_final:
-            evaluations = models.Evaluation.objects.filter(parent=parent).delete()
+            models.Evaluation.objects.filter(parent=parent).delete()
             parent.delete()
             return redirect('evaluations_list')
         else:
