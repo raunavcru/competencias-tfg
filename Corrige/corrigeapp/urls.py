@@ -24,4 +24,9 @@ urlpatterns = [
     path('subjects/<int:pk>/update', views.SubjectsUpdateView.as_view(), name = 'subjects_update'),
 
 
+    path('evaluations/create', views.EvaluationCreateView.as_view(), name = 'evaluations_create'),
+    path('evaluations/list', views.EvaluationsListView.as_view(), name = 'evaluations_list'),
+    path('evaluations/<int:pk>/delete', views.EvaluationDeleteView.as_view(), name='evaluations_delete'),
+    path('evaluations/<int:pk>/update', views.EvaluationUpdateView.as_view(), name = 'evaluations_update'),
+
 ]
