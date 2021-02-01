@@ -11,7 +11,7 @@
                         <th id="surname">{% trans "Surname" %}</th>
                         <th id="name">{% trans "Name" %}</th>
                         <th id="birthdate">{% trans "Birthdate" %}</th>
-                        <th class="center" id="button">{% trans "Delete" %}</th>
+                        <th class="center" id="button">{% trans "Unassign" %}</th>
                     </tr>
                 </thead>
             {% for o in object_list  %}
@@ -21,6 +21,8 @@
                             <td>{{o.surname}}</td>
                             <td>{{o.name}}</td>
                             <td>{{o.birthdate}}</td>
+                            <td class="center dropdown-trigger" type="button" onclick="location.href='{% url 'sets_unassign_student' pk=o.pk id=set_object_pk %}'"><em class="material-icons" style="color:#e53935">clear</em></td>
+                            
                         </tr>
                     </tbody>
             {% endfor %}
@@ -46,11 +48,11 @@
                             <td>{{o.surname}}</td>
                             <td>{{o.name}}</td>
                             <td>{{o.birthdate}}</td>
+                            <td class="center dropdown-trigger" type="button" onclick="location.href='{% url 'sets_assign_student' pk=o.pk id=set_object_pk %}'"><em class="material-icons" style="color:#29b6f6">send</em></td>
                         </tr>
                     </tbody>
             {% endfor %}
         </table>
-    {% include 'paginate2.html' %}
 
 {% endblock %}
 

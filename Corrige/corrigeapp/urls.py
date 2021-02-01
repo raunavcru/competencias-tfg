@@ -17,7 +17,9 @@ urlpatterns = [
     path('teachers/<int:pk>/update', views.TeacherUpdateView.as_view(), name = 'teachers_update'),
     path('teachers/create', views.TeacherCreateView.as_view(), name = 'teachers_create'),
 
-    path('sets/<int:pk>/assign', views.SetAssignStudentView.as_view(), name = 'sets_assign_student'),
+    path('sets/<int:pk>/assign/list', views.SetAssignStudentListView.as_view(), name = 'sets_assign_student_list'),
+    path('sets/<int:pk>/<int:id>/assign/', views.SetAssignStudentView.as_view(), name = 'sets_assign_student'),
+    path('sets/<int:pk>/<int:id>/unassign/', views.SetUnassignStudentView.as_view(), name = 'sets_unassign_student'),
     path('sets/create', views.SetCreateView.as_view(), name = 'sets_create'),
     path('sets/<int:pk>/update', views.SetUpdateView.as_view(), name = 'sets_update'),
     path('sets/list', views.SetsListView.as_view(), name = 'sets_list'),

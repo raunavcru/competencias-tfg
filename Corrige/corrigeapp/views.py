@@ -370,14 +370,14 @@ class SubjectsUpdateView(generic.UpdateView):
             return redirect('/')
 
 @method_decorator(login_required, name='dispatch')        
-class SetAssignStudentView(generic.ListView, generic.list.MultipleObjectMixin):
+class SetAssignStudentListView(generic.ListView, generic.list.MultipleObjectMixin):
     model = models.Set
     template_name = 'students/list_assign_student.html'
     paginate_by = 5
 
     def get(self, request, *args, **kwargs):
         if services.UserService().is_admin(request.user):
-            return super(SetAssignStudentView, self).get(self, request, *args, **kwargs)
+            return super(SetAssignStudentListView, self).get(self, request, *args, **kwargs)
         else:
             return redirect('/')
 
@@ -385,7 +385,40 @@ class SetAssignStudentView(generic.ListView, generic.list.MultipleObjectMixin):
         set_object_pk = self.kwargs.get('pk')
         set_object = models.Set.objects.get(pk=set_object_pk)
         object_list = set_object.students.all()
-        context = super(SetAssignStudentView, self).get_context_data(
+        context = super(SetAssignStudentListView, self).get_context_data(
             object_list=object_list, **kwargs)
         context['other_students'] = models.Student.objects.all().exclude(id__in=object_list)
+        context['set_object_pk'] = set_object_pk
+
+        return context
+
+class SetAssignStudentView(generic.TemplateView):
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            student_pk = self.kwargs.get('pk')
+            student = models.Student.objects.get(pk=student_pk)
+            set_pk = self.kwargs.get('id')
+            set_object = models.Set.objects.get(pk=set_pk)
+
+            set_object.students.add(student)
+            set_object.save()
+            return redirect('sets_assign_student_list', pk=set_pk)
+        else:
+            return redirect('/')
+
+class SetUnassignStudentView(generic.TemplateView):
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            student_pk = self.kwargs.get('pk')
+            student = models.Student.objects.get(pk=student_pk)
+            set_pk = self.kwargs.get('id')
+            set_object = models.Set.objects.get(pk=set_pk)
+
+            set_object.students.remove(student)
+            set_object.save()
+            return redirect('sets_assign_student_list', pk=set_pk)
+        else:
+            return redirect('/')
         
