@@ -384,10 +384,10 @@ class SetAssignStudentListView(generic.ListView, generic.list.MultipleObjectMixi
     def get_context_data(self, **kwargs):
         set_object_pk = self.kwargs.get('pk')
         set_object = models.Set.objects.get(pk=set_object_pk)
-        object_list = set_object.students.all()
+        object_list = set_object.students.all().order_by('surname')
         context = super(SetAssignStudentListView, self).get_context_data(
             object_list=object_list, **kwargs)
-        context['other_students'] = models.Student.objects.all().exclude(id__in=object_list)
+        context['other_students'] = models.Student.objects.all().exclude(id__in=object_list).order_by('surname')
         context['set_object_pk'] = set_object_pk
 
         return context

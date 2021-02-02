@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-31 12:33+0100\n"
+"POT-Creation-Date: 2021-02-02 16:03+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -118,6 +118,8 @@ msgstr "Lista de evaluaciones"
 #: .\corrigeapp\templates\sets\list.html:12
 #: .\corrigeapp\templates\students\create.html:19
 #: .\corrigeapp\templates\students\list.html:13
+#: .\corrigeapp\templates\students\list_assign_student.html:12
+#: .\corrigeapp\templates\students\list_assign_student.html:39
 #: .\corrigeapp\templates\subjects\create.html:19
 #: .\corrigeapp\templates\subjects\list.html:12
 #: .\corrigeapp\templates\teachers\create.html:19
@@ -267,8 +269,15 @@ msgstr "¿Estás seguro de que quieres eliminar el grupo "
 msgid "List of sets"
 msgstr "Lista de grupos"
 
+#: .\corrigeapp\templates\sets\list.html:18
+#: .\corrigeapp\templates\students\list.html:5
+msgid "List of students"
+msgstr "Lista de estudiantes"
+
 #: .\corrigeapp\templates\students\create.html:28
 #: .\corrigeapp\templates\students\list.html:12
+#: .\corrigeapp\templates\students\list_assign_student.html:11
+#: .\corrigeapp\templates\students\list_assign_student.html:38
 #: .\corrigeapp\templates\teachers\create.html:28
 #: .\corrigeapp\templates\teachers\list.html:12
 msgid "Surname"
@@ -276,6 +285,8 @@ msgstr "Apellidos"
 
 #: .\corrigeapp\templates\students\create.html:41
 #: .\corrigeapp\templates\students\list.html:14
+#: .\corrigeapp\templates\students\list_assign_student.html:13
+#: .\corrigeapp\templates\students\list_assign_student.html:40
 #: .\corrigeapp\templates\teachers\create.html:41
 #: .\corrigeapp\templates\teachers\list.html:15
 msgid "Birthdate"
@@ -291,9 +302,21 @@ msgstr "Iniciales"
 msgid "Are you sure about deleting the student "
 msgstr "¿Estás seguro de que quieres eliminar el estudiante "
 
-#: .\corrigeapp\templates\students\list.html:5
-msgid "List of students"
-msgstr "Lista de estudiantes"
+#: .\corrigeapp\templates\students\list_assign_student.html:5
+msgid "List of assigned students"
+msgstr "Lista de estudiantes asignados"
+
+#: .\corrigeapp\templates\students\list_assign_student.html:14
+msgid "Unassign"
+msgstr "Desasignar"
+
+#: .\corrigeapp\templates\students\list_assign_student.html:32
+msgid "List of not assigned students"
+msgstr "Lista de estudiantes no asignados"
+
+#: .\corrigeapp\templates\students\list_assign_student.html:41
+msgid "Assign"
+msgstr "Asignar"
 
 #: .\corrigeapp\templates\subjects\create.html:54
 #: .\corrigeapp\templates\subjects\list.html:15
