@@ -491,3 +491,150 @@ class SubjectCreateForm(forms.ModelForm):
                 raise ValidationError(
                     MESSAGE_NAME)
         return name
+
+class CompetenceCreateForm(forms.ModelForm):
+
+    code = forms.CharField(required=True)
+    name = forms.CharField(required=True)
+    description = forms.CharField(required=True)
+    weight = forms.CharField(required=True)
+    level = forms.CharField(required=True)
+
+    class Meta:
+        model = models.Competence
+        fields = (
+            'code',
+            'name',
+            'description',
+            'weight',
+            'level',
+        )
+        
+    def clean_code(self):
+        code = self.cleaned_data.get('code')
+        if len(code) > 50:
+            if get_language() == 'en':
+                raise ValidationError(
+                    'Code can not be longer of 50 characters')
+            else:
+                raise ValidationError(
+                    'El tamaño del código no puede ser mayor que 50')
+        return code
+
+    def clean_level(self):
+        level = self.cleaned_data.get('level')
+        if len(level) > 50:
+            if get_language() == 'en':
+                raise ValidationError(
+                    'Level can not be longer of 50 characters')
+            else:
+                raise ValidationError(
+                    'El tamaño del nivel no puede ser mayor que 50')
+        return level
+
+    def clean_weight(self):
+        weight = self.cleaned_data.get('weight')
+        if len(weight) > 3:
+            if get_language() == 'en':
+                raise ValidationError(
+                    'Level can not be longer of 50 characters')
+            else:
+                raise ValidationError(
+                    'El tamaño del pesol no puede ser mayor que 50')
+        return weight
+
+    def clean_description(self):
+        description = self.cleaned_data.get('description')
+        if len(description) > 300:
+            if get_language() == 'en':
+                raise ValidationError(
+                    'Description can not be longer of 100 characters')
+            else:
+                raise ValidationError(
+                    'El tamaño de la descripcioçón no puede ser mayor que 100')
+        return description
+
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
+        if len(name) > 300:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_NAME_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_NAME)
+        return name
+
+class CompetenceUpdateForm(forms.ModelForm):
+
+    code = forms.CharField(required=True)
+    name = forms.CharField(required=True)
+    description = forms.CharField(required=True)
+    weight = forms.CharField(required=True)
+    level = forms.CharField(required=True)
+
+    class Meta:
+        model = models.Competence
+        fields = (
+            'code',
+            'name',
+            'description',
+            'weight',
+            'level',
+        )
+        
+    def clean_code(self):
+        code = self.cleaned_data.get('code')
+        if len(code) > 50:
+            if get_language() == 'en':
+                raise ValidationError(
+                    'Code can not be longer of 50 characters')
+            else:
+                raise ValidationError(
+                    'El tamaño del código no puede ser mayor que 50')
+        return code
+
+    def clean_level(self):
+        level = self.cleaned_data.get('level')
+        if len(level) > 50:
+            if get_language() == 'en':
+                raise ValidationError(
+                    'Level can not be longer of 50 characters')
+            else:
+                raise ValidationError(
+                    'El tamaño del nivel no puede ser mayor que 50')
+        return level
+
+    def clean_weight(self):
+        weight = self.cleaned_data.get('weight')
+        if len(weight) > 3:
+            if get_language() == 'en':
+                raise ValidationError(
+                    'Level can not be longer of 50 characters')
+            else:
+                raise ValidationError(
+                    'El tamaño del pesol no puede ser mayor que 50')
+        return weight
+
+    def clean_description(self):
+        description = self.cleaned_data.get('description')
+        if len(description) > 300:
+            if get_language() == 'en':
+                raise ValidationError(
+                    'Description can not be longer of 100 characters')
+            else:
+                raise ValidationError(
+                    'El tamaño de la descripcioçón no puede ser mayor que 100')
+        return description
+
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
+        if len(name) > 300:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_NAME_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_NAME)
+        return name
+

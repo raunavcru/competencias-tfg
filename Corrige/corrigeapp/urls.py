@@ -23,6 +23,13 @@ urlpatterns = [
     path('subjects/<int:pk>/delete', views.SubjectsDeleteView.as_view(), name='subjects_delete'),
     path('subjects/<int:pk>/update', views.SubjectsUpdateView.as_view(), name = 'subjects_update'),
 
+    path('competences/create', views.CompetenceCreateView.as_view(), name = 'competences_create'),
+    path('competences/list/level1', views.CompetenceListView1.as_view(), name = 'competences_list1'),
+    path('competences/list/level2', views.CompetenceListView2.as_view(), name = 'competences_list2'),
+    path('competences/list/level3', views.CompetenceListView3.as_view(), name = 'competences_list3'),
+    path('competences/<int:pk>/delete', views.CompetencesDeleteView.as_view(), name='competences_delete'),
+    path('competences/<int:pk>/update', views.CompetenceUpdateView.as_view(), name = 'competences_update'),
+    path('competences/<int:pk>/list', views.CompetencesListViewPK.as_view(), name='competences_relation'),
 
     path('evaluations/create', views.EvaluationCreateView.as_view(), name = 'evaluations_create'),
     path('evaluations/list', views.EvaluationsListView.as_view(), name = 'evaluations_list'),
