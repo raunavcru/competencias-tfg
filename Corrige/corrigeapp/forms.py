@@ -311,6 +311,13 @@ class SetCreateForm(forms.ModelForm):
 
     def clean_line(self):
         line = self.cleaned_data.get('line')
+        if not line.isalpha():
+            if get_language() == 'en':
+                raise ValidationError(
+                    'Line must be letters')
+            else:
+                raise ValidationError(
+                    'Línea solo pueden ser letras')
         if len(line) > 50:
             if get_language() == 'en':
                 raise ValidationError(
