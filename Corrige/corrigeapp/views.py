@@ -526,7 +526,13 @@ class CompetenceParentCreateView(generic.CreateView):
 
         competence_new = form.save(commit=False)
         competence_new.parent = competence
-        competence_new.level = 2
+        if competence.level == 3:
+            competence_new.level = 2
+        elif competence.level == 2:
+            competence_new.level = 2
+        else:
+            return redirect('/')
+            
         competence_new.save()
 
         return redirect('competences_relation', pk=competence_pk)
