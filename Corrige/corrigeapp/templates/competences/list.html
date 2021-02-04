@@ -47,5 +47,12 @@
 
             </tbody>
         </table>
+        {% if level2 %}
+            <a style="border-radius:5px" href="{% url 'competences_relation2' competence_pk %}" class="right teal lighten-2 waves-effect waves-light btn-small">{% trans "Create competence" %}</a>
+        {% endif %}
+        {% if level3 %} 
+            <a style="border-radius:5px" href="{% url 'competences_relation2' competence_pk %}" class="right teal lighten-2 waves-effect waves-light btn-small">{% trans "Create competence" %}</a>
+        {% endif %}  
+
 {% include 'paginate.html' %}
 {% endblock %}

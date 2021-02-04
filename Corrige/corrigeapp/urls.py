@@ -30,6 +30,7 @@ urlpatterns = [
     path('competences/<int:pk>/delete', views.CompetencesDeleteView.as_view(), name='competences_delete'),
     path('competences/<int:pk>/update', views.CompetenceUpdateView.as_view(), name = 'competences_update'),
     path('competences/<int:pk>/list', views.CompetencesListViewPK.as_view(), name='competences_relation'),
+    path('competences/<int:pk>/create', views.CompetenceParentCreateView.as_view(), name='competences_relation2'),
 
     path('evaluations/create', views.EvaluationCreateView.as_view(), name = 'evaluations_create'),
     path('evaluations/list', views.EvaluationsListView.as_view(), name = 'evaluations_list'),

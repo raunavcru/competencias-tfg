@@ -286,7 +286,7 @@ class EvaluationCreateView(generic.CreateView):
         end_date = form.cleaned_data.get('end_date')
         subject = form.cleaned_data.get('subject')
 
-        evaluation = form.save(commit=False)
+        evaluation = form.save(commit=False) #no es un objeto de base de datos, no lo guarda solo en la variable 
         evaluation.is_final=True
         evaluation.period = "Final"
         evaluation.save()
@@ -452,6 +452,7 @@ class CompetencesListViewPK(generic.ListView):
         context = super(CompetencesListViewPK, self).get_context_data(**kwargs)
         competence_pk = self.kwargs.get('pk')
         competence = models.Competence.objects.get(pk=competence_pk)
+        context['competence_pk'] = competence_pk
         context['level3'] = False
         context['level2'] = False
 
@@ -479,6 +480,31 @@ class CompetenceCreateView(generic.CreateView):
             return super(CompetenceCreateView, self).get(self, request, *args, **kwargs)
         else:
             return redirect('/')
+
+
+@method_decorator(login_required, name='dispatch')
+class CompetenceParentCreateView(generic.CreateView):
+    form_class = forms.CompetenceCreateForm
+    template_name = "competences/create.html"
+    success_url = reverse_lazy('competences_list')
+    
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            return super(CompetenceParentCreateView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+    
+    def post(self, request, *args, **kwargs):
+        competence_pk = self.kwargs.get('pk')
+        competence = models.Competence.objects.get(pk=competence_pk)
+
+        competence_new = form.save(commit=False) #no es un objeto de base de datos, no lo guarda solo en la variable 
+        competence_new.parent(competence)
+        competence_new.level(1)
+        competence_new.save()
+
+        return redirect('competences_list')
+
 
 @method_decorator(login_required, name='dispatch')
 class CompetenceUpdateView(generic.UpdateView):
