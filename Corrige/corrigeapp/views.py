@@ -123,7 +123,7 @@ class TeachersListView(generic.ListView):
             return redirect('/')
 
     def get_queryset(self):
-        queryset = models.Teacher.objects.all()
+        queryset = models.Teacher.objects.all().order_by('user__last_name')
         return queryset
 
 @method_decorator(login_required, name='dispatch')        
