@@ -180,7 +180,7 @@ class SetsListView(generic.ListView):
             return redirect('/')
 
     def get_queryset(self):
-        queryset = models.Set.objects.all()
+        queryset = models.Set.objects.all().order_by('name')
         return queryset
 
 @method_decorator(login_required, name='dispatch')
