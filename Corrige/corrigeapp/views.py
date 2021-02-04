@@ -54,7 +54,7 @@ class StudentsListView(generic.ListView):
             return redirect('/')
 
     def get_queryset(self):
-        queryset = models.Student.objects.all()
+        queryset = models.Student.objects.all().order_by('surname')
         return queryset
 
 @method_decorator(login_required, name='dispatch')
