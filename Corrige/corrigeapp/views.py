@@ -141,8 +141,6 @@ class TeacherUpdateView(generic.UpdateView):
     def get_context_data(self, **kwargs):
         context = super(TeacherUpdateView, self).get_context_data(**kwargs)
         context['teacher_form'] = self.teacher_form_class(instance=self.object.profile)
-
-
         return context
 
     def get_object(self):
@@ -381,8 +379,9 @@ class CompetenceListView1(generic.ListView):
 
     def get_context_data(self, **kwargs):
         context = super(CompetenceListView1, self).get_context_data(**kwargs)
-        context['level3'] = False
-        context['level2'] = False
+        context['listall_level3'] = False
+        context['listall_level2'] = False
+        context['list_level2'] = False
 
         return context
 
@@ -404,8 +403,9 @@ class CompetenceListView2(generic.ListView):
 
     def get_context_data(self, **kwargs):
         context = super(CompetenceListView2, self).get_context_data(**kwargs)
-        context['level3'] = False
-        context['level2'] = True
+        context['listall_level3'] = False
+        context['listall_level2'] = True
+        context['list_level2'] = False
 
         return context
 
@@ -427,8 +427,10 @@ class CompetenceListView3(generic.ListView):
 
     def get_context_data(self, **kwargs):
         context = super(CompetenceListView3, self).get_context_data(**kwargs)
-        context['level3'] = True
-        context['level2'] = False
+        context['listall_level3'] = True
+        context['listall_level2'] = False
+        context['list_level3'] = False
+        context['list_level2'] = False
 
         return context
 
@@ -453,12 +455,15 @@ class CompetencesListViewPK(generic.ListView):
         competence_pk = self.kwargs.get('pk')
         competence = models.Competence.objects.get(pk=competence_pk)
         context['competence_pk'] = competence_pk
-        context['level3'] = False
-        context['level2'] = False
+        context['listall_level3'] = False
+        context['listall_level2'] = False
+        context['list_level2'] = False
+        context['list_level1'] = False
 
         if competence.level == 3:
-            context['level3'] = False
-            context['level2'] = True
+            context['list_level2'] = True
+        elif competence.level == 2:
+            context['list_level1'] = True
 
         return context
 
@@ -473,13 +478,27 @@ class CompetencesListViewPK(generic.ListView):
 class CompetenceCreateView(generic.CreateView):
     form_class = forms.CompetenceCreateForm
     template_name = "competences/create.html"
-    success_url = reverse_lazy('competences_list')
+    success_url = reverse_lazy('competences_list3')
 
     def get(self, request, *args, **kwargs):
         if services.UserService().is_admin(request.user):
             return super(CompetenceCreateView, self).get(self, request, *args, **kwargs)
         else:
             return redirect('/')
+    
+    def get_context_data(self, **kwargs):
+        context = super(CompetenceCreateView, self).get_context_data(**kwargs)
+        context['create_level3'] = True
+        return context
+    
+    def form_valid(self, form):
+
+        competence_new = form.save(commit=False)
+        competence_new.level = 3
+        competence_new.save()
+        print(competence_new)
+
+        return redirect('competences_list3')
 
 
 @method_decorator(login_required, name='dispatch')
@@ -494,16 +513,23 @@ class CompetenceParentCreateView(generic.CreateView):
         else:
             return redirect('/')
     
-    def post(self, request, *args, **kwargs):
+    def get_context_data(self, **kwargs):
+        context = super(CompetenceParentCreateView, self).get_context_data(**kwargs)
+        competence_pk = self.kwargs.get('pk')
+        competence = models.Competence.objects.get(pk=competence_pk)
+        context['competence_pk'] = competence_pk
+        return context
+
+    def form_valid(self, form):
         competence_pk = self.kwargs.get('pk')
         competence = models.Competence.objects.get(pk=competence_pk)
 
-        competence_new = form.save(commit=False) #no es un objeto de base de datos, no lo guarda solo en la variable 
-        competence_new.parent(competence)
-        competence_new.level(1)
+        competence_new = form.save(commit=False)
+        competence_new.parent = competence
+        competence_new.level = 2
         competence_new.save()
 
-        return redirect('competences_list')
+        return redirect('competences_relation', pk=competence_pk)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -518,6 +544,11 @@ class CompetenceUpdateView(generic.UpdateView):
             return super(CompetenceUpdateView, self).get(self, request, *args, **kwargs)
         else:
             return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        context = super(CompetenceCreateView, self).get_context_data(**kwargs)
+        context['is_update'] = True
+        return context
 
 @method_decorator(login_required, name='dispatch')
 class CompetencesDeleteView(generic.DeleteView):

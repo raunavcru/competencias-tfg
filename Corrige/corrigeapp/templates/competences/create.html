@@ -5,10 +5,12 @@
     <divclass="row">
         <div class="grid-example col s11 offset-s1">
             <div class="center-form">
-            {% if request.get_full_path == '/competences/create' %}
+            {% if is_update %}
+                <form class="col s12" id="form-update-competences" method="post" action="{% url 'competences_update' object.pk %}">
+            {% elif create_level3  %}
                 <form class="col s12" id="form-create-competences" method="post" action="{% url 'competences_create' %}">
             {% else %}
-                <form class="col s12" id="form-update-competences" method="post" action="{% url 'competences_update' object.pk %}">
+                <form class="col s12" id="form-create-competences" method="post" action="{% url 'competences_relation2' competence_pk %}">
             {% endif %}
                     {% csrf_token %}
                     <div class="row">
@@ -58,15 +60,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="grid-example col s4">
-                            <div class="validate-input">
-                                <label>{% trans "Level" %}</label>
-                                    {{form.level}}
-                                <div class="form-errors">
-                                    {{ form.level.errors }}
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     {% if request.get_full_path == '/competences/create' %}
                     <div class="row">
@@ -86,6 +79,5 @@
         </div>
     </div>
 </div>
-{{form.media}}
 {% endblock %}
 
