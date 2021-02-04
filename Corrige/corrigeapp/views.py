@@ -330,7 +330,7 @@ class SubjectsListView(generic.ListView):
             return redirect('/')
 
     def get_queryset(self):
-        queryset = models.Subject.objects.all()
+        queryset = models.Subject.objects.all().order_by('name')
         return queryset
 
 class SubjectsDeleteView(generic.DeleteView):
