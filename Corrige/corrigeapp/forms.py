@@ -494,10 +494,14 @@ class SubjectCreateForm(forms.ModelForm):
 
 class CompetenceCreateForm(forms.ModelForm):
 
-    code = forms.CharField(required=True)
-    name = forms.CharField(required=True)
-    description = forms.CharField(required=True)
-    weight = forms.CharField(required=True)
+    code = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'CC1', 'id': 'code-create-competence'}))
+    name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Comunicación lingüística', 'id': 'name-create-competence'}))
+    description = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Comunicación lingüística.	', 'id': 'description-create-competence'}))
+    weight = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': '1', 'id': 'wieight-create-competence'}))
 
     class Meta:
         model = models.Competence
@@ -554,10 +558,14 @@ class CompetenceCreateForm(forms.ModelForm):
 
 class CompetenceUpdateForm(forms.ModelForm):
 
-    code = forms.CharField(required=True)
-    name = forms.CharField(required=True)
-    description = forms.CharField(required=True)
-    weight = forms.CharField(required=True)
+    code = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'CC1', 'id': 'code-create-competence'}))
+    name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Comunicación lingüística', 'id': 'name-create-competence'}))
+    description = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Comunicación lingüística.	', 'id': 'description-create-competence'}))
+    weight = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': '1', 'id': 'wieight-create-competence'}))
 
     class Meta:
         model = models.Competence
