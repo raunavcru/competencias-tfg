@@ -1,10 +1,12 @@
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render, redirect
 from django.urls import reverse, reverse_lazy
 from django.utils.decorators import method_decorator
 from django.utils.translation import activate, get_language
 from django.views import generic
+
 
 from . import forms
 from . import models
@@ -596,3 +598,57 @@ class CompetencesDeleteView(generic.DeleteView):
         competence.delete()
 
         return redirect('competences_list3')
+
+@method_decorator(login_required, name='dispatch')        
+class SetAssignStudentListView(generic.ListView, generic.list.MultipleObjectMixin):
+    model = models.Set
+    template_name = 'students/list_assign_student.html'
+    paginate_by = 5
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            return super(SetAssignStudentListView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        set_object_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_object_pk)
+        object_list = set_object.students.all().order_by('surname')
+        context = super(SetAssignStudentListView, self).get_context_data(
+            object_list=object_list, **kwargs)
+        context['other_students'] = models.Student.objects.all().exclude(id__in=object_list).order_by('surname')
+        context['set_object_pk'] = set_object_pk
+
+        return context
+
+class SetAssignStudentView(generic.TemplateView):
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            student_pk = self.kwargs.get('pk')
+            student = models.Student.objects.get(pk=student_pk)
+            set_pk = self.kwargs.get('id')
+            set_object = models.Set.objects.get(pk=set_pk)
+
+            set_object.students.add(student)
+            set_object.save()
+            return redirect('sets_assign_student_list', pk=set_pk)
+        else:
+            return redirect('/')
+
+class SetUnassignStudentView(generic.TemplateView):
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            student_pk = self.kwargs.get('pk')
+            student = models.Student.objects.get(pk=student_pk)
+            set_pk = self.kwargs.get('id')
+            set_object = models.Set.objects.get(pk=set_pk)
+
+            set_object.students.remove(student)
+            set_object.save()
+            return redirect('sets_assign_student_list', pk=set_pk)
+        else:
+            return redirect('/')
+        
