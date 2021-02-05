@@ -30,7 +30,8 @@ class StudentCreateForm(forms.ModelForm):
     
     name = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': 'Raúl', 'id': 'first_name-create-student'}))
-    surname = forms.CharField(required=True)
+    surname = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Navarro Cruz', 'id': 'surname-create-student'}))
     birthdate = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
@@ -38,7 +39,8 @@ class StudentCreateForm(forms.ModelForm):
             attrs={'placeholder': DATE_PLACEHOLDER}
         )
     )
-    initials = forms.CharField(required=True)
+    initials = forms.CharField(required=True,widget=forms.TextInput(
+        attrs={'placeholder': 'RNC', 'id': 'initials-create-student'}))
 
     def __init__(self, *args, **kwargs):
         super(StudentCreateForm, self).__init__(*args, **kwargs)
@@ -104,9 +106,12 @@ class TeacherCreateForm(UserCreationForm):
     
     first_name = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': 'Alberto', 'id': 'first_name-create-teacher'}))
-    last_name = forms.CharField(required=True)
-    username = forms.CharField(required=True)
-    email = forms.EmailField(required=True)
+    last_name = forms.CharField(required=True,widget=forms.TextInput(
+        attrs={'placeholder': 'Cordón', 'id': 'last_name-create-teacher'}))
+    username = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'alberto26', 'id': 'username-create-teacher'}))
+    email = forms.EmailField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'alberto@gmail.com', 'id': 'email-create-teacher'}))
     birthdate = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
@@ -114,9 +119,12 @@ class TeacherCreateForm(UserCreationForm):
             attrs={'placeholder': DATE_PLACEHOLDER}
         )
     )
-    initials = forms.CharField(required=True)
-    password1 = forms.CharField(required=True)
-    password2 = forms.CharField(required=True)
+    initials = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'ACA', 'id': 'initials-create-teacher'}))
+    password1 = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': '*************', 'id': 'password1-create-teacher'}))
+    password2 = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': '*************', 'id': 'password2-create-teacher'}))
 
     def __init__(self, *args, **kwargs):
         super(TeacherCreateForm, self).__init__(*args, **kwargs)
@@ -266,10 +274,14 @@ class UserUpdateForm(forms.ModelForm):
 
 class SetCreateForm(forms.ModelForm):
     
-    name = forms.CharField(required=True)
-    level = forms.CharField(required=True)
-    grade = forms.CharField(required=True)
-    line = forms.CharField(required=True)
+    name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Matemáticas', 'id': 'name-create-set'}))
+    level = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': '5º', 'id': 'level-create-set'}))
+    grade = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Primaria', 'id': 'grade-create-set'}))
+    line = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'A', 'id': 'line-create-set'}))
     teacher = forms.ModelChoiceField(teachers, empty_label=None)
     subject = forms.ModelChoiceField(subjects, empty_label=None)
     evaluation = forms.ModelChoiceField(evaluations, empty_label=None)
@@ -353,7 +365,8 @@ class LoginForm(AuthenticationForm):
 
 class EvaluationCreateForm(forms.ModelForm):
     
-    name = forms.CharField(required=True)
+    name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Matemáticas 5º Primaria Final', 'id': 'name-create-evaluation'}))
     start_date = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
@@ -441,10 +454,14 @@ class EvaluationUpdateForm(forms.ModelForm):
 
 class SubjectCreateForm(forms.ModelForm):
     
-    name = forms.CharField(required=True)
-    level = forms.CharField(required=True)
-    grade = forms.CharField(required=True)
-    description = forms.CharField(required=True)
+    name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Ciencias Sociales', 'id': 'name-create-subject'}))
+    level = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': '5º', 'id': 'level-create-subject'}))
+    grade = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Primaria', 'id': 'grade-create-subject'}))
+    description = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Las ciencias sociales son las ramas de la ciencia relacionadas con ...', 'id': 'description-create-subject'}))
 
     class Meta:
         model = models.Subject
