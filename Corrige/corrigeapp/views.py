@@ -596,8 +596,15 @@ class CompetencesDeleteView(generic.DeleteView):
         competence_pk = self.kwargs.get('pk')
         competence = models.Competence.objects.get(pk=competence_pk)
         competence.delete()
-
-        return redirect('competences_list3')
+        
+        if competence.level == 3:
+            return redirect('competences_list3')
+            
+        elif competence.level == 2:
+            return redirect('competences_list2')
+        else:
+            return redirect('competences_list1')
+        
 
 @method_decorator(login_required, name='dispatch')        
 class SetAssignStudentListView(generic.ListView, generic.list.MultipleObjectMixin):
