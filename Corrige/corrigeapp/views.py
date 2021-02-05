@@ -492,11 +492,9 @@ class CompetenceCreateView(generic.CreateView):
         return context
     
     def form_valid(self, form):
-
         competence_new = form.save(commit=False)
         competence_new.level = 3
         competence_new.save()
-        print(competence_new)
 
         return redirect('competences_list3')
 
@@ -505,7 +503,7 @@ class CompetenceCreateView(generic.CreateView):
 class CompetenceParentCreateView(generic.CreateView):
     form_class = forms.CompetenceCreateForm
     template_name = "competences/create.html"
-    success_url = reverse_lazy('competences_list')
+    #success_url = reverse_lazy('competences_list')
     
     def get(self, request, *args, **kwargs):
         if services.UserService().is_admin(request.user):
@@ -518,18 +516,18 @@ class CompetenceParentCreateView(generic.CreateView):
         competence_pk = self.kwargs.get('pk')
         competence = models.Competence.objects.get(pk=competence_pk)
         context['competence_pk'] = competence_pk
+        context['competence_parent'] = True
         return context
 
     def form_valid(self, form):
         competence_pk = self.kwargs.get('pk')
         competence = models.Competence.objects.get(pk=competence_pk)
-
         competence_new = form.save(commit=False)
         competence_new.parent = competence
         if competence.level == 3:
             competence_new.level = 2
         elif competence.level == 2:
-            competence_new.level = 2
+            competence_new.level = 1
         else:
             return redirect('/')
             
@@ -543,7 +541,6 @@ class CompetenceUpdateView(generic.UpdateView):
     model = models.Competence
     form_class = forms.CompetenceUpdateForm
     template_name = "competences/create.html"
-    success_url = reverse_lazy('competences_list')
 
     def get(self, request, *args, **kwargs):
         if services.UserService().is_admin(request.user):
@@ -552,18 +549,50 @@ class CompetenceUpdateView(generic.UpdateView):
             return redirect('/')
 
     def get_context_data(self, **kwargs):
-        context = super(CompetenceCreateView, self).get_context_data(**kwargs)
+        context = super(CompetenceUpdateView, self).get_context_data(**kwargs)
         context['is_update'] = True
         return context
 
+    def form_valid(self, form):
+        competence = form.save()
+
+        if competence.level == 3:
+            return redirect('competences_list3')
+        elif competence.level == 2:
+            return redirect('competences_list2')
+        else:
+            return redirect('competences_list1')
+            
 @method_decorator(login_required, name='dispatch')
 class CompetencesDeleteView(generic.DeleteView):
     template_name = 'competences/delete.html'
     model = models.Competence
-    success_url = reverse_lazy('competences_list')
 
     def get(self, request, *args, **kwargs):
         if services.UserService().is_admin(request.user):
             return super(CompetencesDeleteView, self).get(self, request, *args, **kwargs)
         else:
             return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        competence_pk = self.kwargs.get('pk')
+        competence = models.Competence.objects.get(pk=competence_pk)
+        context = super(CompetencesDeleteView, self).get_context_data(**kwargs)
+        context['list_level3'] = False
+        context['list_level2'] = False
+        context['list_level1'] = False
+        if competence.level == 3:
+            context['list_level3'] = True
+            
+        elif competence.level == 2:
+            context['list_level2'] = True
+        else:
+            context['list_level1'] = True
+
+        return context
+    def post(self, request, *args, **kwargs):
+        competence_pk = self.kwargs.get('pk')
+        competence = models.Competence.objects.get(pk=competence_pk)
+        competence.delete()
+
+        return redirect('competences_list3')

@@ -49,7 +49,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="grid-example col s2">
+                        <div class="grid-example col s4">
                         </div>
                         <div class="grid-example col s4">
                             <div class="validate-input">
@@ -60,8 +60,10 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="grid-example col s3">
+                        </div>
                     </div>
-                    {% if request.get_full_path == '/competences/create' %}
+                    {% if request.get_full_path == '/competences/create' or competence_parent %}
                     <div class="row">
                         <button class="btn waves-effect right" type="submit" name="action">{% trans "Create" %}
                             <i class="large material-icons right"><i>send</i></i>
