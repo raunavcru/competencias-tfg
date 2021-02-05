@@ -367,7 +367,7 @@ class SubjectsUpdateView(generic.UpdateView):
         else:
             return redirect('/')
 
-class CompetenceListView1(generic.ListView):
+class CompetenceListLevel1View(generic.ListView):
     model = models.Competence
     template_name = 'competences/list.html'
     context_object_name = 'competence_list'
@@ -375,12 +375,12 @@ class CompetenceListView1(generic.ListView):
 
     def get(self, request, *args, **kwargs):
         if services.UserService().is_admin(request.user):
-            return super(CompetenceListView1, self).get(self, request, *args, **kwargs)
+            return super(CompetenceListLevel1View, self).get(self, request, *args, **kwargs)
         else:
             return redirect('/')
 
     def get_context_data(self, **kwargs):
-        context = super(CompetenceListView1, self).get_context_data(**kwargs)
+        context = super(CompetenceListLevel1View, self).get_context_data(**kwargs)
         context['listall_level3'] = False
         context['listall_level2'] = False
         context['list_level2'] = False
@@ -391,7 +391,7 @@ class CompetenceListView1(generic.ListView):
         queryset = models.Competence.objects.filter(level="1")
         return queryset
 
-class CompetenceListView2(generic.ListView):
+class CompetenceListLevel2View(generic.ListView):
     model = models.Competence
     template_name = 'competences/list.html'
     context_object_name = 'competence_list'
@@ -399,12 +399,12 @@ class CompetenceListView2(generic.ListView):
 
     def get(self, request, *args, **kwargs):
         if services.UserService().is_admin(request.user):
-            return super(CompetenceListView2, self).get(self, request, *args, **kwargs)
+            return super(CompetenceListLevel2View, self).get(self, request, *args, **kwargs)
         else:
             return redirect('/')
 
     def get_context_data(self, **kwargs):
-        context = super(CompetenceListView2, self).get_context_data(**kwargs)
+        context = super(CompetenceListLevel2View, self).get_context_data(**kwargs)
         context['listall_level3'] = False
         context['listall_level2'] = True
         context['list_level2'] = False
@@ -415,7 +415,7 @@ class CompetenceListView2(generic.ListView):
         queryset = models.Competence.objects.filter(level="2")
         return queryset
 
-class CompetenceListView3(generic.ListView):
+class CompetenceListLevel3View(generic.ListView):
     model = models.Competence
     template_name = 'competences/list.html'
     context_object_name = 'competence_list'
@@ -423,12 +423,12 @@ class CompetenceListView3(generic.ListView):
 
     def get(self, request, *args, **kwargs):
         if services.UserService().is_admin(request.user):
-            return super(CompetenceListView3, self).get(self, request, *args, **kwargs)
+            return super(CompetenceListLevel3View, self).get(self, request, *args, **kwargs)
         else:
             return redirect('/')
 
     def get_context_data(self, **kwargs):
-        context = super(CompetenceListView3, self).get_context_data(**kwargs)
+        context = super(CompetenceListLevel3View, self).get_context_data(**kwargs)
         context['listall_level3'] = True
         context['listall_level2'] = False
         context['list_level3'] = False
@@ -440,7 +440,7 @@ class CompetenceListView3(generic.ListView):
         queryset = models.Competence.objects.filter(level="3")
         return queryset
 
-class CompetencesListViewPK(generic.ListView):
+class CompetencesListChildView(generic.ListView):
     model = models.Competence
     template_name = 'competences/list.html'
     context_object_name = 'competence_list'
@@ -448,12 +448,12 @@ class CompetencesListViewPK(generic.ListView):
 
     def get(self, request, *args, **kwargs):
         if services.UserService().is_admin(request.user):
-            return super(CompetencesListViewPK, self).get(self, request, *args, **kwargs)
+            return super(CompetencesListChildView, self).get(self, request, *args, **kwargs)
         else:
             return redirect('/')
     
     def get_context_data(self, **kwargs):
-        context = super(CompetencesListViewPK, self).get_context_data(**kwargs)
+        context = super(CompetencesListChildView, self).get_context_data(**kwargs)
         competence_pk = self.kwargs.get('pk')
         competence = models.Competence.objects.get(pk=competence_pk)
         context['competence_pk'] = competence_pk
@@ -477,19 +477,19 @@ class CompetencesListViewPK(generic.ListView):
 
 
 @method_decorator(login_required, name='dispatch')
-class CompetenceCreateView(generic.CreateView):
+class CompetenceCreateLevel3View(generic.CreateView):
     form_class = forms.CompetenceCreateForm
     template_name = "competences/create.html"
     success_url = reverse_lazy('competences_list3')
 
     def get(self, request, *args, **kwargs):
         if services.UserService().is_admin(request.user):
-            return super(CompetenceCreateView, self).get(self, request, *args, **kwargs)
+            return super(CompetenceCreateLevel3View, self).get(self, request, *args, **kwargs)
         else:
             return redirect('/')
     
     def get_context_data(self, **kwargs):
-        context = super(CompetenceCreateView, self).get_context_data(**kwargs)
+        context = super(CompetenceCreateLevel3View, self).get_context_data(**kwargs)
         context['create_level3'] = True
         return context
     
@@ -502,19 +502,19 @@ class CompetenceCreateView(generic.CreateView):
 
 
 @method_decorator(login_required, name='dispatch')
-class CompetenceParentCreateView(generic.CreateView):
+class CompetenceCreateChildView(generic.CreateView):
     form_class = forms.CompetenceCreateForm
     template_name = "competences/create.html"
     #success_url = reverse_lazy('competences_list')
     
     def get(self, request, *args, **kwargs):
         if services.UserService().is_admin(request.user):
-            return super(CompetenceParentCreateView, self).get(self, request, *args, **kwargs)
+            return super(CompetenceCreateChildView, self).get(self, request, *args, **kwargs)
         else:
             return redirect('/')
     
     def get_context_data(self, **kwargs):
-        context = super(CompetenceParentCreateView, self).get_context_data(**kwargs)
+        context = super(CompetenceCreateChildView, self).get_context_data(**kwargs)
         competence_pk = self.kwargs.get('pk')
         competence = models.Competence.objects.get(pk=competence_pk)
         context['competence_pk'] = competence_pk
