@@ -1,4 +1,6 @@
 from django.contrib.auth import get_user_model
+from django.core.exceptions import ValidationError
+from django.utils.translation import get_language
 
 from . import models
 
@@ -21,3 +23,14 @@ class UserService():
             res = True
 
         return res
+
+class FormService():
+
+    def raise_error(self, en_message: str, es_message: str):
+        
+        if get_language() == 'en':
+            raise ValidationError(
+                en_message)
+        else:
+            raise ValidationError(
+                es_message)
