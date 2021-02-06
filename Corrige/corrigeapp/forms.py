@@ -25,6 +25,16 @@ MESSAGE_SURNAME = 'El tamaño del apellido no puede ser mayor que 100'
 MESSAGE_SURNAME_EN = 'Surname can not be longer of 100 characters'
 MESSAGE_BIRTHDATE = 'La fecha de cumpleaños debe ser en el pasado'
 MESSAGE_BIRTHDATE_EN = 'Birthdate can not be past'
+MESSAGE_GRADE = 'La calificación no puede tener más de 50 caracteres'
+MESSAGE_GRADE_EN = 'Grade can not be longer of 50 characters'
+MESSAGE_LEVEL_EN = 'Level can not be longer of 50 characters'
+MESSAGE_LEVEL = 'El tamaño del nivel no puede ser mayor que 50'
+MESSAGE_LINE_EN = 'Line can not be longer of 50 characters'
+MESSAGE_LINE = 'El tamaño de la línea no puede ser mayor que 50'
+MESSAGE_DESCRIPTION_EN = 'Description can not be longer of 100 characters'
+MESSAGE_DESCRIPTION = 'El tamaño de la descripción no puede ser mayor que 100'
+MESSAGE_CODE_EN = 'Code can not be longer of 50 characters'
+MESSAGE_CODE = 'El tamaño del código no puede ser mayor que 50'
 
 class StudentCreateForm(forms.ModelForm):
     
@@ -291,10 +301,10 @@ class SetCreateForm(forms.ModelForm):
         if len(grade) > 50:
             if get_language() == 'en':
                 raise ValidationError(
-                    'Grade can not be longer of 50 characters')
+                    MESSAGE_GRADE_EN)
             else:
                 raise ValidationError(
-                    'El tamaño del grado no puede ser mayor que 50')
+                    MESSAGE_GRADE)
         return grade
 
     def clean_level(self):
@@ -302,10 +312,10 @@ class SetCreateForm(forms.ModelForm):
         if len(level) > 50:
             if get_language() == 'en':
                 raise ValidationError(
-                    'Level can not be longer of 50 characters')
+                    MESSAGE_LEVEL)
             else:
                 raise ValidationError(
-                    'El tamaño del nivel no puede ser mayor que 50')
+                    MESSAGE_LEVEL_EN)
         return level
 
 
@@ -314,10 +324,10 @@ class SetCreateForm(forms.ModelForm):
         if len(line) > 50:
             if get_language() == 'en':
                 raise ValidationError(
-                    'Line can not be longer of 50 characters')
+                    MESSAGE_LINE_EN)
             else:
                 raise ValidationError(
-                    'El tamaño de la línea no puede ser mayor que 50')
+                    MESSAGE_LINE)
         return line
 
     def clean_name(self):
@@ -453,10 +463,10 @@ class SubjectCreateForm(forms.ModelForm):
         if len(grade) > 50:
             if get_language() == 'en':
                 raise ValidationError(
-                    'Grade can not be longer of 50 characters')
+                    MESSAGE_GRADE_EN)
             else:
                 raise ValidationError(
-                    'El tamaño del grado no puede ser mayor que 50')
+                    MESSAGE_GRADE)
         return grade
 
     def clean_level(self):
@@ -464,10 +474,10 @@ class SubjectCreateForm(forms.ModelForm):
         if len(level) > 50:
             if get_language() == 'en':
                 raise ValidationError(
-                    'Level can not be longer of 50 characters')
+                    MESSAGE_LEVEL_EN)
             else:
                 raise ValidationError(
-                    'El tamaño del nivel no puede ser mayor que 50')
+                    MESSAGE_LEVEL)
         return level
 
     def clean_description(self):
@@ -475,10 +485,10 @@ class SubjectCreateForm(forms.ModelForm):
         if len(description) > 100:
             if get_language() == 'en':
                 raise ValidationError(
-                    'Description can not be longer of 100 characters')
+                    )
             else:
                 raise ValidationError(
-                    'El tamaño de la descripcioçón no puede ser mayor que 100')
+                    )
         return description
 
     def clean_name(self):
@@ -517,10 +527,10 @@ class CompetenceCreateForm(forms.ModelForm):
         if len(code) > 50:
             if get_language() == 'en':
                 raise ValidationError(
-                    'Code can not be longer of 50 characters')
+                    MESSAGE_CODE_EN)
             else:
                 raise ValidationError(
-                    'El tamaño del código no puede ser mayor que 50')
+                    MESSAGE_CODE)
         return code
 
     def clean_level(self):
@@ -528,10 +538,10 @@ class CompetenceCreateForm(forms.ModelForm):
         if len(level) > 50:
             if get_language() == 'en':
                 raise ValidationError(
-                    'Level can not be longer of 50 characters')
+                    MESSAGE_LEVEL_EN)
             else:
                 raise ValidationError(
-                    'El tamaño del nivel no puede ser mayor que 50')
+                    MESSAGE_LEVEL)
         return level
 
     def clean_description(self):
@@ -539,10 +549,10 @@ class CompetenceCreateForm(forms.ModelForm):
         if len(description) > 300:
             if get_language() == 'en':
                 raise ValidationError(
-                    'Description can not be longer of 100 characters')
+                    MESSAGE_DESCRIPTION_EN)
             else:
                 raise ValidationError(
-                    'El tamaño de la descripcioçón no puede ser mayor que 100')
+                    MESSAGE_DESCRIPTION)
         return description
 
     def clean_name(self):
@@ -581,10 +591,10 @@ class CompetenceUpdateForm(forms.ModelForm):
         if len(code) > 50:
             if get_language() == 'en':
                 raise ValidationError(
-                    'Code can not be longer of 50 characters')
+                    MESSAGE_CODE_EN)
             else:
                 raise ValidationError(
-                    'El tamaño del código no puede ser mayor que 50')
+                    MESSAGE_CODE)
         return code
 
     def clean_description(self):
@@ -592,10 +602,10 @@ class CompetenceUpdateForm(forms.ModelForm):
         if len(description) > 300:
             if get_language() == 'en':
                 raise ValidationError(
-                    'Description can not be longer of 100 characters')
+                    MESSAGE_DESCRIPTION_EN)
             else:
                 raise ValidationError(
-                    'El tamaño de la descripcioçón no puede ser mayor que 100')
+                    MESSAGE_DESCRIPTION)
         return description
 
     def clean_name(self):

@@ -12,6 +12,9 @@ from . import forms
 from . import models
 from . import services
 
+COMPETENCE_LIST = 'competences/list.html'
+COMPETENCE_CREATE = "competences/create.html"
+
 class HomeView(generic.TemplateView):
     template_name = 'home.html'
 
@@ -286,7 +289,7 @@ class EvaluationCreateView(generic.CreateView):
         end_date = form.cleaned_data.get('end_date')
         subject = form.cleaned_data.get('subject')
 
-        evaluation = form.save(commit=False) #no es un objeto de base de datos, no lo guarda solo en la variable 
+        evaluation = form.save(commit=False) 
         evaluation.is_final=True
         evaluation.period = "Final"
         evaluation.save()
@@ -369,7 +372,7 @@ class SubjectsUpdateView(generic.UpdateView):
 
 class CompetenceListLevel1View(generic.ListView):
     model = models.Competence
-    template_name = 'competences/list.html'
+    template_name = COMPETENCE_LIST
     context_object_name = 'competence_list'
     paginate_by = 5
 
@@ -393,7 +396,7 @@ class CompetenceListLevel1View(generic.ListView):
 
 class CompetenceListLevel2View(generic.ListView):
     model = models.Competence
-    template_name = 'competences/list.html'
+    template_name = COMPETENCE_LIST
     context_object_name = 'competence_list'
     paginate_by = 5
 
@@ -417,7 +420,7 @@ class CompetenceListLevel2View(generic.ListView):
 
 class CompetenceListLevel3View(generic.ListView):
     model = models.Competence
-    template_name = 'competences/list.html'
+    template_name = COMPETENCE_LIST
     context_object_name = 'competence_list'
     paginate_by = 5
 
@@ -442,7 +445,7 @@ class CompetenceListLevel3View(generic.ListView):
 
 class CompetencesListChildView(generic.ListView):
     model = models.Competence
-    template_name = 'competences/list.html'
+    template_name = COMPETENCE_LIST
     context_object_name = 'competence_list'
     paginate_by = 5
 
@@ -479,7 +482,7 @@ class CompetencesListChildView(generic.ListView):
 @method_decorator(login_required, name='dispatch')
 class CompetenceCreateLevel3View(generic.CreateView):
     form_class = forms.CompetenceCreateForm
-    template_name = "competences/create.html"
+    template_name = COMPETENCE_CREATE
     success_url = reverse_lazy('competences_list3')
 
     def get(self, request, *args, **kwargs):
@@ -504,8 +507,7 @@ class CompetenceCreateLevel3View(generic.CreateView):
 @method_decorator(login_required, name='dispatch')
 class CompetenceCreateChildView(generic.CreateView):
     form_class = forms.CompetenceCreateForm
-    template_name = "competences/create.html"
-    #success_url = reverse_lazy('competences_list')
+    template_name = COMPETENCE_CREATE
     
     def get(self, request, *args, **kwargs):
         if services.UserService().is_admin(request.user):
@@ -516,7 +518,6 @@ class CompetenceCreateChildView(generic.CreateView):
     def get_context_data(self, **kwargs):
         context = super(CompetenceCreateChildView, self).get_context_data(**kwargs)
         competence_pk = self.kwargs.get('pk')
-        competence = models.Competence.objects.get(pk=competence_pk)
         context['competence_pk'] = competence_pk
         context['competence_parent'] = True
         return context
@@ -542,7 +543,7 @@ class CompetenceCreateChildView(generic.CreateView):
 class CompetenceUpdateView(generic.UpdateView):
     model = models.Competence
     form_class = forms.CompetenceUpdateForm
-    template_name = "competences/create.html"
+    template_name = COMPETENCE_CREATE
 
     def get(self, request, *args, **kwargs):
         if services.UserService().is_admin(request.user):
