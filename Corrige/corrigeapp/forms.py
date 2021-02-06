@@ -8,6 +8,7 @@ from django.utils.translation import get_language, activate
 from django.contrib.auth.hashers import check_password
 
 from . import models
+from . import services
 
 User = get_user_model()
 
@@ -27,6 +28,16 @@ MESSAGE_SURNAME = 'El tamaño del apellido no puede ser mayor que 100'
 MESSAGE_SURNAME_EN = 'Surname can not be longer of 100 characters'
 MESSAGE_BIRTHDATE = 'La fecha de cumpleaños debe ser en el pasado'
 MESSAGE_BIRTHDATE_EN = 'Birthdate can not be past'
+MESSAGE_GRADE = 'La calificación no puede tener más de 50 caracteres'
+MESSAGE_GRADE_EN = 'Grade can not be longer of 50 characters'
+MESSAGE_LEVEL_EN = 'Level can not be longer of 50 characters'
+MESSAGE_LEVEL = 'El tamaño del nivel no puede ser mayor que 50'
+MESSAGE_LINE_EN = 'Line can not be longer of 50 characters'
+MESSAGE_LINE = 'El tamaño de la línea no puede ser mayor que 50'
+MESSAGE_DESCRIPTION_EN = 'Description can not be longer of 100 characters'
+MESSAGE_DESCRIPTION = 'El tamaño de la descripción no puede ser mayor que 100'
+MESSAGE_CODE_EN = 'Code can not be longer of 50 characters'
+MESSAGE_CODE = 'El tamaño del código no puede ser mayor que 50'
 
 class StudentCreateForm(forms.ModelForm):
     
@@ -276,12 +287,10 @@ class UserUpdateForm(forms.ModelForm):
 
 class SetCreateForm(forms.ModelForm):
     
-    name = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': 'Matemáticas', 'id': 'name-create-set'}))
-    grade = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': 'Primaria', 'id': 'grade-create-set'}))
-    line = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': 'A', 'id': 'line-create-set'}))
+    name = forms.CharField(required=True)
+    level = forms.CharField(required=True)
+    grade = forms.CharField(required=True)
+    line = forms.CharField(required=True)
     teacher = forms.ModelChoiceField(teachers, empty_label=None)
     subject = forms.ModelChoiceField(subjects, empty_label=None)
     evaluation = forms.ModelChoiceField(evaluations, empty_label=None)
@@ -297,37 +306,39 @@ class SetCreateForm(forms.ModelForm):
             'subject',
             'evaluation',
         )
-        widgets = {
-            'level': forms.Select(choices=CHOICES_LEVEL)
-        }
         
     def clean_grade(self):
         grade = self.cleaned_data.get('grade')
         if len(grade) > 50:
             if get_language() == 'en':
                 raise ValidationError(
-                    'Grade can not be longer of 50 characters')
+                    MESSAGE_GRADE_EN)
             else:
                 raise ValidationError(
-                    'El tamaño del grado no puede ser mayor que 50')
+                    MESSAGE_GRADE)
         return grade
+
+    def clean_level(self):
+        level = self.cleaned_data.get('level')
+        if len(level) > 50:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_LEVEL_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_LEVEL)
+        return level
+
 
     def clean_line(self):
         line = self.cleaned_data.get('line')
-        if not line.isalpha():
-            if get_language() == 'en':
-                raise ValidationError(
-                    'Line must be letters')
-            else:
-                raise ValidationError(
-                    'Línea solo pueden ser letras')
         if len(line) > 50:
             if get_language() == 'en':
                 raise ValidationError(
-                    'Line can not be longer of 50 characters')
+                    MESSAGE_LINE_EN)
             else:
                 raise ValidationError(
-                    'El tamaño de la línea no puede ser mayor que 50')
+                    MESSAGE_LINE)
         return line
 
     def clean_name(self):
@@ -467,28 +478,84 @@ class SubjectCreateForm(forms.ModelForm):
     def clean_grade(self):
         grade = self.cleaned_data.get('grade')
         if len(grade) > 50:
-            if get_language() == 'en':
-                raise ValidationError(
-                    'Grade can not be longer of 50 characters')
-            else:
-                raise ValidationError(
-                    'El tamaño del grado no puede ser mayor que 50')
+            services.FormService().raise_error(MESSAGE_GRADE_EN, MESSAGE_GRADE)
+
         return grade
+
+    def clean_level(self):
+        level = self.cleaned_data.get('level')
+        if len(level) > 50:
+            services.FormService().raise_error(MESSAGE_LEVEL_EN, MESSAGE_LEVEL)
+        return level
 
     def clean_description(self):
         description = self.cleaned_data.get('description')
         if len(description) > 100:
-            if get_language() == 'en':
-                raise ValidationError(
-                    'Description can not be longer of 100 characters')
-            else:
-                raise ValidationError(
-                    'El tamaño de la descripción no puede ser mayor que 100')
+            services.FormService().raise_error(MESSAGE_DESCRIPTION_EN, MESSAGE_DESCRIPTION)
         return description
 
     def clean_name(self):
         name = self.cleaned_data.get('name')
         if len(name) > 100:
+            services.FormService().raise_error(MESSAGE_NAME_EN, MESSAGE_NAME)
+        return name
+
+class CompetenceCreateForm(forms.ModelForm):
+
+    code = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'CC1', 'id': 'code-create-competence'}))
+    name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Comunicación lingüística', 'id': 'name-create-competence'}))
+    description = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Comunicación lingüística.	', 'id': 'description-create-competence'}))
+    weight = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': '1', 'id': 'wieight-create-competence'}))
+
+    class Meta:
+        model = models.Competence
+        fields = (
+            'code',
+            'name',
+            'description',
+            'weight',
+        )
+        
+    def clean_code(self):
+        code = self.cleaned_data.get('code')
+        if len(code) > 50:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_CODE_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_CODE)
+        return code
+
+    def clean_level(self):
+        level = self.cleaned_data.get('level')
+        if len(level) > 50:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_LEVEL_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_LEVEL)
+        return level
+
+    def clean_description(self):
+        description = self.cleaned_data.get('description')
+        if len(description) > 300:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_DESCRIPTION_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_DESCRIPTION)
+        return description
+
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
+        if len(name) > 300:
             if get_language() == 'en':
                 raise ValidationError(
                     MESSAGE_NAME_EN)
