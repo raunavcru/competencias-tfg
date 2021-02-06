@@ -312,10 +312,10 @@ class SetCreateForm(forms.ModelForm):
         if len(level) > 50:
             if get_language() == 'en':
                 raise ValidationError(
-                    MESSAGE_LEVEL)
+                    MESSAGE_LEVEL_EN)
             else:
                 raise ValidationError(
-                    MESSAGE_LEVEL_EN)
+                    MESSAGE_LEVEL)
         return level
 
 
@@ -485,10 +485,10 @@ class SubjectCreateForm(forms.ModelForm):
         if len(description) > 100:
             if get_language() == 'en':
                 raise ValidationError(
-                    )
+                    MESSAGE_DESCRIPTION_EN)
             else:
                 raise ValidationError(
-                    )
+                    MESSAGE_DESCRIPTION)
         return description
 
     def clean_name(self):
