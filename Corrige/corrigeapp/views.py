@@ -658,4 +658,57 @@ class SetUnassignStudentView(generic.TemplateView):
             return redirect('sets_assign_student_list', pk=set_pk)
         else:
             return redirect('/')
+
+@method_decorator(login_required, name='dispatch')        
+class TeacherAssignSubjectListView(generic.ListView, generic.list.MultipleObjectMixin):
+    model = models.Teacher
+    template_name = 'subjects/list_assign_subject.html'
+    paginate_by = 5
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            return super(TeacherAssignSubjectListView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        teacher_object_pk = self.kwargs.get('pk')
+        teacher_object = models.Teacher.objects.get(pk=teacher_object_pk)
+        object_list = teacher_object.subjects.all().order_by('name')
+        context = super(TeacherAssignSubjectListView, self).get_context_data(
+            object_list=object_list, **kwargs)
+        context['other_subjects'] = models.Subject.objects.all().exclude(id__in=object_list).order_by('name')
+        context['teacher_object_pk'] = teacher_object_pk
+
+        return context
+
+class TeacherAssignSubjectView(generic.TemplateView):
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            subject_pk = self.kwargs.get('pk')
+            subject = models.Subject.objects.get(pk=subject_pk)
+            teacher_pk = self.kwargs.get('id')
+            teacher_object = models.Teacher.objects.get(pk=teacher_pk)
+
+            teacher_object.subjects.add(subject)
+            teacher_object.save()
+            return redirect('teachers_assign_subject_list', pk=teacher_pk)
+        else:
+            return redirect('/')
+
+class TeacherUnassignSubjectView(generic.TemplateView):
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            subject_pk = self.kwargs.get('pk')
+            subject = models.Subject.objects.get(pk=subject_pk)
+            teacher_pk = self.kwargs.get('id')
+            teacher_object = models.Teacher.objects.get(pk=teacher_pk)
+
+            teacher_object.subjects.remove(subject)
+            teacher_object.save()
+            return redirect('teachers_assign_subject_list', pk=teacher_pk)
+        else:
+            return redirect('/')
         
