@@ -8,6 +8,7 @@ from django.utils.translation import get_language, activate
 from django.contrib.auth.hashers import check_password
 
 from . import models
+from . import services
 
 User = get_user_model()
 
@@ -461,45 +462,26 @@ class SubjectCreateForm(forms.ModelForm):
     def clean_grade(self):
         grade = self.cleaned_data.get('grade')
         if len(grade) > 50:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_GRADE_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_GRADE)
+            services.FormService().raise_error(MESSAGE_GRADE_EN, MESSAGE_GRADE)
+
         return grade
 
     def clean_level(self):
         level = self.cleaned_data.get('level')
         if len(level) > 50:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_LEVEL_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_LEVEL)
+            services.FormService().raise_error(MESSAGE_LEVEL_EN, MESSAGE_LEVEL)
         return level
 
     def clean_description(self):
         description = self.cleaned_data.get('description')
         if len(description) > 100:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_DESCRIPTION_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_DESCRIPTION)
+            services.FormService().raise_error(MESSAGE_DESCRIPTION_EN, MESSAGE_DESCRIPTION)
         return description
 
     def clean_name(self):
         name = self.cleaned_data.get('name')
         if len(name) > 100:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_NAME_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_NAME)
+            services.FormService().raise_error(MESSAGE_NAME_EN, MESSAGE_NAME)
         return name
 
 class CompetenceCreateForm(forms.ModelForm):
@@ -543,59 +525,6 @@ class CompetenceCreateForm(forms.ModelForm):
                 raise ValidationError(
                     MESSAGE_LEVEL)
         return level
-
-    def clean_description(self):
-        description = self.cleaned_data.get('description')
-        if len(description) > 300:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_DESCRIPTION_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_DESCRIPTION)
-        return description
-
-    def clean_name(self):
-        name = self.cleaned_data.get('name')
-        if len(name) > 300:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_NAME_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_NAME)
-        return name
-
-class CompetenceUpdateForm(forms.ModelForm):
-
-    code = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': 'CC1', 'id': 'code-create-competence'}))
-    name = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': 'Comunicación lingüística', 'id': 'name-create-competence'}))
-    description = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': 'Comunicación lingüística.	', 'id': 'description-create-competence'}))
-    weight = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': '1', 'id': 'wieight-create-competence'}))
-
-    class Meta:
-        model = models.Competence
-        fields = (
-            'code',
-            'name',
-            'description',
-            'weight',
-        )
-        
-    def clean_code(self):
-        code = self.cleaned_data.get('code')
-        if len(code) > 50:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_CODE_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_CODE)
-        return code
 
     def clean_description(self):
         description = self.cleaned_data.get('description')

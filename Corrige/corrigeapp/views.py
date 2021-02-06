@@ -542,7 +542,7 @@ class CompetenceCreateChildView(generic.CreateView):
 @method_decorator(login_required, name='dispatch')
 class CompetenceUpdateView(generic.UpdateView):
     model = models.Competence
-    form_class = forms.CompetenceUpdateForm
+    form_class = forms.CompetenceCreateForm
     template_name = COMPETENCE_CREATE
 
     def get(self, request, *args, **kwargs):
@@ -593,6 +593,7 @@ class CompetencesDeleteView(generic.DeleteView):
             context['list_level1'] = True
 
         return context
+
     def post(self, request, *args, **kwargs):
         competence_pk = self.kwargs.get('pk')
         competence = models.Competence.objects.get(pk=competence_pk)
