@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %} 
+    <h4 class="centered">{% trans "List of assigned subjects" %}</h4>
+        <table class="highlight">
+            <caption></caption>
+                <thead>
+                    <tr>
+                        <th id=""></th>
+                        <th id="name">{% trans "Name" %}</th>
+                        <th id="level">{% trans "Level" %}</th>
+                        <th id="grade">{% trans "Grade" %}</th>
+                        <th id="description">{% trans "Description" %}</th>
+                        <th class="center" id="button">{% trans "Unassign" %}</th>
+                    </tr>
+                </thead>
+            {% for o in object_list  %}
+                    <tbody>
+                        <tr class="center">
+                            <td><i class="material-icons" style="color:#BBBBBB">book</i></td>
+                            <td>{{o.name}}</td>
+                            <td>{{o.level}}</td>
+                            <td>{{o.grade}}</td>
+                            <td>{{o.description}}</td>  
+                            <td class="center dropdown-trigger" type="button" onclick="location.href='{% url 'teachers_unassign_subject' pk=o.pk id=teacher_object_pk %}'"><em class="material-icons" style="color:#e53935">clear</em></td>
+                            
+                        </tr>
+                    </tbody>
+            {% endfor %}
+        </table>
+    {% include 'paginate.html' %}
+
+    <h4 class="centered">{% trans "List of not assigned subjects" %}</h4>
+        <table class="highlight">
+            <caption></caption>
+                <thead>
+                    <tr>
+                        <th id=""></th>
+                        <th id="name">{% trans "Name" %}</th>
+                        <th id="level">{% trans "Level" %}</th>
+                        <th id="grade">{% trans "Grade" %}</th>
+                        <th id="description">{% trans "Description" %}</th>
+                        <th class="center" id="button">{% trans "Assign" %}</th>
+                    </tr>
+                </thead>
+            {% for o in other_subjects %}
+                    <tbody>
+                        <tr class="center">
+                            <td><i class="material-icons" style="color:#BBBBBB">book</i></td>
+                            <td>{{o.name}}</td>
+                            <td>{{o.level}}</td>
+                            <td>{{o.grade}}</td>
+                            <td>{{o.description}}</td>    
+                            <td class="center dropdown-trigger" type="button" onclick="location.href='{% url 'teachers_assign_subject' pk=o.pk id=teacher_object_pk %}'"><em class="material-icons" style="color:#29b6f6">send</em></td>
+                        </tr>
+                    </tbody>
+            {% endfor %}
+        </table>
+
+{% endblock %}
+
+  <!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
+  <!-- Modal Structure -->
+
+
+
