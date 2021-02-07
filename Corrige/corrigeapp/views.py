@@ -713,4 +713,23 @@ class TeacherUnassignSubjectView(generic.TemplateView):
             return redirect('teachers_assign_subject_list', pk=teacher_pk)
         else:
             return redirect('/')
-        
+
+@method_decorator(login_required, name='dispatch')
+class SubjectsOwnerListView(generic.ListView):
+    model = models.Student
+    template_name = 'subjects/list.html'
+    context_object_name = 'subject_list'
+    paginate_by = 5
+
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_teacher(request.user):
+            return super(SubjectsOwnerListView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_queryset(self):
+        user = self.request.user
+        teacher = models.Teacher.objects.get(user=user)
+        subjects = teacher.subjects.all()
+        return subjects     

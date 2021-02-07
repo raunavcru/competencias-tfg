@@ -47,5 +47,7 @@ urlpatterns = [
     path('teachers/<int:pk>/<int:id>/assign/', views.TeacherAssignSubjectView.as_view(), name = 'teachers_assign_subject'),
     path('teachers/<int:pk>/<int:id>/unassign/', views.TeacherUnassignSubjectView.as_view(), name = 'teachers_unassign_subject'),
 
+    path('my_subjects/list', views.SubjectsOwnerListView.as_view(), name = 'my_subjects_list'),
+
 
 ]
