@@ -110,9 +110,9 @@ def seed_admins():
     last_name = names[1]
 
     fields = {
-        'password': make_password(profile['username']),
+        'password': make_password('administrator'),
         'is_superuser': False,
-        'username': profile['username'],
+        'username': 'administrator',
         'first_name': first_name,
         'last_name': last_name,
         'email': profile['mail'],

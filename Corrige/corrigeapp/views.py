@@ -18,6 +18,103 @@ COMPETENCE_CREATE = "competences/create.html"
 class HomeView(generic.TemplateView):
     template_name = 'home.html'
 
+# Administrators
+@method_decorator(login_required, name='dispatch')
+class AdministratorCreateView(generic.CreateView):
+    form_class = forms.AdministratorCreateForm
+    template_name = "administrators/create.html"
+    success_url = reverse_lazy('administrators_list')
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            return super(AdministratorCreateView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def form_valid(self, form):
+        user = form.save()
+        birthdate = form.cleaned_data.get('birthdate')
+        initials = form.cleaned_data.get('initials')
+        profile = models.Administrator.objects.create(user=user, birthdate=birthdate, initials=initials, role='ADMINISTRATOR')
+        profile.save()
+        return super(AdministratorCreateView, self).form_valid(form)
+
+@method_decorator(login_required, name='dispatch')
+class AdministratorDeleteView(generic.DeleteView):
+    model = models.Administrator
+    template_name = 'administrators/confirm_delete.html'
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            return super(AdministratorDeleteView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def post(self, request, *args, **kwargs):
+        admin_pk = self.kwargs.get('pk')
+        admin = models.Administrator.objects.get(pk=admin_pk)
+        admin.user.delete()
+        admin.delete()
+
+        return redirect('administrators_list')
+
+@method_decorator(login_required, name='dispatch')
+class AdministratorsListView(generic.ListView):
+    model = models.Administrator
+    template_name = 'administrators/list.html'
+    context_object_name = 'administrator_list'
+    paginate_by = 5
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            return super(AdministratorsListView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_queryset(self):
+        user = self.request.user
+        admin_log = models.Administrator.objects.filter(user=user).first()
+        queryset = models.Administrator.objects.all().order_by('user__last_name').exclude(pk = admin_log.pk)
+        return queryset
+
+@method_decorator(login_required, name='dispatch')        
+class AdministratorUpdateView(generic.UpdateView):
+    model = models.User
+    form_class = forms.UserUpdateForm
+    administrator_form_class = forms.TeacherUpdateForm
+    template_name = "administrators/create.html"
+    success_url = reverse_lazy('administrators_list')
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            return super(AdministratorUpdateView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        context = super(AdministratorUpdateView, self).get_context_data(**kwargs)
+        context['administrator_form'] = self.administrator_form_class(instance=self.object.profile)
+        return context
+    
+    def get_object(self):
+        admin_pk = self.kwargs.get('pk')
+        admin = models.Administrator.objects.get(pk=admin_pk)
+        admin_user = admin.user
+        return admin_user
+
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        form = self.form_class(request.POST, instance=self.object)
+        administrator_form = self.administrator_form_class(
+            request.POST, instance=self.object.profile)
+        if form.is_valid() and administrator_form.is_valid():
+            user = form.save()
+            administrator_form.save(user)
+            return redirect(self.get_success_url())
+        else:
+            return self.render_to_response(
+                self.get_context_data(form=form, profile_form=administrator_form))
+
 @method_decorator(login_required, name='dispatch')
 class StudentCreateView(generic.CreateView):
     form_class = forms.StudentCreateForm
