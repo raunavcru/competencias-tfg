@@ -8,14 +8,7 @@
             <caption></caption>
                 <thead>
                     <tr>
-                        <th id=""></th>
-                        <th id="surname">{% trans "Surname" %}</th>
-                        <th id="name">{% trans "Name" %}</th>
-                        <th id="initials">{% trans "Initials" %}</th>
-                        <th id="birthdate">{% trans "Birthdate" %}</th>
-                        <th id="email">Email</th>
-                        <th class="center" id="button">{% trans "Edit" %}</th>
-                        <th class="center" id="delete" >{% trans "Delete" %}</th>
+                        {% include 'user_tr.html' %}
                     </tr>
                 </thead>
                 {% for object in administrator_list %}
