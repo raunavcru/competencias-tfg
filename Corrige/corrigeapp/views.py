@@ -714,3 +714,67 @@ class TeacherUnassignSubjectView(generic.TemplateView):
         else:
             return redirect('/')
         
+
+@method_decorator(login_required, name='dispatch')        
+class SubjectAssignCompetenceListView(generic.ListView, generic.list.MultipleObjectMixin):
+    model = models.Subject
+    template_name = 'competences/list_assign_competence.html'
+    paginate_by = 5
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            return super(SubjectAssignCompetenceListView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        subject_object_pk = self.kwargs.get('pk')
+        subject_object = models.Subject.objects.get(pk=subject_object_pk)
+        object_list = subject_object.competences.all().order_by('code')
+        context = super(SubjectAssignCompetenceListView, self).get_context_data(
+            object_list=object_list, **kwargs)
+        context['other_competences'] = models.Competence.objects.filter(level = 1).exclude(id__in=object_list).order_by('code')
+        context['subject_object_pk'] = subject_object_pk
+
+        return context
+
+class SubjectAssignCompetenceView(generic.TemplateView):
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            competence_pk = self.kwargs.get('pk')
+            competence = models.Competence.objects.get(pk=competence_pk)
+            subject_pk = self.kwargs.get('id')
+            subject_object = models.Subject.objects.get(pk=subject_pk)
+
+            subject_object.competences.add(competence)
+            subject_object.save()
+            subject_object.competences.add(competence.parent)
+            subject_object.save()
+            subject_object.competences.add(competence.parent.parent)
+            subject_object.save()
+            return redirect('subjects_assign_competence_list', pk=subject_pk)
+        else:
+            return redirect('/')
+
+class SubjectUnassignCompetenceView(generic.TemplateView):
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            competence_pk = self.kwargs.get('pk')
+            competence = models.Competence.objects.get(pk=competence_pk)
+            subject_pk = self.kwargs.get('id')
+            subject_object = models.Subject.objects.get(pk=subject_pk)
+            parent = competence.parent
+            grandparent = competence.parent.parent
+
+            subject_object.competences.remove(grandparent)
+            subject_object.save()
+            subject_object.competences.remove(parent)
+            subject_object.save()
+            subject_object.competences.remove(competence)
+            subject_object.save()
+            return redirect('subjects_assign_competence_list', pk=subject_pk)
+        else:
+            return redirect('/')
+
