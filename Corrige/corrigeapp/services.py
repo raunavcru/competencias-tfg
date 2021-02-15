@@ -6,6 +6,17 @@ from . import models
 
 User = get_user_model()
 
+class FormService():
+
+    def raise_error(self, en_message: str, es_message: str):
+        
+        if get_language() == 'en':
+            raise ValidationError(
+                en_message)
+        else:
+            raise ValidationError(
+                es_message)
+
 class UserService():
 
     def is_admin(self, user: User) -> bool:
@@ -23,14 +34,3 @@ class UserService():
             res = True
 
         return res
-
-class FormService():
-
-    def raise_error(self, en_message: str, es_message: str):
-        
-        if get_language() == 'en':
-            raise ValidationError(
-                en_message)
-        else:
-            raise ValidationError(
-                es_message)
