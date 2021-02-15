@@ -617,6 +617,61 @@ class StudentUpdateView(generic.UpdateView):
         else:
             return redirect('/')
 
+# Subjects
+@method_decorator(login_required, name='dispatch')
+class SubjectCreateView(generic.CreateView):
+    form_class = forms.SubjectCreateForm
+    template_name = "subjects/create.html"
+    success_url = reverse_lazy('subjects_list')
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            return super(SubjectCreateView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+@method_decorator(login_required, name='dispatch')
+class SubjectsDeleteView(generic.DeleteView):
+    template_name = 'subjects/delete.html'
+    model = models.Subject
+    success_url = reverse_lazy('subjects_list')
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            return super(SubjectsDeleteView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+@method_decorator(login_required, name='dispatch')
+class SubjectsListView(generic.ListView):
+    model = models.Subject
+    template_name = 'subjects/list.html'
+    context_object_name = 'subject_list'
+    paginate_by = 5
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            return super(SubjectsListView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_queryset(self):
+        queryset = models.Subject.objects.all().order_by('name')
+        return queryset
+
+@method_decorator(login_required, name='dispatch')        
+class SubjectsUpdateView(generic.UpdateView):
+    model = models.Subject
+    form_class = forms.SubjectCreateForm
+    template_name = "subjects/create.html"
+    success_url = reverse_lazy('subjects_list')
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            return super(SubjectsUpdateView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+            
 # Teachers
 @method_decorator(login_required, name='dispatch') 
 class TeacherAssignSubjectView(generic.TemplateView):
@@ -766,58 +821,3 @@ class TeacherUpdateView(generic.UpdateView):
         else:
             return self.render_to_response(
                 self.get_context_data(form=form, profile_form=teacher_form))
-
-# Subjects
-@method_decorator(login_required, name='dispatch')
-class SubjectCreateView(generic.CreateView):
-    form_class = forms.SubjectCreateForm
-    template_name = "subjects/create.html"
-    success_url = reverse_lazy('subjects_list')
-
-    def get(self, request, *args, **kwargs):
-        if services.UserService().is_admin(request.user):
-            return super(SubjectCreateView, self).get(self, request, *args, **kwargs)
-        else:
-            return redirect('/')
-
-@method_decorator(login_required, name='dispatch')
-class SubjectsDeleteView(generic.DeleteView):
-    template_name = 'subjects/delete.html'
-    model = models.Subject
-    success_url = reverse_lazy('subjects_list')
-
-    def get(self, request, *args, **kwargs):
-        if services.UserService().is_admin(request.user):
-            return super(SubjectsDeleteView, self).get(self, request, *args, **kwargs)
-        else:
-            return redirect('/')
-
-@method_decorator(login_required, name='dispatch')
-class SubjectsListView(generic.ListView):
-    model = models.Subject
-    template_name = 'subjects/list.html'
-    context_object_name = 'subject_list'
-    paginate_by = 5
-
-    def get(self, request, *args, **kwargs):
-        if services.UserService().is_admin(request.user):
-            return super(SubjectsListView, self).get(self, request, *args, **kwargs)
-        else:
-            return redirect('/')
-
-    def get_queryset(self):
-        queryset = models.Subject.objects.all().order_by('name')
-        return queryset
-
-@method_decorator(login_required, name='dispatch')        
-class SubjectsUpdateView(generic.UpdateView):
-    model = models.Subject
-    form_class = forms.SubjectCreateForm
-    template_name = "subjects/create.html"
-    success_url = reverse_lazy('subjects_list')
-
-    def get(self, request, *args, **kwargs):
-        if services.UserService().is_admin(request.user):
-            return super(SubjectsUpdateView, self).get(self, request, *args, **kwargs)
-        else:
-            return redirect('/')
