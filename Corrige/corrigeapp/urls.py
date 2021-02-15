@@ -42,6 +42,9 @@ urlpatterns = [
     path('subjects/create', views.SubjectCreateView.as_view(), name = 'subjects_create'),
     path('subjects/<int:pk>/delete', views.SubjectsDeleteView.as_view(), name='subjects_delete'),
     path('subjects/<int:pk>/update', views.SubjectsUpdateView.as_view(), name = 'subjects_update'),
+    path('subjects/<int:pk>/assign/list', views.SubjectAssignCompetenceListView.as_view(), name = 'subjects_assign_competence_list'),
+    path('subjects/<int:pk>/<int:id>/assign/', views.SubjectAssignCompetenceView.as_view(), name = 'subjects_assign_competence'),
+    path('subjects/<int:pk>/<int:id>/unassign/', views.SubjectUnassignCompetenceView.as_view(), name = 'subjects_unassign_competence'),
 
     path('teachers/create', views.TeacherCreateView.as_view(), name = 'teachers_create'),
     path('teachers/<int:pk>/delete', views.TeacherDeleteView.as_view(), name='teachers_delete'),
