@@ -15,8 +15,244 @@ from . import services
 COMPETENCE_LIST = 'competences/list.html'
 COMPETENCE_CREATE = "competences/create.html"
 
+# Generic
 class HomeView(generic.TemplateView):
     template_name = 'home.html'
+
+# Competences
+@method_decorator(login_required, name='dispatch')
+class CompetenceCreateChildView(generic.CreateView):
+    form_class = forms.CompetenceCreateForm
+    template_name = COMPETENCE_CREATE
+    
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            return super(CompetenceCreateChildView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+    
+    def get_context_data(self, **kwargs):
+        context = super(CompetenceCreateChildView, self).get_context_data(**kwargs)
+        competence_pk = self.kwargs.get('pk')
+        context['competence_pk'] = competence_pk
+        context['competence_parent'] = True
+        return context
+
+    def form_valid(self, form):
+        competence_pk = self.kwargs.get('pk')
+        competence = models.Competence.objects.get(pk=competence_pk)
+        competence_new = form.save(commit=False)
+        competence_new.parent = competence
+        if competence.level == 3:
+            competence_new.level = 2
+        elif competence.level == 2:
+            competence_new.level = 1
+        else:
+            return redirect('/')
+            
+        competence_new.save()
+
+        return redirect('competences_relation', pk=competence_pk)
+
+@method_decorator(login_required, name='dispatch')
+class CompetenceCreateLevel3View(generic.CreateView):
+    form_class = forms.CompetenceCreateForm
+    template_name = COMPETENCE_CREATE
+    success_url = reverse_lazy('competences_list3')
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            return super(CompetenceCreateLevel3View, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+    
+    def get_context_data(self, **kwargs):
+        context = super(CompetenceCreateLevel3View, self).get_context_data(**kwargs)
+        context['create_level3'] = True
+        return context
+    
+    def form_valid(self, form):
+        competence_new = form.save(commit=False)
+        competence_new.level = 3
+        competence_new.save()
+
+        return redirect('competences_list3')
+
+@method_decorator(login_required, name='dispatch')
+class CompetencesDeleteView(generic.DeleteView):
+    template_name = 'competences/delete.html'
+    model = models.Competence
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            return super(CompetencesDeleteView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        competence_pk = self.kwargs.get('pk')
+        competence = models.Competence.objects.get(pk=competence_pk)
+        context = super(CompetencesDeleteView, self).get_context_data(**kwargs)
+        context['list_level3'] = False
+        context['list_level2'] = False
+        context['list_level1'] = False
+        if competence.level == 3:
+            context['list_level3'] = True
+            
+        elif competence.level == 2:
+            context['list_level2'] = True
+        else:
+            context['list_level1'] = True
+
+        return context
+
+    def post(self, request, *args, **kwargs):
+        competence_pk = self.kwargs.get('pk')
+        competence = models.Competence.objects.get(pk=competence_pk)
+        competence.delete()
+        
+        if competence.level == 3:
+            return redirect('competences_list3')
+            
+        elif competence.level == 2:
+            return redirect('competences_list2')
+        else:
+            return redirect('competences_list1')
+
+class CompetencesListChildView(generic.ListView):
+    model = models.Competence
+    template_name = COMPETENCE_LIST
+    context_object_name = 'competence_list'
+    paginate_by = 5
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            return super(CompetencesListChildView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+    
+    def get_context_data(self, **kwargs):
+        context = super(CompetencesListChildView, self).get_context_data(**kwargs)
+        competence_pk = self.kwargs.get('pk')
+        competence = models.Competence.objects.get(pk=competence_pk)
+        context['competence_pk'] = competence_pk
+        context['listall_level3'] = False
+        context['listall_level2'] = False
+        context['list_level2'] = False
+        context['list_level1'] = False
+
+        if competence.level == 3:
+            context['list_level2'] = True
+        elif competence.level == 2:
+            context['list_level1'] = True
+
+        return context
+
+    def get_queryset(self):
+        level3_pk = self.kwargs.get('pk')
+        level3 = models.Competence.objects.get(pk=level3_pk)
+        queryset = models.Competence.objects.filter(parent=level3)
+        return queryset
+
+class CompetenceListLevel1View(generic.ListView):
+    model = models.Competence
+    template_name = COMPETENCE_LIST
+    context_object_name = 'competence_list'
+    paginate_by = 5
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            return super(CompetenceListLevel1View, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        context = super(CompetenceListLevel1View, self).get_context_data(**kwargs)
+        context['listall_level3'] = False
+        context['listall_level2'] = False
+        context['list_level2'] = False
+
+        return context
+
+    def get_queryset(self):
+        queryset = models.Competence.objects.filter(level="1")
+        return queryset
+
+class CompetenceListLevel2View(generic.ListView):
+    model = models.Competence
+    template_name = COMPETENCE_LIST
+    context_object_name = 'competence_list'
+    paginate_by = 5
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            return super(CompetenceListLevel2View, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        context = super(CompetenceListLevel2View, self).get_context_data(**kwargs)
+        context['listall_level3'] = False
+        context['listall_level2'] = True
+        context['list_level2'] = False
+
+        return context
+
+    def get_queryset(self):
+        queryset = models.Competence.objects.filter(level="2")
+        return queryset
+
+class CompetenceListLevel3View(generic.ListView):
+    model = models.Competence
+    template_name = COMPETENCE_LIST
+    context_object_name = 'competence_list'
+    paginate_by = 5
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            return super(CompetenceListLevel3View, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        context = super(CompetenceListLevel3View, self).get_context_data(**kwargs)
+        context['listall_level3'] = True
+        context['listall_level2'] = False
+        context['list_level3'] = False
+        context['list_level2'] = False
+
+        return context
+
+    def get_queryset(self):
+        queryset = models.Competence.objects.filter(level="3")
+        return queryset
+
+@method_decorator(login_required, name='dispatch')
+class CompetenceUpdateView(generic.UpdateView):
+    model = models.Competence
+    form_class = forms.CompetenceCreateForm
+    template_name = COMPETENCE_CREATE
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            return super(CompetenceUpdateView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        context = super(CompetenceUpdateView, self).get_context_data(**kwargs)
+        context['is_update'] = True
+        return context
+
+    def form_valid(self, form):
+        competence = form.save()
+
+        if competence.level == 3:
+            return redirect('competences_list3')
+        elif competence.level == 2:
+            return redirect('competences_list2')
+        else:
+            return redirect('competences_list1')
 
 @method_decorator(login_required, name='dispatch')
 class StudentCreateView(generic.CreateView):
@@ -57,7 +293,7 @@ class StudentsListView(generic.ListView):
             return redirect('/')
 
     def get_queryset(self):
-        queryset = models.Student.objects.all()
+        queryset = models.Student.objects.all().order_by('surname')
         return queryset
 
 @method_decorator(login_required, name='dispatch')
@@ -126,7 +362,7 @@ class TeachersListView(generic.ListView):
             return redirect('/')
 
     def get_queryset(self):
-        queryset = models.Teacher.objects.all()
+        queryset = models.Teacher.objects.all().order_by('user__last_name')
         return queryset
 
 @method_decorator(login_required, name='dispatch')        
@@ -181,7 +417,7 @@ class SetsListView(generic.ListView):
             return redirect('/')
 
     def get_queryset(self):
-        queryset = models.Set.objects.all()
+        queryset = models.Set.objects.all().order_by('name')
         return queryset
 
 @method_decorator(login_required, name='dispatch')
@@ -331,7 +567,7 @@ class SubjectsListView(generic.ListView):
             return redirect('/')
 
     def get_queryset(self):
-        queryset = models.Subject.objects.all()
+        queryset = models.Subject.objects.all().order_by('name')
         return queryset
 
 class SubjectsDeleteView(generic.DeleteView):
@@ -369,244 +605,6 @@ class SubjectsUpdateView(generic.UpdateView):
             return super(SubjectsUpdateView, self).get(self, request, *args, **kwargs)
         else:
             return redirect('/')
-
-class CompetenceListLevel1View(generic.ListView):
-    model = models.Competence
-    template_name = COMPETENCE_LIST
-    context_object_name = 'competence_list'
-    paginate_by = 5
-
-    def get(self, request, *args, **kwargs):
-        if services.UserService().is_admin(request.user):
-            return super(CompetenceListLevel1View, self).get(self, request, *args, **kwargs)
-        else:
-            return redirect('/')
-
-    def get_context_data(self, **kwargs):
-        context = super(CompetenceListLevel1View, self).get_context_data(**kwargs)
-        context['listall_level3'] = False
-        context['listall_level2'] = False
-        context['list_level2'] = False
-
-        return context
-
-    def get_queryset(self):
-        queryset = models.Competence.objects.filter(level="1")
-        return queryset
-
-class CompetenceListLevel2View(generic.ListView):
-    model = models.Competence
-    template_name = COMPETENCE_LIST
-    context_object_name = 'competence_list'
-    paginate_by = 5
-
-    def get(self, request, *args, **kwargs):
-        if services.UserService().is_admin(request.user):
-            return super(CompetenceListLevel2View, self).get(self, request, *args, **kwargs)
-        else:
-            return redirect('/')
-
-    def get_context_data(self, **kwargs):
-        context = super(CompetenceListLevel2View, self).get_context_data(**kwargs)
-        context['listall_level3'] = False
-        context['listall_level2'] = True
-        context['list_level2'] = False
-
-        return context
-
-    def get_queryset(self):
-        queryset = models.Competence.objects.filter(level="2")
-        return queryset
-
-class CompetenceListLevel3View(generic.ListView):
-    model = models.Competence
-    template_name = COMPETENCE_LIST
-    context_object_name = 'competence_list'
-    paginate_by = 5
-
-    def get(self, request, *args, **kwargs):
-        if services.UserService().is_admin(request.user):
-            return super(CompetenceListLevel3View, self).get(self, request, *args, **kwargs)
-        else:
-            return redirect('/')
-
-    def get_context_data(self, **kwargs):
-        context = super(CompetenceListLevel3View, self).get_context_data(**kwargs)
-        context['listall_level3'] = True
-        context['listall_level2'] = False
-        context['list_level3'] = False
-        context['list_level2'] = False
-
-        return context
-
-    def get_queryset(self):
-        queryset = models.Competence.objects.filter(level="3")
-        return queryset
-
-class CompetencesListChildView(generic.ListView):
-    model = models.Competence
-    template_name = COMPETENCE_LIST
-    context_object_name = 'competence_list'
-    paginate_by = 5
-
-    def get(self, request, *args, **kwargs):
-        if services.UserService().is_admin(request.user):
-            return super(CompetencesListChildView, self).get(self, request, *args, **kwargs)
-        else:
-            return redirect('/')
-    
-    def get_context_data(self, **kwargs):
-        context = super(CompetencesListChildView, self).get_context_data(**kwargs)
-        competence_pk = self.kwargs.get('pk')
-        competence = models.Competence.objects.get(pk=competence_pk)
-        context['competence_pk'] = competence_pk
-        context['listall_level3'] = False
-        context['listall_level2'] = False
-        context['list_level2'] = False
-        context['list_level1'] = False
-
-        if competence.level == 3:
-            context['list_level2'] = True
-        elif competence.level == 2:
-            context['list_level1'] = True
-
-        return context
-
-    def get_queryset(self):
-        level3_pk = self.kwargs.get('pk')
-        level3 = models.Competence.objects.get(pk=level3_pk)
-        queryset = models.Competence.objects.filter(parent=level3)
-        return queryset
-
-
-@method_decorator(login_required, name='dispatch')
-class CompetenceCreateLevel3View(generic.CreateView):
-    form_class = forms.CompetenceCreateForm
-    template_name = COMPETENCE_CREATE
-    success_url = reverse_lazy('competences_list3')
-
-    def get(self, request, *args, **kwargs):
-        if services.UserService().is_admin(request.user):
-            return super(CompetenceCreateLevel3View, self).get(self, request, *args, **kwargs)
-        else:
-            return redirect('/')
-    
-    def get_context_data(self, **kwargs):
-        context = super(CompetenceCreateLevel3View, self).get_context_data(**kwargs)
-        context['create_level3'] = True
-        return context
-    
-    def form_valid(self, form):
-        competence_new = form.save(commit=False)
-        competence_new.level = 3
-        competence_new.save()
-
-        return redirect('competences_list3')
-
-
-@method_decorator(login_required, name='dispatch')
-class CompetenceCreateChildView(generic.CreateView):
-    form_class = forms.CompetenceCreateForm
-    template_name = COMPETENCE_CREATE
-    
-    def get(self, request, *args, **kwargs):
-        if services.UserService().is_admin(request.user):
-            return super(CompetenceCreateChildView, self).get(self, request, *args, **kwargs)
-        else:
-            return redirect('/')
-    
-    def get_context_data(self, **kwargs):
-        context = super(CompetenceCreateChildView, self).get_context_data(**kwargs)
-        competence_pk = self.kwargs.get('pk')
-        context['competence_pk'] = competence_pk
-        context['competence_parent'] = True
-        return context
-
-    def form_valid(self, form):
-        competence_pk = self.kwargs.get('pk')
-        competence = models.Competence.objects.get(pk=competence_pk)
-        competence_new = form.save(commit=False)
-        competence_new.parent = competence
-        if competence.level == 3:
-            competence_new.level = 2
-        elif competence.level == 2:
-            competence_new.level = 1
-        else:
-            return redirect('/')
-            
-        competence_new.save()
-
-        return redirect('competences_relation', pk=competence_pk)
-
-
-@method_decorator(login_required, name='dispatch')
-class CompetenceUpdateView(generic.UpdateView):
-    model = models.Competence
-    form_class = forms.CompetenceCreateForm
-    template_name = COMPETENCE_CREATE
-
-    def get(self, request, *args, **kwargs):
-        if services.UserService().is_admin(request.user):
-            return super(CompetenceUpdateView, self).get(self, request, *args, **kwargs)
-        else:
-            return redirect('/')
-
-    def get_context_data(self, **kwargs):
-        context = super(CompetenceUpdateView, self).get_context_data(**kwargs)
-        context['is_update'] = True
-        return context
-
-    def form_valid(self, form):
-        competence = form.save()
-
-        if competence.level == 3:
-            return redirect('competences_list3')
-        elif competence.level == 2:
-            return redirect('competences_list2')
-        else:
-            return redirect('competences_list1')
-            
-@method_decorator(login_required, name='dispatch')
-class CompetencesDeleteView(generic.DeleteView):
-    template_name = 'competences/delete.html'
-    model = models.Competence
-
-    def get(self, request, *args, **kwargs):
-        if services.UserService().is_admin(request.user):
-            return super(CompetencesDeleteView, self).get(self, request, *args, **kwargs)
-        else:
-            return redirect('/')
-
-    def get_context_data(self, **kwargs):
-        competence_pk = self.kwargs.get('pk')
-        competence = models.Competence.objects.get(pk=competence_pk)
-        context = super(CompetencesDeleteView, self).get_context_data(**kwargs)
-        context['list_level3'] = False
-        context['list_level2'] = False
-        context['list_level1'] = False
-        if competence.level == 3:
-            context['list_level3'] = True
-            
-        elif competence.level == 2:
-            context['list_level2'] = True
-        else:
-            context['list_level1'] = True
-
-        return context
-
-    def post(self, request, *args, **kwargs):
-        competence_pk = self.kwargs.get('pk')
-        competence = models.Competence.objects.get(pk=competence_pk)
-        competence.delete()
-        
-        if competence.level == 3:
-            return redirect('competences_list3')
-            
-        elif competence.level == 2:
-            return redirect('competences_list2')
-        else:
-            return redirect('competences_list1')
-        
 
 @method_decorator(login_required, name='dispatch')        
 class SetAssignStudentListView(generic.ListView, generic.list.MultipleObjectMixin):
