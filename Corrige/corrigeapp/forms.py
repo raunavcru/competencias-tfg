@@ -40,102 +40,6 @@ MESSAGE_CODE_EN = 'Code can not be longer of 50 characters'
 MESSAGE_CODE = 'El tamaño del código no puede ser mayor que 50'
 
 # Administrator
-class AdministratorCreateForm(UserCreationForm):
-    
-    first_name = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': 'Alberto', 'id': 'first_name-create-administrator'}))
-    last_name = forms.CharField(required=True)
-    username = forms.CharField(required=True)
-    email = forms.EmailField(required=True)
-    birthdate = forms.DateField(required=True, 
-        input_formats=settings.DATE_INPUT_FORMATS, 
-        widget=forms.DateInput(
-            format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
-        )
-    )
-    initials = forms.CharField(required=True)
-    password1 = forms.CharField(required=True)
-    password2 = forms.CharField(required=True)
-
-    def __init__(self, *args, **kwargs):
-        super(AdministratorCreateForm, self).__init__(*args, **kwargs)
-        if get_language() == 'en':
-            self.fields['birthdate'].widget.attrs['placeholder'] = DATE_PLACEHOLDER_EN
-            self.fields['birthdate'].widget.format = settings.DATE_INPUT_FORMATS[0]
-
-    class Meta:
-        model = User
-        fields = (
-            'first_name',
-            'last_name',
-            'username',
-            'email',
-            'birthdate',
-            'initials',
-            'password1',
-            'password2'
-        )
-
-    def clean_initials(self):
-        initials = self.cleaned_data.get('initials')
-        if len(initials) > 9:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_INITIALS_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_INITIALS)
-        return initials
-
-    def clean_first_name(self):
-        first_name = self.cleaned_data.get('first_name')
-        if len(first_name) > 100:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_NAME_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_NAME)
-        return first_name
-
-    def clean_email(self):
-        email = self.cleaned_data.get('email')
-        if not email:
-            raise ValidationError('El email es necesario')
-        elif User.objects.filter(email=email).exists():
-            raise ValidationError('El email ya existe')
-        return email
-
-    def clean_last_name(self):
-        last_name = self.cleaned_data.get('last_name')
-        if len(last_name) > 100:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_SURNAME_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_SURNAME)
-        return last_name
-        
-    def clean_birthdate(self):
-        birthdate = self.cleaned_data.get('birthdate')
-        if birthdate >= now().date():
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_BIRTHDATE_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_BIRTHDATE)
-        return birthdate
-
-    def clean_username(self):
-        username = self.cleaned_data.get('username')
-        exist = User.objects.filter(username=username)
-        if exist:
-            raise ValidationError('Usuario ya registrado')
-        return username
-
 class AdministratorUpdateForm(forms.ModelForm):
     birthdate = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
@@ -535,37 +439,7 @@ class LoginForm(AuthenticationForm):
             'password',
         )
 
-class UserUpdateForm(forms.ModelForm):
-    first_name = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': 'Alberto', 'id': 'first_name-create-teacher'}))
-    last_name = forms.CharField(required=True)
-    email = forms.EmailField(required=True)
-
-    class Meta:
-        model = User
-        fields = (
-            'first_name',
-            'last_name',
-            'email',
-        )   
-
-
-    def clean_first_name(self):
-        first_name = self.cleaned_data.get('first_name')
-        if len(first_name) > 100:
-            raise ValidationError(
-                MESSAGE_NAME)
-        return first_name
-
-    def clean_last_name(self):
-        last_name = self.cleaned_data.get('last_name')
-        if len(last_name) > 100:
-            raise ValidationError(
-                MESSAGE_SURNAME)
-        return last_name
-        
-# Teachers
-class TeacherCreateForm(UserCreationForm):
+class UserCreateForm(UserCreationForm):
     
     first_name = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': 'Alberto', 'id': 'first_name-create-teacher'}))
@@ -590,7 +464,7 @@ class TeacherCreateForm(UserCreationForm):
         attrs={'placeholder': '*************', 'id': 'password2-create-teacher'}))
 
     def __init__(self, *args, **kwargs):
-        super(TeacherCreateForm, self).__init__(*args, **kwargs)
+        super(UserCreateForm, self).__init__(*args, **kwargs)
         if get_language() == 'en':
             self.fields['birthdate'].widget.attrs['placeholder'] = DATE_PLACEHOLDER_EN
             self.fields['birthdate'].widget.format = settings.DATE_INPUT_FORMATS[0]
@@ -667,7 +541,37 @@ class TeacherCreateForm(UserCreationForm):
         if exist:
             raise ValidationError('Usuario ya registrado')
         return username
+
+class UserUpdateForm(forms.ModelForm):
+    first_name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Alberto', 'id': 'first_name-create-teacher'}))
+    last_name = forms.CharField(required=True)
+    email = forms.EmailField(required=True)
+
+    class Meta:
+        model = User
+        fields = (
+            'first_name',
+            'last_name',
+            'email',
+        )   
+
+
+    def clean_first_name(self):
+        first_name = self.cleaned_data.get('first_name')
+        if len(first_name) > 100:
+            raise ValidationError(
+                MESSAGE_NAME)
+        return first_name
+
+    def clean_last_name(self):
+        last_name = self.cleaned_data.get('last_name')
+        if len(last_name) > 100:
+            raise ValidationError(
+                MESSAGE_SURNAME)
+        return last_name
         
+# Teachers
 class TeacherUpdateForm(forms.ModelForm):
     birthdate = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 

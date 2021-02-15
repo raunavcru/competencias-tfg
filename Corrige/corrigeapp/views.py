@@ -25,7 +25,7 @@ class not_impl(generic.TemplateView):
 # Administrators
 @method_decorator(login_required, name='dispatch')
 class AdministratorCreateView(generic.CreateView):
-    form_class = forms.AdministratorCreateForm
+    form_class = forms.UserCreateForm
     template_name = "administrators/create.html"
     success_url = reverse_lazy('administrators_list')
 
@@ -714,7 +714,7 @@ class TeacherAssignSubjectListView(generic.ListView, generic.list.MultipleObject
 
 @method_decorator(login_required, name='dispatch')
 class TeacherCreateView(generic.CreateView):
-    form_class = forms.TeacherCreateForm
+    form_class = forms.UserCreateForm
     template_name = "teachers/create.html"
     success_url = reverse_lazy('teachers_list')
 
