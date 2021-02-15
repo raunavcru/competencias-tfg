@@ -766,12 +766,21 @@ class SubjectUnassignCompetenceView(generic.TemplateView):
             parent = competence.parent
             grandparent = competence.parent.parent
 
-            subject_object.competences.remove(grandparent)
-            subject_object.save()
-            subject_object.competences.remove(parent)
-            subject_object.save()
+            level2_list = models.Competence.objects.filter(parent = grandparent, competences = subject_object)
+            count_level2 = level2_list.count()
+
+            level1_list = models.Competence.objects.filter(parent = parent, competences = subject_object)
+            count_level1 = level1_list.count()
+
+            if count_level2 == 1:
+                subject_object.competences.remove(grandparent)
+            
+            if count_level1 == 1:
+                subject_object.competences.remove(parent)
+            
             subject_object.competences.remove(competence)
             subject_object.save()
+
             return redirect('subjects_assign_competence_list', pk=subject_pk)
         else:
             return redirect('/')
