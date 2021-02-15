@@ -736,7 +736,7 @@ class SubjectUnassignCompetenceView(generic.TemplateView):
             if count_level1 == 1:
                 subject_object.competences.remove(parent)
 
-            if (count_level1 == 1 and parent.parent.pk == grandparent.pk) or (count_level2 !=1 and parent.parent.pk == grandparent.pk):
+            if count_level2 == 1:
                 subject_object.competences.remove(grandparent)
             
             subject_object.competences.remove(competence)
