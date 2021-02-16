@@ -17,6 +17,7 @@ subjects = models.Subject.objects.all()
 evaluations = models.Evaluation.objects.all()
 
 CHOICES_LEVEL = (("1º","1º"),("2º","2º"),("3º","3º"),("4º","4º"),("5º","5º"),("6º","6º"))
+CHOICES_GRADE = ((" Primary School"," Primary School"),("Secondary Education","Secondary Education"),("Sixth Form","Sixth Form"),("Further Education","Further Education"),("University","University"))
 
 DATE_PLACEHOLDER = 'dd/mm/aaaa'
 DATE_PLACEHOLDER_EN = 'mm/dd/yyyy'
@@ -238,7 +239,6 @@ class SetCreateForm(forms.ModelForm):
     
     name = forms.CharField(required=True)
     level = forms.CharField(required=True)
-    grade = forms.CharField(required=True)
     line = forms.CharField(required=True)
     teacher = forms.ModelChoiceField(teachers, empty_label=None)
     subject = forms.ModelChoiceField(subjects, empty_label=None)
@@ -255,6 +255,9 @@ class SetCreateForm(forms.ModelForm):
             'subject',
             'evaluation',
         )
+        widgets = {
+            'grade': forms.Select(choices=CHOICES_GRADE)
+        }
         
     def clean_grade(self):
         grade = self.cleaned_data.get('grade')
@@ -383,8 +386,6 @@ class SubjectCreateForm(forms.ModelForm):
     
     name = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': 'Ciencias Sociales', 'id': 'name-create-subject'}))
-    grade = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': 'Primaria', 'id': 'grade-create-subject'}))
     description = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': 'Las ciencias sociales son las ramas de la ciencia relacionadas con ...', 'id': 'description-create-subject'}))
 
@@ -397,7 +398,8 @@ class SubjectCreateForm(forms.ModelForm):
             'description',
         )
         widgets = {
-            'level': forms.Select(choices=CHOICES_LEVEL)
+            'level': forms.Select(choices=CHOICES_LEVEL),
+            'grade': forms.Select(choices=CHOICES_GRADE)
         }
         
     def clean_grade(self):
