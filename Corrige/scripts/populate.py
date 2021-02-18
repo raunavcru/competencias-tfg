@@ -171,180 +171,313 @@ def seed_students():
 def seed_competences():
     competence_pk = 1
 
-    ## Level 3
+    ## 3º ESO Level 3
     competence = {
         'pk': competence_pk,
         'model': 'corrigeapp.Competence',
         'fields': {
                 'code': 'CC1',
                 'name': 'Comunicación lingüística',
-                'description': 'Comunicación lingüística.',
+                'description': '3º ESO',
                 'level': 3,
             }
     }
     POPULATE.append(competence)
+    competence_3ESO_CC1_pk = competence_pk
     competence_pk += 1
 
-    ## Level 3
     competence = {
         'pk': competence_pk,
         'model': 'corrigeapp.Competence',
         'fields': {
                 'code': 'CC2',
                 'name': 'Competencia matemática y competencias básicas en ciencia y tecnología',
-                'description': 'Competencia matemática y competencias básicas en ciencia y tecnología.',
+                'description': '3º ESO',
                 'level': 3,
             }
     }
     POPULATE.append(competence)
+    competence_3ESO_CC2_pk = competence_pk
     competence_pk += 1
 
-    ## Level 3
     competence = {
         'pk': competence_pk,
         'model': 'corrigeapp.Competence',
         'fields': {
                 'code': 'CC3',
                 'name': 'Competencia digital',
-                'description': 'Competencia digital.',
+                'description': '3º ESO',
                 'level': 3,
             }
     }
     POPULATE.append(competence)
+    competence_3ESO_CC3_pk = competence_pk
     competence_pk += 1
 
-    ## Level 3
     competence = {
         'pk': competence_pk,
         'model': 'corrigeapp.Competence',
         'fields': {
                 'code': 'CC4',
                 'name': 'Aprender a aprender',
-                'description': 'Aprender a aprender.',
+                'description': '3º ESO',
                 'level': 3,
             }
     }
     POPULATE.append(competence)
+    competence_3ESO_CC4_pk = competence_pk
     competence_pk += 1
 
-    ## Level 3 =====================================================================================
     competence = {
         'pk': competence_pk,
         'model': 'corrigeapp.Competence',
         'fields': {
                 'code': 'CC5',
                 'name': 'Competencias sociales y cívicas',
-                'description': 'Competencias sociales y cívicas.',
+                'description': '3º ESO',
                 'level': 3,
             }
     }
     POPULATE.append(competence)
-    competence_level3_pk = competence_pk
-    competence_pk += 1
-    ## Level 2
-    competence = {
-        'pk': competence_pk,
-        'model': 'corrigeapp.Competence',
-        'fields': {
-                'code': 'CS1',
-                'name': 'Obtener información concreta y relevante sobre hechos o fenómenos previamente delimitados, utilizando diferentes fuentes (directas e indirectas).',
-                'description': 'Obtener información concreta y relevante sobre hechos o fenómenos previamente delimitados, utilizando diferentes fuentes (directas e indirectas).',
-                'weight': 0.15,
-                'level': 2,
-                'parent': competence_level3_pk,
-        }
-    }
-    POPULATE.append(competence)
-    competence_level2_pk = competence_pk
-    competence_pk += 1
-    ## Level 1
-    competence = {
-        'pk': competence_pk,
-        'model': 'corrigeapp.Competence',
-        'fields': {
-                'code': 'CS1.1',
-                'name': 'Busca, selecciona y organiza información concreta y relevante, la analiza, obtiene conclusiones, reflexiona acerca del proceso seguido y lo comunica oralmente y/o por escrito.',
-                'description': 'Busca, selecciona y organiza información concreta y relevante, la analiza, obtiene conclusiones, reflexiona acerca del proceso seguido y lo comunica oralmente y/o por escrito.',
-                'weight': 0.15,
-                'level': 1,
-                'parent': competence_level2_pk,
-        }
-    }
-    POPULATE.append(competence)
-    competence_pk += 1
-    ## Level 2
-    competence = {
-        'pk': competence_pk,
-        'model': 'corrigeapp.Competence',
-        'fields': {
-                'code': 'CS2',
-                'name': 'Utilizar las tecnologías de la información y la comunicación para obtener información aprender y expresar contenidos sobre Ciencias Sociales.',
-                'description': 'Utilizar las tecnologías de la información y la comunicación para obtener información aprender y expresar contenidos sobre Ciencias Sociales.',
-                'weight': 0.3,
-                'level': 2,
-                'parent': competence_level3_pk,
-        }
-    }
-    POPULATE.append(competence)
-    competence_level2_pk = competence_pk
-    competence_pk += 1
-    ## Level 1
-    competence = {
-        'pk': competence_pk,
-        'model': 'corrigeapp.Competence',
-        'fields': {
-                'code': 'CS2.1',
-                'name': 'Utiliza la tecnologías de la información y la comunicación (Internet, blogs, redes sociales…) para elaborar trabajos con la terminología adecuada a los temas tratados.',
-                'description': 'Utiliza la tecnologías de la información y la comunicación (Internet, blogs, redes sociales…) para elaborar trabajos con la terminología adecuada a los temas tratados.',
-                'weight': 0.15,
-                'level': 1,
-                'parent': competence_level2_pk,
-        }
-    }
-    POPULATE.append(competence)
+    competence_3ESO_CC5_pk = competence_pk
     competence_pk += 1
 
-    ## Level 3
     competence = {
         'pk': competence_pk,
         'model': 'corrigeapp.Competence',
         'fields': {
                 'code': 'CC6',
                 'name': 'Sentido de la iniciativa y espíritu emprendedor',
-                'description': 'Sentido de iniciativa y espíritu emprendedor.',
+                'description': '3º ESO',
                 'level': 3,
             }
     }
     POPULATE.append(competence)
+    competence_3ESO_CC6_pk = competence_pk
     competence_pk += 1
 
-    ## Level 3
     competence = {
         'pk': competence_pk,
         'model': 'corrigeapp.Competence',
         'fields': {
                 'code': 'CC7',
                 'name': 'Conciencia y expresiones culturales',
-                'description': 'Conciencia y expresiones culturales.',
+                'description': '3º ESO',
                 'level': 3,
             }
     }
     POPULATE.append(competence)
+    competence_3ESO_CC7_pk = competence_pk
+    competence_pk += 1
+
+    ## 4º ESO Level 3
+    competence = {
+        'pk': competence_pk,
+        'model': 'corrigeapp.Competence',
+        'fields': {
+                'code': 'CC1',
+                'name': 'Comunicación lingüística',
+                'description': '4º ESO',
+                'level': 3,
+            }
+    }
+    POPULATE.append(competence)
+    competence_3ESO_CC1_pk = competence_pk
+    competence_pk += 1
+
+    competence = {
+        'pk': competence_pk,
+        'model': 'corrigeapp.Competence',
+        'fields': {
+                'code': 'CC2',
+                'name': 'Competencia matemática y competencias básicas en ciencia y tecnología',
+                'description': '4º ESO',
+                'level': 3,
+            }
+    }
+    POPULATE.append(competence)
+    competence_3ESO_CC2_pk = competence_pk
+    competence_pk += 1
+
+    competence = {
+        'pk': competence_pk,
+        'model': 'corrigeapp.Competence',
+        'fields': {
+                'code': 'CC3',
+                'name': 'Competencia digital',
+                'description': '4º ESO',
+                'level': 3,
+            }
+    }
+    POPULATE.append(competence)
+    competence_3ESO_CC3_pk = competence_pk
+    competence_pk += 1
+
+    competence = {
+        'pk': competence_pk,
+        'model': 'corrigeapp.Competence',
+        'fields': {
+                'code': 'CC4',
+                'name': 'Aprender a aprender',
+                'description': '4º ESO',
+                'level': 3,
+            }
+    }
+    POPULATE.append(competence)
+    competence_3ESO_CC4_pk = competence_pk
+    competence_pk += 1
+
+    competence = {
+        'pk': competence_pk,
+        'model': 'corrigeapp.Competence',
+        'fields': {
+                'code': 'CC5',
+                'name': 'Competencias sociales y cívicas',
+                'description': '4º ESO',
+                'level': 3,
+            }
+    }
+    POPULATE.append(competence)
+    competence_3ESO_CC5_pk = competence_pk
+    competence_pk += 1
+
+    competence = {
+        'pk': competence_pk,
+        'model': 'corrigeapp.Competence',
+        'fields': {
+                'code': 'CC6',
+                'name': 'Sentido de la iniciativa y espíritu emprendedor',
+                'description': '4º ESO',
+                'level': 3,
+            }
+    }
+    POPULATE.append(competence)
+    competence_3ESO_CC6_pk = competence_pk
+    competence_pk += 1
+
+    competence = {
+        'pk': competence_pk,
+        'model': 'corrigeapp.Competence',
+        'fields': {
+                'code': 'CC7',
+                'name': 'Conciencia y expresiones culturales',
+                'description': '4º ESO',
+                'level': 3,
+            }
+    }
+    POPULATE.append(competence)
+    competence_3ESO_CC7_pk = competence_pk
+    competence_pk += 1
+    
+    ## FQ 3º ESO
+    ## Level 2
+    competence = {
+        'pk': competence_pk,
+        'model': 'corrigeapp.Competence',
+        'fields': {
+                'code': 'FQ3 1.1',
+                'name': 'Reconocer e identificar las características del método científico.',
+                'description': 'FQ 3º ESO',
+                'weight': 0.15,
+                'level': 2,
+                'parent': competence_3ESO_CC2_pk,
+        }
+    }
+    POPULATE.append(competence)
+    competence_level2_pk = competence_pk
+    competence_pk += 1
+    ## FQ3 1.1 Level 1
+    competence = {
+        'pk': competence_pk,
+        'model': 'corrigeapp.Competence',
+        'fields': {
+                'code': 'FQ3 1.1.1',
+                'name': 'Formula hipótesis para explicar fenómenos cotidianos utilizando teorías y modelos científicos.',
+                'description': 'FQ 3º ESO',
+                'weight': 0.15,
+                'level': 2,
+                'parent': competence_level2_pk,
+        }
+    }
+    POPULATE.append(competence)
+    competence_pk += 1
+
+    competence = {
+        'pk': competence_pk,
+        'model': 'corrigeapp.Competence',
+        'fields': {
+                'code': 'FQ3 1.1.1',
+                'name': 'Registra observaciones, datos y resultados de manera organizada y rigurosa, y los comunica de forma oral y escrita utilizando esquemas, gráficos, tablas y expresiones matemáticas.',
+                'description': 'FQ 3º ESO',
+                'weight': 0.15,
+                'level': 2,
+                'parent': competence_level2_pk,
+        }
+    }
+    POPULATE.append(competence)
+    competence_pk += 1
+    ## Level 2
+    competence = {
+        'pk': competence_pk,
+        'model': 'corrigeapp.Competence',
+        'fields': {
+                'code': 'FQ3 1.3',
+                'name': 'Conocer los procedimientos científicos para determinar magnitudes.',
+                'description': 'FQ 3º ESO',
+                'weight': 0.15,
+                'level': 2,
+                'parent': competence_3ESO_CC2_pk,
+        }
+    }
+    POPULATE.append(competence)
+    competence_level2_pk = competence_pk
+    competence_pk += 1
+    ## Level 2
+    competence = {
+        'pk': competence_pk,
+        'model': 'corrigeapp.Competence',
+        'fields': {
+                'code': 'FQ3 1.4',
+                'name': 'Reconocer los materiales, e instrumentos básicos presentes en los laboratorios de Física y Química; conocer y respetar las normas de seguridad y de eliminación de residuos para la protección del medio ambiente.',
+                'description': 'FQ 3º ESO',
+                'weight': 0.15,
+                'level': 2,
+                'parent': competence_3ESO_CC2_pk,
+        }
+    }
+    POPULATE.append(competence)
+    competence_level2_pk = competence_pk
+    competence_pk += 1
+    ## Level 2
+    competence = {
+        'pk': competence_pk,
+        'model': 'corrigeapp.Competence',
+        'fields': {
+                'code': 'FQ3 1.6',
+                'name': 'Desarrollar y defender pequeños trabajos de investigación en los que se ponga en práctica la aplicación del método científico y la utilización de las TIC.',
+                'description': 'FQ 3º ESO',
+                'weight': 0.15,
+                'level': 2,
+                'parent': competence_3ESO_CC2_pk,
+        }
+    }
+    POPULATE.append(competence)
+    competence_level2_pk = competence_pk
     competence_pk += 1
 
 def seed_subjects():
     subject_pk = 1
     competencels = []
 
-    competencels = [5,6,7,8,9]
+    competencels = [2,15,16,17,18,19,20]
     subject = {
         'pk': subject_pk,
         'model': 'corrigeapp.Subject',
         'fields': {
-                'name': 'Ciencias Sociales',
-                'level': '5º',
-                'grade': 'Primaria',
-                'description': 'Ciencias Sociales',
+                'name': 'Física y Química',
+                'level': '3º',
+                'grade': 'ESO',
+                'description': 'Física y Química',
                 'competences': competencels, 
             }
     }
@@ -355,10 +488,10 @@ def seed_subjects():
         'pk': subject_pk,
         'model': 'corrigeapp.Subject',
         'fields': {
-                'name': 'Lengua Castellana y Literatura',
-                'level': '5º',
-                'grade': 'Primaria',
-                'description': 'Lengua Castellana y Literatura',
+                'name': 'Física y Química',
+                'level': '4º',
+                'grade': 'ESO',
+                'description': 'Física y Química',
                 'competences': competencels, 
             }
     }
@@ -370,8 +503,8 @@ def seed_subjects():
         'model': 'corrigeapp.Subject',
         'fields': {
                 'name': 'Matemáticas',
-                'level': '5º',
-                'grade': 'Primaria',
+                'level': '3º',
+                'grade': 'ESO',
                 'description': 'Matemáticas',
                 'competences': competencels, 
             }
@@ -383,66 +516,10 @@ def seed_subjects():
         'pk': subject_pk,
         'model': 'corrigeapp.Subject',
         'fields': {
-                'name': 'Valores Sociales y Cívicos',
-                'level': '5º',
-                'grade': 'Primaria',
-                'description': 'Valores Sociales y Cívicos',
-                'competences': competencels, 
-            }
-    }
-    POPULATE.append(subject)
-    subject_pk += 1
-    competencels = []
-    subject = {
-        'pk': subject_pk,
-        'model': 'corrigeapp.Subject',
-        'fields': {
-                'name': 'Educación Plástica',
-                'level': '5º',
-                'grade': 'Primaria',
-                'description': 'Educación Plástica',
-                'competences': competencels, 
-            }
-    }
-    POPULATE.append(subject)
-    subject_pk += 1
-    competencels = []
-    subject = {
-        'pk': subject_pk,
-        'model': 'corrigeapp.Subject',
-        'fields': {
-                'name': 'Educación Musical',
-                'level': '5º',
-                'grade': 'Primaria',
-                'description': 'Educación Musical',
-                'competences': competencels, 
-            }
-    }
-    POPULATE.append(subject)
-    subject_pk += 1
-    competencels = []
-    subject = {
-        'pk': subject_pk,
-        'model': 'corrigeapp.Subject',
-        'fields': {
-                'name': 'Segunda Lengua Extranjera',
-                'level': '5º',
-                'grade': 'Primaria',
-                'description': 'Segunda Lengua Extranjera',
-                'competences': competencels, 
-            }
-    }
-    POPULATE.append(subject)
-    subject_pk += 1
-    competencels = []
-    subject = {
-        'pk': subject_pk,
-        'model': 'corrigeapp.Subject',
-        'fields': {
-                'name': 'Educación Física',
-                'level': '5º',
-                'grade': 'Primaria',
-                'description': 'Educación Física',
+                'name': 'Matemáticas',
+                'level': '4º',
+                'grade': 'ESO',
+                'description': 'Matemáticas',
                 'competences': competencels, 
             }
     }
