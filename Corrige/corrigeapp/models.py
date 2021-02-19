@@ -54,7 +54,7 @@ class Competence(Common):
 
     level = models.PositiveIntegerField('level')
 
-    parent = models.ForeignKey('self', on_delete=models.CASCADE, related_name='competence_parent', blank=True, null=True)
+    parent = models.ManyToManyField('self', "competences", verbose_name=("competences_parent"), blank=True)
 
     class Meta:
         verbose_name = 'Competence'
