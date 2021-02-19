@@ -421,6 +421,37 @@ def seed_competences():
         'pk': competence_pk,
         'model': 'corrigeapp.Competence',
         'fields': {
+                'code': 'FQ3 1.2',
+                'name': 'Valorar la investigación científica y su impacto en la industria y en el desarrollo de la sociedad.',
+                'description': 'FQ 3º ESO',
+                'weight': 0.15,
+                'level': 2,
+                'parent': [competence_3ESO_CC1_pk, competence_3ESO_CC5_pk],
+        }
+    }
+    POPULATE.append(competence)
+    competence_level2_pk = competence_pk
+    competence_pk += 1
+    ## FQ3 1.2 Level 1
+    competence = {
+        'pk': competence_pk,
+        'model': 'corrigeapp.Competence',
+        'fields': {
+                'code': 'FQ3 1.2.1',
+                'name': 'Relaciona la investigación científica con las aplicaciones tecnológicas en la vida cotidiana.',
+                'description': 'FQ 3º ESO',
+                'weight': 0.15,
+                'level': 1,
+                'parent': [competence_level2_pk],
+        }
+    }
+    POPULATE.append(competence)
+    competence_pk += 1
+    ## Level 2
+    competence = {
+        'pk': competence_pk,
+        'model': 'corrigeapp.Competence',
+        'fields': {
                 'code': 'FQ3 1.3',
                 'name': 'Conocer los procedimientos científicos para determinar magnitudes.',
                 'description': 'FQ 3º ESO',
@@ -493,6 +524,52 @@ def seed_competences():
     }
     POPULATE.append(competence)
     competence_pk += 1
+    ## Level 2
+    competence = {
+        'pk': competence_pk,
+        'model': 'corrigeapp.Competence',
+        'fields': {
+                'code': 'FQ3 1.5',
+                'name': 'Interpretar la información sobre temas científicos de carácter divulgativo que aparece en publicaciones y medios de comunicación.',
+                'description': 'FQ 3º ESO',
+                'weight': 0.15,
+                'level': 2,
+                'parent': [competence_3ESO_CC1_pk, competence_3ESO_CC5_pk],
+        }
+    }
+    POPULATE.append(competence)
+    competence_level2_pk = competence_pk
+    competence_pk += 1
+    ## FQ3 1.5 Level 1
+    competence = {
+        'pk': competence_pk,
+        'model': 'corrigeapp.Competence',
+        'fields': {
+                'code': 'FQ3 1.5.1',
+                'name': 'Selecciona, comprende e interpreta información relevante en un texto de divulgación científica y transmite las conclusiones obtenidas utilizando el lenguaje oral y escrito con propiedad.',
+                'description': 'FQ 3º ESO',
+                'weight': 0.15,
+                'level': 1,
+                'parent': [competence_level2_pk],
+        }
+    }
+    POPULATE.append(competence)
+    competence_pk += 1
+
+    competence = {
+        'pk': competence_pk,
+        'model': 'corrigeapp.Competence',
+        'fields': {
+                'code': 'FQ3 1.5.2',
+                'name': 'Identifica las principales características ligadas a la fiabilidad y objetividad del flujo de información existente en internet y otros medios digitales.',
+                'description': 'FQ 3º ESO',
+                'weight': 0.15,
+                'level': 1,
+                'parent': [competence_level2_pk],
+        }
+    }
+    POPULATE.append(competence)
+    competence_pk += 1
 
     ## Level 2
     competence = {
@@ -545,7 +622,7 @@ def seed_subjects():
     subject_pk = 1
     competencels = []
 
-    competencels = [2,15,16,17,18,19,20,21,22,23,24,25]
+    competencels = [2,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
     subject = {
         'pk': subject_pk,
         'model': 'corrigeapp.Subject',
