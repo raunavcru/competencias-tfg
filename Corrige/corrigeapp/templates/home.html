@@ -2,13 +2,17 @@
 {% load static %}
 {% load i18n %}
 {% block content %}
+<div class="parallax-container" id="index-banner">
+  <div class="center"> 
+      <img class="logo centered" src="{% static 'images/rosa.png' %}" alt="corrige" width="400" height="200">  
+  </div>
 
-<div class="centrado"> 
-    <img class="logo centered" src="{% static 'images/rosa.png' %}" alt="corrige" width="400" height="200">  
-</div>
-
-<div class="centrado">
-<h3>{% trans "Welcome" %} {{user.username}}</h3>
+  <div class="centrado">
+  <h3>{% trans "Welcome" %} {{user.username}}</h3>
+  </div>
+  <div class="parallax" >
+    <img src="/static/images/fondo Pantalla.png" style="bottom: 0px; display: block;">
+  </div>
 </div>
 
 <script>
