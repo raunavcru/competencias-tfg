@@ -142,7 +142,7 @@ class CompetenceCreateChildView(generic.CreateView):
         competence_pk = self.kwargs.get('pk')
         competence = models.Competence.objects.get(pk=competence_pk)
         competence_new = form.save(commit=False)
-        competence_new.parent = competence
+
         if competence.level == 3:
             competence_new.level = 2
         elif competence.level == 2:
@@ -151,6 +151,7 @@ class CompetenceCreateChildView(generic.CreateView):
             return redirect('/')
             
         competence_new.save()
+        competence_new.parent.add(competence) 
 
         return redirect('competences_relation', pk=competence_pk)
 
@@ -252,7 +253,7 @@ class CompetencesListChildView(generic.ListView):
     def get_queryset(self):
         level3_pk = self.kwargs.get('pk')
         level3 = models.Competence.objects.get(pk=level3_pk)
-        queryset = models.Competence.objects.filter(parent=level3)
+        queryset = models.Competence.objects.filter(parent=level3).order_by('code')
         return queryset
 
 @method_decorator(login_required, name='dispatch')
@@ -277,7 +278,7 @@ class CompetenceListLevel1View(generic.ListView):
         return context
 
     def get_queryset(self):
-        queryset = models.Competence.objects.filter(level="1")
+        queryset = models.Competence.objects.filter(level="1").order_by('code')
         return queryset
 
 @method_decorator(login_required, name='dispatch')
@@ -302,7 +303,7 @@ class CompetenceListLevel2View(generic.ListView):
         return context
 
     def get_queryset(self):
-        queryset = models.Competence.objects.filter(level="2")
+        queryset = models.Competence.objects.filter(level="2").order_by('code')
         return queryset
 
 @method_decorator(login_required, name='dispatch')
@@ -328,7 +329,7 @@ class CompetenceListLevel3View(generic.ListView):
         return context
 
     def get_queryset(self):
-        queryset = models.Competence.objects.filter(level="3")
+        queryset = models.Competence.objects.filter(level="3").order_by('code')
         return queryset
 
 @method_decorator(login_required, name='dispatch')
