@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<div class="limiter">
+	<div class="container-login100">
+		<div class="wrap-login100">
+			<form class="login100-form form-eventshow login validate-form" id="login-res" method="POST" action="{% url 'login' %}">
+				{% csrf_token %}
+				<h2 style="text-align:center; padding-bottom:70px;">
+					{% trans "Login" %}
+				</h2>
+				    <div class="row" data-validate="Valid email is required: ex@abc.xyz">
+						<div class="grid-example col s4">
+						</div>
+							<div class="grid-example col s4">
+								<div class="validate-input">
+								<label>{% trans "Username" %}</label>
+								{{form.username}}
+								</div>
+						</div>
+                    </div>
+					<div class="row" data-validate="Password is required">
+						<div class="grid-example col s4">
+						</div>
+							<div class="grid-example col s4">
+								<div class="validate-input">
+								<label>{% trans "Password" %}</label>
+								{{form.password}}
+								</div>
+								<div class="form-errors">
+								{{ form.non_field_errors }}
+							</div>
+						</div>
+                    </div>
+				<div class="row" style="padding-right:250px;">
+                        <button class="btn waves-effect right" type="submit" name="action">{% trans "Enter" %}
+                            <i class="large material-icons right"><i >send</i></i>
+                        </button>
+                </div>
+			</form>
+			<div class="login100-more">
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

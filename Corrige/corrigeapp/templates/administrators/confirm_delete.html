@@ -3,9 +3,9 @@
 {% block content %}
 
 <div  id="top-bot" class="container">
-    <form action="{% url 'teachers_delete' object.pk %}" method="post">
+    <form action="{% url 'administrators_delete' object.pk %}" method="post">
         {% csrf_token %}
-        <h1 class="center title-delete flow-text">{% trans "Are you sure about deleting the teacher " %}<a>{{object.user.first_name}} {{object.user.last_name}}</a>?</h1>
+        <h1 class="center title-delete flow-text">{% trans "Are you sure about deleting the administrator " %}<a>{{object.user.first_name}} {{object.user.last_name}}</a>?</h1>
 
         <div class="center">
             <a style="border-radius:5px; background-color:#BBBBBB" href="{% url 'teachers_list'%}" class="waves-effect waves-light btn-large button-delete">{% trans "Cancel" %}</a>

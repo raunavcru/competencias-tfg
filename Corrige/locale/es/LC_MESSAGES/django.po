@@ -1,0 +1,443 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-06 18:23+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\Corrige\local_settings.py:120 .\Corrige\settings.py:120
+msgid "English"
+msgstr ""
+
+#: .\Corrige\local_settings.py:121 .\Corrige\settings.py:121
+msgid "Spanish"
+msgstr ""
+
+#: .\corrigeapp\templates\base.html:28
+msgid "Home"
+msgstr "Inicio"
+
+#: .\corrigeapp\templates\base.html:31
+msgid "Administrators"
+msgstr "Administratores"
+
+#: .\corrigeapp\templates\base.html:32
+msgid "Competences"
+msgstr "Competencias"
+
+#: .\corrigeapp\templates\base.html:33
+msgid "Evaluations"
+msgstr "Evaluaciones"
+
+#: .\corrigeapp\templates\base.html:34
+msgid "Students"
+msgstr "Alumnos"
+
+#: .\corrigeapp\templates\base.html:35
+msgid "Teachers"
+msgstr "Profesor"
+
+#: .\corrigeapp\templates\base.html:36
+msgid "Sets"
+msgstr "Grupos"
+
+#: .\corrigeapp\templates\base.html:37
+msgid "Subjects"
+msgstr "Asignaturas"
+
+#: .\corrigeapp\templates\base.html:40
+msgid "My Activities"
+msgstr "Mis actividades"
+
+#: .\corrigeapp\templates\base.html:41
+msgid "My Sets"
+msgstr "Mis grupos"
+
+#: .\corrigeapp\templates\base.html:42
+msgid "My Subjects"
+msgstr "Mis asignaturas"
+
+#: .\corrigeapp\templates\base.html:46
+#: .\corrigeapp\templates\registration\login.html:10
+msgid "Login"
+msgstr "Inicio de sesión"
+
+#: .\corrigeapp\templates\base.html:53
+msgid "Profile"
+msgstr "Perfil"
+
+#: .\corrigeapp\templates\base.html:54
+msgid "Logout"
+msgstr "Cerrar sesión"
+
+#: .\corrigeapp\templates\base.html:59
+#: .\corrigeapp\templates\competences\list.html:28
+msgid "Level 1"
+msgstr "Nivel 1"
+
+#: .\corrigeapp\templates\base.html:60
+#: .\corrigeapp\templates\competences\list.html:31
+msgid "Level 2"
+msgstr "Nivel 2"
+
+#: .\corrigeapp\templates\base.html:61
+msgid "Level 3"
+msgstr "Nivel 3"
+
+#: .\corrigeapp\templates\competences\create.html:21
+#: .\corrigeapp\templates\competences\list.html:22
+msgid "Code"
+msgstr "Código"
+
+#: .\corrigeapp\templates\competences\create.html:30
+#: .\corrigeapp\templates\competences\list.html:23
+#: .\corrigeapp\templates\evaluations\list.html:12
+#: .\corrigeapp\templates\evaluations\update.html:19
+#: .\corrigeapp\templates\sets\create.html:19
+#: .\corrigeapp\templates\sets\list.html:12
+#: .\corrigeapp\templates\students\create.html:19
+#: .\corrigeapp\templates\students\list.html:13
+#: .\corrigeapp\templates\students\list_assign_student.html:12
+#: .\corrigeapp\templates\students\list_assign_student.html:39
+#: .\corrigeapp\templates\subjects\create.html:19
+#: .\corrigeapp\templates\subjects\list.html:12
+#: .\corrigeapp\templates\teachers\create.html:19
+#: .\corrigeapp\templates\teachers\list.html:13
+msgid "Name"
+msgstr "Nombre"
+
+#: .\corrigeapp\templates\competences\create.html:43
+#: .\corrigeapp\templates\competences\list.html:24
+#: .\corrigeapp\templates\subjects\create.html:54
+#: .\corrigeapp\templates\subjects\list.html:15
+msgid "Description"
+msgstr "Descripción"
+
+#: .\corrigeapp\templates\competences\create.html:56
+msgid "Weight"
+msgstr "Peso"
+
+#: .\corrigeapp\templates\competences\create.html:68
+#: .\corrigeapp\templates\evaluations\update.html:130
+#: .\corrigeapp\templates\sets\create.html:84
+#: .\corrigeapp\templates\students\create.html:64
+#: .\corrigeapp\templates\subjects\create.html:64
+#: .\corrigeapp\templates\teachers\create.html:117
+msgid "Create"
+msgstr "Crear"
+
+#: .\corrigeapp\templates\competences\create.html:74
+#: .\corrigeapp\templates\competences\list.html:25
+#: .\corrigeapp\templates\evaluations\list.html:17
+#: .\corrigeapp\templates\evaluations\update.html:136
+#: .\corrigeapp\templates\sets\create.html:90
+#: .\corrigeapp\templates\sets\list.html:16
+#: .\corrigeapp\templates\students\create.html:70
+#: .\corrigeapp\templates\students\list.html:15
+#: .\corrigeapp\templates\subjects\create.html:70
+#: .\corrigeapp\templates\subjects\list.html:16
+#: .\corrigeapp\templates\teachers\create.html:123
+#: .\corrigeapp\templates\teachers\list.html:17
+msgid "Edit"
+msgstr "Editar"
+
+#: .\corrigeapp\templates\competences\delete.html:8
+msgid "Are you sure about deleting the competence "
+msgstr "¿Estás seguro de que quieres eliminar la competencia "
+
+#: .\corrigeapp\templates\competences\delete.html:12
+#: .\corrigeapp\templates\competences\delete.html:15
+#: .\corrigeapp\templates\competences\delete.html:18
+#: .\corrigeapp\templates\evaluations\delete.html:11
+#: .\corrigeapp\templates\sets\delete.html:11
+#: .\corrigeapp\templates\students\delete.html:12
+#: .\corrigeapp\templates\subjects\delete.html:11
+#: .\corrigeapp\templates\teachers\confirm_delete.html:11
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: .\corrigeapp\templates\competences\delete.html:21
+#: .\corrigeapp\templates\competences\list.html:26
+#: .\corrigeapp\templates\evaluations\delete.html:13
+#: .\corrigeapp\templates\evaluations\list.html:18
+#: .\corrigeapp\templates\sets\delete.html:13
+#: .\corrigeapp\templates\sets\list.html:17
+#: .\corrigeapp\templates\students\delete.html:15
+#: .\corrigeapp\templates\students\list.html:16
+#: .\corrigeapp\templates\subjects\delete.html:12
+#: .\corrigeapp\templates\subjects\list.html:17
+#: .\corrigeapp\templates\teachers\confirm_delete.html:12
+#: .\corrigeapp\templates\teachers\list.html:18
+msgid "Delete"
+msgstr "Borrar"
+
+#: .\corrigeapp\templates\competences\list.html:6
+msgid "List of competences level 2"
+msgstr "Lista de competencias de nivel 2"
+
+#: .\corrigeapp\templates\competences\list.html:8
+msgid "List of competences level 3"
+msgstr "Lista de competencias de nivel 3"
+
+#: .\corrigeapp\templates\competences\list.html:10
+msgid "List of competences level 1"
+msgstr "Lista de competencias de nivel 1"
+
+#: .\corrigeapp\templates\competences\list.html:13
+#: .\corrigeapp\templates\competences\list.html:16
+msgid "Create competence"
+msgstr "Crear competencias"
+
+#: .\corrigeapp\templates\evaluations\delete.html:8
+msgid "Are you sure about deleting the evaluation "
+msgstr "¿Estás seguro de que quieres eliminar la evaluación "
+
+#: .\corrigeapp\templates\evaluations\list.html:5
+msgid "List of evaluations"
+msgstr "Lista de evaluaciones"
+
+#: .\corrigeapp\templates\evaluations\list.html:12
+#: .\corrigeapp\templates\evaluations\update.html:19
+#: .\corrigeapp\templates\sets\create.html:19
+#: .\corrigeapp\templates\sets\list.html:12
+#: .\corrigeapp\templates\students\create.html:19
+#: .\corrigeapp\templates\students\list.html:13
+#: .\corrigeapp\templates\students\list_assign_student.html:12
+#: .\corrigeapp\templates\students\list_assign_student.html:39
+#: .\corrigeapp\templates\subjects\create.html:19
+#: .\corrigeapp\templates\subjects\list.html:12
+#: .\corrigeapp\templates\subjects\list_assign_subject.html:11
+#: .\corrigeapp\templates\subjects\list_assign_subject.html:40
+#: .\corrigeapp\templates\teachers\create.html:19
+#: .\corrigeapp\templates\teachers\list.html:13
+msgid "Name"
+msgstr "Nombre"
+
+#: .\corrigeapp\templates\evaluations\list.html:13
+msgid "Period"
+msgstr "Período"
+
+#: .\corrigeapp\templates\evaluations\list.html:14
+#: .\corrigeapp\templates\evaluations\update.html:100
+msgid "Start date"
+msgstr "Fecha de inicio"
+
+#: .\corrigeapp\templates\evaluations\list.html:15
+#: .\corrigeapp\templates\evaluations\update.html:109
+msgid "End date"
+msgstr "Fecha de fin"
+
+#: .\corrigeapp\templates\evaluations\list.html:16
+#: .\corrigeapp\templates\evaluations\update.html:123
+#: .\corrigeapp\templates\sets\create.html:70
+msgid "Subject"
+msgstr "Asignatura"
+
+#: .\corrigeapp\templates\evaluations\update.html:33
+msgid "Start date 1st trimester"
+msgstr "Fecha de inicio 1er trimestre"
+
+#: .\corrigeapp\templates\evaluations\update.html:42
+msgid "End date 1st trimester"
+msgstr "Fecha de fin 1er trimestre"
+
+#: .\corrigeapp\templates\evaluations\update.html:55
+msgid "Start date 2nd trimester"
+msgstr "Fecha de inicio 2o trimestre"
+
+#: .\corrigeapp\templates\evaluations\update.html:64
+msgid "End date 2nd trimester"
+msgstr "Fecha de fin 2o trimestre"
+
+#: .\corrigeapp\templates\evaluations\update.html:77
+msgid "Start date 3rd trimester"
+msgstr "Fecha de inicio 3er trimestre"
+
+#: .\corrigeapp\templates\evaluations\update.html:86
+msgid "End date 3rd trimester"
+msgstr "Fecha de fin 3er trimestre"
+
+#: .\corrigeapp\templates\home.html:11
+msgid "Welcome"
+msgstr "Bienvenido"
+
+#: .\corrigeapp\templates\paginate.html:5
+msgid "first"
+msgstr "primera"
+
+#: .\corrigeapp\templates\paginate.html:6
+msgid "previous"
+msgstr "anterior"
+
+#: .\corrigeapp\templates\paginate.html:10
+msgid "Page"
+msgstr "Página"
+
+#: .\corrigeapp\templates\paginate.html:10
+msgid "of"
+msgstr "de"
+
+#: .\corrigeapp\templates\paginate.html:14
+msgid "next"
+msgstr "siguiente"
+
+#: .\corrigeapp\templates\paginate.html:15
+msgid "last"
+msgstr "última"
+
+#: .\corrigeapp\templates\registration\login.html:17
+#: .\corrigeapp\templates\teachers\create.html:85
+msgid "Username"
+msgstr "Nombre de usuario"
+
+#: .\corrigeapp\templates\registration\login.html:27
+#: .\corrigeapp\templates\teachers\create.html:96
+msgid "Password"
+msgstr "Contraseña"
+
+#: .\corrigeapp\templates\registration\login.html:36
+msgid "Enter"
+msgstr "Entrar"
+
+#: .\corrigeapp\templates\sets\create.html:28
+#: .\corrigeapp\templates\sets\list.html:13
+#: .\corrigeapp\templates\subjects\create.html:32
+#: .\corrigeapp\templates\subjects\list.html:13
+#: .\corrigeapp\templates\subjects\list_assign_subject.html:12
+#: .\corrigeapp\templates\subjects\list_assign_subject.html:41
+msgid "Level"
+msgstr "Nivel"
+
+#: .\corrigeapp\templates\sets\create.html:41
+#: .\corrigeapp\templates\sets\list.html:14
+#: .\corrigeapp\templates\subjects\create.html:41
+#: .\corrigeapp\templates\subjects\list.html:14
+#: .\corrigeapp\templates\subjects\list_assign_subject.html:13
+#: .\corrigeapp\templates\subjects\list_assign_subject.html:42
+msgid "Grade"
+msgstr "Grado"
+
+#: .\corrigeapp\templates\sets\create.html:50
+#: .\corrigeapp\templates\sets\list.html:15
+msgid "Line"
+msgstr "Línea"
+
+#: .\corrigeapp\templates\sets\create.html:62
+msgid "Teacher"
+msgstr "Profesor"
+
+#: .\corrigeapp\templates\sets\create.html:78
+msgid "Evaluation"
+msgstr "Evaluación"
+
+#: .\corrigeapp\templates\sets\delete.html:8
+msgid "Are you sure about deleting the set "
+msgstr "¿Estás seguro de que quieres eliminar el grupo "
+
+#: .\corrigeapp\templates\sets\list.html:5
+msgid "List of sets"
+msgstr "Lista de grupos"
+
+#: .\corrigeapp\templates\sets\list.html:18
+#: .\corrigeapp\templates\students\list.html:5
+msgid "List of students"
+msgstr "Lista de estudiantes"
+
+#: .\corrigeapp\templates\students\create.html:28
+#: .\corrigeapp\templates\students\list.html:12
+#: .\corrigeapp\templates\students\list_assign_student.html:11
+#: .\corrigeapp\templates\students\list_assign_student.html:38
+#: .\corrigeapp\templates\teachers\create.html:28
+#: .\corrigeapp\templates\teachers\list.html:12
+msgid "Surname"
+msgstr "Apellidos"
+
+#: .\corrigeapp\templates\students\create.html:41
+#: .\corrigeapp\templates\students\list.html:14
+#: .\corrigeapp\templates\students\list_assign_student.html:13
+#: .\corrigeapp\templates\students\list_assign_student.html:40
+#: .\corrigeapp\templates\teachers\create.html:41
+#: .\corrigeapp\templates\teachers\list.html:15
+msgid "Birthdate"
+msgstr "Fecha de nacimiento"
+
+#: .\corrigeapp\templates\students\create.html:54
+#: .\corrigeapp\templates\teachers\create.html:55
+#: .\corrigeapp\templates\teachers\list.html:14
+msgid "Initials"
+msgstr "Iniciales"
+
+#: .\corrigeapp\templates\students\delete.html:8
+msgid "Are you sure about deleting the student "
+msgstr "¿Estás seguro de que quieres eliminar el estudiante "
+
+#: .\corrigeapp\templates\students\list_assign_student.html:5
+msgid "List of assigned students"
+msgstr "Lista de estudiantes asignados"
+
+#: .\corrigeapp\templates\students\list_assign_student.html:14
+#: .\corrigeapp\templates\subjects\list_assign_subject.html:15
+msgid "Unassign"
+msgstr "Desasignar"
+
+#: .\corrigeapp\templates\students\list_assign_student.html:32
+msgid "List of not assigned students"
+msgstr "Lista de estudiantes no asignados"
+
+#: .\corrigeapp\templates\students\list_assign_student.html:41
+#: .\corrigeapp\templates\subjects\list_assign_subject.html:44
+msgid "Assign"
+msgstr "Asignar"
+
+#: .\corrigeapp\templates\subjects\create.html:54
+#: .\corrigeapp\templates\subjects\list.html:15
+#: .\corrigeapp\templates\subjects\list_assign_subject.html:14
+#: .\corrigeapp\templates\subjects\list_assign_subject.html:43
+msgid "Description"
+msgstr "Descripción"
+
+#: .\corrigeapp\templates\subjects\delete.html:8
+msgid "Are you sure about deleting the subject "
+msgstr "¿Estás seguro de que quieres eliminar la asignatura "
+
+#: .\corrigeapp\templates\subjects\list.html:5
+#: .\corrigeapp\templates\teachers\list.html:19
+msgid "List of subjects"
+msgstr "Lista de asignaturas"
+
+#: .\corrigeapp\templates\subjects\list.html:6
+msgid "Create subject"
+msgstr "Crear asignatura"
+
+#: .\corrigeapp\templates\subjects\list_assign_subject.html:5
+msgid "List of assigned subjects"
+msgstr "Lista de asignaturas asignadas"
+
+#: .\corrigeapp\templates\subjects\list_assign_subject.html:34
+msgid "List of not assigned subjects"
+msgstr "Lista de asignaturas no asignadas"
+
+#: .\corrigeapp\templates\teachers\confirm_delete.html:8
+msgid "Are you sure about deleting the teacher "
+msgstr "¿Estás seguro de que quieres eliminar el profesor "
+
+#: .\corrigeapp\templates\teachers\create.html:107
+msgid "Confirm Password"
+msgstr "Confirmar Contraseña"
+
+#: .\corrigeapp\templates\teachers\list.html:5
+msgid "List of teachers"
+msgstr "Lista de profesores"
