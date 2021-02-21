@@ -14,7 +14,7 @@ User = get_user_model()
 
 teachers = models.Teacher.objects.all()
 subjects = models.Subject.objects.all()
-evaluations = models.Evaluation.objects.all()
+evaluations = models.Evaluation.objects.filter(is_final=True)
 
 CHOICES_LEVEL = (("1º","1º"),("2º","2º"),("3º","3º"),("4º","4º"),("5º","5º"),("6º","6º"))
 
@@ -32,8 +32,8 @@ MESSAGE_GRADE = 'La calificación no puede tener más de 50 caracteres'
 MESSAGE_GRADE_EN = 'Grade can not be longer of 50 characters'
 MESSAGE_LEVEL_EN = 'Level can not be longer of 50 characters'
 MESSAGE_LEVEL = 'El tamaño del nivel no puede ser mayor que 50'
-MESSAGE_LINE_EN = 'Line can not be longer of 50 characters'
-MESSAGE_LINE = 'El tamaño de la línea no puede ser mayor que 50'
+MESSAGE_LINE_EN = 'Line must be a letter'
+MESSAGE_LINE = 'Línea solo pueden ser un letra'
 MESSAGE_DESCRIPTION_EN = 'Description can not be longer of 100 characters'
 MESSAGE_DESCRIPTION = 'El tamaño de la descripción no puede ser mayor que 100'
 MESSAGE_CODE_EN = 'Code can not be longer of 50 characters'
@@ -236,10 +236,12 @@ class EvaluationUpdateForm(forms.ModelForm):
 # Sets
 class SetCreateForm(forms.ModelForm):
     
-    name = forms.CharField(required=True)
-    level = forms.CharField(required=True)
-    grade = forms.CharField(required=True)
-    line = forms.CharField(required=True)
+    name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Matemáticas', 'id': 'name-create-set'}))
+    grade = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Primaria', 'id': 'grade-create-set'}))
+    line = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'A', 'id': 'line-create-set'}))
     teacher = forms.ModelChoiceField(teachers, empty_label=None)
     subject = forms.ModelChoiceField(subjects, empty_label=None)
     evaluation = forms.ModelChoiceField(evaluations, empty_label=None)
@@ -255,6 +257,9 @@ class SetCreateForm(forms.ModelForm):
             'subject',
             'evaluation',
         )
+        widgets = {
+            'level': forms.Select(choices=CHOICES_LEVEL)
+        }
         
     def clean_grade(self):
         grade = self.cleaned_data.get('grade')
@@ -281,7 +286,7 @@ class SetCreateForm(forms.ModelForm):
 
     def clean_line(self):
         line = self.cleaned_data.get('line')
-        if len(line) > 50:
+        if not line.isalpha() or len(line) > 1:
             if get_language() == 'en':
                 raise ValidationError(
                     MESSAGE_LINE_EN)
