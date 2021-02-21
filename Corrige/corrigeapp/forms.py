@@ -17,6 +17,8 @@ subjects = models.Subject.objects.all()
 evaluations = models.Evaluation.objects.filter(is_final=True)
 
 CHOICES_LEVEL = (("1º","1º"),("2º","2º"),("3º","3º"),("4º","4º"),("5º","5º"),("6º","6º"))
+CHOICES_GRADE = ((" PrimarySchool"," Educación Primaria"),("SecondaryEducation","Educación Secundaria"),("SixthForm","Bachillerato"),("FurtherEducation","Grado Medio o Superior"),("University","Grado Universitario"))
+CHOICES_GRADE_EN = ((" PrimarySchool"," Primary School"),("SecondaryEducation","Secondary Education"),("SixthForm","Sixth Form"),("FurtherEducation","Further Education"),("University","University"))
 
 DATE_PLACEHOLDER = 'dd/mm/aaaa'
 DATE_PLACEHOLDER_EN = 'mm/dd/yyyy'
@@ -227,8 +229,6 @@ class SetCreateForm(forms.ModelForm):
     
     name = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': 'Matemáticas', 'id': 'name-create-set'}))
-    grade = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': 'Primaria', 'id': 'grade-create-set'}))
     line = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': 'A', 'id': 'line-create-set'}))
     teacher = forms.ModelChoiceField(teachers, empty_label=None)
@@ -247,19 +247,9 @@ class SetCreateForm(forms.ModelForm):
             'evaluation',
         )
         widgets = {
-            'level': forms.Select(choices=CHOICES_LEVEL)
+            'level': forms.Select(choices=CHOICES_LEVEL),
+            'grade': forms.Select(choices=CHOICES_GRADE)
         }
-        
-    def clean_grade(self):
-        grade = self.cleaned_data.get('grade')
-        if len(grade) > 50:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_GRADE_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_GRADE)
-        return grade
 
     def clean_level(self):
         level = self.cleaned_data.get('level')
@@ -377,8 +367,6 @@ class SubjectCreateForm(forms.ModelForm):
     
     name = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': 'Ciencias Sociales', 'id': 'name-create-subject'}))
-    grade = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': 'Primaria', 'id': 'grade-create-subject'}))
     description = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': 'Las ciencias sociales son las ramas de la ciencia relacionadas con ...', 'id': 'description-create-subject'}))
 
@@ -391,15 +379,9 @@ class SubjectCreateForm(forms.ModelForm):
             'description',
         )
         widgets = {
-            'level': forms.Select(choices=CHOICES_LEVEL)
+            'level': forms.Select(choices=CHOICES_LEVEL),
+            'grade': forms.Select(choices=CHOICES_GRADE)
         }
-        
-    def clean_grade(self):
-        grade = self.cleaned_data.get('grade')
-        if len(grade) > 50:
-            services.FormService().raise_error(MESSAGE_GRADE_EN, MESSAGE_GRADE)
-
-        return grade
 
     def clean_level(self):
         level = self.cleaned_data.get('level')
