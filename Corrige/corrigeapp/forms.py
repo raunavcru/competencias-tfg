@@ -110,17 +110,6 @@ class CompetenceCreateForm(forms.ModelForm):
                     MESSAGE_CODE)
         return code
 
-    def clean_level(self):
-        level = self.cleaned_data.get('level')
-        if len(level) > 50:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_LEVEL_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_LEVEL)
-        return level
-
     def clean_description(self):
         description = self.cleaned_data.get('description')
         if len(description) > 300:
