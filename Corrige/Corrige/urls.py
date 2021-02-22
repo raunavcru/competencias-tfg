@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.contrib.auth import views
+from django.conf import settings
+from django.conf.urls.static import static
 from django.urls import path, include
 
 from corrigeapp.forms import LoginForm
@@ -26,4 +28,4 @@ urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
     path('auth/login', views.LoginView.as_view(authentication_form=LoginForm), name='login'),
     path('', include('corrigeapp.urls')),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
