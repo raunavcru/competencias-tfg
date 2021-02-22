@@ -43,6 +43,6 @@ branches:
     - release/s2/Despliegue-0.2
 deploy:
   provider: heroku
-  api_key: c6abb260-78a7-4819-910e-1b04023be0c7
+  api_key: f6a1e341-506e-49f9-876a-5b08228e8453
   app: verumapp
   on: release/s2/Despliegue-0.2
