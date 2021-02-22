@@ -20,6 +20,7 @@ CHOICES_LEVEL = (("1º","1º"),("2º","2º"),("3º","3º"),("4º","4º"),("5º",
 CHOICES_GRADE = ((" PrimarySchool"," Educación Primaria"),("SecondaryEducation","Educación Secundaria"),("SixthForm","Bachillerato"),("FurtherEducation","Grado Medio o Superior"),("University","Grado Universitario"))
 CHOICES_GRADE_EN = ((" PrimarySchool"," Primary School"),("SecondaryEducation","Secondary Education"),("SixthForm","Sixth Form"),("FurtherEducation","Further Education"),("University","University"))
 
+
 DATE_PLACEHOLDER = 'dd/mm/aaaa'
 DATE_PLACEHOLDER_EN = 'mm/dd/yyyy'
 MESSAGE_INITIALS = 'El tamaño de las iniciales no puede ser mayor que 9'
