@@ -810,19 +810,255 @@ def seed_subjects():
     subject_pk += 1
 
 def seed_evaluations():
+    evaluation_pk=1
+    ## FQ 3ºESO
     evaluation = {
-        'pk': 1,
+        'pk': evaluation_pk,
         'model': 'corrigeapp.Evaluation',
         'fields': {
-                'name': 'Matemáticas 5º Primaria Final',
-                'start_date': '1980-01-01',
-                'end_date': '1980-01-01',
+                'name': 'Física y Química 3º ESO Final',
+                'start_date': '2020-09-15',
+                'end_date': '2021-06-19',
+                'is_final': True,
+                'period': 'Final',
+                'subject': 1,
+            }
+    }
+    POPULATE.append(evaluation)
+    evaluation_parent = evaluation_pk
+    evaluation_pk += 1
+    evaluation = {
+        'pk': evaluation_pk,
+        'model': 'corrigeapp.Evaluation',
+        'fields': {
+                'name': 'Física y Química 3º ESO 1er Cuatrimestre',
+                'start_date': '2020-09-15',
+                'end_date': '2021-12-22',
+                'is_final': False,
+                'period': '1st',
+                'parent': evaluation_parent,
+                'subject': 1,
+            }
+    }
+    POPULATE.append(evaluation)
+    evaluation_pk += 1
+    evaluation = {
+        'pk': evaluation_pk,
+        'model': 'corrigeapp.Evaluation',
+        'fields': {
+                'name': 'Física y Química 3º ESO 2o Cuatrimestre',
+                'start_date': '2021-01-07',
+                'end_date': '2021-03-26',
+                'is_final': False,
+                'period': '2nd',
+                'parent': evaluation_parent,
+                'subject': 1,
+            }
+    }
+    POPULATE.append(evaluation)
+    evaluation_pk += 1
+    evaluation = {
+        'pk': evaluation_pk,
+        'model': 'corrigeapp.Evaluation',
+        'fields': {
+                'name': 'Física y Química 3º ESO 3er Cuatrimestre',
+                'start_date': '2021-04-05',
+                'end_date': '2021-06-19',
+                'is_final': False,
+                'period': '3tr',
+                'parent': evaluation_parent,
+                'subject': 1,
+            }
+    }
+    POPULATE.append(evaluation)
+    evaluation_pk += 1
+
+    ## FQ 4ºESO
+    evaluation = {
+        'pk': evaluation_pk,
+        'model': 'corrigeapp.Evaluation',
+        'fields': {
+                'name': 'Física y Química 4º ESO Final',
+                'start_date': '2020-09-15',
+                'end_date': '2021-06-19',
+                'is_final': True,
+                'period': 'Final',
+                'subject': 2,
+            }
+    }
+    POPULATE.append(evaluation)
+    evaluation_parent = evaluation_pk
+    evaluation_pk += 1
+    evaluation = {
+        'pk': evaluation_pk,
+        'model': 'corrigeapp.Evaluation',
+        'fields': {
+                'name': 'Física y Química 4º ESO 1er Cuatrimestre',
+                'start_date': '2020-09-15',
+                'end_date': '2021-12-22',
+                'is_final': False,
+                'period': '1st',
+                'parent': evaluation_parent,
+                'subject': 2,
+            }
+    }
+    POPULATE.append(evaluation)
+    evaluation_pk += 1
+    evaluation = {
+        'pk': evaluation_pk,
+        'model': 'corrigeapp.Evaluation',
+        'fields': {
+                'name': 'Física y Química 4º ESO 2o Cuatrimestre',
+                'start_date': '2021-01-07',
+                'end_date': '2021-03-26',
+                'is_final': False,
+                'period': '2nd',
+                'parent': evaluation_parent,
+                'subject': 2,
+            }
+    }
+    POPULATE.append(evaluation)
+    evaluation_pk += 1
+    evaluation = {
+        'pk': evaluation_pk,
+        'model': 'corrigeapp.Evaluation',
+        'fields': {
+                'name': 'Física y Química 4º ESO 3er Cuatrimestre',
+                'start_date': '2021-04-05',
+                'end_date': '2021-06-19',
+                'is_final': False,
+                'period': '3tr',
+                'parent': evaluation_parent,
+                'subject': 2,
+            }
+    }
+    POPULATE.append(evaluation)
+    evaluation_pk += 1
+
+    ## Mat 3ºESO
+    evaluation = {
+        'pk': evaluation_pk,
+        'model': 'corrigeapp.Evaluation',
+        'fields': {
+                'name': 'Matemáticas 3º ESO Final',
+                'start_date': '2020-09-15',
+                'end_date': '2021-06-19',
                 'is_final': True,
                 'period': 'Final',
                 'subject': 3,
             }
     }
     POPULATE.append(evaluation)
+    evaluation_parent = evaluation_pk
+    evaluation_pk += 1
+    evaluation = {
+        'pk': evaluation_pk,
+        'model': 'corrigeapp.Evaluation',
+        'fields': {
+                'name': 'Matemáticas 3º ESO 1er Cuatrimestre',
+                'start_date': '2020-09-15',
+                'end_date': '2021-12-22',
+                'is_final': False,
+                'period': '1st',
+                'parent': evaluation_parent,
+                'subject': 3,
+            }
+    }
+    POPULATE.append(evaluation)
+    evaluation_pk += 1
+    evaluation = {
+        'pk': evaluation_pk,
+        'model': 'corrigeapp.Evaluation',
+        'fields': {
+                'name': 'Matemáticas 3º ESO 2o Cuatrimestre',
+                'start_date': '2021-01-07',
+                'end_date': '2021-03-26',
+                'is_final': False,
+                'period': '2nd',
+                'parent': evaluation_parent,
+                'subject': 3,
+            }
+    }
+    POPULATE.append(evaluation)
+    evaluation_pk += 1
+    evaluation = {
+        'pk': evaluation_pk,
+        'model': 'corrigeapp.Evaluation',
+        'fields': {
+                'name': 'Matemáticas 3º ESO 3er Cuatrimestre',
+                'start_date': '2021-04-05',
+                'end_date': '2021-06-19',
+                'is_final': False,
+                'period': '3tr',
+                'parent': evaluation_parent,
+                'subject': 3,
+            }
+    }
+    POPULATE.append(evaluation)
+    evaluation_pk += 1
+
+    ## Mat 4ºESO
+    evaluation = {
+        'pk': evaluation_pk,
+        'model': 'corrigeapp.Evaluation',
+        'fields': {
+                'name': 'Matemáticas 4º ESO Final',
+                'start_date': '2020-09-15',
+                'end_date': '2021-06-19',
+                'is_final': True,
+                'period': 'Final',
+                'subject': 4,
+            }
+    }
+    POPULATE.append(evaluation)
+    evaluation_parent = evaluation_pk
+    evaluation_pk += 1
+    evaluation = {
+        'pk': evaluation_pk,
+        'model': 'corrigeapp.Evaluation',
+        'fields': {
+                'name': 'Matemáticas 4º ESO 1er Cuatrimestre',
+                'start_date': '2020-09-15',
+                'end_date': '2021-12-22',
+                'is_final': False,
+                'period': '1st',
+                'parent': evaluation_parent,
+                'subject': 4,
+            }
+    }
+    POPULATE.append(evaluation)
+    evaluation_pk += 1
+    evaluation = {
+        'pk': evaluation_pk,
+        'model': 'corrigeapp.Evaluation',
+        'fields': {
+                'name': 'Matemáticas 4º ESO 2o Cuatrimestre',
+                'start_date': '2021-01-07',
+                'end_date': '2021-03-26',
+                'is_final': False,
+                'period': '2nd',
+                'parent': evaluation_parent,
+                'subject': 4,
+            }
+    }
+    POPULATE.append(evaluation)
+    evaluation_pk += 1
+    evaluation = {
+        'pk': evaluation_pk,
+        'model': 'corrigeapp.Evaluation',
+        'fields': {
+                'name': 'Matemáticas 4º ESO 3er Cuatrimestre',
+                'start_date': '2021-04-05',
+                'end_date': '2021-06-19',
+                'is_final': False,
+                'period': '3tr',
+                'parent': evaluation_parent,
+                'subject': 4,
+            }
+    }
+    POPULATE.append(evaluation)
+    evaluation_pk += 1
+
 
 def seed_sets():
     students = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
