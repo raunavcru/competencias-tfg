@@ -3,13 +3,14 @@
 {% load i18n %}
 {% block content %}
 
-<div class="centrado"> 
-    <img class="logo centered" src="{% static 'images/rosa.png' %}" alt="corrige" width="400" height="200">  
-</div>
+  <div class="center"> 
+      <img class="logo centered" src="{% static 'images/rosa.png' %}" alt="corrige" width="400" height="200">  
+  </div>
 
-<div class="centrado">
-<h3>{% trans "Welcome" %} {{user.username}}</h3>
-</div>
+  <div class="centrado">
+  <h3>{% trans "Welcome" %} {{user.username}}</h3>
+  </div>
+
 
 <script>
   $(document).ready(function(){
