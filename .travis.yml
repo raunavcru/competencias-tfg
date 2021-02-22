@@ -40,10 +40,9 @@ addons:
       - postgresql-client-13
 branches:
   only:
-    - release/s1/Despliegue-0.2
+    - release/s2/Despliegue-0.2
 deploy:
   provider: heroku
   api_key: c6abb260-78a7-4819-910e-1b04023be0c7
   app: verumapp
-  on: release/s1/Despliegue-0.2
-  
+  on: release/s2/Despliegue-0.2
