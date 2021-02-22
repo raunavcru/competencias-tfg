@@ -46,3 +46,4 @@ deploy:
   api_key: c6abb260-78a7-4819-910e-1b04023be0c7
   app: verumapp
   on: release/s1/Despliegue-0.2
+  
