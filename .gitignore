@@ -129,7 +129,6 @@ dmypy.json
 .pyre/
 
 ## Eventshow stuff
-initial_data.json
 media/profile/*
 media/event/*
 
