@@ -5,16 +5,27 @@
     <divclass="row">
         <div class="grid-example col s11 offset-s1">
             <div class="center-form">
-            {% if request.get_full_path == '/sets/create' %}
-                <form class="col s12" id="form-create-students" method="post" action="{% url 'sets_create' %}">
+            {% if is_update %}
+                <form class="col s12" id="form-update-competences" method="post" action="{% url 'competences_update' object.pk %}">
+            {% elif create_level3  %}
+                <form class="col s12" id="form-create-competences" method="post" action="{% url 'competences_create' %}">
             {% else %}
-                <form class="col s12" id="form-update-students" method="post" action="{% url 'sets_update' object.pk %}">
+                <form class="col s12" id="form-create-competences" method="post" action="{% url 'competences_relation2' competence_pk %}">
             {% endif %}
                     {% csrf_token %}
                     <div class="row">
                         <div class="grid-example col s2">
                         </div>
-                        <div class="grid-example col s3">
+                        <div class="grid-example col s1">
+                            <div class="validate-input">
+                                <label>{% trans "Code" %}</label>
+                                    {{form.code}}
+                                <div class="form-errors">
+                                    {{ form.code.errors }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-example col s7">
                             <div class="validate-input">
                                 <label>{% trans "Name" %}</label>
                                 {{form.name}}
@@ -23,58 +34,36 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="grid-example col s5">
-                            <label>{% trans "Level" %}</label>
-                            {{form.level}}
-                        </div>
                     </div>
                     <div class="row">
                         <div class="grid-example col s2">
+                        </div>
+                        <div class="grid-example col s8">
+                            <div class="validate-input">
+                                <label>{% trans "Description" %}</label>
+                                    {{form.description}}
+                                <div class="form-errors">
+                                    {{form.description.errors}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="grid-example col s4">
+                        </div>
+                        <div class="grid-example col s4">
+                            <div class="validate-input">
+                                <label>{% trans "Weight" %}</label>
+                                    {{form.weight}}
+                                <div class="form-errors">
+                                    {{ form.weight.errors }}
+                                </div>
+                            </div>
                         </div>
                         <div class="grid-example col s3">
-                            <div class="validate-input">
-                                <label>{% trans "Grade" %}</label>
-                                {{form.grade}}
-                                <div class="form-errors">
-                                    {{ form.grade.errors }}
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid-example col s5">
-                            <div class="validate-input">
-                                <label>{% trans "Line" %}</label>
-                                {{form.line}}
-                                <div class="form-errors">
-                                    {{ form.line.errors }}
-                                </div>
-                            </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="grid-example col s2">
-                        </div>
-                        <div class="grid-example col s8">
-                            <label>{% trans "Teacher" %}</label>
-                                {{form.teacher}}
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="grid-example col s2">
-                        </div>
-                        <div class="grid-example col s8">
-                            <label>{% trans "Subject" %}</label>
-                                {{form.subject}}
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="grid-example col s2">
-                        </div>
-                        <div class="grid-example col s8">
-                            <label>{% trans "Evaluation" %}</label>
-                                {{form.evaluation}}
-                        </div>
-                    </div>
-                    {% if request.get_full_path == '/sets/create' %}
+                    {% if request.get_full_path == '/competences/create' or competence_parent %}
                     <div class="row">
                         <button class="btn waves-effect right" type="submit" name="action">{% trans "Create" %}
                             <i class="large material-icons right"><i>send</i></i>
@@ -92,5 +81,5 @@
         </div>
     </div>
 </div>
-{{form.media}}
 {% endblock %}
+

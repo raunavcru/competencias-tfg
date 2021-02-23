@@ -50,13 +50,11 @@ class Competence(Common):
 
     description = models.CharField(("description"), max_length=300)
 
-    subject_weight = models.DecimalField('subject_weight', max_digits=3, decimal_places=2, blank=True, null=True)
-
     weight = models.DecimalField('weight', max_digits=3, decimal_places=2, blank=True, null=True)
 
     level = models.PositiveIntegerField('level')
 
-    parent = models.ForeignKey('self', on_delete=models.CASCADE, related_name='competence_parent', blank=True, null=True)
+    parent = models.ManyToManyField('self', "competences", verbose_name=("competences_parent"), blank=True)
 
     class Meta:
         verbose_name = 'Competence'
@@ -122,7 +120,7 @@ class Evaluation(Common):
         verbose_name_plural = 'Evaluations'
     
     def __str__(self):
-        return self.name + ' ' + self.period
+        return self.name
 
 class Student(Common):
     name = models.CharField(("name"), max_length=100)

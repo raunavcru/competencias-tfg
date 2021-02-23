@@ -11,7 +11,7 @@
       });
     </script>
     <!-- Compiled and minified CSS -->
-    <link rel="shortcut icon" href="{% static 'images/ico.ico' %}" />
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
     <link rel="stylesheet" href="{% static 'css/main.css'%}" />
     <link rel="stylesheet" href="{% static 'css/materialize.css'%}" />
     <link rel="stylesheet" href="{% static 'css/materialize.min.css'%}">
@@ -28,8 +28,9 @@
                 <li><a href="{% url 'home'%}">{% trans "Home" %}</a></li>
                 {% if  request.user.is_authenticated %}
                     {% if request.user.profile.role == "ADMINISTRATOR" %} 
-                    <li><a href="#">{% trans "Administrators" %}</a></li>
-                    <li><a href="#">{% trans "Competences" %}</a></li>
+                    <li><a href="{% url 'administrators_list' %}">{% trans "Administrators" %}</a></li>
+                    <li><a href="#!" class="dropdown-trigger" data-beloworigin="true" data-target="dropdown2" >{% trans "Competences" %}<i class="material-icons left">arrow_drop_down</i></a></li>
+                    <li><a href="{% url 'evaluations_list' %}">{% trans "Evaluations" %}</a></li>
                     <li><a href="{% url 'students_list' %}">{% trans "Students" %}</a></li>
                     <li><a href="{% url 'teachers_list' %}">{% trans "Teachers" %}</a></li>
                     <li><a href="{% url 'sets_list' %}">{% trans "Sets" %}</a></li>
@@ -52,6 +53,14 @@
         <li><a href="#!" style="color:black">{% trans "Profile" %}</a></li>
         <li><a href="{% url 'logout'%}" style="color:black">{% trans "Logout" %}</a></li>
     </ul>
+
+
+    <ul id="dropdown2" class="dropdown-content grey lighten-4">
+        <li><a href="{% url 'competences_list1'%}" style="color:black">{% trans "Level 1" %}</a></li>
+        <li><a href="{% url 'competences_list2'%}" style="color:black">{% trans "Level 2" %}</a></li>
+        <li><a href="{% url 'competences_list3'%}" style="color:black">{% trans "Level 3" %}</a></li>
+    </ul>
+
     <div class="container">
 
 

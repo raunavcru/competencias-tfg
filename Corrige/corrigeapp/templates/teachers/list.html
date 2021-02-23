@@ -8,14 +8,8 @@
             <caption></caption>
                 <thead>
                     <tr>
-                        <th id=""></th>
-                        <th id="surname">{% trans "Surname" %}</th>
-                        <th id="name">{% trans "Name" %}</th>
-                        <th id="initials">{% trans "Initials" %}</th>
-                        <th id="birthdate">{% trans "Birthdate" %}</th>
-                        <th id="email">Email</th>
-                        <th class="center" id="button">{% trans "Edit" %}</th>
-                        <th class="center" id="delete" >{% trans "Delete" %}</th>
+                        {% include 'user_tr.html' %}
+                        <th class="center" id="list">{% trans "List of subjects" %}</th>
                     </tr>
                 </thead>
                 {% for object in teacher_list %}
@@ -29,6 +23,7 @@
                             <td>{{object.user.email}}</td>
                             <td class="center dropdown-trigger" type="button" onclick="location.href='{% url 'teachers_update' object.pk %}'"><em class="material-icons" style="color:#29b6f6">create</em></td>
                             <td class="center dropdown-trigger" onclick="location.href='{% url 'teachers_delete' object.pk %}'"><em class="material-icons" style="color:#e53935">delete</em></td>
+                            <td class="center dropdown-trigger" onclick="location.href='{% url 'teachers_assign_subject_list' object.pk %}'"><em class="material-icons" style="color:#e53935">book</em></td>
                         </tr>
                     </tbody>
                 {% endfor %}

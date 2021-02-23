@@ -8,12 +8,18 @@ from django.utils.translation import get_language, activate
 from django.contrib.auth.hashers import check_password
 
 from . import models
+from . import services
 
 User = get_user_model()
 
 teachers = models.Teacher.objects.all()
 subjects = models.Subject.objects.all()
-evaluations = models.Evaluation.objects.all()
+evaluations = models.Evaluation.objects.filter(is_final=True)
+
+CHOICES_LEVEL = (("1º","1º"),("2º","2º"),("3º","3º"),("4º","4º"),("5º","5º"),("6º","6º"))
+CHOICES_GRADE = ((" PrimarySchool"," Educación Primaria"),("SecondaryEducation","Educación Secundaria"),("SixthForm","Bachillerato"),("FurtherEducation","Grado Medio o Superior"),("University","Grado Universitario"))
+CHOICES_GRADE_EN = ((" PrimarySchool"," Primary School"),("SecondaryEducation","Secondary Education"),("SixthForm","Sixth Form"),("FurtherEducation","Further Education"),("University","University"))
+
 
 DATE_PLACEHOLDER = 'dd/mm/aaaa'
 DATE_PLACEHOLDER_EN = 'mm/dd/yyyy'
@@ -25,12 +31,19 @@ MESSAGE_SURNAME = 'El tamaño del apellido no puede ser mayor que 100'
 MESSAGE_SURNAME_EN = 'Surname can not be longer of 100 characters'
 MESSAGE_BIRTHDATE = 'La fecha de cumpleaños debe ser en el pasado'
 MESSAGE_BIRTHDATE_EN = 'Birthdate can not be past'
+MESSAGE_GRADE = 'La calificación no puede tener más de 50 caracteres'
+MESSAGE_GRADE_EN = 'Grade can not be longer of 50 characters'
+MESSAGE_LEVEL_EN = 'Level can not be longer of 50 characters'
+MESSAGE_LEVEL = 'El tamaño del nivel no puede ser mayor que 50'
+MESSAGE_LINE_EN = 'Line must be a letter'
+MESSAGE_LINE = 'Línea solo pueden ser un letra'
+MESSAGE_DESCRIPTION_EN = 'Description can not be longer of 100 characters'
+MESSAGE_DESCRIPTION = 'El tamaño de la descripción no puede ser mayor que 100'
+MESSAGE_CODE_EN = 'Code can not be longer of 50 characters'
+MESSAGE_CODE = 'El tamaño del código no puede ser mayor que 50'
 
-class StudentCreateForm(forms.ModelForm):
-    
-    name = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': 'Raúl', 'id': 'first_name-create-student'}))
-    surname = forms.CharField(required=True)
+# Administrator
+class AdministratorUpdateForm(forms.ModelForm):
     birthdate = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
@@ -39,6 +52,256 @@ class StudentCreateForm(forms.ModelForm):
         )
     )
     initials = forms.CharField(required=True)
+
+    def __init__(self, *args, **kwargs):
+        super(AdministratorUpdateForm, self).__init__(*args, **kwargs)
+        if get_language() == 'en':
+            self.fields['birthdate'].widget.attrs['placeholder'] = DATE_PLACEHOLDER_EN
+            self.fields['birthdate'].widget.format = settings.DATE_INPUT_FORMATS[0]
+
+    class Meta:
+        model = models.Administrator
+        fields = (
+            'birthdate',
+            'initials',
+        )   
+
+    def clean_birthdate(self):
+        birthdate = self.cleaned_data.get('birthdate')
+        if birthdate >= now().date():
+            raise ValidationError(
+                MESSAGE_BIRTHDATE)
+        return birthdate
+
+    def clean_initials(self):
+        initials = self.cleaned_data.get('initials')
+        
+        if len(initials) > 9:
+            raise ValidationError(
+                MESSAGE_INITIALS)
+        return initials
+
+# Competences
+class CompetenceCreateForm(forms.ModelForm):
+
+    code = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'CC1', 'id': 'code-create-competence'}))
+    name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Comunicación lingüística', 'id': 'name-create-competence'}))
+    description = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Comunicación lingüística.	', 'id': 'description-create-competence'}))
+    weight = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': '1', 'id': 'wieight-create-competence'}))
+
+    class Meta:
+        model = models.Competence
+        fields = (
+            'code',
+            'name',
+            'description',
+            'weight',
+        )
+        
+    def clean_code(self):
+        code = self.cleaned_data.get('code')
+        if len(code) > 50:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_CODE_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_CODE)
+        return code
+
+    def clean_description(self):
+        description = self.cleaned_data.get('description')
+        if len(description) > 300:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_DESCRIPTION_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_DESCRIPTION)
+        return description
+
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
+        if len(name) > 300:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_NAME_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_NAME)
+        return name
+
+# Evaluations
+class EvaluationCreateForm(forms.ModelForm):
+    
+    name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Matemáticas 5º Primaria Final', 'id': 'name-create-evaluation'}))
+    start_date = forms.DateField(required=True, 
+        input_formats=settings.DATE_INPUT_FORMATS, 
+        widget=forms.DateInput(
+            format=settings.DATE_INPUT_FORMATS[0],
+            attrs={'placeholder': DATE_PLACEHOLDER}
+        )
+    )
+    end_date_1 = forms.DateField(required=True, 
+        input_formats=settings.DATE_INPUT_FORMATS, 
+        widget=forms.DateInput(
+            format=settings.DATE_INPUT_FORMATS[0],
+            attrs={'placeholder': DATE_PLACEHOLDER}
+        )
+    )
+    start_date_2 = forms.DateField(required=True, 
+        input_formats=settings.DATE_INPUT_FORMATS, 
+        widget=forms.DateInput(
+            format=settings.DATE_INPUT_FORMATS[0],
+            attrs={'placeholder': DATE_PLACEHOLDER}
+        )
+    )
+    end_date_2 = forms.DateField(required=True, 
+        input_formats=settings.DATE_INPUT_FORMATS, 
+        widget=forms.DateInput(
+            format=settings.DATE_INPUT_FORMATS[0],
+            attrs={'placeholder': DATE_PLACEHOLDER}
+        )
+    )
+    start_date_3 = forms.DateField(required=True, 
+        input_formats=settings.DATE_INPUT_FORMATS, 
+        widget=forms.DateInput(
+            format=settings.DATE_INPUT_FORMATS[0],
+            attrs={'placeholder': DATE_PLACEHOLDER}
+        )
+    )
+    end_date = forms.DateField(required=True, 
+        input_formats=settings.DATE_INPUT_FORMATS, 
+        widget=forms.DateInput(
+            format=settings.DATE_INPUT_FORMATS[0],
+            attrs={'placeholder': DATE_PLACEHOLDER}
+        )
+    )
+    subject = forms.ModelChoiceField(subjects, empty_label=None)
+
+    class Meta:
+        model = models.Evaluation
+        fields = (
+            'name',
+            'start_date',
+            'end_date_1',
+            'start_date_2',
+            'end_date_2',
+            'start_date_3',
+            'end_date',
+            'subject',
+        )
+
+class EvaluationUpdateForm(forms.ModelForm):
+    
+    name = forms.CharField(required=True)
+    start_date = forms.DateField(required=True, 
+        input_formats=settings.DATE_INPUT_FORMATS, 
+        widget=forms.DateInput(
+            format=settings.DATE_INPUT_FORMATS[0],
+            attrs={'placeholder': DATE_PLACEHOLDER}
+        )
+    )
+    end_date = forms.DateField(required=True, 
+        input_formats=settings.DATE_INPUT_FORMATS, 
+        widget=forms.DateInput(
+            format=settings.DATE_INPUT_FORMATS[0],
+            attrs={'placeholder': DATE_PLACEHOLDER}
+        )
+    )
+    subject = forms.ModelChoiceField(subjects, empty_label=None)
+
+    class Meta:
+        model = models.Evaluation
+        fields = (
+            'name',
+            'start_date',
+            'end_date',
+            'subject',
+        )
+
+# Sets
+class SetCreateForm(forms.ModelForm):
+    
+    name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Matemáticas', 'id': 'name-create-set'}))
+    line = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'A', 'id': 'line-create-set'}))
+    teacher = forms.ModelChoiceField(teachers, empty_label=None)
+    subject = forms.ModelChoiceField(subjects, empty_label=None)
+    evaluation = forms.ModelChoiceField(evaluations, empty_label=None)
+
+    class Meta:
+        model = models.Set
+        fields = (
+            'name',
+            'level',
+            'grade',
+            'line',
+            'teacher',
+            'subject',
+            'evaluation',
+        )
+        widgets = {
+            'level': forms.Select(choices=CHOICES_LEVEL),
+            'grade': forms.Select(choices=CHOICES_GRADE)
+        }
+
+    def clean_level(self):
+        level = self.cleaned_data.get('level')
+        if len(level) > 50:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_LEVEL_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_LEVEL)
+        return level
+
+
+    def clean_line(self):
+        line = self.cleaned_data.get('line')
+        if not line.isalpha() or len(line) > 1:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_LINE_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_LINE)
+        return line
+
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
+        if len(name) > 100:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_NAME_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_NAME)
+        return name
+
+# Student
+class StudentCreateForm(forms.ModelForm):
+    
+    name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Raúl', 'id': 'first_name-create-student'}))
+    surname = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Navarro Cruz', 'id': 'surname-create-student'}))
+    birthdate = forms.DateField(required=True, 
+        input_formats=settings.DATE_INPUT_FORMATS, 
+        widget=forms.DateInput(
+            format=settings.DATE_INPUT_FORMATS[0],
+            attrs={'placeholder': DATE_PLACEHOLDER}
+        )
+    )
+    initials = forms.CharField(required=True,widget=forms.TextInput(
+        attrs={'placeholder': 'RNC', 'id': 'initials-create-student'}))
 
     def __init__(self, *args, **kwargs):
         super(StudentCreateForm, self).__init__(*args, **kwargs)
@@ -100,13 +363,69 @@ class StudentCreateForm(forms.ModelForm):
                     MESSAGE_BIRTHDATE)
         return birthdate
 
-class TeacherCreateForm(UserCreationForm):
+# Subjects
+class SubjectCreateForm(forms.ModelForm):
+    
+    name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Ciencias Sociales', 'id': 'name-create-subject'}))
+    description = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Las ciencias sociales son las ramas de la ciencia relacionadas con ...', 'id': 'description-create-subject'}))
+
+    class Meta:
+        model = models.Subject
+        fields = (
+            'name',
+            'level',
+            'grade',
+            'description',
+        )
+        widgets = {
+            'level': forms.Select(choices=CHOICES_LEVEL),
+            'grade': forms.Select(choices=CHOICES_GRADE)
+        }
+
+    def clean_level(self):
+        level = self.cleaned_data.get('level')
+        if len(level) > 50:
+            services.FormService().raise_error(MESSAGE_LEVEL_EN, MESSAGE_LEVEL)
+        return level
+
+    def clean_description(self):
+        description = self.cleaned_data.get('description')
+        if len(description) > 100:
+            services.FormService().raise_error(MESSAGE_DESCRIPTION_EN, MESSAGE_DESCRIPTION)
+        return description
+
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
+        if len(name) > 100:
+            services.FormService().raise_error(MESSAGE_NAME_EN, MESSAGE_NAME)
+        return name
+
+# Users 
+class LoginForm(AuthenticationForm):
+    username = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': "albsoucru"}))
+    password = forms.CharField(required=True, widget=forms.PasswordInput(
+        attrs={'placeholder': "***************"}))
+
+    class Meta:
+        model = User
+        fields = (
+            'username',
+            'password',
+        )
+
+class UserCreateForm(UserCreationForm):
     
     first_name = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': 'Alberto', 'id': 'first_name-create-teacher'}))
-    last_name = forms.CharField(required=True)
-    username = forms.CharField(required=True)
-    email = forms.EmailField(required=True)
+    last_name = forms.CharField(required=True,widget=forms.TextInput(
+        attrs={'placeholder': 'Cordón', 'id': 'last_name-create-teacher'}))
+    username = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'alberto26', 'id': 'username-create-teacher'}))
+    email = forms.EmailField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'alberto@gmail.com', 'id': 'email-create-teacher'}))
     birthdate = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
@@ -114,12 +433,15 @@ class TeacherCreateForm(UserCreationForm):
             attrs={'placeholder': DATE_PLACEHOLDER}
         )
     )
-    initials = forms.CharField(required=True)
-    password1 = forms.CharField(required=True)
-    password2 = forms.CharField(required=True)
+    initials = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'ACA', 'id': 'initials-create-teacher'}))
+    password1 = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': '*************', 'id': 'password1-create-teacher'}))
+    password2 = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': '*************', 'id': 'password2-create-teacher'}))
 
     def __init__(self, *args, **kwargs):
-        super(TeacherCreateForm, self).__init__(*args, **kwargs)
+        super(UserCreateForm, self).__init__(*args, **kwargs)
         if get_language() == 'en':
             self.fields['birthdate'].widget.attrs['placeholder'] = DATE_PLACEHOLDER_EN
             self.fields['birthdate'].widget.format = settings.DATE_INPUT_FORMATS[0]
@@ -196,7 +518,37 @@ class TeacherCreateForm(UserCreationForm):
         if exist:
             raise ValidationError('Usuario ya registrado')
         return username
+
+class UserUpdateForm(forms.ModelForm):
+    first_name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Alberto', 'id': 'first_name-create-teacher'}))
+    last_name = forms.CharField(required=True)
+    email = forms.EmailField(required=True)
+
+    class Meta:
+        model = User
+        fields = (
+            'first_name',
+            'last_name',
+            'email',
+        )   
+
+
+    def clean_first_name(self):
+        first_name = self.cleaned_data.get('first_name')
+        if len(first_name) > 100:
+            raise ValidationError(
+                MESSAGE_NAME)
+        return first_name
+
+    def clean_last_name(self):
+        last_name = self.cleaned_data.get('last_name')
+        if len(last_name) > 100:
+            raise ValidationError(
+                MESSAGE_SURNAME)
+        return last_name
         
+# Teachers
 class TeacherUpdateForm(forms.ModelForm):
     birthdate = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
@@ -234,173 +586,3 @@ class TeacherUpdateForm(forms.ModelForm):
             raise ValidationError(
                 MESSAGE_INITIALS)
         return initials
-    
-class UserUpdateForm(forms.ModelForm):
-    first_name = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': 'Alberto', 'id': 'first_name-create-teacher'}))
-    last_name = forms.CharField(required=True)
-    email = forms.EmailField(required=True)
-
-    class Meta:
-        model = User
-        fields = (
-            'first_name',
-            'last_name',
-            'email',
-        )   
-
-
-    def clean_first_name(self):
-        first_name = self.cleaned_data.get('first_name')
-        if len(first_name) > 100:
-            raise ValidationError(
-                MESSAGE_NAME)
-        return first_name
-
-    def clean_last_name(self):
-        last_name = self.cleaned_data.get('last_name')
-        if len(last_name) > 100:
-            raise ValidationError(
-                MESSAGE_SURNAME)
-        return last_name
-
-class SetCreateForm(forms.ModelForm):
-    
-    name = forms.CharField(required=True)
-    level = forms.CharField(required=True)
-    grade = forms.CharField(required=True)
-    line = forms.CharField(required=True)
-    teacher = forms.ModelChoiceField(teachers, empty_label=None)
-    subject = forms.ModelChoiceField(subjects, empty_label=None)
-    evaluation = forms.ModelChoiceField(evaluations, empty_label=None)
-
-    class Meta:
-        model = models.Set
-        fields = (
-            'name',
-            'level',
-            'grade',
-            'line',
-            'teacher',
-            'subject',
-            'evaluation',
-        )
-        
-    def clean_grade(self):
-        grade = self.cleaned_data.get('grade')
-        if len(grade) > 50:
-            if get_language() == 'en':
-                raise ValidationError(
-                    'Grade can not be longer of 50 characters')
-            else:
-                raise ValidationError(
-                    'El tamaño del grado no puede ser mayor que 50')
-        return grade
-
-    def clean_level(self):
-        level = self.cleaned_data.get('level')
-        if len(level) > 50:
-            if get_language() == 'en':
-                raise ValidationError(
-                    'Level can not be longer of 50 characters')
-            else:
-                raise ValidationError(
-                    'El tamaño del nivel no puede ser mayor que 50')
-        return level
-
-
-    def clean_line(self):
-        line = self.cleaned_data.get('line')
-        if len(line) > 50:
-            if get_language() == 'en':
-                raise ValidationError(
-                    'Line can not be longer of 50 characters')
-            else:
-                raise ValidationError(
-                    'El tamaño de la línea no puede ser mayor que 50')
-        return line
-
-    def clean_name(self):
-        name = self.cleaned_data.get('name')
-        if len(name) > 100:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_NAME_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_NAME)
-        return name
-
-class LoginForm(AuthenticationForm):
-    username = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': "albsoucru"}))
-    password = forms.CharField(required=True, widget=forms.PasswordInput(
-        attrs={'placeholder': "***************"}))
-
-    class Meta:
-        model = User
-        fields = (
-            'username',
-            'password',
-        )
-
-
-class SubjectCreateForm(forms.ModelForm):
-    
-    name = forms.CharField(required=True)
-    level = forms.CharField(required=True)
-    grade = forms.CharField(required=True)
-    description = forms.CharField(required=True)
-
-    class Meta:
-        model = models.Subject
-        fields = (
-            'name',
-            'level',
-            'grade',
-            'description',
-        )
-        
-    def clean_grade(self):
-        grade = self.cleaned_data.get('grade')
-        if len(grade) > 50:
-            if get_language() == 'en':
-                raise ValidationError(
-                    'Grade can not be longer of 50 characters')
-            else:
-                raise ValidationError(
-                    'El tamaño del grado no puede ser mayor que 50')
-        return grade
-
-    def clean_level(self):
-        level = self.cleaned_data.get('level')
-        if len(level) > 50:
-            if get_language() == 'en':
-                raise ValidationError(
-                    'Level can not be longer of 50 characters')
-            else:
-                raise ValidationError(
-                    'El tamaño del nivel no puede ser mayor que 50')
-        return level
-
-    def clean_description(self):
-        description = self.cleaned_data.get('description')
-        if len(description) > 100:
-            if get_language() == 'en':
-                raise ValidationError(
-                    'Description can not be longer of 100 characters')
-            else:
-                raise ValidationError(
-                    'El tamaño de la descripcioçón no puede ser mayor que 100')
-        return description
-
-    def clean_name(self):
-        name = self.cleaned_data.get('name')
-        if len(name) > 100:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_NAME_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_NAME)
-        return name
