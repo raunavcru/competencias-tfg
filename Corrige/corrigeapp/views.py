@@ -533,6 +533,23 @@ class SetsListView(generic.ListView):
         queryset = models.Set.objects.all().order_by('name')
         return queryset
 
+@method_decorator(login_required, name='dispatch')
+class MySetsListView(generic.ListView):
+    model = models.Set
+    template_name = 'sets/list.html'
+    context_object_name = 'set_list'
+    paginate_by = 5
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_teacher(request.user):
+            return super(MySetsListView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_queryset(self):
+        queryset = models.Set.objects.filter(teacher__user=self.request.user)
+        return queryset
+
 @method_decorator(login_required, name='dispatch') 
 class SetUnassignStudentView(generic.TemplateView):
 
