@@ -1062,9 +1062,9 @@ def seed_evaluations():
 
 def seed_sets():
     students = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
-
+    set_pk = 1
     set_obj = {
-        'pk': 1,
+        'pk': set_pk,
         'model': 'corrigeapp.Set',
         'fields': {
                 'name': 'Física y Qúimica 3ºA ESO',
@@ -1078,11 +1078,12 @@ def seed_sets():
             }
     }
     POPULATE.append(set_obj)
+    set_pk += 1
 
     students = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
 
     set_obj = {
-        'pk': 1,
+        'pk': set_pk,
         'model': 'corrigeapp.Set',
         'fields': {
                 'name': 'Matemáticas 3ºA ESO',
@@ -1096,11 +1097,12 @@ def seed_sets():
             }
     }
     POPULATE.append(set_obj)
+    set_pk += 1
 
     students = [16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
 
     set_obj = {
-        'pk': 1,
+        'pk': set_pk,
         'model': 'corrigeapp.Set',
         'fields': {
                 'name': 'Física y Qúimica 4ºA ESO',
@@ -1114,11 +1116,12 @@ def seed_sets():
             }
     }
     POPULATE.append(set_obj)
+    set_pk += 1
 
     students = [16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
 
     set_obj = {
-        'pk': 1,
+        'pk': set_pk,
         'model': 'corrigeapp.Set',
         'fields': {
                 'name': 'Matemáticas 4ºA ESO',
@@ -1132,4 +1135,5 @@ def seed_sets():
             }
     }
     POPULATE.append(set_obj)
+    set_pk += 1
     
