@@ -720,6 +720,26 @@ class SubjectsListView(generic.ListView):
         queryset = models.Subject.objects.all().order_by('name')
         return queryset
 
+@method_decorator(login_required, name='dispatch')
+class SubjectsOwnerListView(generic.ListView):
+    model = models.Student
+    template_name = 'subjects/list.html'
+    context_object_name = 'subject_list'
+    paginate_by = 5
+
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_teacher(request.user):
+            return super(SubjectsOwnerListView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_queryset(self):
+        user = self.request.user
+        teacher = models.Teacher.objects.get(user=user)
+        subjects = teacher.subjects.all()
+        return subjects     
+        
 @method_decorator(login_required, name='dispatch')        
 class SubjectsUpdateView(generic.UpdateView):
     model = models.Subject
@@ -913,3 +933,4 @@ class TeacherUpdateView(generic.UpdateView):
         else:
             return self.render_to_response(
                 self.get_context_data(form=form, profile_form=teacher_form))
+

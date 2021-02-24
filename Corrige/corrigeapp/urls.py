@@ -25,6 +25,9 @@ urlpatterns = [
     path('evaluations/<int:pk>/delete', views.EvaluationDeleteView.as_view(), name='evaluations_delete'),
     path('evaluations/<int:pk>/update', views.EvaluationUpdateView.as_view(), name = 'evaluations_update'),
 
+    path('my_sets/list', views.MySetsListView.as_view(), name = 'my_sets_list'),
+    path('my_subjects/list', views.SubjectsOwnerListView.as_view(), name = 'my_subjects_list'),
+
     path('sets/<int:pk>/assign/list', views.SetAssignStudentListView.as_view(), name = 'sets_assign_student_list'),
     path('sets/<int:pk>/<int:id>/assign/', views.SetAssignStudentView.as_view(), name = 'sets_assign_student'),
     path('sets/<int:pk>/<int:id>/unassign/', views.SetUnassignStudentView.as_view(), name = 'sets_unassign_student'),
@@ -32,8 +35,6 @@ urlpatterns = [
     path('sets/<int:pk>/update', views.SetUpdateView.as_view(), name = 'sets_update'),
     path('sets/list', views.SetsListView.as_view(), name = 'sets_list'),
     path('sets/<int:pk>/delete', views.SetDeleteView.as_view(), name='sets_delete'),
-
-    path('mysets/list', views.MySetsListView.as_view(), name = 'my_sets_list'),
     
     path('students/list', views.StudentsListView.as_view(), name = 'students_list'),
     path('students/create', views.StudentCreateView.as_view(), name = 'students_create'),
