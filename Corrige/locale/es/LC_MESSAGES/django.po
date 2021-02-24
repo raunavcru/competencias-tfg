@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-23 12:15+0100\n"
+"POT-Creation-Date: 2021-02-24 12:55+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,10 +19,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: .\Corrige\local_settings.py:120 .\Corrige\settings.py:120
+#: .\corrigeapp\local_settings.py:120
 msgid "English"
 msgstr ""
 
 #: .\Corrige\local_settings.py:121 .\Corrige\settings.py:121
+#: .\corrigeapp\local_settings.py:121
 msgid "Spanish"
 msgstr ""
 
@@ -48,11 +50,11 @@ msgstr "Cancelar"
 #: .\corrigeapp\templates\evaluations\delete.html:13
 #: .\corrigeapp\templates\evaluations\list.html:18
 #: .\corrigeapp\templates\sets\delete.html:13
-#: .\corrigeapp\templates\sets\list.html:17
+#: .\corrigeapp\templates\sets\list.html:20
 #: .\corrigeapp\templates\students\delete.html:15
 #: .\corrigeapp\templates\students\list.html:16
 #: .\corrigeapp\templates\subjects\delete.html:12
-#: .\corrigeapp\templates\subjects\list.html:17
+#: .\corrigeapp\templates\subjects\list.html:20
 #: .\corrigeapp\templates\teachers\confirm_delete.html:12
 #: .\corrigeapp\templates\user_tr.html:9
 msgid "Delete"
@@ -91,11 +93,11 @@ msgstr "Crear"
 #: .\corrigeapp\templates\evaluations\list.html:17
 #: .\corrigeapp\templates\evaluations\update.html:136
 #: .\corrigeapp\templates\sets\create.html:85
-#: .\corrigeapp\templates\sets\list.html:16
+#: .\corrigeapp\templates\sets\list.html:19
 #: .\corrigeapp\templates\students\create.html:70
 #: .\corrigeapp\templates\students\list.html:15
 #: .\corrigeapp\templates\subjects\create.html:67
-#: .\corrigeapp\templates\subjects\list.html:16
+#: .\corrigeapp\templates\subjects\list.html:19
 #: .\corrigeapp\templates\teachers\create.html:72
 #: .\corrigeapp\templates\user_tr.html:8
 msgid "Edit"
@@ -114,7 +116,7 @@ msgid "Administrators"
 msgstr "Administratores"
 
 #: .\corrigeapp\templates\base.html:32
-#: .\corrigeapp\templates\subjects\list.html:18
+#: .\corrigeapp\templates\subjects\list.html:21
 msgid "Competences"
 msgstr "Competencias"
 
@@ -150,30 +152,30 @@ msgstr "Mis grupos"
 msgid "My Subjects"
 msgstr "Mis asignaturas"
 
-#: .\corrigeapp\templates\base.html:46
+#: .\corrigeapp\templates\base.html:47
 #: .\corrigeapp\templates\registration\login.html:13
 msgid "Login"
 msgstr "Inicio de sesión"
 
-#: .\corrigeapp\templates\base.html:53
+#: .\corrigeapp\templates\base.html:54
 msgid "Profile"
 msgstr "Perfil"
 
-#: .\corrigeapp\templates\base.html:54
+#: .\corrigeapp\templates\base.html:55
 msgid "Logout"
 msgstr "Cerrar sesión"
 
-#: .\corrigeapp\templates\base.html:59
+#: .\corrigeapp\templates\base.html:60
 #: .\corrigeapp\templates\competences\list.html:28
 msgid "Level 1"
 msgstr "Nivel 1"
 
-#: .\corrigeapp\templates\base.html:60
+#: .\corrigeapp\templates\base.html:61
 #: .\corrigeapp\templates\competences\list.html:31
 msgid "Level 2"
 msgstr "Nivel 2"
 
-#: .\corrigeapp\templates\base.html:61
+#: .\corrigeapp\templates\base.html:62
 msgid "Level 3"
 msgstr "Nivel 3"
 
@@ -191,13 +193,13 @@ msgstr "Código"
 #: .\corrigeapp\templates\evaluations\list.html:12
 #: .\corrigeapp\templates\evaluations\update.html:19
 #: .\corrigeapp\templates\sets\create.html:19
-#: .\corrigeapp\templates\sets\list.html:12
+#: .\corrigeapp\templates\sets\list.html:14
 #: .\corrigeapp\templates\students\create.html:19
 #: .\corrigeapp\templates\students\list.html:13
 #: .\corrigeapp\templates\students\list_assign_student.html:12
 #: .\corrigeapp\templates\students\list_assign_student.html:39
 #: .\corrigeapp\templates\subjects\create.html:19
-#: .\corrigeapp\templates\subjects\list.html:12
+#: .\corrigeapp\templates\subjects\list.html:14
 #: .\corrigeapp\templates\subjects\list_assign_subject.html:11
 #: .\corrigeapp\templates\subjects\list_assign_subject.html:40
 #: .\corrigeapp\templates\user_name_form.html:7
@@ -210,7 +212,7 @@ msgstr "Nombre"
 #: .\corrigeapp\templates\competences\list_assign_competence.html:12
 #: .\corrigeapp\templates\competences\list_assign_competence.html:39
 #: .\corrigeapp\templates\subjects\create.html:51
-#: .\corrigeapp\templates\subjects\list.html:15
+#: .\corrigeapp\templates\subjects\list.html:17
 #: .\corrigeapp\templates\subjects\list_assign_subject.html:14
 #: .\corrigeapp\templates\subjects\list_assign_subject.html:43
 msgid "Description"
@@ -356,25 +358,25 @@ msgid "Enter"
 msgstr "Entrar"
 
 #: .\corrigeapp\templates\sets\create.html:27
-#: .\corrigeapp\templates\sets\list.html:13
+#: .\corrigeapp\templates\sets\list.html:15
 #: .\corrigeapp\templates\subjects\create.html:31
-#: .\corrigeapp\templates\subjects\list.html:13
+#: .\corrigeapp\templates\subjects\list.html:15
 #: .\corrigeapp\templates\subjects\list_assign_subject.html:12
 #: .\corrigeapp\templates\subjects\list_assign_subject.html:41
 msgid "Level"
 msgstr "Nivel"
 
 #: .\corrigeapp\templates\sets\create.html:36
-#: .\corrigeapp\templates\sets\list.html:14
+#: .\corrigeapp\templates\sets\list.html:16
 #: .\corrigeapp\templates\subjects\create.html:38
-#: .\corrigeapp\templates\subjects\list.html:14
+#: .\corrigeapp\templates\subjects\list.html:16
 #: .\corrigeapp\templates\subjects\list_assign_subject.html:13
 #: .\corrigeapp\templates\subjects\list_assign_subject.html:42
 msgid "Grade"
 msgstr "Grado"
 
 #: .\corrigeapp\templates\sets\create.html:45
-#: .\corrigeapp\templates\sets\list.html:15
+#: .\corrigeapp\templates\sets\list.html:17
 msgid "Line"
 msgstr "Línea"
 
@@ -394,11 +396,11 @@ msgstr "¿Estás seguro de que quieres eliminar el grupo "
 msgid "List of sets"
 msgstr "Lista de grupos"
 
-#: .\corrigeapp\templates\sets\list.html:6
+#: .\corrigeapp\templates\sets\list.html:7
 msgid "Create set"
 msgstr "Crear grupo"
 
-#: .\corrigeapp\templates\sets\list.html:18
+#: .\corrigeapp\templates\sets\list.html:22
 #: .\corrigeapp\templates\students\list.html:5
 msgid "List of students"
 msgstr "Lista de estudiantes"
@@ -433,11 +435,11 @@ msgstr "¿Estás seguro de que quieres eliminar la asignatura "
 msgid "List of subjects"
 msgstr "Lista de asignaturas"
 
-#: .\corrigeapp\templates\subjects\list.html:6
+#: .\corrigeapp\templates\subjects\list.html:7
 msgid "Create subject"
 msgstr "Crear asignatura"
 
-#: .\corrigeapp\templates\subjects\list.html:31
+#: .\corrigeapp\templates\subjects\list.html:36
 msgid "Assign competence"
 msgstr "Crear competencias"
 
