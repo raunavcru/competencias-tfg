@@ -32,6 +32,8 @@ urlpatterns = [
     path('sets/<int:pk>/update', views.SetUpdateView.as_view(), name = 'sets_update'),
     path('sets/list', views.SetsListView.as_view(), name = 'sets_list'),
     path('sets/<int:pk>/delete', views.SetDeleteView.as_view(), name='sets_delete'),
+
+    path('mysets/list', views.MySetsListView.as_view(), name = 'my_sets_list'),
     
     path('students/list', views.StudentsListView.as_view(), name = 'students_list'),
     path('students/create', views.StudentCreateView.as_view(), name = 'students_create'),
