@@ -452,6 +452,43 @@ class EvaluationUpdateView(generic.UpdateView):
         else:
             return redirect('/')
 
+@method_decorator(login_required, name='dispatch')        
+class MySetStudentListView(generic.ListView):
+    model = models.Set
+    template_name = 'students/list.html'
+    paginate_by = 5
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_teacher(request.user):
+            return super(MySetStudentListView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        set_object_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_object_pk)
+        object_list = set_object.students.all().order_by('surname')
+        context = super(MySetStudentListView, self).get_context_data(object_list=object_list, **kwargs)
+
+        return context
+
+@method_decorator(login_required, name='dispatch')
+class MySetsListView(generic.ListView):
+    model = models.Set
+    template_name = 'sets/list.html'
+    context_object_name = 'set_list'
+    paginate_by = 5
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_teacher(request.user):
+            return super(MySetsListView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_queryset(self):
+        queryset = models.Set.objects.filter(teacher__user=self.request.user)
+        return queryset
+
 # Sets
 @method_decorator(login_required, name='dispatch') 
 class SetAssignStudentView(generic.TemplateView):
@@ -489,26 +526,6 @@ class SetAssignStudentListView(generic.ListView, generic.list.MultipleObjectMixi
             object_list=object_list, **kwargs)
         context['other_students'] = models.Student.objects.all().exclude(id__in=object_list).order_by('surname')
         context['set_object_pk'] = set_object_pk
-
-        return context
-
-@method_decorator(login_required, name='dispatch')        
-class MySetStudentListView(generic.ListView):
-    model = models.Set
-    template_name = 'students/list.html'
-    paginate_by = 5
-
-    def get(self, request, *args, **kwargs):
-        if services.UserService().is_teacher(request.user):
-            return super(MySetStudentListView, self).get(self, request, *args, **kwargs)
-        else:
-            return redirect('/')
-
-    def get_context_data(self, **kwargs):
-        set_object_pk = self.kwargs.get('pk')
-        set_object = models.Set.objects.get(pk=set_object_pk)
-        object_list = set_object.students.all().order_by('surname')
-        context = super(MySetStudentListView, self).get_context_data(object_list=object_list, **kwargs)
 
         return context
 
@@ -551,23 +568,6 @@ class SetsListView(generic.ListView):
 
     def get_queryset(self):
         queryset = models.Set.objects.all().order_by('name')
-        return queryset
-
-@method_decorator(login_required, name='dispatch')
-class MySetsListView(generic.ListView):
-    model = models.Set
-    template_name = 'sets/list.html'
-    context_object_name = 'set_list'
-    paginate_by = 5
-
-    def get(self, request, *args, **kwargs):
-        if services.UserService().is_teacher(request.user):
-            return super(MySetsListView, self).get(self, request, *args, **kwargs)
-        else:
-            return redirect('/')
-
-    def get_queryset(self):
-        queryset = models.Set.objects.filter(teacher__user=self.request.user)
         return queryset
 
 @method_decorator(login_required, name='dispatch') 
