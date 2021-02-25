@@ -25,6 +25,7 @@ urlpatterns = [
     path('evaluations/<int:pk>/delete', views.EvaluationDeleteView.as_view(), name='evaluations_delete'),
     path('evaluations/<int:pk>/update', views.EvaluationUpdateView.as_view(), name = 'evaluations_update'),
 
+    path('my_sets/list', views.MySetsListView.as_view(), name = 'my_sets_list'),
     path('my_subjects/list', views.SubjectsOwnerListView.as_view(), name = 'my_subjects_list'),
     
     path('sets/<int:pk>/list', views.MySetStudentListView.as_view(), name = 'sets_student_list'),
