@@ -18,8 +18,8 @@
                     {% if request.user.profile.role == "ADMINISTRATOR" %} 
                         <th class="center" id="button">{% trans "Edit" %}</th>
                         <th class="center" id="delete">{% trans "Delete" %}</th>
-                        <th class="center" id="competencia">{% trans "Competences" %}</th>
                     {% endif %}
+                        <th class="center" id="competencia">{% trans "Competences" %}</th>
                     </tr>
                 </thead>
             {% for object in subject_list %}
@@ -34,6 +34,8 @@
                             <td class="center dropdown-trigger" type="button" onclick="location.href='{% url 'subjects_update' object.pk %}'"><em class="material-icons" style="color:#29b6f6">create</em></td>
                             <td class="center dropdown-trigger" onclick="location.href='{% url 'subjects_delete' object.pk %}'"><em class="material-icons" style="color:#e53935">delete</em></td>
                             <td class="center dropdown-trigger" type="button"><a style="border-radius:5px; center" href="{% url 'subjects_assign_competence_list'  object.pk %}" class="right deep-orange lighten-1 waves-effect waves-light btn-small">{% trans "Assign competence" %}</a></td>             
+                        {% else %}
+                            <td class="center dropdown-trigger" type="button"><a style="border-radius:5px; center" href="{% url 'subject_competence_list'  object.pk %}" class="right deep-orange lighten-1 waves-effect waves-light btn-small">{% trans "Competences List" %}</a></td>             
                         {% endif %}
                         </tr>
                     </tbody>

@@ -740,6 +740,25 @@ class SubjectsListView(generic.ListView):
         queryset = models.Subject.objects.all().order_by('name')
         return queryset
 
+@method_decorator(login_required, name='dispatch')   
+class SubjectListCompetenceView(generic.ListView):
+    model = models.Subject
+    template_name = 'subjects/competence_list.html'
+    context_object_name = 'subject_competence_list'
+    paginate_by = 5
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_teacher(request.user):
+            return super(SubjectListCompetenceView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_queryset(self):
+        subject_object_pk = self.kwargs.get('pk')
+        subject_object = models.Subject.objects.get(pk=subject_object_pk)
+        queryset = subject_object.competences.all().order_by('code')
+        return queryset
+
 @method_decorator(login_required, name='dispatch')
 class SubjectsOwnerListView(generic.ListView):
     model = models.Student

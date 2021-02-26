@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+    <h4 class="centered">{% trans "List of competences " %}</h4>
+        <table class="highlight">
+            <caption></caption>
+                <thead>
+                    <tr>
+                        <th id="code">{% trans "Code" %}</th>
+                        <th id="name">{% trans "Name" %}</th>
+                        <th id="description">{% trans "Description" %}</th>                    
+                    </tr>
+                </thead>
+                {% for object in subject_competence_list %}
+                    <tbody>
+                        <tr class="center">
+                            <td>{{object.code}}</td> 
+                            <td style="width:500px">{{object.name}}</td>
+                            <td style="width:500px">{{object.description}}</td>                            
+                        </tr>
+                    </tbody>
+                {% endfor %}
+
+            </tbody>
+        </table>
+        {% include 'paginate.html' %}
+          
+{% endblock %}
