@@ -10,10 +10,10 @@
     <h4 class="centered">{% trans "List of competences level 1" %}</h4>
     {% endif %}
     {% if list_level2 or list_level1%}
-        <a style="border-radius:5px" href="{% url 'competences_relation2' competence_pk %}" class="right teal lighten-2 waves-effect waves-light btn-small">{% trans "Create competence" %}</a>
+        <a style="border-radius:5px" href="{% url 'competences_relation2' competence_pk %}" class="right teal lighten-2 waves-effect waves-light btn-small">{% trans "Create competence" %}<i class="material-icons right">add</i></a>
     {% endif %}
     {% if listall_level3 %}
-        <a style="border-radius:5px" href="{% url 'competences_create' %}" class="right teal lighten-2 waves-effect waves-light btn-small">{% trans "Create competence" %}</a>
+        <a style="border-radius:5px" href="{% url 'competences_create' %}" class="right teal lighten-2 waves-effect waves-light btn-small">{% trans "Create competence" %}<i class="material-icons right">add</i></a>
     {% endif %}
         <table class="highlight">
             <caption></caption>
@@ -50,5 +50,5 @@
             </tbody>
         </table>
         {% include 'paginate.html' %}
-          
+    <a onClick="javascript:history.go(-1);" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>          
 {% endblock %}
