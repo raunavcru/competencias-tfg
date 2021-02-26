@@ -188,7 +188,7 @@ _[27 de Febrero]_
 _[7 de Marzo]_
 | CU-40 Asignar competencias a un ejercicio con una intensidad.
 
-_[14 de Marzo]_
+_[15 de Marzo]_
 | Despliegue de la versión 0.3  
 
 _[22 de Marzo]_
@@ -201,7 +201,7 @@ _[1 de Marzo]_
 _[8 de Marzo]_
 | CU-36 Ver las calificaciones de un alumno.   
 
-_[15 de Marzo]_
+_[16 de Marzo]_
 | Replanificación. 
 
 _[24 de Marzo]_
@@ -213,12 +213,12 @@ _[3 de Marzo]_
 _[7 de Marzo]_
 | CU-42 Modificar sus datos de usuario.  
 
-_[16 de Marzo]_
+_[18 de Marzo]_
 |        
 
 | CU-31 Listar sus alumnos.
 
-_[27 de Febrero]_
+_[29 de Febrero]_
 | CU-38 Edición de un ejercicio. 
 
 _[9 de Marzo]_

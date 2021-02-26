@@ -25,7 +25,11 @@ urlpatterns = [
     path('evaluations/<int:pk>/delete', views.EvaluationDeleteView.as_view(), name='evaluations_delete'),
     path('evaluations/<int:pk>/update', views.EvaluationUpdateView.as_view(), name = 'evaluations_update'),
 
+    path('my_sets/list', views.MySetsListView.as_view(), name = 'my_sets_list'),
+    path('my_subjects/list', views.SubjectsOwnerListView.as_view(), name = 'my_subjects_list'),
+
     path('sets/<int:pk>/assign/list', views.SetAssignStudentListView.as_view(), name = 'sets_assign_student_list'),
+    path('sets/<int:pk>/list', views.MySetStudentListView.as_view(), name = 'sets_student_list'),
     path('sets/<int:pk>/<int:id>/assign/', views.SetAssignStudentView.as_view(), name = 'sets_assign_student'),
     path('sets/<int:pk>/<int:id>/unassign/', views.SetUnassignStudentView.as_view(), name = 'sets_unassign_student'),
     path('sets/create', views.SetCreateView.as_view(), name = 'sets_create'),
@@ -43,6 +47,7 @@ urlpatterns = [
     path('subjects/<int:pk>/delete', views.SubjectsDeleteView.as_view(), name='subjects_delete'),
     path('subjects/<int:pk>/update', views.SubjectsUpdateView.as_view(), name = 'subjects_update'),
     path('subjects/<int:pk>/assign/list', views.SubjectAssignCompetenceListView.as_view(), name = 'subjects_assign_competence_list'),
+    path('subjects/<int:pk>/competence/list', views.SubjectListCompetenceView.as_view(), name = 'subject_competence_list'),
     path('subjects/<int:pk>/<int:id>/assign/', views.SubjectAssignCompetenceView.as_view(), name = 'subjects_assign_competence'),
     path('subjects/<int:pk>/<int:id>/unassign/', views.SubjectUnassignCompetenceView.as_view(), name = 'subjects_unassign_competence'),
 

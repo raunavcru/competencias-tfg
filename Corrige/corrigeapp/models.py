@@ -120,7 +120,7 @@ class Evaluation(Common):
         verbose_name_plural = 'Evaluations'
     
     def __str__(self):
-        return self.name + ' ' + self.period
+        return self.name
 
 class Student(Common):
     name = models.CharField(("name"), max_length=100)
