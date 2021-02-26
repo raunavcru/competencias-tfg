@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-24 12:55+0100\n"
+"POT-Creation-Date: 2021-02-26 10:57+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -116,7 +116,7 @@ msgid "Administrators"
 msgstr "Administratores"
 
 #: .\corrigeapp\templates\base.html:32
-#: .\corrigeapp\templates\subjects\list.html:21
+#: .\corrigeapp\templates\subjects\list.html:22
 msgid "Competences"
 msgstr "Competencias"
 
@@ -183,6 +183,7 @@ msgstr "Nivel 3"
 #: .\corrigeapp\templates\competences\list.html:22
 #: .\corrigeapp\templates\competences\list_assign_competence.html:10
 #: .\corrigeapp\templates\competences\list_assign_competence.html:37
+#: .\corrigeapp\templates\subjects\competence_list.html:10
 msgid "Code"
 msgstr "Código"
 
@@ -198,6 +199,7 @@ msgstr "Código"
 #: .\corrigeapp\templates\students\list.html:13
 #: .\corrigeapp\templates\students\list_assign_student.html:12
 #: .\corrigeapp\templates\students\list_assign_student.html:39
+#: .\corrigeapp\templates\subjects\competence_list.html:11
 #: .\corrigeapp\templates\subjects\create.html:19
 #: .\corrigeapp\templates\subjects\list.html:14
 #: .\corrigeapp\templates\subjects\list_assign_subject.html:11
@@ -211,6 +213,7 @@ msgstr "Nombre"
 #: .\corrigeapp\templates\competences\list.html:24
 #: .\corrigeapp\templates\competences\list_assign_competence.html:12
 #: .\corrigeapp\templates\competences\list_assign_competence.html:39
+#: .\corrigeapp\templates\subjects\competence_list.html:12
 #: .\corrigeapp\templates\subjects\create.html:51
 #: .\corrigeapp\templates\subjects\list.html:17
 #: .\corrigeapp\templates\subjects\list_assign_subject.html:14
@@ -426,6 +429,10 @@ msgstr "Lista de estudiantes asignados"
 msgid "List of not assigned students"
 msgstr "Lista de estudiantes no asignados"
 
+#: .\corrigeapp\templates\subjects\competence_list.html:5
+msgid "List of competences "
+msgstr "Lista de competencias"
+
 #: .\corrigeapp\templates\subjects\delete.html:8
 msgid "Are you sure about deleting the subject "
 msgstr "¿Estás seguro de que quieres eliminar la asignatura "
@@ -442,6 +449,10 @@ msgstr "Crear asignatura"
 #: .\corrigeapp\templates\subjects\list.html:36
 msgid "Assign competence"
 msgstr "Crear competencias"
+
+#: .\corrigeapp\templates\subjects\list.html:38
+msgid "Competences List"
+msgstr "Lista de competencias"
 
 #: .\corrigeapp\templates\subjects\list_assign_subject.html:5
 msgid "List of assigned subjects"
