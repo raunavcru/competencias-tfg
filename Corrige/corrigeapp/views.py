@@ -24,6 +24,42 @@ class not_impl(generic.TemplateView):
 
 # Activities
 @method_decorator(login_required, name='dispatch')
+class ActivityCreateView(generic.CreateView):
+    form_class = forms.ActivityUpdateForm
+    template_name = 'activities/create.html'
+    success_url = reverse_lazy('competences_list3')
+
+    def get(self, request, *args, **kwargs):
+        set_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_pk)
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
+            return super(ActivityCreateView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        set_pk = self.kwargs.get('pk')
+        context = super(ActivityCreateView, self).get_context_data(**kwargs)
+        context['set_pk'] = set_pk
+        return context
+
+    def form_valid(self, form):
+        set_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_pk)
+        if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+            activity = form.save(commit=False)
+            activity.set_activity = set_object
+            activity.subject = set_object.subject
+            activity.save()
+
+            return redirect('competences_list3')
+        else:
+            return redirect('/')
+        
+
+        
+
+@method_decorator(login_required, name='dispatch')
 class ActivitiesListView(generic.ListView):
     model = models.Set
     template_name = 'activities/list.html'
@@ -508,7 +544,7 @@ class MySetsListView(generic.ListView):
             return redirect('/')
 
     def get_queryset(self):
-        queryset = models.Set.objects.filter(teacher__user=self.request.user)
+        queryset = models.Set.objects.filter(teacher__user=self.request.user).order_by('name')
         return queryset
 
 # Sets
