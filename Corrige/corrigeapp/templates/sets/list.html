@@ -18,6 +18,8 @@
                         {% if request.user.profile.role == "ADMINISTRATOR" %} 
                         <th class="center" id="button">{% trans "Edit" %}</th>
                         <th class="center" id="delete">{% trans "Delete" %}</th>
+                        {% else %}
+                        <th class="center" id="activities">{% trans "Activities" %}</th>
                         {% endif %}
                         <th class="center" id="list">{% trans "List of students" %}</th>
                     </tr>
@@ -34,6 +36,8 @@
                             <td class="center dropdown-trigger" type="button" onclick="location.href='{% url 'sets_update' object.pk %}'"><em class="material-icons" style="color:#29b6f6">create</em></td>
                             <td class="center dropdown-trigger" onclick="location.href='{% url 'sets_delete' object.pk %}'"><em class="material-icons" style="color:#e53935">delete</em></td>
                             <td class="center dropdown-trigger" onclick="location.href='{% url 'sets_assign_student_list' object.pk %}'"><em class="material-icons" style="color:#e53935">people</em></td>
+                            {% else %}
+                            <td class="center dropdown-trigger" onclick="location.href='{% url 'activities_list' object.pk %}'"><em class="material-icons" style="color:#e53935">rate_review</em></td>
                             {% endif %} 
                             <td class="center dropdown-trigger" onclick="location.href='{% url 'sets_student_list' object.pk %}'"><em class="material-icons" style="color:#e53935">people</em></td>
 

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %} 
+    <h4 class="centered">{% trans "List of activities" %}</h4>
+        <table class="highlight">
+            <caption></caption>
+                <thead>
+                    <tr>
+                        <th id=""></th>
+                        <th id="date">{% trans "Date" %}</th>
+                        <th id="weight">{% trans "Weight" %}</th>
+                        <th id="evaluation">{% trans "Evaluation" %}</th>
+                        <th class="center" id="is_recovery">{% trans "Recovery" %}</th>
+                    </tr>
+                </thead>
+            {% for object in activities_list %}
+                    <tbody>
+                        <tr class="center">
+                            <td><i class="material-icons" style="color:#BBBBBB">account_circle</i></td>
+                            <td>{{object.date}}</td>
+                            <td>{{object.weight}}</td>
+                            <td>{{object.evaluation}}</td>
+                            <td class="center dropdown-trigger">
+                                {% if object.is_recovery %} 
+                                    <em class="material-icons" style="color:#2d572c">check</em>
+                                {% else %}
+                                    <em class="material-icons" style="color:#e53935">close</em>
+                                {% endif %}
+                            </td>
+
+                        </tr>
+                    </tbody>
+            {% endfor %}
+        </table>
+{% include 'paginate.html' %}
+{% endblock %}
+
+  <!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
+  <!-- Modal Structure -->

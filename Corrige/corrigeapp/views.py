@@ -22,6 +22,28 @@ class HomeView(generic.TemplateView):
 class not_impl(generic.TemplateView):
     template_name = "not_impl.html"
 
+# Activities
+@method_decorator(login_required, name='dispatch')
+class ActivitiesListView(generic.ListView):
+    model = models.Set
+    template_name = 'activities/list.html'
+    context_object_name = 'activities_list'
+    paginate_by = 5
+
+    def get(self, request, *args, **kwargs):
+        set_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_pk)
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
+            return super(ActivitiesListView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_queryset(self):
+        set_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_pk)
+        queryset = models.Activity.objects.filter(set_activity=set_object).order_by('date')
+        return queryset
+
 # Administrators
 @method_decorator(login_required, name='dispatch')
 class AdministratorCreateView(generic.CreateView):
