@@ -42,6 +42,14 @@ class ActivityCreateView(generic.CreateView):
         context = super(ActivityCreateView, self).get_context_data(**kwargs)
         context['set_pk'] = set_pk
         return context
+    
+    def get_form_kwargs(self):
+        kwargs = super(ActivityCreateView, self).get_form_kwargs()
+        set_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_pk)
+        evaluations = models.Evaluation.objects.filter(evaluation_set=set_pk) | models.Evaluation.objects.filter(parent=set_object.evaluation)
+        kwargs['choices'] = evaluations
+        return kwargs
 
     def form_valid(self, form):
         set_pk = self.kwargs.get('pk')
@@ -52,7 +60,7 @@ class ActivityCreateView(generic.CreateView):
             activity.subject = set_object.subject
             activity.save()
 
-            return redirect('competences_list3')
+            return redirect('activities_list', pk=set_pk)
         else:
             return redirect('/')
         
@@ -73,6 +81,12 @@ class ActivitiesListView(generic.ListView):
             return super(ActivitiesListView, self).get(self, request, *args, **kwargs)
         else:
             return redirect('/')
+    
+    def get_context_data(self, **kwargs):
+        set_pk = self.kwargs.get('pk')
+        context = super(ActivitiesListView, self).get_context_data(**kwargs)
+        context['set_pk'] = set_pk
+        return context
 
     def get_queryset(self):
         set_pk = self.kwargs.get('pk')

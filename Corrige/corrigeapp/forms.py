@@ -14,7 +14,7 @@ User = get_user_model()
 
 teachers = models.Teacher.objects.all()
 subjects = models.Subject.objects.all()
-evaluations = models.Evaluation.objects.filter(is_final=True)
+evaluations_final = models.Evaluation.objects.filter(is_final=True)
 
 CHOICES_YES_NO = ((False, "No"), (True, "Sí"))
 CHOICES_YES_NO_EN = ((False, "No"), (True, "Yes"))
@@ -55,19 +55,21 @@ class ActivityUpdateForm(forms.ModelForm):
     )
     weight = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': '1', 'id': 'wieight-create-competence'}))
-    evaluation = forms.ModelChoiceField(evaluations, empty_label=None)
+    evaluation = forms.ModelChoiceField(evaluations_final, empty_label=None)
     is_recovery = forms.ChoiceField(
         widget = forms.Select(),
         choices = CHOICES_YES_NO
     )
 
     def __init__(self, *args, **kwargs):
+        self.choices = kwargs.pop('choices', None)
         super(ActivityUpdateForm, self).__init__(*args, **kwargs)
+        self.fields['evaluation'].queryset = self.choices
         if get_language() == 'en':
             self.fields['date'].widget.attrs['placeholder'] = DATE_PLACEHOLDER_EN
             self.fields['date'].widget.format = settings.DATE_INPUT_FORMATS[0]
             self.fields['is_recovery'].choices = CHOICES_YES_NO_EN
-
+    
     class Meta:
         model = models.Activity
         fields = (
@@ -269,7 +271,7 @@ class SetCreateForm(forms.ModelForm):
         attrs={'placeholder': 'A', 'id': 'line-create-set'}))
     teacher = forms.ModelChoiceField(teachers, empty_label=None)
     subject = forms.ModelChoiceField(subjects, empty_label=None)
-    evaluation = forms.ModelChoiceField(evaluations, empty_label=None)
+    evaluation = forms.ModelChoiceField(evaluations_final, empty_label=None)
 
     class Meta:
         model = models.Set
