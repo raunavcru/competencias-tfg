@@ -6,6 +6,9 @@ urlpatterns = [
     path('', views.HomeView.as_view(), name='home'),
     path('404', views.not_impl.as_view(), name = '404'),
 
+    path('activities/<int:pk>/create', views.ActivityCreateView.as_view(), name = 'activities_create'),
+    path('activities/<int:pk>/list', views.ActivitiesListView.as_view(), name = 'activities_list'),
+
     path('administrators/create', views.AdministratorCreateView.as_view(), name = 'administrators_create'),
     path('administrators/<int:pk>/delete', views.AdministratorDeleteView.as_view(), name='administrators_delete'),
     path('administrators/list', views.AdministratorsListView.as_view(), name = 'administrators_list'),
