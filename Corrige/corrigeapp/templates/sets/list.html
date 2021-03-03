@@ -18,6 +18,8 @@
                         {% if request.user.profile.role == "ADMINISTRATOR" %} 
                         <th class="center" id="button">{% trans "Edit" %}</th>
                         <th class="center" id="delete">{% trans "Delete" %}</th>
+                        {% else %}
+                        <th class="center" id="activities">{% trans "Activities" %}</th>
                         {% endif %}
                         <th class="center" id="list">{% trans "List of students" %}</th>
                     </tr>

@@ -17,6 +17,16 @@ class FormService():
             raise ValidationError(
                 es_message)
 
+class SetService():
+
+    def is_owner(self, user: User, set_object: models.Set) -> bool:
+        res = False
+
+        if set_object.teacher.user == user:
+            res = True
+        
+        return res
+
 class UserService():
 
     def is_admin(self, user: User) -> bool:

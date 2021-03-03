@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-26 10:57+0100\n"
+"POT-Creation-Date: 2021-02-28 10:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,6 +27,47 @@ msgstr ""
 #: .\corrigeapp\local_settings.py:121
 msgid "Spanish"
 msgstr ""
+
+#: .\corrigeapp\templates\activities\create.html:15
+#: .\corrigeapp\templates\activities\list.html:12
+msgid "Date"
+msgstr "Fecha"
+
+#: .\corrigeapp\templates\activities\create.html:28
+#: .\corrigeapp\templates\activities\list.html:13
+#: .\corrigeapp\templates\competences\create.html:56
+msgid "Weight"
+msgstr "Peso"
+
+#: .\corrigeapp\templates\activities\create.html:36
+#: .\corrigeapp\templates\activities\list.html:15
+msgid "Recovery"
+msgstr "Recuperación"
+
+#: .\corrigeapp\templates\activities\create.html:44
+#: .\corrigeapp\templates\activities\list.html:14
+#: .\corrigeapp\templates\sets\create.html:73
+msgid "Evaluation"
+msgstr "Evaluación"
+
+#: .\corrigeapp\templates\activities\create.html:49
+#: .\corrigeapp\templates\administrators\create.html:66
+#: .\corrigeapp\templates\competences\create.html:68
+#: .\corrigeapp\templates\evaluations\update.html:130
+#: .\corrigeapp\templates\sets\create.html:79
+#: .\corrigeapp\templates\students\create.html:64
+#: .\corrigeapp\templates\subjects\create.html:61
+#: .\corrigeapp\templates\teachers\create.html:66
+msgid "Create"
+msgstr "Crear"
+
+#: .\corrigeapp\templates\activities\list.html:5
+msgid "List of activities"
+msgstr "Lista de actividades"
+
+#: .\corrigeapp\templates\activities\list.html:6
+msgid "Create activity"
+msgstr "Crear actividad"
 
 #: .\corrigeapp\templates\administrators\confirm_delete.html:8
 msgid "Are you sure about deleting the administrator "
@@ -52,7 +93,7 @@ msgstr "Cancelar"
 #: .\corrigeapp\templates\sets\delete.html:13
 #: .\corrigeapp\templates\sets\list.html:20
 #: .\corrigeapp\templates\students\delete.html:15
-#: .\corrigeapp\templates\students\list.html:16
+#: .\corrigeapp\templates\students\list.html:19
 #: .\corrigeapp\templates\subjects\delete.html:12
 #: .\corrigeapp\templates\subjects\list.html:20
 #: .\corrigeapp\templates\teachers\confirm_delete.html:12
@@ -62,7 +103,7 @@ msgstr "Borrar"
 
 #: .\corrigeapp\templates\administrators\create.html:22
 #: .\corrigeapp\templates\students\create.html:41
-#: .\corrigeapp\templates\students\list.html:14
+#: .\corrigeapp\templates\students\list.html:16
 #: .\corrigeapp\templates\students\list_assign_student.html:13
 #: .\corrigeapp\templates\students\list_assign_student.html:40
 #: .\corrigeapp\templates\teachers\create.html:22
@@ -77,16 +118,6 @@ msgstr "Fecha de nacimiento"
 msgid "Initials"
 msgstr "Iniciales"
 
-#: .\corrigeapp\templates\administrators\create.html:66
-#: .\corrigeapp\templates\competences\create.html:68
-#: .\corrigeapp\templates\evaluations\update.html:130
-#: .\corrigeapp\templates\sets\create.html:79
-#: .\corrigeapp\templates\students\create.html:64
-#: .\corrigeapp\templates\subjects\create.html:61
-#: .\corrigeapp\templates\teachers\create.html:66
-msgid "Create"
-msgstr "Crear"
-
 #: .\corrigeapp\templates\administrators\create.html:72
 #: .\corrigeapp\templates\competences\create.html:74
 #: .\corrigeapp\templates\competences\list.html:25
@@ -95,7 +126,7 @@ msgstr "Crear"
 #: .\corrigeapp\templates\sets\create.html:85
 #: .\corrigeapp\templates\sets\list.html:19
 #: .\corrigeapp\templates\students\create.html:70
-#: .\corrigeapp\templates\students\list.html:15
+#: .\corrigeapp\templates\students\list.html:18
 #: .\corrigeapp\templates\subjects\create.html:67
 #: .\corrigeapp\templates\subjects\list.html:19
 #: .\corrigeapp\templates\teachers\create.html:72
@@ -196,7 +227,7 @@ msgstr "Código"
 #: .\corrigeapp\templates\sets\create.html:19
 #: .\corrigeapp\templates\sets\list.html:14
 #: .\corrigeapp\templates\students\create.html:19
-#: .\corrigeapp\templates\students\list.html:13
+#: .\corrigeapp\templates\students\list.html:15
 #: .\corrigeapp\templates\students\list_assign_student.html:12
 #: .\corrigeapp\templates\students\list_assign_student.html:39
 #: .\corrigeapp\templates\subjects\competence_list.html:11
@@ -220,10 +251,6 @@ msgstr "Nombre"
 #: .\corrigeapp\templates\subjects\list_assign_subject.html:43
 msgid "Description"
 msgstr "Descripción"
-
-#: .\corrigeapp\templates\competences\create.html:56
-msgid "Weight"
-msgstr "Peso"
 
 #: .\corrigeapp\templates\competences\delete.html:8
 msgid "Are you sure about deleting the competence "
@@ -387,10 +414,6 @@ msgstr "Línea"
 msgid "Teacher"
 msgstr "Profesor"
 
-#: .\corrigeapp\templates\sets\create.html:73
-msgid "Evaluation"
-msgstr "Evaluación"
-
 #: .\corrigeapp\templates\sets\delete.html:8
 msgid "Are you sure about deleting the set "
 msgstr "¿Estás seguro de que quieres eliminar el grupo "
@@ -404,12 +427,16 @@ msgid "Create set"
 msgstr "Crear grupo"
 
 #: .\corrigeapp\templates\sets\list.html:22
+msgid "Activities"
+msgstr "Actividades"
+
+#: .\corrigeapp\templates\sets\list.html:24
 #: .\corrigeapp\templates\students\list.html:5
 msgid "List of students"
 msgstr "Lista de estudiantes"
 
 #: .\corrigeapp\templates\students\create.html:28
-#: .\corrigeapp\templates\students\list.html:12
+#: .\corrigeapp\templates\students\list.html:14
 #: .\corrigeapp\templates\students\list_assign_student.html:11
 #: .\corrigeapp\templates\students\list_assign_student.html:38
 #: .\corrigeapp\templates\user_name_form.html:16
