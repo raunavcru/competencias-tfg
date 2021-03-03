@@ -28,3 +28,60 @@
     width: 100%;
     height: 844px;
 }
+#nav {
+	z-index: 100 !important;
+}
+/* IPHONE 6/7/8 PLUS */
+
+@media only screen and (min-width: 414px) and (max-width: 736px) {
+	.date-res {
+		margin-top: 45% !important;
+		margin-left: 12% !important;
+	}
+	.separated7 {
+		margin-left: 12% !important;
+		margin-top: 78% !important;
+	}
+	.separated2 {
+		margin-left: 12% !important;
+		margin-top: 13% !important;
+	}
+	.section-detail2 {
+		margin-top: -235% !important;
+		margin-bottom: -170% !important;
+	}
+	.map-detail iframe {
+		width: 370px !important;
+		height: 240px !important;
+		border: 0;
+		margin: 3%;
+	}
+	.section-detail3 {
+		height: 900px;
+		width: 100%;
+		margin-top: -54% !important;
+		margin-bottom: -35% !important;
+	}
+	#title-delete-comi {
+		font-weight: bold;
+		color: #686969;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		text-align: center;
+		width: 285px;
+		margin-bottom: -58% !important;
+		margin-left: 7% !important;
+	}
+	#panel {
+		margin-left: 41px;
+		margin-bottom: 75px;
+	}
+	.name-host-rating {
+			
+		margin-top: 18%;
+		margin-bottom: 115px;
+	
+	}
+}
