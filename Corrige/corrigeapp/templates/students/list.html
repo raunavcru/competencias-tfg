@@ -4,7 +4,7 @@
 {% block content %} 
     <h4 class="centered">{% trans "List of students" %}</h4>
     {% if request.user.profile.role == "ADMINISTRATOR" %} 
-        <a style="border-radius:5px" href="{% url 'students_create' %}" class="right dropdown-trigger"  ><em class="material-icons">person_add</em></a>
+        <a style="border-radius:5px" href="{% url 'students_create'%}" class="right teal lighten-2 waves-effect waves-light btn-small"><i class="material-icons right">person_add</i>{% trans "Create Student" %}</a>
     {% endif %}
         <table class="highlight">
             <caption></caption>
@@ -36,6 +36,8 @@
             {% endfor %}
         </table>
 {% include 'paginate.html' %}
+<a onClick="javascript:history.go(-1);" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
+
 {% endblock %}
 
   <!-- Modal Trigger -->

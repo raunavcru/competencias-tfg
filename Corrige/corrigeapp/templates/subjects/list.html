@@ -4,7 +4,7 @@
 {% block content %} 
     <h4 class="centered">{% trans "List of subjects" %}</h4>
     {% if request.user.profile.role == "ADMINISTRATOR" %} 
-        <a style="border-radius:5px" href="{% url 'subjects_create' %}" class="right teal lighten-2 waves-effect waves-light btn-small">{% trans "Create subject" %}</a>
+        <a style="border-radius:5px" href="{% url 'subjects_create' %}" class="right teal lighten-2 waves-effect waves-light btn-small"><i class="material-icons right">add</i>{% trans "Create subject" %}</a>
     {% endif %}
         <table class="highlight">
             <caption></caption>
@@ -43,6 +43,7 @@
         </table>
 
 {% include 'paginate.html' %}
+<a onClick="javascript:history.go(-1);" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
 {% endblock %}
 
   <!-- Modal Trigger -->

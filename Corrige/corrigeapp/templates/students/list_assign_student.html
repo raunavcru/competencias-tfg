@@ -28,6 +28,8 @@
             {% endfor %}
         </table>
     {% include 'paginate.html' %}
+    <a onClick="javascript:history.go(-1);" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
+
 
     <h4 class="centered">{% trans "List of not assigned students" %}</h4>
         <table class="highlight">
