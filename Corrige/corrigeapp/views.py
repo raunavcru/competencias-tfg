@@ -63,6 +63,42 @@ class ActivityCreateView(generic.CreateView):
         else:
             return redirect('/')
         
+@method_decorator(login_required, name='dispatch')
+class ActivityDeleteView(generic.DeleteView):
+    model = models.Activity
+    template_name = 'activities/delete.html'
+
+    def get(self, request, *args, **kwargs):
+        activity_pk = self.kwargs.get('pk')
+        activity_object = models.Activity.objects.get(pk=activity_pk)
+        set_object = activity_object.set_activity
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
+            return super(ActivityDeleteView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+    
+    def get_context_data(self, **kwargs):
+        activity_pk = self.kwargs.get('pk')
+        activity_object = models.Activity.objects.get(pk=activity_pk)
+        set_object = activity_object.set_activity
+        set_pk = set_object.pk
+        context = super(ActivityDeleteView, self).get_context_data(**kwargs)
+        context['set_pk'] = set_pk
+        return context
+
+    def post(self, request, *args, **kwargs):
+        activity_pk = self.kwargs.get('pk')
+        activity_object = models.Activity.objects.get(pk=activity_pk)
+        set_object = activity_object.set_activity
+        set_pk = set_object.pk
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
+            activity_pk = self.kwargs.get('pk')
+            activity_object = models.Activity.objects.get(pk=activity_pk)
+            activity_object.delete()
+
+            return redirect('activities_list', pk=set_pk)
+        else:
+            return redirect('/')
 
 @method_decorator(login_required, name='dispatch')
 class ActivitiesListView(generic.ListView):

@@ -14,6 +14,7 @@
                         <th id="evaluation">{% trans "Evaluation" %}</th>
                         <th class="center" id="is_recovery">{% trans "Recovery" %}</th>
                         <th class="center" id="button">{% trans "Edit" %}</th>
+                        <th class="center" id="delete">{% trans "Delete" %}</th>
                     </tr>
                 </thead>
             {% for object in activities_list %}
@@ -31,12 +32,14 @@
                                 {% endif %}
                             </td>
                             <td class="center dropdown-trigger" type="button" onclick="location.href='{% url 'activities_update' object.pk %}'"><em class="material-icons" style="color:#29b6f6">create</em></td>
+                            <td class="center dropdown-trigger" onclick="location.href='{% url 'activities_delete' object.pk %}'"><em class="material-icons" style="color:#e53935">delete</em></td>
 
                         </tr>
                     </tbody>
             {% endfor %}
         </table>
 {% include 'paginate.html' %}
+    <a onClick="javascript:history.go(-1);" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
 {% endblock %}
 
   <!-- Modal Trigger -->
