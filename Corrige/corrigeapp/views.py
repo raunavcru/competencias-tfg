@@ -165,7 +165,7 @@ class ActivityUpdateView(generic.UpdateView):
         set_object = activity_object.set_activity
         set_pk = set_object.pk
         if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
-            activity = form.save()
+            form.save()
 
             return redirect('activities_list', pk=set_pk)
         else:
