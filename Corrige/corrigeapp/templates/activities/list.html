@@ -13,6 +13,7 @@
                         <th id="weight">{% trans "Weight" %}</th>
                         <th id="evaluation">{% trans "Evaluation" %}</th>
                         <th class="center" id="is_recovery">{% trans "Recovery" %}</th>
+                        <th class="center" id="button">{% trans "Edit" %}</th>
                     </tr>
                 </thead>
             {% for object in activities_list %}
@@ -29,6 +30,7 @@
                                     <em class="material-icons" style="color:#e53935">close</em>
                                 {% endif %}
                             </td>
+                            <td class="center dropdown-trigger" type="button" onclick="location.href='{% url 'activities_update' object.pk %}'"><em class="material-icons" style="color:#29b6f6">create</em></td>
 
                         </tr>
                     </tbody>
