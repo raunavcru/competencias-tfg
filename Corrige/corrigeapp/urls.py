@@ -7,7 +7,9 @@ urlpatterns = [
     path('404', views.not_impl.as_view(), name = '404'),
 
     path('activities/<int:pk>/create', views.ActivityCreateView.as_view(), name = 'activities_create'),
+    path('activities/<int:pk>/update', views.ActivityDeleteView.as_view(), name = 'activities_delete'),
     path('activities/<int:pk>/list', views.ActivitiesListView.as_view(), name = 'activities_list'),
+    path('activities/<int:pk>/update', views.ActivityUpdateView.as_view(), name = 'activities_update'),
 
     path('administrators/create', views.AdministratorCreateView.as_view(), name = 'administrators_create'),
     path('administrators/<int:pk>/delete', views.AdministratorDeleteView.as_view(), name='administrators_delete'),
