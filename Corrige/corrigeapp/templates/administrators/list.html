@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load i18n %}
-{% block content %} 
+{% block content %}
+<div class="container">
     <h4 class="centered">{% trans "List of administrator" %}</h4>
     <a style="border-radius:5px" href="{% url 'administrators_create'%}" class="right teal lighten-2 waves-effect waves-light btn-small"><i class="material-icons right">person_add</i>{% trans "Create Administrator" %}</a>
         <table class="highlight">
