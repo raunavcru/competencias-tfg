@@ -3,16 +3,25 @@
 {% load i18n %}
 {% block content %}
 
-  <div class="center"> 
-      <img class="logo centered" src="{% static 'images/rosa.png' %}" alt="corrige" width="400" height="200">  
+  <div class"full-slider">
+      <div class="carousel carousel-slider">
+          <img class="responsive-img" alt="parallax" src="static/images/Sin título-2.png">
+      </div>
+  </div>
+  <div class="centrado">
+    <h3>{% trans "Welcome" %} {{user.username}}</h3>
   </div>
 
-  <div class="centrado">
-  <h3>{% trans "Welcome" %} {{user.username}}</h3>
-  </div>
 
 
 <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.parallax');
+    var instances = M.Parallax.init(elems, options);
+  });
+
+  // Or with jQuery
+
   $(document).ready(function(){
     $('.parallax').parallax();
   });
