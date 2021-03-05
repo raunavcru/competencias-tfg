@@ -2,8 +2,8 @@
 {% load static %}
 {% load i18n %}
 {% block content %} 
-    <h4 class="centered">{% trans "List of exercices" %}</h4>
-    
+    <h4 class="centered">{% trans "List of exercises" %}</h4>
+    <a style="border-radius:5px" href="{% url 'exercises_create' activity_pk %}" class="right teal lighten-2 waves-effect waves-light btn-small">{% trans "Create exercise" %}</a>
         <table class="highlight">
             <caption></caption>
                 <thead>
@@ -14,7 +14,7 @@
                         <th class="center" id="delete">{% trans "Delete" %}</th>
                     </tr>
                 </thead>
-            {% for object in exercices_list %}
+            {% for object in exercises_list %}
                     <tbody>
                         <tr class="center">
                             <td>{{object.weight}}</td>

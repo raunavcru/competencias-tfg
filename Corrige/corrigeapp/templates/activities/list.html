@@ -32,7 +32,7 @@
                                     <em class="material-icons" style="color:#e53935">close</em>
                                 {% endif %}
                             </td>
-                            <td class="center dropdown-trigger" onclick="location.href='{% url 'exercices_list' object.pk %}'"><em class="material-icons" style="color:#e53935">rate_review</em></td>
+                            <td class="center dropdown-trigger" onclick="location.href='{% url 'exercises_list' object.pk %}'"><em class="material-icons" style="color:#e53935">rate_review</em></td>
                             <td class="center dropdown-trigger" type="button" onclick="location.href='{% url 'activities_update' object.pk %}'"><em class="material-icons" style="color:#29b6f6">create</em></td>
                             <td class="center dropdown-trigger" onclick="location.href='{% url 'activities_delete' object.pk %}'"><em class="material-icons" style="color:#e53935">delete</em></td>
 
@@ -41,7 +41,7 @@
             {% endfor %}
         </table>
 {% include 'paginate.html' %}
-    <a onClick="javascript:history.go(-1);" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
+    <a onclick="location.href='{% url 'my_sets_list' %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
 {% endblock %}
 
   <!-- Modal Trigger -->

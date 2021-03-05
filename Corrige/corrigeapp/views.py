@@ -509,11 +509,43 @@ class CompetenceUpdateView(generic.UpdateView):
             return redirect('competences_list1')
 
 # Exercices
+class ExerciseCreateView(generic.CreateView):
+    form_class = forms.ExerciseUpdateForm
+    template_name = 'exercises/create.html'
+
+    def get(self, request, *args, **kwargs):
+        activity_pk = self.kwargs.get('pk')
+        activity_object = models.Activity.objects.get(pk=activity_pk)
+        set_object = activity_object.set_activity
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
+            return super(ExerciseCreateView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        activity_pk = self.kwargs.get('pk')
+        context = super(ExerciseCreateView, self).get_context_data(**kwargs)
+        context['activity_pk'] = activity_pk
+        return context
+
+    def form_valid(self, form):
+        activity_pk = self.kwargs.get('pk')
+        activity_object = models.Activity.objects.get(pk=activity_pk)
+        set_object = activity_object.set_activity
+        if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+            exercice = form.save(commit=False)
+            exercice.activity = activity_object
+            exercice.save()
+
+            return redirect('exercises_list', pk=activity_pk)
+        else:
+            return redirect('/')
+
 @method_decorator(login_required, name='dispatch')
-class ExercicesListView(generic.ListView):
+class ExercisesListView(generic.ListView):
     model = models.Exercise
-    template_name = 'exercices/list.html'
-    context_object_name = 'exercices_list'
+    template_name = 'exercises/list.html'
+    context_object_name = 'exercises_list'
     paginate_by = 5
 
     def get(self, request, *args, **kwargs):
@@ -521,15 +553,15 @@ class ExercicesListView(generic.ListView):
         activity_object = models.Activity.objects.get(pk=activity_pk)
         set_object = activity_object.set_activity
         if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
-            return super(ExercicesListView, self).get(self, request, *args, **kwargs)
+            return super(ExercisesListView, self).get(self, request, *args, **kwargs)
         else:
             return redirect('/')
 
     def get_context_data(self, **kwargs):
         activity_pk = self.kwargs.get('pk')
         activity_object = models.Activity.objects.get(pk=activity_pk)
-        set_pk = activity_object.set_activity
-        context = super(ExercicesListView, self).get_context_data(**kwargs)
+        set_pk = activity_object.set_activity.pk
+        context = super(ExercisesListView, self).get_context_data(**kwargs)
         context['activity_pk'] = activity_pk
         context['set_pk'] = set_pk
         return context
