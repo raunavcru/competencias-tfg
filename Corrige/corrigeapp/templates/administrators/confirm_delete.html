@@ -8,7 +8,7 @@
         <h1 class="center title-delete flow-text">{% trans "Are you sure about deleting the administrator " %}<a>{{object.user.first_name}} {{object.user.last_name}}</a>?</h1>
 
         <div class="center">
-            <a style="border-radius:5px; background-color:#BBBBBB" href="{% url 'teachers_list'%}" class="waves-effect waves-light btn-large button-delete">{% trans "Cancel" %}</a>
+            <a style="border-radius:5px; background-color:#BBBBBB" href="{% url 'administrators_list'%}" class="waves-effect waves-light btn-large button-delete">{% trans "Cancel" %}</a>
             <button style="border-radius:5px; background-color:#f05060" class="waves-effect waves-light btn-large button-delete delete-yes" type="submit">{% trans "Delete" %}</button>
         </div>
     </form>
