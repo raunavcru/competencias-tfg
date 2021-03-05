@@ -508,6 +508,38 @@ class CompetenceUpdateView(generic.UpdateView):
         else:
             return redirect('competences_list1')
 
+# Exercices
+@method_decorator(login_required, name='dispatch')
+class ExercicesListView(generic.ListView):
+    model = models.Exercise
+    template_name = 'exercices/list.html'
+    context_object_name = 'exercices_list'
+    paginate_by = 5
+
+    def get(self, request, *args, **kwargs):
+        activity_pk = self.kwargs.get('pk')
+        activity_object = models.Activity.objects.get(pk=activity_pk)
+        set_object = activity_object.set_activity
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
+            return super(ExercicesListView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        activity_pk = self.kwargs.get('pk')
+        activity_object = models.Activity.objects.get(pk=activity_pk)
+        set_pk = activity_object.set_activity
+        context = super(ExercicesListView, self).get_context_data(**kwargs)
+        context['activity_pk'] = activity_pk
+        context['set_pk'] = set_pk
+        return context
+
+    def get_queryset(self):
+        activity_pk = self.kwargs.get('pk')
+        activity_object = models.Activity.objects.get(pk=activity_pk)
+        queryset = models.Exercise.objects.filter(activity=activity_object).order_by('statement')
+        return queryset
+
 # Evaluations 
 @method_decorator(login_required, name='dispatch')
 class EvaluationCreateView(generic.CreateView):
