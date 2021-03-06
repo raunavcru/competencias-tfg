@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <a onclick="location.href='{% url 'exercises_list' activity_pk %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
+                        <a onclick="location.href='{% url 'exercises_list' type=1 pk=activity_pk %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
                     {% if update %}
                         <button class="btn waves-effect right" type="submit" name="action">{% trans "Edit" %}
                             <i class="large material-icons right"><i>send</i></i>

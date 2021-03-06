@@ -62,7 +62,22 @@ class ActivityCreateView(generic.CreateView):
             return redirect('activities_list', pk=set_pk)
         else:
             return redirect('/')
-        
+
+@method_decorator(login_required, name='dispatch')
+class ActivityCopyView(generic.TemplateView):   
+
+    def get(self, request, *args, **kwargs):
+        activity_pk = self.kwargs.get('pk')
+        activity_object = models.Activity.objects.get(pk=activity_pk)
+        set_pk = self.kwargs.get('id')
+        set_object = models.Set.objects.get(pk=set_pk)
+        if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object) and services.SetService().is_owner(user=self.request.user, set_object=activity_object.set_activity):
+            copy = models.Activity.objects.create(date=activity_object.date, weight=activity_object.weight, is_recovery=activity_object.is_recovery, set_activity=set_object, evaluation=set_object.evaluation, subject=set_object.subject)
+            copy.save()
+            return redirect('activities_list', pk=set_pk)
+        else:
+            return redirect('/')
+
 @method_decorator(login_required, name='dispatch')
 class ActivityDeleteView(generic.DeleteView):
     model = models.Activity
@@ -119,12 +134,38 @@ class ActivitiesListView(generic.ListView):
         set_pk = self.kwargs.get('pk')
         context = super(ActivitiesListView, self).get_context_data(**kwargs)
         context['set_pk'] = set_pk
+        context['no_copy_list'] = True
         return context
 
     def get_queryset(self):
         set_pk = self.kwargs.get('pk')
         set_object = models.Set.objects.get(pk=set_pk)
         queryset = models.Activity.objects.filter(set_activity=set_object).order_by('date')
+        return queryset
+
+@method_decorator(login_required, name='dispatch')
+class ActivitiesListCopyView(generic.ListView):
+    model = models.Activity
+    template_name = 'activities/list.html'
+    context_object_name = 'activities_list'
+    paginate_by = 5
+
+    def get(self, request, *args, **kwargs):
+        set_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_pk)
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
+            return super(ActivitiesListCopyView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+    
+    def get_context_data(self, **kwargs):
+        set_pk = self.kwargs.get('pk')
+        context = super(ActivitiesListCopyView, self).get_context_data(**kwargs)
+        context['set_pk'] = set_pk
+        return context
+
+    def get_queryset(self):
+        queryset = models.Activity.objects.filter(set_activity__teacher__user=self.request.user).order_by('date')
         return queryset
 
 @method_decorator(login_required, name='dispatch')
@@ -594,12 +635,14 @@ class ExercisesListView(generic.ListView):
             return redirect('/')
 
     def get_context_data(self, **kwargs):
+        type_url = self.kwargs.get('type')
         activity_pk = self.kwargs.get('pk')
         activity_object = models.Activity.objects.get(pk=activity_pk)
         set_pk = activity_object.set_activity.pk
         context = super(ExercisesListView, self).get_context_data(**kwargs)
         context['activity_pk'] = activity_pk
         context['set_pk'] = set_pk
+        context['type_url'] = type_url
         return context
 
     def get_queryset(self):

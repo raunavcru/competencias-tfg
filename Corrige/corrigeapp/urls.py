@@ -9,7 +9,9 @@ urlpatterns = [
     path('activities/<int:pk>/create', views.ActivityCreateView.as_view(), name = 'activities_create'),
     path('activities/<int:pk>/update', views.ActivityDeleteView.as_view(), name = 'activities_delete'),
     path('activities/<int:pk>/list', views.ActivitiesListView.as_view(), name = 'activities_list'),
+    path('activities/<int:pk>/list/copy', views.ActivitiesListCopyView.as_view(), name = 'activities_list_copy'),
     path('activities/<int:pk>/delete', views.ActivityUpdateView.as_view(), name = 'activities_update'),
+    path('activities/<int:pk>/<int:id>/copy', views.ActivityCopyView.as_view(), name = 'activities_copy'),
 
     path('administrators/create', views.AdministratorCreateView.as_view(), name = 'administrators_create'),
     path('administrators/<int:pk>/delete', views.AdministratorDeleteView.as_view(), name='administrators_delete'),
@@ -27,8 +29,8 @@ urlpatterns = [
 
     path('exercises/<int:pk>/create', views.ExerciseCreateView.as_view(), name = 'exercises_create'),
     path('exercises/<int:pk>/delete', views.ExerciseDeleteView.as_view(), name = 'exercises_delete'),
-    path('exercises/<int:pk>/list', views.ExercisesListView.as_view(), name = 'exercises_list'),
     path('exercises/<int:pk>/update', views.ExerciseUpdateView.as_view(), name = 'exercises_update'),
+    path('exercises/<int:type>/<int:pk>/list', views.ExercisesListView.as_view(), name = 'exercises_list'),
 
     path('evaluations/create', views.EvaluationCreateView.as_view(), name = 'evaluations_create'),
     path('evaluations/list', views.EvaluationsListView.as_view(), name = 'evaluations_list'),
