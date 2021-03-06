@@ -572,6 +572,45 @@ class ExercisesListView(generic.ListView):
         queryset = models.Exercise.objects.filter(activity=activity_object).order_by('statement')
         return queryset
 
+@method_decorator(login_required, name='dispatch')
+class ExerciseUpdateView(generic.UpdateView):
+    model = models.Exercise
+    form_class = forms.ExerciseUpdateForm
+    template_name = 'exercises/create.html'
+
+    def get(self, request, *args, **kwargs):
+        exercise_pk = self.kwargs.get('pk')
+        exercise_object = models.Exercise.objects.get(pk=exercise_pk)
+        activity_object = models.Activity.objects.get(pk=exercise_object.activity.pk)
+        set_object = activity_object.set_activity
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
+            return super(ExerciseUpdateView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        exercise_pk = self.kwargs.get('pk')
+        exercise_object = models.Exercise.objects.get(pk=exercise_pk)
+        activity_object = models.Activity.objects.get(pk=exercise_object.activity.pk)
+        context = super(ExerciseUpdateView, self).get_context_data(**kwargs)
+        context['exercise_pk'] = exercise_pk
+        context['activity_pk'] = activity_object.pk
+        context['update'] = True
+        return context
+
+    def form_valid(self, form):
+        exercise_pk = self.kwargs.get('pk')
+        exercise_object = models.Exercise.objects.get(pk=exercise_pk)
+        activity_object = models.Activity.objects.get(pk=exercise_object.activity.pk)
+        set_object = activity_object.set_activity
+        set_pk = set_object.pk
+        if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+            form.save()
+
+            return redirect('exercises_list', pk=activity_object.pk)
+        else:
+            return redirect('/')
+
 # Evaluations 
 @method_decorator(login_required, name='dispatch')
 class EvaluationCreateView(generic.CreateView):
