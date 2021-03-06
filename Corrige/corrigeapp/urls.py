@@ -26,6 +26,7 @@ urlpatterns = [
     path('competences/<int:pk>/create', views.CompetenceCreateChildView.as_view(), name='competences_relation2'),
 
     path('exercises/<int:pk>/create', views.ExerciseCreateView.as_view(), name = 'exercises_create'),
+    path('exercises/<int:pk>/delete', views.ExerciseDeleteView.as_view(), name = 'exercises_delete'),
     path('exercises/<int:pk>/list', views.ExercisesListView.as_view(), name = 'exercises_list'),
     path('exercises/<int:pk>/update', views.ExerciseUpdateView.as_view(), name = 'exercises_update'),
 

@@ -542,6 +542,42 @@ class ExerciseCreateView(generic.CreateView):
             return redirect('/')
 
 @method_decorator(login_required, name='dispatch')
+class ExerciseDeleteView(generic.DeleteView):
+    model = models.Exercise
+    template_name = 'exercises/delete.html'
+
+    def get(self, request, *args, **kwargs):
+        exercise_pk = self.kwargs.get('pk')
+        exercise_object = models.Exercise.objects.get(pk=exercise_pk)
+        activity_object = models.Activity.objects.get(pk=exercise_object.activity.pk)
+        set_object = activity_object.set_activity
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
+            return super(ExerciseDeleteView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        exercise_pk = self.kwargs.get('pk')
+        exercise_object = models.Exercise.objects.get(pk=exercise_pk)
+        activity_object = models.Activity.objects.get(pk=exercise_object.activity.pk)
+        context = super(ExerciseDeleteView, self).get_context_data(**kwargs)
+        context['activity_pk'] = activity_object.pk
+        return context
+
+    def post(self, request, *args, **kwargs):
+        exercise_pk = self.kwargs.get('pk')
+        exercise_object = models.Exercise.objects.get(pk=exercise_pk)
+        activity_object = models.Activity.objects.get(pk=exercise_object.activity.pk)
+        set_object = activity_object.set_activity
+        set_pk = set_object.pk
+        if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+            exercise_object.delete()
+
+            return redirect('exercises_list', pk=activity_object.pk)
+        else:
+            return redirect('/')
+
+@method_decorator(login_required, name='dispatch')
 class ExercisesListView(generic.ListView):
     model = models.Exercise
     template_name = 'exercises/list.html'
