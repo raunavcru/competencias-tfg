@@ -6,9 +6,9 @@
         <div class="grid-example col s11 offset-s1">
             <div class="center-form">
             {% if update %}
-                <form class="col s12" id="form-create-students" method="post" action="{% url 'activities_update' object.pk%}">
+                <form class="col s12" id="form-create-students" method="post" action="{% url 'activities_update' object.pk %}">
             {% else %}
-                <form class="col s12" id="form-create-students" method="post" action="{% url 'activities_create' set_pk%}">
+                <form class="col s12" id="form-create-students" method="post" action="{% url 'activities_create' set_pk %}">
             {% endif %}
                     {% csrf_token %}
                     <div class="row">
@@ -50,9 +50,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <button onClick="javascript:history.go(-1);" class="waves-effect waves-light btn pink lighten-2" style="margin-bottom:15px;" type="submit" name="action">{% trans "Back" %}
-                            <i class="material-icons left">arrow_back</i>
-                        </button>
+                        <a onclick="location.href='{% url 'activities_list' set_pk %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
                     {% if update %}
                         <button class="btn waves-effect right" type="submit" name="action">{% trans "Edit" %}
                             <i class="large material-icons right"><i>send</i></i>
