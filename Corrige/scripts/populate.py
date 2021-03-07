@@ -1092,7 +1092,7 @@ def seed_sets():
                 'line': 'A',
                 'teacher': 2,
                 'subject': 3,
-                'evaluation': 1,
+                'evaluation': 9,
                 'students': students,
             }
     }
@@ -1111,7 +1111,7 @@ def seed_sets():
                 'line': 'A',
                 'teacher': 2,
                 'subject': 2,
-                'evaluation': 1,
+                'evaluation': 5,
                 'students': students,
             }
     }
@@ -1130,7 +1130,7 @@ def seed_sets():
                 'line': 'A',
                 'teacher': 2,
                 'subject': 4,
-                'evaluation': 1,
+                'evaluation': 13,
                 'students': students,
             }
     }

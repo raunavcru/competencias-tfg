@@ -39,9 +39,12 @@
 				</div>
 			</div>
 			<div class="row" style="padding-bottom: 20px; padding-right: 20px;">
-					<button class="btn waves-effect right" type="submit" name="action">{% trans "Enter" %}
-						<i class="large material-icons right"><i >send</i></i>
-					</button>
+				<div style="padding-left:20px;">
+					<a onclick="location.href='{% url 'home' %}'" class="waves-effect waves-light btn pink lighten-2 left" style="margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
+				</div>
+				<button class="btn waves-effect right" type="submit" name="action">{% trans "Enter" %}
+					<i class="large material-icons right"><i >send</i></i>
+				</button>
 			</div>
 		</div>
 	</form>
