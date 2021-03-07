@@ -578,7 +578,7 @@ class ExerciseCreateView(generic.CreateView):
             exercice.activity = activity_object
             exercice.save()
 
-            return redirect('exercises_list', pk=activity_pk)
+            return redirect('exercises_list', type=1, pk=activity_pk)
         else:
             return redirect('/')
 
@@ -613,7 +613,7 @@ class ExerciseDeleteView(generic.DeleteView):
         if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
             exercise_object.delete()
 
-            return redirect('exercises_list', pk=activity_object.pk)
+            return redirect('exercises_list', type=1, pk=activity_object.pk)
         else:
             return redirect('/')
 
@@ -670,10 +670,14 @@ class ExerciseUpdateView(generic.UpdateView):
         exercise_pk = self.kwargs.get('pk')
         exercise_object = models.Exercise.objects.get(pk=exercise_pk)
         activity_object = models.Activity.objects.get(pk=exercise_object.activity.pk)
+        list_exercise_competence = models.Exercise_competence.objects.filter(exercise=exercise_object)
+        list_competences_unassigned = models.Competence.objects.filter(level=1, competences=activity_object.set_activity.subject).exclude(competence_exercise_competence__exercise=exercise_object).order_by('code')
         context = super(ExerciseUpdateView, self).get_context_data(**kwargs)
         context['exercise_pk'] = exercise_pk
         context['activity_pk'] = activity_object.pk
         context['update'] = True
+        context['list_competences_assigned'] = list_exercise_competence
+        context['list_competences_unassigned'] = list_competences_unassigned
         return context
 
     def form_valid(self, form):
@@ -684,7 +688,7 @@ class ExerciseUpdateView(generic.UpdateView):
         if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
             form.save()
 
-            return redirect('exercises_list', pk=activity_object.pk)
+            return redirect('exercises_list', type=1, pk=activity_object.pk)
         else:
             return redirect('/')
 
