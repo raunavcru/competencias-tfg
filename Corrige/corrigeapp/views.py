@@ -610,7 +610,6 @@ class ExerciseDeleteView(generic.DeleteView):
         exercise_object = models.Exercise.objects.get(pk=exercise_pk)
         activity_object = models.Activity.objects.get(pk=exercise_object.activity.pk)
         set_object = activity_object.set_activity
-        set_pk = set_object.pk
         if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
             exercise_object.delete()
 
@@ -682,7 +681,6 @@ class ExerciseUpdateView(generic.UpdateView):
         exercise_object = models.Exercise.objects.get(pk=exercise_pk)
         activity_object = models.Activity.objects.get(pk=exercise_object.activity.pk)
         set_object = activity_object.set_activity
-        set_pk = set_object.pk
         if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
             form.save()
 
