@@ -6,24 +6,12 @@
         <div class="grid-example col s11 offset-s1">
             <div class="center-form">
             {% if update %}
-                <form class="col s12" id="form-create-students" method="post" action="{% url 'activities_update' object.pk %}">
+                <form class="col s12" id="form-create-exercises" method="post" action="{% url 'exercises_update' exercise_pk %}">
             {% else %}
-                <form class="col s12" id="form-create-students" method="post" action="{% url 'activities_create' set_pk %}">
+                <form class="col s12" id="form-create-exercises" method="post" action="{% url 'exercises_create' activity_pk %}">
             {% endif %}
                     {% csrf_token %}
-                    <div class="row">
-                        <div class="grid-example col s2">
-                        </div>
-                        <div class="grid-example col s8">
-                            <div class="validate-input">
-                                <label>{% trans "Date" %}</label>
-                                {{form.date}}
-                                <div class="form-errors">
-                                    {{ form.date.errors }}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="row">
                         <div class="grid-example col s2">
                         </div>
@@ -36,21 +24,22 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="grid-example col s5">
-                            <label>{% trans "Recovery" %}</label>
-                            {{form.is_recovery}}
-                        </div>
                     </div>
                     <div class="row">
                         <div class="grid-example col s2">
                         </div>
                         <div class="grid-example col s8">
-                            <label>{% trans "Evaluation" %}</label>
-                                {{form.evaluation}}
+                            <div class="validate-input">
+                                <label>{% trans "Statement" %}</label>
+                                {{form.statement}}
+                                <div class="form-errors">
+                                    {{ form.statement.errors }}
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
-                        <a onclick="location.href='{% url 'activities_list' set_pk %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
+                        <a onclick="location.href='{% url 'exercises_list' type=1 pk=activity_pk %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
                     {% if update %}
                         <button class="btn waves-effect right" type="submit" name="action">{% trans "Edit" %}
                             <i class="large material-icons right"><i>send</i></i>

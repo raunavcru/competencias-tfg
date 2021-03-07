@@ -43,7 +43,7 @@
         </table>
 
 {% include 'paginate.html' %}
-<a onClick="javascript:history.go(-1);" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
+<a onclick="location.href='{% url 'home' %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
 {% endblock %}
 
   <!-- Modal Trigger -->
