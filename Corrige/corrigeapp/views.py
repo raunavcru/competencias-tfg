@@ -550,6 +550,7 @@ class CompetenceUpdateView(generic.UpdateView):
             return redirect('competences_list1')
 
 # Exercices
+@method_decorator(login_required, name='dispatch')
 class ExerciseCreateView(generic.CreateView):
     form_class = forms.ExerciseUpdateForm
     template_name = 'exercises/create.html'
@@ -678,6 +679,7 @@ class ExerciseUpdateView(generic.UpdateView):
         context['update'] = True
         context['list_competences_assigned'] = list_exercise_competence
         context['list_competences_unassigned'] = list_competences_unassigned
+        context['exercise_competence_form'] = forms.ExerciseCompetenceUpdateForm
         return context
 
     def form_valid(self, form):
@@ -691,6 +693,36 @@ class ExerciseUpdateView(generic.UpdateView):
             return redirect('exercises_list', type=1, pk=activity_object.pk)
         else:
             return redirect('/')
+
+# Exercices_competence
+@method_decorator(login_required, name='dispatch')
+class ExerciseCompetenceCreateView(generic.CreateView):
+    form_class = forms.ExerciseCompetenceUpdateForm
+    template_name = 'exercises/create.html'
+
+    def get(self, request, *args, **kwargs):
+        return redirect('/')
+
+    def form_valid(self, form):
+        exercise_pk = self.kwargs.get('pk')
+        exercise_object = models.Exercise.objects.get(pk=exercise_pk)
+        competence_pk = self.kwargs.get('id')
+        competence_object = models.Competence.objects.get(pk=competence_pk)
+        activity_object = models.Activity.objects.get(pk=exercise_object.activity.pk)
+        set_object = activity_object.set_activity
+        if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+            exercice_competence = form.save(commit=False)
+            exercice_competence.exercise = exercise_object
+            exercice_competence.competence = competence_object
+            exercice_competence.save()
+
+            return redirect('exercises_update', pk=exercise_pk)
+        else:
+            return redirect('/')
+    
+    def form_invalid(self, form):
+        exercise_pk = self.kwargs.get('pk')
+        return redirect('exercises_update', pk=exercise_pk)
 
 # Evaluations 
 @method_decorator(login_required, name='dispatch')
