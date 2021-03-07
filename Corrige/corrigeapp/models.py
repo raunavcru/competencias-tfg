@@ -54,7 +54,7 @@ class Competence(Common):
 
     level = models.PositiveIntegerField('level')
 
-    parent = models.ManyToManyField('self', "competences", verbose_name=("competences_parent"), blank=True)
+    parent = models.ManyToManyField('self', "competence_parent", symmetrical=False, verbose_name=("competences_parent"), blank=True)
 
     class Meta:
         verbose_name = 'Competence'

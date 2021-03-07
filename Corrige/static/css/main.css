@@ -19,12 +19,12 @@
 }
 
 #fondoPantalla{
-    background-image: url('/static/images/fondos 3.png');
+    background-image: url('/static/images/fondo 4.png');
     background-position: center center;
     background-attachment: fixed;
 }
-#fondoHome{
-    background-image: url('/static/images/fondo Pantalla.png');
-    width: 100%;
-    height: 844px;
+#fondoPantallaLista{
+    background-image: url('/static/images/fondo prueba.png');
+    background-position: center center;
+    background-attachment: fixed;
 }
