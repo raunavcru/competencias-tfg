@@ -14,6 +14,7 @@ from . import services
 
 COMPETENCE_LIST = 'competences/list.html'
 COMPETENCE_CREATE = "competences/create.html"
+EXERCISE_CREATE = 'exercises/create.html'
 
 # Generic
 class HomeView(generic.TemplateView):
@@ -553,7 +554,7 @@ class CompetenceUpdateView(generic.UpdateView):
 @method_decorator(login_required, name='dispatch')
 class ExerciseCreateView(generic.CreateView):
     form_class = forms.ExerciseUpdateForm
-    template_name = 'exercises/create.html'
+    template_name = EXERCISE_CREATE
 
     def get(self, request, *args, **kwargs):
         activity_pk = self.kwargs.get('pk')
@@ -655,7 +656,7 @@ class ExercisesListView(generic.ListView):
 class ExerciseUpdateView(generic.UpdateView):
     model = models.Exercise
     form_class = forms.ExerciseUpdateForm
-    template_name = 'exercises/create.html'
+    template_name = EXERCISE_CREATE
 
     def get(self, request, *args, **kwargs):
         exercise_pk = self.kwargs.get('pk')
@@ -698,7 +699,7 @@ class ExerciseUpdateView(generic.UpdateView):
 @method_decorator(login_required, name='dispatch')
 class ExerciseCompetenceCreateView(generic.CreateView):
     form_class = forms.ExerciseCompetenceUpdateForm
-    template_name = 'exercises/create.html'
+    template_name = EXERCISE_CREATE
 
     def get(self, request, *args, **kwargs):
         return redirect('/')
