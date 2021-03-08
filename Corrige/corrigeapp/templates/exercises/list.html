@@ -2,6 +2,7 @@
 {% load static %}
 {% load i18n %}
 {% block content %} 
+<div class="container">
     <h4 class="centered">{% trans "List of exercises" %}</h4>
     {% if type_url == 1 %}  
     <a style="border-radius:5px" href="{% url 'exercises_create' activity_pk %}" class="right teal lighten-2 waves-effect waves-light btn-small">{% trans "Create exercise" %}</a>
@@ -37,6 +38,7 @@
 {% else %}
     <a onclick="location.href='{% url 'activities_list_copy' set_pk %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
 {% endif %}
+</div>
 {% endblock %}
 
   <!-- Modal Trigger -->
