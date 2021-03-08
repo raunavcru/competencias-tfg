@@ -731,7 +731,7 @@ class ExerciseCompetenceCreateView(generic.CreateView):
         competence_object = models.Competence.objects.get(pk=competence_pk)
         activity_object = models.Activity.objects.get(pk=exercise_object.activity.pk)
         set_object = activity_object.set_activity
-        if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+        if services.UserService().is_teacher(self.request.user) and competence_object.level == 1 and services.SetService().is_owner(user=self.request.user, set_object=set_object):
             exercice_competence = form.save(commit=False)
             exercice_competence.exercise = exercise_object
             exercice_competence.competence = competence_object
