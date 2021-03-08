@@ -697,6 +697,26 @@ class ExerciseUpdateView(generic.UpdateView):
 
 # Exercices_competence
 @method_decorator(login_required, name='dispatch')
+class ExerciseCompetenceDeleteView(generic.DeleteView):
+    model = models.Exercise_competence
+
+    def get(self, request, *args, **kwargs):
+        return redirect('/')
+
+    def delete(self, request, *args, **kwargs):
+        exercise_competence_pk = self.kwargs.get('pk')
+        exercise_competence_object = models.Exercise_competence.objects.get(pk=exercise_competence_pk)
+        exercise_pk = self.kwargs.get('id')
+        exercise_object = models.Exercise.objects.get(pk=exercise_pk)
+        activity_object = models.Activity.objects.get(pk=exercise_object.activity.pk)
+        set_object = activity_object.set_activity
+        if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+            exercise_competence_object.delete()
+            return redirect('exercises_update', pk=exercise_pk)
+        else:
+            return redirect('/')
+
+@method_decorator(login_required, name='dispatch')
 class ExerciseCompetenceCreateView(generic.CreateView):
     form_class = forms.ExerciseCompetenceUpdateForm
     template_name = EXERCISE_CREATE
@@ -711,7 +731,7 @@ class ExerciseCompetenceCreateView(generic.CreateView):
         competence_object = models.Competence.objects.get(pk=competence_pk)
         activity_object = models.Activity.objects.get(pk=exercise_object.activity.pk)
         set_object = activity_object.set_activity
-        if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+        if services.UserService().is_teacher(self.request.user) and competence_object.level == 1 and services.SetService().is_owner(user=self.request.user, set_object=set_object):
             exercice_competence = form.save(commit=False)
             exercice_competence.exercise = exercise_object
             exercice_competence.competence = competence_object
