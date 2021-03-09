@@ -172,6 +172,34 @@ class CompetenceCreateForm(forms.ModelForm):
                     MESSAGE_NAME)
         return name
 
+# Exercices
+class ExerciseUpdateForm(forms.ModelForm):
+    weight = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': '1', 'id': 'weight-create-exercice'}))
+    statement = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'id': 'statement-create-exercice'}))
+
+    class Meta:
+        model = models.Exercise
+        fields = (
+            'weight',
+            'statement',
+        )  
+
+# Exercices_competence
+class ExerciseCompetenceUpdateForm(forms.ModelForm):
+    intensity = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': '1', 'id': 'intensity-create-exercice_competence'}))
+    weight = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': '1', 'id': 'weight-create-exercice_competence'}))
+
+    class Meta:
+        model = models.Exercise_competence
+        fields = (
+            'intensity',
+            'weight',
+        )  
+
 # Evaluations
 class EvaluationCreateForm(forms.ModelForm):
     

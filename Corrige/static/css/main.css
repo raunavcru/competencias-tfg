@@ -19,7 +19,7 @@
 }
 
 #fondoPantalla{
-    background-image: url('/static/images/fondos 3.png');
+    background-image: url('/static/images/fondo 4.png');
     background-position: center center;
     background-attachment: fixed;
 }
@@ -84,4 +84,8 @@
 		margin-bottom: 115px;
 	
 	}
+#fondoPantallaLista{
+    background-image: url('/static/images/fondo prueba.png');
+    background-position: center center;
+    background-attachment: fixed;
 }

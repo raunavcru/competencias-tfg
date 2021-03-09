@@ -2,6 +2,7 @@
 {% load static %}
 {% load i18n %}
 {% block content %} 
+<div class="container">
     <h4 class="centered">{% trans "List of teachers" %}</h4>
     <a style="border-radius:5px" href="{% url 'teachers_create'%}" class="right teal lighten-2 waves-effect waves-light btn-small"><i class="material-icons right">person_add</i>{% trans "Create Teacher" %}</a>
         <table class="highlight">
@@ -31,5 +32,5 @@
             </tbody>
         </table>
 {% include 'paginate.html' %}
-<a onClick="javascript:history.go(-1);" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
+    <a onClick="location.href='{% url 'home' %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
 {% endblock %}
