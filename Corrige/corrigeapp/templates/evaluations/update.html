@@ -9,25 +9,25 @@
                 <form class="col s12" id="form-create-students" method="post" action="{% url 'evaluations_create' %}">
             {% elif request.get_full_path == '/evaluations/create/all' %}
                 <form class="col s12" id="form-create-students" method="post" action="{% url 'evaluations_create_all' %}">
+            {% elif request.get_full_path == '/evaluations/create/all/oneFinalThreePartial' %}
+                <form class="col s12" id="form-create-students" method="post" action="{% url 'evaluations_create_all_oneFinalThreePartial' %}">
             {% else %}
                 <form class="col s12" id="form-update-students" method="post" action="{% url 'evaluations_update' object.pk %}">
             {% endif %}
                     {% csrf_token %}
-                    {% if partial %}
-                        <div class="row">
-                            <div class="grid-example col s2">
-                            </div>
-                            <div class="grid-example col s8">
-                                <div class="validate-input">
-                                    <label>{% trans "Name" %}</label>
-                                    {{form.name}}
-                                    <div class="form-errors">
-                                        {{ form.name.errors }}
-                                    </div>
+                    <div class="row">
+                        <div class="grid-example col s2">
+                        </div>
+                        <div class="grid-example col s8">
+                            <div class="validate-input">
+                                <label>{% trans "Name" %}</label>
+                                {{form.name}}
+                                <div class="form-errors">
+                                    {{ form.name.errors }}
                                 </div>
                             </div>
                         </div>
-                    {% endif %}
+                    </div>
                     <div class="row">
                         <div class="grid-example col s2">
                         </div>
@@ -50,6 +50,117 @@
                             </div>
                         </div>
                     </div>
+                    {% if part1 %}
+                    <div class="row">
+                        <div class="grid-example col s2">
+                        </div>
+                        <div class="grid-example col s8">
+                            <div class="validate-input">
+                                <label>{% trans "Name evaluation 1" %}</label>
+                                {{form.period_1}}
+                                <div class="form-errors">
+                                    {{ form.period_1.errors }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="grid-example col s2">
+                        </div>
+                        <div class="grid-example col s4">
+                            <div class="validate-input">
+                                <label>{% trans "Start date evaluation 1" %}</label>
+                                {{form.start_date_1}}
+                                <div class="form-errors">
+                                    {{ form.start_date_1.errors }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-example col s4">
+                            <div class="validate-input">
+                                <label>{% trans "End date evaluation 1" %}</label>
+                                {{form.end_date_1}}
+                                <div class="form-errors">
+                                    {{ form.end_date_1.errors }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% if part2 %}
+                    <div class="row">
+                        <div class="grid-example col s2">
+                        </div>
+                        <div class="grid-example col s8">
+                            <div class="validate-input">
+                                <label>{% trans "Name evaluation 2" %}</label>
+                                {{form.period_2}}
+                                <div class="form-errors">
+                                    {{ form.period_2.errors }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="grid-example col s2">
+                        </div>
+                        <div class="grid-example col s4">
+                            <div class="validate-input">
+                                <label>{% trans "Start date evaluation 2" %}</label>
+                                {{form.start_date_2}}
+                                <div class="form-errors">
+                                    {{ form.start_date_2.errors }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-example col s4">
+                            <div class="validate-input">
+                                <label>{% trans "End date evaluation 2" %}</label>
+                                {{form.end_date_2}}
+                                <div class="form-errors">
+                                    {{ form.end_date_2.errors }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% if part3 %}
+                    <div class="row">
+                        <div class="grid-example col s2">
+                        </div>
+                        <div class="grid-example col s8">
+                            <div class="validate-input">
+                                <label>{% trans "Name evaluation 3" %}</label>
+                                {{form.period_3}}
+                                <div class="form-errors">
+                                    {{ form.period_3.errors }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="grid-example col s2">
+                        </div>
+                        <div class="grid-example col s4">
+                            <div class="validate-input">
+                                <label>{% trans "Start date evaluation 3" %}</label>
+                                {{form.start_date_3}}
+                                <div class="form-errors">
+                                    {{ form.start_date_3.errors }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-example col s4">
+                            <div class="validate-input">
+                                <label>{% trans "End date evaluation 3" %}</label>
+                                {{form.end_date_3}}
+                                <div class="form-errors">
+                                    {{ form.end_date_3.errors }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
                     {% if partial %}
                         <div class="row">
                             <div class="grid-example col s2">
