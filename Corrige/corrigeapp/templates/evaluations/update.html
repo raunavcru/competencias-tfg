@@ -7,91 +7,27 @@
             <div class="center-form">
             {% if request.get_full_path == '/evaluations/create' %}
                 <form class="col s12" id="form-create-students" method="post" action="{% url 'evaluations_create' %}">
+            {% elif request.get_full_path == '/evaluations/create/all' %}
+                <form class="col s12" id="form-create-students" method="post" action="{% url 'evaluations_create_all' %}">
             {% else %}
                 <form class="col s12" id="form-update-students" method="post" action="{% url 'evaluations_update' object.pk %}">
             {% endif %}
                     {% csrf_token %}
-                    <div class="row">
-                        <div class="grid-example col s2">
-                        </div>
-                        <div class="grid-example col s8">
-                            <div class="validate-input">
-                                <label>{% trans "Name" %}</label>
-                                {{form.name}}
-                                <div class="form-errors">
-                                    {{ form.name.errors }}
+                    {% if partial %}
+                        <div class="row">
+                            <div class="grid-example col s2">
+                            </div>
+                            <div class="grid-example col s8">
+                                <div class="validate-input">
+                                    <label>{% trans "Name" %}</label>
+                                    {{form.name}}
+                                    <div class="form-errors">
+                                        {{ form.name.errors }}
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                {% if request.get_full_path == '/evaluations/create' %}
-                    <div class="row">
-                        <div class="grid-example col s2">
-                        </div>
-                        <div class="grid-example col s4">
-                            <div class="validate-input">
-                                <label>{% trans "Start date 1st trimester" %}</label>
-                                {{form.start_date}}
-                                <div class="form-errors">
-                                    {{ form.start_date.errors }}
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid-example col s4">
-                            <div class="validate-input">
-                                <label>{% trans "End date 1st trimester" %}</label>
-                                {{form.end_date_1}}
-                                <div class="form-errors">
-                                    {{ form.end_date_1.errors }}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="grid-example col s2">
-                        </div>
-                        <div class="grid-example col s4">
-                            <div class="validate-input">
-                                <label>{% trans "Start date 2nd trimester" %}</label>
-                                {{form.start_date_2}}
-                                <div class="form-errors">
-                                    {{ form.start_date_2.errors }}
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid-example col s4">
-                            <div class="validate-input">
-                                <label>{% trans "End date 2nd trimester" %}</label>
-                                {{form.end_date_2}}
-                                <div class="form-errors">
-                                    {{ form.end_date_2.errors }}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="grid-example col s2">
-                        </div>
-                        <div class="grid-example col s4">
-                            <div class="validate-input">
-                                <label>{% trans "Start date 3rd trimester" %}</label>
-                                {{form.start_date_3}}
-                                <div class="form-errors">
-                                    {{ form.start_date_3.errors }}
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid-example col s4">
-                            <div class="validate-input">
-                                <label>{% trans "End date 3rd trimester" %}</label>
-                                {{form.end_date}}
-                                <div class="form-errors">
-                                    {{ form.end_date.errors }}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                {% else %}
+                    {% endif %}
                     <div class="row">
                         <div class="grid-example col s2">
                         </div>
@@ -114,16 +50,16 @@
                             </div>
                         </div>
                     </div>
-                {% endif %}
-                    
-                    <div class="row">
-                        <div class="grid-example col s2">
+                    {% if partial %}
+                        <div class="row">
+                            <div class="grid-example col s2">
+                            </div>
+                            <div class="grid-example col s8">
+                                <label>{% trans "Subject" %}</label>
+                                    {{form.subject}}
+                            </div>
                         </div>
-                        <div class="grid-example col s8">
-                            <label>{% trans "Subject" %}</label>
-                                {{form.subject}}
-                        </div>
-                    </div>
+                    {% endif %}
                     <div class="row">
                         <a onclick="location.href='{% url 'evaluations_list' %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
                     {% if request.get_full_path == '/evaluations/create' %}

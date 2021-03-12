@@ -29,7 +29,19 @@
                             <td><i class="material-icons" style="color:#BBBBBB">book</i></td>
                             <td>{{object.name}}</td>
                             <td>{{object.level}}</td>
-                            <td>{{object.grade}}</td>
+                            <td>
+                                {% if object.grade == "PrimarySchool" %}
+                                    {% trans "Primary School" %}
+                                {% elif object.grade == "SecondaryEducation" %}
+                                    {% trans "Secondary Education" %}
+                                {% elif object.grade == "SixthForm" %}
+                                    {% trans "Sixth Form" %}
+                                {% elif object.grade == "FurtherEducation" %}
+                                    {% trans "FurtherEducation" %}
+                                {% elif object.grade == "University" %}
+                                    {% trans "University" %}
+                                {% endif %}
+                            </td>
                             <td>{{object.description}}</td>
                         {% if request.user.profile.role == "ADMINISTRATOR" %} 
                             <td class="center dropdown-trigger" type="button" onclick="location.href='{% url 'subjects_update' object.pk %}'"><em class="material-icons" style="color:#29b6f6">create</em></td>

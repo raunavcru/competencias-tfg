@@ -4,6 +4,7 @@
 {% block content %}
 <div class="container">
     <h4 class="centered">{% trans "List of evaluations" %}</h4>
+        <a style="border-radius:5px" href="{% url 'evaluations_create_all' %}" class="right teal lighten-2 waves-effect waves-light btn-small"><i class="material-icons right">add</i>{% trans "Create All Evaluation" %}</a>
         <a style="border-radius:5px" href="{% url 'evaluations_create' %}" class="right teal lighten-2 waves-effect waves-light btn-small"><i class="material-icons right">add</i>{% trans "Create Evaluation" %}</a>
         <table class="highlight">
             <caption></caption>

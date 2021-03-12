@@ -785,6 +785,31 @@ class EvaluationCreateView(generic.CreateView):
         return redirect('evaluations_list')
 
 @method_decorator(login_required, name='dispatch')
+class EvaluationCreateAllView(generic.CreateView):
+    form_class = forms.EvaluationCreateAllForm
+    template_name = "evaluations/update.html"
+    success_url = reverse_lazy('evaluations_list')
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            return super(EvaluationCreateAllView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def form_valid(self, form):
+        subjects = models.Subject.objects.all().order_by('name')
+        start_date = form.cleaned_data.get('start_date')
+        end_date = form.cleaned_data.get('end_date')
+
+        for subject in subjects:
+            evaluation = models.Evaluation.objects.create(name=subject.name + " " + subject.level + "Final", start_date=start_date, end_date=end_date,
+            is_final=True, period="Final", subject=subject)
+            evaluation.save()
+        
+
+        return redirect('evaluations_list')
+
+@method_decorator(login_required, name='dispatch')
 class EvaluationDeleteView(generic.DeleteView):
     template_name = 'evaluations/delete.html'
     model = models.Evaluation
@@ -822,7 +847,7 @@ class EvaluationsListView(generic.ListView):
             return redirect('/')
             
     def get_queryset(self):
-        queryset = models.Evaluation.objects.all().order_by('name','subject', 'parent', 'start_date')
+        queryset = models.Evaluation.objects.filter(is_final = True).order_by('name','subject', 'start_date')
         return queryset
     
 @method_decorator(login_required, name='dispatch')

@@ -19,8 +19,8 @@ evaluations_final = models.Evaluation.objects.filter(is_final=True)
 CHOICES_YES_NO = ((False, "No"), (True, "Sí"))
 CHOICES_YES_NO_EN = ((False, "No"), (True, "Yes"))
 CHOICES_LEVEL = (("1º","1º"),("2º","2º"),("3º","3º"),("4º","4º"),("5º","5º"),("6º","6º"))
-CHOICES_GRADE = ((" PrimarySchool"," Educación Primaria"),("SecondaryEducation","Educación Secundaria"),("SixthForm","Bachillerato"),("FurtherEducation","Grado Medio o Superior"),("University","Grado Universitario"))
-CHOICES_GRADE_EN = ((" PrimarySchool"," Primary School"),("SecondaryEducation","Secondary Education"),("SixthForm","Sixth Form"),("FurtherEducation","Further Education"),("University","University"))
+CHOICES_GRADE = (("PrimarySchool","Educación Primaria"),("SecondaryEducation","Educación Secundaria"),("SixthForm","Bachillerato"),("FurtherEducation","Grado Medio o Superior"),("University","Grado Universitario"))
+CHOICES_GRADE_EN = ((" PrimarySchool","Primary School"),("SecondaryEducation","Secondary Education"),("SixthForm","Sixth Form"),("FurtherEducation","Further Education"),("University","University"))
 
 
 DATE_PLACEHOLDER = 'dd/mm/aaaa'
@@ -260,6 +260,30 @@ class EvaluationCreateForm(forms.ModelForm):
             'start_date_3',
             'end_date',
             'subject',
+        )
+
+class EvaluationCreateAllForm(forms.ModelForm):
+    
+    start_date = forms.DateField(required=True, 
+        input_formats=settings.DATE_INPUT_FORMATS, 
+        widget=forms.DateInput(
+            format=settings.DATE_INPUT_FORMATS[0],
+            attrs={'placeholder': DATE_PLACEHOLDER}
+        )
+    )
+    end_date = forms.DateField(required=True, 
+        input_formats=settings.DATE_INPUT_FORMATS, 
+        widget=forms.DateInput(
+            format=settings.DATE_INPUT_FORMATS[0],
+            attrs={'placeholder': DATE_PLACEHOLDER}
+        )
+    )
+
+    class Meta:
+        model = models.Evaluation
+        fields = (
+            'start_date',
+            'end_date',
         )
 
 class EvaluationUpdateForm(forms.ModelForm):
