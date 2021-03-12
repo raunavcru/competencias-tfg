@@ -761,6 +761,7 @@ class EvaluationCreateView(generic.CreateView):
     def get_context_data(self, **kwargs):
         context = super(EvaluationCreateView, self).get_context_data(**kwargs)
         context['partial'] = True
+        context['create_final'] = True
         return context
 
     def form_valid(self, form):
@@ -783,6 +784,11 @@ class EvaluationCreateAllView(generic.CreateView):
             return super(EvaluationCreateAllView, self).get(self, request, *args, **kwargs)
         else:
             return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        context = super(EvaluationCreateAllView, self).get_context_data(**kwargs)
+        context['create_final'] = True
+        return context
 
     def form_valid(self, form):
         subjects = models.Subject.objects.all().order_by('name')
@@ -814,6 +820,7 @@ class EvaluationCreateAllOneFinalThreePartialView(generic.CreateView):
         context['part1'] = True
         context['part2'] = True
         context['part3'] = True
+        context['create_final'] = True
         return context
 
     def form_valid(self, form):
@@ -866,8 +873,8 @@ class EvaluationDeleteView(generic.DeleteView):
     def delete(self, request, *args, **kwargs):
         evaluation_pk = self.kwargs.get('pk')
         evaluation = models.Evaluation.objects.get(pk=evaluation_pk)
+        evaluation.delete()
         if evaluation.is_final:
-            evaluation.delete()
             return redirect('evaluations_list_final')
         else:
             return redirect('evaluations_list_partial', pk=evaluation.parent.pk )
@@ -933,6 +940,19 @@ class EvaluationUpdateView(generic.UpdateView):
         else:
             return redirect('/')
 
+    def get_context_data(self, **kwargs):
+        context = super(EvaluationUpdateView, self).get_context_data(**kwargs)
+        context['update'] = True
+        return context
+    
+    def form_valid(self, form):
+        evaluation = form.save()
+        if evaluation.is_final:
+            return redirect('evaluations_list_final')
+        else:
+            return redirect('evaluations_list_partial', pk=evaluation.parent.pk ) 
+
+# My
 @method_decorator(login_required, name='dispatch')        
 class MySetStudentListView(generic.ListView):
     model = models.Set
