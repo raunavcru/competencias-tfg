@@ -750,7 +750,7 @@ class ExerciseCompetenceCreateView(generic.CreateView):
 class EvaluationCreateView(generic.CreateView):
     form_class = forms.EvaluationCreateForm
     template_name = "evaluations/update.html"
-    success_url = reverse_lazy('evaluations_list')
+    success_url = reverse_lazy('evaluations_list_final')
 
     def get(self, request, *args, **kwargs):
         if services.UserService().is_admin(request.user):
@@ -770,13 +770,13 @@ class EvaluationCreateView(generic.CreateView):
         evaluation.period = "Final"
         evaluation.save()
 
-        return redirect('evaluations_list')
+        return redirect('evaluations_list_final')
 
 @method_decorator(login_required, name='dispatch')
 class EvaluationCreateAllView(generic.CreateView):
     form_class = forms.EvaluationCreateAllForm
     template_name = "evaluations/update.html"
-    success_url = reverse_lazy('evaluations_list')
+    success_url = reverse_lazy('evaluations_list_final')
 
     def get(self, request, *args, **kwargs):
         if services.UserService().is_admin(request.user):
@@ -795,13 +795,13 @@ class EvaluationCreateAllView(generic.CreateView):
             evaluation.save()
         
 
-        return redirect('evaluations_list')
+        return redirect('evaluations_list_final')
 
 @method_decorator(login_required, name='dispatch')
 class EvaluationCreateAllOneFinalThreePartialView(generic.CreateView):
     form_class = forms.EvaluationCreateOneFinalThreePartialForm
     template_name = "evaluations/update.html"
-    success_url = reverse_lazy('evaluations_list')
+    success_url = reverse_lazy('evaluations_list_final')
 
     def get(self, request, *args, **kwargs):
         if services.UserService().is_admin(request.user):
@@ -847,34 +847,33 @@ class EvaluationCreateAllOneFinalThreePartialView(generic.CreateView):
             evaluation3.save()
         
 
-        return redirect('evaluations_list')
+        return redirect('evaluations_list_final')
 
 @method_decorator(login_required, name='dispatch')
 class EvaluationDeleteView(generic.DeleteView):
     template_name = 'evaluations/delete.html'
     model = models.Evaluation
-    success_url = reverse_lazy('evaluations_list')
+    success_url = reverse_lazy('evaluations_list_final')
 
     def get(self, request, *args, **kwargs):
         evaluation_pk = self.kwargs.get('pk')
         parent = models.Evaluation.objects.get(pk=evaluation_pk)
-        if services.UserService().is_admin(request.user) and parent.is_final:
+        if services.UserService().is_admin(request.user):
             return super(EvaluationDeleteView, self).get(self, request, *args, **kwargs)
         else:
             return redirect('/')
-    
+
     def delete(self, request, *args, **kwargs):
         evaluation_pk = self.kwargs.get('pk')
-        parent = models.Evaluation.objects.get(pk=evaluation_pk)
-        if parent.is_final:
-            models.Evaluation.objects.filter(parent=parent).delete()
-            parent.delete()
-            return redirect('evaluations_list')
+        evaluation = models.Evaluation.objects.get(pk=evaluation_pk)
+        if evaluation.is_final:
+            evaluation.delete()
+            return redirect('evaluations_list_final')
         else:
-            return redirect('/')
+            return redirect('evaluations_list_partial', pk=evaluation.parent.pk )
 
 @method_decorator(login_required, name='dispatch')
-class EvaluationsListView(generic.ListView):
+class EvaluationsListFinalView(generic.ListView):
     model = models.Evaluation
     template_name = 'evaluations/list.html'
     context_object_name = 'evaluations_list'
@@ -882,20 +881,51 @@ class EvaluationsListView(generic.ListView):
 
     def get(self, request, *args, **kwargs):
         if services.UserService().is_admin(request.user):
-            return super(EvaluationsListView, self).get(self, request, *args, **kwargs)
+            return super(EvaluationsListFinalView, self).get(self, request, *args, **kwargs)
         else:
             return redirect('/')
-            
+    
+    def get_context_data(self, **kwargs):
+        context = super(EvaluationsListFinalView, self).get_context_data(**kwargs)
+        context['list_final'] = True
+        return context
+
     def get_queryset(self):
         queryset = models.Evaluation.objects.filter(is_final = True).order_by('name','subject', 'start_date')
+        return queryset
+
+@method_decorator(login_required, name='dispatch')
+class EvaluationsListPartialView(generic.ListView):
+    model = models.Evaluation
+    template_name = 'evaluations/list.html'
+    context_object_name = 'evaluations_list'
+    paginate_by = 8
+
+    def get(self, request, *args, **kwargs):
+        parent_pk = self.kwargs.get('pk')
+        parent = models.Evaluation.objects.get(pk=parent_pk)
+        if services.UserService().is_admin(request.user) and parent.is_final:
+            return super(EvaluationsListPartialView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+    
+    def get_context_data(self, **kwargs):
+        context = super(EvaluationsListPartialView, self).get_context_data(**kwargs)
+        context['list_partial'] = True
+        return context
+
+    def get_queryset(self):
+        parent_pk = self.kwargs.get('pk')
+        parent = models.Evaluation.objects.get(pk=parent_pk)
+        queryset = models.Evaluation.objects.filter(parent = parent).order_by('name','subject', 'start_date')
         return queryset
     
 @method_decorator(login_required, name='dispatch')
 class EvaluationUpdateView(generic.UpdateView):
     model = models.Evaluation
-    form_class = forms.EvaluationUpdateForm
+    form_class = forms.EvaluationCreateAllForm
     template_name = "evaluations/update.html"
-    success_url = reverse_lazy('evaluations_list')
+    success_url = reverse_lazy('evaluations_list_final')
 
     def get(self, request, *args, **kwargs):
         if services.UserService().is_admin(request.user):

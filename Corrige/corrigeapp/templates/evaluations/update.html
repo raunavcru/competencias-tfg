@@ -172,7 +172,7 @@
                         </div>
                     {% endif %}
                     <div class="row">
-                        <a onclick="location.href='{% url 'evaluations_list' %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
+                        <a onclick="location.href='{% url 'evaluations_list_final' %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
                     {% if request.get_full_path == '/evaluations/create' %}
                         <button class="btn waves-effect right" type="submit" name="action">{% trans "Create" %}
                             <i class="large material-icons right"><i>send</i></i>
