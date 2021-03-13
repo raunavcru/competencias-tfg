@@ -43,6 +43,7 @@ MESSAGE_DESCRIPTION_EN = 'Description can not be longer of 100 characters'
 MESSAGE_DESCRIPTION = 'El tamaño de la descripción no puede ser mayor que 100'
 MESSAGE_CODE_EN = 'Code can not be longer of 50 characters'
 MESSAGE_CODE = 'El tamaño del código no puede ser mayor que 50'
+PLACEHOLDER_NAME_EVALUATION = 'Matemáticas 5º Primaria'
 
 # Activity
 class ActivityUpdateForm(forms.ModelForm):
@@ -204,7 +205,7 @@ class ExerciseCompetenceUpdateForm(forms.ModelForm):
 class EvaluationCreateForm(forms.ModelForm):
     
     name = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': 'Matemáticas 5º Primaria Final', 'id': 'name-create-evaluation'}))
+        attrs={'placeholder': PLACEHOLDER_NAME_EVALUATION, 'id': 'name-create-evaluation'}))
     start_date = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
@@ -233,7 +234,7 @@ class EvaluationCreateForm(forms.ModelForm):
 class EvaluationCreateAllForm(forms.ModelForm):
     
     name = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': 'Matemáticas 5º Primaria Final', 'id': 'name-create-evaluation'}))
+        attrs={'placeholder': PLACEHOLDER_NAME_EVALUATION, 'id': 'name-create-evaluation'}))
     start_date = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
@@ -260,7 +261,7 @@ class EvaluationCreateAllForm(forms.ModelForm):
 class EvaluationCreateChildForm(forms.ModelForm):
     
     name = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': 'Matemáticas 5º Primaria Final', 'id': 'name-create-evaluation'}))
+        attrs={'placeholder': PLACEHOLDER_NAME_EVALUATION, 'id': 'name-create-evaluation'}))
     period = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': '1er Trimestre'}))
     start_date = forms.DateField(required=True, 
@@ -290,7 +291,7 @@ class EvaluationCreateChildForm(forms.ModelForm):
 class EvaluationCreateOneFinalThreePartialForm(forms.ModelForm):
     
     name = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': 'Matemáticas 5º Primaria', 'id': 'name-create-evaluation'}))
+        attrs={'placeholder': PLACEHOLDER_NAME_EVALUATION, 'id': 'name-create-evaluation'}))
     start_date = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
@@ -374,7 +375,7 @@ class EvaluationCreateOneFinalThreePartialForm(forms.ModelForm):
 class EvaluationCreateOneFinalTwoPartialForm(forms.ModelForm):
     
     name = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': 'Matemáticas 5º Primaria', 'id': 'name-create-evaluation'}))
+        attrs={'placeholder': PLACEHOLDER_NAME_EVALUATION, 'id': 'name-create-evaluation'}))
     start_date = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
