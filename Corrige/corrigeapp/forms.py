@@ -44,6 +44,7 @@ MESSAGE_DESCRIPTION = 'El tamaño de la descripción no puede ser mayor que 100'
 MESSAGE_CODE_EN = 'Code can not be longer of 50 characters'
 MESSAGE_CODE = 'El tamaño del código no puede ser mayor que 50'
 PLACEHOLDER_NAME_EVALUATION = 'Matemáticas 5º Primaria'
+PLACEHOLDER_PERIOD_EVALUATION = '1er Trimestre'
 
 # Activity
 class ActivityUpdateForm(forms.ModelForm):
@@ -263,7 +264,7 @@ class EvaluationCreateChildForm(forms.ModelForm):
     name = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': PLACEHOLDER_NAME_EVALUATION, 'id': 'name-create-evaluation'}))
     period = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': '1er Trimestre'}))
+        attrs={'placeholder': PLACEHOLDER_PERIOD_EVALUATION}))
     start_date = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
@@ -307,7 +308,7 @@ class EvaluationCreateOneFinalThreePartialForm(forms.ModelForm):
         )
     )
     period_1 = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': '1er Trimestre'}))
+        attrs={'placeholder': PLACEHOLDER_PERIOD_EVALUATION}))
     start_date_1 = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
@@ -323,7 +324,7 @@ class EvaluationCreateOneFinalThreePartialForm(forms.ModelForm):
         )
     )
     period_2 = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': '1er Trimestre'}))
+        attrs={'placeholder': PLACEHOLDER_PERIOD_EVALUATION}))
     start_date_2 = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
@@ -339,7 +340,7 @@ class EvaluationCreateOneFinalThreePartialForm(forms.ModelForm):
         )
     )
     period_3 = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': '1er Trimestre'}))
+        attrs={'placeholder': PLACEHOLDER_PERIOD_EVALUATION}))
     start_date_3 = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
@@ -391,7 +392,7 @@ class EvaluationCreateOneFinalTwoPartialForm(forms.ModelForm):
         )
     )
     period_1 = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': '1er Trimestre'}))
+        attrs={'placeholder': PLACEHOLDER_PERIOD_EVALUATION}))
     start_date_1 = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
@@ -407,7 +408,7 @@ class EvaluationCreateOneFinalTwoPartialForm(forms.ModelForm):
         )
     )
     period_2 = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': '1er Trimestre'}))
+        attrs={'placeholder': PLACEHOLDER_PERIOD_EVALUATION}))
     start_date_2 = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
