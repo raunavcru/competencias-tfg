@@ -14,7 +14,9 @@ from . import services
 
 COMPETENCE_LIST = 'competences/list.html'
 COMPETENCE_CREATE = "competences/create.html"
+EVALUATION_UPDATE = "evaluations/update.html"
 EXERCISE_CREATE = 'exercises/create.html'
+
 
 # Generic
 class HomeView(generic.TemplateView):
@@ -749,7 +751,7 @@ class ExerciseCompetenceCreateView(generic.CreateView):
 @method_decorator(login_required, name='dispatch')
 class EvaluationCreateView(generic.CreateView):
     form_class = forms.EvaluationCreateForm
-    template_name = "evaluations/update.html"
+    template_name = EVALUATION_UPDATE
     success_url = reverse_lazy('evaluations_list_final')
 
     def get(self, request, *args, **kwargs):
@@ -776,7 +778,7 @@ class EvaluationCreateView(generic.CreateView):
 @method_decorator(login_required, name='dispatch')
 class EvaluationCreateAllView(generic.CreateView):
     form_class = forms.EvaluationCreateAllForm
-    template_name = "evaluations/update.html"
+    template_name = EVALUATION_UPDATE
     success_url = reverse_lazy('evaluations_list_final')
 
     def get(self, request, *args, **kwargs):
@@ -806,7 +808,7 @@ class EvaluationCreateAllView(generic.CreateView):
 @method_decorator(login_required, name='dispatch')
 class EvaluationCreateAllOneFinalThreePartialView(generic.CreateView):
     form_class = forms.EvaluationCreateOneFinalThreePartialForm
-    template_name = "evaluations/update.html"
+    template_name = EVALUATION_UPDATE
     success_url = reverse_lazy('evaluations_list_final')
 
     def get(self, request, *args, **kwargs):
@@ -859,7 +861,7 @@ class EvaluationCreateAllOneFinalThreePartialView(generic.CreateView):
 @method_decorator(login_required, name='dispatch')
 class EvaluationCreateAllOneFinalTwoPartialView(generic.CreateView):
     form_class = forms.EvaluationCreateOneFinalTwoPartialForm
-    template_name = "evaluations/update.html"
+    template_name = EVALUATION_UPDATE
     success_url = reverse_lazy('evaluations_list_final')
 
     def get(self, request, *args, **kwargs):
@@ -904,7 +906,7 @@ class EvaluationCreateAllOneFinalTwoPartialView(generic.CreateView):
 @method_decorator(login_required, name='dispatch')
 class EvaluationCreateChildView(generic.CreateView):
     form_class = forms.EvaluationCreateChildForm
-    template_name = "evaluations/update.html"
+    template_name = EVALUATION_UPDATE
     success_url = reverse_lazy('evaluations_list_final')
 
     def get(self, request, *args, **kwargs):
@@ -1009,7 +1011,7 @@ class EvaluationsListPartialView(generic.ListView):
 class EvaluationUpdateView(generic.UpdateView):
     model = models.Evaluation
     form_class = forms.EvaluationCreateAllForm
-    template_name = "evaluations/update.html"
+    template_name = EVALUATION_UPDATE
     success_url = reverse_lazy('evaluations_list_final')
 
     def get(self, request, *args, **kwargs):
