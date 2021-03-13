@@ -19,8 +19,8 @@ evaluations_final = models.Evaluation.objects.filter(is_final=True)
 CHOICES_YES_NO = ((False, "No"), (True, "Sí"))
 CHOICES_YES_NO_EN = ((False, "No"), (True, "Yes"))
 CHOICES_LEVEL = (("1º","1º"),("2º","2º"),("3º","3º"),("4º","4º"),("5º","5º"),("6º","6º"))
-CHOICES_GRADE = ((" PrimarySchool"," Educación Primaria"),("SecondaryEducation","Educación Secundaria"),("SixthForm","Bachillerato"),("FurtherEducation","Grado Medio o Superior"),("University","Grado Universitario"))
-CHOICES_GRADE_EN = ((" PrimarySchool"," Primary School"),("SecondaryEducation","Secondary Education"),("SixthForm","Sixth Form"),("FurtherEducation","Further Education"),("University","University"))
+CHOICES_GRADE = (("PrimarySchool","Educación Primaria"),("SecondaryEducation","Educación Secundaria"),("SixthForm","Bachillerato"),("FurtherEducation","Grado Medio o Superior"),("University","Grado Universitario"))
+CHOICES_GRADE_EN = ((" PrimarySchool","Primary School"),("SecondaryEducation","Secondary Education"),("SixthForm","Sixth Form"),("FurtherEducation","Further Education"),("University","University"))
 
 
 DATE_PLACEHOLDER = 'dd/mm/aaaa'
@@ -43,6 +43,8 @@ MESSAGE_DESCRIPTION_EN = 'Description can not be longer of 100 characters'
 MESSAGE_DESCRIPTION = 'El tamaño de la descripción no puede ser mayor que 100'
 MESSAGE_CODE_EN = 'Code can not be longer of 50 characters'
 MESSAGE_CODE = 'El tamaño del código no puede ser mayor que 50'
+PLACEHOLDER_NAME_EVALUATION = 'Matemáticas 5º Primaria'
+PLACEHOLDER_PERIOD_EVALUATION = '1er Trimestre'
 
 # Activity
 class ActivityUpdateForm(forms.ModelForm):
@@ -204,8 +206,110 @@ class ExerciseCompetenceUpdateForm(forms.ModelForm):
 class EvaluationCreateForm(forms.ModelForm):
     
     name = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': 'Matemáticas 5º Primaria Final', 'id': 'name-create-evaluation'}))
+        attrs={'placeholder': PLACEHOLDER_NAME_EVALUATION, 'id': 'name-create-evaluation'}))
     start_date = forms.DateField(required=True, 
+        input_formats=settings.DATE_INPUT_FORMATS, 
+        widget=forms.DateInput(
+            format=settings.DATE_INPUT_FORMATS[0],
+            attrs={'placeholder': DATE_PLACEHOLDER}
+        )
+    )
+    end_date = forms.DateField(required=True, 
+        input_formats=settings.DATE_INPUT_FORMATS, 
+        widget=forms.DateInput(
+            format=settings.DATE_INPUT_FORMATS[0],
+            attrs={'placeholder': DATE_PLACEHOLDER}
+        )
+    )
+    subject = forms.ModelChoiceField(subjects, empty_label=None)
+
+    class Meta:
+        model = models.Evaluation
+        fields = (
+            'name',
+            'start_date',
+            'end_date',
+            'subject',
+        )
+
+class EvaluationCreateAllForm(forms.ModelForm):
+    
+    name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': PLACEHOLDER_NAME_EVALUATION, 'id': 'name-create-evaluation'}))
+    start_date = forms.DateField(required=True, 
+        input_formats=settings.DATE_INPUT_FORMATS, 
+        widget=forms.DateInput(
+            format=settings.DATE_INPUT_FORMATS[0],
+            attrs={'placeholder': DATE_PLACEHOLDER}
+        )
+    )
+    end_date = forms.DateField(required=True, 
+        input_formats=settings.DATE_INPUT_FORMATS, 
+        widget=forms.DateInput(
+            format=settings.DATE_INPUT_FORMATS[0],
+            attrs={'placeholder': DATE_PLACEHOLDER}
+        )
+    )
+
+    class Meta:
+        model = models.Evaluation
+        fields = (
+            'name',
+            'start_date',
+            'end_date',
+        )
+
+class EvaluationCreateChildForm(forms.ModelForm):
+    
+    name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': PLACEHOLDER_NAME_EVALUATION, 'id': 'name-create-evaluation'}))
+    period = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': PLACEHOLDER_PERIOD_EVALUATION}))
+    start_date = forms.DateField(required=True, 
+        input_formats=settings.DATE_INPUT_FORMATS, 
+        widget=forms.DateInput(
+            format=settings.DATE_INPUT_FORMATS[0],
+            attrs={'placeholder': DATE_PLACEHOLDER}
+        )
+    )
+    end_date = forms.DateField(required=True, 
+        input_formats=settings.DATE_INPUT_FORMATS, 
+        widget=forms.DateInput(
+            format=settings.DATE_INPUT_FORMATS[0],
+            attrs={'placeholder': DATE_PLACEHOLDER}
+        )
+    )
+
+    class Meta:
+        model = models.Evaluation
+        fields = (
+            'name',
+            'period',
+            'start_date',
+            'end_date',
+        )
+
+class EvaluationCreateOneFinalThreePartialForm(forms.ModelForm):
+    
+    name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': PLACEHOLDER_NAME_EVALUATION, 'id': 'name-create-evaluation'}))
+    start_date = forms.DateField(required=True, 
+        input_formats=settings.DATE_INPUT_FORMATS, 
+        widget=forms.DateInput(
+            format=settings.DATE_INPUT_FORMATS[0],
+            attrs={'placeholder': DATE_PLACEHOLDER}
+        )
+    )
+    end_date = forms.DateField(required=True, 
+        input_formats=settings.DATE_INPUT_FORMATS, 
+        widget=forms.DateInput(
+            format=settings.DATE_INPUT_FORMATS[0],
+            attrs={'placeholder': DATE_PLACEHOLDER}
+        )
+    )
+    period_1 = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': PLACEHOLDER_PERIOD_EVALUATION}))
+    start_date_1 = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
@@ -219,6 +323,8 @@ class EvaluationCreateForm(forms.ModelForm):
             attrs={'placeholder': DATE_PLACEHOLDER}
         )
     )
+    period_2 = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': PLACEHOLDER_PERIOD_EVALUATION}))
     start_date_2 = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
@@ -233,6 +339,8 @@ class EvaluationCreateForm(forms.ModelForm):
             attrs={'placeholder': DATE_PLACEHOLDER}
         )
     )
+    period_3 = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': PLACEHOLDER_PERIOD_EVALUATION}))
     start_date_3 = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
@@ -240,31 +348,35 @@ class EvaluationCreateForm(forms.ModelForm):
             attrs={'placeholder': DATE_PLACEHOLDER}
         )
     )
-    end_date = forms.DateField(required=True, 
+    end_date_3 = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
             attrs={'placeholder': DATE_PLACEHOLDER}
         )
     )
-    subject = forms.ModelChoiceField(subjects, empty_label=None)
-
+    
     class Meta:
         model = models.Evaluation
         fields = (
             'name',
             'start_date',
+            'end_date',
+            'period_1',
+            'start_date_1',
             'end_date_1',
+            'period_2',
             'start_date_2',
             'end_date_2',
+            'period_3',
             'start_date_3',
-            'end_date',
-            'subject',
+            'end_date_3',
         )
 
-class EvaluationUpdateForm(forms.ModelForm):
+class EvaluationCreateOneFinalTwoPartialForm(forms.ModelForm):
     
-    name = forms.CharField(required=True)
+    name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': PLACEHOLDER_NAME_EVALUATION, 'id': 'name-create-evaluation'}))
     start_date = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
@@ -279,15 +391,51 @@ class EvaluationUpdateForm(forms.ModelForm):
             attrs={'placeholder': DATE_PLACEHOLDER}
         )
     )
-    subject = forms.ModelChoiceField(subjects, empty_label=None)
-
+    period_1 = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': PLACEHOLDER_PERIOD_EVALUATION}))
+    start_date_1 = forms.DateField(required=True, 
+        input_formats=settings.DATE_INPUT_FORMATS, 
+        widget=forms.DateInput(
+            format=settings.DATE_INPUT_FORMATS[0],
+            attrs={'placeholder': DATE_PLACEHOLDER}
+        )
+    )
+    end_date_1 = forms.DateField(required=True, 
+        input_formats=settings.DATE_INPUT_FORMATS, 
+        widget=forms.DateInput(
+            format=settings.DATE_INPUT_FORMATS[0],
+            attrs={'placeholder': DATE_PLACEHOLDER}
+        )
+    )
+    period_2 = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': PLACEHOLDER_PERIOD_EVALUATION}))
+    start_date_2 = forms.DateField(required=True, 
+        input_formats=settings.DATE_INPUT_FORMATS, 
+        widget=forms.DateInput(
+            format=settings.DATE_INPUT_FORMATS[0],
+            attrs={'placeholder': DATE_PLACEHOLDER}
+        )
+    )
+    end_date_2 = forms.DateField(required=True, 
+        input_formats=settings.DATE_INPUT_FORMATS, 
+        widget=forms.DateInput(
+            format=settings.DATE_INPUT_FORMATS[0],
+            attrs={'placeholder': DATE_PLACEHOLDER}
+        )
+    )
+    
     class Meta:
         model = models.Evaluation
         fields = (
             'name',
             'start_date',
             'end_date',
-            'subject',
+            'period_1',
+            'start_date_1',
+            'end_date_1',
+            'period_2',
+            'start_date_2',
+            'end_date_2',
         )
 
 # Sets

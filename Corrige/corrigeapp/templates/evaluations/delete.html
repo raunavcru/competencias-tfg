@@ -8,7 +8,11 @@
         <h1 class="center title-delete flow-text">{% trans "Are you sure about deleting the evaluation " %}<a>{{object.name}}</a>?</h1>
 
         <div class="center">
-            <a style="border-radius:5px; background-color:#BBBBBB" href="{% url 'evaluations_list'%}" class="waves-effect waves-light btn-large button-delete">{% trans "Cancel" %}</a>
+        {% if object.is_final %}
+            <a style="border-radius:5px; background-color:#BBBBBB" href="{% url 'evaluations_list_final' %}" class="waves-effect waves-light btn-large button-delete">{% trans "Cancel" %}</a>
+        {% else %}
+            <a style="border-radius:5px; background-color:#BBBBBB" href="{% url 'evaluations_list_partial' object.parent.pk %}" class="waves-effect waves-light btn-large button-delete">{% trans "Cancel" %}</a>
+        {% endif %}
             <button style="border-radius:5px; background-color:#f05060" class="waves-effect waves-light btn-large button-delete delete-yes" type="submit"> 
                 {% trans "Delete" %}
             </button>

@@ -759,7 +759,7 @@ def seed_subjects():
         'fields': {
                 'name': 'Física y Química',
                 'level': '3º',
-                'grade': 'ESO',
+                'grade': 'SecondaryEducation',
                 'description': 'Física y Química',
                 'competences': competencels, 
             }
@@ -773,7 +773,7 @@ def seed_subjects():
         'fields': {
                 'name': 'Física y Química',
                 'level': '4º',
-                'grade': 'ESO',
+                'grade': 'SecondaryEducation',
                 'description': 'Física y Química',
                 'competences': competencels, 
             }
@@ -787,7 +787,7 @@ def seed_subjects():
         'fields': {
                 'name': 'Matemáticas',
                 'level': '3º',
-                'grade': 'ESO',
+                'grade': 'SecondaryEducation',
                 'description': 'Matemáticas',
                 'competences': competencels, 
             }
@@ -801,7 +801,7 @@ def seed_subjects():
         'fields': {
                 'name': 'Matemáticas',
                 'level': '4º',
-                'grade': 'ESO',
+                'grade': 'SecondaryEducation',
                 'description': 'Matemáticas',
                 'competences': competencels, 
             }
@@ -1069,7 +1069,7 @@ def seed_sets():
         'fields': {
                 'name': 'Física y Qúimica 3ºA ESO',
                 'level': '3º',
-                'grade': 'ESO',
+                'grade': 'SecondaryEducation',
                 'line': 'A',
                 'teacher': 2,
                 'subject': 1,
@@ -1088,7 +1088,7 @@ def seed_sets():
         'fields': {
                 'name': 'Matemáticas 3ºA ESO',
                 'level': '3º',
-                'grade': 'ESO',
+                'grade': 'SecondaryEducation',
                 'line': 'A',
                 'teacher': 2,
                 'subject': 3,
@@ -1107,7 +1107,7 @@ def seed_sets():
         'fields': {
                 'name': 'Física y Qúimica 4ºA ESO',
                 'level': '4º',
-                'grade': 'ESO',
+                'grade': 'SecondaryEducation',
                 'line': 'A',
                 'teacher': 2,
                 'subject': 2,
@@ -1126,7 +1126,7 @@ def seed_sets():
         'fields': {
                 'name': 'Matemáticas 4ºA ESO',
                 'level': '4º',
-                'grade': 'ESO',
+                'grade': 'SecondaryEducation',
                 'line': 'A',
                 'teacher': 2,
                 'subject': 4,
