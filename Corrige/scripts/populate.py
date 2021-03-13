@@ -759,7 +759,7 @@ def seed_subjects():
         'fields': {
                 'name': 'Física y Química',
                 'level': '3º',
-                'grade': 'ESO',
+                'grade': 'SecondaryEducation',
                 'description': 'Física y Química',
                 'competences': competencels, 
             }
@@ -773,7 +773,7 @@ def seed_subjects():
         'fields': {
                 'name': 'Física y Química',
                 'level': '4º',
-                'grade': 'ESO',
+                'grade': 'SecondaryEducation',
                 'description': 'Física y Química',
                 'competences': competencels, 
             }
@@ -787,7 +787,7 @@ def seed_subjects():
         'fields': {
                 'name': 'Matemáticas',
                 'level': '3º',
-                'grade': 'ESO',
+                'grade': 'SecondaryEducation',
                 'description': 'Matemáticas',
                 'competences': competencels, 
             }
@@ -801,7 +801,7 @@ def seed_subjects():
         'fields': {
                 'name': 'Matemáticas',
                 'level': '4º',
-                'grade': 'ESO',
+                'grade': 'SecondaryEducation',
                 'description': 'Matemáticas',
                 'competences': competencels, 
             }

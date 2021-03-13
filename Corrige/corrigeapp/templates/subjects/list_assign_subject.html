@@ -22,19 +22,7 @@
                             <td><i class="material-icons" style="color:#BBBBBB">book</i></td>
                             <td>{{o.name}}</td>
                             <td>{{o.level}}</td>
-                            <td>
-                                {% if object.grade == "PrimarySchool" %}
-                                    {% trans "Primary School" %}
-                                {% else if object.grade == "SecondaryEducation" %}
-                                    {% trans "Secndary Education" %}
-                                {% else if object.grade == "SixthForm" %}
-                                    {% trans "Sixth Form" %}
-                                {% else if object.grade == "FurtherEducation" %}
-                                    {% trans "FurtherEducation" %}
-                                {% else if object.grade == "University" %}
-                                    {% trans "University" %}
-                                {% endif %}
-                            </td>
+                            {% include 'td_grade.html' %}
                             <td>{{o.description}}</td>  
                             <td class="center dropdown-trigger" type="button" onclick="location.href='{% url 'teachers_unassign_subject' pk=o.pk id=teacher_object_pk %}'"><em class="material-icons" style="color:#e53935">clear</em></td>
                             
@@ -64,19 +52,7 @@
                             <td><i class="material-icons" style="color:#BBBBBB">book</i></td>
                             <td>{{o.name}}</td>
                             <td>{{o.level}}</td>
-                            <td>
-                                {% if object.grade == "PrimarySchool" %}
-                                    {% trans "Primary School" %}
-                                {% elif object.grade == "SecondaryEducation" %}
-                                    {% trans "Secondary Education" %}
-                                {% elif object.grade == "SixthForm" %}
-                                    {% trans "Sixth Form" %}
-                                {% elif object.grade == "FurtherEducation" %}
-                                    {% trans "FurtherEducation" %}
-                                {% elif object.grade == "University" %}
-                                    {% trans "University" %}
-                                {% endif %}
-                            </td>
+                            {% include 'td_grade.html' %}
                             <td>{{o.description}}</td>    
                             <td class="center dropdown-trigger" type="button" onclick="location.href='{% url 'teachers_assign_subject' pk=o.pk id=teacher_object_pk %}'"><em class="material-icons" style="color:#29b6f6">send</em></td>
                         </tr>
