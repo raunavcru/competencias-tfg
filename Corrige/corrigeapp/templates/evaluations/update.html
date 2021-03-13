@@ -13,8 +13,10 @@
                 <form class="col s12" id="form-create-students" method="post" action="{% url 'evaluations_create_all_oneFinalThreePartial' %}">
             {% elif request.get_full_path == '/evaluations/create/all/oneFinalTwoPartial' %}
                 <form class="col s12" id="form-create-students" method="post" action="{% url 'evaluations_create_all_oneFinalTwoPartial' %}">
-            {% else %}
+            {% elif update %}
                 <form class="col s12" id="form-update-students" method="post" action="{% url 'evaluations_update' object.pk %}">
+            {% else %}
+                <form class="col s12" id="form-update-students" method="post" action="{% url 'evaluations_create_child' parent_pk %}">
             {% endif %}
                     {% csrf_token %}
                     <div class="row">
@@ -30,6 +32,21 @@
                             </div>
                         </div>
                     </div>
+                    {% if create_partial %}
+                    <div class="row">
+                        <div class="grid-example col s2">
+                        </div>
+                        <div class="grid-example col s8">
+                            <div class="validate-input">
+                                <label>{% trans "Name period" %}</label>
+                                {{form.period}}
+                                <div class="form-errors">
+                                    {{ form.period.errors }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
                     <div class="row">
                         <div class="grid-example col s2">
                         </div>
@@ -176,6 +193,8 @@
                     <div class="row">
                     {% if create_final or object.is_final%}
                         <a onclick="location.href='{% url 'evaluations_list_final' %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
+                    {% elif create_partial %}
+                        <a onclick="location.href='{% url 'evaluations_list_partial' parent_pk %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
                     {% else %}
                         <a onclick="location.href='{% url 'evaluations_list_partial' object.parent.pk %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
                     {% endif %}

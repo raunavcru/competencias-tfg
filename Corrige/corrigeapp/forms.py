@@ -257,6 +257,36 @@ class EvaluationCreateAllForm(forms.ModelForm):
             'end_date',
         )
 
+class EvaluationCreateChildForm(forms.ModelForm):
+    
+    name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Matemáticas 5º Primaria Final', 'id': 'name-create-evaluation'}))
+    period = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': '1er Trimestre'}))
+    start_date = forms.DateField(required=True, 
+        input_formats=settings.DATE_INPUT_FORMATS, 
+        widget=forms.DateInput(
+            format=settings.DATE_INPUT_FORMATS[0],
+            attrs={'placeholder': DATE_PLACEHOLDER}
+        )
+    )
+    end_date = forms.DateField(required=True, 
+        input_formats=settings.DATE_INPUT_FORMATS, 
+        widget=forms.DateInput(
+            format=settings.DATE_INPUT_FORMATS[0],
+            attrs={'placeholder': DATE_PLACEHOLDER}
+        )
+    )
+
+    class Meta:
+        model = models.Evaluation
+        fields = (
+            'name',
+            'period',
+            'start_date',
+            'end_date',
+        )
+
 class EvaluationCreateOneFinalThreePartialForm(forms.ModelForm):
     
     name = forms.CharField(required=True, widget=forms.TextInput(

@@ -902,6 +902,37 @@ class EvaluationCreateAllOneFinalTwoPartialView(generic.CreateView):
         return redirect('evaluations_list_final')
 
 @method_decorator(login_required, name='dispatch')
+class EvaluationCreateChildView(generic.CreateView):
+    form_class = forms.EvaluationCreateChildForm
+    template_name = "evaluations/update.html"
+    success_url = reverse_lazy('evaluations_list_final')
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            return super(EvaluationCreateChildView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        evaluation_pk = self.kwargs.get('pk')
+        context = super(EvaluationCreateChildView, self).get_context_data(**kwargs)
+        context['create_partial'] = True
+        context['parent_pk'] = evaluation_pk
+        return context
+
+    def form_valid(self, form):
+        evaluation_pk = self.kwargs.get('pk')
+        parent = models.Evaluation.objects.get(pk=evaluation_pk)
+
+        evaluation = form.save(commit=False) 
+        evaluation.is_final=False
+        evaluation.parent = parent
+        evaluation.subject = parent.subject
+        evaluation.save()
+
+        return redirect('evaluations_list_partial', pk=evaluation_pk)
+
+@method_decorator(login_required, name='dispatch')
 class EvaluationDeleteView(generic.DeleteView):
     template_name = 'evaluations/delete.html'
     model = models.Evaluation
@@ -962,8 +993,10 @@ class EvaluationsListPartialView(generic.ListView):
             return redirect('/')
     
     def get_context_data(self, **kwargs):
+        parent_pk = self.kwargs.get('pk')
         context = super(EvaluationsListPartialView, self).get_context_data(**kwargs)
         context['list_partial'] = True
+        context['parent_pk'] = parent_pk
         return context
 
     def get_queryset(self):
