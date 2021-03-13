@@ -857,6 +857,51 @@ class EvaluationCreateAllOneFinalThreePartialView(generic.CreateView):
         return redirect('evaluations_list_final')
 
 @method_decorator(login_required, name='dispatch')
+class EvaluationCreateAllOneFinalTwoPartialView(generic.CreateView):
+    form_class = forms.EvaluationCreateOneFinalTwoPartialForm
+    template_name = "evaluations/update.html"
+    success_url = reverse_lazy('evaluations_list_final')
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            return super(EvaluationCreateAllOneFinalTwoPartialView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        context = super(EvaluationCreateAllOneFinalTwoPartialView, self).get_context_data(**kwargs)
+        context['part1'] = True
+        context['part2'] = True
+        context['create_final'] = True
+        return context
+
+    def form_valid(self, form):
+        subjects = models.Subject.objects.all().order_by('name')
+        name = form.cleaned_data.get('name')
+        start_date = form.cleaned_data.get('start_date')
+        end_date = form.cleaned_data.get('end_date')
+        period_1 = form.cleaned_data.get('period_1')
+        start_date_1 = form.cleaned_data.get('start_date_1')
+        end_date_1 = form.cleaned_data.get('end_date_1')
+        period_2 = form.cleaned_data.get('period_2')
+        start_date_2 = form.cleaned_data.get('start_date_2')
+        end_date_2 = form.cleaned_data.get('end_date_2')
+        
+        for subject in subjects:
+            evaluation = models.Evaluation.objects.create(name=name + " Final", start_date=start_date, end_date=end_date,
+            is_final=True, period="Final", subject=subject)
+            evaluation.save()
+            evaluation1 = models.Evaluation.objects.create(name=name + " " + period_1, start_date=start_date_1, end_date=end_date_1,
+            is_final=False, period=period_1, subject=subject, parent=evaluation)
+            evaluation1.save()
+            evaluation2 = models.Evaluation.objects.create(name=name + " " + period_2, start_date=start_date_2, end_date=end_date_2,
+                is_final=False, period=period_2, subject=subject, parent=evaluation)
+            evaluation2.save()
+        
+
+        return redirect('evaluations_list_final')
+
+@method_decorator(login_required, name='dispatch')
 class EvaluationDeleteView(generic.DeleteView):
     template_name = 'evaluations/delete.html'
     model = models.Evaluation

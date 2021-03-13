@@ -307,6 +307,8 @@ class EvaluationCreateOneFinalThreePartialForm(forms.ModelForm):
             attrs={'placeholder': DATE_PLACEHOLDER}
         )
     )
+    period_3 = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': '1er Trimestre'}))
     start_date_3 = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
@@ -314,8 +316,6 @@ class EvaluationCreateOneFinalThreePartialForm(forms.ModelForm):
             attrs={'placeholder': DATE_PLACEHOLDER}
         )
     )
-    period_3 = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': '1er Trimestre'}))
     end_date_3 = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
@@ -359,6 +359,8 @@ class EvaluationCreateOneFinalTwoPartialForm(forms.ModelForm):
             attrs={'placeholder': DATE_PLACEHOLDER}
         )
     )
+    period_1 = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': '1er Trimestre'}))
     start_date_1 = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
@@ -373,6 +375,8 @@ class EvaluationCreateOneFinalTwoPartialForm(forms.ModelForm):
             attrs={'placeholder': DATE_PLACEHOLDER}
         )
     )
+    period_2 = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': '1er Trimestre'}))
     start_date_2 = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
@@ -387,16 +391,17 @@ class EvaluationCreateOneFinalTwoPartialForm(forms.ModelForm):
             attrs={'placeholder': DATE_PLACEHOLDER}
         )
     )
-    subject = forms.ModelChoiceField(subjects, empty_label=None)
-
+    
     class Meta:
         model = models.Evaluation
         fields = (
             'name',
             'start_date',
             'end_date',
+            'period_1',
             'start_date_1',
             'end_date_1',
+            'period_2',
             'start_date_2',
             'end_date_2',
         )

@@ -38,9 +38,10 @@ urlpatterns = [
     path('evaluations/create', views.EvaluationCreateView.as_view(), name = 'evaluations_create'),
     path('evaluations/create/all', views.EvaluationCreateAllView.as_view(), name = 'evaluations_create_all'),
     path('evaluations/create/all/oneFinalThreePartial', views.EvaluationCreateAllOneFinalThreePartialView.as_view(), name = 'evaluations_create_all_oneFinalThreePartial'),
+    path('evaluations/create/all/oneFinalTwoPartial', views.EvaluationCreateAllOneFinalTwoPartialView.as_view(), name = 'evaluations_create_all_oneFinalTwoPartial'),
+    path('evaluations/<int:pk>/delete', views.EvaluationDeleteView.as_view(), name='evaluations_delete'),
     path('evaluations/list', views.EvaluationsListFinalView.as_view(), name = 'evaluations_list_final'),
     path('evaluations/<int:pk>/list', views.EvaluationsListPartialView.as_view(), name = 'evaluations_list_partial'),
-    path('evaluations/<int:pk>/delete', views.EvaluationDeleteView.as_view(), name='evaluations_delete'),
     path('evaluations/<int:pk>/update', views.EvaluationUpdateView.as_view(), name = 'evaluations_update'),
 
     path('my_sets/list', views.MySetsListView.as_view(), name = 'my_sets_list'),

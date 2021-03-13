@@ -11,6 +11,8 @@
                 <form class="col s12" id="form-create-students" method="post" action="{% url 'evaluations_create_all' %}">
             {% elif request.get_full_path == '/evaluations/create/all/oneFinalThreePartial' %}
                 <form class="col s12" id="form-create-students" method="post" action="{% url 'evaluations_create_all_oneFinalThreePartial' %}">
+            {% elif request.get_full_path == '/evaluations/create/all/oneFinalTwoPartial' %}
+                <form class="col s12" id="form-create-students" method="post" action="{% url 'evaluations_create_all_oneFinalTwoPartial' %}">
             {% else %}
                 <form class="col s12" id="form-update-students" method="post" action="{% url 'evaluations_update' object.pk %}">
             {% endif %}
