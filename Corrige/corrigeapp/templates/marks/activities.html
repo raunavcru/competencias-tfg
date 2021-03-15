@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %} 
+<div class="container">
+    <h4 class="centered">{% trans "List of activities" %}</h4>   
+        <table class="highlight">
+            <caption></caption>
+                <thead>
+                    <tr>
+                        <th id=""></th>
+                        <th id="date">{% trans "Date" %}</th>
+                        <th id="weight">{% trans "Weight" %}</th>
+                        <th id="evaluation">{% trans "Evaluation" %}</th>
+                        <th class="center" id="is_recovery">{% trans "Recovery" %}</th>
+                        <th class="center" id="mark">{% trans "Mark" %}</th>
+                        <th class="center" id="manual_mark">{% trans "Manual mark" %}</th>
+                    </tr>
+                </thead>
+            {% for object in ac_mark_saved %}
+                    <tbody>
+                        <tr class="center">
+                            <td><i class="material-icons" style="color:#BBBBBB">account_circle</i></td>
+                            <td>{{object.activity.date}}</td>
+                            <td>{{object.activity.weight}}</td>
+                            <td>{{object.activity.evaluation}}</td>
+                            <td class="center dropdown-trigger">
+                                {% if object.activity.is_recovery %} 
+                                    <em class="material-icons" style="color:#2d572c">check</em>
+                                {% else %}
+                                    <em class="material-icons" style="color:#e53935">close</em>
+                                {% endif %}
+                            </td>
+                            <td class="center">
+                        {% if object.mark %}
+                            {{object.mark}}
+                        {% else %}
+                            -
+                        {% endif %}
+                        </td>
+                        <td class="center">
+                        {% if object.manual_mark %}
+                            {{object.manual_mark}}
+                        {% else %}
+                            -
+                        {% endif %}
+                        </td>
+                        </tr>
+                    </tbody>
+            {% endfor %}
+        </table>
+{% endblock %}
+
+  <!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
+  <!-- Modal Structure -->
