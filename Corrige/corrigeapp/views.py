@@ -1032,6 +1032,47 @@ class EvaluationUpdateView(generic.UpdateView):
         else:
             return redirect('evaluations_list_partial', pk=evaluation.parent.pk ) 
 
+# Marks
+@method_decorator(login_required, name='dispatch')        
+class MarkEvaluationListView(generic.ListView):
+    model = models.Evaluation_mark
+    template_name = 'marks/evaluations.html'
+    paginate_by = 5
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_teacher(request.user):
+            return super(MarkEvaluationListView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        set_pk = self.kwargs.get('id')
+        set_object = models.Set.objects.get(pk=set_pk)
+        student_pk = self.kwargs.get('pk')
+        student_object = models.Student.objects.get(pk=student_pk)
+        parent = set_object.evaluation
+        evaluations = models.Evaluation.objects.filter(parent=parent).order_by('period')
+
+        if not models.Evaluation_mark.objects.filter(evaluation = parent, student=student_object).exists():
+            parent_mark = models.Evaluation_mark.objects.create(evaluation = parent, student=student_object, evaluation_type="AUTOMATIC")
+            parent_mark.save()
+
+        for ev in evaluations:
+            if not models.Evaluation_mark.objects.filter(evaluation = ev, student=student_object).exists():
+                ev_mark = models.Evaluation_mark.objects.create(evaluation = ev, student=student_object, evaluation_type="AUTOMATIC")
+                ev_mark.save()
+        
+        parent_mark_saved = models.Evaluation_mark.objects.filter(evaluation = parent, student=student_object).first()
+        ev_mark_saved = models.Evaluation_mark.objects.filter(evaluation__parent = parent, student=student_object).order_by('evaluation__period')
+
+        context = super(MarkEvaluationListView, self).get_context_data(**kwargs)
+        context['set_object'] = set_object
+        context['student_object'] = student_object
+        context['parent_mark_saved'] = parent_mark_saved
+        context['ev_mark_saved'] = ev_mark_saved
+        
+        return context
+
 # My
 @method_decorator(login_required, name='dispatch')        
 class MySetStudentListView(generic.ListView):
@@ -1050,6 +1091,7 @@ class MySetStudentListView(generic.ListView):
         set_object = models.Set.objects.get(pk=set_object_pk)
         object_list = set_object.students.all().order_by('surname')
         context = super(MySetStudentListView, self).get_context_data(object_list=object_list, **kwargs)
+        context['set_object_pk'] = set_object_pk
 
         return context
 

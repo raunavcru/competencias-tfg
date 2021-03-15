@@ -186,9 +186,9 @@ class Activity(Common):
             return self.date + ' activity'
 
 class Evaluation_mark(Common):
-    mark = models.DecimalField('mark', max_digits=4, decimal_places=2)
+    mark = models.DecimalField('mark', max_digits=4, decimal_places=2, blank=True, null=True )
 
-    manual_mark = models.DecimalField('manual_mark', max_digits=4, decimal_places=2)
+    manual_mark = models.DecimalField('manual_mark', max_digits=4, decimal_places=2, blank=True, null=True)
 
     evaluation_type = models.CharField(("evaluation_type"), max_length=50)
 

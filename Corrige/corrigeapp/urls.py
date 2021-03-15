@@ -45,6 +45,8 @@ urlpatterns = [
     path('evaluations/<int:pk>/list', views.EvaluationsListPartialView.as_view(), name = 'evaluations_list_partial'),
     path('evaluations/<int:pk>/update', views.EvaluationUpdateView.as_view(), name = 'evaluations_update'),
 
+    path('marks/evaluations/<int:id>/<int:pk>/list', views.MarkEvaluationListView.as_view(), name = 'marks_evaluations_list'),
+
     path('my_sets/list', views.MySetsListView.as_view(), name = 'my_sets_list'),
     path('my_subjects/list', views.SubjectsOwnerListView.as_view(), name = 'my_subjects_list'),
 
