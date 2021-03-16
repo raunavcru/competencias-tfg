@@ -1072,6 +1072,7 @@ class MarkActivityListView(generic.ListView):
         context = super(MarkActivityListView, self).get_context_data(**kwargs)
         context['set_object'] = set_object
         context['student_object'] = student_object
+        context['evaluation_object'] = evaluation_object
         context['ac_mark_saved'] = ac_mark_saved
         
         return context
