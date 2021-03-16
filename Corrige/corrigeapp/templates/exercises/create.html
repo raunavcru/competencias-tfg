@@ -56,8 +56,8 @@
     </div>
 </div>
 {% if update %}
-    {% if list_competences_assigned %}
     <ul class="collapsible">
+    {% if list_competences_assigned %}
         <li onclick="onCloseAssigned()" class="active">
             <div class="collapsible-header">
                 <div class="container">
@@ -125,59 +125,58 @@
                 <div class="container" style="margin-bottom:100px">
                     <div class="row">
                         <table class="highlight">
-                    <caption></caption>
-                        <thead>
-                            <tr>
-                                <th id="code">{% trans "Code" %}</th>
-                                <th id="name">{% trans "Name" %}</th>   
-                                <th class="center" id="assign">{% trans "Assign" %}</th>        
-                            </tr>
-                        </thead>
-                        {% for object in list_competences_unassigned %}
-                            <tbody>
-                                <tr class="center">
-                                    <td style="width:100px">{{object.code}}</td> 
-                                    <td style="width:300px">{{object.name}}</td>   
-                                    <td class="center" style="width:200px">
-                                        <form class="col s12" id="form-create-exercise_competences" method="post" action="{% url 'exercise_competences_create' id=object.pk pk=exercise_pk %}">   
-                                            {% csrf_token %}
-                                            <div class="row">
-                                                <div class="grid-example col s2">
-                                                </div>
-                                                <div class="grid-example col s3">
-                                                    <div class="validate-input">
-                                                        <label>{% trans "Intensity" %}</label>
-                                                        {{exercise_competence_form.intensity}}
-                                                        <div class="form-errors">
-                                                            {{ exercise_competence_form.intensity.errors }}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="grid-example col s3">
-                                                    <div class="validate-input">
-                                                        <label>{% trans "Weight" %}</label>
-                                                        {{exercise_competence_form.weight}}
-                                                        <div class="form-errors">
-                                                            {{ exercise_competence_form.weight.errors }}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <button class="btn waves-effect right" type="submit" name="action">{% trans "Create" %}
-                                                    <i class="large material-icons right"><i>send</i></i>
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </td>                   
+                        <caption></caption>
+                            <thead>
+                                <tr>
+                                    <th id="code">{% trans "Code" %}</th>
+                                    <th id="name">{% trans "Name" %}</th>   
+                                    <th class="center" id="assign">{% trans "Assign" %}</th>        
                                 </tr>
-                            </tbody>
-                        {% endfor %}
-                    </tbody>
-                </table>
+                            </thead>
+                            {% for object in list_competences_unassigned %}
+                                <tbody>
+                                    <tr class="center">
+                                        <td style="width:100px">{{object.code}}</td> 
+                                        <td style="width:300px">{{object.name}}</td>   
+                                        <td class="center" style="width:200px">
+                                            <form class="col s12" id="form-create-exercise_competences" method="post" action="{% url 'exercise_competences_create' id=object.pk pk=exercise_pk %}">   
+                                                {% csrf_token %}
+                                                <div class="row">
+                                                    <div class="grid-example col s2">
+                                                    </div>
+                                                    <div class="grid-example col s3">
+                                                        <div class="validate-input">
+                                                            <label>{% trans "Intensity" %}</label>
+                                                            {{exercise_competence_form.intensity}}
+                                                            <div class="form-errors">
+                                                                {{ exercise_competence_form.intensity.errors }}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="grid-example col s3">
+                                                        <div class="validate-input">
+                                                            <label>{% trans "Weight" %}</label>
+                                                            {{exercise_competence_form.weight}}
+                                                            <div class="form-errors">
+                                                                {{ exercise_competence_form.weight.errors }}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <button class="btn waves-effect right" type="submit" name="action">{% trans "Create" %}
+                                                        <i class="large material-icons right"><i>send</i></i>
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </td>                   
+                                    </tr>
+                                </tbody>
+                            {% endfor %}
+                        </table>
                     </div>
                 </div>
             </div>
         </li>
-        </ul>
+    </ul>
     {% endif %}
 {% endif %}
 {{form.media}}

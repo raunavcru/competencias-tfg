@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+
+<div class="container">
+    <h4 class="centered">{% trans "List of competences" %} {% trans "of" %} {{student_object.name}} {{student_object.surname}} </h4>
+        <table class="highlight">
+            <caption></caption>
+                <thead>
+                    <tr>
+                        <th id="code">{% trans "Code" %}</th>
+                        <th id="name">{% trans "Name" %}</th>
+                        <th id="description">{% trans "Description" %}</th>   
+                        <th class="center" id="mark">{% trans "Mark" %}</th>
+                        <th class="center" id="manual_mark">{% trans "Manual mark" %}</th>                 
+                    </tr>
+                </thead>
+                {% for object in c_mark_saved %}
+                    <tbody>
+                        <tr class="center">
+                            <td>{{object.competence.code}}</td> 
+                            <td style="width:300px">{{object.competence.name}}</td>
+                            <td style="width:500px">{{object.competence.description}}</td>
+                            <td class="center">
+                                {% if object.mark %}
+                                    {{object.mark}}
+                                {% else %}
+                                    -
+                                {% endif %}
+                            </td>
+                            <td class="center">
+                                {% if object.manual_mark %}
+                                    {{object.manual_mark}}
+                                {% else %}
+                                    -
+                                {% endif %}
+                            </td>
+                        </tr>
+                    </tbody>
+                {% endfor %}
+
+            </tbody>
+        </table>
+        {% include 'paginate.html' %}       
+<a onClick="location.href='{% url 'marks_exercises_list' id=activity_object.pk pk=student_object.pk %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
+{% endblock %}

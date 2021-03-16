@@ -34,7 +34,7 @@
                                     -
                                 {% endif %}
                             </td>
-
+                            <td class="center dropdown-trigger" onclick="location.href='{% url 'marks_competences_list' id=object.exercise.pk pk=student_object.pk %}'"><em class="material-icons" style="color:#e53935">rate_review</em></td>
                         </tr>
                     </tbody>
             {% endfor %}
