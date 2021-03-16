@@ -3,7 +3,7 @@
 {% load i18n %}
 {% block content %} 
 <div class="container">
-    <h4 class="centered">{% trans "List of assigned subjects" %}</h4>
+    <h4 class="centered">{% trans "List of assigned subjects" %} {% trans "of" %} {{teacher_object.user.first_name}} {{teacher_object.user.last_name}}</h4>
         <table class="highlight">
             <caption></caption>
                 <thead>

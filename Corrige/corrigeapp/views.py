@@ -1441,6 +1441,7 @@ class TeacherAssignSubjectListView(generic.ListView, generic.list.MultipleObject
             object_list=object_list, **kwargs)
         context['other_subjects'] = models.Subject.objects.all().exclude(id__in=object_list).order_by('name')
         context['teacher_object_pk'] = teacher_object_pk
+        context['teacher_object'] = teacher_object
 
         return context
 
