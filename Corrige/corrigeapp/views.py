@@ -1118,6 +1118,53 @@ class MarkEvaluationListView(generic.ListView):
         
         return context
 
+@method_decorator(login_required, name='dispatch')        
+class MarkExerciseListView(generic.ListView):
+    model = models.Exercise_mark
+    template_name = 'marks/exercises.html'
+
+    def get(self, request, *args, **kwargs):
+        activity_pk = self.kwargs.get('id')
+        activity_object = models.Activity.objects.get(pk=activity_pk)
+        evaluation_object = activity_object.evaluation
+        if evaluation_object.is_final:
+            set_object = models.Set.objects.get(evaluation=evaluation_object)
+        else:
+            set_object = models.Set.objects.get(evaluation=evaluation_object.parent)
+        
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
+            return super(MarkExerciseListView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        activity_pk = self.kwargs.get('id')
+        activity_object = models.Activity.objects.get(pk=activity_pk)
+        evaluation_object = activity_object.evaluation
+        student_pk = self.kwargs.get('pk')
+        student_object = models.Student.objects.get(pk=student_pk)
+        exercises = models.Exercise.objects.filter(activity=activity_object).order_by('statement')
+        if evaluation_object.is_final:
+            set_object = models.Set.objects.get(evaluation=evaluation_object)
+        else:
+            set_object = models.Set.objects.get(evaluation=evaluation_object.parent)
+
+        for ex in exercises:
+            if not models.Exercise_mark.objects.filter(exercise = ex, student=student_object).exists():
+                ex_mark = models.Exercise_mark.objects.create(exercise = ex, student=student_object, evaluation_type="AUTOMATIC")
+                ex_mark.save()
+        
+        ex_mark_saved = models.Exercise_mark.objects.filter(exercise__activity = activity_object, student=student_object).order_by('exercise__statement')
+
+        context = super(MarkExerciseListView, self).get_context_data(**kwargs)
+        context['set_object'] = set_object
+        context['student_object'] = student_object
+        context['activity_object'] = activity_object
+        context['evaluation_object'] = evaluation_object
+        context['ex_mark_saved'] = ex_mark_saved
+        
+        return context
+
 # My
 @method_decorator(login_required, name='dispatch')        
 class MySetStudentListView(generic.ListView):
