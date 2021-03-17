@@ -17,6 +17,8 @@ COMPETENCE_CREATE = "competences/create.html"
 EVALUATION_UPDATE = "evaluations/update.html"
 EXERCISE_CREATE = 'exercises/create.html'
 
+User = get_user_model()
+
 
 # Generic
 class HomeView(generic.TemplateView):
@@ -1245,6 +1247,42 @@ class MySetsListView(generic.ListView):
     def get_queryset(self):
         queryset = models.Set.objects.filter(teacher__user=self.request.user).order_by('name')
         return queryset
+
+# Profile
+@method_decorator(login_required, name='dispatch')
+class UserUpdateView(generic.UpdateView):
+    template_name = 'profile/update.html'
+    model = User
+    form_class = forms.UserForm
+    profile_form_class = forms.UserProfileForm
+    success_url = reverse_lazy('home')
+
+    def get_context_data(self, **kwargs):
+        context = super(UserUpdateView,self).get_context_data(**kwargs)
+        if self.request.POST:
+            context['profile_form'] = self.profile_form_class(
+                self.request.POST, instance=self.object.profile)
+        else:
+            context['profile_form'] = self.profile_form_class(
+                instance=self.object.profile)
+        return context
+
+    def get_object(self):
+        return self.request.user
+
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        form = self.form_class(request.POST, instance=self.object)
+        profile_form = self.profile_form_class(
+            request.POST, request.FILES, instance=self.object.profile)
+        if form.is_valid() and profile_form.is_valid():
+            user = form.save()
+            profile_form.save(user)
+
+            return redirect(self.get_success_url())
+        else:
+            return self.render_to_response(
+                self.get_context_data(form=form, profile_form=profile_form))
 
 # Sets
 @method_decorator(login_required, name='dispatch') 

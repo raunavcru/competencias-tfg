@@ -53,7 +53,7 @@
     </nav>
 
     <ul id="dropdown1" class="dropdown-content grey lighten-4">
-        <li><a href="#!" style="color:black">{% trans "Profile" %}</a></li>
+        <li><a href="{% url 'profile_update' %}" style="color:black">{% trans "Profile" %}</a></li>
         <li><a href="{% url 'logout'%}" style="color:black">{% trans "Logout" %}</a></li>
     </ul>
 
@@ -78,7 +78,7 @@
             <li><a href="{% url 'teachers_list' %}">{% trans "Teachers" %}</a></li>
             <li><a href="{% url 'sets_list' %}">{% trans "Sets" %}</a></li>
             <li><a href="{% url 'subjects_list' %}">{% trans "Subjects" %}</a></li>
-            <li><a href="#!" style="font-weight: bold;">{% trans "Profile" %}</a></li>
+            <li><a href="{% url 'profile_update' %}" style="font-weight: bold;">{% trans "Profile" %}</a></li>
             <li><a href="{% url 'logout'%}" style="color:red">{% trans "Logout" %}</a></li>
             {% else %}
             <li><a href="#">{% trans "My Activities" %}</a></li>
