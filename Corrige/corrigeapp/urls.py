@@ -53,6 +53,8 @@ urlpatterns = [
     path('my_sets/list', views.MySetsListView.as_view(), name = 'my_sets_list'),
     path('my_subjects/list', views.SubjectsOwnerListView.as_view(), name = 'my_subjects_list'),
 
+    path('profile/update', views.UserUpdateView.as_view(), name = 'profile_update'),
+
     path('sets/<int:pk>/assign/list', views.SetAssignStudentListView.as_view(), name = 'sets_assign_student_list'),
     path('sets/<int:pk>/list', views.MySetStudentListView.as_view(), name = 'sets_student_list'),
     path('sets/<int:pk>/<int:id>/assign/', views.SetAssignStudentView.as_view(), name = 'sets_assign_student'),

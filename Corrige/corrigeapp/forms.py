@@ -732,6 +732,50 @@ class UserCreateForm(UserCreationForm):
             raise ValidationError('Usuario ya registrado')
         return username
 
+class UserForm(UserChangeForm):
+    first_name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Alberto', 'id': 'first_name-update-profile'}))
+    last_name = forms.CharField(required=True,widget=forms.TextInput(
+        attrs={'placeholder': 'Cordón', 'id': 'last_name-update-profile'}))
+    username = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'alberto26', 'id': 'username-update-profile'}))
+    email = forms.EmailField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'alberto@gmail.com', 'id': 'email-update-profile'}))
+    
+
+    class Meta:
+        model = User
+        fields = (
+            'first_name', 
+            'last_name',
+            'username', 
+            'email', 
+            
+        )
+
+class UserProfileForm(UserChangeForm):
+    birthdate = forms.DateField(required=True, 
+        input_formats=settings.DATE_INPUT_FORMATS, 
+        widget=forms.DateInput(
+            format=settings.DATE_INPUT_FORMATS[0],
+            attrs={'placeholder': DATE_PLACEHOLDER}
+        )
+    )
+    initials = forms.CharField(required=True)
+
+    def __init__(self, *args, **kwargs):
+        super(UserProfileForm, self).__init__(*args, **kwargs)
+        if get_language() == 'en':
+            self.fields['birthdate'].widget.attrs['placeholder'] = DATE_PLACEHOLDER_EN
+            self.fields['birthdate'].widget.format = settings.DATE_INPUT_FORMATS[0]
+    
+    class Meta:
+        model = models.Profile
+        fields = (
+            'birthdate', 
+            'initials',
+        )
+
 class UserUpdateForm(forms.ModelForm):
     first_name = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': 'Alberto', 'id': 'first_name-create-teacher'}))
