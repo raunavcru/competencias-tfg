@@ -14,7 +14,11 @@ from . import services
 
 COMPETENCE_LIST = 'competences/list.html'
 COMPETENCE_CREATE = "competences/create.html"
+EVALUATION_UPDATE = "evaluations/update.html"
 EXERCISE_CREATE = 'exercises/create.html'
+
+User = get_user_model()
+
 
 # Generic
 class HomeView(generic.TemplateView):
@@ -674,6 +678,7 @@ class ExerciseUpdateView(generic.UpdateView):
         activity_object = models.Activity.objects.get(pk=exercise_object.activity.pk)
         list_exercise_competence = models.Exercise_competence.objects.filter(exercise=exercise_object)
         list_competences_unassigned = models.Competence.objects.filter(level=1, competences=activity_object.set_activity.subject).exclude(competence_exercise_competence__exercise=exercise_object).order_by('code')
+        print(list_competences_unassigned)
         context = super(ExerciseUpdateView, self).get_context_data(**kwargs)
         context['exercise_pk'] = exercise_pk
         context['activity_pk'] = activity_object.pk
@@ -749,8 +754,8 @@ class ExerciseCompetenceCreateView(generic.CreateView):
 @method_decorator(login_required, name='dispatch')
 class EvaluationCreateView(generic.CreateView):
     form_class = forms.EvaluationCreateForm
-    template_name = "evaluations/update.html"
-    success_url = reverse_lazy('evaluations_list')
+    template_name = EVALUATION_UPDATE
+    success_url = reverse_lazy('evaluations_list_final')
 
     def get(self, request, *args, **kwargs):
         if services.UserService().is_admin(request.user):
@@ -758,58 +763,205 @@ class EvaluationCreateView(generic.CreateView):
         else:
             return redirect('/')
 
+    def get_context_data(self, **kwargs):
+        context = super(EvaluationCreateView, self).get_context_data(**kwargs)
+        context['partial'] = True
+        context['create_final'] = True
+        return context
+
     def form_valid(self, form):
-        name = form.cleaned_data.get('name')
-        start_date = form.cleaned_data.get('start_date')
-        end_date_1 = form.cleaned_data.get('end_date_1')
-        start_date_2 = form.cleaned_data.get('start_date_2')
-        end_date_2 = form.cleaned_data.get('end_date_2')
-        start_date_3 = form.cleaned_data.get('start_date_3')
-        end_date = form.cleaned_data.get('end_date')
-        subject = form.cleaned_data.get('subject')
 
         evaluation = form.save(commit=False) 
         evaluation.is_final=True
         evaluation.period = "Final"
         evaluation.save()
-        evaluation1 = models.Evaluation.objects.create(name=name, start_date=start_date, end_date=end_date_1,
-            is_final=False, period="1st", subject=subject, parent=evaluation)
-        evaluation1.save()
-        evaluation2 = models.Evaluation.objects.create(name=name, start_date=start_date_2, end_date=end_date_2,
-            is_final=False, period="2nd", subject=subject, parent=evaluation)
-        evaluation2.save()
-        evaluation3 = models.Evaluation.objects.create(name=name, start_date=start_date_3, end_date=end_date,
-            is_final=False, period="3rd", subject=subject, parent=evaluation)
-        evaluation3.save()
 
-        return redirect('evaluations_list')
+        return redirect('evaluations_list_final')
+
+@method_decorator(login_required, name='dispatch')
+class EvaluationCreateAllView(generic.CreateView):
+    form_class = forms.EvaluationCreateAllForm
+    template_name = EVALUATION_UPDATE
+    success_url = reverse_lazy('evaluations_list_final')
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            return super(EvaluationCreateAllView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        context = super(EvaluationCreateAllView, self).get_context_data(**kwargs)
+        context['create_final'] = True
+        return context
+
+    def form_valid(self, form):
+        subjects = models.Subject.objects.all().order_by('name')
+        start_date = form.cleaned_data.get('start_date')
+        end_date = form.cleaned_data.get('end_date')
+
+        for subject in subjects:
+            evaluation = models.Evaluation.objects.create(name=subject.name + " " + subject.level + "Final", start_date=start_date, end_date=end_date,
+            is_final=True, period="Final", subject=subject)
+            evaluation.save()
+        
+
+        return redirect('evaluations_list_final')
+
+@method_decorator(login_required, name='dispatch')
+class EvaluationCreateAllOneFinalThreePartialView(generic.CreateView):
+    form_class = forms.EvaluationCreateOneFinalThreePartialForm
+    template_name = EVALUATION_UPDATE
+    success_url = reverse_lazy('evaluations_list_final')
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            return super(EvaluationCreateAllOneFinalThreePartialView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        context = super(EvaluationCreateAllOneFinalThreePartialView, self).get_context_data(**kwargs)
+        context['part1'] = True
+        context['part2'] = True
+        context['part3'] = True
+        context['create_final'] = True
+        return context
+
+    def form_valid(self, form):
+        subjects = models.Subject.objects.all().order_by('name')
+        name = form.cleaned_data.get('name')
+        start_date = form.cleaned_data.get('start_date')
+        end_date = form.cleaned_data.get('end_date')
+        period_1 = form.cleaned_data.get('period_1')
+        start_date_1 = form.cleaned_data.get('start_date_1')
+        end_date_1 = form.cleaned_data.get('end_date_1')
+        period_2 = form.cleaned_data.get('period_2')
+        start_date_2 = form.cleaned_data.get('start_date_2')
+        end_date_2 = form.cleaned_data.get('end_date_2')
+        period_3 = form.cleaned_data.get('period_3')
+        start_date_3 = form.cleaned_data.get('start_date_3')
+        end_date_3 = form.cleaned_data.get('end_date_3')
+        
+
+        for subject in subjects:
+            evaluation = models.Evaluation.objects.create(name=name + " Final", start_date=start_date, end_date=end_date,
+            is_final=True, period="Final", subject=subject)
+            evaluation.save()
+            evaluation1 = models.Evaluation.objects.create(name=name + " " + period_1, start_date=start_date_1, end_date=end_date_1,
+            is_final=False, period=period_1, subject=subject, parent=evaluation)
+            evaluation1.save()
+            evaluation2 = models.Evaluation.objects.create(name=name + " " + period_2, start_date=start_date_2, end_date=end_date_2,
+                is_final=False, period=period_2, subject=subject, parent=evaluation)
+            evaluation2.save()
+            evaluation3 = models.Evaluation.objects.create(name=name + " " + period_3, start_date=start_date_3, end_date=end_date_3,
+                is_final=False, period=period_3, subject=subject, parent=evaluation)
+            evaluation3.save()
+        
+
+        return redirect('evaluations_list_final')
+
+@method_decorator(login_required, name='dispatch')
+class EvaluationCreateAllOneFinalTwoPartialView(generic.CreateView):
+    form_class = forms.EvaluationCreateOneFinalTwoPartialForm
+    template_name = EVALUATION_UPDATE
+    success_url = reverse_lazy('evaluations_list_final')
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            return super(EvaluationCreateAllOneFinalTwoPartialView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        context = super(EvaluationCreateAllOneFinalTwoPartialView, self).get_context_data(**kwargs)
+        context['part1'] = True
+        context['part2'] = True
+        context['create_final'] = True
+        return context
+
+    def form_valid(self, form):
+        subjects = models.Subject.objects.all().order_by('name')
+        name = form.cleaned_data.get('name')
+        start_date = form.cleaned_data.get('start_date')
+        end_date = form.cleaned_data.get('end_date')
+        period_1 = form.cleaned_data.get('period_1')
+        start_date_1 = form.cleaned_data.get('start_date_1')
+        end_date_1 = form.cleaned_data.get('end_date_1')
+        period_2 = form.cleaned_data.get('period_2')
+        start_date_2 = form.cleaned_data.get('start_date_2')
+        end_date_2 = form.cleaned_data.get('end_date_2')
+        
+        for subject in subjects:
+            evaluation = models.Evaluation.objects.create(name=name + " Final", start_date=start_date, end_date=end_date,
+            is_final=True, period="Final", subject=subject)
+            evaluation.save()
+            evaluation1 = models.Evaluation.objects.create(name=name + " " + period_1, start_date=start_date_1, end_date=end_date_1,
+            is_final=False, period=period_1, subject=subject, parent=evaluation)
+            evaluation1.save()
+            evaluation2 = models.Evaluation.objects.create(name=name + " " + period_2, start_date=start_date_2, end_date=end_date_2,
+                is_final=False, period=period_2, subject=subject, parent=evaluation)
+            evaluation2.save()
+        
+
+        return redirect('evaluations_list_final')
+
+@method_decorator(login_required, name='dispatch')
+class EvaluationCreateChildView(generic.CreateView):
+    form_class = forms.EvaluationCreateChildForm
+    template_name = EVALUATION_UPDATE
+    success_url = reverse_lazy('evaluations_list_final')
+
+    def get(self, request, *args, **kwargs):
+        if services.UserService().is_admin(request.user):
+            return super(EvaluationCreateChildView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        evaluation_pk = self.kwargs.get('pk')
+        context = super(EvaluationCreateChildView, self).get_context_data(**kwargs)
+        context['create_partial'] = True
+        context['parent_pk'] = evaluation_pk
+        return context
+
+    def form_valid(self, form):
+        evaluation_pk = self.kwargs.get('pk')
+        parent = models.Evaluation.objects.get(pk=evaluation_pk)
+
+        evaluation = form.save(commit=False) 
+        evaluation.is_final=False
+        evaluation.parent = parent
+        evaluation.subject = parent.subject
+        evaluation.save()
+
+        return redirect('evaluations_list_partial', pk=evaluation_pk)
 
 @method_decorator(login_required, name='dispatch')
 class EvaluationDeleteView(generic.DeleteView):
     template_name = 'evaluations/delete.html'
     model = models.Evaluation
-    success_url = reverse_lazy('evaluations_list')
+    success_url = reverse_lazy('evaluations_list_final')
 
     def get(self, request, *args, **kwargs):
         evaluation_pk = self.kwargs.get('pk')
         parent = models.Evaluation.objects.get(pk=evaluation_pk)
-        if services.UserService().is_admin(request.user) and parent.is_final:
+        if services.UserService().is_admin(request.user):
             return super(EvaluationDeleteView, self).get(self, request, *args, **kwargs)
         else:
             return redirect('/')
-    
+
     def delete(self, request, *args, **kwargs):
         evaluation_pk = self.kwargs.get('pk')
-        parent = models.Evaluation.objects.get(pk=evaluation_pk)
-        if parent.is_final:
-            models.Evaluation.objects.filter(parent=parent).delete()
-            parent.delete()
-            return redirect('evaluations_list')
+        evaluation = models.Evaluation.objects.get(pk=evaluation_pk)
+        evaluation.delete()
+        if evaluation.is_final:
+            return redirect('evaluations_list_final')
         else:
-            return redirect('/')
+            return redirect('evaluations_list_partial', pk=evaluation.parent.pk )
 
 @method_decorator(login_required, name='dispatch')
-class EvaluationsListView(generic.ListView):
+class EvaluationsListFinalView(generic.ListView):
     model = models.Evaluation
     template_name = 'evaluations/list.html'
     context_object_name = 'evaluations_list'
@@ -817,20 +969,53 @@ class EvaluationsListView(generic.ListView):
 
     def get(self, request, *args, **kwargs):
         if services.UserService().is_admin(request.user):
-            return super(EvaluationsListView, self).get(self, request, *args, **kwargs)
+            return super(EvaluationsListFinalView, self).get(self, request, *args, **kwargs)
         else:
             return redirect('/')
-            
+    
+    def get_context_data(self, **kwargs):
+        context = super(EvaluationsListFinalView, self).get_context_data(**kwargs)
+        context['list_final'] = True
+        return context
+
     def get_queryset(self):
-        queryset = models.Evaluation.objects.all().order_by('name','subject', 'parent', 'start_date')
+        queryset = models.Evaluation.objects.filter(is_final = True).order_by('name','subject', 'start_date')
+        return queryset
+
+@method_decorator(login_required, name='dispatch')
+class EvaluationsListPartialView(generic.ListView):
+    model = models.Evaluation
+    template_name = 'evaluations/list.html'
+    context_object_name = 'evaluations_list'
+    paginate_by = 8
+
+    def get(self, request, *args, **kwargs):
+        parent_pk = self.kwargs.get('pk')
+        parent = models.Evaluation.objects.get(pk=parent_pk)
+        if services.UserService().is_admin(request.user) and parent.is_final:
+            return super(EvaluationsListPartialView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+    
+    def get_context_data(self, **kwargs):
+        parent_pk = self.kwargs.get('pk')
+        context = super(EvaluationsListPartialView, self).get_context_data(**kwargs)
+        context['list_partial'] = True
+        context['parent_pk'] = parent_pk
+        return context
+
+    def get_queryset(self):
+        parent_pk = self.kwargs.get('pk')
+        parent = models.Evaluation.objects.get(pk=parent_pk)
+        queryset = models.Evaluation.objects.filter(parent = parent).order_by('name','subject', 'start_date')
         return queryset
     
 @method_decorator(login_required, name='dispatch')
 class EvaluationUpdateView(generic.UpdateView):
     model = models.Evaluation
-    form_class = forms.EvaluationUpdateForm
-    template_name = "evaluations/update.html"
-    success_url = reverse_lazy('evaluations_list')
+    form_class = forms.EvaluationCreateAllForm
+    template_name = EVALUATION_UPDATE
+    success_url = reverse_lazy('evaluations_list_final')
 
     def get(self, request, *args, **kwargs):
         if services.UserService().is_admin(request.user):
@@ -838,6 +1023,193 @@ class EvaluationUpdateView(generic.UpdateView):
         else:
             return redirect('/')
 
+    def get_context_data(self, **kwargs):
+        context = super(EvaluationUpdateView, self).get_context_data(**kwargs)
+        context['update'] = True
+        return context
+    
+    def form_valid(self, form):
+        evaluation = form.save()
+        if evaluation.is_final:
+            return redirect('evaluations_list_final')
+        else:
+            return redirect('evaluations_list_partial', pk=evaluation.parent.pk ) 
+
+# Marks
+@method_decorator(login_required, name='dispatch')        
+class MarkActivityListView(generic.ListView):
+    model = models.Activity_mark
+    template_name = 'marks/activities.html'
+
+    def get(self, request, *args, **kwargs):
+        evalution_pk = self.kwargs.get('id')
+        evaluation_object = models.Evaluation.objects.get(pk=evalution_pk)
+        if evaluation_object.is_final:
+            set_object = models.Set.objects.get(evaluation=evaluation_object)
+        else:
+            set_object = models.Set.objects.get(evaluation=evaluation_object.parent)
+        
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
+            return super(MarkActivityListView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        evalution_pk = self.kwargs.get('id')
+        evaluation_object = models.Evaluation.objects.get(pk=evalution_pk)
+        student_pk = self.kwargs.get('pk')
+        student_object = models.Student.objects.get(pk=student_pk)
+        activities = models.Activity.objects.filter(evaluation=evaluation_object).order_by('date')
+        if evaluation_object.is_final:
+            set_object = models.Set.objects.get(evaluation=evaluation_object)
+        else:
+            set_object = models.Set.objects.get(evaluation=evaluation_object.parent)
+
+        for ac in activities:
+            if not models.Activity_mark.objects.filter(activity = ac, student=student_object).exists():
+                ac_mark = models.Activity_mark.objects.create(activity = ac, student=student_object, evaluation_type="AUTOMATIC")
+                ac_mark.save()
+        
+        ac_mark_saved = models.Activity_mark.objects.filter(activity__evaluation = evaluation_object, student=student_object).order_by('activity__date')
+
+        context = super(MarkActivityListView, self).get_context_data(**kwargs)
+        context['set_object'] = set_object
+        context['student_object'] = student_object
+        context['evaluation_object'] = evaluation_object
+        context['ac_mark_saved'] = ac_mark_saved
+        
+        return context
+
+@method_decorator(login_required, name='dispatch')        
+class MarkCompetenceListView(generic.ListView):
+    model = models.Competence_mark
+    template_name = 'marks/competences.html'
+
+    def get(self, request, *args, **kwargs):
+        exercise_pk = self.kwargs.get('id')
+        exercise_object = models.Exercise.objects.get(pk=exercise_pk)
+        evaluation_object = exercise_object.activity.evaluation
+        if evaluation_object.is_final:
+            set_object = models.Set.objects.get(evaluation=evaluation_object)
+        else:
+            set_object = models.Set.objects.get(evaluation=evaluation_object.parent)
+        
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
+            return super(MarkCompetenceListView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        exercise_pk = self.kwargs.get('id')
+        exercise_object = models.Exercise.objects.get(pk=exercise_pk)
+        activity_object = exercise_object.activity
+        evaluation_object = activity_object.evaluation
+        student_pk = self.kwargs.get('pk')
+        student_object = models.Student.objects.get(pk=student_pk)
+        exercise_competences = models.Exercise_competence.objects.filter(exercise=exercise_object).order_by('competence__code')
+        for ec in exercise_competences:
+            if not models.Competence_mark.objects.filter(competence = ec.competence, student=student_object).exists():
+                c_mark = models.Competence_mark.objects.create(competence = ec.competence, student=student_object, evaluation_type="AUTOMATIC")
+                c_mark.save()
+        
+        c_mark_saved = models.Competence_mark.objects.filter(competence__competence_exercise_competence__exercise = exercise_object, student=student_object).order_by('competence__code')
+
+        context = super(MarkCompetenceListView, self).get_context_data(**kwargs)
+        context['student_object'] = student_object
+        context['activity_object'] = activity_object
+        context['c_mark_saved'] = c_mark_saved
+        
+        return context
+
+@method_decorator(login_required, name='dispatch')        
+class MarkEvaluationListView(generic.ListView):
+    model = models.Evaluation_mark
+    template_name = 'marks/evaluations.html'
+
+    def get(self, request, *args, **kwargs):
+        set_pk = self.kwargs.get('id')
+        set_object = models.Set.objects.get(pk=set_pk)
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
+            return super(MarkEvaluationListView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        set_pk = self.kwargs.get('id')
+        set_object = models.Set.objects.get(pk=set_pk)
+        student_pk = self.kwargs.get('pk')
+        student_object = models.Student.objects.get(pk=student_pk)
+        parent = set_object.evaluation
+        evaluations = models.Evaluation.objects.filter(parent=parent).order_by('period')
+
+        if not models.Evaluation_mark.objects.filter(evaluation = parent, student=student_object).exists():
+            parent_mark = models.Evaluation_mark.objects.create(evaluation = parent, student=student_object, evaluation_type="AUTOMATIC")
+            parent_mark.save()
+
+        for ev in evaluations:
+            if not models.Evaluation_mark.objects.filter(evaluation = ev, student=student_object).exists():
+                ev_mark = models.Evaluation_mark.objects.create(evaluation = ev, student=student_object, evaluation_type="AUTOMATIC")
+                ev_mark.save()
+        
+        parent_mark_saved = models.Evaluation_mark.objects.filter(evaluation = parent, student=student_object).first()
+        ev_mark_saved = models.Evaluation_mark.objects.filter(evaluation__parent = parent, student=student_object).order_by('evaluation__period')
+
+        context = super(MarkEvaluationListView, self).get_context_data(**kwargs)
+        context['set_object'] = set_object
+        context['student_object'] = student_object
+        context['parent_mark_saved'] = parent_mark_saved
+        context['ev_mark_saved'] = ev_mark_saved
+        
+        return context
+
+@method_decorator(login_required, name='dispatch')        
+class MarkExerciseListView(generic.ListView):
+    model = models.Exercise_mark
+    template_name = 'marks/exercises.html'
+
+    def get(self, request, *args, **kwargs):
+        activity_pk = self.kwargs.get('id')
+        activity_object = models.Activity.objects.get(pk=activity_pk)
+        evaluation_object = activity_object.evaluation
+        if evaluation_object.is_final:
+            set_object = models.Set.objects.get(evaluation=evaluation_object)
+        else:
+            set_object = models.Set.objects.get(evaluation=evaluation_object.parent)
+        
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
+            return super(MarkExerciseListView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        activity_pk = self.kwargs.get('id')
+        activity_object = models.Activity.objects.get(pk=activity_pk)
+        evaluation_object = activity_object.evaluation
+        student_pk = self.kwargs.get('pk')
+        student_object = models.Student.objects.get(pk=student_pk)
+        exercises = models.Exercise.objects.filter(activity=activity_object).order_by('statement')
+        if evaluation_object.is_final:
+            set_object = models.Set.objects.get(evaluation=evaluation_object)
+        else:
+            set_object = models.Set.objects.get(evaluation=evaluation_object.parent)
+
+        for ex in exercises:
+            if not models.Exercise_mark.objects.filter(exercise = ex, student=student_object).exists():
+                ex_mark = models.Exercise_mark.objects.create(exercise = ex, student=student_object, evaluation_type="AUTOMATIC")
+                ex_mark.save()
+        
+        ex_mark_saved = models.Exercise_mark.objects.filter(exercise__activity = activity_object, student=student_object).order_by('exercise__statement')
+
+        context = super(MarkExerciseListView, self).get_context_data(**kwargs)
+        context['set_object'] = set_object
+        context['student_object'] = student_object
+        context['activity_object'] = activity_object
+        context['evaluation_object'] = evaluation_object
+        context['ex_mark_saved'] = ex_mark_saved
+        
+        return context
+
+# My
 @method_decorator(login_required, name='dispatch')        
 class MySetStudentListView(generic.ListView):
     model = models.Set
@@ -855,6 +1227,7 @@ class MySetStudentListView(generic.ListView):
         set_object = models.Set.objects.get(pk=set_object_pk)
         object_list = set_object.students.all().order_by('surname')
         context = super(MySetStudentListView, self).get_context_data(object_list=object_list, **kwargs)
+        context['set_object_pk'] = set_object_pk
 
         return context
 
@@ -874,6 +1247,42 @@ class MySetsListView(generic.ListView):
     def get_queryset(self):
         queryset = models.Set.objects.filter(teacher__user=self.request.user).order_by('name')
         return queryset
+
+# Profile
+@method_decorator(login_required, name='dispatch')
+class UserUpdateView(generic.UpdateView):
+    template_name = 'profile/update.html'
+    model = User
+    form_class = forms.UserForm
+    profile_form_class = forms.UserProfileForm
+    success_url = reverse_lazy('home')
+
+    def get_context_data(self, **kwargs):
+        context = super(UserUpdateView,self).get_context_data(**kwargs)
+        if self.request.POST:
+            context['profile_form'] = self.profile_form_class(
+                self.request.POST, instance=self.object.profile)
+        else:
+            context['profile_form'] = self.profile_form_class(
+                instance=self.object.profile)
+        return context
+
+    def get_object(self):
+        return self.request.user
+
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        form = self.form_class(request.POST, instance=self.object)
+        profile_form = self.profile_form_class(
+            request.POST, request.FILES, instance=self.object.profile)
+        if form.is_valid() and profile_form.is_valid():
+            user = form.save()
+            profile_form.save(user)
+
+            return redirect(self.get_success_url())
+        else:
+            return self.render_to_response(
+                self.get_context_data(form=form, profile_form=profile_form))
 
 # Sets
 @method_decorator(login_required, name='dispatch') 
@@ -1246,6 +1655,7 @@ class TeacherAssignSubjectListView(generic.ListView, generic.list.MultipleObject
             object_list=object_list, **kwargs)
         context['other_subjects'] = models.Subject.objects.all().exclude(id__in=object_list).order_by('name')
         context['teacher_object_pk'] = teacher_object_pk
+        context['teacher_object'] = teacher_object
 
         return context
 

@@ -4,7 +4,7 @@ from django.utils.crypto import get_random_string
 from django.utils.timezone import now
 from faker import Faker
 
-from corrigeapp.models import Student, Teacher, Administrator, Competence, Subject, Evaluation, Set
+from corrigeapp.models import Student, Teacher, Administrator, Competence, Subject, Evaluation, Set, Activity, Exercise
 
 import random
 import json
@@ -26,6 +26,8 @@ def run():
     seed_competences()
     seed_subjects()
     seed_evaluations()
+    seed_activities()
+    seed_evaluations()
     seed_sets()
 
     sets = Set.objects.all()
@@ -45,6 +47,12 @@ def run():
 
     subjects = Subject.objects.all()
     subjects.delete()
+
+    exercises = Exercise.objects.all()
+    exercises.delete()
+
+    activities = Activity.objects.all()
+    activities.delete()
 
     evaluations = Evaluation.objects.all()
     evaluations.delete()
@@ -759,7 +767,7 @@ def seed_subjects():
         'fields': {
                 'name': 'Física y Química',
                 'level': '3º',
-                'grade': 'ESO',
+                'grade': 'SecondaryEducation',
                 'description': 'Física y Química',
                 'competences': competencels, 
             }
@@ -773,7 +781,7 @@ def seed_subjects():
         'fields': {
                 'name': 'Física y Química',
                 'level': '4º',
-                'grade': 'ESO',
+                'grade': 'SecondaryEducation',
                 'description': 'Física y Química',
                 'competences': competencels, 
             }
@@ -787,7 +795,7 @@ def seed_subjects():
         'fields': {
                 'name': 'Matemáticas',
                 'level': '3º',
-                'grade': 'ESO',
+                'grade': 'SecondaryEducation',
                 'description': 'Matemáticas',
                 'competences': competencels, 
             }
@@ -801,7 +809,7 @@ def seed_subjects():
         'fields': {
                 'name': 'Matemáticas',
                 'level': '4º',
-                'grade': 'ESO',
+                'grade': 'SecondaryEducation',
                 'description': 'Matemáticas',
                 'competences': competencels, 
             }
@@ -833,7 +841,7 @@ def seed_evaluations():
         'fields': {
                 'name': 'Física y Química 3º ESO 1er Cuatrimestre',
                 'start_date': '2020-09-15',
-                'end_date': '2021-12-22',
+                'end_date': '2020-12-22',
                 'is_final': False,
                 'period': '1st',
                 'parent': evaluation_parent,
@@ -895,7 +903,7 @@ def seed_evaluations():
         'fields': {
                 'name': 'Física y Química 4º ESO 1er Cuatrimestre',
                 'start_date': '2020-09-15',
-                'end_date': '2021-12-22',
+                'end_date': '2020-12-22',
                 'is_final': False,
                 'period': '1st',
                 'parent': evaluation_parent,
@@ -957,7 +965,7 @@ def seed_evaluations():
         'fields': {
                 'name': 'Matemáticas 3º ESO 1er Cuatrimestre',
                 'start_date': '2020-09-15',
-                'end_date': '2021-12-22',
+                'end_date': '2020-12-22',
                 'is_final': False,
                 'period': '1st',
                 'parent': evaluation_parent,
@@ -1019,7 +1027,7 @@ def seed_evaluations():
         'fields': {
                 'name': 'Matemáticas 4º ESO 1er Cuatrimestre',
                 'start_date': '2020-09-15',
-                'end_date': '2021-12-22',
+                'end_date': '2020-12-22',
                 'is_final': False,
                 'period': '1st',
                 'parent': evaluation_parent,
@@ -1069,7 +1077,7 @@ def seed_sets():
         'fields': {
                 'name': 'Física y Qúimica 3ºA ESO',
                 'level': '3º',
-                'grade': 'ESO',
+                'grade': 'SecondaryEducation',
                 'line': 'A',
                 'teacher': 2,
                 'subject': 1,
@@ -1088,7 +1096,7 @@ def seed_sets():
         'fields': {
                 'name': 'Matemáticas 3ºA ESO',
                 'level': '3º',
-                'grade': 'ESO',
+                'grade': 'SecondaryEducation',
                 'line': 'A',
                 'teacher': 2,
                 'subject': 3,
@@ -1107,7 +1115,7 @@ def seed_sets():
         'fields': {
                 'name': 'Física y Qúimica 4ºA ESO',
                 'level': '4º',
-                'grade': 'ESO',
+                'grade': 'SecondaryEducation',
                 'line': 'A',
                 'teacher': 2,
                 'subject': 2,
@@ -1126,7 +1134,7 @@ def seed_sets():
         'fields': {
                 'name': 'Matemáticas 4ºA ESO',
                 'level': '4º',
-                'grade': 'ESO',
+                'grade': 'SecondaryEducation',
                 'line': 'A',
                 'teacher': 2,
                 'subject': 4,
@@ -1136,4 +1144,176 @@ def seed_sets():
     }
     POPULATE.append(set_obj)
     set_pk += 1
-    
+
+def seed_activities():
+    activity_pk=1
+    ## FQ 3ºESO
+    activity = {
+        'pk': activity_pk,
+        'model': 'corrigeapp.Activity',
+        'fields': {
+                'date': '2020-11-04',
+                'weight': 1,
+                'is_recovery': False,
+                'set_activity': 1,
+                'evaluation': 2,
+                'subject': 1,
+            }
+    }
+    POPULATE.append(activity)
+    activity_pk += 1
+    activity = {
+        'pk': activity_pk,
+        'model': 'corrigeapp.Activity',
+        'fields': {
+                'date': '2021-01-22',
+                'weight': 1,
+                'is_recovery': False,
+                'set_activity': 1,
+                'evaluation': 3,
+                'subject': 1,
+            }
+    }
+    POPULATE.append(activity)
+    activity_pk += 1
+    activity = {
+        'pk': activity_pk,
+        'model': 'corrigeapp.Activity',
+        'fields': {
+                'date': '2021-05-26',
+                'weight': 1,
+                'is_recovery': False,
+                'set_activity': 1,
+                'evaluation': 4,
+                'subject': 1,
+            }
+    }
+    POPULATE.append(activity)
+    activity_pk += 1
+
+    ## FQ 4ºESO
+    activity = {
+        'pk': activity_pk,
+        'model': 'corrigeapp.Activity',
+        'fields': {
+                'date': '2020-11-04',
+                'weight': 1,
+                'is_recovery': False,
+                'set_activity': 3,
+                'evaluation': 6,
+                'subject': 2,
+            }
+    }
+    POPULATE.append(activity)
+    activity_pk += 1
+    activity = {
+        'pk': activity_pk,
+        'model': 'corrigeapp.Activity',
+        'fields': {
+                'date': '2021-01-22',
+                'weight': 1,
+                'is_recovery': False,
+                'set_activity': 3,
+                'evaluation': 7,
+                'subject': 2,
+            }
+    }
+    POPULATE.append(activity)
+    activity_pk += 1
+    activity = {
+        'pk': activity_pk,
+        'model': 'corrigeapp.Activity',
+        'fields': {
+                'date': '2021-05-26',
+                'weight': 1,
+                'is_recovery': False,
+                'set_activity': 3,
+                'evaluation': 8,
+                'subject': 2,
+            }
+    }
+    POPULATE.append(activity)
+    activity_pk += 1
+
+def seed_exercises():
+    exercise_pk=1
+    ## FQ 3ºESO
+    ## Activity 1
+    exercise = {
+        'pk': exercise_pk,
+        'model': 'corrigeapp.Exercise',
+        'fields': {
+                'weight': 1,
+                'statement': 'Example statement 1',
+                'activity': 1,
+            }
+    }
+    POPULATE.append(exercise)
+    exercise_pk += 1
+    exercise = {
+        'pk': exercise_pk,
+        'model': 'corrigeapp.Exercise',
+        'fields': {
+                'weight': 1,
+                'statement': 'Example statement 2',
+                'activity': 1,
+            }
+    }
+    POPULATE.append(exercise)
+    exercise_pk += 1
+    exercise = {
+        'pk': exercise_pk,
+        'model': 'corrigeapp.Exercise',
+        'fields': {
+                'weight': 1,
+                'statement': 'Example statement 3',
+                'activity': 1,
+            }
+    }
+    POPULATE.append(exercise)
+    exercise_pk += 1
+    exercise = {
+        'pk': exercise_pk,
+        'model': 'corrigeapp.Exercise',
+        'fields': {
+                'weight': 1,
+                'statement': 'Example statement 4',
+                'activity': 1,
+            }
+    }
+    POPULATE.append(exercise)
+    exercise_pk += 1
+    exercise = {
+        'pk': exercise_pk,
+        'model': 'corrigeapp.Exercise',
+        'fields': {
+                'weight': 1,
+                'statement': 'Example statement 5',
+                'activity': 1,
+            }
+    }
+    POPULATE.append(exercise)
+    exercise_pk += 1
+    exercise = {
+        'pk': exercise_pk,
+        'model': 'corrigeapp.Exercise',
+        'fields': {
+                'weight': 1,
+                'statement': 'Example statement 6',
+                'activity': 1,
+            }
+    }
+    POPULATE.append(exercise)
+    exercise_pk += 1
+    ## Activity 2
+    exercise = {
+        'pk': exercise_pk,
+        'model': 'corrigeapp.Exercise',
+        'fields': {
+                'weight': 1,
+                'statement': 'Example statement 1',
+                'activity': 2,
+            }
+    }
+    POPULATE.append(exercise)
+    exercise_pk += 1

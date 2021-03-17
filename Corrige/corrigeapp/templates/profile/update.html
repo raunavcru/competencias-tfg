@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+
+<div id="form-generic" class="container">
+    <div class="row">
+        <div class="grid-example col s11 offset-s1">
+            <div class="center-form">
+                <form class="col s12" id="form-create-students" method="post" action="{% url 'profile_update' %}">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="grid-example col s2">
+                        </div>
+                        <div class="grid-example col s8">
+                            <div class="validate-input">
+                                <label>Email</label>
+                                {{form.email}}
+                                <div class="form-errors">
+                                    {{ form.email.errors }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="grid-example col s2">
+                        </div>
+                        <div class="grid-example col s8">
+                            <div class="validate-input">
+                                <label>{% trans "Username" %}</label>
+                                {{form.username}}
+                                <div class="form-errors">
+                                    {{ form.username.errors }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="grid-example col s2">
+                        </div>
+                        <div class="grid-example col s4">
+                            <div class="validate-input">
+                                <label>{% trans "First name" %}</label>
+                                {{form.first_name}}
+                                <div class="form-errors">
+                                    {{ form.first_name.errors }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-example col s4">
+                            <div class="validate-input">
+                                <label>{% trans "Last name" %}</label>
+                                {{form.last_name}}
+                                <div class="form-errors">
+                                    {{ form.last_name.errors }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="grid-example col s2">
+                        </div>
+                        <div class="grid-example col s3">
+                            <div class="validate-input">
+                                <label>{% trans "Initials" %}</label>
+                                {{profile_form.initials}}
+                                <div class="form-errors">
+                                    {{ profile_form.initials.errors }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-example col s4">
+                            <div class="validate-input">
+                                <label>{% trans "Birthdate " %}</label>
+                                {{profile_form.birthdate}}
+                                <div class="form-errors">
+                                    {{ profile_form.birthdate.errors }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+                    <div class="row">
+                        <a onclick="location.href='{% url 'home' %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
+                        <button class="btn waves-effect right" type="submit" name="action">{% trans "Edit" %}
+                            <i class="large material-icons right"><i>send</i></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{{form.media}}
+{% endblock %}

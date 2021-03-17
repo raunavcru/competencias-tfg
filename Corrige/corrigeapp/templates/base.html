@@ -32,7 +32,7 @@
                     {% if request.user.profile.role == "ADMINISTRATOR" %} 
                     <li><a href="{% url 'administrators_list' %}">{% trans "Administrators" %}</a></li>
                     <li><a href="#!" class="dropdown-trigger" data-beloworigin="true" data-target="dropdown2" >{% trans "Competences" %}<i class="material-icons left">arrow_drop_down</i></a></li>
-                    <li><a href="{% url 'evaluations_list' %}">{% trans "Evaluations" %}</a></li>
+                    <li><a href="{% url 'evaluations_list_final' %}">{% trans "Evaluations" %}</a></li>
                     <li><a href="{% url 'students_list' %}">{% trans "Students" %}</a></li>
                     <li><a href="{% url 'teachers_list' %}">{% trans "Teachers" %}</a></li>
                     <li><a href="{% url 'sets_list' %}">{% trans "Sets" %}</a></li>
@@ -52,7 +52,7 @@
     </nav>
 
     <ul id="dropdown1" class="dropdown-content grey lighten-4">
-        <li><a href="#!" style="color:black">{% trans "Profile" %}</a></li>
+        <li><a href="{% url 'profile_update' %}" style="color:black">{% trans "Profile" %}</a></li>
         <li><a href="{% url 'logout'%}" style="color:black">{% trans "Logout" %}</a></li>
     </ul>
 
@@ -72,12 +72,12 @@
                 <li><a href="{% url 'competences_list1'%}" style="color:black; padding-left:55px;">{% trans "Level 1" %}</a></li>
                 <li><a href="{% url 'competences_list2'%}" style="color:black;  padding-left:55px;">{% trans "Level 2" %}</a></li>
                 <li><a href="{% url 'competences_list3'%}" style="color:black;  padding-left:55px;">{% trans "Level 3" %}</a></li>
-            <li><a href="{% url 'evaluations_list' %}">{% trans "Evaluations" %}</a></li>
+            <li><a href="{% url 'evaluations_list_final' %}">{% trans "Evaluations" %}</a></li>
             <li><a href="{% url 'students_list' %}">{% trans "Students" %}</a></li>
             <li><a href="{% url 'teachers_list' %}">{% trans "Teachers" %}</a></li>
             <li><a href="{% url 'sets_list' %}">{% trans "Sets" %}</a></li>
             <li><a href="{% url 'subjects_list' %}">{% trans "Subjects" %}</a></li>
-            <li><a href="#!" style="font-weight: bold;">{% trans "Profile" %}</a></li>
+            <li><a href="{% url 'profile_update' %}" style="font-weight: bold;">{% trans "Profile" %}</a></li>
             <li><a href="{% url 'logout'%}" style="color:red">{% trans "Logout" %}</a></li>
             {% else %}
             <li><a href="#">{% trans "My Activities" %}</a></li>

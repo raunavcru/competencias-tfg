@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %} 
+<div class="container">
+    <h4 class="centered">{% trans "List of exercises" %} {% trans "of" %} {{student_object.name}} {{student_object.surname}} {% trans "of" %} {{activity_object.date}}</h4>
+        <table class="highlight">
+            <caption></caption>
+                <thead>
+                    <tr>
+                        <th id="weight">{% trans "Weight" %}</th>
+                        <th id="statement">{% trans "Statement" %}</th>
+                        <th class="center" id="mark">{% trans "Mark" %}</th>
+                        <th class="center" id="manual_mark">{% trans "Manual mark" %}</th>
+                        <th class="center" id="competences">{% trans "Competences" %}</th>
+                    </tr>
+                </thead>
+            {% for object in ex_mark_saved %}
+                    <tbody>
+                        <tr class="center">
+                            <td>{{object.exercise.weight}}</td>
+                            <td>{{object.exercise.statement}}</td>
+                            <td class="center">
+                                {% if object.mark %}
+                                    {{object.mark}}
+                                {% else %}
+                                    -
+                                {% endif %}
+                            </td>
+                            <td class="center">
+                                {% if object.manual_mark %}
+                                    {{object.manual_mark}}
+                                {% else %}
+                                    -
+                                {% endif %}
+                            </td>
+                            <td class="center dropdown-trigger" onclick="location.href='{% url 'marks_competences_list' id=object.exercise.pk pk=student_object.pk %}'"><em class="material-icons" style="color:#e53935">rate_review</em></td>
+                        </tr>
+                    </tbody>
+            {% endfor %}
+        </table>
+<a onClick="location.href='{% url 'marks_activities_list' id=evaluation_object.pk pk=student_object.pk %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
+</div>
+{% endblock %}
+
+  <!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
+  <!-- Modal Structure -->

@@ -3,7 +3,7 @@
 {% load i18n %}
 {% block content %} 
 <div class="container">
-    <h4 class="centered">{% trans "List of assigned subjects" %}</h4>
+    <h4 class="centered">{% trans "List of assigned subjects" %} {% trans "of" %} {{teacher_object.user.first_name}} {{teacher_object.user.last_name}}</h4>
         <table class="highlight">
             <caption></caption>
                 <thead>
@@ -22,7 +22,7 @@
                             <td><i class="material-icons" style="color:#BBBBBB">book</i></td>
                             <td>{{o.name}}</td>
                             <td>{{o.level}}</td>
-                            <td>{{o.grade}}</td>
+                            {% include 'td_grade.html' %}
                             <td>{{o.description}}</td>  
                             <td class="center dropdown-trigger" type="button" onclick="location.href='{% url 'teachers_unassign_subject' pk=o.pk id=teacher_object_pk %}'"><em class="material-icons" style="color:#e53935">clear</em></td>
                             
@@ -52,7 +52,7 @@
                             <td><i class="material-icons" style="color:#BBBBBB">book</i></td>
                             <td>{{o.name}}</td>
                             <td>{{o.level}}</td>
-                            <td>{{o.grade}}</td>
+                            {% include 'td_grade.html' %}
                             <td>{{o.description}}</td>    
                             <td class="center dropdown-trigger" type="button" onclick="location.href='{% url 'teachers_assign_subject' pk=o.pk id=teacher_object_pk %}'"><em class="material-icons" style="color:#29b6f6">send</em></td>
                         </tr>

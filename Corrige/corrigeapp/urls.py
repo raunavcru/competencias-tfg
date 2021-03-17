@@ -36,12 +36,24 @@ urlpatterns = [
     path('exercises/competence/<int:id>/<int:pk>/create', views.ExerciseCompetenceCreateView.as_view(), name = 'exercise_competences_create'),
 
     path('evaluations/create', views.EvaluationCreateView.as_view(), name = 'evaluations_create'),
-    path('evaluations/list', views.EvaluationsListView.as_view(), name = 'evaluations_list'),
+    path('evaluations/create/all', views.EvaluationCreateAllView.as_view(), name = 'evaluations_create_all'),
+    path('evaluations/create/all/oneFinalThreePartial', views.EvaluationCreateAllOneFinalThreePartialView.as_view(), name = 'evaluations_create_all_oneFinalThreePartial'),
+    path('evaluations/create/all/oneFinalTwoPartial', views.EvaluationCreateAllOneFinalTwoPartialView.as_view(), name = 'evaluations_create_all_oneFinalTwoPartial'),
+    path('evaluations/list', views.EvaluationsListFinalView.as_view(), name = 'evaluations_list_final'),
+    path('evaluations/<int:pk>/create/child', views.EvaluationCreateChildView.as_view(), name = 'evaluations_create_child'),
     path('evaluations/<int:pk>/delete', views.EvaluationDeleteView.as_view(), name='evaluations_delete'),
+    path('evaluations/<int:pk>/list', views.EvaluationsListPartialView.as_view(), name = 'evaluations_list_partial'),
     path('evaluations/<int:pk>/update', views.EvaluationUpdateView.as_view(), name = 'evaluations_update'),
+
+    path('marks/activities/<int:id>/<int:pk>/list', views.MarkActivityListView.as_view(), name = 'marks_activities_list'),
+    path('marks/competences/<int:id>/<int:pk>/list', views.MarkCompetenceListView.as_view(), name = 'marks_competences_list'),
+    path('marks/evaluations/<int:id>/<int:pk>/list', views.MarkEvaluationListView.as_view(), name = 'marks_evaluations_list'),
+    path('marks/exercises/<int:id>/<int:pk>/list', views.MarkExerciseListView.as_view(), name = 'marks_exercises_list'),
 
     path('my_sets/list', views.MySetsListView.as_view(), name = 'my_sets_list'),
     path('my_subjects/list', views.SubjectsOwnerListView.as_view(), name = 'my_subjects_list'),
+
+    path('profile/update', views.UserUpdateView.as_view(), name = 'profile_update'),
 
     path('sets/<int:pk>/assign/list', views.SetAssignStudentListView.as_view(), name = 'sets_assign_student_list'),
     path('sets/<int:pk>/list', views.MySetStudentListView.as_view(), name = 'sets_student_list'),
