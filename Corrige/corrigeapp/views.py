@@ -189,7 +189,7 @@ class ActivityUpdateView(generic.UpdateView):
             return redirect('/')
 
     def get_context_data(self, **kwargs):
-        set_pk = self.kwargs.get('pk')
+        set_pk = self.kwargs.get('pk')     
         context = super(ActivityUpdateView, self).get_context_data(**kwargs)
         context['set_pk'] = set_pk
         context['update'] = True
@@ -678,7 +678,6 @@ class ExerciseUpdateView(generic.UpdateView):
         activity_object = models.Activity.objects.get(pk=exercise_object.activity.pk)
         list_exercise_competence = models.Exercise_competence.objects.filter(exercise=exercise_object)
         list_competences_unassigned = models.Competence.objects.filter(level=1, competences=activity_object.set_activity.subject).exclude(competence_exercise_competence__exercise=exercise_object).order_by('code')
-        print(list_competences_unassigned)
         context = super(ExerciseUpdateView, self).get_context_data(**kwargs)
         context['exercise_pk'] = exercise_pk
         context['activity_pk'] = activity_object.pk
