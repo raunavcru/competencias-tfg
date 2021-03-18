@@ -62,9 +62,11 @@
     });
 </script>
 
-<div id="modal1" class="modal">
+<div id="modal1" class="modal" style="border-radius: 10px;  box-shadow: 2px 2px 10px #666;">
     <div class="modal-content">
-        <div class="row center">
+    <h3 class="center" >{% trans "What type of evaluation do you want to create?" %}</h3>
+    <hr>
+        <div class="row center" style="padding-top:15px;">
             <a style="border-radius:5px;" href="{% url 'evaluations_create' %}" class="center teal lighten-2 waves-effect waves-light btn-small"><i class="material-icons right">add</i>{% trans "Create One Final Evaluation For One Subject" %}</a>
         </div>
         <div class="row center">
