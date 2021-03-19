@@ -1388,3 +1388,68 @@ def seed_exercise_competence():
     }
     POPULATE.append(exercise_competence)
     exercise_competence_pk += 1
+     ## Activity 1 Exercise 2
+    exercise_competence = {
+        'pk': exercise_competence_pk,
+        'model': 'corrigeapp.Exercise_competence',
+        'fields': {
+                'intensity': 1,
+                'weight': 1,
+                'exercise': 2,
+                'competence': 17,
+            }
+    }
+    POPULATE.append(exercise_competence)
+    exercise_competence_pk += 1
+     ## Activity 1 Exercise 3
+    exercise_competence = {
+        'pk': exercise_competence_pk,
+        'model': 'corrigeapp.Exercise_competence',
+        'fields': {
+                'intensity': 1,
+                'weight': 1,
+                'exercise': 3,
+                'competence': 19,
+            }
+    }
+    POPULATE.append(exercise_competence)
+    exercise_competence_pk += 1
+    ## Activity 1 Exercise 4
+    exercise_competence = {
+        'pk': exercise_competence_pk,
+        'model': 'corrigeapp.Exercise_competence',
+        'fields': {
+                'intensity': 1,
+                'weight': 1,
+                'exercise': 4,
+                'competence': 21,
+            }
+    }
+    POPULATE.append(exercise_competence)
+    exercise_competence_pk += 1
+    ## Activity 1 Exercise 5
+    exercise_competence = {
+        'pk': exercise_competence_pk,
+        'model': 'corrigeapp.Exercise_competence',
+        'fields': {
+                'intensity': 1,
+                'weight': 1,
+                'exercise': 5,
+                'competence': 23,
+            }
+    }
+    POPULATE.append(exercise_competence)
+    exercise_competence_pk += 1
+    ## Activity 1 Exercise 6
+    exercise_competence = {
+        'pk': exercise_competence_pk,
+        'model': 'corrigeapp.Exercise_competence',
+        'fields': {
+                'intensity': 1,
+                'weight': 1,
+                'exercise': 6,
+                'competence': 24,
+            }
+    }
+    POPULATE.append(exercise_competence)
+    exercise_competence_pk += 1
