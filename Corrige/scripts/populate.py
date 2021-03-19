@@ -4,7 +4,7 @@ from django.utils.crypto import get_random_string
 from django.utils.timezone import now
 from faker import Faker
 
-from corrigeapp.models import Student, Teacher, Administrator, Competence, Subject, Evaluation, Set, Activity, Exercise
+from corrigeapp.models import Student, Teacher, Administrator, Competence, Subject, Evaluation, Set, Activity, Exercise, Exercise_competence
 
 import random
 import json
@@ -12,7 +12,7 @@ import json
 DATE_FORMAT = '%Y-%m-%d %H:%M:%S%z'
 FAKE = Faker('es_ES')
 POPULATE = []
-USER_PKS = range(2, 10)
+USER_PKS = range(3, 10)
 STUDENT_PKS = range(1, 31)
 
 
@@ -25,10 +25,11 @@ def run():
     seed_students()
     seed_competences()
     seed_subjects()
+    seed_sets()
     seed_evaluations()
     seed_activities()
-    seed_evaluations()
-    seed_sets()
+    seed_exercises()
+    seed_exercise_competence()
 
     sets = Set.objects.all()
     sets.delete()
@@ -48,6 +49,9 @@ def run():
     subjects = Subject.objects.all()
     subjects.delete()
 
+    e_c = Exercise_competence.objects.all()
+    e_c.delete()
+
     exercises = Exercise.objects.all()
     exercises.delete()
 
@@ -63,6 +67,29 @@ def run():
     management.call_command('loaddata', 'initial_data/initial_data')
 
 def seed_users():
+    profile = FAKE.profile()
+    names = profile['name'].split(' ')
+    first_name = names[0]
+    last_name = names[1]
+
+    fields = {
+        'password': make_password('teacherusertest'),
+        'is_superuser': False,
+        'username': 'teacherusertest',
+        'first_name': first_name,
+        'last_name': last_name,
+        'email': profile['mail'],
+        'is_staff': False,
+        'date_joined': now().strftime(DATE_FORMAT),
+    }
+    user = {
+        'pk': 2,
+        'model': 'auth.User',
+        'fields': fields
+    }
+
+    POPULATE.append(user)
+
     for pk in USER_PKS:
         profile = FAKE.profile()
         names = profile['name'].split(' ')
@@ -88,6 +115,27 @@ def seed_users():
         POPULATE.append(user)
 
 def seed_profiles():
+    teacher = {
+            'pk': 2,
+            'model': 'corrigeapp.TEACHER',
+            'fields': {
+                'profile_ptr_id': 2,
+                'subjects': [1,2,3,4,]
+            }
+        }
+    POPULATE.append(teacher)
+
+    profile = {
+        'pk': 2,
+        'model': 'corrigeapp.PROFILE',
+        'fields': {
+            'birthdate': '1980-01-01',
+            'initials': get_random_string(length=3).upper(),
+            'role': 'TEACHER',
+            'user': 2,
+        }
+    }
+    POPULATE.append(profile)
     for user_pk in USER_PKS:
         
         teacher = {
@@ -1152,6 +1200,7 @@ def seed_activities():
         'pk': activity_pk,
         'model': 'corrigeapp.Activity',
         'fields': {
+                'title': 'Examen 1',
                 'date': '2020-11-04',
                 'weight': 1,
                 'is_recovery': False,
@@ -1166,6 +1215,7 @@ def seed_activities():
         'pk': activity_pk,
         'model': 'corrigeapp.Activity',
         'fields': {
+                'title': 'Examen 2',
                 'date': '2021-01-22',
                 'weight': 1,
                 'is_recovery': False,
@@ -1180,6 +1230,7 @@ def seed_activities():
         'pk': activity_pk,
         'model': 'corrigeapp.Activity',
         'fields': {
+                'title': 'Examen 3',
                 'date': '2021-05-26',
                 'weight': 1,
                 'is_recovery': False,
@@ -1196,6 +1247,7 @@ def seed_activities():
         'pk': activity_pk,
         'model': 'corrigeapp.Activity',
         'fields': {
+                'title': 'Examen 1',
                 'date': '2020-11-04',
                 'weight': 1,
                 'is_recovery': False,
@@ -1210,6 +1262,7 @@ def seed_activities():
         'pk': activity_pk,
         'model': 'corrigeapp.Activity',
         'fields': {
+                'title': 'Examen 2',
                 'date': '2021-01-22',
                 'weight': 1,
                 'is_recovery': False,
@@ -1224,6 +1277,7 @@ def seed_activities():
         'pk': activity_pk,
         'model': 'corrigeapp.Activity',
         'fields': {
+                'title': 'Examen 3',
                 'date': '2021-05-26',
                 'weight': 1,
                 'is_recovery': False,
@@ -1317,3 +1371,20 @@ def seed_exercises():
     }
     POPULATE.append(exercise)
     exercise_pk += 1
+
+def seed_exercise_competence():
+    exercise_competence_pk=1
+    ## FQ 3ºESO
+    ## Activity 1 Exercise 1
+    exercise_competence = {
+        'pk': exercise_competence_pk,
+        'model': 'corrigeapp.Exercise_competence',
+        'fields': {
+                'intensity': 1,
+                'weight': 1,
+                'exercise': 1,
+                'competence': 16,
+            }
+    }
+    POPULATE.append(exercise_competence)
+    exercise_competence_pk += 1

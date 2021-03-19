@@ -163,6 +163,8 @@ class Set(Common):
         return self.name + ' ' + self.level + ' ' + self.grade + ' ' + self.line
 
 class Activity(Common):
+    title = models.CharField(("title"), max_length=50)
+
     date = models.DateField('date')
 
     weight = models.DecimalField('weight', max_digits=3, decimal_places=2)

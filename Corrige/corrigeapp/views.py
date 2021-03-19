@@ -77,7 +77,7 @@ class ActivityCopyView(generic.TemplateView):
         set_pk = self.kwargs.get('id')
         set_object = models.Set.objects.get(pk=set_pk)
         if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object) and services.SetService().is_owner(user=self.request.user, set_object=activity_object.set_activity):
-            copy = models.Activity.objects.create(date=activity_object.date, weight=activity_object.weight, is_recovery=activity_object.is_recovery, set_activity=set_object, evaluation=set_object.evaluation, subject=set_object.subject)
+            copy = models.Activity.objects.create(title=activity_object.title ,date=activity_object.date, weight=activity_object.weight, is_recovery=activity_object.is_recovery, set_activity=set_object, evaluation=set_object.evaluation, subject=set_object.subject)
             copy.save()
             return redirect('activities_list', pk=set_pk)
         else:
