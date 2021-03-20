@@ -21,23 +21,24 @@
     <title>Verum</title>
 </head>
 <body class="grey lighten-4">
-    <nav class="pink lighten-3">
+    <nav class="pink lighten-2">
         <div class="nav-wrapper">
-        <img class="logo" src="{% static 'images/blanco.png' %}" alt="corrige" width="120" height="60">            
+        <img class="center" src="{% static 'images/logoverum.png' %}" alt="corrige" width:"100" height="60" >       
+        	<a href="#" class="sidenav-trigger" data-target="mobile-nav">     
+            <i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right:15px;">
                 <li><a href="{% url 'home'%}">{% trans "Home" %}</a></li>
                 {% if  request.user.is_authenticated %}
                     {% if request.user.profile.role == "ADMINISTRATOR" %} 
                     <li><a href="{% url 'administrators_list' %}">{% trans "Administrators" %}</a></li>
                     <li><a href="#!" class="dropdown-trigger" data-beloworigin="true" data-target="dropdown2" >{% trans "Competences" %}<i class="material-icons left">arrow_drop_down</i></a></li>
-                    <li><a href="{% url 'evaluations_list' %}">{% trans "Evaluations" %}</a></li>
+                    <li><a href="{% url 'evaluations_list_final' %}">{% trans "Evaluations" %}</a></li>
                     <li><a href="{% url 'students_list' %}">{% trans "Students" %}</a></li>
                     <li><a href="{% url 'teachers_list' %}">{% trans "Teachers" %}</a></li>
                     <li><a href="{% url 'sets_list' %}">{% trans "Sets" %}</a></li>
                     <li><a href="{% url 'subjects_list' %}">{% trans "Subjects" %}</a></li>
                     <li><a class="dropdown-trigger" href="#!" data-beloworigin="true" data-target="dropdown1"><i class="material-icons left">account_circle arrow_drop_down</i></a></li>
                     {% else %}
-                    <li><a href="#">{% trans "My Activities" %}</a></li>
                     <li><a href="{% url 'my_sets_list' %}">{% trans "My Sets" %}</a></li>
                     <li><a href="{% url 'my_subjects_list' %}">{% trans "My Subjects" %}</a></li>
                 
@@ -51,18 +52,45 @@
     </nav>
 
     <ul id="dropdown1" class="dropdown-content grey lighten-4">
-        <li><a href="#!" style="color:black">{% trans "Profile" %}</a></li>
+        <li><a href="{% url 'profile_update' %}" style="color:black">{% trans "Profile" %}</a></li>
         <li><a href="{% url 'logout'%}" style="color:black">{% trans "Logout" %}</a></li>
     </ul>
 
 
     <ul id="dropdown2" class="dropdown-content grey lighten-4">
-        <li><a href="{% url 'competences_list1'%}" style="color:black">{% trans "Level 1" %}</a></li>
+        <li><a href="{% url 'competences_list1'%}" style="color:black;">{% trans "Level 1" %}</a></li>
         <li><a href="{% url 'competences_list2'%}" style="color:black">{% trans "Level 2" %}</a></li>
         <li><a href="{% url 'competences_list3'%}" style="color:black">{% trans "Level 3" %}</a></li>
     </ul>
+    
+    <ul class="sidenav " id="mobile-nav">
+        <li><a href="{% url 'home'%}">{% trans "Home" %}</a></li>
+        {% if  request.user.is_authenticated %}
+            {% if request.user.profile.role == "ADMINISTRATOR" %} 
+            <li><a href="{% url 'administrators_list' %}">{% trans "Administrators" %}</a></li>
+            <li><a href="#!">{% trans "Competences:" %}</a></li>
+                <li><a href="{% url 'competences_list1'%}" style="color:black; padding-left:55px;">{% trans "Level 1" %}</a></li>
+                <li><a href="{% url 'competences_list2'%}" style="color:black;  padding-left:55px;">{% trans "Level 2" %}</a></li>
+                <li><a href="{% url 'competences_list3'%}" style="color:black;  padding-left:55px;">{% trans "Level 3" %}</a></li>
+            <li><a href="{% url 'evaluations_list_final' %}">{% trans "Evaluations" %}</a></li>
+            <li><a href="{% url 'students_list' %}">{% trans "Students" %}</a></li>
+            <li><a href="{% url 'teachers_list' %}">{% trans "Teachers" %}</a></li>
+            <li><a href="{% url 'sets_list' %}">{% trans "Sets" %}</a></li>
+            <li><a href="{% url 'subjects_list' %}">{% trans "Subjects" %}</a></li>
+            {% else %}
+            <li><a href="#">{% trans "My Activities" %}</a></li>
+            <li><a href="{% url 'my_sets_list' %}">{% trans "My Sets" %}</a></li>
+            <li><a href="{% url 'my_subjects_list' %}">{% trans "My Subjects" %}</a></li>
+            {% endif %}
+            <li><a href="{% url 'profile_update' %}" style="font-weight: bold;">{% trans "Profile" %}</a></li>
+            <li><a href="{% url 'logout'%}" style="color:red">{% trans "Logout" %}</a></li>
+        {% else %}
+        <li><a href="{% url 'login'%}" class="teal lighten-2 waves-effect waves-light btn-small">{% trans "Login" %}</a></li>
+        {% endif %}
+    </ul>
+    
 
-    <div class="container">
+
 
 
     {% block content %}
@@ -70,6 +98,11 @@
 
     </div>
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
+
         document.addEventListener('DOMContentLoaded', function() {
             var elems = document.querySelectorAll('.dropdown-trigger');
             var options ={

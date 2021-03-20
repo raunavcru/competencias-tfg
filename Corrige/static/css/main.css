@@ -19,7 +19,7 @@
 }
 
 #fondoPantalla{
-    background-image: url('/static/images/fondos 3.png');
+    background-image: url('/static/images/fondo 4.png');
     background-position: center center;
     background-attachment: fixed;
 }
@@ -27,4 +27,23 @@
     background-image: url('/static/images/fondo Pantalla.png');
     width: 100%;
     height: 844px;
+}
+#nav {
+	z-index: 100 !important;
+}
+
+#fondoPantallaLista{
+    background-image: url('/static/images/fondo prueba.png');
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+/* iPad*/
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+#nameCompetence{
+	width: 1000px;
+}
+
 }

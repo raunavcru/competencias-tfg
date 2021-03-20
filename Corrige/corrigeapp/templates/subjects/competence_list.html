@@ -2,6 +2,7 @@
 {% load static %}
 {% load i18n %}
 {% block content %}
+<div class="container">
     <h4 class="centered">{% trans "List of competences " %}</h4>
         <table class="highlight">
             <caption></caption>
@@ -24,6 +25,7 @@
 
             </tbody>
         </table>
-        {% include 'paginate.html' %}
-          
+        <a onClick="location.href='{% url 'my_subjects_list' %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
+    {% include 'paginate.html' %}
+</div>
 {% endblock %}

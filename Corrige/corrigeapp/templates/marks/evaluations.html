@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+<div class="container">
+    <h4 class="centered">{% trans "List of evaluations" %} {% trans "of" %} {{student_object.name}} {{student_object.surname}} {% trans "of" %} {{set_object.name}}</h4>
+        <table class="highlight">
+            <caption></caption>
+                <thead>
+                    <tr>
+                        <th id="name">{% trans "Name" %}</th>
+                        <th id="period">{% trans "Period" %}</th>
+                        <th id="star_date">{% trans "Start date" %}</th>
+                        <th id="end_date">{% trans "End date" %}</th>
+                        <th class="center" id="mark">{% trans "Mark" %}</th>
+                        <th class="center" id="manual_mark">{% trans "Manual mark" %}</th>
+                        <th class="center" id="activities">{% trans "Activities" %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="center">
+                        <td>{{parent_mark_saved.evaluation.name}}</td>
+                        <td>{{parent_mark_saved.evaluation.period}}</td>
+                        <td>{{parent_mark_saved.evaluation.start_date}}</td>
+                        <td>{{parent_mark_saved.evaluation.end_date}}</td>
+                        <td class="center">
+                        {% if parent_mark_saved.mark %}
+                            {{parent_mark_saved.mark}}
+                        {% else %}
+                            -
+                        {% endif %}
+                        </td>
+                        <td class="center">
+                        {% if parent_mark_saved.manual_mark %}
+                            {{parent_mark_saved.manual_mark}}
+                        {% else %}
+                            -
+                        {% endif %}
+                        </td>
+                        <td class="center dropdown-trigger" onclick="location.href='{% url 'marks_activities_list' id=parent_mark_saved.evaluation.pk pk=student_object.pk %}'"><em class="material-icons" style="color:#e53935">rate_review</em></td>
+                    </tr>
+                </tbody>
+            {% for object in ev_mark_saved %}
+                    <tbody>
+                        <tr class="center">
+                            <td>{{object.evaluation.name}}</td>
+                            <td>{{object.evaluation.period}}</td>
+                            <td>{{object.evaluation.start_date}}</td>
+                            <td>{{object.evaluation.end_date}}</td>
+                            <td class="center">
+                            {% if object.mark %}
+                                {{object.mark}}
+                            {% else %}
+                                -
+                            {% endif %}
+                            </td>
+                            <td class="center">
+                            {% if object.manual_mark %}
+                                {{object.manual_mark}}
+                            {% else %}
+                                -
+                            {% endif %}
+                            </td>
+                            <td class="center dropdown-trigger" onclick="location.href='{% url 'marks_activities_list' id=object.evaluation.pk pk=student_object.pk %}'"><em class="material-icons" style="color:#e53935">rate_review</em></td>
+                        </tr>
+                    </tbody>
+            {% endfor %}
+        </table>
+<a onClick="location.href='{% url 'sets_student_list' set_object.pk %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
+{% endblock %}
+
