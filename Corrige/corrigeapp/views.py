@@ -398,14 +398,12 @@ class CompetencesDeleteView(generic.DeleteView):
 
     def get_context_data(self, **kwargs):
         competence_pk = self.kwargs.get('pk')
+        parent_pk = self.kwargs.get('id')
         competence = models.Competence.objects.get(pk=competence_pk)
         context = super(CompetencesDeleteView, self).get_context_data(**kwargs)
-        context['list_level3'] = False
-        context['list_level2'] = False
-        context['list_level1'] = False
+        context['parent_pk'] = parent_pk
         if competence.level == 3:
             context['list_level3'] = True
-            
         elif competence.level == 2:
             context['list_level2'] = True
         else:
@@ -415,14 +413,18 @@ class CompetencesDeleteView(generic.DeleteView):
 
     def post(self, request, *args, **kwargs):
         competence_pk = self.kwargs.get('pk')
+        parent_pk = self.kwargs.get('id')
         competence = models.Competence.objects.get(pk=competence_pk)
         competence.delete()
         
         if competence.level == 3:
-            return redirect('competences_list3')
-            
+            return redirect('competences_list3') 
+        elif parent_pk and competence.level == 2:
+            return redirect('competences_list_child', pk=parent_pk)
         elif competence.level == 2:
             return redirect('competences_list2')
+        elif parent_pk and competence.level == 1:
+            return redirect('competences_list_child', pk=parent_pk)
         else:
             return redirect('competences_list1')
 
@@ -443,6 +445,9 @@ class CompetencesListChildView(generic.ListView):
         context = super(CompetencesListChildView, self).get_context_data(**kwargs)
         competence_pk = self.kwargs.get('pk')
         competence = models.Competence.objects.get(pk=competence_pk)
+        if competence.level == 2:
+            context['parent_pk'] = competence.parent.first().pk
+
         context['competence_pk'] = competence_pk
         context['list_level2'] = False
         context['list_level1'] = False
@@ -522,9 +527,6 @@ class CompetenceListLevel3View(generic.ListView):
     def get_context_data(self, **kwargs):
         context = super(CompetenceListLevel3View, self).get_context_data(**kwargs)
         context['listall_level3'] = True
-        context['listall_level2'] = False
-        context['list_level3'] = False
-        context['list_level2'] = False
 
         return context
 
@@ -556,7 +558,6 @@ class CompetenceUpdateView(generic.UpdateView):
     def form_valid(self, form):
         competence = form.save()
         parent_pk = self.kwargs.get('id')
-        print(parent_pk)
 
         if competence.level == 3:
             return redirect('competences_list3')
