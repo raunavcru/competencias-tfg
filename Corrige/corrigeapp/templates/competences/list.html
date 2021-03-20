@@ -39,15 +39,16 @@
                         <tr class="center">
                             <td>{{object.code}}</td> 
                             <td id="nameCompetence" >{{object.name}}</td>
-                            <td style="width:500px">{{object.description}}</td>                            
+                            <td style="width:500px">{{object.description}}</td>      
+                            {% if listall_level1 or listall_level2 or listall_level3 %}                       
                             <td class="center dropdown-trigger"  onclick="location.href='{% url 'competences_update' object.pk %}'"><em class="material-icons" style="color:#29b6f6">create</em></td>
-                    
+                            {% else %}   
+                            <td class="center dropdown-trigger"  onclick="location.href='{% url 'competences_update_child' id=competence_pk pk=object.pk %}'"><em class="material-icons" style="color:#29b6f6">create</em></td>
+                            {% endif %}  
                             <td class="center dropdown-trigger" onclick="location.href='{% url 'competences_delete' object.pk %}'"><em class="material-icons" style="color:#e53935">delete</em></td>
-                            </td>
-
 
                             {% if listall_level2 or list_level2 or listall_level3 %} 
-                            <td class="center dropdown-trigger"  onclick="location.href='{% url 'competences_relation' object.pk %}'"><em class="material-icons" style="color:#66bb6a">fast_forward</em></td>
+                            <td class="center dropdown-trigger"  onclick="location.href='{% url 'competences_list_child' object.pk %}'"><em class="material-icons" style="color:#66bb6a">fast_forward</em></td>
                             {% endif %}
                         </tr>
                     </tbody>

@@ -235,6 +235,7 @@ def seed_competences():
                 'code': 'CC1',
                 'name': 'Comunicación lingüística',
                 'description': '3º ESO',
+                'weight': 1,
                 'level': 3,
             }
     }
@@ -249,6 +250,7 @@ def seed_competences():
                 'code': 'CC2',
                 'name': 'Competencia matemática y competencias básicas en ciencia y tecnología',
                 'description': '3º ESO',
+                'weight': 1,
                 'level': 3,
             }
     }
@@ -263,6 +265,7 @@ def seed_competences():
                 'code': 'CC3',
                 'name': 'Competencia digital',
                 'description': '3º ESO',
+                'weight': 1,
                 'level': 3,
             }
     }
@@ -277,6 +280,7 @@ def seed_competences():
                 'code': 'CC4',
                 'name': 'Aprender a aprender',
                 'description': '3º ESO',
+                'weight': 1,
                 'level': 3,
             }
     }
@@ -291,6 +295,7 @@ def seed_competences():
                 'code': 'CC5',
                 'name': 'Competencias sociales y cívicas',
                 'description': '3º ESO',
+                'weight': 1,
                 'level': 3,
             }
     }
@@ -305,6 +310,7 @@ def seed_competences():
                 'code': 'CC6',
                 'name': 'Sentido de la iniciativa y espíritu emprendedor',
                 'description': '3º ESO',
+                'weight': 1,
                 'level': 3,
             }
     }
@@ -319,6 +325,7 @@ def seed_competences():
                 'code': 'CC7',
                 'name': 'Conciencia y expresiones culturales',
                 'description': '3º ESO',
+                'weight': 1,
                 'level': 3,
             }
     }
@@ -334,6 +341,7 @@ def seed_competences():
                 'code': 'CC1',
                 'name': 'Comunicación lingüística',
                 'description': '4º ESO',
+                'weight': 1,
                 'level': 3,
             }
     }
@@ -348,6 +356,7 @@ def seed_competences():
                 'code': 'CC2',
                 'name': 'Competencia matemática y competencias básicas en ciencia y tecnología',
                 'description': '4º ESO',
+                'weight': 1,
                 'level': 3,
             }
     }
@@ -362,6 +371,7 @@ def seed_competences():
                 'code': 'CC3',
                 'name': 'Competencia digital',
                 'description': '4º ESO',
+                'weight': 1,
                 'level': 3,
             }
     }
@@ -376,6 +386,7 @@ def seed_competences():
                 'code': 'CC4',
                 'name': 'Aprender a aprender',
                 'description': '4º ESO',
+                'weight': 1,
                 'level': 3,
             }
     }
@@ -390,6 +401,7 @@ def seed_competences():
                 'code': 'CC5',
                 'name': 'Competencias sociales y cívicas',
                 'description': '4º ESO',
+                'weight': 1,
                 'level': 3,
             }
     }
@@ -404,6 +416,7 @@ def seed_competences():
                 'code': 'CC6',
                 'name': 'Sentido de la iniciativa y espíritu emprendedor',
                 'description': '4º ESO',
+                'weight': 1,
                 'level': 3,
             }
     }
@@ -418,6 +431,7 @@ def seed_competences():
                 'code': 'CC7',
                 'name': 'Conciencia y expresiones culturales',
                 'description': '4º ESO',
+                'weight': 1,
                 'level': 3,
             }
     }

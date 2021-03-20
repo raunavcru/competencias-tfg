@@ -359,7 +359,7 @@ class CompetenceCreateChildView(generic.CreateView):
         competence_new.save()
         competence_new.parent.add(competence) 
 
-        return redirect('competences_relation', pk=competence_pk)
+        return redirect('competences_list_child', pk=competence_pk)
 
 @method_decorator(login_required, name='dispatch')
 class CompetenceCreateLevel3View(generic.CreateView):
@@ -444,8 +444,6 @@ class CompetencesListChildView(generic.ListView):
         competence_pk = self.kwargs.get('pk')
         competence = models.Competence.objects.get(pk=competence_pk)
         context['competence_pk'] = competence_pk
-        context['listall_level3'] = False
-        context['listall_level2'] = False
         context['list_level2'] = False
         context['list_level1'] = False
 
@@ -477,9 +475,7 @@ class CompetenceListLevel1View(generic.ListView):
 
     def get_context_data(self, **kwargs):
         context = super(CompetenceListLevel1View, self).get_context_data(**kwargs)
-        context['listall_level3'] = False
-        context['listall_level2'] = False
-        context['list_level2'] = False
+        context['listall_level1'] = True
 
         return context
 
@@ -502,9 +498,7 @@ class CompetenceListLevel2View(generic.ListView):
 
     def get_context_data(self, **kwargs):
         context = super(CompetenceListLevel2View, self).get_context_data(**kwargs)
-        context['listall_level3'] = False
         context['listall_level2'] = True
-        context['list_level2'] = False
 
         return context
 
@@ -551,17 +545,27 @@ class CompetenceUpdateView(generic.UpdateView):
             return redirect('/')
 
     def get_context_data(self, **kwargs):
+        parent_pk = self.kwargs.get('id')
         context = super(CompetenceUpdateView, self).get_context_data(**kwargs)
-        context['is_update'] = True
+        if parent_pk:
+            context['parent_pk'] = parent_pk
+        else:
+            context['is_update'] = True
         return context
 
     def form_valid(self, form):
         competence = form.save()
+        parent_pk = self.kwargs.get('id')
+        print(parent_pk)
 
         if competence.level == 3:
             return redirect('competences_list3')
+        elif parent_pk and competence.level == 2:
+            return redirect('competences_list_child', pk=parent_pk)
         elif competence.level == 2:
             return redirect('competences_list2')
+        elif parent_pk and competence.level == 1:
+            return redirect('competences_list_child', pk=parent_pk)
         else:
             return redirect('competences_list1')
 
