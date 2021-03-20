@@ -48,6 +48,8 @@ PLACEHOLDER_PERIOD_EVALUATION = '1er Trimestre'
 
 # Activity
 class ActivityUpdateForm(forms.ModelForm):
+    title = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Ex 1', 'id': 'title-create-activity'}))
     date = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
@@ -75,6 +77,7 @@ class ActivityUpdateForm(forms.ModelForm):
     class Meta:
         model = models.Activity
         fields = (
+            'title',
             'date',
             'weight',
             'evaluation',

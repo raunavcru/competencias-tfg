@@ -76,9 +76,20 @@ class ActivityCopyView(generic.TemplateView):
         activity_object = models.Activity.objects.get(pk=activity_pk)
         set_pk = self.kwargs.get('id')
         set_object = models.Set.objects.get(pk=set_pk)
+        if get_language() == 'en':
+            title = "Copy of " + activity_object.title
+        else:
+            title = "Copia de " + activity_object.title
+
         if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object) and services.SetService().is_owner(user=self.request.user, set_object=activity_object.set_activity):
-            copy = models.Activity.objects.create(date=activity_object.date, weight=activity_object.weight, is_recovery=activity_object.is_recovery, set_activity=set_object, evaluation=set_object.evaluation, subject=set_object.subject)
+            copy = models.Activity.objects.create(title=title ,date=activity_object.date, weight=activity_object.weight, is_recovery=activity_object.is_recovery, set_activity=set_object, evaluation=set_object.evaluation, subject=set_object.subject)
             copy.save()
+            exercises = models.Exercise.objects.filter(activity=activity_object).order_by('statement')
+
+            for ex in exercises:
+                ex_copy = models.Exercise.objects.create(weight=ex.weight, statement=ex.statement, activity=copy)
+                ex_copy.save()
+
             return redirect('activities_list', pk=set_pk)
         else:
             return redirect('/')
