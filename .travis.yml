@@ -40,7 +40,7 @@ addons:
       - postgresql-client-13
 branches:
   only:
-    - release/s2/Despliegue-0.2
+    - release/s2/Despliegue-0.3
 deploy:
   provider: heroku
   api_key: 9a4d80da-d656-4680-b72d-15e614a8245b
