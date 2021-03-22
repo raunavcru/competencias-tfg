@@ -52,7 +52,6 @@ coverage.xml
 .pytest_cache/
 
 ## Translations
-*.mo
 *.pot
 
 ## Django stuff:
@@ -129,7 +128,6 @@ dmypy.json
 .pyre/
 
 ## Eventshow stuff
-initial_data.json
 media/profile/*
 media/event/*
 
