@@ -16,9 +16,11 @@ before_install:
   - sudo mv postgresql.conf /etc/postgresql/13/main
   - sudo cp /etc/postgresql/{10,13}/main/pg_hba.conf
   - sudo service postgresql restart 13
-  - cd Corrige
+  - sudo apt-get install -y gettext
 install:
   - pip install -r requirements.txt
+env:
+  - DATABASE_URL=postgres://pwmcmwvalxobcz:8e51eaca927828431420d9db6450e427e02c23e32f4df26b572351191d5c4c11@ec2-18-203-62-227.eu-west-1.compute.amazonaws.com:5432/dcbrkjnp1ol12u
 before_script:
   - cp ./Corrige/settings.py ./Corrige/local_settings.py
   - export PATH="/usr/lib/postgresql/13/bin:$PATH"
@@ -26,6 +28,8 @@ before_script:
   - sudo -u postgres createdb corrige -O Kelsier
   - python manage.py makemigrations
   - python manage.py migrate
+  - python manage.py runscript populate
+  - python manage.py compilemessages
 script:
   - travis_wait 20 python manage.py test
 addons:
@@ -36,5 +40,9 @@ addons:
       - postgresql-client-13
 branches:
   only:
-    - master
-    - dev
+    - release/s2/Despliegue-0.2
+deploy:
+  provider: heroku
+  api_key: 9a4d80da-d656-4680-b72d-15e614a8245b
+  app: verumapp
+  on: release/s2/Despliegue-0.3
