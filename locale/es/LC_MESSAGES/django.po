@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-19 15:17+0100\n"
+"POT-Creation-Date: 2021-03-22 11:23+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,12 +18,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\Corrige\local_settings.py:120 .\Corrige\settings.py:120
+#: .\Corrige\local_settings.py:120 .\Corrige\settings.py:152
 #: .\corrigeapp\local_settings.py:120
 msgid "English"
 msgstr ""
 
-#: .\Corrige\local_settings.py:121 .\Corrige\settings.py:121
+#: .\Corrige\local_settings.py:121 .\Corrige\settings.py:153
 #: .\corrigeapp\local_settings.py:121
 msgid "Spanish"
 msgstr ""
@@ -49,7 +49,7 @@ msgstr "Fecha"
 
 #: .\corrigeapp\templates\activities\create.html:60
 #: .\corrigeapp\templates\activities\list.html:22
-#: .\corrigeapp\templates\competences\create.html:71
+#: .\corrigeapp\templates\competences\create.html:73
 #: .\corrigeapp\templates\exercises\create.html:36
 #: .\corrigeapp\templates\exercises\create.html:98
 #: .\corrigeapp\templates\exercises\create.html:174
@@ -77,8 +77,10 @@ msgstr "Evaluación"
 #: .\corrigeapp\templates\activities\list.html:65
 #: .\corrigeapp\templates\administrators\create.html:80
 #: .\corrigeapp\templates\administrators\list.html:41
-#: .\corrigeapp\templates\competences\create.html:82
-#: .\corrigeapp\templates\competences\list.html:59
+#: .\corrigeapp\templates\competences\create.html:84
+#: .\corrigeapp\templates\competences\list.html:62
+#: .\corrigeapp\templates\competences\list.html:64
+#: .\corrigeapp\templates\competences\list.html:66
 #: .\corrigeapp\templates\competences\list_assign_competence.html:32
 #: .\corrigeapp\templates\evaluations\list.html:53
 #: .\corrigeapp\templates\evaluations\list.html:55
@@ -112,7 +114,7 @@ msgstr "Volver"
 #: .\corrigeapp\templates\activities\create.html:83
 #: .\corrigeapp\templates\activities\list.html:27
 #: .\corrigeapp\templates\administrators\create.html:89
-#: .\corrigeapp\templates\competences\create.html:91
+#: .\corrigeapp\templates\competences\create.html:93
 #: .\corrigeapp\templates\competences\list.html:27
 #: .\corrigeapp\templates\evaluations\list.html:26
 #: .\corrigeapp\templates\evaluations\update.html:217
@@ -132,7 +134,7 @@ msgstr "Editar"
 
 #: .\corrigeapp\templates\activities\create.html:87
 #: .\corrigeapp\templates\administrators\create.html:83
-#: .\corrigeapp\templates\competences\create.html:86
+#: .\corrigeapp\templates\competences\create.html:88
 #: .\corrigeapp\templates\evaluations\list.html:8
 #: .\corrigeapp\templates\evaluations\list.html:10
 #: .\corrigeapp\templates\evaluations\update.html:222
@@ -155,9 +157,10 @@ msgstr "¿Estás seguro de que quieres eliminar la actividad "
 
 #: .\corrigeapp\templates\activities\delete.html:17
 #: .\corrigeapp\templates\administrators\confirm_delete.html:17
-#: .\corrigeapp\templates\competences\delete.html:19
-#: .\corrigeapp\templates\competences\delete.html:22
+#: .\corrigeapp\templates\competences\delete.html:23
 #: .\corrigeapp\templates\competences\delete.html:25
+#: .\corrigeapp\templates\competences\delete.html:27
+#: .\corrigeapp\templates\competences\delete.html:29
 #: .\corrigeapp\templates\evaluations\delete.html:18
 #: .\corrigeapp\templates\evaluations\delete.html:20
 #: .\corrigeapp\templates\exercises\delete.html:17
@@ -171,7 +174,7 @@ msgstr "Cancelar"
 #: .\corrigeapp\templates\activities\delete.html:19
 #: .\corrigeapp\templates\activities\list.html:28
 #: .\corrigeapp\templates\administrators\confirm_delete.html:18
-#: .\corrigeapp\templates\competences\delete.html:28
+#: .\corrigeapp\templates\competences\delete.html:32
 #: .\corrigeapp\templates\competences\list.html:28
 #: .\corrigeapp\templates\evaluations\delete.html:23
 #: .\corrigeapp\templates\evaluations\list.html:27
@@ -341,7 +344,7 @@ msgstr "Crear competencia"
 msgid "Edit Competence"
 msgstr "Editar Competencia"
 
-#: .\corrigeapp\templates\competences\create.html:36
+#: .\corrigeapp\templates\competences\create.html:38
 #: .\corrigeapp\templates\competences\list.html:24
 #: .\corrigeapp\templates\competences\list_assign_competence.html:11
 #: .\corrigeapp\templates\competences\list_assign_competence.html:40
@@ -352,7 +355,7 @@ msgstr "Editar Competencia"
 msgid "Code"
 msgstr "Código"
 
-#: .\corrigeapp\templates\competences\create.html:45
+#: .\corrigeapp\templates\competences\create.html:47
 #: .\corrigeapp\templates\competences\list.html:25
 #: .\corrigeapp\templates\competences\list_assign_competence.html:12
 #: .\corrigeapp\templates\competences\list_assign_competence.html:41
@@ -378,7 +381,7 @@ msgstr "Código"
 msgid "Name"
 msgstr "Nombre"
 
-#: .\corrigeapp\templates\competences\create.html:58
+#: .\corrigeapp\templates\competences\create.html:60
 #: .\corrigeapp\templates\competences\list.html:26
 #: .\corrigeapp\templates\competences\list_assign_competence.html:13
 #: .\corrigeapp\templates\competences\list_assign_competence.html:42
@@ -395,7 +398,7 @@ msgstr "Descripción"
 msgid "Delete Competence"
 msgstr "Borrar Competencia"
 
-#: .\corrigeapp\templates\competences\delete.html:15
+#: .\corrigeapp\templates\competences\delete.html:19
 msgid "Are you sure about deleting the competence "
 msgstr "¿Estás seguro de que quieres eliminar la competencia "
 
@@ -493,11 +496,13 @@ msgstr "Creación de una evaluación final para todas las asignaturas"
 
 #: .\corrigeapp\templates\evaluations\list.html:76
 msgid "Create One Final and Two Partial Evaluation For All Subjects"
-msgstr "Creación de una evaluación final y dos parciales para todas las asignaturas"
+msgstr ""
+"Creación de una evaluación final y dos parciales para todas las asignaturas"
 
 #: .\corrigeapp\templates\evaluations\list.html:79
 msgid "Create One Final and Three Partial Evaluation For All Subjects"
-msgstr "Creación de una evaluación final y tres parciales para todas las asignaturas"
+msgstr ""
+"Creación de una evaluación final y tres parciales para todas las asignaturas"
 
 #: .\corrigeapp\templates\evaluations\update.html:9
 msgid "Edit Evaluation"
@@ -835,7 +840,7 @@ msgstr "¿Estás seguro de que quieres eliminar el profesor "
 #: .\corrigeapp\templates\teachers\create.html:9
 #: .\corrigeapp\templates\teachers\list.html:7
 msgid "Create Teacher"
-msgstr " Crear Profesor"
+msgstr "Crear Profesor"
 
 #: .\corrigeapp\templates\teachers\create.html:15
 msgid "Edit Teacher"

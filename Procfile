@@ -1,0 +1,1 @@
+web: gunicorn Corrige.wsgi --log-file -
