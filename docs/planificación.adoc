@@ -253,45 +253,70 @@ _[11 de Marzo]_
 |===
 |Semana 1: 26 de Marzo al 1 de Abril |Semana 2: 2 de Abril al 8 de Abril |Semana 3: 9 de Abril al 15 de Abril |Semana 4:  16 de Abril al 22 de Abril |Semana 5:  23 de Abril al 29 de Abril   
 
+// Fila 1 ========================================================
+
+| CU-50 Listar bloques (evaluaciones).
+
+_[29 de Marzo]_
 | CU-41 Puntuar las evaluaciones, las actividades, los ejercicios y las competencias.
 
-_[31 de Marzo]_
+_[7 de Abril]_
+| CU-45 Ver competencias de un alumno. 
+
+_[14 de Abril]_
 | CU-43 Generar informe de un grupo completo.   
 
-_[6 de Abril]_
+_[19 de Abril]_
+| Despliegue de la versión 1.0
+
+_[28 de Abril]_
+
+// Fila 2 ========================================================
+
+| CU-51 Crear bloques (evaluaciones).
+
+_[30 de Marzo]_
+| Responsive.
+
+_[8 de Abril]_
 | Responsive. 
 
-_[15 de Abril]_
+_[15 de Abril]_    
+| CU-44 Generar informe de un alumno.
+
+_[21 de Abril]_
+|
+
+// Fila 3 ========================================================
+
+| CU-52 Editar bloques (evaluaciones).
+
+_[31 de Marzo]_
+| 
+|        
 | Responsive.
 
 _[22 de Abril]_
-| Despliegue de la versión 1.0
+|
 
-_[26 de Abril]_
-| Responsive. 
+// Fila 4 ========================================================
+
+| CU-53 Elimianr bloques (evaluaciones).
 
 _[1 de Abril]_
-| CU-44 Generar informe de un alumno.
-
-_[8 de Abril]_
+| 
 |        
 |
-|
-
 | 
-| CU-45 Ver competencias de un alumno. 
 
-_[5 de Abril]_
-|        
-|
-|
+// Fila 5 ========================================================
 
-| 
 | Responsive.
 
-_[8 de Abril]_
+_[1 de Abril]_
+| 
 |        
 |
-|
+| 
 
 |===

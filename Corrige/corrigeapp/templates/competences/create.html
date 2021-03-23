@@ -22,6 +22,8 @@
                     <div class="center-form">
                     {% if is_update %}
                         <form class="col s12" id="form-update-competences" method="post" action="{% url 'competences_update' object.pk %}">
+                    {% elif parent_pk  %}
+                        <form class="col s12" id="form-create-competences" method="post" action="{% url 'competences_update_child' id=parent_pk pk=object.pk %}">
                     {% elif create_level3  %}
                         <form class="col s12" id="form-create-competences" method="post" action="{% url 'competences_create' %}">
                     {% else %}
