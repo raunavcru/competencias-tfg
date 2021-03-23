@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load i18n %}
-{% block content %} 
+{% block content %}
+<div class="container">
     <h4 class="centered">{% trans "List of subjects" %}</h4>
-        <a style="border-radius:5px" href="{% url 'subjects_create' %}" class="right teal lighten-2 waves-effect waves-light btn-small">{% trans "Create subject" %}</a>
+    {% if request.user.profile.role == "ADMINISTRATOR" %} 
+        <a style="border-radius:5px" href="{% url 'subjects_create' %}" class="right teal lighten-2 waves-effect waves-light btn-small"><i class="material-icons right">add</i>{% trans "Create subject" %}</a>
+    {% endif %}
         <table class="highlight">
             <caption></caption>
                 <thead>
@@ -13,8 +16,10 @@
                         <th id="level">{% trans "Level" %}</th>
                         <th id="grade">{% trans "Grade" %}</th>
                         <th id="description">{% trans "Description" %}</th>
+                    {% if request.user.profile.role == "ADMINISTRATOR" %} 
                         <th class="center" id="button">{% trans "Edit" %}</th>
                         <th class="center" id="delete">{% trans "Delete" %}</th>
+                    {% endif %}
                         <th class="center" id="competencia">{% trans "Competences" %}</th>
                     </tr>
                 </thead>
@@ -24,17 +29,22 @@
                             <td><i class="material-icons" style="color:#BBBBBB">book</i></td>
                             <td>{{object.name}}</td>
                             <td>{{object.level}}</td>
-                            <td>{{object.grade}}</td>
+                            {% include 'td_grade.html' %}
                             <td>{{object.description}}</td>
+                        {% if request.user.profile.role == "ADMINISTRATOR" %} 
                             <td class="center dropdown-trigger" type="button" onclick="location.href='{% url 'subjects_update' object.pk %}'"><em class="material-icons" style="color:#29b6f6">create</em></td>
                             <td class="center dropdown-trigger" onclick="location.href='{% url 'subjects_delete' object.pk %}'"><em class="material-icons" style="color:#e53935">delete</em></td>
                             <td class="center dropdown-trigger" type="button"><a style="border-radius:5px; center" href="{% url 'subjects_assign_competence_list'  object.pk %}" class="right deep-orange lighten-1 waves-effect waves-light btn-small">{% trans "Assign competence" %}</a></td>             
+                        {% else %}
+                            <td class="center dropdown-trigger" type="button"><a style="border-radius:5px; center" href="{% url 'subject_competence_list'  object.pk %}" class="right deep-orange lighten-1 waves-effect waves-light btn-small">{% trans "Competences List" %}</a></td>             
+                        {% endif %}
                         </tr>
                     </tbody>
             {% endfor %}
         </table>
 
 {% include 'paginate.html' %}
+<a onclick="location.href='{% url 'home' %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
 {% endblock %}
 
   <!-- Modal Trigger -->

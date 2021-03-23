@@ -4,7 +4,7 @@ from django.utils.crypto import get_random_string
 from django.utils.timezone import now
 from faker import Faker
 
-from corrigeapp.models import Student, Teacher, Administrator, Competence, Subject, Evaluation, Set
+from corrigeapp.models import Student, Teacher, Administrator, Competence, Subject, Evaluation, Set, Activity, Exercise, Exercise_competence
 
 import random
 import json
@@ -12,7 +12,7 @@ import json
 DATE_FORMAT = '%Y-%m-%d %H:%M:%S%z'
 FAKE = Faker('es_ES')
 POPULATE = []
-USER_PKS = range(2, 10)
+USER_PKS = range(3, 10)
 STUDENT_PKS = range(1, 31)
 
 
@@ -25,8 +25,11 @@ def run():
     seed_students()
     seed_competences()
     seed_subjects()
-    seed_evaluations()
     seed_sets()
+    seed_evaluations()
+    seed_activities()
+    seed_exercises()
+    seed_exercise_competence()
 
     sets = Set.objects.all()
     sets.delete()
@@ -46,6 +49,15 @@ def run():
     subjects = Subject.objects.all()
     subjects.delete()
 
+    e_c = Exercise_competence.objects.all()
+    e_c.delete()
+
+    exercises = Exercise.objects.all()
+    exercises.delete()
+
+    activities = Activity.objects.all()
+    activities.delete()
+
     evaluations = Evaluation.objects.all()
     evaluations.delete()
 
@@ -55,6 +67,29 @@ def run():
     management.call_command('loaddata', 'initial_data/initial_data')
 
 def seed_users():
+    profile = FAKE.profile()
+    names = profile['name'].split(' ')
+    first_name = names[0]
+    last_name = names[1]
+
+    fields = {
+        'password': make_password('teacherusertest'),
+        'is_superuser': False,
+        'username': 'teacherusertest',
+        'first_name': first_name,
+        'last_name': last_name,
+        'email': profile['mail'],
+        'is_staff': False,
+        'date_joined': now().strftime(DATE_FORMAT),
+    }
+    user = {
+        'pk': 2,
+        'model': 'auth.User',
+        'fields': fields
+    }
+
+    POPULATE.append(user)
+
     for pk in USER_PKS:
         profile = FAKE.profile()
         names = profile['name'].split(' ')
@@ -80,6 +115,27 @@ def seed_users():
         POPULATE.append(user)
 
 def seed_profiles():
+    teacher = {
+            'pk': 2,
+            'model': 'corrigeapp.TEACHER',
+            'fields': {
+                'profile_ptr_id': 2,
+                'subjects': [1,2,3,4,]
+            }
+        }
+    POPULATE.append(teacher)
+
+    profile = {
+        'pk': 2,
+        'model': 'corrigeapp.PROFILE',
+        'fields': {
+            'birthdate': '1980-01-01',
+            'initials': get_random_string(length=3).upper(),
+            'role': 'TEACHER',
+            'user': 2,
+        }
+    }
+    POPULATE.append(profile)
     for user_pk in USER_PKS:
         
         teacher = {
@@ -179,6 +235,7 @@ def seed_competences():
                 'code': 'CC1',
                 'name': 'Comunicación lingüística',
                 'description': '3º ESO',
+                'weight': 1,
                 'level': 3,
             }
     }
@@ -193,6 +250,7 @@ def seed_competences():
                 'code': 'CC2',
                 'name': 'Competencia matemática y competencias básicas en ciencia y tecnología',
                 'description': '3º ESO',
+                'weight': 1,
                 'level': 3,
             }
     }
@@ -207,6 +265,7 @@ def seed_competences():
                 'code': 'CC3',
                 'name': 'Competencia digital',
                 'description': '3º ESO',
+                'weight': 1,
                 'level': 3,
             }
     }
@@ -221,6 +280,7 @@ def seed_competences():
                 'code': 'CC4',
                 'name': 'Aprender a aprender',
                 'description': '3º ESO',
+                'weight': 1,
                 'level': 3,
             }
     }
@@ -235,6 +295,7 @@ def seed_competences():
                 'code': 'CC5',
                 'name': 'Competencias sociales y cívicas',
                 'description': '3º ESO',
+                'weight': 1,
                 'level': 3,
             }
     }
@@ -249,6 +310,7 @@ def seed_competences():
                 'code': 'CC6',
                 'name': 'Sentido de la iniciativa y espíritu emprendedor',
                 'description': '3º ESO',
+                'weight': 1,
                 'level': 3,
             }
     }
@@ -263,6 +325,7 @@ def seed_competences():
                 'code': 'CC7',
                 'name': 'Conciencia y expresiones culturales',
                 'description': '3º ESO',
+                'weight': 1,
                 'level': 3,
             }
     }
@@ -278,6 +341,7 @@ def seed_competences():
                 'code': 'CC1',
                 'name': 'Comunicación lingüística',
                 'description': '4º ESO',
+                'weight': 1,
                 'level': 3,
             }
     }
@@ -292,6 +356,7 @@ def seed_competences():
                 'code': 'CC2',
                 'name': 'Competencia matemática y competencias básicas en ciencia y tecnología',
                 'description': '4º ESO',
+                'weight': 1,
                 'level': 3,
             }
     }
@@ -306,6 +371,7 @@ def seed_competences():
                 'code': 'CC3',
                 'name': 'Competencia digital',
                 'description': '4º ESO',
+                'weight': 1,
                 'level': 3,
             }
     }
@@ -320,6 +386,7 @@ def seed_competences():
                 'code': 'CC4',
                 'name': 'Aprender a aprender',
                 'description': '4º ESO',
+                'weight': 1,
                 'level': 3,
             }
     }
@@ -334,6 +401,7 @@ def seed_competences():
                 'code': 'CC5',
                 'name': 'Competencias sociales y cívicas',
                 'description': '4º ESO',
+                'weight': 1,
                 'level': 3,
             }
     }
@@ -348,6 +416,7 @@ def seed_competences():
                 'code': 'CC6',
                 'name': 'Sentido de la iniciativa y espíritu emprendedor',
                 'description': '4º ESO',
+                'weight': 1,
                 'level': 3,
             }
     }
@@ -362,6 +431,7 @@ def seed_competences():
                 'code': 'CC7',
                 'name': 'Conciencia y expresiones culturales',
                 'description': '4º ESO',
+                'weight': 1,
                 'level': 3,
             }
     }
@@ -759,7 +829,7 @@ def seed_subjects():
         'fields': {
                 'name': 'Física y Química',
                 'level': '3º',
-                'grade': 'ESO',
+                'grade': 'SecondaryEducation',
                 'description': 'Física y Química',
                 'competences': competencels, 
             }
@@ -773,7 +843,7 @@ def seed_subjects():
         'fields': {
                 'name': 'Física y Química',
                 'level': '4º',
-                'grade': 'ESO',
+                'grade': 'SecondaryEducation',
                 'description': 'Física y Química',
                 'competences': competencels, 
             }
@@ -787,7 +857,7 @@ def seed_subjects():
         'fields': {
                 'name': 'Matemáticas',
                 'level': '3º',
-                'grade': 'ESO',
+                'grade': 'SecondaryEducation',
                 'description': 'Matemáticas',
                 'competences': competencels, 
             }
@@ -801,7 +871,7 @@ def seed_subjects():
         'fields': {
                 'name': 'Matemáticas',
                 'level': '4º',
-                'grade': 'ESO',
+                'grade': 'SecondaryEducation',
                 'description': 'Matemáticas',
                 'competences': competencels, 
             }
@@ -833,7 +903,7 @@ def seed_evaluations():
         'fields': {
                 'name': 'Física y Química 3º ESO 1er Cuatrimestre',
                 'start_date': '2020-09-15',
-                'end_date': '2021-12-22',
+                'end_date': '2020-12-22',
                 'is_final': False,
                 'period': '1st',
                 'parent': evaluation_parent,
@@ -895,7 +965,7 @@ def seed_evaluations():
         'fields': {
                 'name': 'Física y Química 4º ESO 1er Cuatrimestre',
                 'start_date': '2020-09-15',
-                'end_date': '2021-12-22',
+                'end_date': '2020-12-22',
                 'is_final': False,
                 'period': '1st',
                 'parent': evaluation_parent,
@@ -957,7 +1027,7 @@ def seed_evaluations():
         'fields': {
                 'name': 'Matemáticas 3º ESO 1er Cuatrimestre',
                 'start_date': '2020-09-15',
-                'end_date': '2021-12-22',
+                'end_date': '2020-12-22',
                 'is_final': False,
                 'period': '1st',
                 'parent': evaluation_parent,
@@ -1019,7 +1089,7 @@ def seed_evaluations():
         'fields': {
                 'name': 'Matemáticas 4º ESO 1er Cuatrimestre',
                 'start_date': '2020-09-15',
-                'end_date': '2021-12-22',
+                'end_date': '2020-12-22',
                 'is_final': False,
                 'period': '1st',
                 'parent': evaluation_parent,
@@ -1069,7 +1139,7 @@ def seed_sets():
         'fields': {
                 'name': 'Física y Qúimica 3ºA ESO',
                 'level': '3º',
-                'grade': 'ESO',
+                'grade': 'SecondaryEducation',
                 'line': 'A',
                 'teacher': 2,
                 'subject': 1,
@@ -1088,11 +1158,11 @@ def seed_sets():
         'fields': {
                 'name': 'Matemáticas 3ºA ESO',
                 'level': '3º',
-                'grade': 'ESO',
+                'grade': 'SecondaryEducation',
                 'line': 'A',
                 'teacher': 2,
                 'subject': 3,
-                'evaluation': 1,
+                'evaluation': 9,
                 'students': students,
             }
     }
@@ -1107,11 +1177,11 @@ def seed_sets():
         'fields': {
                 'name': 'Física y Qúimica 4ºA ESO',
                 'level': '4º',
-                'grade': 'ESO',
+                'grade': 'SecondaryEducation',
                 'line': 'A',
                 'teacher': 2,
                 'subject': 2,
-                'evaluation': 1,
+                'evaluation': 5,
                 'students': students,
             }
     }
@@ -1126,14 +1196,274 @@ def seed_sets():
         'fields': {
                 'name': 'Matemáticas 4ºA ESO',
                 'level': '4º',
-                'grade': 'ESO',
+                'grade': 'SecondaryEducation',
                 'line': 'A',
                 'teacher': 2,
                 'subject': 4,
-                'evaluation': 1,
+                'evaluation': 13,
                 'students': students,
             }
     }
     POPULATE.append(set_obj)
     set_pk += 1
-    
+
+def seed_activities():
+    activity_pk=1
+    ## FQ 3ºESO
+    activity = {
+        'pk': activity_pk,
+        'model': 'corrigeapp.Activity',
+        'fields': {
+                'title': 'Examen 1',
+                'date': '2020-11-04',
+                'weight': 1,
+                'is_recovery': False,
+                'set_activity': 1,
+                'evaluation': 2,
+                'subject': 1,
+            }
+    }
+    POPULATE.append(activity)
+    activity_pk += 1
+    activity = {
+        'pk': activity_pk,
+        'model': 'corrigeapp.Activity',
+        'fields': {
+                'title': 'Examen 2',
+                'date': '2021-01-22',
+                'weight': 1,
+                'is_recovery': False,
+                'set_activity': 1,
+                'evaluation': 3,
+                'subject': 1,
+            }
+    }
+    POPULATE.append(activity)
+    activity_pk += 1
+    activity = {
+        'pk': activity_pk,
+        'model': 'corrigeapp.Activity',
+        'fields': {
+                'title': 'Examen 3',
+                'date': '2021-05-26',
+                'weight': 1,
+                'is_recovery': False,
+                'set_activity': 1,
+                'evaluation': 4,
+                'subject': 1,
+            }
+    }
+    POPULATE.append(activity)
+    activity_pk += 1
+
+    ## FQ 4ºESO
+    activity = {
+        'pk': activity_pk,
+        'model': 'corrigeapp.Activity',
+        'fields': {
+                'title': 'Examen 1',
+                'date': '2020-11-04',
+                'weight': 1,
+                'is_recovery': False,
+                'set_activity': 3,
+                'evaluation': 6,
+                'subject': 2,
+            }
+    }
+    POPULATE.append(activity)
+    activity_pk += 1
+    activity = {
+        'pk': activity_pk,
+        'model': 'corrigeapp.Activity',
+        'fields': {
+                'title': 'Examen 2',
+                'date': '2021-01-22',
+                'weight': 1,
+                'is_recovery': False,
+                'set_activity': 3,
+                'evaluation': 7,
+                'subject': 2,
+            }
+    }
+    POPULATE.append(activity)
+    activity_pk += 1
+    activity = {
+        'pk': activity_pk,
+        'model': 'corrigeapp.Activity',
+        'fields': {
+                'title': 'Examen 3',
+                'date': '2021-05-26',
+                'weight': 1,
+                'is_recovery': False,
+                'set_activity': 3,
+                'evaluation': 8,
+                'subject': 2,
+            }
+    }
+    POPULATE.append(activity)
+    activity_pk += 1
+
+def seed_exercises():
+    exercise_pk=1
+    ## FQ 3ºESO
+    ## Activity 1
+    exercise = {
+        'pk': exercise_pk,
+        'model': 'corrigeapp.Exercise',
+        'fields': {
+                'weight': 1,
+                'statement': 'Example statement 1',
+                'activity': 1,
+            }
+    }
+    POPULATE.append(exercise)
+    exercise_pk += 1
+    exercise = {
+        'pk': exercise_pk,
+        'model': 'corrigeapp.Exercise',
+        'fields': {
+                'weight': 1,
+                'statement': 'Example statement 2',
+                'activity': 1,
+            }
+    }
+    POPULATE.append(exercise)
+    exercise_pk += 1
+    exercise = {
+        'pk': exercise_pk,
+        'model': 'corrigeapp.Exercise',
+        'fields': {
+                'weight': 1,
+                'statement': 'Example statement 3',
+                'activity': 1,
+            }
+    }
+    POPULATE.append(exercise)
+    exercise_pk += 1
+    exercise = {
+        'pk': exercise_pk,
+        'model': 'corrigeapp.Exercise',
+        'fields': {
+                'weight': 1,
+                'statement': 'Example statement 4',
+                'activity': 1,
+            }
+    }
+    POPULATE.append(exercise)
+    exercise_pk += 1
+    exercise = {
+        'pk': exercise_pk,
+        'model': 'corrigeapp.Exercise',
+        'fields': {
+                'weight': 1,
+                'statement': 'Example statement 5',
+                'activity': 1,
+            }
+    }
+    POPULATE.append(exercise)
+    exercise_pk += 1
+    exercise = {
+        'pk': exercise_pk,
+        'model': 'corrigeapp.Exercise',
+        'fields': {
+                'weight': 1,
+                'statement': 'Example statement 6',
+                'activity': 1,
+            }
+    }
+    POPULATE.append(exercise)
+    exercise_pk += 1
+    ## Activity 2
+    exercise = {
+        'pk': exercise_pk,
+        'model': 'corrigeapp.Exercise',
+        'fields': {
+                'weight': 1,
+                'statement': 'Example statement 1',
+                'activity': 2,
+            }
+    }
+    POPULATE.append(exercise)
+    exercise_pk += 1
+
+def seed_exercise_competence():
+    exercise_competence_pk=1
+    ## FQ 3ºESO
+    ## Activity 1 Exercise 1
+    exercise_competence = {
+        'pk': exercise_competence_pk,
+        'model': 'corrigeapp.Exercise_competence',
+        'fields': {
+                'intensity': 1,
+                'weight': 1,
+                'exercise': 1,
+                'competence': 16,
+            }
+    }
+    POPULATE.append(exercise_competence)
+    exercise_competence_pk += 1
+     ## Activity 1 Exercise 2
+    exercise_competence = {
+        'pk': exercise_competence_pk,
+        'model': 'corrigeapp.Exercise_competence',
+        'fields': {
+                'intensity': 1,
+                'weight': 1,
+                'exercise': 2,
+                'competence': 17,
+            }
+    }
+    POPULATE.append(exercise_competence)
+    exercise_competence_pk += 1
+     ## Activity 1 Exercise 3
+    exercise_competence = {
+        'pk': exercise_competence_pk,
+        'model': 'corrigeapp.Exercise_competence',
+        'fields': {
+                'intensity': 1,
+                'weight': 1,
+                'exercise': 3,
+                'competence': 19,
+            }
+    }
+    POPULATE.append(exercise_competence)
+    exercise_competence_pk += 1
+    ## Activity 1 Exercise 4
+    exercise_competence = {
+        'pk': exercise_competence_pk,
+        'model': 'corrigeapp.Exercise_competence',
+        'fields': {
+                'intensity': 1,
+                'weight': 1,
+                'exercise': 4,
+                'competence': 21,
+            }
+    }
+    POPULATE.append(exercise_competence)
+    exercise_competence_pk += 1
+    ## Activity 1 Exercise 5
+    exercise_competence = {
+        'pk': exercise_competence_pk,
+        'model': 'corrigeapp.Exercise_competence',
+        'fields': {
+                'intensity': 1,
+                'weight': 1,
+                'exercise': 5,
+                'competence': 23,
+            }
+    }
+    POPULATE.append(exercise_competence)
+    exercise_competence_pk += 1
+    ## Activity 1 Exercise 6
+    exercise_competence = {
+        'pk': exercise_competence_pk,
+        'model': 'corrigeapp.Exercise_competence',
+        'fields': {
+                'intensity': 1,
+                'weight': 1,
+                'exercise': 6,
+                'competence': 24,
+            }
+    }
+    POPULATE.append(exercise_competence)
+    exercise_competence_pk += 1

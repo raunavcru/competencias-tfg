@@ -54,7 +54,7 @@ class Competence(Common):
 
     level = models.PositiveIntegerField('level')
 
-    parent = models.ManyToManyField('self', "competences", verbose_name=("competences_parent"), blank=True)
+    parent = models.ManyToManyField('self', "competence_parent", symmetrical=False, verbose_name=("competences_parent"), blank=True)
 
     class Meta:
         verbose_name = 'Competence'
@@ -163,6 +163,8 @@ class Set(Common):
         return self.name + ' ' + self.level + ' ' + self.grade + ' ' + self.line
 
 class Activity(Common):
+    title = models.CharField(("title"), max_length=50)
+
     date = models.DateField('date')
 
     weight = models.DecimalField('weight', max_digits=3, decimal_places=2)
@@ -186,9 +188,9 @@ class Activity(Common):
             return self.date + ' activity'
 
 class Evaluation_mark(Common):
-    mark = models.DecimalField('mark', max_digits=4, decimal_places=2)
+    mark = models.DecimalField('mark', max_digits=4, decimal_places=2, blank=True, null=True)
 
-    manual_mark = models.DecimalField('manual_mark', max_digits=4, decimal_places=2)
+    manual_mark = models.DecimalField('manual_mark', max_digits=4, decimal_places=2, blank=True, null=True)
 
     evaluation_type = models.CharField(("evaluation_type"), max_length=50)
 
@@ -205,9 +207,11 @@ class Evaluation_mark(Common):
 
 
 class Activity_mark(Common):
-    mark = models.DecimalField('mark', max_digits=4, decimal_places=2)
+    mark = models.DecimalField('mark', max_digits=4, decimal_places=2, blank=True, null=True)
 
-    manual_mark = models.DecimalField('manual_mark', max_digits=4, decimal_places=2)
+    manual_mark = models.DecimalField('manual_mark', max_digits=4, decimal_places=2, blank=True, null=True)
+
+    evaluation_type = models.CharField(("evaluation_type"), max_length=50)
 
     activity = models.ForeignKey(Activity, on_delete=models.CASCADE, related_name='activity_activity_mark')
 
@@ -237,9 +241,11 @@ class Exercise(Common):
 
 
 class Exercise_mark(Common):
-    mark = models.DecimalField('mark', max_digits=4, decimal_places=2)
+    mark = models.DecimalField('mark', max_digits=4, decimal_places=2, blank=True, null=True)
 
-    manual_mark = models.DecimalField('manual_mark', max_digits=4, decimal_places=2)
+    manual_mark = models.DecimalField('manual_mark', max_digits=4, decimal_places=2, blank=True, null=True)
+
+    evaluation_type = models.CharField(("evaluation_type"), max_length=50)
 
     exercise = models.ForeignKey(Exercise, on_delete=models.CASCADE, related_name='exercise_exercise_mark')
 
@@ -270,7 +276,9 @@ class Exercise_competence(Common):
 
 
 class Competence_mark(Common):
-    mark = models.DecimalField('mark', max_digits=4, decimal_places=2)
+    mark = models.DecimalField('mark', max_digits=4, decimal_places=2, blank=True, null=True)
+
+    evaluation_type = models.CharField(("evaluation_type"), max_length=50)
 
     competence = models.ForeignKey(Competence, on_delete=models.CASCADE, related_name='competence_competence_mark')
 

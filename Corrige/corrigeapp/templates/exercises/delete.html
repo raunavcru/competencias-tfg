@@ -5,19 +5,17 @@
 	<div style="background-color:white; border-radius: 10px;  box-shadow: 2px 2px 10px #666;">
         <div class="center"  style="background-color:#f05060; padding-top:1px; border-top-right-radius: 10px; border-top-left-radius:10px; color:white;">
         <h3 style="text-align:center; padding-bottom:20px;">
-            {% trans "Delete Student" %}  
+            {% trans "Delete Exercise" %}  
         </h3>
         </div>
         <div  style="padding-bottom:15px;" class="container">
-    <form action="{% url 'students_delete' object.pk %}" method="post">
+    <form action="{% url 'exercises_delete' object.pk %}" method="post">
         {% csrf_token %}
-        <h1 class="center title-delete flow-text">{% trans "Are you sure about deleting the student " %} <a>{{object.name}} {{object.surname}}</a>?</h1>
+        <h1 class="center title-delete flow-text">{% trans "Are you sure about deleting the exercise" %}?</h1>
 
         <div class="center">
-            <a style="border-radius:5px; background-color:#BBBBBB" href="{% url 'students_list'%}" class="waves-effect waves-light btn-large button-delete">
-                {% trans "Cancel" %}
-            </a>
-            <button style="border-radius:5px; background-color:#f05060" class="waves-effect waves-light btn-large button-delete delete-yes" type="submit">
+            <a style="border-radius:5px; background-color:#BBBBBB" href="{% url 'exercises_list' type=1 pk=activity_pk %}" class="waves-effect waves-light btn-large button-delete">{% trans "Cancel" %}</a>
+            <button style="border-radius:5px; background-color:#f05060" class="waves-effect waves-light btn-large button-delete delete-yes" type="submit"> 
                 {% trans "Delete" %}
             </button>
         </div>

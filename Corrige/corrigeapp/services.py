@@ -6,6 +6,16 @@ from . import models
 
 User = get_user_model()
 
+class ActivityService():
+
+    def is_owner(self, user: User, activity_object: models.Activity) -> bool:
+        res = False
+
+        if activity_object.created_by == user:
+            res = True
+        
+        return res
+
 class FormService():
 
     def raise_error(self, en_message: str, es_message: str):
@@ -16,6 +26,16 @@ class FormService():
         else:
             raise ValidationError(
                 es_message)
+
+class SetService():
+
+    def is_owner(self, user: User, set_object: models.Set) -> bool:
+        res = False
+
+        if set_object.teacher.user == user:
+            res = True
+        
+        return res
 
 class UserService():
 

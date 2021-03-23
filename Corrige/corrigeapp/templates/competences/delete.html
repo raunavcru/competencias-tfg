@@ -2,26 +2,39 @@
 {% load i18n %}
 {% block content %}
 
-<div  id="top-bot" class="container">
-    <form action="{% url 'competences_delete' object.pk %}" method="post">
-        {% csrf_token %}
-        <h1 class="center title-delete flow-text">{% trans "Are you sure about deleting the competence " %}<a>{{object.name}}</a>?</h1>
-
-        <div class="center">
-        {% if list_level3 %}
-            <a style="border-radius:5px; background-color:#BBBBBB" href="{% url 'competences_list3'%}" class="waves-effect waves-light btn-large button-delete">{% trans "Cancel" %}</a>
-        {% endif %}
-        {% if list_level2 %}
-            <a style="border-radius:5px; background-color:#BBBBBB" href="{% url 'competences_list2'%}" class="waves-effect waves-light btn-large button-delete">{% trans "Cancel" %}</a>
-        {% endif %} 
-        {% if list_level1 %}
-            <a style="border-radius:5px; background-color:#BBBBBB" href="{% url 'competences_list1'%}" class="waves-effect waves-light btn-large button-delete">{% trans "Cancel" %}</a>
-        {% endif %} 
-            <button style="border-radius:5px; background-color:#f05060" class="waves-effect waves-light btn-large button-delete delete-yes" type="submit"> 
-                {% trans "Delete" %}
-            </button>
+<div style="padding-top:15px; width:1000px; margin: 0 auto;" >
+	<div style="background-color:white; border-radius: 10px;  box-shadow: 2px 2px 10px #666;">
+        <div class="center"  style="background-color:#f05060; padding-top:1px; border-top-right-radius: 10px; border-top-left-radius:10px; color:white;">
+            <h3 style="text-align:center; padding-bottom:20px;">
+                {% trans "Delete Competence" %}  
+            </h3>
         </div>
-    </form>
+        <div  style="padding-bottom:15px;" class="container">
+            {% if parent_pk %}
+            <form action="{% url 'competences_delete_child' id=parent_pk pk=object.pk %}" method="post">
+            {% else %}
+            <form action="{% url 'competences_delete' object.pk %}" method="post">
+            {% endif %}
+                {% csrf_token %}
+                <h1 class="center title-delete flow-text">{% trans "Are you sure about deleting the competence " %}<a>{{object.name}}</a>?</h1>
+
+                <div class="center">
+                {% if parent_pk %}
+                    <a style="border-radius:5px; background-color:#BBBBBB" href="{% url 'competences_list_child' pk=parent_pk %}" class="waves-effect waves-light btn-large button-delete">{% trans "Cancel" %}</a>
+                {% elif list_level3 %}
+                    <a style="border-radius:5px; background-color:#BBBBBB" href="{% url 'competences_list3'%}" class="waves-effect waves-light btn-large button-delete">{% trans "Cancel" %}</a>
+                {% elif list_level2 %}
+                    <a style="border-radius:5px; background-color:#BBBBBB" href="{% url 'competences_list2'%}" class="waves-effect waves-light btn-large button-delete">{% trans "Cancel" %}</a>
+                {% elif list_level1 %}
+                    <a style="border-radius:5px; background-color:#BBBBBB" href="{% url 'competences_list1'%}" class="waves-effect waves-light btn-large button-delete">{% trans "Cancel" %}</a>
+                {% endif %} 
+                    <button style="border-radius:5px; background-color:#f05060" class="waves-effect waves-light btn-large button-delete delete-yes" type="submit"> 
+                        {% trans "Delete" %}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 
 {% endblock %}
