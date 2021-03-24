@@ -59,7 +59,12 @@
     }
     .h3-title{
         padding-bottom:0.1em;
-        
+    }
+    .td-none{
+        display: none;;
+    }
+    .th-none{
+        display: none;
     }
 }
 
