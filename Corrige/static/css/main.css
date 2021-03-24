@@ -49,6 +49,11 @@
     padding-bottom:20px;
 }
 
+.form-errors{
+    text-align:center;
+    color:firebrick
+}
+
 @media only screen and (max-width: 812px) {
     
     .div-container {
@@ -61,5 +66,9 @@
         padding-bottom:0.1em;
         
     }
+    table {
+        display: block;
+        overflow-x: auto;
+      }
 }
 
