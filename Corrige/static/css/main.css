@@ -38,12 +38,28 @@
     background-attachment: fixed;
 }
 
-/* iPad*/
-
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-
-#nameCompetence{
-	width: 1000px;
+.div-container{
+    padding-top:15px; 
+    width:1000px; 
+    margin: 0 auto;
 }
 
+.h3-title{
+    text-align:center;
+    padding-bottom:20px;
 }
+
+@media only screen and (max-width: 812px) {
+    
+    .div-container {
+        width: 94%;
+    }
+    #form-generic {
+        padding-top: 0px;
+    }
+    .h3-title{
+        padding-bottom:0.1em;
+        
+    }
+}
+
