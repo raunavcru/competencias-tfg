@@ -49,6 +49,11 @@
     padding-bottom:20px;
 }
 
+.form-errors{
+    text-align:center;
+    color:firebrick
+}
+
 @media only screen and (max-width: 812px) {
     
     .div-container {
@@ -66,5 +71,9 @@
     .th-none{
         display: none;
     }
+    table {
+        display: block;
+        overflow-x: auto;
+      }
 }
 
