@@ -701,6 +701,11 @@ class ExerciseUpdateView(generic.UpdateView):
         context['list_competences_assigned'] = list_exercise_competence
         context['list_competences_unassigned'] = list_competences_unassigned
         context['exercise_competence_form'] = forms.ExerciseCompetenceUpdateForm
+
+        if get_language == 'en':
+            context['info'] = "Intensity indicates the competence's value about its mark. Weight indicates the competence's value about the mark of the exercise." 
+        else:
+            context['info'] = "Intensidad indica el valor de la competencias sobre su nota. Peso indica el valor de la competencia sobre el ejercicio."
         return context
 
     def form_valid(self, form):

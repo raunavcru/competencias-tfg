@@ -1,17 +1,18 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% block content %}
-<div style="padding-top:15px; width:1000px; margin: 0 auto;" >
+<div class="div-container" >
 	<div style=" border-radius: 10px;  box-shadow: 2px 2px 10px #666;">
     {% if update %}
         <div class="center" style="background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%); padding-top:1px; border-top-right-radius: 10px; border-top-left-radius:10px; ">
-            <h3 style="text-align:center; padding-bottom:20px;">
+            <h3 class="h3-title">
             {% trans "Edit Exercise" %}  
+            <em class="material-icons tooltipped" data-position="bottom" data-tooltip="{{info}}" style="color:#29b6f6">info</em>
             </h3>
         </div>  
     {% else %}
         <div class="center"  style="background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);padding-top:1px; border-top-right-radius: 10px; border-top-left-radius:10px;">
-            <h3 style="text-align:center; padding-bottom:20px;">
+            <h3 class="h3-title">
                 {% trans "Create Exercise" %}  
             </h3>
         </div>
@@ -27,11 +28,10 @@
                 <form class="col s12" id="form-create-exercises" method="post" action="{% url 'exercises_create' activity_pk %}">
             {% endif %}
                     {% csrf_token %}
-                    
                     <div class="row">
-                        <div class="grid-example col s4">
+                        <div class="grid-example col s3">
                         </div>
-                        <div class="grid-example col s4">
+                        <div class="grid-example col s6">
                             <div class="validate-input">
                                 <label>{% trans "Weight" %}</label>
                                 {{form.weight}}
@@ -42,9 +42,9 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="grid-example col s2">
+                        <div class="grid-example col s1">
                         </div>
-                        <div class="grid-example col s8">
+                        <div class="grid-example col s10">
                             <div class="validate-input">
                                 <label>{% trans "Statement" %}</label>
                                 {{form.statement}}
@@ -93,7 +93,7 @@
                                 <thead>
                                     <tr>
                                         <th id="code">{% trans "Code" %}</th>
-                                        <th id="name">{% trans "Name" %}</th>
+                                        <th id="name" class="th-none">{% trans "Name" %}</th>
                                         <th class="center" id="intensity">{% trans "Intensity" %}</th>  
                                         <th class="center" id="weight">{% trans "Weight" %}</th>         
                                         <th class="center" id="Unassign">{% trans "Unassign" %}</th>       
@@ -103,7 +103,7 @@
                                     <tbody>
                                         <tr class="center">
                                             <td style="width:100px">{{object.competence.code}}</td> 
-                                            <td style="width:300px">{{object.competence.name}}</td>
+                                            <td class="td-none" style="width:300px">{{object.competence.name}}</td>
                                             <td class="center" style="width:100px">{{object.intensity}}</td>
                                             <td class="center" style="width:100px">{{object.weight}}</td> 
                                             <td class="center" style="width:100px">
@@ -145,7 +145,7 @@
                             <thead>
                                 <tr>
                                     <th id="code">{% trans "Code" %}</th>
-                                    <th id="name">{% trans "Name" %}</th>   
+                                    <th id="name" class="th-none">{% trans "Name" %}</th>   
                                     <th class="center" id="assign">{% trans "Assign" %}</th>        
                                 </tr>
                             </thead>
@@ -153,14 +153,14 @@
                                 <tbody>
                                     <tr class="center">
                                         <td style="width:100px">{{object.code}}</td> 
-                                        <td style="width:300px">{{object.name}}</td>   
+                                        <td class="td-none" style="width:300px">{{object.name}}</td>   
                                         <td class="center" style="width:200px">
                                             <form class="col s12" id="form-create-exercise_competences" method="post" action="{% url 'exercise_competences_create' id=object.pk pk=exercise_pk %}">   
                                                 {% csrf_token %}
                                                 <div class="row">
-                                                    <div class="grid-example col s2">
+                                                    <div class="grid-example col s1 xl2">
                                                     </div>
-                                                    <div class="grid-example col s3">
+                                                    <div class="grid-example col s5 xl3">
                                                         <div class="validate-input">
                                                             <label>{% trans "Intensity" %}</label>
                                                             {{exercise_competence_form.intensity}}
@@ -169,7 +169,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="grid-example col s3">
+                                                    <div class="grid-example col s5 xl3">
                                                         <div class="validate-input">
                                                             <label>{% trans "Weight" %}</label>
                                                             {{exercise_competence_form.weight}}
@@ -178,7 +178,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <button class="btn waves-effect right" type="submit" name="action">{% trans "Create" %}
+                                                    <button class="btn waves-effect center" type="submit" name="action">{% trans "Create" %}
                                                         <i class="large material-icons right"><i>send</i></i>
                                                     </button>
                                                 </div>
@@ -200,6 +200,11 @@
     document.addEventListener('DOMContentLoaded', function() {
         var elems = document.querySelectorAll('.collapsible');
         var instances = M.Collapsible.init(elems);
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.tooltipped');
+        var instances = M.Tooltip.init(elems);
     });
 
     function onCloseAssigned() {
