@@ -19,8 +19,13 @@
                         <th id=""></th>
                         <th id="title">{% trans "Title" %}</th>
                         <th id="date">{% trans "Date" %}</th>
+                        {% if no_copy_list %} 
                         <th id="weight">{% trans "Weight" %}</th>
                         <th id="evaluation">{% trans "Evaluation" %}</th>
+                        {% else %}
+                        <th id="evaluation">{% trans "Evaluation" %}</th>
+                        <th id="subject">{% trans "Subject" %}</th>
+                        {% endif %}
                         <th class="center" id="is_recovery">{% trans "Recovery" %}</th>
                         <th class="center" id="list">{% trans "List of exercises" %}</th>
                     {% if no_copy_list %}
@@ -37,8 +42,13 @@
                             <td><i class="material-icons" style="color:#BBBBBB">account_circle</i></td>
                             <td>{{object.title}}</td>
                             <td>{{object.date}}</td>
+                            {% if no_copy_list %}
                             <td>{{object.weight}}</td>
                             <td>{{object.evaluation}}</td>
+                            {% else %}
+                            <td>{{object.evaluation}}</td>
+                            <td>{{object.subject}}</td>
+                            {% endif %}
                             <td class="center dropdown-trigger">
                                 {% if object.is_recovery %} 
                                     <em class="material-icons" style="color:#2d572c">check</em>
