@@ -301,7 +301,7 @@ _[22 de Abril]_
 
 // Fila 4 ========================================================
 
-| CU-53 Elimianr bloques (evaluaciones).
+| CU-53 Eliminar bloques (evaluaciones).
 
 _[1 de Abril]_
 | 
