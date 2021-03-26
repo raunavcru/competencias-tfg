@@ -16,14 +16,14 @@
             <caption></caption>
                 <thead>
                     <tr>
-                        <th id=""></th>
+                        <th class="td-none" id=""></th>
                         <th id="title">{% trans "Title" %}</th>
-                        <th id="date">{% trans "Date" %}</th>
+                        <th class="td-none" id="date">{% trans "Date" %}</th>
                         {% if no_copy_list %} 
-                        <th id="weight">{% trans "Weight" %}</th>
-                        <th id="evaluation">{% trans "Evaluation" %}</th>
+                        <th class="center" id="weight">{% trans "Weight" %}</th>
+                        <th class="td-none" id="evaluation">{% trans "Evaluation" %}</th>
                         {% else %}
-                        <th id="evaluation">{% trans "Evaluation" %}</th>
+                        <th class="td-none" id="evaluation">{% trans "Evaluation" %}</th>
                         <th id="subject">{% trans "Subject" %}</th>
                         {% endif %}
                         <th class="center" id="is_recovery">{% trans "Recovery" %}</th>
@@ -39,12 +39,12 @@
             {% for object in activities_list %}
                     <tbody>
                         <tr class="center">
-                            <td><i class="material-icons" style="color:#BBBBBB">account_circle</i></td>
+                            <td class="td-none"><i class="material-icons" style="color:#BBBBBB">account_circle</i></td>
                             <td>{{object.title}}</td>
-                            <td>{{object.date}}</td>
+                            <td class="td-none">{{object.date}}</td>
                             {% if no_copy_list %}
-                            <td>{{object.weight}}</td>
-                            <td>{{object.evaluation}}</td>
+                            <td class="center">{{object.weight}}</td>
+                            <td class="td-none">{{object.evaluation}}</td>
                             {% else %}
                             <td>{{object.evaluation}}</td>
                             <td>{{object.subject}}</td>
