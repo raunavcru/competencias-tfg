@@ -327,6 +327,42 @@ class AdministratorUpdateView(generic.UpdateView):
 
 # Blocks
 @method_decorator(login_required, name='dispatch')
+class BlockCreateView(generic.CreateView):
+    form_class = forms.BlockCreateChildForm
+    template_name = EVALUATION_UPDATE
+
+    def get(self, request, *args, **kwargs):
+        set_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_pk)
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
+            return super(BlockCreateView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        set_pk = self.kwargs.get('pk')
+        context = super(BlockCreateView, self).get_context_data(**kwargs)
+        context['teacher'] = True
+        context['set_pk'] = set_pk
+        return context
+
+    def form_valid(self, form):
+        set_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_pk)
+        teacher = models.Teacher.objects.get(user=self.request.user)
+        if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+            block = form.save(commit=False) 
+            block.is_final = False
+            block.parent = set_object.evaluation
+            block.subject = set_object.subject
+            block.teacher = teacher
+            block.save()
+
+            return redirect('blocks_list', pk=set_pk)
+        else:
+            return redirect('/')
+
+@method_decorator(login_required, name='dispatch')
 class BlocksListView(generic.ListView):
     model = models.Evaluation
     template_name = 'evaluations/list_blocks.html'

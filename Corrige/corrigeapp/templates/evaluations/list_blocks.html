@@ -4,6 +4,7 @@
 {% block content %}
 <div class="container">
     <h4 class="centered">{% trans "List of evaluations" %}</h4>
+    <a style="border-radius:5px" href="{% url 'blocks_create' set_object.pk %}" class="right teal lighten-2 waves-effect waves-light btn-small"><i class="material-icons right">add</i>{% trans "Create" %}</a>
         <table class="highlight">
             <caption></caption>
             <thead>

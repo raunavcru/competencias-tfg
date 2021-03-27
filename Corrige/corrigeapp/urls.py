@@ -18,6 +18,7 @@ urlpatterns = [
     path('administrators/list', views.AdministratorsListView.as_view(), name = 'administrators_list'),
     path('administrators/<int:pk>/update', views.AdministratorUpdateView.as_view(), name = 'administrators_update'),
 
+    path('blocks/<int:pk>/create', views.BlockCreateView.as_view(), name = 'blocks_create'),
     path('blocks/<int:pk>/list', views.BlocksListView.as_view(), name = 'blocks_list'),
 
     path('competences/create', views.CompetenceCreateLevel3View.as_view(), name = 'competences_create'),

@@ -3,7 +3,13 @@
 {% block content %}
 <div style="padding-top:15px; width:1000px; margin: 0 auto;" >
 	<div style=" border-radius: 10px;  box-shadow: 2px 2px 10px #666;">
-    {% if update %}
+    {% if teacher %}
+        <div class="center" style="background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%); padding-top:1px; border-top-right-radius: 10px; border-top-left-radius:10px; ">
+            <h3 style="text-align:center; padding-bottom:20px;">
+                {% trans "Create Block" %}  
+            </h3>
+        </div> 
+    {% elif update %}
         <div class="center" style="background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%); padding-top:1px; border-top-right-radius: 10px; border-top-left-radius:10px; ">
             <h3 style="text-align:center; padding-bottom:20px;">
                 {% trans "Edit Evaluation" %}  
@@ -20,18 +26,20 @@
             <div class="row">
                 <div class="grid-example col s11 offset-s1">
                     <div class="center-form">
-                    {% if request.get_full_path == '/evaluations/create' %}
-                        <form class="col s12" id="form-create-students" method="post" action="{% url 'evaluations_create' %}">
+                    {% if teacher %}
+                        <form class="col s12" id="form-create-block" method="post" action="{% url 'blocks_create' set_pk %}">
+                    {% elif request.get_full_path == '/evaluations/create' %}
+                        <form class="col s12" id="form-create-evaluation" method="post" action="{% url 'evaluations_create' %}">
                     {% elif request.get_full_path == '/evaluations/create/all' %}
-                        <form class="col s12" id="form-create-students" method="post" action="{% url 'evaluations_create_all' %}">
+                        <form class="col s12" id="form-create-evaluation" method="post" action="{% url 'evaluations_create_all' %}">
                     {% elif request.get_full_path == '/evaluations/create/all/oneFinalThreePartial' %}
-                        <form class="col s12" id="form-create-students" method="post" action="{% url 'evaluations_create_all_oneFinalThreePartial' %}">
+                        <form class="col s12" id="form-create-evaluation" method="post" action="{% url 'evaluations_create_all_oneFinalThreePartial' %}">
                     {% elif request.get_full_path == '/evaluations/create/all/oneFinalTwoPartial' %}
-                        <form class="col s12" id="form-create-students" method="post" action="{% url 'evaluations_create_all_oneFinalTwoPartial' %}">
+                        <form class="col s12" id="form-create-evaluation" method="post" action="{% url 'evaluations_create_all_oneFinalTwoPartial' %}">
                     {% elif update %}
-                        <form class="col s12" id="form-update-students" method="post" action="{% url 'evaluations_update' object.pk %}">
+                        <form class="col s12" id="form-update-evaluation" method="post" action="{% url 'evaluations_update' object.pk %}">
                     {% else %}
-                        <form class="col s12" id="form-update-students" method="post" action="{% url 'evaluations_create_child' parent_pk %}">
+                        <form class="col s12" id="form-update-evaluation" method="post" action="{% url 'evaluations_create_child' parent_pk %}">
                     {% endif %}
                             {% csrf_token %}
                             <div class="row">
@@ -57,6 +65,30 @@
                                         {{form.period}}
                                         <div class="form-errors">
                                             {{ form.period.errors }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% if teacher %}
+                            <div class="row">
+                                <div class="grid-example col s2">
+                                </div>
+                                <div class="grid-example col s5">
+                                    <div class="validate-input">
+                                        <label>{% trans "Name period" %}</label>
+                                        {{form.period}}
+                                        <div class="form-errors">
+                                            {{ form.period.errors }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grid-example col s3">
+                                    <div class="validate-input">
+                                        <label>{% trans "Weight" %}</label>
+                                        {{form.weight}}
+                                        <div class="form-errors">
+                                            {{ form.Weight.errors }}
                                         </div>
                                     </div>
                                 </div>
@@ -206,7 +238,9 @@
                                 </div>
                             {% endif %}
                             <div class="row">
-                            {% if create_final or object.is_final%}
+                            {% if teacher %}
+                                <a onclick="location.href='{% url 'blocks_list' set_pk %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
+                            {% elif create_final or object.is_final%}
                                 <a onclick="location.href='{% url 'evaluations_list_final' %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
                             {% elif create_partial %}
                                 <a onclick="location.href='{% url 'evaluations_list_partial' parent_pk %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
