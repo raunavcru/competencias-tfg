@@ -363,6 +363,41 @@ class BlockCreateView(generic.CreateView):
             return redirect('/')
 
 @method_decorator(login_required, name='dispatch')
+class BlockDeleteView(generic.DeleteView):
+    model = models.Evaluation
+    template_name = 'evaluations/delete.html'
+
+    def get(self, request, *args, **kwargs):
+        block_pk = self.kwargs.get('pk')
+        block_object = models.Evaluation.objects.get(pk=block_pk)
+        set_object = models.Set.objects.get(evaluation=block_object.parent)
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
+            return super(BlockDeleteView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        block_pk = self.kwargs.get('pk')
+        block_object = models.Evaluation.objects.get(pk=block_pk)
+        set_object = models.Set.objects.get(evaluation=block_object.parent)
+        context = super(BlockDeleteView, self).get_context_data(**kwargs)
+        context['teacher'] = True
+        context['set_pk'] = set_object.pk
+        return context
+
+    def delete(self, request, *args, **kwargs):
+        block_pk = self.kwargs.get('pk')
+        block_object = models.Evaluation.objects.get(pk=block_pk)
+        set_object = models.Set.objects.get(evaluation=block_object.parent)
+        teacher = models.Teacher.objects.get(user=self.request.user)
+        if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+            block_object.delete() 
+
+            return redirect('blocks_list', pk=set_object.pk)
+        else:
+            return redirect('/')
+
+@method_decorator(login_required, name='dispatch')
 class BlocksListView(generic.ListView):
     model = models.Evaluation
     template_name = 'evaluations/list_blocks.html'
@@ -395,6 +430,43 @@ class BlocksListView(generic.ListView):
         teacher = models.Teacher.objects.get(user=self.request.user)
         queryset = models.Evaluation.objects.filter(evaluation_set = set_object).order_by('name') | models.Evaluation.objects.filter(parent = set_object.evaluation).order_by('name') | models.Evaluation.objects.filter(teacher = teacher).order_by('name')
         return queryset
+
+@method_decorator(login_required, name='dispatch')
+class BlockUpdateView(generic.UpdateView):
+    model = models.Evaluation
+    form_class = forms.BlockCreateChildForm
+    template_name = EVALUATION_UPDATE
+
+    def get(self, request, *args, **kwargs):
+        block_pk = self.kwargs.get('pk')
+        block_object = models.Evaluation.objects.get(pk=block_pk)
+        set_object = models.Set.objects.get(evaluation=block_object.parent)
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
+            return super(BlockUpdateView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        block_pk = self.kwargs.get('pk')
+        block_object = models.Evaluation.objects.get(pk=block_pk)
+        set_object = models.Set.objects.get(evaluation=block_object.parent)
+        context = super(BlockUpdateView, self).get_context_data(**kwargs)
+        context['teacher_update'] = True
+        context['block_pk'] = block_pk
+        context['set_pk'] = set_object.pk
+        return context
+
+    def form_valid(self, form):
+        block_pk = self.kwargs.get('pk')
+        block_object = models.Evaluation.objects.get(pk=block_pk)
+        set_object = models.Set.objects.get(evaluation=block_object.parent)
+        teacher = models.Teacher.objects.get(user=self.request.user)
+        if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+            form.save() 
+
+            return redirect('blocks_list', pk=set_object.pk)
+        else:
+            return redirect('/')
 
 # Competences
 @method_decorator(login_required, name='dispatch')

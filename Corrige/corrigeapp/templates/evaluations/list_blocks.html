@@ -31,8 +31,8 @@
                         <td>{{object.start_date}}</td>
                         <td>{{object.end_date}}</td>
                     {% if object.teacher %}
-                        <td class="center dropdown-trigger" type="button" onclick="location.href='{% url 'evaluations_update' object.pk %}'"><em class="material-icons" style="color:#29b6f6">create</em></td>
-                        <td class="center dropdown-trigger" onclick="location.href='{% url 'evaluations_delete' object.pk %}'"><em class="material-icons" style="color:#e53935">delete</em></td>
+                        <td class="center dropdown-trigger" type="button" onclick="location.href='{% url 'blocks_update' object.pk %}'"><em class="material-icons" style="color:#29b6f6">create</em></td>
+                        <td class="center dropdown-trigger" onclick="location.href='{% url 'blocks_delete' object.pk %}'"><em class="material-icons" style="color:#e53935">delete</em></td>
                     {% else %}
                         <td class="center">N/A</td>
                         <td class="center">N/A</td>

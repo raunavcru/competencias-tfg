@@ -19,7 +19,9 @@ urlpatterns = [
     path('administrators/<int:pk>/update', views.AdministratorUpdateView.as_view(), name = 'administrators_update'),
 
     path('blocks/<int:pk>/create', views.BlockCreateView.as_view(), name = 'blocks_create'),
+    path('blocks/<int:pk>/update', views.BlockDeleteView.as_view(), name = 'blocks_delete'),
     path('blocks/<int:pk>/list', views.BlocksListView.as_view(), name = 'blocks_list'),
+    path('blocks/<int:pk>/update', views.BlockUpdateView.as_view(), name = 'blocks_update'),
 
     path('competences/create', views.CompetenceCreateLevel3View.as_view(), name = 'competences_create'),
     path('competences/list/level1', views.CompetenceListLevel1View.as_view(), name = 'competences_list1'),
