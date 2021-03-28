@@ -19,7 +19,7 @@ urlpatterns = [
     path('administrators/<int:pk>/update', views.AdministratorUpdateView.as_view(), name = 'administrators_update'),
 
     path('blocks/<int:pk>/create', views.BlockCreateView.as_view(), name = 'blocks_create'),
-    path('blocks/<int:pk>/update', views.BlockDeleteView.as_view(), name = 'blocks_delete'),
+    path('blocks/<int:pk>/delete', views.BlockDeleteView.as_view(), name = 'blocks_delete'),
     path('blocks/<int:pk>/list', views.BlocksListView.as_view(), name = 'blocks_list'),
     path('blocks/<int:pk>/update', views.BlockUpdateView.as_view(), name = 'blocks_update'),
 
