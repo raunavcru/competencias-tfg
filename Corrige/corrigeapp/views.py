@@ -370,8 +370,7 @@ class BlockDeleteView(generic.DeleteView):
     def get(self, request, *args, **kwargs):
         block_pk = self.kwargs.get('pk')
         block_object = models.Evaluation.objects.get(pk=block_pk)
-        set_object = models.Set.objects.get(evaluation=block_object.parent)
-        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
+        if services.UserService().is_teacher(self.request.user) and services.BlockService().is_owner(user=self.request.user, block=block_object):
             return super(BlockDeleteView, self).get(self, request, *args, **kwargs)
         else:
             return redirect('/')
@@ -390,7 +389,7 @@ class BlockDeleteView(generic.DeleteView):
         block_object = models.Evaluation.objects.get(pk=block_pk)
         set_object = models.Set.objects.get(evaluation=block_object.parent)
         teacher = models.Teacher.objects.get(user=self.request.user)
-        if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+        if services.UserService().is_teacher(self.request.user) and services.BlockService().is_owner(user=self.request.user, block=block_object):
             block_object.delete() 
 
             return redirect('blocks_list', pk=set_object.pk)
@@ -440,8 +439,7 @@ class BlockUpdateView(generic.UpdateView):
     def get(self, request, *args, **kwargs):
         block_pk = self.kwargs.get('pk')
         block_object = models.Evaluation.objects.get(pk=block_pk)
-        set_object = models.Set.objects.get(evaluation=block_object.parent)
-        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
+        if services.UserService().is_teacher(self.request.user) and services.BlockService().is_owner(user=self.request.user, block=block_object):
             return super(BlockUpdateView, self).get(self, request, *args, **kwargs)
         else:
             return redirect('/')
@@ -461,7 +459,7 @@ class BlockUpdateView(generic.UpdateView):
         block_object = models.Evaluation.objects.get(pk=block_pk)
         set_object = models.Set.objects.get(evaluation=block_object.parent)
         teacher = models.Teacher.objects.get(user=self.request.user)
-        if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+        if services.UserService().is_teacher(self.request.user) and services.BlockService().is_owner(user=self.request.user, block=block_object):
             form.save() 
 
             return redirect('blocks_list', pk=set_object.pk)

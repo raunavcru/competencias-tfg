@@ -16,6 +16,16 @@ class ActivityService():
         
         return res
 
+class BlockService():
+
+    def is_owner(self, user: User, block: models.Evaluation) -> bool:
+        res = False
+
+        if block.teacher.user == user:
+            res = True
+        
+        return res
+
 class FormService():
 
     def raise_error(self, en_message: str, es_message: str):
