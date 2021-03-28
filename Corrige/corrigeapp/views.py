@@ -388,7 +388,6 @@ class BlockDeleteView(generic.DeleteView):
         block_pk = self.kwargs.get('pk')
         block_object = models.Evaluation.objects.get(pk=block_pk)
         set_object = models.Set.objects.get(evaluation=block_object.parent)
-        teacher = models.Teacher.objects.get(user=self.request.user)
         if services.UserService().is_teacher(self.request.user) and services.BlockService().is_owner(user=self.request.user, block=block_object):
             block_object.delete() 
 
@@ -458,7 +457,6 @@ class BlockUpdateView(generic.UpdateView):
         block_pk = self.kwargs.get('pk')
         block_object = models.Evaluation.objects.get(pk=block_pk)
         set_object = models.Set.objects.get(evaluation=block_object.parent)
-        teacher = models.Teacher.objects.get(user=self.request.user)
         if services.UserService().is_teacher(self.request.user) and services.BlockService().is_owner(user=self.request.user, block=block_object):
             form.save() 
 
