@@ -123,6 +123,40 @@ class AdministratorUpdateForm(forms.ModelForm):
                 MESSAGE_INITIALS)
         return initials
 
+# Block
+class BlockCreateChildForm(forms.ModelForm):
+    
+    name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': PLACEHOLDER_NAME_EVALUATION, 'id': 'name-create-block'}))
+    period = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': PLACEHOLDER_PERIOD_EVALUATION}))
+    weight = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': '1', 'id': 'weight-create-block'}))
+    start_date = forms.DateField(required=True, 
+        input_formats=settings.DATE_INPUT_FORMATS, 
+        widget=forms.DateInput(
+            format=settings.DATE_INPUT_FORMATS[0],
+            attrs={'placeholder': DATE_PLACEHOLDER}
+        )
+    )
+    end_date = forms.DateField(required=True, 
+        input_formats=settings.DATE_INPUT_FORMATS, 
+        widget=forms.DateInput(
+            format=settings.DATE_INPUT_FORMATS[0],
+            attrs={'placeholder': DATE_PLACEHOLDER}
+        )
+    )
+
+    class Meta:
+        model = models.Evaluation
+        fields = (
+            'name',
+            'period',
+            'weight',
+            'start_date',
+            'end_date',
+        )
+
 # Competences
 class CompetenceCreateForm(forms.ModelForm):
 

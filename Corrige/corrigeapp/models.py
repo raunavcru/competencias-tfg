@@ -111,9 +111,13 @@ class Evaluation(Common):
 
     period = models.CharField(("period"), max_length=50)
 
+    weight = models.DecimalField('weight', max_digits=3, decimal_places=2)
+
     parent = models.ForeignKey('self', on_delete=models.CASCADE, related_name='evaluation_parent', blank=True, null=True)
 
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE, related_name='subject_evaluation')
+
+    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE, related_name='teacher_evaluation', blank=True, null=True)
 
     class Meta:
         verbose_name = 'Evaluation'
