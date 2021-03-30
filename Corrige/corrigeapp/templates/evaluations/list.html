@@ -17,9 +17,9 @@
                     {% if list_partial %}
                         <th id="period">{% trans "Period" %}</th>
                     {% endif %}
-                        <th id="star_date">{% trans "Start date" %}</th>
-                        <th id="end_date">{% trans "End date" %}</th>
-                        <th id="subject">{% trans "Subject" %}</th>
+                        <th class="th-none" id="star_date">{% trans "Start date" %}</th>
+                        <th class="th-none" id="end_date">{% trans "End date" %}</th>
+                        <th class="th-none" id="subject">{% trans "Subject" %}</th>
                     {% if list_final %}
                         <th class="center" id="button">{% trans "Partial evaluations" %}</th>
                     {% endif %}
@@ -34,9 +34,9 @@
                         {% if list_partial %}
                             <td>{{object.period}}</td>
                         {% endif %}
-                            <td>{{object.start_date}}</td>
-                            <td>{{object.end_date}}</td>
-                            <td>{{object.subject}}</td>
+                            <td class="td-none">{{object.start_date}}</td>
+                            <td class="td-none" >{{object.end_date}}</td>
+                            <td class="td-none">{{object.subject}}</td>
                         {% if list_final %}
                             <td class="center dropdown-trigger" onclick="location.href='{% url 'evaluations_list_partial' object.pk %}'"><em class="material-icons" style="color:#e53935">rate_review</em></td>
                         {% endif %}

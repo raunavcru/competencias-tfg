@@ -20,8 +20,8 @@
                             <td>{{object.user.last_name}}</td> 
                             <td>{{object.user.first_name}}</td>
                             <td>{{object.initials}}</td>
-                            <td>{{object.birthdate}}</td>
-                            <td>{{object.user.email}}</td>
+                            <td class="td-none">{{object.birthdate}}</td>
+                            <td class="td-none">{{object.user.email}}</td>
                             <td class="center dropdown-trigger" type="button" onclick="location.href='{% url 'teachers_update' object.pk %}'"><em class="material-icons" style="color:#29b6f6">create</em></td>
                             <td class="center dropdown-trigger" onclick="location.href='{% url 'teachers_delete' object.pk %}'"><em class="material-icons" style="color:#e53935">delete</em></td>
                             <td class="center dropdown-trigger" onclick="location.href='{% url 'teachers_assign_subject_list' object.pk %}'"><em class="material-icons" style="color:#e53935">book</em></td>
