@@ -32,33 +32,36 @@
                             <div class="row">
                                 <div class="grid-example col s1 xl2">
                                 </div>
-                                <div class="grid-example col s6 xl5">
+                                <div class="grid-example col s7 xl5">
                                     <div class="validate-input">
                                         <label>{% trans "Birthdate" %}</label>
                                         {% if request.get_full_path == '/teachers/create' %}
                                             {{form.birthdate}}
-                                            {{form.birthdate.errors}}
                                         {% else %}
-                                        <div class="form-errors">
                                             {{teacher_form.birthdate}}
-                                            {{teacher_form.birthdate.errors}}
                                         </div>
                                         {% endif %}
                                     </div>
                                 </div>
-                                <div class="grid-example col s4 xl3">
+                                <div class="grid-example col s3 xl3">
                                     <div class="validate-input">
                                         <label>{% trans "Initials" %}</label>
                                     {% if request.get_full_path == '/teachers/create' %}
                                         {{form.initials}}
-                                        {{form.initials.errors}}
                                     {% else %}
-                                        <div class="form-errors">
-                                            {{teacher_form.initials}}
-                                            {{teacher_form.initials.errors}}
+                                        {{teacher_form.initials}}
                                         </div>
                                     {% endif %}
                                     </div>
+                                </div>
+                                <div class="form-errors">
+                                {% if request.get_full_path == '/teachers/create' %}
+                                    {{form.birthdate.errors}}
+                                    {{form.initials.errors}}
+                                {% else %}
+                                    {{teacher_form.birthdate.errors}}
+                                    {{teacher_form.initials.errors}}
+                                {% endif %}
                                 </div>
                             </div>
                             <div class="row">

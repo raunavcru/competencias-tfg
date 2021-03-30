@@ -44,9 +44,9 @@
                             <td class="center dropdown-trigger td-none" onclick="location.href='{% url 'activities_list' object.pk %}'"><em class="material-icons" style="color:#e53935">rate_review</em></td>
                             <td class="center dropdown-trigger td-none" onclick="location.href='{% url 'sets_student_list' object.pk %}'"><em class="material-icons" style="color:#e53935">people</em></td>
                             {% endif %}
-                            <td class="center dropdown-trigger modal-trigger display-mobile" href="#modal1" type="button"><em class="material-icons" style="color:#e53935">chat_bubble_outline</em></td> 
+                            <td class="center dropdown-trigger modal-trigger display-mobile" href="#modal{{object.pk}}" type="button"><em class="material-icons" style="color:#e53935">chat_bubble_outline</em></td> 
                             
-                            <div id="modal1" class="modal center" style="border-radius: 10px;  box-shadow: 2px 2px 10px #666;">
+                            <div id="modal{{object.pk}}" class="modal center" style="border-radius: 10px;  box-shadow: 2px 2px 10px #666;">
                                 <div class="modal-content">
                                     <h3 class="center" >{% trans "Actions" %}</h3>
                                     <hr>
