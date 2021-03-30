@@ -325,6 +325,145 @@ class AdministratorUpdateView(generic.UpdateView):
             return self.render_to_response(
                 self.get_context_data(form=form, profile_form=administrator_form))
 
+# Blocks
+@method_decorator(login_required, name='dispatch')
+class BlockCreateView(generic.CreateView):
+    form_class = forms.BlockCreateChildForm
+    template_name = EVALUATION_UPDATE
+
+    def get(self, request, *args, **kwargs):
+        set_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_pk)
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
+            return super(BlockCreateView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        set_pk = self.kwargs.get('pk')
+        context = super(BlockCreateView, self).get_context_data(**kwargs)
+        context['teacher'] = True
+        context['set_pk'] = set_pk
+        return context
+
+    def form_valid(self, form):
+        set_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_pk)
+        teacher = models.Teacher.objects.get(user=self.request.user)
+        if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+            block = form.save(commit=False) 
+            block.is_final = False
+            block.parent = set_object.evaluation
+            block.subject = set_object.subject
+            block.teacher = teacher
+            block.save()
+
+            return redirect('blocks_list', pk=set_pk)
+        else:
+            return redirect('/')
+
+@method_decorator(login_required, name='dispatch')
+class BlockDeleteView(generic.DeleteView):
+    model = models.Evaluation
+    template_name = 'evaluations/delete.html'
+
+    def get(self, request, *args, **kwargs):
+        block_pk = self.kwargs.get('pk')
+        block_object = models.Evaluation.objects.get(pk=block_pk)
+        if services.UserService().is_teacher(self.request.user) and services.BlockService().is_owner(user=self.request.user, block=block_object):
+            return super(BlockDeleteView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        block_pk = self.kwargs.get('pk')
+        block_object = models.Evaluation.objects.get(pk=block_pk)
+        set_object = models.Set.objects.get(evaluation=block_object.parent)
+        context = super(BlockDeleteView, self).get_context_data(**kwargs)
+        context['teacher'] = True
+        context['set_pk'] = set_object.pk
+        return context
+
+    def delete(self, request, *args, **kwargs):
+        block_pk = self.kwargs.get('pk')
+        block_object = models.Evaluation.objects.get(pk=block_pk)
+        set_object = models.Set.objects.get(evaluation=block_object.parent)
+        if services.UserService().is_teacher(self.request.user) and services.BlockService().is_owner(user=self.request.user, block=block_object):
+            block_object.delete() 
+
+            return redirect('blocks_list', pk=set_object.pk)
+        else:
+            return redirect('/')
+
+@method_decorator(login_required, name='dispatch')
+class BlocksListView(generic.ListView):
+    model = models.Evaluation
+    template_name = 'evaluations/list_blocks.html'
+    context_object_name = 'evaluations_list'
+    paginate_by = 8
+
+    def get(self, request, *args, **kwargs):
+        set_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_pk)
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
+            return super(BlocksListView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+    
+    def get_context_data(self, **kwargs):
+        set_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_pk)
+        teacher = models.Teacher.objects.get(user=self.request.user)
+        context = super(BlocksListView, self).get_context_data(**kwargs)
+        context['teacher'] = True
+        context['set_object'] = set_object
+        context['final'] = set_object.evaluation
+        context['partials'] = models.Evaluation.objects.filter(parent = set_object.evaluation).order_by('name')
+        context['blocks'] = models.Evaluation.objects.filter(teacher = teacher).order_by('name')
+        return context
+
+    def get_queryset(self):
+        set_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_pk)
+        teacher = models.Teacher.objects.get(user=self.request.user)
+        queryset = models.Evaluation.objects.filter(evaluation_set = set_object).order_by('name') | models.Evaluation.objects.filter(parent = set_object.evaluation).order_by('name') | models.Evaluation.objects.filter(teacher = teacher).order_by('name')
+        return queryset
+
+@method_decorator(login_required, name='dispatch')
+class BlockUpdateView(generic.UpdateView):
+    model = models.Evaluation
+    form_class = forms.BlockCreateChildForm
+    template_name = EVALUATION_UPDATE
+
+    def get(self, request, *args, **kwargs):
+        block_pk = self.kwargs.get('pk')
+        block_object = models.Evaluation.objects.get(pk=block_pk)
+        if services.UserService().is_teacher(self.request.user) and services.BlockService().is_owner(user=self.request.user, block=block_object):
+            return super(BlockUpdateView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        block_pk = self.kwargs.get('pk')
+        block_object = models.Evaluation.objects.get(pk=block_pk)
+        set_object = models.Set.objects.get(evaluation=block_object.parent)
+        context = super(BlockUpdateView, self).get_context_data(**kwargs)
+        context['teacher_update'] = True
+        context['block_pk'] = block_pk
+        context['set_pk'] = set_object.pk
+        return context
+
+    def form_valid(self, form):
+        block_pk = self.kwargs.get('pk')
+        block_object = models.Evaluation.objects.get(pk=block_pk)
+        set_object = models.Set.objects.get(evaluation=block_object.parent)
+        if services.UserService().is_teacher(self.request.user) and services.BlockService().is_owner(user=self.request.user, block=block_object):
+            form.save() 
+
+            return redirect('blocks_list', pk=set_object.pk)
+        else:
+            return redirect('/')
+
 # Competences
 @method_decorator(login_required, name='dispatch')
 class CompetenceCreateChildView(generic.CreateView):
@@ -794,6 +933,7 @@ class EvaluationCreateView(generic.CreateView):
         evaluation = form.save(commit=False) 
         evaluation.is_final=True
         evaluation.period = "Final"
+        evaluation.weight = 1
         evaluation.save()
 
         return redirect('evaluations_list_final')
@@ -822,7 +962,7 @@ class EvaluationCreateAllView(generic.CreateView):
 
         for subject in subjects:
             evaluation = models.Evaluation.objects.create(name=subject.name + " " + subject.level + "Final", start_date=start_date, end_date=end_date,
-            is_final=True, period="Final", subject=subject)
+            is_final=True, period="Final", weight=1, subject=subject)
             evaluation.save()
         
 
@@ -866,16 +1006,16 @@ class EvaluationCreateAllOneFinalThreePartialView(generic.CreateView):
 
         for subject in subjects:
             evaluation = models.Evaluation.objects.create(name=name + " Final", start_date=start_date, end_date=end_date,
-            is_final=True, period="Final", subject=subject)
+            is_final=True, period="Final", weight=1, subject=subject)
             evaluation.save()
             evaluation1 = models.Evaluation.objects.create(name=name + " " + period_1, start_date=start_date_1, end_date=end_date_1,
-            is_final=False, period=period_1, subject=subject, parent=evaluation)
+            is_final=False, period=period_1, weight=1, subject=subject, parent=evaluation)
             evaluation1.save()
             evaluation2 = models.Evaluation.objects.create(name=name + " " + period_2, start_date=start_date_2, end_date=end_date_2,
-                is_final=False, period=period_2, subject=subject, parent=evaluation)
+                is_final=False, period=period_2, weight=1, subject=subject, parent=evaluation)
             evaluation2.save()
             evaluation3 = models.Evaluation.objects.create(name=name + " " + period_3, start_date=start_date_3, end_date=end_date_3,
-                is_final=False, period=period_3, subject=subject, parent=evaluation)
+                is_final=False, period=period_3, weight=1, subject=subject, parent=evaluation)
             evaluation3.save()
         
 
@@ -914,13 +1054,13 @@ class EvaluationCreateAllOneFinalTwoPartialView(generic.CreateView):
         
         for subject in subjects:
             evaluation = models.Evaluation.objects.create(name=name + " Final", start_date=start_date, end_date=end_date,
-            is_final=True, period="Final", subject=subject)
+            is_final=True, period="Final", weight=1, subject=subject)
             evaluation.save()
             evaluation1 = models.Evaluation.objects.create(name=name + " " + period_1, start_date=start_date_1, end_date=end_date_1,
-            is_final=False, period=period_1, subject=subject, parent=evaluation)
+            is_final=False, period=period_1, weight=1, subject=subject, parent=evaluation)
             evaluation1.save()
             evaluation2 = models.Evaluation.objects.create(name=name + " " + period_2, start_date=start_date_2, end_date=end_date_2,
-                is_final=False, period=period_2, subject=subject, parent=evaluation)
+                is_final=False, period=period_2, weight=1, subject=subject, parent=evaluation)
             evaluation2.save()
         
 
@@ -953,6 +1093,7 @@ class EvaluationCreateChildView(generic.CreateView):
         evaluation.is_final=False
         evaluation.parent = parent
         evaluation.subject = parent.subject
+        evaluation.weight=1,
         evaluation.save()
 
         return redirect('evaluations_list_partial', pk=evaluation_pk)
@@ -1027,7 +1168,7 @@ class EvaluationsListPartialView(generic.ListView):
     def get_queryset(self):
         parent_pk = self.kwargs.get('pk')
         parent = models.Evaluation.objects.get(pk=parent_pk)
-        queryset = models.Evaluation.objects.filter(parent = parent).order_by('name','subject', 'start_date')
+        queryset = models.Evaluation.objects.filter(parent = parent, teacher=None).order_by('name','subject', 'start_date')
         return queryset
     
 @method_decorator(login_required, name='dispatch')
