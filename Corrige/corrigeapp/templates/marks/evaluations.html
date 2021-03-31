@@ -9,9 +9,9 @@
                 <thead>
                     <tr>
                         <th id="name">{% trans "Name" %}</th>
-                        <th id="period">{% trans "Period" %}</th>
-                        <th id="star_date">{% trans "Start date" %}</th>
-                        <th id="end_date">{% trans "End date" %}</th>
+                        <th class="td-none" id="period">{% trans "Period" %}</th>
+                        <th class="td-none" id="star_date">{% trans "Start date" %}</th>
+                        <th class="td-none" id="end_date">{% trans "End date" %}</th>
                         <th class="center" id="mark">{% trans "Mark" %}</th>
                         <th class="center" id="manual_mark">{% trans "Manual mark" %}</th>
                         <th class="center" id="activities">{% trans "Activities" %}</th>
@@ -20,9 +20,9 @@
                 <tbody>
                     <tr class="center">
                         <td>{{parent_mark_saved.evaluation.name}}</td>
-                        <td>{{parent_mark_saved.evaluation.period}}</td>
-                        <td>{{parent_mark_saved.evaluation.start_date}}</td>
-                        <td>{{parent_mark_saved.evaluation.end_date}}</td>
+                        <td class="td-none">{{parent_mark_saved.evaluation.period}}</td>
+                        <td class="td-none">{{parent_mark_saved.evaluation.start_date}}</td>
+                        <td class="td-none">{{parent_mark_saved.evaluation.end_date}}</td>
                         <td class="center">
                         {% if parent_mark_saved.mark %}
                             {{parent_mark_saved.mark}}
@@ -44,9 +44,9 @@
                     <tbody>
                         <tr class="center">
                             <td>{{object.evaluation.name}}</td>
-                            <td>{{object.evaluation.period}}</td>
-                            <td>{{object.evaluation.start_date}}</td>
-                            <td>{{object.evaluation.end_date}}</td>
+                            <td class="td-none">{{object.evaluation.period}}</td>
+                            <td class="td-none">{{object.evaluation.start_date}}</td>
+                            <td class="td-none">{{object.evaluation.end_date}}</td>
                             <td class="center">
                             {% if object.mark %}
                                 {{object.mark}}

@@ -8,7 +8,7 @@
             <caption></caption>
                 <thead>
                     <tr>
-                        <th id="weight">{% trans "Weight" %}</th>
+                        <th class="td-none" id="weight">{% trans "Weight" %}</th>
                         <th id="statement">{% trans "Statement" %}</th>
                         <th class="center" id="mark">{% trans "Mark" %}</th>
                         <th class="center" id="manual_mark">{% trans "Manual mark" %}</th>
@@ -18,7 +18,7 @@
             {% for object in ex_mark_saved %}
                     <tbody>
                         <tr class="center">
-                            <td>{{object.exercise.weight}}</td>
+                            <td class="td-none" >{{object.exercise.weight}}</td>
                             <td>{{object.exercise.statement}}</td>
                             <td class="center">
                                 {% if object.mark %}

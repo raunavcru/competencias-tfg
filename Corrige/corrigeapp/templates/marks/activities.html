@@ -8,11 +8,12 @@
             <caption></caption>
                 <thead>
                     <tr>
-                        <th id=""></th>
-                        <th id="date">{% trans "Date" %}</th>
+                        <th class="td-none" id=""></th>
+                        <th id="title">{% trans "Title" %}</th>
+                        <th class="td-none" id="date">{% trans "Date" %}</th>
                         <th id="weight">{% trans "Weight" %}</th>
-                        <th id="evaluation">{% trans "Evaluation" %}</th>
-                        <th class="center" id="is_recovery">{% trans "Recovery" %}</th>
+                        <th class="td-none" id="evaluation">{% trans "Evaluation" %}</th>
+                        <th class="center td-none" id="is_recovery">{% trans "Recovery" %}</th>
                         <th class="center" id="mark">{% trans "Mark" %}</th>
                         <th class="center" id="manual_mark">{% trans "Manual mark" %}</th>
                         <th class="center" id="exercises">{% trans "Exercises" %}</th>
@@ -21,11 +22,12 @@
             {% for object in ac_mark_saved %}
                     <tbody>
                         <tr class="center">
-                            <td><i class="material-icons" style="color:#BBBBBB">account_circle</i></td>
-                            <td>{{object.activity.date}}</td>
+                            <td class="td-none"><i class="material-icons" style="color:#BBBBBB">account_circle</i></td>
+                            <td>{{object.activity.title}}</td>
+                            <td class="td-none">{{object.activity.date}}</td>
                             <td>{{object.activity.weight}}</td>
-                            <td>{{object.activity.evaluation}}</td>
-                            <td class="center dropdown-trigger">
+                            <td class="td-none">{{object.activity.evaluation}}</td>
+                            <td class="center dropdown-trigger td-none">
                                 {% if object.activity.is_recovery %} 
                                     <em class="material-icons" style="color:#2d572c">check</em>
                                 {% else %}
