@@ -200,7 +200,9 @@ class ActivityUpdateView(generic.UpdateView):
             return redirect('/')
 
     def get_context_data(self, **kwargs):
-        set_pk = self.kwargs.get('pk')     
+        activity_pk = self.kwargs.get('pk')
+        activity_object = models.Activity.objects.get(pk=activity_pk)
+        set_pk = activity_object.set_activity.pk
         context = super(ActivityUpdateView, self).get_context_data(**kwargs)
         context['set_pk'] = set_pk
         context['update'] = True
