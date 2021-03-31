@@ -39,11 +39,6 @@
                     </tbody>
             {% endfor %}
         </table>
-<a onClick="location.href='{% url 'marks_activities_list' id=evaluation_object.pk pk=student_object.pk %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
+<a onClick="location.href='{% url 'marks_activities_list' sk=set_object.pk id=evaluation_object.pk pk=student_object.pk %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
 </div>
 {% endblock %}
-
-  <!-- Modal Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
-
-  <!-- Modal Structure -->

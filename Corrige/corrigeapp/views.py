@@ -1205,12 +1205,10 @@ class MarkActivityListView(generic.ListView):
     template_name = 'marks/activities.html'
 
     def get(self, request, *args, **kwargs):
-        evalution_pk = self.kwargs.get('id')
-        evaluation_object = models.Evaluation.objects.get(pk=evalution_pk)
-        if evaluation_object.is_final:
-            set_object = models.Set.objects.get(evaluation=evaluation_object)
-        else:
-            set_object = models.Set.objects.get(evaluation=evaluation_object.parent)
+        evaluation_pk = self.kwargs.get('id')
+        evaluation_object = models.Evaluation.objects.get(pk=evaluation_pk)
+        set_pk = self.kwargs.get('sk')
+        set_object = models.Set.objects.get(pk=set_pk)
         
         if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
             return super(MarkActivityListView, self).get(self, request, *args, **kwargs)
@@ -1223,10 +1221,8 @@ class MarkActivityListView(generic.ListView):
         student_pk = self.kwargs.get('pk')
         student_object = models.Student.objects.get(pk=student_pk)
         activities = models.Activity.objects.filter(evaluation=evaluation_object).order_by('date')
-        if evaluation_object.is_final:
-            set_object = models.Set.objects.get(evaluation=evaluation_object)
-        else:
-            set_object = models.Set.objects.get(evaluation=evaluation_object.parent)
+        set_pk = self.kwargs.get('sk')
+        set_object = models.Set.objects.get(pk=set_pk)
 
         for ac in activities:
             if not models.Activity_mark.objects.filter(activity = ac, student=student_object).exists():
@@ -1251,11 +1247,7 @@ class MarkCompetenceListView(generic.ListView):
     def get(self, request, *args, **kwargs):
         exercise_pk = self.kwargs.get('id')
         exercise_object = models.Exercise.objects.get(pk=exercise_pk)
-        evaluation_object = exercise_object.activity.evaluation
-        if evaluation_object.is_final:
-            set_object = models.Set.objects.get(evaluation=evaluation_object)
-        else:
-            set_object = models.Set.objects.get(evaluation=evaluation_object.parent)
+        set_object = exercise_object.activity.set_activity
         
         if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
             return super(MarkCompetenceListView, self).get(self, request, *args, **kwargs)
@@ -1333,11 +1325,7 @@ class MarkExerciseListView(generic.ListView):
     def get(self, request, *args, **kwargs):
         activity_pk = self.kwargs.get('id')
         activity_object = models.Activity.objects.get(pk=activity_pk)
-        evaluation_object = activity_object.evaluation
-        if evaluation_object.is_final:
-            set_object = models.Set.objects.get(evaluation=evaluation_object)
-        else:
-            set_object = models.Set.objects.get(evaluation=evaluation_object.parent)
+        set_object = activity_object.set_activity
         
         if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
             return super(MarkExerciseListView, self).get(self, request, *args, **kwargs)
@@ -1351,10 +1339,7 @@ class MarkExerciseListView(generic.ListView):
         student_pk = self.kwargs.get('pk')
         student_object = models.Student.objects.get(pk=student_pk)
         exercises = models.Exercise.objects.filter(activity=activity_object).order_by('statement')
-        if evaluation_object.is_final:
-            set_object = models.Set.objects.get(evaluation=evaluation_object)
-        else:
-            set_object = models.Set.objects.get(evaluation=evaluation_object.parent)
+        set_object = activity_object.set_activity
 
         for ex in exercises:
             if not models.Exercise_mark.objects.filter(exercise = ex, student=student_object).exists():
