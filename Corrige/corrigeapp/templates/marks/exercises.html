@@ -8,7 +8,7 @@
             <caption></caption>
                 <thead>
                     <tr>
-                        <th id="weight">{% trans "Weight" %}</th>
+                        <th class="td-none" id="weight">{% trans "Weight" %}</th>
                         <th id="statement">{% trans "Statement" %}</th>
                         <th class="center" id="mark">{% trans "Mark" %}</th>
                         <th class="center" id="manual_mark">{% trans "Manual mark" %}</th>
@@ -18,8 +18,8 @@
             {% for object in ex_mark_saved %}
                     <tbody>
                         <tr class="center">
-                            <td>{{object.exercise.weight}}</td>
-                            <td>{{object.exercise.statement}}</td>
+                            <td class="td-none" >{{object.exercise.weight}}</td>
+                            <td><div class="text-large">{{object.exercise.statement}}</div></td>
                             <td class="center">
                                 {% if object.mark %}
                                     {{object.mark}}
@@ -39,11 +39,6 @@
                     </tbody>
             {% endfor %}
         </table>
-<a onClick="location.href='{% url 'marks_activities_list' id=evaluation_object.pk pk=student_object.pk %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
+<a onClick="location.href='{% url 'marks_activities_list' sk=set_object.pk id=evaluation_object.pk pk=student_object.pk %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
 </div>
 {% endblock %}
-
-  <!-- Modal Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
-
-  <!-- Modal Structure -->

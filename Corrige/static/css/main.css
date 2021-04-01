@@ -38,12 +38,69 @@
     background-attachment: fixed;
 }
 
-/* iPad*/
-
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-
-#nameCompetence{
-	width: 1000px;
+.div-container{
+    padding-top:15px; 
+    width:1000px; 
+    margin: 0 auto;
 }
 
+.div-login{
+    padding-top:15px; 
+    width:500px; 
+    margin: 0 auto;
 }
+
+.h3-title{
+    text-align:center;
+    padding-bottom:20px;
+}
+
+.form-errors{
+    text-align:center;
+    color:firebrick
+}
+
+.display-mobile{
+    display: none;
+}
+
+.button-modal-evaluation{
+    border-radius:5px; 
+    white-space: normal; 
+    height: 100%;
+}
+
+@media only screen and (max-width: 812px) {
+    
+    .div-container {
+        width: 94%;
+    }
+    .div-login{
+        width: 94%;
+    }
+    #form-generic {
+        padding-top: 0px;
+    }
+    .h3-title{
+        padding-bottom:0.1em;
+    }
+    .td-none{
+        display: none;
+    }
+    .th-none{
+        display: none;
+    }
+    .display-mobile{
+        display: revert;
+    }
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+    .text-large{
+        width: 140px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}
+

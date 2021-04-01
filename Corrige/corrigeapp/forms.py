@@ -685,9 +685,9 @@ class UserCreateForm(UserCreationForm):
     )
     initials = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': 'ACA', 'id': 'initials-create-teacher'}))
-    password1 = forms.CharField(required=True, widget=forms.TextInput(
+    password1 = forms.CharField(required=True, widget=forms.PasswordInput(
         attrs={'placeholder': '*************', 'id': 'password1-create-teacher'}))
-    password2 = forms.CharField(required=True, widget=forms.TextInput(
+    password2 = forms.CharField(required=True, widget=forms.PasswordInput(
         attrs={'placeholder': '*************', 'id': 'password2-create-teacher'}))
 
     def __init__(self, *args, **kwargs):

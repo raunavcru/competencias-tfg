@@ -10,8 +10,8 @@
                 <thead>
                     <tr>
                         <th id="code">{% trans "Code" %}</th>
-                        <th id="name">{% trans "Name" %}</th>
-                        <th id="description">{% trans "Description" %}</th>   
+                        <th class="td-none" id="name">{% trans "Name" %}</th>
+                        <th class="td-none" id="description">{% trans "Description" %}</th>   
                         <th class="center" id="mark">{% trans "Mark" %}</th>
                         <th class="center" id="manual_mark">{% trans "Manual mark" %}</th>                 
                     </tr>
@@ -20,8 +20,8 @@
                     <tbody>
                         <tr class="center">
                             <td>{{object.competence.code}}</td> 
-                            <td style="width:300px">{{object.competence.name}}</td>
-                            <td style="width:500px">{{object.competence.description}}</td>
+                            <td class="td-none" style="width:300px">{{object.competence.name}}</td>
+                            <td class="td-none" style="width:500px">{{object.competence.description}}</td>
                             <td class="center">
                                 {% if object.mark %}
                                     {{object.mark}}

@@ -1,29 +1,29 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% block content %}
-<div style="padding-top:15px; width:1000px; margin: 0 auto;" >
+<div class="div-container">
 	<div style=" border-radius: 10px;  box-shadow: 2px 2px 10px #666;">
     {% if teacher %}
         <div class="center" style="background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%); padding-top:1px; border-top-right-radius: 10px; border-top-left-radius:10px; ">
-            <h3 style="text-align:center; padding-bottom:20px;">
+            <h3 class="h3-title">
                 {% trans "Create Block" %}  
             </h3>
         </div>
     {% elif teacher_update %}
         <div class="center" style="background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%); padding-top:1px; border-top-right-radius: 10px; border-top-left-radius:10px; ">
-            <h3 style="text-align:center; padding-bottom:20px;">
+            <h3 class="h3-title">
                 {% trans "Edit Block" %}  
             </h3>
         </div>  
     {% elif update %}
         <div class="center" style="background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%); padding-top:1px; border-top-right-radius: 10px; border-top-left-radius:10px; ">
-            <h3 style="text-align:center; padding-bottom:20px;">
+            <h3 class="h3-title">
                 {% trans "Edit Evaluation" %}  
             </h3>
         </div> 
     {% else %}
         <div class="center"  style="background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);padding-top:1px; border-top-right-radius: 10px; border-top-left-radius:10px;">
-            <h3 style="text-align:center; padding-bottom:20px;">
+            <h3 class="h3-title">
                 {% trans "Create Evaluation" %}  
             </h3>
         </div>
@@ -51,9 +51,9 @@
                     {% endif %}
                             {% csrf_token %}
                             <div class="row">
-                                <div class="grid-example col s2">
+                                <div class="grid-example col s1 xl2">
                                 </div>
-                                <div class="grid-example col s8">
+                                <div class="grid-example col s10 xl8">
                                     <div class="validate-input">
                                         <label>{% trans "Name" %}</label>
                                         {{form.name}}
@@ -80,32 +80,30 @@
                             {% endif %}
                             {% if teacher or teacher_update %}
                             <div class="row">
-                                <div class="grid-example col s2">
+                                <div class="grid-example col s1 xl2">
                                 </div>
-                                <div class="grid-example col s5">
+                                <div class="grid-example col s7 xl5">
                                     <div class="validate-input">
                                         <label>{% trans "Name period" %}</label>
                                         {{form.period}}
-                                        <div class="form-errors">
-                                            {{ form.period.errors }}
-                                        </div>
                                     </div>
                                 </div>
-                                <div class="grid-example col s3">
+                                <div class="grid-example col s3 xl3">
                                     <div class="validate-input">
                                         <label>{% trans "Weight" %}</label>
                                         {{form.weight}}
-                                        <div class="form-errors">
-                                            {{ form.Weight.errors }}
-                                        </div>
                                     </div>
+                                </div>
+                                <div class="form-errors">
+                                    {{ form.period.errors }}
+                                    {{ form.weight.errors }}
                                 </div>
                             </div>
                             {% endif %}
                             <div class="row">
-                                <div class="grid-example col s2">
+                                <div class="grid-example col s1 xl2">
                                 </div>
-                                <div class="grid-example col s4">
+                                <div class="grid-example col s5 xl4">
                                     <div class="validate-input">
                                         <label>{% trans "Start date" %}</label>
                                         {{form.start_date}}
@@ -114,7 +112,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="grid-example col s4">
+                                <div class="grid-example col s5 xl4">
                                     <div class="validate-input">
                                         <label>{% trans "End date" %}</label>
                                         {{form.end_date}}
@@ -126,9 +124,9 @@
                             </div>
                             {% if part1 %}
                             <div class="row">
-                                <div class="grid-example col s2">
+                                <div class="grid-example col s1 xl2">
                                 </div>
-                                <div class="grid-example col s8">
+                                <div class="grid-example col s10 xl8">
                                     <div class="validate-input">
                                         <label>{% trans "Name evaluation 1" %}</label>
                                         {{form.period_1}}
@@ -139,9 +137,9 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="grid-example col s2">
+                                <div class="grid-example col s1 xl2">
                                 </div>
-                                <div class="grid-example col s4">
+                                <div class="grid-example col s5 xl4">
                                     <div class="validate-input">
                                         <label>{% trans "Start date evaluation 1" %}</label>
                                         {{form.start_date_1}}
@@ -150,7 +148,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="grid-example col s4">
+                                <div class="grid-example col s5 xl4">
                                     <div class="validate-input">
                                         <label>{% trans "End date evaluation 1" %}</label>
                                         {{form.end_date_1}}
@@ -163,9 +161,9 @@
                             {% endif %}
                             {% if part2 %}
                             <div class="row">
-                                <div class="grid-example col s2">
+                                <div class="grid-example col s1 xl2">
                                 </div>
-                                <div class="grid-example col s8">
+                                <div class="grid-example col s10 xl8">
                                     <div class="validate-input">
                                         <label>{% trans "Name evaluation 2" %}</label>
                                         {{form.period_2}}
@@ -176,9 +174,9 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="grid-example col s2">
+                                <div class="grid-example col s1 xl2">
                                 </div>
-                                <div class="grid-example col s4">
+                                <div class="grid-example col s5 xl4">
                                     <div class="validate-input">
                                         <label>{% trans "Start date evaluation 2" %}</label>
                                         {{form.start_date_2}}
@@ -187,7 +185,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="grid-example col s4">
+                                <div class="grid-example col s5 xl4">
                                     <div class="validate-input">
                                         <label>{% trans "End date evaluation 2" %}</label>
                                         {{form.end_date_2}}
@@ -200,9 +198,9 @@
                             {% endif %}
                             {% if part3 %}
                             <div class="row">
-                                <div class="grid-example col s2">
+                                <div class="grid-example col s1 xl2">
                                 </div>
-                                <div class="grid-example col s8">
+                                <div class="grid-example col s10 xl8">
                                     <div class="validate-input">
                                         <label>{% trans "Name evaluation 3" %}</label>
                                         {{form.period_3}}
@@ -213,9 +211,9 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="grid-example col s2">
+                                <div class="grid-example col s1 xl2">
                                 </div>
-                                <div class="grid-example col s4">
+                                <div class="grid-example col s5 xl4">
                                     <div class="validate-input">
                                         <label>{% trans "Start date evaluation 3" %}</label>
                                         {{form.start_date_3}}
@@ -224,7 +222,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="grid-example col s4">
+                                <div class="grid-example col s5 xl4">
                                     <div class="validate-input">
                                         <label>{% trans "End date evaluation 3" %}</label>
                                         {{form.end_date_3}}
@@ -237,9 +235,9 @@
                             {% endif %}
                             {% if partial %}
                                 <div class="row">
-                                    <div class="grid-example col s2">
+                                    <div class="grid-example col s1 xl2">
                                     </div>
-                                    <div class="grid-example col s8">
+                                    <div class="grid-example col s10 xl8">
                                         <label>{% trans "Subject" %}</label>
                                             {{form.subject}}
                                     </div>
