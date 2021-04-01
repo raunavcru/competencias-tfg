@@ -1206,7 +1206,6 @@ class MarkActivityListView(generic.ListView):
 
     def get(self, request, *args, **kwargs):
         evaluation_pk = self.kwargs.get('id')
-        evaluation_object = models.Evaluation.objects.get(pk=evaluation_pk)
         set_pk = self.kwargs.get('sk')
         set_object = models.Set.objects.get(pk=set_pk)
         
