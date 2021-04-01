@@ -64,6 +64,12 @@
     display: none;
 }
 
+.button-modal-evaluation{
+    border-radius:5px; 
+    white-space: normal; 
+    height: 100%;
+}
+
 @media only screen and (max-width: 812px) {
     
     .div-container {
@@ -90,6 +96,11 @@
     table {
         display: block;
         overflow-x: auto;
-      }
+    }
+    .text-large{
+        width: 140px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
 }
 
