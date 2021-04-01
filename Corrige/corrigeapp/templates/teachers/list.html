@@ -11,7 +11,7 @@
                     <tr>
                         {% include 'user_tr.html' %}
                         <th class="center td-none" id="list">{% trans "List of subjects" %}</th>
-                        <th class="center display-mobile">{% trans "Actions" %}</th>
+                        <th class="center display-mobile" id="actions">{% trans "Actions" %}</th>
                     </tr>
                 </thead>
                 {% for object in teacher_list %}
