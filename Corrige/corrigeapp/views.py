@@ -1205,7 +1205,6 @@ class MarkActivityListView(generic.ListView):
     template_name = 'marks/activities.html'
 
     def get(self, request, *args, **kwargs):
-        evaluation_pk = self.kwargs.get('id')
         set_pk = self.kwargs.get('sk')
         set_object = models.Set.objects.get(pk=set_pk)
         
