@@ -284,6 +284,8 @@ class Competence_mark(Common):
 
     evaluation_type = models.CharField(("evaluation_type"), max_length=50)
 
+    exercise = models.ForeignKey(Exercise, on_delete=models.CASCADE, related_name='exercise_competence_mark')
+
     competence = models.ForeignKey(Competence, on_delete=models.CASCADE, related_name='competence_competence_mark')
 
     student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='student_competence_mark')

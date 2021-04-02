@@ -475,6 +475,17 @@ class EvaluationCreateOneFinalTwoPartialForm(forms.ModelForm):
             'end_date_2',
         )
 
+# Marks
+class CompetenceMarkCreateForm(forms.ModelForm):
+    mark = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': '7.0', 'id': 'mark-create-input'}))
+
+    class Meta:
+        model = models.Competence_mark
+        fields = (
+            'mark',
+        )
+
 # Sets
 class SetCreateForm(forms.ModelForm):
     

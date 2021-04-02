@@ -1237,6 +1237,50 @@ class MarkActivityListView(generic.ListView):
         
         return context
 
+@method_decorator(login_required, name='dispatch')
+class MarkCompetenceCreateView(generic.UpdateView):
+    model = models.Competence_mark
+    form_class = forms.CompetenceMarkCreateForm
+    template_name = 'marks/mark.html'
+
+    def get(self, request, *args, **kwargs):
+        exercise_pk = self.kwargs.get('id')
+        exercise_object = models.Exercise.objects.get(pk=exercise_pk)
+        activity_object = exercise_object.activity
+        set_object = activity_object.set_activity
+        set_pk = set_object.pk
+        if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+            return super(MarkCompetenceCreateView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        exercise_pk = self.kwargs.get('id')
+        competence_mark_pk = self.kwargs.get('pk')
+        competence_mark = models.Competence_mark.objects.get(pk=competence_mark_pk)
+        student_pk = competence_mark.student.pk
+        context = super(MarkCompetenceCreateView, self).get_context_data(**kwargs)
+        context['exercise_pk'] = exercise_pk
+        context['student_pk'] = student_pk
+
+        return context
+
+    def form_valid(self, form):
+        exercise_pk = self.kwargs.get('id')
+        exercise_object = models.Exercise.objects.get(pk=exercise_pk)
+        activity_object = exercise_object.activity
+        set_object = activity_object.set_activity
+        set_pk = set_object.pk
+        competence_mark_pk = self.kwargs.get('pk')
+        competence_mark = models.Competence_mark.objects.get(pk=competence_mark_pk)
+        if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+            mark = form.cleaned_data.get('mark')
+            services.MarkService().calculate_competence_mark(mark=mark, competence_mark=competence_mark)
+        
+            return redirect('marks_competences_list', id=set_pk, pk=competence_mark.student.pk)
+        else:
+            return redirect('/')
+
 @method_decorator(login_required, name='dispatch')        
 class MarkCompetenceListView(generic.ListView):
     model = models.Competence_mark
@@ -1262,13 +1306,14 @@ class MarkCompetenceListView(generic.ListView):
         exercise_competences = models.Exercise_competence.objects.filter(exercise=exercise_object).order_by('competence__code')
         for ec in exercise_competences:
             if not models.Competence_mark.objects.filter(competence = ec.competence, student=student_object).exists():
-                c_mark = models.Competence_mark.objects.create(competence = ec.competence, student=student_object, evaluation_type="AUTOMATIC")
+                c_mark = models.Competence_mark.objects.create(exercise=exercise_object, competence = ec.competence, student=student_object, evaluation_type="AUTOMATIC")
                 c_mark.save()
         
-        c_mark_saved = models.Competence_mark.objects.filter(competence__competence_exercise_competence__exercise = exercise_object, student=student_object).order_by('competence__code')
+        c_mark_saved = models.Competence_mark.objects.filter(exercise = exercise_object, student=student_object).order_by('competence__code')
 
         context = super(MarkCompetenceListView, self).get_context_data(**kwargs)
         context['student_object'] = student_object
+        context['exercise_pk'] = exercise_pk
         context['activity_object'] = activity_object
         context['c_mark_saved'] = c_mark_saved
         
