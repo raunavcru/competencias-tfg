@@ -21,14 +21,14 @@
                             <td class="td-none" >{{object.exercise.weight}}</td>
                             <td><div class="text-large">{{object.exercise.statement}}</div></td>
                             <td class="center">
-                                {% if object.mark %}
+                                {% if object.mark or object.mark == 0 %}
                                     {{object.mark}}
                                 {% else %}
                                     -
                                 {% endif %}
                             </td>
                             <td class="center">
-                                {% if object.manual_mark %}
+                                {% if object.manual_mark or object.manual_mark == 0 %}
                                     {{object.manual_mark}}
                                 {% else %}
                                     -

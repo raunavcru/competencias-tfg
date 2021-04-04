@@ -62,11 +62,38 @@ class MarkService():
             mark = marks_sum/intensity_sum
             c_e_saved.mark = mark
 
+    def calculate_exercise_mark(self, exercise: models.Exercise, student: models.Student) -> None:
+        if not models.Exercise_mark.objects.filter(exercise = exercise, student = student).exists():
+            e_m = models.Exercise_mark.objects.create(exercise = exercise, student = student)
+            e_m.save()
+        
+        exercise_mark = models.Exercise_mark.objects.get(exercise = exercise, student = student)
+        competence_mark_ls = models.Competence_mark.objects.filter(exercise=exercise).order_by('competence')
 
-    def calculate_competence_mark(self, mark: float, competence_mark: models.Competence_mark) -> None:
+        weight_total = 0.0
+        mark_total = 0.0
+        if competence_mark_ls:
+            for competence_mark in competence_mark_ls:
+                exercise_competence = models.Exercise_competence.objects.get(exercise=exercise, competence=competence_mark.competence)
+                weight_total = weight_total + float(exercise_competence.weight)
+                if competence_mark.mark:
+                    if competence_mark.evaluation_type == "AUTOMATIC":
+                        mark_total = mark_total + float(competence_mark.mark * exercise_competence.weight)
+                    else:
+                        mark_total = mark_total + float(competence_mark.manual_mark * exercise_competence.weight)
+                
+            
+            mark = mark_total/weight_total
 
+            exercise_mark.mark = mark
+            exercise_mark.save()
+
+    def mark_competence_mark(self, mark: float, competence_mark: models.Competence_mark) -> None:
+        competence_mark_mark_saved = competence_mark.mark
         competence_mark.mark = mark
         competence_mark.save()
+
+        self.calculate_exercise_mark(exercise = competence_mark.exercise, student=competence_mark.student)
     
     
 

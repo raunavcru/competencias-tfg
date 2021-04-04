@@ -1270,14 +1270,13 @@ class MarkCompetenceCreateView(generic.UpdateView):
         exercise_object = models.Exercise.objects.get(pk=exercise_pk)
         activity_object = exercise_object.activity
         set_object = activity_object.set_activity
-        set_pk = set_object.pk
         competence_mark_pk = self.kwargs.get('pk')
         competence_mark = models.Competence_mark.objects.get(pk=competence_mark_pk)
         if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
             mark = form.cleaned_data.get('mark')
-            services.MarkService().calculate_competence_mark(mark=mark, competence_mark=competence_mark)
+            services.MarkService().mark_competence_mark(mark=mark, competence_mark=competence_mark)
         
-            return redirect('marks_competences_list', id=set_pk, pk=competence_mark.student.pk)
+            return redirect('marks_competences_list', id=exercise_pk, pk=competence_mark.student.pk)
         else:
             return redirect('/')
 
@@ -1305,7 +1304,7 @@ class MarkCompetenceListView(generic.ListView):
         student_object = models.Student.objects.get(pk=student_pk)
         exercise_competences = models.Exercise_competence.objects.filter(exercise=exercise_object).order_by('competence__code')
         for ec in exercise_competences:
-            if not models.Competence_mark.objects.filter(competence = ec.competence, student=student_object).exists():
+            if not models.Competence_mark.objects.filter(exercise=exercise_object, competence = ec.competence, student=student_object).exists():
                 c_mark = models.Competence_mark.objects.create(exercise=exercise_object, competence = ec.competence, student=student_object, evaluation_type="AUTOMATIC")
                 c_mark.save()
         

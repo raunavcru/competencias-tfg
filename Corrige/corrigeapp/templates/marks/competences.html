@@ -23,7 +23,7 @@
                             <td class="td-none" style="width:300px">{{object.competence.name}}</td>
                             <td class="td-none" style="width:500px">{{object.competence.description}}</td>
                             <td class="center">
-                                {% if object.mark %}
+                                {% if object.mark or object.mark == 0 %}
                                     {{object.mark}}
                                 {% else %}
                                     -
