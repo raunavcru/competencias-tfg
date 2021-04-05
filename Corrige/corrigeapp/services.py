@@ -57,10 +57,7 @@ class MarkService():
                     mark_total = mark_total + float(exercise_mark.mark * exercise_mark.exercise.weight)
                 elif exercise_mark.manual_mark:
                     mark_total = mark_total + float(exercise_mark.manual_mark * exercise_mark.exercise.weight)
-                    print(exercise_mark.exercise.statement)
-                
-            print(weight_total)
-            print(mark_total)
+            
             mark = mark_total/weight_total
 
             activity_mark.mark = mark
