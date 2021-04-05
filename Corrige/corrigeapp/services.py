@@ -39,6 +39,33 @@ class FormService():
 
 class MarkService():
 
+    def calculate_activity_mark(self, activity: models.Activity, student: models.Student) -> None:
+        if not models.Activity_mark.objects.filter(activity = activity, student = student).exists():
+            a_m = models.Exercise_mark.objects.create(activity = activity, student = student)
+            a_m.save()
+        
+        activity_mark = models.Activity_mark.objects.get(activity = activity, student = student)
+        exercise_mark_ls = models.Exercise_mark.objects.filter(exercise__activity=activity).order_by('exercise')
+
+        weight_total = 0.0
+        mark_total = 0.0
+        if exercise_mark_ls:
+            for exercise_mark in exercise_mark_ls:
+                weight_total = weight_total + float(exercise_mark.exercise.weight)
+
+                if exercise_mark.evaluation_type == "AUTOMATIC" and exercise_mark.mark:
+                    mark_total = mark_total + float(exercise_mark.mark * exercise_mark.exercise.weight)
+                elif exercise_mark.manual_mark:
+                    mark_total = mark_total + float(exercise_mark.manual_mark * exercise_mark.exercise.weight)
+                    print(exercise_mark.exercise.statement)
+                
+            print(weight_total)
+            print(mark_total)
+            mark = mark_total/weight_total
+
+            activity_mark.mark = mark
+            activity_mark.save()
+
     def calculate_competence_evaluation(self, exercise_object: models.Exercise, student_object: models.Student) -> None:
 
         competence_mark_distinct_list = models.Competence_mark.objects.filter(competence__competence_exercise_competence__exercise = exercise_object, student=student_object).distinct('competence')
@@ -88,6 +115,8 @@ class MarkService():
             exercise_mark.mark = mark
             exercise_mark.save()
 
+        self.calculate_activity_mark(activity = exercise_mark.exercise.activity, student=exercise_mark.student)
+
     def mark_activity_mark(self, mark: float, activity_mark: models.Activity_mark) -> None:
         activity_mark.manual_mark = mark
         activity_mark.evaluation_type = "MANUAL"
@@ -103,6 +132,8 @@ class MarkService():
         exercise_mark.manual_mark = mark
         exercise_mark.evaluation_type = "MANUAL"
         exercise_mark.save()
+
+        self.calculate_activity_mark(activity = exercise_mark.exercise.activity, student=exercise_mark.student)
     
     
 
