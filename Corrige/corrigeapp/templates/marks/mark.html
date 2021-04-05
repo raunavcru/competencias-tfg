@@ -6,14 +6,26 @@
 	<div style=" border-radius: 10px;  box-shadow: 2px 2px 10px #666;">
         <div class="center" style="background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%); padding-top:1px; border-top-right-radius: 10px; border-top-left-radius:10px; ">
         <h3 class="h3-title">
-            {% trans "Mark Competence" %}  
+        {% if is_competence %}
+            {% trans "Evaluate Competence" %}  
+        {% elif is_exercise %}
+            {% trans "Evaluate Exercise" %} 
+        {% elif is_activity %} 
+            {% trans "Evaluate Activity" %} 
+        {% endif %}
         </h3>
         </div>  
         <div id="form-generic" class="container">
             <div class="row">
                 <div class="grid-example col s12 xl11">
                     <div class="center-form">
+                    {% if is_competence %}
                         <form class="col s12" id="form-create-mark" method="post" action="{% url 'marks_competences_create' id=exercise_pk pk=object.pk %}">
+                    {% elif is_exercise %}
+                        <form class="col s12" id="form-create-mark" method="post" action="{% url 'marks_exercises_create' object.pk %}">
+                    {% elif is_activity %}
+                        <form class="col s12" id="form-create-mark" method="post" action="{% url 'marks_activities_create' object.pk %}">
+                    {% endif %}
                     
                             {% csrf_token %}
                             <div class="row">
@@ -22,16 +34,29 @@
                                 <div class="grid-example col s8 xl4">
                                     <div class="validate-input">
                                         <label>{% trans "Mark" %}</label>
-                                        {{form.mark}}
+                                        {% if is_competence %}
+                                            {{form.mark}}
+                                        {% else %}
+                                            {{form.manual_mark}}
+                                        {% endif %}
                                     </div>
                                 </div>
                                 <div class="form-errors">
-                                    {{ form.mark.errors }}
+                                    {% if is_competence %}
+                                        {{form.mark.errors}}
+                                    {% else %}
+                                        {{form.manual_mark.errors}}
+                                    {% endif %}
                                 </div>
                             </div>
                             <div class="row">
+                            {% if is_competence %}
                                 <a onclick="location.href='{% url 'marks_competences_list' id=exercise_pk pk=student_pk %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
-
+                            {% elif is_exercise %}
+                                <a onclick="location.href='{% url 'marks_exercises_list' id=activity_pk pk=student_pk %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
+                            {% elif is_exercise %}
+                                <a onclick="location.href='{% url 'marks_activities_list' sk=set_pk id=evaluation_pk pk=student_pk %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
+                            {% endif %}
                                 <button class="btn waves-effect right" type="submit" name="action">{% trans "Send" %}
                                     <i class="large material-icons right"><i>send</i></i>
                                 </button>

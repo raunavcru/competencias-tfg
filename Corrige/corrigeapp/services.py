@@ -88,12 +88,21 @@ class MarkService():
             exercise_mark.mark = mark
             exercise_mark.save()
 
+    def mark_activity_mark(self, mark: float, activity_mark: models.Activity_mark) -> None:
+        activity_mark.manual_mark = mark
+        activity_mark.evaluation_type = "MANUAL"
+        activity_mark.save()
+
     def mark_competence_mark(self, mark: float, competence_mark: models.Competence_mark) -> None:
-        competence_mark_mark_saved = competence_mark.mark
         competence_mark.mark = mark
         competence_mark.save()
 
         self.calculate_exercise_mark(exercise = competence_mark.exercise, student=competence_mark.student)
+    
+    def mark_exercise_mark(self, mark: float, exercise_mark: models.Exercise_mark) -> None:
+        exercise_mark.manual_mark = mark
+        exercise_mark.evaluation_type = "MANUAL"
+        exercise_mark.save()
     
     
 

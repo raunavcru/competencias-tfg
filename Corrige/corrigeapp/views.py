@@ -1199,6 +1199,47 @@ class EvaluationUpdateView(generic.UpdateView):
             return redirect('evaluations_list_partial', pk=evaluation.parent.pk ) 
 
 # Marks
+@method_decorator(login_required, name='dispatch')
+class MarkActivityCreateView(generic.UpdateView):
+    model = models.Activity_mark
+    form_class = forms.ActivityMarkCreateForm
+    template_name = 'marks/mark.html'
+
+    def get(self, request, *args, **kwargs):
+        activity_mark_pk = self.kwargs.get('pk')
+        activity_mark = models.Activity_mark.objects.get(pk=activity_mark_pk)
+        set_object = activity_mark.activity.set_activity
+        if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+            return super(MarkActivityCreateView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        activity_mark_pk = self.kwargs.get('pk')
+        activity_mark = models.Activity_mark.objects.get(pk=activity_mark_pk)
+        set_object = activity_mark.activity.set_activity
+        student_pk = activity_mark.student.pk
+        context = super(MarkActivityCreateView, self).get_context_data(**kwargs)
+        context['evaluation_pk'] = activity_mark.activity.evaluation.pk
+        context['student_pk'] = student_pk
+        context['set_pk'] = set_object.pk
+        context['is_activity'] = True
+
+        return context
+
+    def form_valid(self, form):
+        activity_mark_pk = self.kwargs.get('pk')
+        activity_mark = models.Activity_mark.objects.get(pk=activity_mark_pk)
+        set_object = activity_mark.activity.set_activity
+        student_pk = activity_mark.student.pk
+        if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+            mark = form.cleaned_data.get('manual_mark')
+            services.MarkService().mark_activity_mark(mark=mark, activity_mark=activity_mark)
+        
+            return redirect('marks_activities_list', sk=set_object.pk, id=activity_mark.activity.evaluation.pk, pk=activity_mark.student.pk)
+        else:
+            return redirect('/')
+
 @method_decorator(login_required, name='dispatch')        
 class MarkActivityListView(generic.ListView):
     model = models.Activity_mark
@@ -1262,6 +1303,7 @@ class MarkCompetenceCreateView(generic.UpdateView):
         context = super(MarkCompetenceCreateView, self).get_context_data(**kwargs)
         context['exercise_pk'] = exercise_pk
         context['student_pk'] = student_pk
+        context['is_competence'] = True
 
         return context
 
@@ -1358,6 +1400,45 @@ class MarkEvaluationListView(generic.ListView):
         context['ev_mark_saved'] = ev_mark_saved
         
         return context
+
+@method_decorator(login_required, name='dispatch')
+class MarkExerciseCreateView(generic.UpdateView):
+    model = models.Exercise_mark
+    form_class = forms.ExerciseMarkCreateForm
+    template_name = 'marks/mark.html'
+
+    def get(self, request, *args, **kwargs):
+        exercise_mark_pk = self.kwargs.get('pk')
+        exercise_mark = models.Exercise_mark.objects.get(pk=exercise_mark_pk)
+        set_object = exercise_mark.exercise.activity.set_activity
+        if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+            return super(MarkExerciseCreateView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        exercise_mark_pk = self.kwargs.get('pk')
+        exercise_mark = models.Exercise_mark.objects.get(pk=exercise_mark_pk)
+        student_pk = exercise_mark.student.pk
+        context = super(MarkExerciseCreateView, self).get_context_data(**kwargs)
+        context['activity_pk'] = exercise_mark.exercise.activity.pk
+        context['student_pk'] = student_pk
+        context['is_exercise'] = True
+
+        return context
+
+    def form_valid(self, form):
+        exercise_mark_pk = self.kwargs.get('pk')
+        exercise_mark = models.Exercise_mark.objects.get(pk=exercise_mark_pk)
+        activity = exercise_mark.exercise.activity
+        set_object = activity.set_activity
+        if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+            mark = form.cleaned_data.get('manual_mark')
+            services.MarkService().mark_exercise_mark(mark=mark, exercise_mark=exercise_mark)
+        
+            return redirect('marks_exercises_list', id=activity.pk, pk=exercise_mark.student.pk)
+        else:
+            return redirect('/')
 
 @method_decorator(login_required, name='dispatch')        
 class MarkExerciseListView(generic.ListView):
