@@ -186,6 +186,12 @@ class MarkService():
 
         self.calculate_evaluation_mark(evaluation = evaluation.parent, set_object = set_object, student = student)
     
+    def calculate_evaluation_mark_by_no_recovery_activities(self, evaluation: models.Evaluation, set_object: models.Set, student: models.Student) -> None:
+        if evaluation.is_final:
+            self.calculate_evaluation_mark_by_partial_evaluations(evaluation = evaluation, set_object = set_object, student = student)
+        else:
+            self.calculate_evaluation_mark_by_all_activities(evaluation = evaluation, set_object = set_object, student = student)
+
     def calculate_evaluation_mark_by_partial_evaluations(self, evaluation: models.Evaluation, set_object: models.Set, student: models.Student) -> None:
         if not models.Evaluation_mark.objects.filter(evaluation = evaluation, student = student).exists():
             e_m = models.Evaluation_mark.objects.create(evaluation = evaluation, student = student)
@@ -226,7 +232,7 @@ class MarkService():
                 weight_total = weight_total + float(activity_mark.weight)
 
                 if activity_mark.mark:
-                    if weight_total.evaluation_type == "AUTOMATIC":
+                    if activity_mark.evaluation_type == "AUTOMATIC":
                         mark_total = mark_total + float(activity_mark.mark * activity_mark.activity.weight)
                     else:
                         mark_total = mark_total + float(activity_mark.manual_mark * activity_mark.activity.weight)
@@ -236,11 +242,8 @@ class MarkService():
             evaluation_mark.mark = mark
             evaluation_mark.save()
         else:
-            if evaluation.is_final:
-                self.calculate_evaluation_mark_by_partial_evaluations(evaluation = evaluation, set_object = set_object, student = student)
-            else:
-                self.calculate_evaluation_mark_by_all_activities(evaluation = evaluation, set_object = set_object, student = student)
-        
+            self.calculate_evaluation_mark_by_no_recovery_activities(evaluation = evaluation, set_object = set_object, student = student)
+
         if not evaluation.is_final:
             self.calculate_evaluation_mark(evaluation = evaluation.parent, set_object = set_object, student = student)
 
