@@ -151,6 +151,10 @@ class Set(Common):
 
     line = models.CharField(("line"), max_length=50)
 
+    evaluation_type_final = models.CharField(("evaluation_type_final"), max_length=100, blank=True, null=True)
+
+    evaluation_type_partial = models.CharField(("evaluation_type_partial"), max_length=100, blank=True, null=True)
+
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE, related_name='teacher_set')
 
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE, related_name='subject_set')
@@ -307,4 +311,4 @@ class Competence_evaluation(Common):
         verbose_name_plural = 'Competence_evaluations'
     
     def __str__(self):
-        return self.mark
+        return self.competence.code + ' ' +  self.student.name + ' ' + self.student.surname

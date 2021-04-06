@@ -25,14 +25,14 @@
                         <td class="td-none">{{parent_mark_saved.evaluation.start_date}}</td>
                         <td class="td-none">{{parent_mark_saved.evaluation.end_date}}</td>
                         <td class="center">
-                        {% if parent_mark_saved.mark %}
+                        {% if parent_mark_saved.mark or parent_mark_saved.mark == 0 %}
                             {{parent_mark_saved.mark}}
                         {% else %}
                             -
                         {% endif %}
                         </td>
                         <td class="center">
-                        {% if parent_mark_saved.manual_mark %}
+                        {% if parent_mark_saved.manual_mark or parent_mark_saved.manual_mark == 0 %}
                             {{parent_mark_saved.manual_mark}}
                         {% else %}
                             -
@@ -50,14 +50,14 @@
                             <td class="td-none">{{object.evaluation.start_date}}</td>
                             <td class="td-none">{{object.evaluation.end_date}}</td>
                             <td class="center">
-                            {% if object.mark %}
+                            {% if object.mark or object.mark == 0 %}
                                 {{object.mark}}
                             {% else %}
                                 -
                             {% endif %}
                             </td>
                             <td class="center">
-                            {% if object.manual_mark %}
+                            {% if object.manual_mark or object.manual_mark == 0 %}
                                 {{object.manual_mark}}
                             {% else %}
                                 -
