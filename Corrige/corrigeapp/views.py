@@ -1248,8 +1248,10 @@ class MarkActivityListView(generic.ListView):
     def get(self, request, *args, **kwargs):
         set_pk = self.kwargs.get('sk')
         set_object = models.Set.objects.get(pk=set_pk)
-        
-        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
+        student_pk = self.kwargs.get('pk')
+        student_object = models.Student.objects.get(pk=student_pk)
+        exist = models.Set.objects.filter(pk=set_object.pk, students=student_object).exists()
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object) and exist:
             return super(MarkActivityListView, self).get(self, request, *args, **kwargs)
         else:
             return redirect('/')
@@ -1331,8 +1333,10 @@ class MarkCompetenceListView(generic.ListView):
         exercise_pk = self.kwargs.get('id')
         exercise_object = models.Exercise.objects.get(pk=exercise_pk)
         set_object = exercise_object.activity.set_activity
-        
-        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
+        student_pk = self.kwargs.get('pk')
+        student_object = models.Student.objects.get(pk=student_pk)
+        exist = models.Set.objects.filter(pk=set_object.pk, students=student_object).exists()
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object) and exist:
             return super(MarkCompetenceListView, self).get(self, request, *args, **kwargs)
         else:
             return redirect('/')
@@ -1360,6 +1364,47 @@ class MarkCompetenceListView(generic.ListView):
         
         return context
 
+@method_decorator(login_required, name='dispatch')
+class MarkEvaluationCreateView(generic.UpdateView):
+    model = models.Evaluation_mark
+    form_class = forms.EvaluationMarkCreateForm
+    template_name = 'marks/mark.html'
+
+    def get(self, request, *args, **kwargs):
+        set_pk = self.kwargs.get('id')
+        set_object = models.Set.objects.get(pk=set_pk)
+        if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+            return super(MarkEvaluationCreateView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        set_pk = self.kwargs.get('id')
+        evaluation_mark_pk = self.kwargs.get('pk')
+        evaluation_mark = models.Evaluation_mark.objects.get(pk=evaluation_mark_pk)
+        student_pk = evaluation_mark.student.pk
+        context = super(MarkEvaluationCreateView, self).get_context_data(**kwargs)
+        context['evaluation_pk'] = evaluation_mark.evaluation.pk
+        context['student_pk'] = student_pk
+        context['set_pk'] = set_pk
+        context['is_evaluation'] = True
+
+        return context
+
+    def form_valid(self, form):
+        set_pk = self.kwargs.get('id')
+        set_object = models.Set.objects.get(pk=set_pk)
+        evaluation_mark_pk = self.kwargs.get('pk')
+        evaluation_mark = models.Evaluation_mark.objects.get(pk=evaluation_mark_pk)
+        student_pk = evaluation_mark.student.pk
+        if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+            mark = form.cleaned_data.get('manual_mark')
+            services.MarkService().mark_evaluation_mark(mark=mark, evaluation_mark=evaluation_mark)
+        
+            return redirect('marks_evaluations_list', id=set_object.pk, pk=student_pk)
+        else:
+            return redirect('/')
+
 @method_decorator(login_required, name='dispatch')        
 class MarkEvaluationListView(generic.ListView):
     model = models.Evaluation_mark
@@ -1368,7 +1413,10 @@ class MarkEvaluationListView(generic.ListView):
     def get(self, request, *args, **kwargs):
         set_pk = self.kwargs.get('id')
         set_object = models.Set.objects.get(pk=set_pk)
-        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
+        student_pk = self.kwargs.get('pk')
+        student_object = models.Student.objects.get(pk=student_pk)
+        exist = models.Set.objects.filter(pk=set_pk, students=student_object).exists()
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object) and exist:
             return super(MarkEvaluationListView, self).get(self, request, *args, **kwargs)
         else:
             return redirect('/')

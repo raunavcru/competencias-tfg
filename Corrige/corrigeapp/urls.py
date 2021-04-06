@@ -56,6 +56,7 @@ urlpatterns = [
     path('marks/activities/<int:sk>/<int:id>/<int:pk>/list', views.MarkActivityListView.as_view(), name = 'marks_activities_list'),
     path('marks/competences/<int:id>/<int:pk>/create', views.MarkCompetenceCreateView.as_view(), name = 'marks_competences_create'),
     path('marks/competences/<int:id>/<int:pk>/list', views.MarkCompetenceListView.as_view(), name = 'marks_competences_list'),
+    path('marks/evaluations/<int:id>/<int:pk>/create', views.MarkEvaluationCreateView.as_view(), name = 'marks_evaluations_create'),
     path('marks/evaluations/<int:id>/<int:pk>/list', views.MarkEvaluationListView.as_view(), name = 'marks_evaluations_list'),
     path('marks/exercises/<int:pk>/create', views.MarkExerciseCreateView.as_view(), name = 'marks_exercises_create'),
     path('marks/exercises/<int:id>/<int:pk>/list', views.MarkExerciseListView.as_view(), name = 'marks_exercises_list'),

@@ -12,6 +12,8 @@
             {% trans "Evaluate Exercise" %} 
         {% elif is_activity %} 
             {% trans "Evaluate Activity" %} 
+        {% elif is_evaluation %}
+            {% trans "Evaluate Evaluation" %} 
         {% endif %}
         </h3>
         </div>  
@@ -25,6 +27,8 @@
                         <form class="col s12" id="form-create-mark" method="post" action="{% url 'marks_exercises_create' object.pk %}">
                     {% elif is_activity %}
                         <form class="col s12" id="form-create-mark" method="post" action="{% url 'marks_activities_create' object.pk %}">
+                    {% elif is_evaluation %}
+                        <form class="col s12" id="form-create-mark" method="post" action="{% url 'marks_evaluations_create' id=set_pk pk=object.pk %}">
                     {% endif %}
                     
                             {% csrf_token %}
@@ -56,6 +60,8 @@
                                 <a onclick="location.href='{% url 'marks_exercises_list' id=activity_pk pk=student_pk %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
                             {% elif is_activity %}
                                 <a onclick="location.href='{% url 'marks_activities_list' sk=set_pk id=evaluation_pk pk=student_pk %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
+                            {% elif is_evaluation %}
+                                <a onclick="location.href='{% url 'marks_evaluations_list' id=set_pk pk=student_pk %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
                             {% endif %}
                                 <button class="btn waves-effect right" type="submit" name="action">{% trans "Send" %}
                                     <i class="large material-icons right"><i>send</i></i>
