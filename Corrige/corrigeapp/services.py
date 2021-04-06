@@ -63,28 +63,61 @@ class MarkService():
             activity_mark.mark = mark
             activity_mark.save()
 
-    def calculate_competence_evaluation(self, exercise_object: models.Exercise, student_object: models.Student) -> None:
+    def calculate_competence_evaluation_level1(self, competence_mark: models.Competence_mark) -> None:
 
-        competence_mark_distinct_list = models.Competence_mark.objects.filter(competence__competence_exercise_competence__exercise = exercise_object, student=student_object).distinct('competence')
+        if not models.Competence_evaluation.objects.filter(competence=competence_mark.competence, student=competence_mark.student).exists():
+            c_e = models.Competence_evaluation.objects.create(competence=competence_mark.competence, student=competence_mark.student)
+            c_e.save()
+        
+        competence_evaluation = models.Competence_evaluation.objects.get(competence=competence_mark.competence, student=competence_mark.student)
+        competence_mark_list = models.Competence_mark.objects.filter(competence = competence_mark.competence, student=competence_mark.student)
 
-        for c_m in competence_mark_distinct_list:
-            competence_mark_list = models.Competence_mark.objects.filter(competence=c_m.competence ,student=student_object)
+        intensity_sum = 0.0
+        marks_sum = 0.0
+        for c_m in competence_mark_list:
+            exercise_competence = models.Exercise_competence.objects.get(exercise = c_m.exercise, competence = c_m.competence)
+            intensity_sum = intensity_sum + float(exercise_competence.intensity)
+            marks_sum = marks_sum + float(c_m.mark * exercise_competence.intensity)
+        
+        mark = marks_sum/intensity_sum
 
-            if not models.Competence_evaluation.filter(competence=c_m.competence ,student=student_object).exists():
-                c_e = models.Competence_evaluation.create(competence=c_m.competence ,student=student_object)
-                c_e.save()
-            
-            intensity_sum = 0.0
-            marks_sum = 0.0
-            c_e_saved = models.Competence_evaluation.filter(competence=c_m.competence, student=student_object)
+        competence_evaluation.mark = mark
+        competence_evaluation.save()
 
-            for c_m_c in competence_mark_list:
-                e_c = models.Exercise_competence(exercise_activity__set_activity__students = student_object,  competece = c_m.competence)
-                intensity_sum = intensity_sum + e_c.intensity
-                marks_sum = marks_sum + c_m_c.mark
-            
-            mark = marks_sum/intensity_sum
-            c_e_saved.mark = mark
+        self.calculate_competence_evaluation_level2(competence_evaluation = competence_evaluation)
+    
+    def calculate_competence_evaluation_level2(self, competence_evaluation: models.Competence_evaluation) -> None:
+
+        parent = models.Competence.objects.filter(competence_parent=competence_evaluation.competence).first()
+
+        if not models.Competence_evaluation.objects.filter(competence=parent, student=competence_evaluation.student).exists():
+            c_e = models.Competence_evaluation.objects.create(competence=parent, student=competence_evaluation.student)
+            c_e.save()
+        
+        competence_evaluation_level2 = models.Competence_evaluation.objects.get(competence=parent, student=competence_evaluation.student)
+
+        competence_list = models.Competence.objects.filter(parent = parent)
+        for c in competence_list:
+            if not models.Competence_evaluation.objects.filter(competence=c, student=competence_evaluation.student).exists():
+                c_e_level1 = models.Competence_evaluation.objects.create(competence=c, student=competence_evaluation.student)
+                c_e_level1.save()
+        
+        competence_evaluation_list = models.Competence_evaluation.objects.filter(competence__parent = parent, student=competence_evaluation.student)
+        
+        weight_total = 0.0
+        mark_total = 0.0
+        for c_e in competence_evaluation_list:
+            print(c_e.competence.code)
+            weight_total = weight_total + float(c_e.competence.weight)
+
+            if c_e.mark:
+                mark_total = mark_total + float(c_e.mark * c_e.competence.weight)
+        
+        mark = mark_total/weight_total
+
+        competence_evaluation_level2.mark = mark
+        competence_evaluation_level2.save()
+
 
     def calculate_exercise_mark(self, exercise: models.Exercise, student: models.Student) -> None:
         if not models.Exercise_mark.objects.filter(exercise = exercise, student = student).exists():
@@ -124,6 +157,7 @@ class MarkService():
         competence_mark.save()
 
         self.calculate_exercise_mark(exercise = competence_mark.exercise, student=competence_mark.student)
+        self.calculate_competence_evaluation_level1(competence_mark=competence_mark)
     
     def mark_evaluation_mark(self, mark: float, evaluation_mark: models.Evaluation_mark) -> None:
         evaluation_mark.manual_mark = mark

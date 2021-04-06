@@ -242,8 +242,6 @@ class Exercise(Common):
     def __str__(self):
         return self.statement
 
-
-
 class Exercise_mark(Common):
     mark = models.DecimalField('mark', max_digits=4, decimal_places=2, blank=True, null=True)
 
@@ -298,7 +296,7 @@ class Competence_mark(Common):
         return self.mark
 
 class Competence_evaluation(Common):
-    mark = models.DecimalField('mark', max_digits=4, decimal_places=2)
+    mark = models.DecimalField('mark', max_digits=4, decimal_places=2, blank=True, null=True)
 
     competence = models.ForeignKey(Competence, on_delete=models.CASCADE, related_name='competence_competence_evaluation')
 
