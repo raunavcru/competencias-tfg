@@ -16,6 +16,7 @@ COMPETENCE_LIST = 'competences/list.html'
 COMPETENCE_CREATE = "competences/create.html"
 EVALUATION_UPDATE = "evaluations/update.html"
 EXERCISE_CREATE = 'exercises/create.html'
+MARK_MARK = 'marks/mark.html'
 
 User = get_user_model()
 
@@ -1203,7 +1204,7 @@ class EvaluationUpdateView(generic.UpdateView):
 class MarkActivityCreateView(generic.UpdateView):
     model = models.Activity_mark
     form_class = forms.ActivityMarkCreateForm
-    template_name = 'marks/mark.html'
+    template_name = MARK_MARK
 
     def get(self, request, *args, **kwargs):
         activity_mark_pk = self.kwargs.get('pk')
@@ -1231,7 +1232,6 @@ class MarkActivityCreateView(generic.UpdateView):
         activity_mark_pk = self.kwargs.get('pk')
         activity_mark = models.Activity_mark.objects.get(pk=activity_mark_pk)
         set_object = activity_mark.activity.set_activity
-        student_pk = activity_mark.student.pk
         if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
             mark = form.cleaned_data.get('manual_mark')
             services.MarkService().mark_activity_mark(mark=mark, activity_mark=activity_mark)
@@ -1284,14 +1284,13 @@ class MarkActivityListView(generic.ListView):
 class MarkCompetenceCreateView(generic.UpdateView):
     model = models.Competence_mark
     form_class = forms.CompetenceMarkCreateForm
-    template_name = 'marks/mark.html'
+    template_name = MARK_MARK
 
     def get(self, request, *args, **kwargs):
         exercise_pk = self.kwargs.get('id')
         exercise_object = models.Exercise.objects.get(pk=exercise_pk)
         activity_object = exercise_object.activity
         set_object = activity_object.set_activity
-        set_pk = set_object.pk
         if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
             return super(MarkCompetenceCreateView, self).get(self, request, *args, **kwargs)
         else:
@@ -1368,7 +1367,7 @@ class MarkCompetenceListView(generic.ListView):
 class MarkEvaluationCreateView(generic.UpdateView):
     model = models.Evaluation_mark
     form_class = forms.EvaluationMarkCreateForm
-    template_name = 'marks/mark.html'
+    template_name = MARK_MARK
 
     def get(self, request, *args, **kwargs):
         set_pk = self.kwargs.get('id')
@@ -1453,7 +1452,7 @@ class MarkEvaluationListView(generic.ListView):
 class MarkExerciseCreateView(generic.UpdateView):
     model = models.Exercise_mark
     form_class = forms.ExerciseMarkCreateForm
-    template_name = 'marks/mark.html'
+    template_name = MARK_MARK
 
     def get(self, request, *args, **kwargs):
         exercise_mark_pk = self.kwargs.get('pk')
