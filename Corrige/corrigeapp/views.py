@@ -608,6 +608,37 @@ class CompetencesListChildView(generic.ListView):
         return queryset
 
 @method_decorator(login_required, name='dispatch')
+class MarkCompetenceEvaluationList(generic.ListView):
+    model = models.Competence_evaluation
+    template_name = 'competences/list_student_competence.html'
+    context_object_name = 'competence_student_list'
+    paginate_by = 5
+
+    def get(self, request, *args, **kwargs):
+        set_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_pk)
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+            return super(MarkCompetenceEvaluationList, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        context = super(MarkCompetenceEvaluationList, self).get_context_data(**kwargs)
+        student_pk = self.kwargs.get('id')
+        student_object = models.Student.objects.get(pk=student_pk)
+        context['student'] = student_object
+
+        return context
+
+    def get_queryset(self):
+        set_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_pk)
+        student_pk = self.kwargs.get('id')
+        student_object = models.Student.objects.get(pk=student_pk)
+        competence_evaluation_ls = models.Competence_evaluation.objects.filter(competence__level=3, competence__competences__subject_set=set_object, student=student_object)
+        return competence_evaluation_ls
+
+@method_decorator(login_required, name='dispatch')
 class CompetenceListLevel1View(generic.ListView):
     model = models.Competence
     template_name = COMPETENCE_LIST

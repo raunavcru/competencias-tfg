@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+
+<div class="container">
+    <h4 class="centered">{% trans "List of competences level 3 of "  %} {{student.surname}} {{student.name}}</h4>
+        <table class="highlight">
+            <caption></caption>
+                <thead>
+                    <tr>
+                        <th id="competence">{% trans "Competence" %}</th>
+                        <th id="competence">{% trans "Competence Level" %}</th>
+                        <th id="mark">{% trans "Mark" %}</th>
+                    </tr>
+                </thead>
+                {% for object in competence_student_list %}
+                    <tbody>
+                        <tr class="center">
+                            <td>{{object.competence}}</td>
+                            <td>{{object.competence.level}}</td>   
+                            <td>{{object.mark}}</td> 
+                        </tr>
+                    </tbody>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% include 'paginate.html' %}
+</div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems);
+    });
+
+</script>
+
+
+{% endblock %}
