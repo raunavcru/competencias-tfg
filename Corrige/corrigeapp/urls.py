@@ -66,17 +66,19 @@ urlpatterns = [
 
     path('profile/update', views.UserUpdateView.as_view(), name = 'profile_update'),
 
+    path('sets/create', views.SetCreateView.as_view(), name = 'sets_create'),
+    path('sets/list', views.SetsListView.as_view(), name = 'sets_list'),
     path('sets/<int:pk>/assign/list', views.SetAssignStudentListView.as_view(), name = 'sets_assign_student_list'),
+    path('sets/<int:pk>/delete', views.SetDeleteView.as_view(), name='sets_delete'),
     path('sets/<int:pk>/list', views.MySetStudentListView.as_view(), name = 'sets_student_list'),
+    path('sets/<int:pk>/update', views.SetUpdateView.as_view(), name = 'sets_update'),
+    path('sets/<int:pk>/update/evaluation_type', views.SetUpdateEvaluationTypeForm.as_view(), name = 'sets_update_evaluation_type'),
     path('sets/<int:pk>/<int:id>/assign/', views.SetAssignStudentView.as_view(), name = 'sets_assign_student'),
     path('sets/<int:pk>/<int:id>/unassign/', views.SetUnassignStudentView.as_view(), name = 'sets_unassign_student'),
-    path('sets/create', views.SetCreateView.as_view(), name = 'sets_create'),
-    path('sets/<int:pk>/update', views.SetUpdateView.as_view(), name = 'sets_update'),
-    path('sets/list', views.SetsListView.as_view(), name = 'sets_list'),
-    path('sets/<int:pk>/delete', views.SetDeleteView.as_view(), name='sets_delete'),
     
-    path('students/list', views.StudentsListView.as_view(), name = 'students_list'),
+    
     path('students/create', views.StudentCreateView.as_view(), name = 'students_create'),
+    path('students/list', views.StudentsListView.as_view(), name = 'students_list'),
     path('students/<int:pk>/delete', views.StudentDeleteView.as_view(), name='students_delete'),
     path('students/<int:pk>/update', views.StudentUpdateView.as_view(), name = 'students_update'),
 
