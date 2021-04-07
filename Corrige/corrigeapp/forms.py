@@ -475,6 +475,47 @@ class EvaluationCreateOneFinalTwoPartialForm(forms.ModelForm):
             'end_date_2',
         )
 
+# Marks
+class ActivityMarkCreateForm(forms.ModelForm):
+    manual_mark = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': '7.0', 'id': 'mark-create-input'}))
+
+    class Meta:
+        model = models.Activity_mark
+        fields = (
+            'manual_mark',
+        )
+
+class CompetenceMarkCreateForm(forms.ModelForm):
+    mark = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': '7.0', 'id': 'mark-create-input'}))
+
+    class Meta:
+        model = models.Competence_mark
+        fields = (
+            'mark',
+        )
+
+class EvaluationMarkCreateForm(forms.ModelForm):
+    manual_mark = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': '7.0', 'id': 'mark-create-input'}))
+
+    class Meta:
+        model = models.Evaluation_mark
+        fields = (
+            'manual_mark',
+        )
+        
+class ExerciseMarkCreateForm(forms.ModelForm):
+    manual_mark = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': '7.0', 'id': 'mark-create-input'}))
+
+    class Meta:
+        model = models.Exercise_mark
+        fields = (
+            'manual_mark',
+        )
+
 # Sets
 class SetCreateForm(forms.ModelForm):
     

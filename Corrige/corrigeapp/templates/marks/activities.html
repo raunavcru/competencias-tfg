@@ -16,6 +16,7 @@
                         <th class="center td-none" id="is_recovery">{% trans "Recovery" %}</th>
                         <th class="center" id="mark">{% trans "Mark" %}</th>
                         <th class="center" id="manual_mark">{% trans "Manual mark" %}</th>
+                        <th class="center" id="evaluate">{% trans "Evaluate" %}</th> 
                         <th class="center" id="exercises">{% trans "Exercises" %}</th>
                     </tr>
                 </thead>
@@ -35,19 +36,20 @@
                                 {% endif %}
                             </td>
                             <td class="center">
-                                {% if object.mark %}
+                                {% if object.mark or object.mark == 0 %}
                                     {{object.mark}}
                                 {% else %}
                                     -
                                 {% endif %}
                             </td>
                             <td class="center">
-                                {% if object.manual_mark %}
+                                {% if object.manual_mark or object.manual_mark == 0 %}
                                     {{object.manual_mark}}
                                 {% else %}
                                     -
                                 {% endif %}
                             </td>
+                            <td class="center dropdown-trigger" onclick="location.href='{% url 'marks_activities_create' object.pk %}'"><em class="material-icons" style="color:#29b6f6">create</em></td>
                             <td class="center dropdown-trigger" onclick="location.href='{% url 'marks_exercises_list' id=object.activity.pk pk=student_object.pk %}'"><em class="material-icons" style="color:#e53935">rate_review</em></td>
                         </tr>
                     </tbody>

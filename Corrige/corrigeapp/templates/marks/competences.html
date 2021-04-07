@@ -12,8 +12,8 @@
                         <th id="code">{% trans "Code" %}</th>
                         <th class="td-none" id="name">{% trans "Name" %}</th>
                         <th class="td-none" id="description">{% trans "Description" %}</th>   
-                        <th class="center" id="mark">{% trans "Mark" %}</th>
-                        <th class="center" id="manual_mark">{% trans "Manual mark" %}</th>                 
+                        <th class="center" id="manual_mark">{% trans "Manual mark" %}</th>    
+                        <th class="center" id="evaluate">{% trans "Evaluate" %}</th>               
                     </tr>
                 </thead>
                 {% for object in c_mark_saved %}
@@ -23,19 +23,13 @@
                             <td class="td-none" style="width:300px">{{object.competence.name}}</td>
                             <td class="td-none" style="width:500px">{{object.competence.description}}</td>
                             <td class="center">
-                                {% if object.mark %}
+                                {% if object.mark or object.mark == 0 %}
                                     {{object.mark}}
                                 {% else %}
                                     -
                                 {% endif %}
                             </td>
-                            <td class="center">
-                                {% if object.manual_mark %}
-                                    {{object.manual_mark}}
-                                {% else %}
-                                    -
-                                {% endif %}
-                            </td>
+                            <td class="center dropdown-trigger" onclick="location.href='{% url 'marks_competences_create' id=exercise_pk pk=object.pk %}'"><em class="material-icons" style="color:#29b6f6">create</em></td>
                         </tr>
                     </tbody>
                 {% endfor %}
