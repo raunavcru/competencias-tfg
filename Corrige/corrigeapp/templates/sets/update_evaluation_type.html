@@ -9,6 +9,13 @@
             </h3>
         </div>
         <div id="form-generic" class="container">
+        {% if not object.evaluation_type_final %}
+            <div class="row">
+                <div class="center">
+                    <p>{% trans "You can not access the other features if you do not complete the form." %}</p>
+                </div>
+            </div>
+        {% endif %}    
             <div class="row">
                 <div class="grid-example col s12 xl11">
                     <div class="center-form">
