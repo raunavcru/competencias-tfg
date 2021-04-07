@@ -143,7 +143,10 @@ class ActivitiesListView(generic.ListView):
         set_pk = self.kwargs.get('pk')
         set_object = models.Set.objects.get(pk=set_pk)
         if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
-            return super(ActivitiesListView, self).get(self, request, *args, **kwargs)
+            if set_object.evaluation_type_final:
+                return super(ActivitiesListView, self).get(self, request, *args, **kwargs)
+            else:
+                return redirect('sets_update_evaluation_type', pk=set_pk)
         else:
             return redirect('/')
     
@@ -409,7 +412,10 @@ class BlocksListView(generic.ListView):
         set_pk = self.kwargs.get('pk')
         set_object = models.Set.objects.get(pk=set_pk)
         if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
-            return super(BlocksListView, self).get(self, request, *args, **kwargs)
+            if set_object.evaluation_type_final:
+                return super(BlocksListView, self).get(self, request, *args, **kwargs)
+            else:
+                return redirect('sets_update_evaluation_type', pk=set_pk)
         else:
             return redirect('/')
     
@@ -1535,8 +1541,13 @@ class MySetStudentListView(generic.ListView):
     paginate_by = 5
 
     def get(self, request, *args, **kwargs):
-        if services.UserService().is_teacher(request.user):
-            return super(MySetStudentListView, self).get(self, request, *args, **kwargs)
+        set_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_pk)
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
+            if set_object.evaluation_type_final:
+                return super(MySetStudentListView, self).get(self, request, *args, **kwargs)
+            else:
+                return redirect('sets_update_evaluation_type', pk=set_pk)
         else:
             return redirect('/')
 
