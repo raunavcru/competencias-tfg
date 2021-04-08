@@ -18,8 +18,12 @@
                     <tbody>
                         <tr class="center">
                             <td>{{object.competence.code}}</td>
-                            <td>{{object.competence.level}}</td>   
-                            <td>{{object.mark}}</td> 
+                            <td>{{object.competence.level}}</td>
+                                {% if object.mark or object.mark == 0%}
+                                    <td>{{object.mark}}</td>                                 
+                                {% else %}
+                                    <td>-</td>
+                                {% endif %}
                         </tr>
                     </tbody>
                 {% endfor %}
