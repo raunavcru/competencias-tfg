@@ -4,7 +4,7 @@
 {% block content %}
 
 <div class="container">
-    <h4 class="centered">{% trans "List of competences level 3 of "  %} {{student.surname}} {{student.name}}</h4>
+    <h4 class="centered">{% trans "List of competences of "  %} {{student.surname}} {{student.name}}</h4>
         <table class="highlight">
             <caption></caption>
                 <thead>
@@ -14,7 +14,7 @@
                         <th id="mark">{% trans "Mark" %}</th>
                     </tr>
                 </thead>
-                {% for object in competence_student_list %}
+                {% for object in competence_student_list %} 
                     <tbody>
                         <tr class="center">
                             <td>{{object.competence}}</td>

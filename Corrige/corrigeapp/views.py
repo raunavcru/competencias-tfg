@@ -623,7 +623,10 @@ class MarkCompetenceEvaluationList(generic.ListView):
     def get(self, request, *args, **kwargs):
         set_pk = self.kwargs.get('pk')
         set_object = models.Set.objects.get(pk=set_pk)
+        student_pk = self.kwargs.get('id')
+        student_object = models.Student.objects.get(pk=student_pk)
         if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+            services.MarkService().create_competence_evaluation(set_object = set_object, student =student_object)
             return super(MarkCompetenceEvaluationList, self).get(self, request, *args, **kwargs)
         else:
             return redirect('/')
@@ -633,7 +636,6 @@ class MarkCompetenceEvaluationList(generic.ListView):
         student_pk = self.kwargs.get('id')
         student_object = models.Student.objects.get(pk=student_pk)
         context['student'] = student_object
-
         return context
 
     def get_queryset(self):
@@ -641,7 +643,7 @@ class MarkCompetenceEvaluationList(generic.ListView):
         set_object = models.Set.objects.get(pk=set_pk)
         student_pk = self.kwargs.get('id')
         student_object = models.Student.objects.get(pk=student_pk)
-        competence_evaluation_ls = models.Competence_evaluation.objects.filter(competence__level=3, competence__competences__subject_set=set_object, student=student_object)
+        competence_evaluation_ls = models.Competence_evaluation.objects.filter(competence__competences__subject_set=set_object, student=student_object).order_by("competence__level")
         return competence_evaluation_ls
 
 @method_decorator(login_required, name='dispatch')
