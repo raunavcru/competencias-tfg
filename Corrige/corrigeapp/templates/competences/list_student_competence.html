@@ -9,15 +9,15 @@
             <caption></caption>
                 <thead>
                     <tr>
-                        <th id="competence">{% trans "Competence" %}</th>
-                        <th id="competence">{% trans "Competence Level" %}</th>
+                        <th id="competence">{% trans "Code" %}</th>
+                        <th id="competence">{% trans "Level" %}</th>
                         <th id="mark">{% trans "Mark" %}</th>
                     </tr>
                 </thead>
                 {% for object in competence_student_list %} 
                     <tbody>
                         <tr class="center">
-                            <td>{{object.competence}}</td>
+                            <td>{{object.competence.code}}</td>
                             <td>{{object.competence.level}}</td>   
                             <td>{{object.mark}}</td> 
                         </tr>
