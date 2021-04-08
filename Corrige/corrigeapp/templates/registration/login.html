@@ -2,7 +2,7 @@
 {% load i18n %}
 {% block content %}
 <body id="fondoPantalla">
-<div style="padding-top:15px; width:500px; margin: 0 auto;" >
+<div class="div-login" >
 	<form  method="POST" action="{% url 'login' %}">
 
 		{% csrf_token %}
@@ -16,19 +16,19 @@
 
 
 			<div class="row" data-validate="Valid email is required: ex@abc.xyz">
-				<div class="grid-example col s2">
+				<div class="grid-example col s1 xl2">
 				</div>
-					<div class="grid-example col s4" style="width:330px;">
-						<div class="validate-input">
-						<label style="color: black;">{% trans "Username" %}</label>
-						{{form.username}}
-						</div>
+				<div class="grid-example col s10 xl8">
+					<div class="validate-input">
+					<label style="color: black;">{% trans "Username" %}</label>
+					{{form.username}}
+					</div>
 				</div>
 			</div>
 			<div class="row" data-validate="Password is required">
-				<div class="grid-example col s2">
+				<div class="grid-example col s1 xl2">
 				</div>
-					<div class="grid-example col s4" style="width:330px;">
+					<div class="grid-example col s10 xl8">
 						<div class="validate-input">
 						<label style="color: black;">{% trans "Password" %}</label>
 						{{form.password}}

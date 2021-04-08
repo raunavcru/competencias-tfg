@@ -11,6 +11,7 @@
       });
     </script>
     <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="{% static 'fuentes/Ubuntu-L.ttf' %}">
     <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
     <link rel="stylesheet" href="{% static 'css/main.css'%}" />
     <link rel="stylesheet" href="{% static 'css/materialize.css'%}" />
@@ -78,7 +79,6 @@
             <li><a href="{% url 'sets_list' %}">{% trans "Sets" %}</a></li>
             <li><a href="{% url 'subjects_list' %}">{% trans "Subjects" %}</a></li>
             {% else %}
-            <li><a href="#">{% trans "My Activities" %}</a></li>
             <li><a href="{% url 'my_sets_list' %}">{% trans "My Sets" %}</a></li>
             <li><a href="{% url 'my_subjects_list' %}">{% trans "My Subjects" %}</a></li>
             {% endif %}

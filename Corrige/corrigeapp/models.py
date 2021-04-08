@@ -111,9 +111,13 @@ class Evaluation(Common):
 
     period = models.CharField(("period"), max_length=50)
 
+    weight = models.DecimalField('weight', max_digits=3, decimal_places=2)
+
     parent = models.ForeignKey('self', on_delete=models.CASCADE, related_name='evaluation_parent', blank=True, null=True)
 
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE, related_name='subject_evaluation')
+
+    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE, related_name='teacher_evaluation', blank=True, null=True)
 
     class Meta:
         verbose_name = 'Evaluation'
@@ -146,6 +150,10 @@ class Set(Common):
     grade = models.CharField(("grade"), max_length=50)
 
     line = models.CharField(("line"), max_length=50)
+
+    evaluation_type_final = models.CharField(("evaluation_type_final"), max_length=100, blank=True, null=True)
+
+    evaluation_type_partial = models.CharField(("evaluation_type_partial"), max_length=100, blank=True, null=True)
 
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE, related_name='teacher_set')
 
@@ -238,8 +246,6 @@ class Exercise(Common):
     def __str__(self):
         return self.statement
 
-
-
 class Exercise_mark(Common):
     mark = models.DecimalField('mark', max_digits=4, decimal_places=2, blank=True, null=True)
 
@@ -280,6 +286,8 @@ class Competence_mark(Common):
 
     evaluation_type = models.CharField(("evaluation_type"), max_length=50)
 
+    exercise = models.ForeignKey(Exercise, on_delete=models.CASCADE, related_name='exercise_competence_mark')
+
     competence = models.ForeignKey(Competence, on_delete=models.CASCADE, related_name='competence_competence_mark')
 
     student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='student_competence_mark')
@@ -292,7 +300,7 @@ class Competence_mark(Common):
         return self.mark
 
 class Competence_evaluation(Common):
-    mark = models.DecimalField('mark', max_digits=4, decimal_places=2)
+    mark = models.DecimalField('mark', max_digits=4, decimal_places=2, blank=True, null=True)
 
     competence = models.ForeignKey(Competence, on_delete=models.CASCADE, related_name='competence_competence_evaluation')
 
@@ -303,4 +311,4 @@ class Competence_evaluation(Common):
         verbose_name_plural = 'Competence_evaluations'
     
     def __str__(self):
-        return self.mark
+        return self.competence.code + ' ' +  self.student.name + ' ' + self.student.surname

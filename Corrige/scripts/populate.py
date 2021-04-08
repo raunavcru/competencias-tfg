@@ -891,6 +891,7 @@ def seed_evaluations():
                 'end_date': '2021-06-19',
                 'is_final': True,
                 'period': 'Final',
+                'weight': 1,
                 'subject': 1,
             }
     }
@@ -906,6 +907,7 @@ def seed_evaluations():
                 'end_date': '2020-12-22',
                 'is_final': False,
                 'period': '1st',
+                'weight': 1,
                 'parent': evaluation_parent,
                 'subject': 1,
             }
@@ -921,6 +923,7 @@ def seed_evaluations():
                 'end_date': '2021-03-26',
                 'is_final': False,
                 'period': '2nd',
+                'weight': 1,
                 'parent': evaluation_parent,
                 'subject': 1,
             }
@@ -936,6 +939,7 @@ def seed_evaluations():
                 'end_date': '2021-06-19',
                 'is_final': False,
                 'period': '3tr',
+                'weight': 1,
                 'parent': evaluation_parent,
                 'subject': 1,
             }
@@ -953,6 +957,7 @@ def seed_evaluations():
                 'end_date': '2021-06-19',
                 'is_final': True,
                 'period': 'Final',
+                'weight': 1,
                 'subject': 2,
             }
     }
@@ -968,6 +973,7 @@ def seed_evaluations():
                 'end_date': '2020-12-22',
                 'is_final': False,
                 'period': '1st',
+                'weight': 1,
                 'parent': evaluation_parent,
                 'subject': 2,
             }
@@ -983,6 +989,7 @@ def seed_evaluations():
                 'end_date': '2021-03-26',
                 'is_final': False,
                 'period': '2nd',
+                'weight': 1,
                 'parent': evaluation_parent,
                 'subject': 2,
             }
@@ -998,6 +1005,7 @@ def seed_evaluations():
                 'end_date': '2021-06-19',
                 'is_final': False,
                 'period': '3tr',
+                'weight': 1,
                 'parent': evaluation_parent,
                 'subject': 2,
             }
@@ -1015,6 +1023,7 @@ def seed_evaluations():
                 'end_date': '2021-06-19',
                 'is_final': True,
                 'period': 'Final',
+                'weight': 1,
                 'subject': 3,
             }
     }
@@ -1030,6 +1039,7 @@ def seed_evaluations():
                 'end_date': '2020-12-22',
                 'is_final': False,
                 'period': '1st',
+                'weight': 1,
                 'parent': evaluation_parent,
                 'subject': 3,
             }
@@ -1045,6 +1055,7 @@ def seed_evaluations():
                 'end_date': '2021-03-26',
                 'is_final': False,
                 'period': '2nd',
+                'weight': 1,
                 'parent': evaluation_parent,
                 'subject': 3,
             }
@@ -1060,6 +1071,7 @@ def seed_evaluations():
                 'end_date': '2021-06-19',
                 'is_final': False,
                 'period': '3tr',
+                'weight': 1,
                 'parent': evaluation_parent,
                 'subject': 3,
             }
@@ -1077,6 +1089,7 @@ def seed_evaluations():
                 'end_date': '2021-06-19',
                 'is_final': True,
                 'period': 'Final',
+                'weight': 1,
                 'subject': 4,
             }
     }
@@ -1092,6 +1105,7 @@ def seed_evaluations():
                 'end_date': '2020-12-22',
                 'is_final': False,
                 'period': '1st',
+                'weight': 1,
                 'parent': evaluation_parent,
                 'subject': 4,
             }
@@ -1107,6 +1121,7 @@ def seed_evaluations():
                 'end_date': '2021-03-26',
                 'is_final': False,
                 'period': '2nd',
+                'weight': 1,
                 'parent': evaluation_parent,
                 'subject': 4,
             }
@@ -1122,6 +1137,7 @@ def seed_evaluations():
                 'end_date': '2021-06-19',
                 'is_final': False,
                 'period': '3tr',
+                'weight': 1,
                 'parent': evaluation_parent,
                 'subject': 4,
             }
@@ -1141,6 +1157,8 @@ def seed_sets():
                 'level': '3º',
                 'grade': 'SecondaryEducation',
                 'line': 'A',
+                'evaluation_type_final': 'BY_EVALUATION_RECOVERY',
+                'evaluation_type_partial': 'BY_RECOVERY_ACTIVITIES',
                 'teacher': 2,
                 'subject': 1,
                 'evaluation': 1,
@@ -1160,6 +1178,8 @@ def seed_sets():
                 'level': '3º',
                 'grade': 'SecondaryEducation',
                 'line': 'A',
+                'evaluation_type_final': 'BY_EVALUATION_RECOVERY',
+                'evaluation_type_partial': 'BY_RECOVERY_ACTIVITIES',
                 'teacher': 2,
                 'subject': 3,
                 'evaluation': 9,
@@ -1179,6 +1199,8 @@ def seed_sets():
                 'level': '4º',
                 'grade': 'SecondaryEducation',
                 'line': 'A',
+                'evaluation_type_final': 'BY_EVALUATION_RECOVERY',
+                'evaluation_type_partial': 'BY_RECOVERY_ACTIVITIES',
                 'teacher': 2,
                 'subject': 2,
                 'evaluation': 5,
@@ -1198,6 +1220,8 @@ def seed_sets():
                 'level': '4º',
                 'grade': 'SecondaryEducation',
                 'line': 'A',
+                'evaluation_type_final': 'BY_EVALUATION_RECOVERY',
+                'evaluation_type_partial': 'BY_RECOVERY_ACTIVITIES',
                 'teacher': 2,
                 'subject': 4,
                 'evaluation': 13,

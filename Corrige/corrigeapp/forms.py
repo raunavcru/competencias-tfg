@@ -20,7 +20,11 @@ CHOICES_YES_NO = ((False, "No"), (True, "Sí"))
 CHOICES_YES_NO_EN = ((False, "No"), (True, "Yes"))
 CHOICES_LEVEL = (("1º","1º"),("2º","2º"),("3º","3º"),("4º","4º"),("5º","5º"),("6º","6º"))
 CHOICES_GRADE = (("PrimarySchool","Educación Primaria"),("SecondaryEducation","Educación Secundaria"),("SixthForm","Bachillerato"),("FurtherEducation","Grado Medio o Superior"),("University","Grado Universitario"))
-CHOICES_GRADE_EN = ((" PrimarySchool","Primary School"),("SecondaryEducation","Secondary Education"),("SixthForm","Sixth Form"),("FurtherEducation","Further Education"),("University","University"))
+CHOICES_GRADE_EN = (("PrimarySchool","Primary School"),("SecondaryEducation","Secondary Education"),("SixthForm","Sixth Form"),("FurtherEducation","Further Education"),("University","University"))
+CHOICES_EVALUATION_TYPE_FINAL_EN =(("BY_COMPETENCES", "By Competences"), ("BY_EVALUATION_NO_RECOVERY", "By Evaluations (No recovery)"), ("BY_EVALUATION_RECOVERY", "By Evaluations (Recovery)"))
+CHOICES_EVALUATION_TYPE_FINAL =(("BY_COMPETENCES", "Por Competencias"), ("BY_EVALUATION_NO_RECOVERY", "Por evaluaciones (Sin recuperación)"), ("BY_EVALUATION_RECOVERY", "Por evaluaciones (Con recuperación)"))
+CHOICES_EVALUATION_TYPE_PARTIAL_EN =(("BY_ALL_ACTIVITIES", "By all Activities"), ("BY_RECOVERY_ACTIVITIES", "By Recovery Activities"))
+CHOICES_EVALUATION_TYPE_PARTIAL =(("BY_ALL_ACTIVITIES", "Por todas las Actividades"), ("BY_RECOVERY_ACTIVITIES", "Por Recuperaciones"))
 
 
 DATE_PLACEHOLDER = 'dd/mm/aaaa'
@@ -122,6 +126,40 @@ class AdministratorUpdateForm(forms.ModelForm):
             raise ValidationError(
                 MESSAGE_INITIALS)
         return initials
+
+# Block
+class BlockCreateChildForm(forms.ModelForm):
+    
+    name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': PLACEHOLDER_NAME_EVALUATION, 'id': 'name-create-block'}))
+    period = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': PLACEHOLDER_PERIOD_EVALUATION}))
+    weight = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': '1', 'id': 'weight-create-block'}))
+    start_date = forms.DateField(required=True, 
+        input_formats=settings.DATE_INPUT_FORMATS, 
+        widget=forms.DateInput(
+            format=settings.DATE_INPUT_FORMATS[0],
+            attrs={'placeholder': DATE_PLACEHOLDER}
+        )
+    )
+    end_date = forms.DateField(required=True, 
+        input_formats=settings.DATE_INPUT_FORMATS, 
+        widget=forms.DateInput(
+            format=settings.DATE_INPUT_FORMATS[0],
+            attrs={'placeholder': DATE_PLACEHOLDER}
+        )
+    )
+
+    class Meta:
+        model = models.Evaluation
+        fields = (
+            'name',
+            'period',
+            'weight',
+            'start_date',
+            'end_date',
+        )
 
 # Competences
 class CompetenceCreateForm(forms.ModelForm):
@@ -441,6 +479,47 @@ class EvaluationCreateOneFinalTwoPartialForm(forms.ModelForm):
             'end_date_2',
         )
 
+# Marks
+class ActivityMarkCreateForm(forms.ModelForm):
+    manual_mark = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': '7.0', 'id': 'mark-create-input'}))
+
+    class Meta:
+        model = models.Activity_mark
+        fields = (
+            'manual_mark',
+        )
+
+class CompetenceMarkCreateForm(forms.ModelForm):
+    mark = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': '7.0', 'id': 'mark-create-input'}))
+
+    class Meta:
+        model = models.Competence_mark
+        fields = (
+            'mark',
+        )
+
+class EvaluationMarkCreateForm(forms.ModelForm):
+    manual_mark = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': '7.0', 'id': 'mark-create-input'}))
+
+    class Meta:
+        model = models.Evaluation_mark
+        fields = (
+            'manual_mark',
+        )
+        
+class ExerciseMarkCreateForm(forms.ModelForm):
+    manual_mark = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': '7.0', 'id': 'mark-create-input'}))
+
+    class Meta:
+        model = models.Exercise_mark
+        fields = (
+            'manual_mark',
+        )
+
 # Sets
 class SetCreateForm(forms.ModelForm):
     
@@ -501,6 +580,25 @@ class SetCreateForm(forms.ModelForm):
                 raise ValidationError(
                     MESSAGE_NAME)
         return name
+
+class SetUpdateEvaluationTypeForm(forms.ModelForm):
+
+    def __init__(self, *args, **kwargs):
+        super(SetUpdateEvaluationTypeForm, self).__init__(*args, **kwargs)
+        if get_language() == 'en':
+            self.fields['evaluation_type_final'].choices = CHOICES_EVALUATION_TYPE_FINAL_EN
+            self.fields['evaluation_type_partial'].choices = CHOICES_EVALUATION_TYPE_PARTIAL_EN
+
+    class Meta:
+        model = models.Set
+        fields = (
+            'evaluation_type_final',
+            'evaluation_type_partial',
+        )
+        widgets = {
+            'evaluation_type_final': forms.Select(choices=CHOICES_EVALUATION_TYPE_FINAL),
+            'evaluation_type_partial': forms.Select(choices=CHOICES_EVALUATION_TYPE_PARTIAL),
+        }
 
 # Student
 class StudentCreateForm(forms.ModelForm):
@@ -651,9 +749,9 @@ class UserCreateForm(UserCreationForm):
     )
     initials = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': 'ACA', 'id': 'initials-create-teacher'}))
-    password1 = forms.CharField(required=True, widget=forms.TextInput(
+    password1 = forms.CharField(required=True, widget=forms.PasswordInput(
         attrs={'placeholder': '*************', 'id': 'password1-create-teacher'}))
-    password2 = forms.CharField(required=True, widget=forms.TextInput(
+    password2 = forms.CharField(required=True, widget=forms.PasswordInput(
         attrs={'placeholder': '*************', 'id': 'password2-create-teacher'}))
 
     def __init__(self, *args, **kwargs):

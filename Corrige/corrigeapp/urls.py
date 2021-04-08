@@ -18,6 +18,11 @@ urlpatterns = [
     path('administrators/list', views.AdministratorsListView.as_view(), name = 'administrators_list'),
     path('administrators/<int:pk>/update', views.AdministratorUpdateView.as_view(), name = 'administrators_update'),
 
+    path('blocks/<int:pk>/create', views.BlockCreateView.as_view(), name = 'blocks_create'),
+    path('blocks/<int:pk>/delete', views.BlockDeleteView.as_view(), name = 'blocks_delete'),
+    path('blocks/<int:pk>/list', views.BlocksListView.as_view(), name = 'blocks_list'),
+    path('blocks/<int:pk>/update', views.BlockUpdateView.as_view(), name = 'blocks_update'),
+
     path('competences/create', views.CompetenceCreateLevel3View.as_view(), name = 'competences_create'),
     path('competences/list/level1', views.CompetenceListLevel1View.as_view(), name = 'competences_list1'),
     path('competences/list/level2', views.CompetenceListLevel2View.as_view(), name = 'competences_list2'),
@@ -47,9 +52,13 @@ urlpatterns = [
     path('evaluations/<int:pk>/list', views.EvaluationsListPartialView.as_view(), name = 'evaluations_list_partial'),
     path('evaluations/<int:pk>/update', views.EvaluationUpdateView.as_view(), name = 'evaluations_update'),
 
-    path('marks/activities/<int:id>/<int:pk>/list', views.MarkActivityListView.as_view(), name = 'marks_activities_list'),
+    path('marks/activities/<int:pk>/create', views.MarkActivityCreateView.as_view(), name = 'marks_activities_create'),
+    path('marks/activities/<int:sk>/<int:id>/<int:pk>/list', views.MarkActivityListView.as_view(), name = 'marks_activities_list'),
+    path('marks/competences/<int:id>/<int:pk>/create', views.MarkCompetenceCreateView.as_view(), name = 'marks_competences_create'),
     path('marks/competences/<int:id>/<int:pk>/list', views.MarkCompetenceListView.as_view(), name = 'marks_competences_list'),
+    path('marks/evaluations/<int:id>/<int:pk>/create', views.MarkEvaluationCreateView.as_view(), name = 'marks_evaluations_create'),
     path('marks/evaluations/<int:id>/<int:pk>/list', views.MarkEvaluationListView.as_view(), name = 'marks_evaluations_list'),
+    path('marks/exercises/<int:pk>/create', views.MarkExerciseCreateView.as_view(), name = 'marks_exercises_create'),
     path('marks/exercises/<int:id>/<int:pk>/list', views.MarkExerciseListView.as_view(), name = 'marks_exercises_list'),
 
     path('my_sets/list', views.MySetsListView.as_view(), name = 'my_sets_list'),
@@ -57,17 +66,19 @@ urlpatterns = [
 
     path('profile/update', views.UserUpdateView.as_view(), name = 'profile_update'),
 
+    path('sets/create', views.SetCreateView.as_view(), name = 'sets_create'),
+    path('sets/list', views.SetsListView.as_view(), name = 'sets_list'),
     path('sets/<int:pk>/assign/list', views.SetAssignStudentListView.as_view(), name = 'sets_assign_student_list'),
+    path('sets/<int:pk>/delete', views.SetDeleteView.as_view(), name='sets_delete'),
     path('sets/<int:pk>/list', views.MySetStudentListView.as_view(), name = 'sets_student_list'),
+    path('sets/<int:pk>/update', views.SetUpdateView.as_view(), name = 'sets_update'),
+    path('sets/<int:pk>/update/evaluation_type', views.SetUpdateEvaluationTypeForm.as_view(), name = 'sets_update_evaluation_type'),
     path('sets/<int:pk>/<int:id>/assign/', views.SetAssignStudentView.as_view(), name = 'sets_assign_student'),
     path('sets/<int:pk>/<int:id>/unassign/', views.SetUnassignStudentView.as_view(), name = 'sets_unassign_student'),
-    path('sets/create', views.SetCreateView.as_view(), name = 'sets_create'),
-    path('sets/<int:pk>/update', views.SetUpdateView.as_view(), name = 'sets_update'),
-    path('sets/list', views.SetsListView.as_view(), name = 'sets_list'),
-    path('sets/<int:pk>/delete', views.SetDeleteView.as_view(), name='sets_delete'),
     
-    path('students/list', views.StudentsListView.as_view(), name = 'students_list'),
+    
     path('students/create', views.StudentCreateView.as_view(), name = 'students_create'),
+    path('students/list', views.StudentsListView.as_view(), name = 'students_list'),
     path('students/<int:pk>/delete', views.StudentDeleteView.as_view(), name='students_delete'),
     path('students/<int:pk>/update', views.StudentUpdateView.as_view(), name = 'students_update'),
 
