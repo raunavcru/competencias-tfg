@@ -1,78 +1,95 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% block content %}
-<div id="form-generic" class="container">
-    <divclass="row">
-        <div class="grid-example col s11 offset-s1">
-            <div class="center-form">
-            {% if request.get_full_path == '/students/create' %}
-                <form class="col s12" id="form-create-students" method="post" action="{% url 'students_create' %}">
-            {% else %}
-                <form class="col s12" id="form-update-students" method="post" action="{% url 'students_update' object.pk %}">
-            {% endif %}
-                    {% csrf_token %}
-                    <div class="row">
-                        <div class="grid-example col s2">
-                        </div>
-                        <div class="grid-example col s3">
-                            <div class="validate-input">
-                                <label>{% trans "Name" %}</label>
-                                {{form.name}}
-                                <div class="form-errors">
-                                    {{ form.name.errors }}
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid-example col s5">
-                            <div class="validate-input">
-                                <label>{% trans "Surname" %}</label>
-                                {{form.surname}}
-                                <div class="form-errors">
-                                    {{ form.surname.errors }}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="grid-example col s2">
-                        </div>
-                        <div class="grid-example col s8">
-                            <div class="validate-input">
-                                <label>{% trans "Birthdate" %}</label>
-                                {{form.birthdate}}
-                                <div class="form-errors">
-                                    {{ form.birthdate.errors }}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="grid-example col s2">
-                        </div> 
-                        <div class="grid-example col s8">
-                            <div class="validate-input">
-                                <label>{% trans "Initials" %}</label>
-                                {{form.initials}}
-                                <div class="form-errors">
-                                    {{ form.initials.errors }}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<div class="div-container" >
+	<div style=" border-radius: 10px;  box-shadow: 2px 2px 10px #666;">
+    {% if request.get_full_path == '/students/create' %}
+        <div class="center"  style="background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);padding-top:1px; border-top-right-radius: 10px; border-top-left-radius:10px;">
+            <h3 class="h3-title">
+                {% trans "Create Student" %}  
+            </h3>
+        </div>
+    {% else %}
+        <div class="center" style="background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%); padding-top:1px; border-top-right-radius: 10px; border-top-left-radius:10px; ">
+        <h3 class="h3-title">
+            {% trans "Edit Student" %}  
+        </h3>
+        </div>  
+    {% endif %}
+        <div id="form-generic" class="container">
+            <div class="row">
+                <div class="grid-example col s10 xl11 offset-s1">
+                    <div class="center-form">
                     {% if request.get_full_path == '/students/create' %}
-                    <div class="row">
-                        <button class="btn waves-effect right" type="submit" name="action">{% trans "Create" %}
-                            <i class="large material-icons right"><i >send</i></i>
-                        </button>
-                    </div>
+                        <form class="col s12" id="form-create-students" method="post" action="{% url 'students_create' %}">
                     {% else %}
-                    <div class="row">
-                        <button class="btn waves-effect right" style="background-color:#29b6f6" type="submit" name="action">{% trans "Edit" %}
-                            <i class="large material-icons right"><i >send</i></i>
-                        </button>
-                    </div>
+                        <form class="col s12" id="form-update-students" method="post" action="{% url 'students_update' object.pk %}">
                     {% endif %}
-                </form>
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="grid-example col s1 xl2">
+                                </div>
+                                <div class="grid-example col s4 xl3">
+                                    <div class="validate-input">
+                                        <label>{% trans "Name" %}</label>
+                                        {{form.name}}
+                                        <div class="form-errors">
+                                            {{ form.name.errors }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grid-example col s6 xl5">
+                                    <div class="validate-input">
+                                        <label>{% trans "Surname" %}</label>
+                                        {{form.surname}}
+                                        <div class="form-errors">
+                                            {{ form.surname.errors }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="grid-example col s1 xl2">
+                                </div>
+                                <div class="grid-example col s10 xl8">
+                                    <div class="validate-input">
+                                        <label>{% trans "Birthdate" %}</label>
+                                        {{form.birthdate}}
+                                        <div class="form-errors">
+                                            {{ form.birthdate.errors }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="grid-example col s1 xl2">
+                                </div> 
+                                <div class="grid-example col s10 xl8">
+                                    <div class="validate-input">
+                                        <label>{% trans "Initials" %}</label>
+                                        {{form.initials}}
+                                        <div class="form-errors">
+                                            {{ form.initials.errors }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <a onclick="location.href='{% url 'students_list' %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
+                            {% if request.get_full_path == '/students/create' %}
+                                <button class="btn waves-effect right" type="submit" name="action">{% trans "Create" %}
+                                    <i class="large material-icons right"><i >send</i></i>
+                                </button>
+                            </div>
+                            {% else %}
+                                <button class="btn waves-effect right" style="background-color:#29b6f6" type="submit" name="action">{% trans "Edit" %}
+                                    <i class="large material-icons right"><i >send</i></i>
+                                </button>
+                            </div>
+                            {% endif %}
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

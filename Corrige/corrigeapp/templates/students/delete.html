@@ -1,8 +1,14 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% block content %}
-
-<div  id="top-bot" class="container">
+<div class="div-container" >
+	<div style="background-color:white; border-radius: 10px;  box-shadow: 2px 2px 10px #666;">
+        <div class="center"  style="background-color:#f05060; padding-top:1px; border-top-right-radius: 10px; border-top-left-radius:10px; color:white;">
+        <h3 style="text-align:center; padding-bottom:20px;">
+            {% trans "Delete Student" %}  
+        </h3>
+        </div>
+        <div  style="padding-bottom:15px;" class="container">
     <form action="{% url 'students_delete' object.pk %}" method="post">
         {% csrf_token %}
         <h1 class="center title-delete flow-text">{% trans "Are you sure about deleting the student " %} <a>{{object.name}} {{object.surname}}</a>?</h1>
@@ -16,6 +22,8 @@
             </button>
         </div>
     </form>
+</div>
+</div>
 </div>
 
 

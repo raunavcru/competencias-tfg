@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %} 
+<div class="container">
+{% if no_copy_list %}  
+    <h4 class="centered">{% trans "List of activities" %}</h4>
+{% else %}
+<h4 class="centered">{% trans "List of all activities" %}</h4>
+{% endif %}
+{% if no_copy_list %}  
+    <a style="border-radius:5px" href="{% url 'activities_create' set_pk %}" class="right teal lighten-2 waves-effect waves-light btn-small">{% trans "Create activity" %}</a>
+    <a style="border-radius:5px; margin-right:20px;" href="{% url 'activities_list_copy' set_pk %}" class="right teal lighten-2 waves-effect waves-light btn-small">{% trans "Copy activity" %}</a>    
+{% endif %}    
+        <table class="highlight">
+            <caption></caption>
+                <thead>
+                    <tr>
+                        <th class="td-none" id=""></th>
+                        <th id="title">{% trans "Title" %}</th>
+                        <th class="td-none" id="date">{% trans "Date" %}</th>
+                    {% if no_copy_list %} 
+                        <th class="center" id="weight">{% trans "Weight" %}</th>
+                        <th class="td-none" id="evaluation">{% trans "Evaluation" %}</th>
+                    {% else %}
+                        <th class="td-none" id="evaluation">{% trans "Evaluation" %}</th>
+                        <th id="subject">{% trans "Subject" %}</th>
+                    {% endif %}
+                        <th class="center" id="is_recovery">{% trans "Recovery" %}</th>
+                        <th class="center td-none" id="list">{% trans "List of exercises" %}</th>
+                    {% if no_copy_list %}
+                        <th class="center td-none" id="button">{% trans "Edit" %}</th>
+                        <th class="center td-none" id="delete">{% trans "Delete" %}</th>
+                    {% else %}
+                        <th class="center td-none" id="copy">{% trans "Copy" %}</th>
+                    {% endif %}
+                    <th class="center display-mobile" id="actions">{% trans "Actions" %}</th>
+                    </tr>
+                </thead>
+            {% for object in activities_list %}
+                    <tbody>
+                        <tr class="center">
+                            <td class="td-none"><i class="material-icons" style="color:#BBBBBB">account_circle</i></td>
+                            <td>{{object.title}}</td>
+                            <td class="td-none">{{object.date}}</td>
+                            {% if no_copy_list %}
+                            <td class="center">{{object.weight}}</td>
+                            <td class="td-none">{{object.evaluation}}</td>
+                            {% else %}
+                            <td class="td-none">{{object.evaluation}}</td>
+                            <td>{{object.subject}}</td>
+                            {% endif %}
+                            <td class="center dropdown-trigger">
+                                {% if object.is_recovery %} 
+                                    <em class="material-icons" style="color:#2d572c">check</em>
+                                {% else %}
+                                    <em class="material-icons" style="color:#e53935">close</em>
+                                {% endif %}
+                            </td>
+                        {% if no_copy_list %}    
+                            <td class="center dropdown-trigger td-none" onclick="location.href='{% url 'exercises_list' type=1 pk=object.pk %}'"><em class="material-icons" style="color:#e53935">rate_review</em></td>
+                            <td class="center dropdown-trigger td-none" type="button" onclick="location.href='{% url 'activities_update' object.pk %}'"><em class="material-icons" style="color:#29b6f6">create</em></td>
+                            <td class="center dropdown-trigger td-none" onclick="location.href='{% url 'activities_delete' object.pk %}'"><em class="material-icons" style="color:#e53935">delete</em></td>
+                        {% else %}
+                            <td class="center dropdown-trigger td-none" onclick="location.href='{% url 'exercises_list' type=2 pk=object.pk %}'"><em class="material-icons" style="color:#e53935">rate_review</em></td>
+                            <td class="center dropdown-trigger td-none" onclick="location.href='{% url 'activities_copy' pk=object.pk id=set_pk %}'"><em class="material-icons" style="color:#29b6f6">content_copy</em></td>
+                        {% endif %}
+                            <td class="center dropdown-trigger modal-trigger display-mobile" href="#modal{{object.pk}}" type="button"><em class="material-icons" style="color:#e53935">chat_bubble_outline</em></td> 
+                            
+                            <div id="modal{{object.pk}}" class="modal center" style="border-radius: 10px;  box-shadow: 2px 2px 10px #666;">
+                                <div class="modal-content">
+                                    <h3 class="center" >{% trans "Actions" %}</h3>
+                                    <hr>
+                                    {% if no_copy_list %}    
+                                    <h6>{% trans "List of exercises" %}</h6>
+                                    <a class="center dropdown-trigger" onclick="location.href='{% url 'exercises_list' type=1 pk=object.pk %}'"><em class="material-icons" style="color:#e53935">rate_review</em></a>
+                                    <h6>{% trans "Edit" %}</h6>
+                                    <a class="center dropdown-trigger" type="button" onclick="location.href='{% url 'activities_update' object.pk %}'"><em class="material-icons" style="color:#29b6f6">create</em></a>
+                                    <h6>{% trans "Delete" %}</h6>
+                                    <a class="center dropdown-trigger" onclick="location.href='{% url 'activities_delete' object.pk %}'"><em class="material-icons" style="color:#e53935">delete</em></a>
+                                    {% else %}
+                                    <h6>{% trans "List of exercises" %}</h6>
+                                    <a class="center dropdown-trigger" onclick="location.href='{% url 'exercises_list' type=2 pk=object.pk %}'"><em class="material-icons" style="color:#e53935">rate_review</em></a>
+                                    <h6>{% trans "Copy" %}</h6>
+                                    <a class="center dropdown-trigger" onclick="location.href='{% url 'activities_copy' pk=object.pk id=set_pk %}'"><em class="material-icons" style="color:#29b6f6">content_copy</em></a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </tr>
+                    </tbody>
+            {% endfor %}
+        </table>
+{% include 'paginate.html' %}
+{% if no_copy_list %}  
+    <a onclick="location.href='{% url 'my_sets_list' %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
+{% else %}
+    <a onclick="location.href='{% url 'activities_list' set_pk %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
+{% endif %}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems);
+    });
+</script>
+{% endblock %}

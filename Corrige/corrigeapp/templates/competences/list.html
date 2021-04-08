@@ -2,6 +2,8 @@
 {% load static %}
 {% load i18n %}
 {% block content %}
+
+<div class="container">
     {% if listall_level2 or list_level2 %}
     <h4 class="centered">{% trans "List of competences level 2" %}</h4>
     {% elif listall_level3 %}
@@ -10,10 +12,10 @@
     <h4 class="centered">{% trans "List of competences level 1" %}</h4>
     {% endif %}
     {% if list_level2 or list_level1%}
-        <a style="border-radius:5px" href="{% url 'competences_relation2' competence_pk %}" class="right teal lighten-2 waves-effect waves-light btn-small">{% trans "Create competence" %}</a>
+        <a style="border-radius:5px" href="{% url 'competences_relation2' competence_pk %}" class="right teal lighten-2 waves-effect waves-light btn-small">{% trans "Create competence" %}<i class="material-icons right">add</i></a>
     {% endif %}
     {% if listall_level3 %}
-        <a style="border-radius:5px" href="{% url 'competences_create' %}" class="right teal lighten-2 waves-effect waves-light btn-small">{% trans "Create competence" %}</a>
+        <a style="border-radius:5px" href="{% url 'competences_create' %}" class="right teal lighten-2 waves-effect waves-light btn-small">{% trans "Create competence" %}<i class="material-icons right">add</i></a>
     {% endif %}
         <table class="highlight">
             <caption></caption>
@@ -36,12 +38,18 @@
                     <tbody>
                         <tr class="center">
                             <td>{{object.code}}</td> 
-                            <td style="width:300px">{{object.name}}</td>
-                            <td style="width:500px">{{object.description}}</td>                            
+                            <td id="nameCompetence" >{{object.name}}</td>
+                            <td style="width:500px">{{object.description}}</td>      
+                            {% if listall_level1 or listall_level2 or listall_level3 %}                       
                             <td class="center dropdown-trigger"  onclick="location.href='{% url 'competences_update' object.pk %}'"><em class="material-icons" style="color:#29b6f6">create</em></td>
-                            <td class="center dropdown-trigger"  onclick="location.href='{% url 'competences_delete' object.pk %}'"><em class="material-icons" style="color:#e53935">delete</em></td>
+                            <td class="center dropdown-trigger" onclick="location.href='{% url 'competences_delete' object.pk %}'"><em class="material-icons" style="color:#e53935">delete</em></td>
+                            {% else %}   
+                            <td class="center dropdown-trigger"  onclick="location.href='{% url 'competences_update_child' id=competence_pk pk=object.pk %}'"><em class="material-icons" style="color:#29b6f6">create</em></td>
+                            <td class="center dropdown-trigger"  onclick="location.href='{% url 'competences_delete_child' id=competence_pk pk=object.pk %}'"><em class="material-icons" style="color:#e53935">delete</em></td>
+                            {% endif %}  
+                            
                             {% if listall_level2 or list_level2 or listall_level3 %} 
-                            <td class="center dropdown-trigger"  onclick="location.href='{% url 'competences_relation' object.pk %}'"><em class="material-icons" style="color:#66bb6a">fast_forward</em></td>
+                            <td class="center dropdown-trigger"  onclick="location.href='{% url 'competences_list_child' object.pk %}'"><em class="material-icons" style="color:#66bb6a">fast_forward</em></td>
                             {% endif %}
                         </tr>
                     </tbody>
@@ -50,5 +58,23 @@
             </tbody>
         </table>
         {% include 'paginate.html' %}
-          
+    {% if listall_level3 or listall_level2 or listall_level1 %}    
+    <a onClick="location.href='{% url 'home' %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
+    {% elif list_level2 %}
+    <a onClick="location.href='{% url 'competences_list3' %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
+    {% else %} 
+    <a onClick="location.href='{% url 'competences_list_child' pk=parent_pk %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
+    {% endif %} 
+</div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems);
+    });
+
+</script>
+
+
 {% endblock %}

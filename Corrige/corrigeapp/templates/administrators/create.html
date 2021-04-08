@@ -1,80 +1,97 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% block content %}
-<div id="form-generic" class="container">
-    <divclass="row">
-        <div class="grid-example col s11 offset-s1">
-            <div class="center-form">
-            {% if request.get_full_path == '/administrators/create' %}
-                <form class="col s12" id="form-create-administrator" method="post" action="{% url 'administrators_create' %}">
-            {% else %}
-                <form class="col s12" id="form-create-administrator" method="post" action="{% url 'administrators_update' object.pk %}">
-            {% endif %}
-                    {% csrf_token %}
-                    
-                    {% include 'user_name_form.html' %}
 
-                    <div class="row">
-                        <div class="grid-example col s2">
-                        </div>
-                        <div class="grid-example col s5">
-                            <div class="validate-input">
-                                <label>{% trans "Birthdate" %}</label>
+<div class="div-container" >
+	<div style=" border-radius: 10px;  box-shadow: 2px 2px 10px #666;">
+    {% if request.get_full_path == '/administrators/create' %}
+        <div class="center"  style="background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);padding-top:1px; border-top-right-radius: 10px; border-top-left-radius:10px;">
+            <h3 style="text-align:center; padding-bottom:20px;">
+                {% trans "Create Administrator" %}  
+            </h3>
+        </div>
+    {% else %}
+        <div class="center" style="background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%); padding-top:1px; border-top-right-radius: 10px; border-top-left-radius:10px; ">
+        <h3 style="text-align:center; padding-bottom:20px;">
+            {% trans "Edit Administrator" %}  
+        </h3>
+        </div>  
+    {% endif %}
+    <div id="form-generic" class="container">
+        <div class="row">
+            <div class="grid-example col s11 offset-s1">
+                <div class="center-form">
+                {% if request.get_full_path == '/administrators/create' %}
+                    <form style="padding-right:80px;" id="form-create-administrator" method="post" action="{% url 'administrators_create' %}">
+                {% else %}
+                    <form style="padding-right:80px;" id="form-create-administrator" method="post" action="{% url 'administrators_update' object.pk %}">
+                {% endif %}
+                        {% csrf_token %}
+                        
+                        {% include 'user_name_form.html' %}
+
+                        <div class="row">
+                            <div class="grid-example col xl2">
+                            </div>
+                            <div class="grid-example col s5 xl5">
+                                <div class="validate-input">
+                                    <label>{% trans "Birthdate" %}</label>
+                                    {% if request.get_full_path == '/administrators/create' %}
+                                        {{form.birthdate}}
+                                        {{form.birthdate.errors}}
+                                    {% else %}
+                                    <div class="form-errors">
+                                        {{administrator_form.birthdate}}
+                                        {{administrator_form.birthdate.errors}}
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="grid-example col s5 xl3">
+                                <div class="validate-input">
+                                    <label>{% trans "Initials" %}</label>
                                 {% if request.get_full_path == '/administrators/create' %}
-                                    {{form.birthdate}}
-                                    {{form.birthdate.errors}}
+                                    {{form.initials}}
+                                    {{form.initials.errors}}
                                 {% else %}
-                                <div class="form-errors">
-                                    {{administrator_form.birthdate}}
-                                    {{administrator_form.birthdate.errors}}
-                                </div>
+                                    <div class="form-errors">
+                                        {{administrator_form.initials}}
+                                        {{administrator_form.initials.errors}}
+                                    </div>
                                 {% endif %}
-                            </div>
-                        </div>
-                        <div class="grid-example col s3">
-                            <div class="validate-input">
-                                <label>{% trans "Initials" %}</label>
-                            {% if request.get_full_path == '/administrators/create' %}
-                                {{form.initials}}
-                                {{form.initials.errors}}
-                            {% else %}
-                                <div class="form-errors">
-                                    {{administrator_form.initials}}
-                                    {{administrator_form.initials.errors}}
                                 </div>
-                            {% endif %}
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="grid-example col s2">
-                        </div>
-                        <div class="grid-example col s8">
-                            <div class="validate-input">    
-                                <label>Email</label>
-                                {{form.email}}
-                                {{form.email.errors}}
+                        <div class="row">
+                            <div class="grid-example col xl2">
                             </div>
+                            <div class="grid-example col s10 xl8">
+                                <div class="validate-input">    
+                                    <label>Email</label>
+                                    {{form.email}}
+                                    {{form.email.errors}}
+                                </div>
+                            </div>
+                        </div> 
+                        {% if request.get_full_path == '/administrators/create' %}
+                            {% include 'user_userpass_form.html' %}
+                        {% endif %}  
+                        <div class="row">
+                            <a onclick="location.href='{% url 'administrators_list' %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
+                        {% if request.get_full_path == '/administrators/create' %}
+                            <button class="btn waves-effect right" type="submit" name="action">{% trans "Create" %}
+                                <i class="large material-icons right"><i >send</i></i>
+                            </button>
                         </div>
-                    </div> 
-                    {% if request.get_full_path == '/administrators/create' %}
-                        {% include 'user_userpass_form.html' %}
-                    {% endif %}  
+                        {% else %}
+                            <button class="btn waves-effect right " style="background-color:#29b6f6" type="submit" name="action">{% trans "Edit" %}
+                                <i class="large material-icons right"><i >send</i></i>
+                            </button>
+                        </div>
+                        {% endif %}
 
-                    {% if request.get_full_path == '/administrators/create' %}
-                    <div class="row">
-                        <button class="btn waves-effect right" type="submit" name="action">{% trans "Create" %}
-                            <i class="large material-icons right"><i >send</i></i>
-                        </button>
-                    </div>
-                    {% else %}
-                    <div class="row">
-                        <button class="btn waves-effect right" style="background-color:#29b6f6" type="submit" name="action">{% trans "Edit" %}
-                            <i class="large material-icons right"><i >send</i></i>
-                        </button>
-                    </div>
-                    {% endif %}
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

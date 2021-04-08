@@ -1,9 +1,10 @@
 {% load i18n %}
-<th id=""></th>
+{% load static %}
+<th class="td-none" id=""></th>
 <th id="surname">{% trans "Surname" %}</th>
 <th id="name">{% trans "Name" %}</th>
 <th id="initials">{% trans "Initials" %}</th>
-<th id="birthdate">{% trans "Birthdate" %}</th>
-<th id="email">Email</th>
-<th class="center" id="button">{% trans "Edit" %}</th>
-<th class="center" id="delete" >{% trans "Delete" %}</th>
+<th id="birthdate" class="th-none">{% trans "Birthdate" %}</th>
+<th id="email" class="th-none">Email</th>
+<th class="center td-none" id="button">{% trans "Edit" %}</th>
+<th class="center td-none" id="delete" >{% trans "Delete" %}</th>
