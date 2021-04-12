@@ -32,8 +32,7 @@ urlpatterns = [
     path('competences/<int:pk>/list', views.CompetencesListChildView.as_view(), name='competences_list_child'),
     path('competences/<int:pk>/create', views.CompetenceCreateChildView.as_view(), name='competences_relation2'),
     path('competences/<int:id>/<int:pk>/delete', views.CompetencesDeleteView.as_view(), name='competences_delete_child'),
-    path('competences/<int:id>/<int:pk>/update', views.CompetenceUpdateView.as_view(), name = 'competences_update_child'),    
-    path('competences/<int:id>/<int:pk>/student', views.MarkCompetenceEvaluationList.as_view(), name = 'competences_student_lits'),    
+    path('competences/<int:id>/<int:pk>/update', views.CompetenceUpdateView.as_view(), name = 'competences_update_child'),       
 
     path('exercises/<int:pk>/create', views.ExerciseCreateView.as_view(), name = 'exercises_create'),
     path('exercises/<int:pk>/delete', views.ExerciseDeleteView.as_view(), name = 'exercises_delete'),
@@ -53,6 +52,7 @@ urlpatterns = [
     path('evaluations/<int:pk>/list', views.EvaluationsListPartialView.as_view(), name = 'evaluations_list_partial'),
     path('evaluations/<int:pk>/update', views.EvaluationUpdateView.as_view(), name = 'evaluations_update'),
 
+    path('marks/competence_evaluation/<int:id>/<int:pk>/list', views.MarkCompetenceEvaluationList.as_view(), name = 'competences_student_lits'), 
     path('marks/activities/<int:pk>/create', views.MarkActivityCreateView.as_view(), name = 'marks_activities_create'),
     path('marks/activities/<int:sk>/<int:id>/<int:pk>/list', views.MarkActivityListView.as_view(), name = 'marks_activities_list'),
     path('marks/competences/<int:id>/<int:pk>/create', views.MarkCompetenceCreateView.as_view(), name = 'marks_competences_create'),

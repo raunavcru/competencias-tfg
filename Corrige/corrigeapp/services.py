@@ -311,10 +311,6 @@ class MarkService():
 
         competence_list = models.Competence.objects.filter(competences__subject_set = set_object)
         competence_evaluation_list = models.Competence_evaluation.objects.filter(competence__competences__subject_set = set_object, student = student)
-        print("=================================================================")
-        print(competence_list.count())
-        print("=================================================================")
-        print(competence_evaluation_list.count())
 
         if not competence_list.count() == competence_evaluation_list.count():
             for competence in competence_list:
