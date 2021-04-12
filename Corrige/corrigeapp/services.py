@@ -307,6 +307,17 @@ class MarkService():
 
         self.calculate_activity_mark(activity = exercise_mark.exercise.activity, student=exercise_mark.student)
 
+    def create_competence_evaluation(self, set_object: models.Set, student: models.Student) -> None:
+
+        competence_list = models.Competence.objects.filter(competences__subject_set = set_object)
+        competence_evaluation_list = models.Competence_evaluation.objects.filter(competence__competences__subject_set = set_object, student = student)
+
+        if not competence_list.count() == competence_evaluation_list.count():
+            for competence in competence_list:
+                if not models.Competence_evaluation.objects.filter(competence = competence, student = student).exists():
+                    competence_evaluation = models.Competence_evaluation.objects.create(competence = competence, student = student)
+                    competence_evaluation.save()
+                    
     def mark_activity_mark(self, mark: float, activity_mark: models.Activity_mark) -> None:
         activity_mark.manual_mark = mark
         activity_mark.evaluation_type = "MANUAL"
