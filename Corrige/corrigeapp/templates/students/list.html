@@ -19,7 +19,8 @@
                         <th class="center" id="button">{% trans "Edit" %}</th>
                         <th class="center" id="delete">{% trans "Delete" %}</th>
                     {% else %}
-                        <th class="center" id="delete">{% trans "Marks" %}</th>
+                        <th class="center" id="competencs_list">{% trans "Competences" %}</th>
+                        <th class="center" id="marks">{% trans "Marks" %}</th>
                     {% endif %}
                     </tr>
                 </thead>
@@ -34,6 +35,7 @@
                             <td class="center dropdown-trigger" type="button" onclick="location.href='{% url 'students_update' object.pk %}'"><em class="material-icons" style="color:#29b6f6">create</em></td>
                             <td class="center dropdown-trigger" onclick="location.href='{% url 'students_delete' object.pk %}'"><em class="material-icons" style="color:#e53935">delete</em></td>
                         {% else %}
+                            <td class="center dropdown-trigger" onclick="location.href='{% url 'marks_competence_evaluations_list' pk=set_object_pk id=object.pk %}'"><em class="material-icons" style="color:#ec407a">library_books</em></td>
                             <td class="center dropdown-trigger" onclick="location.href='{% url 'marks_evaluations_list' id=set_object_pk pk=object.pk %}'"><em class="material-icons" style="color:#e53935">rate_review</em></td>
                         {% endif %}
                         </tr>
