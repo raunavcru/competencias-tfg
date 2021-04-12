@@ -1205,41 +1205,7 @@ class EvaluationUpdateView(generic.UpdateView):
         else:
             return redirect('evaluations_list_partial', pk=evaluation.parent.pk ) 
 
-# Marks
-
-@method_decorator(login_required, name='dispatch')
-class MarkCompetenceEvaluationList(generic.ListView):
-    model = models.Competence_evaluation
-    template_name = 'competences/list_student_competence.html'
-    context_object_name = 'competence_student_list'
-    paginate_by = 5
-
-    def get(self, request, *args, **kwargs):
-        set_pk = self.kwargs.get('pk')
-        set_object = models.Set.objects.get(pk=set_pk)
-        student_pk = self.kwargs.get('id')
-        student_object = models.Student.objects.get(pk=student_pk)
-        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
-            services.MarkService().create_competence_evaluation(set_object = set_object, student =student_object)
-            return super(MarkCompetenceEvaluationList, self).get(self, request, *args, **kwargs)
-        else:
-            return redirect('/')
-
-    def get_context_data(self, **kwargs):
-        context = super(MarkCompetenceEvaluationList, self).get_context_data(**kwargs)
-        student_pk = self.kwargs.get('id')
-        student_object = models.Student.objects.get(pk=student_pk)
-        context['student'] = student_object
-        return context
-
-    def get_queryset(self):
-        set_pk = self.kwargs.get('pk')
-        set_object = models.Set.objects.get(pk=set_pk)
-        student_pk = self.kwargs.get('id')
-        student_object = models.Student.objects.get(pk=student_pk)
-        competence_evaluation_ls = models.Competence_evaluation.objects.filter(competence__competences__subject_set=set_object, student=student_object).order_by("competence__level")
-        return competence_evaluation_ls
-        
+# Marks 
 @method_decorator(login_required, name='dispatch')
 class MarkActivityCreateView(generic.UpdateView):
     model = models.Activity_mark
@@ -1363,6 +1329,42 @@ class MarkCompetenceCreateView(generic.UpdateView):
         else:
             return redirect('/')
 
+@method_decorator(login_required, name='dispatch')
+class MarkCompetenceEvaluationList(generic.ListView):
+    model = models.Competence_evaluation
+    template_name = 'competence_evaluations/list.html'
+    context_object_name = 'competence_student_list'
+    paginate_by = 5
+
+    def get(self, request, *args, **kwargs):
+        set_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_pk)
+        student_pk = self.kwargs.get('id')
+        student_object = models.Student.objects.get(pk=student_pk)
+        exist = models.Set.objects.filter(pk = set_pk, students = student_object).exists()
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object) and exist:
+            services.MarkService().create_competence_evaluation(set_object = set_object, student = student_object)
+            return super(MarkCompetenceEvaluationList, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        set_pk = self.kwargs.get('pk')
+        student_pk = self.kwargs.get('id')
+        student_object = models.Student.objects.get(pk=student_pk)
+        context = super(MarkCompetenceEvaluationList, self).get_context_data(**kwargs)
+        context['student'] = student_object
+        context['set_pk'] = set_pk
+        return context
+
+    def get_queryset(self):
+        set_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_pk)
+        student_pk = self.kwargs.get('id')
+        student_object = models.Student.objects.get(pk=student_pk)
+        competence_evaluation_ls = models.Competence_evaluation.objects.filter(competence__competences__subject_set=set_object, student=student_object).order_by("competence__level", "competence__code")
+        return competence_evaluation_ls
+
 @method_decorator(login_required, name='dispatch')        
 class MarkCompetenceListView(generic.ListView):
     model = models.Competence_mark
@@ -1454,8 +1456,9 @@ class MarkEvaluationListView(generic.ListView):
         set_object = models.Set.objects.get(pk=set_pk)
         student_pk = self.kwargs.get('pk')
         student_object = models.Student.objects.get(pk=student_pk)
-        exist = models.Set.objects.filter(pk=set_pk, students=student_object).exists()
+        exist = models.Set.objects.filter(pk = set_pk, students = student_object).exists()
         if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object) and exist:
+            services.MarkService().create_competence_evaluation(set_object = set_object, student = student_object)
             return super(MarkEvaluationListView, self).get(self, request, *args, **kwargs)
         else:
             return redirect('/')

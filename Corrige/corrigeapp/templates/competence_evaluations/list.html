@@ -10,19 +10,19 @@
                 <thead>
                     <tr>
                         <th id="competence">{% trans "Code" %}</th>
-                        <th id="competence">{% trans "Level" %}</th>
-                        <th id="mark">{% trans "Mark" %}</th>
+                        <th class="center" id="level">{% trans "Level" %}</th>
+                        <th class="center" id="mark">{% trans "Mark" %}</th>
                     </tr>
                 </thead>
                 {% for object in competence_student_list %} 
                     <tbody>
                         <tr class="center">
                             <td>{{object.competence.code}}</td>
-                            <td>{{object.competence.level}}</td>
+                            <td class="center">{{object.competence.level}}</td>
                                 {% if object.mark or object.mark == 0%}
-                                    <td>{{object.mark}}</td>                                 
+                                    <td class="center">{{object.mark}}</td>                                 
                                 {% else %}
-                                    <td>-</td>
+                                    <td class="center">-</td>
                                 {% endif %}
                         </tr>
                     </tbody>
@@ -30,7 +30,6 @@
             </tbody>
         </table>
         {% include 'paginate.html' %}
+<a onClick="location.href='{% url 'sets_student_list' set_pk %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
 </div>
-
-
 {% endblock %}
