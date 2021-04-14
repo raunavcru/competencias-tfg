@@ -1,12 +1,12 @@
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.views import PasswordChangeView
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render, redirect
 from django.urls import reverse, reverse_lazy
 from django.utils.decorators import method_decorator
 from django.utils.translation import activate, get_language
 from django.views import generic
-
 
 from . import forms
 from . import models
@@ -1614,42 +1614,6 @@ class MySetsListView(generic.ListView):
         queryset = models.Set.objects.filter(teacher__user=self.request.user).order_by('name')
         return queryset
 
-# Profile
-@method_decorator(login_required, name='dispatch')
-class UserUpdateView(generic.UpdateView):
-    template_name = 'profile/update.html'
-    model = User
-    form_class = forms.UserForm
-    profile_form_class = forms.UserProfileForm
-    success_url = reverse_lazy('home')
-
-    def get_context_data(self, **kwargs):
-        context = super(UserUpdateView,self).get_context_data(**kwargs)
-        if self.request.POST:
-            context['profile_form'] = self.profile_form_class(
-                self.request.POST, instance=self.object.profile)
-        else:
-            context['profile_form'] = self.profile_form_class(
-                instance=self.object.profile)
-        return context
-
-    def get_object(self):
-        return self.request.user
-
-    def post(self, request, *args, **kwargs):
-        self.object = self.get_object()
-        form = self.form_class(request.POST, instance=self.object)
-        profile_form = self.profile_form_class(
-            request.POST, request.FILES, instance=self.object.profile)
-        if form.is_valid() and profile_form.is_valid():
-            user = form.save()
-            profile_form.save(user)
-
-            return redirect(self.get_success_url())
-        else:
-            return self.render_to_response(
-                self.get_context_data(form=form, profile_form=profile_form))
-
 # Sets
 @method_decorator(login_required, name='dispatch') 
 class SetAssignStudentView(generic.TemplateView):
@@ -2151,3 +2115,45 @@ class TeacherUpdateView(generic.UpdateView):
             return self.render_to_response(
                 self.get_context_data(form=form, profile_form=teacher_form))
 
+# User and Profile
+@method_decorator(login_required, name='dispatch')
+class UserUpdateView(generic.UpdateView):
+    template_name = 'profile/update.html'
+    model = User
+    form_class = forms.UserForm
+    profile_form_class = forms.UserProfileForm
+    success_url = reverse_lazy('home')
+
+    def get_context_data(self, **kwargs):
+        context = super(UserUpdateView,self).get_context_data(**kwargs)
+        if self.request.POST:
+            context['profile_form'] = self.profile_form_class(
+                self.request.POST, instance=self.object.profile)
+        else:
+            context['profile_form'] = self.profile_form_class(
+                instance=self.object.profile)
+        return context
+
+    def get_object(self):
+        return self.request.user
+
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        form = self.form_class(request.POST, instance=self.object)
+        profile_form = self.profile_form_class(
+            request.POST, request.FILES, instance=self.object.profile)
+        if form.is_valid() and profile_form.is_valid():
+            user = form.save()
+            profile_form.save(user)
+
+            return redirect(self.get_success_url())
+        else:
+            return self.render_to_response(
+                self.get_context_data(form=form, profile_form=profile_form))
+
+@method_decorator(login_required, name='dispatch')
+class UserPasswordUpdateView(PasswordChangeView):
+    template_name = 'profile/password.html'
+    model = User
+    form_class = forms.UserPasswordUpdateForm
+    success_url = reverse_lazy('home')

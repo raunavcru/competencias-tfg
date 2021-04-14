@@ -2,10 +2,11 @@ from django import forms
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm, UserChangeForm, UserCreationForm
+from django.contrib.auth.hashers import check_password
+from django.contrib.auth.password_validation import password_validators_help_texts
 from django.core.exceptions import ValidationError
 from django.utils.timezone import now
 from django.utils.translation import get_language, activate
-from django.contrib.auth.hashers import check_password
 
 from . import models
 from . import services
@@ -842,7 +843,6 @@ class UserForm(UserChangeForm):
         attrs={'placeholder': 'alberto26', 'id': 'username-update-profile'}))
     email = forms.EmailField(required=True, widget=forms.TextInput(
         attrs={'placeholder': 'alberto@gmail.com', 'id': 'email-update-profile'}))
-    
 
     class Meta:
         model = User
@@ -851,7 +851,22 @@ class UserForm(UserChangeForm):
             'last_name',
             'username', 
             'email', 
-            
+        )
+
+class UserPasswordUpdateForm(PasswordChangeForm):
+    old_password = forms.CharField(required=True, widget=forms.PasswordInput(
+        attrs={'placeholder': '*************', 'id': 'old_password'}))
+    new_password1 = forms.CharField(required=True, widget=forms.PasswordInput(
+        attrs={'placeholder': '*************', 'id': 'new_password1'}), help_text=password_validators_help_texts())
+    new_password2 = forms.CharField(required=True, widget=forms.PasswordInput(
+        attrs={'placeholder': '*************', 'id': 'new_password2'}))
+
+    class Meta:
+        model = User
+        fields = (
+            'old_password', 
+            'new_password1',
+            'new_password2',
         )
 
 class UserProfileForm(UserChangeForm):
