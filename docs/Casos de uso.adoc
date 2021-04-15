@@ -675,7 +675,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-31**  Listar sus alumnos.
 
-| Versión: 1.0 (01/12/2020)
+| Versión: 1.1 (15/04/2021)
 
 | Precondición: El profesor ha seleccionado el tipo de evaluación.
 
@@ -1164,7 +1164,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-50** Listado de bloques (evaluaciones).
 
-| Versión: 1.0 (15/04/2021)
+| Versión: 1.1 (15/04/2021)
 
 | Precondición: El profesor ha seleccionado el tipo de evaluación.
 
