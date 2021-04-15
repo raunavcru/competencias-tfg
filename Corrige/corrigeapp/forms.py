@@ -48,6 +48,10 @@ MESSAGE_DESCRIPTION_EN = 'Description can not be longer of 100 characters'
 MESSAGE_DESCRIPTION = 'El tamaño de la descripción no puede ser mayor que 100'
 MESSAGE_CODE_EN = 'Code can not be longer of 50 characters'
 MESSAGE_CODE = 'El tamaño del código no puede ser mayor que 50'
+MESSAGE_WEIGHT_EN = 'Weight must be between 0.00 and 1.00.'
+MESSAGE_WEIGHT = 'Peso debe estar entre 0.00 y 1.00.'
+MESSAGE_INTENSITY_EN = 'Intensity must be between 0.00 and 1.00.'
+MESSAGE_INTENSITY = 'Intensidad debe estar entre 0.00 y 1.00.'
 PLACEHOLDER_NAME_EVALUATION = 'Matemáticas 5º Primaria'
 PLACEHOLDER_PERIOD_EVALUATION = '1er Trimestre'
 
@@ -87,7 +91,18 @@ class ActivityUpdateForm(forms.ModelForm):
             'weight',
             'evaluation',
             'is_recovery',
-        )   
+        )
+
+    def clean_weight(self):
+        weight = self.cleaned_data.get('weight')
+        if float(weight) < 0.00 or float(weight) > 1.00:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_WEIGHT_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_WEIGHT)
+        return weight   
 
 # Administrator
 class AdministratorUpdateForm(forms.ModelForm):
@@ -161,6 +176,17 @@ class BlockCreateChildForm(forms.ModelForm):
             'start_date',
             'end_date',
         )
+    
+    def clean_weight(self):
+        weight = self.cleaned_data.get('weight')
+        if float(weight) < 0.00 or float(weight) > 1.00:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_WEIGHT_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_WEIGHT)
+        return weight  
 
 # Competences
 class CompetenceCreateForm(forms.ModelForm):
@@ -215,6 +241,17 @@ class CompetenceCreateForm(forms.ModelForm):
                 raise ValidationError(
                     MESSAGE_NAME)
         return name
+    
+    def clean_weight(self):
+        weight = self.cleaned_data.get('weight')
+        if float(weight) < 0.00 or float(weight) > 1.00:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_WEIGHT_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_WEIGHT)
+        return weight  
 
 # Exercices
 class ExerciseUpdateForm(forms.ModelForm):
@@ -228,7 +265,18 @@ class ExerciseUpdateForm(forms.ModelForm):
         fields = (
             'weight',
             'statement',
-        )  
+        )
+
+    def clean_weight(self):
+        weight = self.cleaned_data.get('weight')
+        if float(weight) < 0.00 or float(weight) > 1.00:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_WEIGHT_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_WEIGHT)
+        return weight    
 
 # Exercices_competence
 class ExerciseCompetenceUpdateForm(forms.ModelForm):
@@ -242,7 +290,29 @@ class ExerciseCompetenceUpdateForm(forms.ModelForm):
         fields = (
             'intensity',
             'weight',
-        )  
+        )
+
+    def clean_weight(self):
+        weight = self.cleaned_data.get('weight')
+        if float(weight) < 0.00 or float(weight) > 1.00:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_WEIGHT_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_WEIGHT)
+        return weight
+
+    def clean_intensity(self):
+        intensity = self.cleaned_data.get('intensity')
+        if float(intensity) < 0.00 or float(intensity) > 1.00:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_INTENSITY_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_INTENSITY)
+        return intensity     
 
 # Evaluations
 class EvaluationCreateForm(forms.ModelForm):
