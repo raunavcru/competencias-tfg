@@ -8,6 +8,8 @@ Para poder ver los casos de uso de manera interactiva vaya al siguiente enlace:
 |===
 | **CU-01** Listado de alumnos.
 
+| Versión: 1.0 (29/11/2020)
+
 | Descripción:
 El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de alumnos inscrito_.
 
@@ -25,6 +27,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 |===
 | **CU-02**  Creación de alumnos.
+
+| Versión: 1.0 (29/11/2020)
 
 |Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de un alumno_.
 
@@ -48,6 +52,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-03**  Edición de alumnos.
 
+| Versión: 1.0 (29/11/2020)
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la edición de un alumno_.
 
 |Secuencia normal:
@@ -67,6 +73,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 |===
 | **CU-04**  Eliminación de alumnos.
+
+| Versión: 1.0 (29/11/2020)
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de un alumno_.
 
@@ -89,6 +97,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-05** Listado de profesores.
 
+| Versión: 1.0 (29/11/2020)
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de profesores inscrito_.
 
 | Secuencia normal: 
@@ -104,6 +114,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 |===
 | **CU-06**  Creación de profesores.
+
+| Versión: 1.0 (29/11/2020)
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de un profesor_.
 
@@ -126,6 +138,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-07**  Edición de profesores.
 
+| Versión: 1.0 (29/11/2020)
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la edición de un profesor_.
 
 | Secuencia normal:
@@ -146,6 +160,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 |===
 | **CU-08**  Eliminación de profesores.
+
+| Versión: 1.0 (29/11/2020)
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de un profesor_.
 
@@ -168,6 +184,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-09** Listado de Grupos de clase.
 
+| Versión: 1.0 (29/11/2020)
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de grupo de clase_.
 
 |Secuencia normal:
@@ -184,6 +202,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 |===
 |**CU-10**  Creación de Grupos de clase.
+
+| Versión: 1.0 (29/11/2020)
 
 | Descripción:
 El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de un grupo de clase_.
@@ -207,6 +227,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-11**  Edición de Grupos de clase.
 
+| Versión: 1.0 (29/11/2020)
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la edición de un grupo de clase_.
 
 | Secuencia normal:
@@ -228,6 +250,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 |**CU-12**  Eliminación de Grupos de clase.
 
+| Versión: 1.0 (29/11/2020)
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de un grupos de clase.
 
 | Secuencia normal:
@@ -248,6 +272,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 |===
 | **CU-13**  Asignar alumnos a sus respectivos grupos de clase.
+
+| Versión: 1.0 (29/11/2020)
 
 |Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador asignar alumnos a sus respectivos grupos de clase_.
 
@@ -272,6 +298,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 |**CU-14** Listado de asignaturas.
 
+| Versión: 1.0 (29/11/2020)
+
 |Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de asignaturas_.
 
 |Secuencia normal
@@ -288,6 +316,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 |===
 | **CU-15**  Creación de asignaturas.
+
+| Versión: 1.0 (29/11/2020)
 
 |Descripción: 
 El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de una asignatura_.
@@ -311,6 +341,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 |**CU-16**  Edición de asignaturas.
 
+| Versión: 1.0 (29/11/2020)
+
 | Descripción:
 El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la edición de una asignatura_.
 
@@ -333,6 +365,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-17**  Eliminación de asignaturas.
 
+| Versión: 1.0 (29/11/2020)
+
 |Descripción:El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de una asignatura.
 
 |Secuencia normal:
@@ -353,6 +387,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 |===
 |**CU-18**  Asignar asignatura a profesores.
+
+| Versión: 1.0 (29/11/2020)
 
 | Descripción: 
 El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador asignar una asignatura a un profesor_.
@@ -378,6 +414,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-19** Listado de competencias.
 
+| Versión: 1.0 (29/11/2020)
+
 | Descripción:
 El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de competencias_.
 
@@ -394,6 +432,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 |===
 | **CU-20**  Creación de competencias.
+
+| Versión: 1.0 (29/11/2020)
 
 |Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de una competencia_.
 
@@ -416,6 +456,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-21**  Edición de competencias.
 
+| Versión: 1.0 (29/11/2020)
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la edición de una competencia_.
 
 |Secuencia normal:
@@ -437,6 +479,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-22**  Eliminación de competencias.
 
+| Versión: 1.0 (29/11/2020)
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de una competencia_.
 
 | Secuencia normal:
@@ -457,6 +501,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 |===
 | **CU-23**  Asignación de competencias.
+
+| Versión: 1.0 (29/11/2020)
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la asignación de competencias a una asignatura_.
 
@@ -481,6 +527,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-24** Listado de administradores.
 
+| Versión: 1.0 (29/11/2020)
+
 | Descripción:
 El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de administradores_.
 
@@ -497,6 +545,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 |===
 | **CU-25**  Creación de administradores.
+
+| Versión: 1.0 (29/11/2020)
 
 |Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de un nuevo administrador_.
 
@@ -520,6 +570,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-26**  Eliminación de administradores.
 
+| Versión: 1.0 (29/11/2020)
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de un administrador_.
 
 | Secuencia normal:
@@ -540,6 +592,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 |===
 | **CU-27**  Edición de usuarios.
+
+| Versión: 1.0 (29/11/2020)
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la edición de un usuario.
 
@@ -562,6 +616,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-28**  Listar sus grupos de clase.
 
+| Versión: 1.0 (01/12/2020)
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite listar sus grupos de clase_.
 
 |Secuencia normal:
@@ -579,6 +635,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 | **CU-29**  Listar sus asignaturas.
+
+| Versión: 1.0 (01/12/2020)
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite listar sus asignaturas_.
 
@@ -598,6 +656,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-30**  Listar las competencias de una asignatura.
 
+| Versión: 1.0 (01/12/2020)
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite listar las competencias de una asignatura_.
 
 |Secuencia normal:
@@ -615,6 +675,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-31**  Listar sus alumnos.
 
+| Versión: 1.0 (01/12/2020)
+
+| Precondición: El profesor ha seleccionado el tipo de evaluación.
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite listar sus alumnos_.
 
 |Secuencia normal:
@@ -623,14 +687,22 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 2.El sistema solicita las credenciales para identificarse.
 
-3.El profesor solicita la lista de sus alumnos.
+3.El profesor solicita la lista de grupos de clase.
 
-4.El profesor obtiene el listado de sus alumnos.
+4.El profesor obtiene el listado de grupos de clase.
+
+5.El profesor solicita la lista de sus alumnos.
+
+6.El profesor obtiene el listado de sus alumnos.
 
 |===
 
 |===
 | **CU-32**  Listar actividades.
+
+| Versión: 1.1 (15/04/2021)
+
+| Precondición: El profesor ha seleccionado el tipo de evaluación.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite actividades_.
 
@@ -648,6 +720,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 | **CU-33**  Creación de actividades.
+
+| Versión: 1.0 (01/12/2020)
 
 |Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la creación de una actividad_.
 
@@ -670,6 +744,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 |===
 | **CU-34**  Edición de una actividad.
+
+| Versión: 1.0 (01/12/2020)
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la edición de una actividad_.
 
@@ -697,6 +773,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-35**  Eliminación de una actividad.
 
+| Versión: 1.0 (01/12/2020)
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la eliminación de una actividad_.
 
 | Secuencia normal:
@@ -723,6 +801,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-36**  Ver las calificaciones de un alumno.
 
+| Versión: 1.0 (01/12/2020)
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite ver las calificaciones de un alumno_.
 
 |Secuencia normal:
@@ -745,6 +825,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 | **CU-37**  Creación de ejercicios.
+
+| Versión: 1.0 (01/12/2020)
 
 |Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la creación de un ejercicio_.
 
@@ -772,6 +854,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-38**  Edición de un ejercicio.
 
+| Versión: 1.0 (01/12/2020)
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la edición de un ejercicio_.
 
 |Secuencia normal:
@@ -798,6 +882,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-39**  Eliminación de un ejercicio.
 
+| Versión: 1.0 (01/12/2020)
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la eliminación de un ejericio_.
 
 | Secuencia normal:
@@ -823,6 +909,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 |===
 | **CU-40**  Asignar competencias a un ejercicio con una intensidad.
+
+| Versión: 1.0 (01/12/2020)
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la asignar competencias a un ejercicio con una intensidad_.
 
@@ -851,6 +939,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 |===
 | **CU-41**  Puntuar las evaluaciones, las actividades, los ejercicios y las competencias.
+
+| Versión: 1.0 (01/12/2020)
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite puntuar las evaluaciones, las actividades, los ejercicios y las competencias_.
 
@@ -886,6 +976,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-42**  Modificar sus datos de usuario.
 
+| Versión: 1.0 (01/12/2020)
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite modificar sus datos de usuario_.
 
 | Secuencia normal:
@@ -902,6 +994,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 | **CU-43**  Generar informe de un grupo completo.
+
+| Versión: 1.0 (09/12/2020)
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite generar informe de un grupo completo_.
 
@@ -927,6 +1021,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 | **CU-44**  Generar informe de un alumno.
+
+| Versión: 1.0 (09/12/2020)
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite generar informe de un alumno_.
 
@@ -954,6 +1050,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-45**  Ver competencias de un alumno.
 
+| Versión: 1.0 (09/12/2020)
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite ver las competencias de un alumno_.
 
 | Secuencia normal:
@@ -979,6 +1077,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-46**  Creación de evaluaciones.
 
+| Versión: 1.0 (28/01/2021)
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de una evaluación_.
 
 |Secuencia normal:
@@ -999,6 +1099,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 |===
 | **CU-47**  Edición de evaluaciones.
+
+| Versión: 1.0 (28/01/2021)
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la edición de una evaluación_.
 
@@ -1021,6 +1123,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-48**  Eliminación de evaluaciones.
 
+| Versión: 1.0 (28/01/2021)
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de una evaluación_.
 
 | Secuencia normal:
@@ -1042,6 +1146,8 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-49** Listado de evaluaciones.
 
+| Versión: 1.0 (28/01/2021)
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de las evaluaciones_.
 
 |Secuencia normal:
@@ -1054,5 +1160,134 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 4.El administrador obtiene el listado de evaluaciones.
 
+|===
+|===
+| **CU-50** Listado de bloques (evaluaciones).
+
+| Versión: 1.0 (15/04/2021)
+
+| Precondición: El profesor ha seleccionado el tipo de evaluación.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesort solicite el listado de los bloques_.
+
+|Secuencia normal:
+
+1.El profesor desea obtener la lista de bloques.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de grupos de clase.
+
+4.El profesor obtiene el listado de grupos de clase.
+
+5.El profesor solicita la lista de bloques de un grupo de clase.
+
+6.El profesor obtiene el listado de bloques.
+
+|===
+|===
+| **CU-51** Creación de bloques (evaluaciones).
+
+| Versión: 1.0 (15/04/2021)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesort solicite la creación de un bloque_.
+
+|Secuencia normal:
+
+1.El profesor desea crear un bloque.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de grupos de clase.
+
+4.El profesor obtiene el listado de grupos de clase.
+
+5.El profesor solicita la lista de bloques de un grupo de clase.
+
+6.El profesor obtiene el listado de bloques.
+
+7.El profesor solicita la creación de un bloque.
+
+8.El profesor crea un bloque.
+
+|===
+|===
+| **CU-52** Edición de bloques (evaluaciones).
+
+| Versión: 1.0 (15/04/2021)
+
+| Precondición: El profesor ha creado un bloque.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la edición de un bloque_.
+
+|Secuencia normal:
+
+1.El profesor desea editar un bloque.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de grupos de clase.
+
+4.El profesor obtiene el listado de grupos de clase.
+
+5.El profesor solicita la lista de bloques de un grupo de clase.
+
+6.El profesor obtiene el listado de bloques.
+
+7.El profesor solicita la edición de un bloque.
+
+8.El profesor edita un bloque.
+
+|===
+|===
+| **CU-53** Eliminación de bloques (evaluaciones).
+
+| Versión: 1.0 (15/04/2021)
+
+| Precondición: El profesor ha creado un bloque.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesort solicite la eliminación de un bloque_.
+
+|Secuencia normal:
+
+1.El profesor desea eliminar un bloque.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de grupos de clase.
+
+4.El profesor obtiene el listado de grupos de clase.
+
+5.El profesor solicita la lista de bloques de un grupo de clase.
+
+6.El profesor obtiene el listado de bloques.
+
+7.El profesor solicita la eliminación de un bloque.
+
+8.El profesor elimina un bloque.
+
+|===
+|===
+| **CU-54** Seleccionar el tipo de evaluación para las evaluaciones de un grupo de clase.
+
+| Versión: 1.0 (15/04/2021)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesort solicite seleccionar el tipo de evaluación para las evaluaciones de un grupo de clase.
+
+|Secuencia normal:
+
+1.El profesor desea seleccionar el tipo de evaluación para las evaluaciones de un grupo de clase.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de grupos de clase.
+
+4.El profesor obtiene el listado de grupos de clase.
+
+5.El profesor solicita seleccionar el tipo de evaluación.
+
+6.El profesor seleccionar el tipo de evaluación.
+
+| Postcondición: Se ha habilitado las opcciones de listar bloques, actividades y estudiantes.
 
 |===
