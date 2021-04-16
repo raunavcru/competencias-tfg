@@ -1440,7 +1440,7 @@ class MarkEvaluationCreateView(generic.UpdateView):
         student_pk = evaluation_mark.student.pk
         if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
             mark = form.cleaned_data.get('manual_mark')
-            services.MarkService().mark_evaluation_mark(mark=mark, evaluation_mark=evaluation_mark)
+            services.MarkService().mark_evaluation_mark(mark=mark, set_object = set_object, evaluation_mark=evaluation_mark)
         
             return redirect('marks_evaluations_list', id=set_object.pk, pk=student_pk)
         else:
@@ -1725,7 +1725,7 @@ class SetUpdateView(generic.UpdateView):
             return redirect('/')
 
 @method_decorator(login_required, name='dispatch')
-class SetUpdateEvaluationTypeForm(generic.UpdateView):
+class SetEvaluationTypeUpdateView(generic.UpdateView):
     model = models.Set
     form_class = forms.SetUpdateEvaluationTypeForm
     template_name = "sets/update_evaluation_type.html"
@@ -1735,10 +1735,20 @@ class SetUpdateEvaluationTypeForm(generic.UpdateView):
         set_pk = self.kwargs.get('pk')
         set_object = models.Set.objects.get(pk=set_pk)
         if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
-            return super(SetUpdateEvaluationTypeForm, self).get(self, request, *args, **kwargs)
+            return super(SetEvaluationTypeUpdateView, self).get(self, request, *args, **kwargs)
         else:
             return redirect('/')
+    
+    def form_valid(self, form):
+        set_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_pk)
+        if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+            form.save()
+            services.MarkService().recalculate(set_object = set_object)
 
+            return redirect('my_sets_list')
+        else:
+            return redirect('/')
 
 # Students
 @method_decorator(login_required, name='dispatch')

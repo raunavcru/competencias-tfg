@@ -74,7 +74,7 @@ urlpatterns = [
     path('sets/<int:pk>/delete', views.SetDeleteView.as_view(), name='sets_delete'),
     path('sets/<int:pk>/list', views.MySetStudentListView.as_view(), name = 'sets_student_list'),
     path('sets/<int:pk>/update', views.SetUpdateView.as_view(), name = 'sets_update'),
-    path('sets/<int:pk>/update/evaluation_type', views.SetUpdateEvaluationTypeForm.as_view(), name = 'sets_update_evaluation_type'),
+    path('sets/<int:pk>/update/evaluation_type', views.SetEvaluationTypeUpdateView.as_view(), name = 'sets_update_evaluation_type'),
     path('sets/<int:pk>/<int:id>/assign/', views.SetAssignStudentView.as_view(), name = 'sets_assign_student'),
     path('sets/<int:pk>/<int:id>/unassign/', views.SetUnassignStudentView.as_view(), name = 'sets_unassign_student'),
     

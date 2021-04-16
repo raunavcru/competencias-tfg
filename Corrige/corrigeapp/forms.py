@@ -34,6 +34,8 @@ MESSAGE_INITIALS = 'El tamaño de las iniciales no puede ser mayor que 9'
 MESSAGE_INITIALS_EN = 'Initials can not be longer of 9 characters'
 MESSAGE_NAME = 'El tamaño del nombre no puede ser mayor que 100'
 MESSAGE_NAME_EN = 'Name can not be longer of 100 characters'
+MESSAGE_MARK_EN = 'Mark must be between 0.00 and 1.00.'
+MESSAGE_MARK = 'Nota debe estar entre 0.00 y 1.00.'
 MESSAGE_SURNAME = 'El tamaño del apellido no puede ser mayor que 100'
 MESSAGE_SURNAME_EN = 'Surname can not be longer of 100 characters'
 MESSAGE_BIRTHDATE = 'La fecha de cumpleaños debe ser en el pasado'
@@ -560,6 +562,17 @@ class ActivityMarkCreateForm(forms.ModelForm):
         fields = (
             'manual_mark',
         )
+    
+    def clean_manual_mark(self):
+        manual_mark = self.cleaned_data.get('manual_mark')
+        if float(manual_mark) < 0.00 or float(manual_mark) > 1.00:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_MARK_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_MARK)
+        return manual_mark  
 
 class CompetenceMarkCreateForm(forms.ModelForm):
     mark = forms.CharField(required=True, widget=forms.TextInput(
@@ -570,6 +583,17 @@ class CompetenceMarkCreateForm(forms.ModelForm):
         fields = (
             'mark',
         )
+    
+    def clean_mark(self):
+        mark = self.cleaned_data.get('mark')
+        if float(mark) < 0.00 or float(mark) > 1.00:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_MARK_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_MARK)
+        return mark  
 
 class EvaluationMarkCreateForm(forms.ModelForm):
     manual_mark = forms.CharField(required=True, widget=forms.TextInput(
@@ -580,6 +604,17 @@ class EvaluationMarkCreateForm(forms.ModelForm):
         fields = (
             'manual_mark',
         )
+    
+    def clean_manual_mark(self):
+        manual_mark = self.cleaned_data.get('manual_mark')
+        if float(manual_mark) < 0.00 or float(manual_mark) > 1.00:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_MARK_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_MARK)
+        return manual_mark  
         
 class ExerciseMarkCreateForm(forms.ModelForm):
     manual_mark = forms.CharField(required=True, widget=forms.TextInput(
@@ -590,6 +625,17 @@ class ExerciseMarkCreateForm(forms.ModelForm):
         fields = (
             'manual_mark',
         )
+    
+    def clean_manual_mark(self):
+        manual_mark = self.cleaned_data.get('manual_mark')
+        if float(manual_mark) < 0.00 or float(manual_mark) > 1.00:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_MARK_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_MARK)
+        return manual_mark  
 
 # Sets
 class SetCreateForm(forms.ModelForm):
