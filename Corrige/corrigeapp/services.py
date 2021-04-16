@@ -188,9 +188,12 @@ class MarkService():
             if competence_evaluation.mark:
                 mark_total = mark_total + float(competence_evaluation.mark * competence_evaluation.competence.weight)
         
-        mark = mark_total/weight_total
+        if weight_total == 0.0:
+            evaluation_mark.mark = 0.0
+        else:
+            mark = mark_total/weight_total
+            evaluation_mark.mark = mark
 
-        evaluation_mark.mark = mark
         evaluation_mark.save()
 
     def calculate_evaluation_mark_by_all_activities(self, evaluation: models.Evaluation, set_object: models.Set, student: models.Student) -> None:
@@ -210,10 +213,13 @@ class MarkService():
                 mark_total = mark_total + float(activity_mark.mark * activity_mark.activity.weight)
             elif activity_mark.evaluation_type == "MANUAL" and activity_mark.manual_mark:
                 mark_total = mark_total + float(activity_mark.manual_mark * activity_mark.activity.weight)
-        
-        mark = mark_total/weight_total
 
-        evaluation_mark.mark = mark
+        if weight_total == 0.0:
+            evaluation_mark.mark = 0.0
+        else:
+            mark = mark_total/weight_total
+            evaluation_mark.mark = mark
+
         evaluation_mark.save()
 
         self.calculate_evaluation_mark(evaluation = evaluation.parent, set_object = set_object, student = student)
@@ -244,10 +250,14 @@ class MarkService():
                 elif evaluation_mark.evaluation_type == "MANUAL" and evaluation_mark.manual_mark:
                     mark_total = mark_total + float(evaluation_mark.manual_mark * evaluation_mark.evaluation.weight)
             
-            mark = mark_total/weight_total
+            if weight_total == 0.0:
+                evaluation_mark_final.mark = 0.0
+            else:
+                mark = mark_total/weight_total
+                evaluation_mark_final.mark = mark
 
-            evaluation_mark_final.mark = mark
             evaluation_mark_final.save()
+            
 
     def calculate_evaluation_mark_by_recovery_activities(self, evaluation: models.Evaluation, set_object: models.Set, student: models.Student) -> None:
         if not models.Evaluation_mark.objects.filter(evaluation = evaluation, student = student).exists():
@@ -268,9 +278,12 @@ class MarkService():
                 elif activity_mark.evaluation_type == "MANUAL" and activity_mark.manual_mark:
                     mark_total = mark_total + float(activity_mark.manual_mark * activity_mark.activity.weight)
             
-            mark = mark_total/weight_total
+            if weight_total == 0.0:
+                evaluation_mark.mark = 0.0
+            else:
+                mark = mark_total/weight_total
+                evaluation_mark.mark = mark
 
-            evaluation_mark.mark = mark
             evaluation_mark.save()
         else:
             self.calculate_evaluation_mark_by_no_recovery_activities(evaluation = evaluation, set_object = set_object, student = student)
@@ -298,9 +311,12 @@ class MarkService():
                     mark_total = mark_total + float(competence_mark.manual_mark * exercise_competence.weight)
             
         
-        mark = mark_total/weight_total
+        if weight_total == 0.0:
+            evaluation_mark.mark = 0.0
+        else:
+            mark = mark_total/weight_total
+            evaluation_mark.mark = mark
 
-        exercise_mark.mark = mark
         exercise_mark.save()
 
         self.calculate_activity_mark(activity = exercise_mark.exercise.activity, student=exercise_mark.student)
@@ -343,7 +359,18 @@ class MarkService():
         exercise_mark.evaluation_type = "MANUAL"
         exercise_mark.save()
 
-        self.calculate_activity_mark(activity = exercise_mark.exercise.activity, student=exercise_mark.student)
+        self.calculate_activity_mark(activity = exercise_mark.exercise.activity, student = exercise_mark.student)
+    
+    def recalculate(self, set_object = models.Set):
+        final = set_object.evaluation
+
+        partials = models.Evaluation.objects.filter(parent = final)
+
+        students = models.Student.objects.filter(student=set_object)
+
+        for student in students:
+            for partial in partials:
+                self.calculate_evaluation_mark(evaluation = partial, set_object = set_object, student = student)
     
 class SetService():
 
