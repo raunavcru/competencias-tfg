@@ -55,7 +55,7 @@ class MarkService():
 
                 if exercise_mark.evaluation_type == "AUTOMATIC" and exercise_mark.mark:
                     mark_total = mark_total + float(exercise_mark.mark * exercise_mark.exercise.weight)
-                elif exercise_mark.manual_mark:
+                elif exercise_mark.evaluation_type == "MANUAL" and exercise_mark.manual_mark:
                     mark_total = mark_total + float(exercise_mark.manual_mark * exercise_mark.exercise.weight)
             
             mark = mark_total/weight_total
@@ -178,7 +178,7 @@ class MarkService():
                 e_v = models.Competence_evaluation.objects.create(competence = competence, student = student)
                 e_v.save()
 
-        competence_evaluation_ls = models.Competence_evaluation.objects.filter(competence__competences__subject_set = set_object, competence__level = 3, student = student)
+        competence_evaluation_ls = models.Competence_evaluation.objects.filter(competence__competences__subject_set = set_object, competence__level = 2, student = student)
 
         weight_total = 0.0
         mark_total = 0.0
@@ -206,11 +206,10 @@ class MarkService():
         for activity_mark in activity_mark_ls:
             weight_total = weight_total + float(activity_mark.activity.weight)
 
-            if activity_mark.mark:
-                if activity_mark.evaluation_type == "AUTOMATIC":
-                    mark_total = mark_total + float(activity_mark.mark * activity_mark.activity.weight)
-                else:
-                    mark_total = mark_total + float(activity_mark.manual_mark * activity_mark.activity.weight)
+            if activity_mark.evaluation_type == "AUTOMATIC" and activity_mark.mark:
+                mark_total = mark_total + float(activity_mark.mark * activity_mark.activity.weight)
+            elif activity_mark.evaluation_type == "MANUAL" and activity_mark.manual_mark:
+                mark_total = mark_total + float(activity_mark.manual_mark * activity_mark.activity.weight)
         
         mark = mark_total/weight_total
 
@@ -229,7 +228,7 @@ class MarkService():
         if not models.Evaluation_mark.objects.filter(evaluation = evaluation, student = student).exists():
             e_m = models.Evaluation_mark.objects.create(evaluation = evaluation, student = student)
             e_m.save()
-
+        
         evaluation_mark_final = models.Evaluation_mark.objects.get(evaluation = evaluation, student = student)
         evaluation_mark_ls = models.Evaluation_mark.objects.filter(evaluation__parent = evaluation, student = student)
 
@@ -237,13 +236,13 @@ class MarkService():
         mark_total = 0.0
         if evaluation_mark_ls:
             for evaluation_mark in evaluation_mark_ls:
+                
                 weight_total = weight_total + float(evaluation_mark.evaluation.weight)
-
-                if evaluation_mark.mark:
-                    if evaluation_mark.evaluation_type == "AUTOMATIC":
-                        mark_total = mark_total + float(evaluation_mark.mark * evaluation_mark.evaluation.weight)
-                    else:
-                        mark_total = mark_total + float(evaluation_mark.manual_mark * evaluation_mark.evaluation.weight)
+                
+                if evaluation_mark.evaluation_type == "AUTOMATIC" and evaluation_mark.mark:
+                    mark_total = mark_total + float(evaluation_mark.mark * evaluation_mark.evaluation.weight)
+                elif evaluation_mark.evaluation_type == "MANUAL" and evaluation_mark.manual_mark:
+                    mark_total = mark_total + float(evaluation_mark.manual_mark * evaluation_mark.evaluation.weight)
             
             mark = mark_total/weight_total
 
@@ -264,11 +263,10 @@ class MarkService():
             for activity_mark in activity_mark_ls:
                 weight_total = weight_total + float(activity_mark.weight)
 
-                if activity_mark.mark:
-                    if activity_mark.evaluation_type == "AUTOMATIC":
-                        mark_total = mark_total + float(activity_mark.mark * activity_mark.activity.weight)
-                    else:
-                        mark_total = mark_total + float(activity_mark.manual_mark * activity_mark.activity.weight)
+                if activity_mark.evaluation_type == "AUTOMATIC" and activity_mark.mark:
+                    mark_total = mark_total + float(activity_mark.mark * activity_mark.activity.weight)
+                elif activity_mark.evaluation_type == "MANUAL" and activity_mark.manual_mark:
+                    mark_total = mark_total + float(activity_mark.manual_mark * activity_mark.activity.weight)
             
             mark = mark_total/weight_total
 
@@ -332,11 +330,13 @@ class MarkService():
         self.calculate_competence_evaluation_level1(competence_mark=competence_mark)
         self.calculate_exercise_mark(exercise = competence_mark.exercise, student=competence_mark.student)
 
-    
-    def mark_evaluation_mark(self, mark: float, evaluation_mark: models.Evaluation_mark) -> None:
+    def mark_evaluation_mark(self, mark: float, set_object: models.Set, evaluation_mark: models.Evaluation_mark) -> None:
         evaluation_mark.manual_mark = mark
         evaluation_mark.evaluation_type = "MANUAL"
         evaluation_mark.save()
+
+        if not evaluation_mark.evaluation.is_final:
+            self.calculate_evaluation_mark(evaluation = evaluation_mark.evaluation.parent, set_object = set_object, student = evaluation_mark.student)
 
     def mark_exercise_mark(self, mark: float, exercise_mark: models.Exercise_mark) -> None:
         exercise_mark.manual_mark = mark
@@ -345,8 +345,6 @@ class MarkService():
 
         self.calculate_activity_mark(activity = exercise_mark.exercise.activity, student=exercise_mark.student)
     
-    
-
 class SetService():
 
     def is_owner(self, user: User, set_object: models.Set) -> bool:

@@ -1440,7 +1440,7 @@ class MarkEvaluationCreateView(generic.UpdateView):
         student_pk = evaluation_mark.student.pk
         if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
             mark = form.cleaned_data.get('manual_mark')
-            services.MarkService().mark_evaluation_mark(mark=mark, evaluation_mark=evaluation_mark)
+            services.MarkService().mark_evaluation_mark(mark=mark, set_object = set_object, evaluation_mark=evaluation_mark)
         
             return redirect('marks_evaluations_list', id=set_object.pk, pk=student_pk)
         else:
