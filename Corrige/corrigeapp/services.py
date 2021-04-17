@@ -183,10 +183,10 @@ class MarkService():
         weight_total = 0.0
         mark_total = 0.0
         for competence_evaluation in competence_evaluation_ls:
-            weight_total = weight_total + float(competence_evaluation.competence.weight)
+            weight_total = weight_total + float(competence_evaluation.competence.subject_weight)
 
             if competence_evaluation.mark:
-                mark_total = mark_total + float(competence_evaluation.mark * competence_evaluation.competence.weight)
+                mark_total = mark_total + float(competence_evaluation.mark * competence_evaluation.competence.subject_weight)
         
         if weight_total == 0.0:
             evaluation_mark.mark = 0.0

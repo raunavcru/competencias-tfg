@@ -52,6 +52,8 @@ class Competence(Common):
 
     weight = models.DecimalField('weight', max_digits=3, decimal_places=2, blank=True, null=True)
 
+    subject_weight = models.DecimalField('subject_weight', max_digits=3, decimal_places=2, blank=True, null=True)
+
     level = models.PositiveIntegerField('level')
 
     parent = models.ManyToManyField('self', "competence_parent", symmetrical=False, verbose_name=("competences_parent"), blank=True)
