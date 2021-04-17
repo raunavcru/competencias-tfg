@@ -280,39 +280,6 @@ class CompetenceLevel2CreateForm(forms.ModelForm):
             'subject_weight',
         )
         
-    def clean_code(self):
-        code = self.cleaned_data.get('code')
-        if len(code) > 50:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_CODE_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_CODE)
-        return code
-
-    def clean_description(self):
-        description = self.cleaned_data.get('description')
-        if len(description) > 300:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_DESCRIPTION_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_DESCRIPTION)
-        return description
-
-    def clean_name(self):
-        name = self.cleaned_data.get('name')
-        if len(name) > 300:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_NAME_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_NAME)
-        return name
-    
     def clean_weight(self):
         weight = self.cleaned_data.get('weight')
         if float(weight) < 0.00 or float(weight) > 1.00:
@@ -352,38 +319,6 @@ class CompetenceLevel3CreateForm(forms.ModelForm):
             'description',
         )
         
-    def clean_code(self):
-        code = self.cleaned_data.get('code')
-        if len(code) > 50:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_CODE_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_CODE)
-        return code
-
-    def clean_description(self):
-        description = self.cleaned_data.get('description')
-        if len(description) > 300:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_DESCRIPTION_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_DESCRIPTION)
-        return description
-
-    def clean_name(self):
-        name = self.cleaned_data.get('name')
-        if len(name) > 300:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_NAME_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_NAME)
-        return name
 
 # Exercices
 class ExerciseUpdateForm(forms.ModelForm):
