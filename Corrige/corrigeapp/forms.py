@@ -52,6 +52,8 @@ MESSAGE_CODE_EN = 'Code can not be longer of 50 characters'
 MESSAGE_CODE = 'El tamaño del código no puede ser mayor que 50'
 MESSAGE_WEIGHT_EN = 'Weight must be between 0.00 and 1.00.'
 MESSAGE_WEIGHT = 'Peso debe estar entre 0.00 y 1.00.'
+MESSAGE_SUBJETC_WEIGHT_EN = 'Subject weight must be between 0.00 and 1.00.'
+MESSAGE_SUBJETC_WEIGHT = 'Peso sobre asignatura debe estar entre 0.00 y 1.00.'
 MESSAGE_INTENSITY_EN = 'Intensity must be between 0.00 and 1.00.'
 MESSAGE_INTENSITY = 'Intensidad debe estar entre 0.00 y 1.00.'
 PLACEHOLDER_NAME_EVALUATION = 'Matemáticas 5º Primaria'
@@ -191,7 +193,7 @@ class BlockCreateChildForm(forms.ModelForm):
         return weight  
 
 # Competences
-class CompetenceCreateForm(forms.ModelForm):
+class CompetenceLevel1CreateForm(forms.ModelForm):
 
     code = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': 'CC1', 'id': 'code-create-competence'}))
@@ -200,7 +202,7 @@ class CompetenceCreateForm(forms.ModelForm):
     description = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': 'Comunicación lingüística.	', 'id': 'description-create-competence'}))
     weight = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': '1', 'id': 'wieight-create-competence'}))
+        attrs={'placeholder': '1', 'id': 'weight-create-competence'}))
 
     class Meta:
         model = models.Competence
@@ -253,7 +255,70 @@ class CompetenceCreateForm(forms.ModelForm):
             else:
                 raise ValidationError(
                     MESSAGE_WEIGHT)
-        return weight  
+        return weight 
+
+class CompetenceLevel2CreateForm(forms.ModelForm):
+
+    code = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'CC1', 'id': 'code-create-competence'}))
+    name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Comunicación lingüística', 'id': 'name-create-competence'}))
+    description = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Comunicación lingüística.	', 'id': 'description-create-competence'}))
+    weight = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': '1', 'id': 'weight-create-competence'}))
+    subject_weight = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': '1', 'id': 'subject_weight-create-competence'}))
+
+    class Meta:
+        model = models.Competence
+        fields = (
+            'code',
+            'name',
+            'description',
+            'weight',
+            'subject_weight',
+        )
+        
+    def clean_weight(self):
+        weight = self.cleaned_data.get('weight')
+        if float(weight) < 0.00 or float(weight) > 1.00:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_WEIGHT_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_WEIGHT)
+        return weight
+
+    def clean_subject_weight(self):
+        subject_weight = self.cleaned_data.get('subject_weight')
+        if float(subject_weight) < 0.00 or float(subject_weight) > 1.00:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_SUBJETC_WEIGHT_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_SUBJETC_WEIGHT)
+        return subject_weight  
+
+class CompetenceLevel3CreateForm(forms.ModelForm):
+
+    code = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'CC1', 'id': 'code-create-competence'}))
+    name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Comunicación lingüística', 'id': 'name-create-competence'}))
+    description = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Comunicación lingüística.', 'id': 'description-create-competence'}))
+
+    class Meta:
+        model = models.Competence
+        fields = (
+            'code',
+            'name',
+            'description',
+        )
+        
 
 # Exercices
 class ExerciseUpdateForm(forms.ModelForm):

@@ -476,7 +476,7 @@ class BlockUpdateView(generic.UpdateView):
 # Competences
 @method_decorator(login_required, name='dispatch')
 class CompetenceCreateChildView(generic.CreateView):
-    form_class = forms.CompetenceCreateForm
+    form_class = forms.CompetenceLevel1CreateForm
     template_name = COMPETENCE_CREATE
     
     def get(self, request, *args, **kwargs):
@@ -486,11 +486,26 @@ class CompetenceCreateChildView(generic.CreateView):
             return redirect('/')
     
     def get_context_data(self, **kwargs):
+        competence_pk = self.kwargs.get('pk')
+        competence = models.Competence.objects.get(pk=competence_pk)
         context = super(CompetenceCreateChildView, self).get_context_data(**kwargs)
         competence_pk = self.kwargs.get('pk')
         context['competence_pk'] = competence_pk
         context['competence_parent'] = True
+        if competence.level == 3:
+            context['level2'] = True
+        elif competence.level == 2:
+            context['level1'] = True
+
         return context
+    
+    def get_form_class(self):
+        competence_pk = self.kwargs.get('pk')
+        competence = models.Competence.objects.get(pk=competence_pk)
+        if competence.level == 3:
+            return forms.CompetenceLevel2CreateForm
+        else:
+            return self.form_class
 
     def form_valid(self, form):
         competence_pk = self.kwargs.get('pk')
@@ -511,7 +526,7 @@ class CompetenceCreateChildView(generic.CreateView):
 
 @method_decorator(login_required, name='dispatch')
 class CompetenceCreateLevel3View(generic.CreateView):
-    form_class = forms.CompetenceCreateForm
+    form_class = forms.CompetenceLevel3CreateForm
     template_name = COMPETENCE_CREATE
     success_url = reverse_lazy('competences_list3')
 
@@ -685,7 +700,7 @@ class CompetenceListLevel3View(generic.ListView):
 @method_decorator(login_required, name='dispatch')
 class CompetenceUpdateView(generic.UpdateView):
     model = models.Competence
-    form_class = forms.CompetenceCreateForm
+    form_class = forms.CompetenceLevel1CreateForm
     template_name = COMPETENCE_CREATE
 
     def get(self, request, *args, **kwargs):
@@ -696,12 +711,31 @@ class CompetenceUpdateView(generic.UpdateView):
 
     def get_context_data(self, **kwargs):
         parent_pk = self.kwargs.get('id')
+        competence_pk = self.kwargs.get('pk')
+        competence = models.Competence.objects.get(pk=competence_pk)
         context = super(CompetenceUpdateView, self).get_context_data(**kwargs)
         if parent_pk:
             context['parent_pk'] = parent_pk
         else:
             context['is_update'] = True
+        if competence.level == 3:
+            context['level3'] = True
+        elif competence.level == 2:
+            context['level2'] = True
+        elif competence.level == 1:
+            context['level1'] = True
+
         return context
+    
+    def get_form_class(self):
+        competence_pk = self.kwargs.get('pk')
+        competence = models.Competence.objects.get(pk=competence_pk)
+        if competence.level == 3:
+            return forms.CompetenceLevel3CreateForm
+        elif competence.level == 2:
+            return forms.CompetenceLevel2CreateForm
+        else:
+            return self.form_class
 
     def form_valid(self, form):
         competence = form.save()
