@@ -1650,7 +1650,7 @@ class MySetsListView(generic.ListView):
 
 # Reports
 @method_decorator(login_required, name='dispatch')
-class ReportSetView(generic.ListView):
+class ReportSetCompetenceEvaluationView(generic.ListView):
     model = models.Student
     template_name = 'reports/set_competence_evaluation.html'
     context_object_name = 'student_list'
@@ -1662,7 +1662,7 @@ class ReportSetView(generic.ListView):
             students = models.Student.objects.filter(student = set_object).order_by('surname')
             for student_object in students:
                 services.MarkService().create_competence_evaluation(set_object = set_object, student = student_object)
-            return super(ReportSetView, self).get(self, request, *args, **kwargs)
+            return super(ReportSetCompetenceEvaluationView, self).get(self, request, *args, **kwargs)
         else:
             return redirect('/')
 
@@ -1670,8 +1670,41 @@ class ReportSetView(generic.ListView):
         set_pk = self.kwargs.get('pk')
         set_object = models.Set.objects.get(pk=set_pk)
         student_th = models.Student.objects.filter(student = set_object).order_by('surname').first()
-        context = super(ReportSetView, self).get_context_data(**kwargs)
+        context = super(ReportSetCompetenceEvaluationView, self).get_context_data(**kwargs)
         context['student_th'] = student_th
+
+        return context
+
+    def get_queryset(self):
+        set_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_pk)
+        queryset = models.Student.objects.filter(student = set_object).order_by('surname')
+        return queryset
+
+@method_decorator(login_required, name='dispatch')
+class ReportSetEvaluationView(generic.ListView):
+    model = models.Student
+    template_name = 'reports/set_evaluations.html'
+    context_object_name = 'student_list'
+
+    def get(self, request, *args, **kwargs):
+        set_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_pk)
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
+            students = models.Student.objects.filter(student = set_object).order_by('surname')
+            for student_object in students:
+                services.MarkService().create_activity_mark(set_object = set_object, student = student_object)
+            return super(ReportSetEvaluationView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        set_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_pk)
+        student_th = models.Student.objects.filter(student = set_object).order_by('surname').first()
+        context = super(ReportSetEvaluationView, self).get_context_data(**kwargs)
+        context['student_th'] = student_th
+        context['set_object'] = set_object
 
         return context
 

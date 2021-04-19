@@ -321,6 +321,15 @@ class MarkService():
 
         self.calculate_activity_mark(activity = exercise_mark.exercise.activity, student=exercise_mark.student)
 
+    def create_activity_mark(self, set_object: models.Set, student: models.Student) -> None:
+
+        activities = models.Activity.objects.filter(set_activity = set_object)
+
+        for activity in activities:
+            if not models.Activity_mark.objects.filter(activity = activity, student = student).exists():
+                ac_m = models.Activity_mark.objects.create(activity = activity, student = student)
+                ac_m.save()
+
     def create_competence_evaluation(self, set_object: models.Set, student: models.Student) -> None:
 
         competence_list = models.Competence.objects.filter(competences__subject_set = set_object)
@@ -331,6 +340,17 @@ class MarkService():
                 if not models.Competence_evaluation.objects.filter(competence = competence, student = student).exists():
                     competence_evaluation = models.Competence_evaluation.objects.create(competence = competence, student = student)
                     competence_evaluation.save()
+    
+    def create_evaluation_mark(self, set_object: models.Set, student: models.Student) -> None:
+
+        final = models.Evaluation.objects.filter(evaluation_set = set_object)
+        partials = models.Evaluation.objects.filter(parent__evaluation_set = set_object)
+        evaluations = final | partials
+
+        for evaluation in evaluations:
+            if not models.Evaluation_mark.objects.filter(evaluation = evaluation, student = student).exists():
+                ev_m = models.Evaluation_mark.objects.create(evaluation = evaluation, student = student)
+                ev_m.save()
                     
     def mark_activity_mark(self, mark: float, activity_mark: models.Activity_mark) -> None:
         activity_mark.manual_mark = mark

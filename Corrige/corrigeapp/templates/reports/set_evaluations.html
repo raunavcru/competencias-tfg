@@ -10,10 +10,10 @@
                 <thead>
                     <tr>
                         <th>{% trans "Student" %}</th>
-                    {% for c_e_s_th_l2 in student_th.level2 %} 
-                        <th class="center grey lighten-3">{{c_e_s_th_l2.competence.code}}</th>
-                        {% for c_e_s_th_l1 in student_th|level1:c_e_s_th_l2.competence %} 
-                            <th class="center">{{c_e_s_th_l1.competence.code}}</th>
+                    {% for ev_th in student_th|evaluations_list:set_object %} 
+                        <th class="center grey lighten-3">{{ev_th.evaluation.name}}</th>
+                        {% for ac_th in student_th|activities_list:ev_th.evaluation %} 
+                            <th class="center">{{ac_th.activity.title}}</th>
                         {% endfor %}
                     {% endfor %}
                     </tr>
@@ -22,23 +22,23 @@
                     <tbody>
                         <tr class="center">
                             <td>{{student.surname}}, {{student.name}}</td>
-                        {% for c_e in student.level2 %}
+                        {% for ev_m in student|evaluations_list:set_object %}
                             <td class="center grey lighten-3">
-                            {% if c_e.mark or c_e.mark == 0 %}
-                                {{c_e.mark}}
+                            {% if ev_m.mark or ev_m.mark == 0 %}
+                                {{ev_m.mark}}
                             {% else %}
                                 -
                             {% endif %}
                             </td>
-                            {% for c_e_l1 in student|level1:c_e.competence %} 
+                            {% for ac_m in student|activities_list:ev_m.evaluation %} 
                                 <td class="center">
-                                {% if c_e_l1.mark or c_e_l1.mark == 0 %}
-                                    {{c_e_l1.mark}}
+                                {% if ac_m.mark or ac_m.mark == 0 %}
+                                    {{ac_m.mark}}
                                 {% else %}
                                     -
                                 {% endif %}
                                 </td>
-                            {% endfor %} 
+                            {% endfor %}
                         {% endfor %}
                         </tr>
                     </tbody>
