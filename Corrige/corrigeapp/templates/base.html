@@ -11,7 +11,6 @@
       });
     </script>
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="{% static 'fuentes/Ubuntu-L.ttf' %}">
     <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
     <link rel="stylesheet" href="{% static 'css/main.css'%}" />
     <link rel="stylesheet" href="{% static 'css/materialize.css'%}" />
@@ -54,6 +53,7 @@
 
     <ul id="dropdown1" class="dropdown-content grey lighten-4">
         <li><a href="{% url 'profile_update' %}" style="color:black">{% trans "Profile" %}</a></li>
+        <li><a href="{% url 'password_update' %}" style="color:black">{% trans "Change Password" %}</a></li>
         <li><a href="{% url 'logout'%}" style="color:black">{% trans "Logout" %}</a></li>
     </ul>
 
@@ -83,6 +83,7 @@
             <li><a href="{% url 'my_subjects_list' %}">{% trans "My Subjects" %}</a></li>
             {% endif %}
             <li><a href="{% url 'profile_update' %}" style="font-weight: bold;">{% trans "Profile" %}</a></li>
+            <li><a href="{% url 'password_update' %}" style="color:black">{% trans "Change Password" %}</a></li>
             <li><a href="{% url 'logout'%}" style="color:red">{% trans "Logout" %}</a></li>
         {% else %}
         <li><a href="{% url 'login'%}" class="teal lighten-2 waves-effect waves-light btn-small">{% trans "Login" %}</a></li>

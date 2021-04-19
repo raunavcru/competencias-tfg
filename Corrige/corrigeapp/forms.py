@@ -2,10 +2,11 @@ from django import forms
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm, UserChangeForm, UserCreationForm
+from django.contrib.auth.hashers import check_password
+from django.contrib.auth.password_validation import password_validators_help_texts
 from django.core.exceptions import ValidationError
 from django.utils.timezone import now
 from django.utils.translation import get_language, activate
-from django.contrib.auth.hashers import check_password
 
 from . import models
 from . import services
@@ -33,6 +34,8 @@ MESSAGE_INITIALS = 'El tamaño de las iniciales no puede ser mayor que 9'
 MESSAGE_INITIALS_EN = 'Initials can not be longer of 9 characters'
 MESSAGE_NAME = 'El tamaño del nombre no puede ser mayor que 100'
 MESSAGE_NAME_EN = 'Name can not be longer of 100 characters'
+MESSAGE_MARK_EN = 'Mark must be between 0.00 and 1.00.'
+MESSAGE_MARK = 'Nota debe estar entre 0.00 y 1.00.'
 MESSAGE_SURNAME = 'El tamaño del apellido no puede ser mayor que 100'
 MESSAGE_SURNAME_EN = 'Surname can not be longer of 100 characters'
 MESSAGE_BIRTHDATE = 'La fecha de cumpleaños debe ser en el pasado'
@@ -47,6 +50,12 @@ MESSAGE_DESCRIPTION_EN = 'Description can not be longer of 100 characters'
 MESSAGE_DESCRIPTION = 'El tamaño de la descripción no puede ser mayor que 100'
 MESSAGE_CODE_EN = 'Code can not be longer of 50 characters'
 MESSAGE_CODE = 'El tamaño del código no puede ser mayor que 50'
+MESSAGE_WEIGHT_EN = 'Weight must be between 0.00 and 1.00.'
+MESSAGE_WEIGHT = 'Peso debe estar entre 0.00 y 1.00.'
+MESSAGE_SUBJETC_WEIGHT_EN = 'Subject weight must be between 0.00 and 1.00.'
+MESSAGE_SUBJETC_WEIGHT = 'Peso sobre asignatura debe estar entre 0.00 y 1.00.'
+MESSAGE_INTENSITY_EN = 'Intensity must be between 0.00 and 1.00.'
+MESSAGE_INTENSITY = 'Intensidad debe estar entre 0.00 y 1.00.'
 PLACEHOLDER_NAME_EVALUATION = 'Matemáticas 5º Primaria'
 PLACEHOLDER_PERIOD_EVALUATION = '1er Trimestre'
 
@@ -86,7 +95,18 @@ class ActivityUpdateForm(forms.ModelForm):
             'weight',
             'evaluation',
             'is_recovery',
-        )   
+        )
+
+    def clean_weight(self):
+        weight = self.cleaned_data.get('weight')
+        if float(weight) < 0.00 or float(weight) > 1.00:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_WEIGHT_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_WEIGHT)
+        return weight   
 
 # Administrator
 class AdministratorUpdateForm(forms.ModelForm):
@@ -160,9 +180,20 @@ class BlockCreateChildForm(forms.ModelForm):
             'start_date',
             'end_date',
         )
+    
+    def clean_weight(self):
+        weight = self.cleaned_data.get('weight')
+        if float(weight) < 0.00 or float(weight) > 1.00:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_WEIGHT_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_WEIGHT)
+        return weight  
 
 # Competences
-class CompetenceCreateForm(forms.ModelForm):
+class CompetenceLevel1CreateForm(forms.ModelForm):
 
     code = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': 'CC1', 'id': 'code-create-competence'}))
@@ -171,7 +202,7 @@ class CompetenceCreateForm(forms.ModelForm):
     description = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': 'Comunicación lingüística.	', 'id': 'description-create-competence'}))
     weight = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': '1', 'id': 'wieight-create-competence'}))
+        attrs={'placeholder': '1', 'id': 'weight-create-competence'}))
 
     class Meta:
         model = models.Competence
@@ -214,6 +245,80 @@ class CompetenceCreateForm(forms.ModelForm):
                 raise ValidationError(
                     MESSAGE_NAME)
         return name
+    
+    def clean_weight(self):
+        weight = self.cleaned_data.get('weight')
+        if float(weight) < 0.00 or float(weight) > 1.00:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_WEIGHT_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_WEIGHT)
+        return weight 
+
+class CompetenceLevel2CreateForm(forms.ModelForm):
+
+    code = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'CC1', 'id': 'code-create-competence'}))
+    name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Comunicación lingüística', 'id': 'name-create-competence'}))
+    description = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Comunicación lingüística.	', 'id': 'description-create-competence'}))
+    weight = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': '1', 'id': 'weight-create-competence'}))
+    subject_weight = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': '1', 'id': 'subject_weight-create-competence'}))
+
+    class Meta:
+        model = models.Competence
+        fields = (
+            'code',
+            'name',
+            'description',
+            'weight',
+            'subject_weight',
+        )
+        
+    def clean_weight(self):
+        weight = self.cleaned_data.get('weight')
+        if float(weight) < 0.00 or float(weight) > 1.00:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_WEIGHT_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_WEIGHT)
+        return weight
+
+    def clean_subject_weight(self):
+        subject_weight = self.cleaned_data.get('subject_weight')
+        if float(subject_weight) < 0.00 or float(subject_weight) > 1.00:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_SUBJETC_WEIGHT_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_SUBJETC_WEIGHT)
+        return subject_weight  
+
+class CompetenceLevel3CreateForm(forms.ModelForm):
+
+    code = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'CC1', 'id': 'code-create-competence'}))
+    name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Comunicación lingüística', 'id': 'name-create-competence'}))
+    description = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': 'Comunicación lingüística.', 'id': 'description-create-competence'}))
+
+    class Meta:
+        model = models.Competence
+        fields = (
+            'code',
+            'name',
+            'description',
+        )
+        
 
 # Exercices
 class ExerciseUpdateForm(forms.ModelForm):
@@ -227,7 +332,18 @@ class ExerciseUpdateForm(forms.ModelForm):
         fields = (
             'weight',
             'statement',
-        )  
+        )
+
+    def clean_weight(self):
+        weight = self.cleaned_data.get('weight')
+        if float(weight) < 0.00 or float(weight) > 1.00:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_WEIGHT_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_WEIGHT)
+        return weight    
 
 # Exercices_competence
 class ExerciseCompetenceUpdateForm(forms.ModelForm):
@@ -241,7 +357,29 @@ class ExerciseCompetenceUpdateForm(forms.ModelForm):
         fields = (
             'intensity',
             'weight',
-        )  
+        )
+
+    def clean_weight(self):
+        weight = self.cleaned_data.get('weight')
+        if float(weight) < 0.00 or float(weight) > 1.00:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_WEIGHT_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_WEIGHT)
+        return weight
+
+    def clean_intensity(self):
+        intensity = self.cleaned_data.get('intensity')
+        if float(intensity) < 0.00 or float(intensity) > 1.00:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_INTENSITY_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_INTENSITY)
+        return intensity     
 
 # Evaluations
 class EvaluationCreateForm(forms.ModelForm):
@@ -489,6 +627,17 @@ class ActivityMarkCreateForm(forms.ModelForm):
         fields = (
             'manual_mark',
         )
+    
+    def clean_manual_mark(self):
+        manual_mark = self.cleaned_data.get('manual_mark')
+        if float(manual_mark) < 0.00 or float(manual_mark) > 1.00:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_MARK_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_MARK)
+        return manual_mark  
 
 class CompetenceMarkCreateForm(forms.ModelForm):
     mark = forms.CharField(required=True, widget=forms.TextInput(
@@ -499,6 +648,17 @@ class CompetenceMarkCreateForm(forms.ModelForm):
         fields = (
             'mark',
         )
+    
+    def clean_mark(self):
+        mark = self.cleaned_data.get('mark')
+        if float(mark) < 0.00 or float(mark) > 1.00:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_MARK_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_MARK)
+        return mark  
 
 class EvaluationMarkCreateForm(forms.ModelForm):
     manual_mark = forms.CharField(required=True, widget=forms.TextInput(
@@ -509,6 +669,17 @@ class EvaluationMarkCreateForm(forms.ModelForm):
         fields = (
             'manual_mark',
         )
+    
+    def clean_manual_mark(self):
+        manual_mark = self.cleaned_data.get('manual_mark')
+        if float(manual_mark) < 0.00 or float(manual_mark) > 1.00:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_MARK_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_MARK)
+        return manual_mark  
         
 class ExerciseMarkCreateForm(forms.ModelForm):
     manual_mark = forms.CharField(required=True, widget=forms.TextInput(
@@ -519,6 +690,17 @@ class ExerciseMarkCreateForm(forms.ModelForm):
         fields = (
             'manual_mark',
         )
+    
+    def clean_manual_mark(self):
+        manual_mark = self.cleaned_data.get('manual_mark')
+        if float(manual_mark) < 0.00 or float(manual_mark) > 1.00:
+            if get_language() == 'en':
+                raise ValidationError(
+                    MESSAGE_MARK_EN)
+            else:
+                raise ValidationError(
+                    MESSAGE_MARK)
+        return manual_mark  
 
 # Sets
 class SetCreateForm(forms.ModelForm):
@@ -842,7 +1024,6 @@ class UserForm(UserChangeForm):
         attrs={'placeholder': 'alberto26', 'id': 'username-update-profile'}))
     email = forms.EmailField(required=True, widget=forms.TextInput(
         attrs={'placeholder': 'alberto@gmail.com', 'id': 'email-update-profile'}))
-    
 
     class Meta:
         model = User
@@ -851,7 +1032,22 @@ class UserForm(UserChangeForm):
             'last_name',
             'username', 
             'email', 
-            
+        )
+
+class UserPasswordUpdateForm(PasswordChangeForm):
+    old_password = forms.CharField(required=True, widget=forms.PasswordInput(
+        attrs={'placeholder': '*************', 'id': 'old_password'}))
+    new_password1 = forms.CharField(required=True, widget=forms.PasswordInput(
+        attrs={'placeholder': '*************', 'id': 'new_password1'}), help_text=password_validators_help_texts())
+    new_password2 = forms.CharField(required=True, widget=forms.PasswordInput(
+        attrs={'placeholder': '*************', 'id': 'new_password2'}))
+
+    class Meta:
+        model = User
+        fields = (
+            'old_password', 
+            'new_password1',
+            'new_password2',
         )
 
 class UserProfileForm(UserChangeForm):

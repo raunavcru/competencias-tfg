@@ -33,7 +33,7 @@
                     
                             {% csrf_token %}
                             <div class="row">
-                                <div class="grid-example col s0 xl4">
+                                <div class="grid-example col s2 xl4">
                                 </div>
                                 <div class="grid-example col s8 xl4">
                                     <div class="validate-input">
@@ -45,13 +45,13 @@
                                         {% endif %}
                                     </div>
                                 </div>
-                                <div class="form-errors">
-                                    {% if is_competence %}
-                                        {{form.mark.errors}}
-                                    {% else %}
-                                        {{form.manual_mark.errors}}
-                                    {% endif %}
-                                </div>
+                            </div>
+                            <div class="row form-errors">
+                                {% if is_competence %}
+                                    {{form.mark.errors}}
+                                {% else %}
+                                    {{form.manual_mark.errors}}
+                                {% endif %}
                             </div>
                             <div class="row">
                             {% if is_competence %}

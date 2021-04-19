@@ -52,6 +52,8 @@ class Competence(Common):
 
     weight = models.DecimalField('weight', max_digits=3, decimal_places=2, blank=True, null=True)
 
+    subject_weight = models.DecimalField('subject_weight', max_digits=3, decimal_places=2, blank=True, null=True)
+
     level = models.PositiveIntegerField('level')
 
     parent = models.ManyToManyField('self', "competence_parent", symmetrical=False, verbose_name=("competences_parent"), blank=True)
@@ -139,6 +141,9 @@ class Student(Common):
         verbose_name = 'Student'
         verbose_name_plural = 'Students'
     
+    def level2(self):
+        return self.student_competence_evaluation.filter(competence__level = 2).order_by('competence__code')
+
     def __str__(self):
         return self.surname + ' ' + self.name
 
