@@ -68,7 +68,8 @@ urlpatterns = [
     path('profile/password/update', views.UserPasswordUpdateView.as_view(), name = 'password_update'),
     path('profile/update', views.UserUpdateView.as_view(), name = 'profile_update'),
 
-    path('reports/set/<int:pk>/competences', views.ReportSetView.as_view(), name = 'report_set_competences'),
+    path('reports/set/<int:pk>/competences', views.ReportSetCompetenceEvaluationView.as_view(), name = 'report_set_competences'),
+    path('reports/set/<int:pk>/evaluations', views.ReportSetEvaluationView.as_view(), name = 'report_set_evaluations'),
 
     path('sets/create', views.SetCreateView.as_view(), name = 'sets_create'),
     path('sets/list', views.SetsListView.as_view(), name = 'sets_list'),

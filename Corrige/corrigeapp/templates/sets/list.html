@@ -23,6 +23,7 @@
                         {% else %}
                         <th class="center td-none" id="blocks">{% trans "Evaluations" %}</th>
                         <th class="center td-none" id="activities">{% trans "Activities" %}</th>
+                        <th class="center td-none" id="reports">{% trans "Reports" %}</th>
                         <th class="center td-none" id="list">{% trans "List of students" %}</th>
                         <th class="center td-none" id="type">{% trans "Evaluation type" %}</th>
                         {% endif %}
@@ -44,7 +45,7 @@
                             {% else %}
                             <td class="center dropdown-trigger td-none" onclick="location.href='{% url 'blocks_list' object.pk %}'"><em class="material-icons" style="color:#29b6f6">border_color</em></td>
                             <td class="center dropdown-trigger td-none" onclick="location.href='{% url 'activities_list' object.pk %}'"><em class="material-icons" style="color:#e53935">rate_review</em></td>
-                            <td class="center dropdown-trigger td-none" onclick="location.href='{% url 'report_set_competences' object.pk %}'"><em class="material-icons" style="color:#29b6f6">description</em></td>
+                            <td class="center dropdown-trigger modal-trigger td-none" href="#modalreport{{object.pk}}"><em class="material-icons" style="color:#29b6f6">description</em></td>
                             <td class="center dropdown-trigger td-none" onclick="location.href='{% url 'sets_student_list' object.pk %}'"><em class="material-icons" style="color:#e53935">people</em></td>
                             <td class="center dropdown-trigger td-none" onclick="location.href='{% url 'sets_update_evaluation_type' object.pk %}'"><em class="material-icons" style="color:#29b6f6">create</em></td>
                             {% endif %}
@@ -66,9 +67,27 @@
                                     <a class="center dropdown-trigger" onclick="location.href='{% url 'blocks_list' object.pk %}'"><em class="material-icons" style="color:#29b6f6">border_color</em></a>
                                     <h6>{% trans "Activities" %}</h6>
                                     <a class="center dropdown-trigger" onclick="location.href='{% url 'activities_list' object.pk %}'"><em class="material-icons" style="color:#e53935">rate_review</em></a>
+                                    <h6>{% trans "Report Competences" %}</h6>
+                                    <a class="center dropdown-trigger" onclick="location.href='{% url 'report_set_competences' object.pk %}'"><em class="material-icons" style="color:#e53935">description</em></a>
+                                    <h6>{% trans "Report Evaluations" %}</h6>
+                                    <a class="center dropdown-trigger" onclick="location.href='{% url 'report_set_evaluations' object.pk %}'"><em class="material-icons" style="color:#e53935">description</em></a>
                                     <h6>{% trans "List of students" %}</h6>
                                     <a class="center dropdown-trigger" onclick="location.href='{% url 'sets_student_list' object.pk %}'"><em class="material-icons" style="color:#e53935">people</em></a>
+                                    <h6>{% trans "List of students" %}</h6>
+                                    <a class="center dropdown-trigger" onclick="location.href='{% url 'sets_update_evaluation_type' object.pk %}'"><em class="material-icons" style="color:#29b6f6">create</em></a>
                                     {% endif %}
+                                </div>
+                            </div>
+                            <div id="modalreport{{object.pk}}" class="modal center" style="border-radius: 10px;  box-shadow: 2px 2px 10px #666;">
+                                <div class="modal-content">
+                                    <h3 class="center" >{% trans "Reports" %}</h3>
+                                    <hr>
+                                    <div class="row center" style="padding-top:15px;">
+                                        <a style="border-radius:5px;" href="{% url 'report_set_competences' object.pk %}" class="center teal lighten-2 waves-effect waves-light btn-small"><i class="material-icons right">description</i>{% trans "Competences" %}</a>
+                                    </div>
+                                    <div class="row center" style="padding-top:15px;">
+                                        <a style="border-radius:5px;" href="{% url 'report_set_evaluations' object.pk %}" class="center teal lighten-2 waves-effect waves-light btn-small"><i class="material-icons right">description</i>{% trans "Evaluations" %}</a>
+                                    </div>
                                 </div>
                             </div>
                         </tr>
