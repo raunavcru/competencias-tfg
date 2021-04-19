@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% load report %}
+{% block content %} 
+<div class="container">
+    <h4 class="centered">{% trans "Report" %}</h4>   
+        <table class="highlight">
+            <caption></caption>
+                <thead>
+                    <tr>
+                        <th id="student">{% trans "Student" %}</th>
+                    {% for ev_th in student_th|evaluations_list:set_object %} 
+                        <th id="evaluation{{ac_th.ac_th.evaluation.pk}}" class="center grey lighten-3">{{ev_th.evaluation.name}}</th>
+                        {% for ac_th in student_th|activities_list:ev_th.evaluation %} 
+                            <th id="activity{{ac_th.ac_th.activity.pk}}" class="center">{{ac_th.activity.title}}</th>
+                        {% endfor %}
+                    {% endfor %}
+                    </tr>
+                </thead>
+                {% for student in student_list %}
+                    <tbody>
+                        <tr class="center">
+                            <td>{{student.surname}}, {{student.name}}</td>
+                        {% for ev_m in student|evaluations_list:set_object %}
+                            <td class="center grey lighten-3">
+                            {% if ev_m.mark or ev_m.mark == 0 %}
+                                {{ev_m.mark}}
+                            {% else %}
+                                -
+                            {% endif %}
+                            </td>
+                            {% for ac_m in student|activities_list:ev_m.evaluation %} 
+                                <td class="center">
+                                {% if ac_m.mark or ac_m.mark == 0 %}
+                                    {{ac_m.mark}}
+                                {% else %}
+                                    -
+                                {% endif %}
+                                </td>
+                            {% endfor %}
+                        {% endfor %}
+                        </tr>
+                    </tbody>
+                {% endfor %}
+        </table>
+    <a onclick="location.href='{% url 'my_sets_list' %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
+</div>
+{% endblock %}
