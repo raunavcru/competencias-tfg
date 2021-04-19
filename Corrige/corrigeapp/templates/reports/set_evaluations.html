@@ -9,11 +9,11 @@
             <caption></caption>
                 <thead>
                     <tr>
-                        <th>{% trans "Student" %}</th>
+                        <th id="student">{% trans "Student" %}</th>
                     {% for ev_th in student_th|evaluations_list:set_object %} 
-                        <th class="center grey lighten-3">{{ev_th.evaluation.name}}</th>
+                        <th id="evaluation{{ac_th.ac_th.evaluation.pk}}" class="center grey lighten-3">{{ev_th.evaluation.name}}</th>
                         {% for ac_th in student_th|activities_list:ev_th.evaluation %} 
-                            <th class="center">{{ac_th.activity.title}}</th>
+                            <th id="activity{{ac_th.ac_th.activity.pk}}" class="center">{{ac_th.activity.title}}</th>
                         {% endfor %}
                     {% endfor %}
                     </tr>

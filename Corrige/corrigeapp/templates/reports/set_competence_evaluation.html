@@ -9,11 +9,11 @@
             <caption></caption>
                 <thead>
                     <tr>
-                        <th>{% trans "Student" %}</th>
+                        <th id="student">{% trans "Student" %}</th>
                     {% for c_e_s_th_l2 in student_th.level2 %} 
-                        <th class="center grey lighten-3">{{c_e_s_th_l2.competence.code}}</th>
+                        <th id="competence2{{c_e_s_th_l2.competence.pk}}" class="center grey lighten-3">{{c_e_s_th_l2.competence.code}}</th>
                         {% for c_e_s_th_l1 in student_th|level1:c_e_s_th_l2.competence %} 
-                            <th class="center">{{c_e_s_th_l1.competence.code}}</th>
+                            <th id="competence1{{c_e_s_th_l1.competence.pk}}" class="center">{{c_e_s_th_l1.competence.code}}</th>
                         {% endfor %}
                     {% endfor %}
                     </tr>
