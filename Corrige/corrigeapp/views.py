@@ -1648,6 +1648,39 @@ class MySetsListView(generic.ListView):
         queryset = models.Set.objects.filter(teacher__user=self.request.user).order_by('name')
         return queryset
 
+# Reports
+@method_decorator(login_required, name='dispatch')
+class ReportSetView(generic.ListView):
+    model = models.Student
+    template_name = 'reports/set_competence_evaluation.html'
+    context_object_name = 'student_list'
+
+    def get(self, request, *args, **kwargs):
+        set_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_pk)
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
+            students = models.Student.objects.filter(student = set_object).order_by('surname')
+            for student_object in students:
+                services.MarkService().create_competence_evaluation(set_object = set_object, student = student_object)
+            return super(ReportSetView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        set_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_pk)
+        student_th = models.Student.objects.filter(student = set_object).order_by('surname').first()
+        context = super(ReportSetView, self).get_context_data(**kwargs)
+        context['student_th'] = student_th
+
+        return context
+
+    def get_queryset(self):
+        set_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_pk)
+        queryset = models.Student.objects.filter(student = set_object).order_by('surname')
+        return queryset
+
 # Sets
 @method_decorator(login_required, name='dispatch') 
 class SetAssignStudentView(generic.TemplateView):
@@ -1713,6 +1746,32 @@ class SetDeleteView(generic.DeleteView):
             return redirect('/')
 
 @method_decorator(login_required, name='dispatch')
+class SetEvaluationTypeUpdateView(generic.UpdateView):
+    model = models.Set
+    form_class = forms.SetUpdateEvaluationTypeForm
+    template_name = "sets/update_evaluation_type.html"
+    success_url = reverse_lazy('my_sets_list')
+
+    def get(self, request, *args, **kwargs):
+        set_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_pk)
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
+            return super(SetEvaluationTypeUpdateView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+    
+    def form_valid(self, form):
+        set_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_pk)
+        if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+            form.save()
+            services.MarkService().recalculate(set_object = set_object)
+
+            return redirect('my_sets_list')
+        else:
+            return redirect('/')
+
+@method_decorator(login_required, name='dispatch')
 class SetsListView(generic.ListView):
     model = models.Set
     template_name = 'sets/list.html'
@@ -1755,32 +1814,6 @@ class SetUpdateView(generic.UpdateView):
     def get(self, request, *args, **kwargs):
         if services.UserService().is_admin(request.user):
             return super(SetUpdateView, self).get(self, request, *args, **kwargs)
-        else:
-            return redirect('/')
-
-@method_decorator(login_required, name='dispatch')
-class SetEvaluationTypeUpdateView(generic.UpdateView):
-    model = models.Set
-    form_class = forms.SetUpdateEvaluationTypeForm
-    template_name = "sets/update_evaluation_type.html"
-    success_url = reverse_lazy('my_sets_list')
-
-    def get(self, request, *args, **kwargs):
-        set_pk = self.kwargs.get('pk')
-        set_object = models.Set.objects.get(pk=set_pk)
-        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
-            return super(SetEvaluationTypeUpdateView, self).get(self, request, *args, **kwargs)
-        else:
-            return redirect('/')
-    
-    def form_valid(self, form):
-        set_pk = self.kwargs.get('pk')
-        set_object = models.Set.objects.get(pk=set_pk)
-        if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
-            form.save()
-            services.MarkService().recalculate(set_object = set_object)
-
-            return redirect('my_sets_list')
         else:
             return redirect('/')
 

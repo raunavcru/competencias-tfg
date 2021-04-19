@@ -141,6 +141,9 @@ class Student(Common):
         verbose_name = 'Student'
         verbose_name_plural = 'Students'
     
+    def level2(self):
+        return self.student_competence_evaluation.filter(competence__level = 2).order_by('competence__code')
+
     def __str__(self):
         return self.surname + ' ' + self.name
 
