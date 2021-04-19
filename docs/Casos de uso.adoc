@@ -1056,3 +1056,94 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 
 |===
+|===
+| **CU-50** Listar bloques de evaluaciones.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite el listado de bloques las evaluaciones_.
+
+|Secuencia normal:
+
+1.El profesor desea obtener la lista de bloques de evaluaciones.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de grupos de clase.
+
+4.El profesor obtiene la lista de grupos de clase.
+
+5.El profesor pide el listado bloque de evaluaciones.
+
+6. El profesor obtiene el bloque de evaluaciones.
+
+
+|===
+|===
+| **CU-51** Crear bloques de evaluaciones.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la creacion de bloques las evaluaciones_.
+
+|Secuencia normal:
+
+1.El profesor desea crear bloques de evaluaciones.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de grupos de clase.
+
+4.El profesor obtiene la lista de grupos de clase.
+
+5.El profesor pide el listado bloque de evaluaciones.
+
+6. El profesor obtiene el bloque de evaluaciones.
+
+7. El profesor crea un bloque de evaluación.
+
+
+|===
+|===
+| **CU-52** Editar bloques de evaluaciones.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la edición de bloques las evaluaciones_.
+
+|Secuencia normal:
+
+1.El profesor desea editar bloques de evaluaciones.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de grupos de clase.
+
+4.El profesor obtiene la lista de grupos de clase.
+
+5.El profesor pide el listado bloque de evaluaciones.
+
+6. El profesor obtiene el bloque de evaluaciones.
+
+7. El profesor edita un bloque de evaluación.
+
+
+|===
+|===
+| **CU-53** Eliminar bloques de evaluaciones.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la eliminación de bloques las evaluaciones_.
+
+|Secuencia normal:
+
+1.El profesor desea eliminar bloques de evaluaciones.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de grupos de clase.
+
+4.El profesor obtiene la lista de grupos de clase.
+
+5.El profesor pide el listado bloque de evaluaciones.
+
+6. El profesor obtiene el bloque de evaluaciones.
+
+7. El profesor elimina un bloque de evaluación.
+
+
+|===
+
