@@ -966,10 +966,47 @@ class ExerciseCompetenceCreateView(generic.CreateView):
             return redirect('exercises_update', pk=exercise_pk)
         else:
             return redirect('/')
-    
-    def form_invalid(self, form):
-        exercise_pk = self.kwargs.get('pk')
-        return redirect('exercises_update', pk=exercise_pk)
+
+@method_decorator(login_required, name='dispatch')
+class ExerciseCompetenceUpdateView(generic.UpdateView):
+    model = models.Exercise_competence
+    form_class = forms.ExerciseCompetenceUpdateForm
+    template_name = 'exercise_competence/create.html'
+
+    def get(self, request, *args, **kwargs):
+        exercise_competence_pk = self.kwargs.get('pk')
+        exercise_competence_object = models.Exercise_competence.objects.get(pk=exercise_competence_pk)
+        activity_object = models.Activity.objects.get(pk=exercise_competence_object.exercise.activity.pk)
+        competence_object = exercise_competence_object.competence
+        set_object = activity_object.set_activity
+        if services.UserService().is_teacher(request.user) and competence_object.level == 1 and services.SetService().is_owner(user=request.user, set_object=set_object):
+            return super(ExerciseCompetenceUpdateView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        exercise_competence_pk = self.kwargs.get('pk')
+        exercise_competence_object = models.Exercise_competence.objects.get(pk=exercise_competence_pk)
+        exercise_pk = exercise_competence_object.exercise.pk
+        context = super(ExerciseCompetenceUpdateView, self).get_context_data(**kwargs)
+        context['exercise_competence_pk'] = exercise_competence_pk
+        context['exercise_pk'] = exercise_pk
+        context['update'] = True
+        return context
+
+    def form_valid(self, form):
+        exercise_competence_pk = self.kwargs.get('pk')
+        exercise_competence_object = models.Exercise_competence.objects.get(pk=exercise_competence_pk)
+        activity_object = models.Activity.objects.get(pk=exercise_competence_object.exercise.activity.pk)
+        competence_object = exercise_competence_object.competence
+        set_object = activity_object.set_activity
+        if services.UserService().is_teacher(self.request.user) and competence_object.level == 1 and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+            
+            exercice_competence = form.save()
+
+            return redirect('exercises_update', pk=exercise_competence_object.exercise.pk)
+        else:
+            return redirect('/')
 
 # Evaluations 
 @method_decorator(login_required, name='dispatch')

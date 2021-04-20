@@ -95,7 +95,8 @@
                                         <th id="code">{% trans "Code" %}</th>
                                         <th id="name" class="th-none">{% trans "Name" %}</th>
                                         <th class="center" id="intensity">{% trans "Intensity" %}</th>  
-                                        <th class="center" id="weight">{% trans "Weight" %}</th>         
+                                        <th class="center" id="weight">{% trans "Weight" %}</th>    
+                                        <th class="center" id="edit">{% trans "Edit" %}</th>          
                                         <th class="center" id="Unassign">{% trans "Unassign" %}</th>       
                                     </tr>
                                 </thead>
@@ -106,6 +107,7 @@
                                             <td class="td-none" style="width:300px">{{object.competence.name}}</td>
                                             <td class="center" style="width:100px">{{object.intensity}}</td>
                                             <td class="center" style="width:100px">{{object.weight}}</td> 
+                                            <td class="center dropdown-trigger" onclick="location.href='{% url 'exercise_competences_update' object.pk %}'"><em class="material-icons" style="color:#29b6f6">create</em></td>              
                                             <td class="center" style="width:100px">
                                                 <form class="col s12" id="form-create-exercises" method="post" action="{% url 'exercise_competences_delete' id=exercise_pk pk=object.pk %}">
                                                     {% csrf_token %}
