@@ -318,7 +318,6 @@ class CompetenceLevel3CreateForm(forms.ModelForm):
             'name',
             'description',
         )
-        
 
 # Exercices
 class ExerciseUpdateForm(forms.ModelForm):

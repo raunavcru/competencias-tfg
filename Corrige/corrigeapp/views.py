@@ -874,7 +874,7 @@ class ExerciseUpdateView(generic.UpdateView):
         exercise_pk = self.kwargs.get('pk')
         exercise_object = models.Exercise.objects.get(pk=exercise_pk)
         activity_object = models.Activity.objects.get(pk=exercise_object.activity.pk)
-        list_exercise_competence = models.Exercise_competence.objects.filter(exercise=exercise_object)
+        list_exercise_competence = models.Exercise_competence.objects.filter(exercise=exercise_object).order_by('competence__code')
         list_competences_unassigned = models.Competence.objects.filter(level=1, competences=activity_object.set_activity.subject).exclude(competence_exercise_competence__exercise=exercise_object).order_by('code')
         context = super(ExerciseUpdateView, self).get_context_data(**kwargs)
         context['exercise_pk'] = exercise_pk
@@ -882,7 +882,6 @@ class ExerciseUpdateView(generic.UpdateView):
         context['update'] = True
         context['list_competences_assigned'] = list_exercise_competence
         context['list_competences_unassigned'] = list_competences_unassigned
-        context['exercise_competence_form'] = forms.ExerciseCompetenceUpdateForm
 
         if get_language == 'en':
             context['info'] = "Intensity indicates the competence's value about its mark. Weight indicates the competence's value about the mark of the exercise." 
@@ -926,10 +925,28 @@ class ExerciseCompetenceDeleteView(generic.DeleteView):
 @method_decorator(login_required, name='dispatch')
 class ExerciseCompetenceCreateView(generic.CreateView):
     form_class = forms.ExerciseCompetenceUpdateForm
-    template_name = EXERCISE_CREATE
+    template_name = 'exercise_competence/create.html'
 
     def get(self, request, *args, **kwargs):
-        return redirect('/')
+        exercise_pk = self.kwargs.get('pk')
+        exercise_object = models.Exercise.objects.get(pk=exercise_pk)
+        activity_object = models.Activity.objects.get(pk=exercise_object.activity.pk)
+        competence_pk = self.kwargs.get('id')
+        competence_object = models.Competence.objects.get(pk=competence_pk)
+        set_object = activity_object.set_activity
+        exist = models.Exercise_competence.objects.filter(exercise = exercise_object, competence = competence_object).exists()
+        if services.UserService().is_teacher(request.user) and competence_object.level == 1 and services.SetService().is_owner(user=request.user, set_object=set_object) and not exist:
+            return super(ExerciseCompetenceCreateView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        exercise_pk = self.kwargs.get('pk')
+        competence_pk = self.kwargs.get('id')
+        context = super(ExerciseCompetenceCreateView, self).get_context_data(**kwargs)
+        context['exercise_pk'] = exercise_pk
+        context['competence_pk'] = competence_pk
+        return context
 
     def form_valid(self, form):
         exercise_pk = self.kwargs.get('pk')
@@ -938,7 +955,9 @@ class ExerciseCompetenceCreateView(generic.CreateView):
         competence_object = models.Competence.objects.get(pk=competence_pk)
         activity_object = models.Activity.objects.get(pk=exercise_object.activity.pk)
         set_object = activity_object.set_activity
-        if services.UserService().is_teacher(self.request.user) and competence_object.level == 1 and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+        exist = models.Exercise_competence.objects.filter(exercise = exercise_object, competence = competence_object).exists()
+        if services.UserService().is_teacher(self.request.user) and competence_object.level == 1 and services.SetService().is_owner(user=self.request.user, set_object=set_object) and not exist:
+            
             exercice_competence = form.save(commit=False)
             exercice_competence.exercise = exercise_object
             exercice_competence.competence = competence_object
