@@ -1002,7 +1002,7 @@ class ExerciseCompetenceUpdateView(generic.UpdateView):
         set_object = activity_object.set_activity
         if services.UserService().is_teacher(self.request.user) and competence_object.level == 1 and services.SetService().is_owner(user=self.request.user, set_object=set_object):
             
-            exercice_competence = form.save()
+            form.save()
 
             return redirect('exercises_update', pk=exercise_competence_object.exercise.pk)
         else:
