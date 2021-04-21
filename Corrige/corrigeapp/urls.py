@@ -71,6 +71,7 @@ urlpatterns = [
 
     path('reports/set/<int:pk>/competences', views.ReportSetCompetenceEvaluationView.as_view(), name = 'report_set_competences'),
     path('reports/set/<int:pk>/evaluations', views.ReportSetEvaluationView.as_view(), name = 'report_set_evaluations'),
+    path('reports/student/<int:id>/<int:pk>', views.ReportStudentView.as_view(), name = 'report_student'),
 
     path('sets/create', views.SetCreateView.as_view(), name = 'sets_create'),
     path('sets/list', views.SetsListView.as_view(), name = 'sets_list'),
