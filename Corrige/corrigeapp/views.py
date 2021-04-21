@@ -1749,6 +1749,7 @@ class ReportSetEvaluationView(generic.ListView):
         if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
             students = models.Student.objects.filter(student = set_object).order_by('surname')
             for student_object in students:
+                services.MarkService().create_evaluation_mark(set_object = set_object, student = student_object)
                 services.MarkService().create_activity_mark(set_object = set_object, student = student_object)
             return super(ReportSetEvaluationView, self).get(self, request, *args, **kwargs)
         else:
@@ -1769,6 +1770,35 @@ class ReportSetEvaluationView(generic.ListView):
         set_object = models.Set.objects.get(pk=set_pk)
         queryset = models.Student.objects.filter(student = set_object).order_by('surname')
         return queryset
+
+@method_decorator(login_required, name='dispatch')
+class ReportStudentView(generic.ListView):
+    model = models.Student
+    template_name = 'reports/student.html'
+    context_object_name = 'student_list'
+
+    def get(self, request, *args, **kwargs):
+        student_pk = self.kwargs.get('pk')
+        student_object = models.Student.objects.get(pk=student_pk)
+        set_pk = self.kwargs.get('id')
+        set_object = models.Set.objects.get(pk=set_pk)
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
+            services.MarkService().create_evaluation_mark(set_object = set_object, student = student_object)
+            services.MarkService().create_activity_mark(set_object = set_object, student = student_object)
+            return super(ReportStudentView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        student_pk = self.kwargs.get('pk')
+        student_object = models.Student.objects.get(pk=student_pk)
+        set_pk = self.kwargs.get('id')
+        set_object = models.Set.objects.get(pk=set_pk)
+        context = super(ReportStudentView, self).get_context_data(**kwargs)
+        context['student'] = student_object
+        context['set_object'] = set_object
+
+        return context
 
 # Sets
 @method_decorator(login_required, name='dispatch') 
