@@ -312,10 +312,10 @@ class MarkService():
             
         
         if weight_total == 0.0:
-            evaluation_mark.mark = 0.0
+            exercise_mark.mark = 0.0
         else:
             mark = mark_total/weight_total
-            evaluation_mark.mark = mark
+            exercise_mark.mark = mark
 
         exercise_mark.save()
 
