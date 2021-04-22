@@ -1883,8 +1883,8 @@ class SetEvaluationTypeUpdateView(generic.UpdateView):
         set_pk = self.kwargs.get('pk')
         set_object = models.Set.objects.get(pk=set_pk)
         if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
-            form.save()
-            services.MarkService().recalculate(set_object = set_object)
+            set_saved = form.save()
+            services.MarkService().recalculate(set_object = set_saved)
 
             return redirect('my_sets_list')
         else:
