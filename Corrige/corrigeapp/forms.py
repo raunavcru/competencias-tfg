@@ -629,7 +629,7 @@ class ActivityMarkCreateForm(forms.ModelForm):
     
     def clean_manual_mark(self):
         manual_mark = self.cleaned_data.get('manual_mark')
-        if float(manual_mark) < 0.00 or float(manual_mark) > 1.00:
+        if float(manual_mark) < 0.00 or float(manual_mark) > 10.00:
             if get_language() == 'en':
                 raise ValidationError(
                     MESSAGE_MARK_EN)
@@ -650,7 +650,7 @@ class CompetenceMarkCreateForm(forms.ModelForm):
     
     def clean_mark(self):
         mark = self.cleaned_data.get('mark')
-        if float(mark) < 0.00 or float(mark) > 1.00:
+        if float(mark) < 0.00 or float(mark) > 10.00:
             if get_language() == 'en':
                 raise ValidationError(
                     MESSAGE_MARK_EN)
@@ -671,7 +671,7 @@ class EvaluationMarkCreateForm(forms.ModelForm):
     
     def clean_manual_mark(self):
         manual_mark = self.cleaned_data.get('manual_mark')
-        if float(manual_mark) < 0.00 or float(manual_mark) > 1.00:
+        if float(manual_mark) < 0.00 or float(manual_mark) > 10.00:
             if get_language() == 'en':
                 raise ValidationError(
                     MESSAGE_MARK_EN)
@@ -692,7 +692,7 @@ class ExerciseMarkCreateForm(forms.ModelForm):
     
     def clean_manual_mark(self):
         manual_mark = self.cleaned_data.get('manual_mark')
-        if float(manual_mark) < 0.00 or float(manual_mark) > 1.00:
+        if float(manual_mark) < 0.00 or float(manual_mark) > 10.00:
             if get_language() == 'en':
                 raise ValidationError(
                     MESSAGE_MARK_EN)
