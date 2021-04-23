@@ -20,7 +20,13 @@
                             <td>{{object.code}}</td> 
                             <td style="width:500px">{{object.name}}</td>
                             <td style="width:500px">{{object.description}}</td>    
-                            <td class="center">{{object.weight}}</td>                         
+                            <td class="center">
+                                {% if object.weight or object.weight == 0 %}
+                                    {{object.weight}}
+                                {% else %}
+                                    -
+                                {% endif %}
+                            </td>                      
                         </tr>
                     </tbody>
                 {% endfor %}

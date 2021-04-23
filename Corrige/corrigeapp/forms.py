@@ -52,6 +52,8 @@ MESSAGE_CODE_EN = 'Code can not be longer of 50 characters'
 MESSAGE_CODE = 'El tamaño del código no puede ser mayor que 50'
 MESSAGE_WEIGHT_EN = 'Weight must be between 0.00 and 1.00.'
 MESSAGE_WEIGHT = 'Peso debe estar entre 0.00 y 1.00.'
+MESSAGE_WEIGHT_COMPETENC_EN = 'Weight must be above 0.00.'
+MESSAGE_WEIGHT_COMPETENCE = 'Peso debe estar por encima de 0.00.'
 MESSAGE_SUBJETC_WEIGHT_EN = 'Subject weight must be between 0.00 and 1.00.'
 MESSAGE_SUBJETC_WEIGHT = 'Peso sobre asignatura debe estar entre 0.00 y 1.00.'
 MESSAGE_INTENSITY_EN = 'Intensity must be between 0.00 and 1.00.'
@@ -335,13 +337,13 @@ class ExerciseUpdateForm(forms.ModelForm):
 
     def clean_weight(self):
         weight = self.cleaned_data.get('weight')
-        if float(weight) < 0.00 or float(weight) > 1.00:
+        if float(weight) < 0.00:
             if get_language() == 'en':
                 raise ValidationError(
-                    MESSAGE_WEIGHT_EN)
+                    MESSAGE_WEIGHT_COMPETENCE_EN)
             else:
                 raise ValidationError(
-                    MESSAGE_WEIGHT)
+                    MESSAGE_WEIGHT_COMPETENCE)
         return weight    
 
 # Exercices_competence
