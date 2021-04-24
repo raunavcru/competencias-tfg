@@ -180,7 +180,7 @@ class Activity(Common):
 
     date = models.DateField('date')
 
-    weight = models.DecimalField('weight', max_digits=3, decimal_places=2)
+    weight = models.DecimalField('weight', max_digits=5, decimal_places=2)
 
     is_recovery = models.BooleanField(("is_recovery"))
 

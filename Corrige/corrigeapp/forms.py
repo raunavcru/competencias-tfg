@@ -50,10 +50,8 @@ MESSAGE_DESCRIPTION_EN = 'Description can not be longer of 100 characters'
 MESSAGE_DESCRIPTION = 'El tamaño de la descripción no puede ser mayor que 100'
 MESSAGE_CODE_EN = 'Code can not be longer of 50 characters'
 MESSAGE_CODE = 'El tamaño del código no puede ser mayor que 50'
-MESSAGE_WEIGHT_EN = 'Weight must be between 0.00 and 1.00.'
-MESSAGE_WEIGHT = 'Peso debe estar entre 0.00 y 1.00.'
-MESSAGE_WEIGHT_COMPETENCE_EN = 'Weight must be above 0.00.'
-MESSAGE_WEIGHT_COMPETENCE = 'Peso debe estar por encima de 0.00.'
+MESSAGE_WEIGHT_EN = 'Weight must be above 0.00.'
+MESSAGE_WEIGHT = 'Peso debe estar por encima de 0.00.'
 MESSAGE_SUBJETC_WEIGHT_EN = 'Subject weight must be between 0.00 and 1.00.'
 MESSAGE_SUBJETC_WEIGHT = 'Peso sobre asignatura debe estar entre 0.00 y 1.00.'
 MESSAGE_INTENSITY_EN = 'Intensity must be between 0.00 and 1.00.'
@@ -72,8 +70,8 @@ class ActivityUpdateForm(forms.ModelForm):
             attrs={'placeholder': DATE_PLACEHOLDER}
         )
     )
-    weight = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': '1', 'id': 'wieight-create-competence'}))
+    weight = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '1.0', 'id': 'weight-create-activity'}))
     evaluation = forms.ModelChoiceField(evaluations_final, empty_label=None)
     is_recovery = forms.ChoiceField(
         widget = forms.Select(),
@@ -101,13 +99,15 @@ class ActivityUpdateForm(forms.ModelForm):
 
     def clean_weight(self):
         weight = self.cleaned_data.get('weight')
-        if float(weight) < 0.00 or float(weight) > 1.00:
+
+        if float(weight) < 0.00:
             if get_language() == 'en':
                 raise ValidationError(
                     MESSAGE_WEIGHT_EN)
             else:
                 raise ValidationError(
                     MESSAGE_WEIGHT)
+        
         return weight   
 
 # Administrator
@@ -156,8 +156,8 @@ class BlockCreateChildForm(forms.ModelForm):
         attrs={'placeholder': PLACEHOLDER_NAME_EVALUATION, 'id': 'name-create-block'}))
     period = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': PLACEHOLDER_PERIOD_EVALUATION}))
-    weight = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': '1', 'id': 'weight-create-block'}))
+    weight = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '1.0', 'id': 'weight-create-block'}))
     start_date = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
@@ -185,7 +185,7 @@ class BlockCreateChildForm(forms.ModelForm):
     
     def clean_weight(self):
         weight = self.cleaned_data.get('weight')
-        if float(weight) < 0.00 or float(weight) > 1.00:
+        if float(weight) < 0.00:
             if get_language() == 'en':
                 raise ValidationError(
                     MESSAGE_WEIGHT_EN)
@@ -203,8 +203,8 @@ class CompetenceLevel1CreateForm(forms.ModelForm):
         attrs={'placeholder': 'Comunicación lingüística', 'id': 'name-create-competence'}))
     description = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': 'Comunicación lingüística.	', 'id': 'description-create-competence'}))
-    weight = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': '1', 'id': 'weight-create-competence'}))
+    weight = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '1.0', 'id': 'weight-create-competence'}))
 
     class Meta:
         model = models.Competence
@@ -250,7 +250,7 @@ class CompetenceLevel1CreateForm(forms.ModelForm):
     
     def clean_weight(self):
         weight = self.cleaned_data.get('weight')
-        if float(weight) < 0.00 or float(weight) > 1.00:
+        if float(weight) < 0.00:
             if get_language() == 'en':
                 raise ValidationError(
                     MESSAGE_WEIGHT_EN)
@@ -267,8 +267,8 @@ class CompetenceLevel2CreateForm(forms.ModelForm):
         attrs={'placeholder': 'Comunicación lingüística', 'id': 'name-create-competence'}))
     description = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': 'Comunicación lingüística.	', 'id': 'description-create-competence'}))
-    weight = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': '1', 'id': 'weight-create-competence'}))
+    weight = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '1.0', 'id': 'weight-create-competence'}))
     subject_weight = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': '1', 'id': 'subject_weight-create-competence'}))
 
@@ -323,8 +323,8 @@ class CompetenceLevel3CreateForm(forms.ModelForm):
 
 # Exercices
 class ExerciseUpdateForm(forms.ModelForm):
-    weight = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': '1', 'id': 'weight-create-exercice'}))
+    weight = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '1.0', 'id': 'weight-create-exercise'}))
     statement = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'id': 'statement-create-exercice'}))
 
@@ -340,18 +340,19 @@ class ExerciseUpdateForm(forms.ModelForm):
         if float(weight) < 0.00:
             if get_language() == 'en':
                 raise ValidationError(
-                    MESSAGE_WEIGHT_COMPETENCE_EN)
+                    MESSAGE_WEIGHT_EN)
             else:
                 raise ValidationError(
-                    MESSAGE_WEIGHT_COMPETENCE)
+                    MESSAGE_WEIGHT)
         return weight    
 
 # Exercices_competence
 class ExerciseCompetenceUpdateForm(forms.ModelForm):
-    intensity = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': '1', 'id': 'intensity-create-exercice_competence'}))
-    weight = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': '1', 'id': 'weight-create-exercice_competence'}))
+
+    intensity = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '1.0', 'id': 'intensity-create-exercise-competence'}))
+    weight = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '1.0', 'id': 'weight-create-exercise-competence'}))
 
     class Meta:
         model = models.Exercise_competence
