@@ -27,35 +27,36 @@ CHOICES_EVALUATION_TYPE_FINAL =(("BY_COMPETENCES", "Por Competencias"), ("BY_EVA
 CHOICES_EVALUATION_TYPE_PARTIAL_EN =(("BY_ALL_ACTIVITIES", "By all Activities"), ("BY_RECOVERY_ACTIVITIES", "By Recovery Activities"))
 CHOICES_EVALUATION_TYPE_PARTIAL =(("BY_ALL_ACTIVITIES", "Por todas las Actividades"), ("BY_RECOVERY_ACTIVITIES", "Por Recuperaciones"))
 
-
-DATE_PLACEHOLDER = 'dd/mm/aaaa'
-DATE_PLACEHOLDER_EN = 'mm/dd/yyyy'
 MESSAGE_INITIALS = 'El tamaño de las iniciales no puede ser mayor que 9'
 MESSAGE_INITIALS_EN = 'Initials can not be longer of 9 characters'
 MESSAGE_NAME = 'El tamaño del nombre no puede ser mayor que 100'
 MESSAGE_NAME_EN = 'Name can not be longer of 100 characters'
-MESSAGE_MARK_EN = 'Mark must be between 0.00 and 1.00.'
-MESSAGE_MARK = 'Nota debe estar entre 0.00 y 1.00.'
 MESSAGE_SURNAME = 'El tamaño del apellido no puede ser mayor que 100'
 MESSAGE_SURNAME_EN = 'Surname can not be longer of 100 characters'
-MESSAGE_BIRTHDATE = 'La fecha de cumpleaños debe ser en el pasado'
-MESSAGE_BIRTHDATE_EN = 'Birthdate can not be past'
 MESSAGE_GRADE = 'La calificación no puede tener más de 50 caracteres'
 MESSAGE_GRADE_EN = 'Grade can not be longer of 50 characters'
 MESSAGE_LEVEL_EN = 'Level can not be longer of 50 characters'
 MESSAGE_LEVEL = 'El tamaño del nivel no puede ser mayor que 50'
-MESSAGE_LINE_EN = 'Line must be a letter'
-MESSAGE_LINE = 'Línea solo pueden ser un letra'
 MESSAGE_DESCRIPTION_EN = 'Description can not be longer of 100 characters'
 MESSAGE_DESCRIPTION = 'El tamaño de la descripción no puede ser mayor que 100'
 MESSAGE_CODE_EN = 'Code can not be longer of 50 characters'
 MESSAGE_CODE = 'El tamaño del código no puede ser mayor que 50'
-MESSAGE_WEIGHT_EN = 'Weight must be above 0.00.'
-MESSAGE_WEIGHT = 'Peso debe estar por encima de 0.00.'
-MESSAGE_SUBJETC_WEIGHT_EN = 'Subject weight must be between 0.00 and 1.00.'
-MESSAGE_SUBJETC_WEIGHT = 'Peso sobre asignatura debe estar entre 0.00 y 1.00.'
+
+MESSAGE_BIRTHDATE = 'La fecha de cumpleaños debe ser en el pasado.'
+MESSAGE_BIRTHDATE_EN = 'Birthdate can not be past.'
 MESSAGE_INTENSITY_EN = 'Intensity must be between 0.00 and 1.00.'
 MESSAGE_INTENSITY = 'Intensidad debe estar entre 0.00 y 1.00.'
+MESSAGE_LINE_EN = 'Line must be a letter.'
+MESSAGE_LINE = 'Línea solo pueden ser un letra.'
+MESSAGE_MARK_EN = 'Mark must be between 0.00 and 10.00.'
+MESSAGE_MARK = 'Nota debe estar entre 0.00 y 10.00.'
+MESSAGE_SUBJETC_WEIGHT_EN = 'Subject weight must be above 0.00.'
+MESSAGE_SUBJETC_WEIGHT = 'Peso debe estar por encima de 0.00.'
+MESSAGE_WEIGHT_EN = 'Weight must be above 0.00.'
+MESSAGE_WEIGHT = 'Peso debe estar por encima de 0.00.'
+
+PLACEHOLDER_DATE = 'dd/mm/aaaa'
+PLACEHOLDER_DATE_EN = 'mm/dd/yyyy'
 PLACEHOLDER_NAME_EVALUATION = 'Matemáticas 5º Primaria'
 PLACEHOLDER_PERIOD_EVALUATION = '1er Trimestre'
 
@@ -67,7 +68,7 @@ class ActivityUpdateForm(forms.ModelForm):
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     weight = forms.DecimalField(
@@ -83,7 +84,7 @@ class ActivityUpdateForm(forms.ModelForm):
         super(ActivityUpdateForm, self).__init__(*args, **kwargs)
         self.fields['evaluation'].queryset = self.choices
         if get_language() == 'en':
-            self.fields['date'].widget.attrs['placeholder'] = DATE_PLACEHOLDER_EN
+            self.fields['date'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
             self.fields['date'].widget.format = settings.DATE_INPUT_FORMATS[0]
             self.fields['is_recovery'].choices = CHOICES_YES_NO_EN
     
@@ -116,7 +117,7 @@ class AdministratorUpdateForm(forms.ModelForm):
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     initials = forms.CharField(required=True)
@@ -124,7 +125,7 @@ class AdministratorUpdateForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(AdministratorUpdateForm, self).__init__(*args, **kwargs)
         if get_language() == 'en':
-            self.fields['birthdate'].widget.attrs['placeholder'] = DATE_PLACEHOLDER_EN
+            self.fields['birthdate'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
             self.fields['birthdate'].widget.format = settings.DATE_INPUT_FORMATS[0]
 
     class Meta:
@@ -162,16 +163,24 @@ class BlockCreateChildForm(forms.ModelForm):
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     end_date = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
+
+    def __init__(self, *args, **kwargs):
+        super(BlockCreateChildForm, self).__init__(*args, **kwargs)
+        if get_language() == 'en':
+            self.fields['start_date'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['start_date'].widget.format = settings.DATE_INPUT_FORMATS[0]
+            self.fields['end_date'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['end_date'].widget.format = settings.DATE_INPUT_FORMATS[0]
 
     class Meta:
         model = models.Evaluation
@@ -266,7 +275,7 @@ class CompetenceLevel2CreateForm(forms.ModelForm):
     name = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': 'Comunicación lingüística', 'id': 'name-create-competence'}))
     description = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': 'Comunicación lingüística.	', 'id': 'description-create-competence'}))
+        attrs={'placeholder': 'Comunicación lingüística.', 'id': 'description-create-competence'}))
     weight = forms.DecimalField(
         widget=forms.NumberInput(attrs={'required':True, 'placeholder': '1.0', 'id': 'weight-create-competence'}))
     subject_weight = forms.CharField(required=True, widget=forms.TextInput(
@@ -392,17 +401,25 @@ class EvaluationCreateForm(forms.ModelForm):
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     end_date = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     subject = forms.ModelChoiceField(subjects, empty_label=None)
+
+    def __init__(self, *args, **kwargs):
+        super(EvaluationCreateForm, self).__init__(*args, **kwargs)
+        if get_language() == 'en':
+            self.fields['start_date'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['start_date'].widget.format = settings.DATE_INPUT_FORMATS[0]
+            self.fields['end_date'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['end_date'].widget.format = settings.DATE_INPUT_FORMATS[0]
 
     class Meta:
         model = models.Evaluation
@@ -421,16 +438,24 @@ class EvaluationCreateAllForm(forms.ModelForm):
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     end_date = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
+
+    def __init__(self, *args, **kwargs):
+        super(EvaluationCreateForm, self).__init__(*args, **kwargs)
+        if get_language() == 'en':
+            self.fields['start_date'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['start_date'].widget.format = settings.DATE_INPUT_FORMATS[0]
+            self.fields['end_date'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['end_date'].widget.format = settings.DATE_INPUT_FORMATS[0]
 
     class Meta:
         model = models.Evaluation
@@ -450,16 +475,24 @@ class EvaluationCreateChildForm(forms.ModelForm):
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     end_date = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
+
+    def __init__(self, *args, **kwargs):
+        super(EvaluationCreateForm, self).__init__(*args, **kwargs)
+        if get_language() == 'en':
+            self.fields['start_date'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['start_date'].widget.format = settings.DATE_INPUT_FORMATS[0]
+            self.fields['end_date'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['end_date'].widget.format = settings.DATE_INPUT_FORMATS[0]
 
     class Meta:
         model = models.Evaluation
@@ -478,14 +511,14 @@ class EvaluationCreateOneFinalThreePartialForm(forms.ModelForm):
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     end_date = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     period_1 = forms.CharField(required=True, widget=forms.TextInput(
@@ -494,14 +527,14 @@ class EvaluationCreateOneFinalThreePartialForm(forms.ModelForm):
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     end_date_1 = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     period_2 = forms.CharField(required=True, widget=forms.TextInput(
@@ -510,14 +543,14 @@ class EvaluationCreateOneFinalThreePartialForm(forms.ModelForm):
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     end_date_2 = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     period_3 = forms.CharField(required=True, widget=forms.TextInput(
@@ -526,17 +559,37 @@ class EvaluationCreateOneFinalThreePartialForm(forms.ModelForm):
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     end_date_3 = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     
+    def __init__(self, *args, **kwargs):
+        super(EvaluationCreateOneFinalThreePartialForm, self).__init__(*args, **kwargs)
+        if get_language() == 'en':
+            self.fields['start_date'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['start_date'].widget.format = settings.DATE_INPUT_FORMATS[0]
+            self.fields['end_date'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['end_date'].widget.format = settings.DATE_INPUT_FORMATS[0]
+            self.fields['start_date_1'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['start_date_1'].widget.format = settings.DATE_INPUT_FORMATS[0]
+            self.fields['end_date_1'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['end_date_1'].widget.format = settings.DATE_INPUT_FORMATS[0]
+            self.fields['start_date_2'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['start_date_2'].widget.format = settings.DATE_INPUT_FORMATS[0]
+            self.fields['end_date_2'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['end_date_2'].widget.format = settings.DATE_INPUT_FORMATS[0]
+            self.fields['start_date_3'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['start_date_3'].widget.format = settings.DATE_INPUT_FORMATS[0]
+            self.fields['end_date_3'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['end_date_3'].widget.format = settings.DATE_INPUT_FORMATS[0]
+
     class Meta:
         model = models.Evaluation
         fields = (
@@ -562,14 +615,14 @@ class EvaluationCreateOneFinalTwoPartialForm(forms.ModelForm):
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     end_date = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     period_1 = forms.CharField(required=True, widget=forms.TextInput(
@@ -578,14 +631,14 @@ class EvaluationCreateOneFinalTwoPartialForm(forms.ModelForm):
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     end_date_1 = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     period_2 = forms.CharField(required=True, widget=forms.TextInput(
@@ -594,17 +647,33 @@ class EvaluationCreateOneFinalTwoPartialForm(forms.ModelForm):
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     end_date_2 = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     
+    def __init__(self, *args, **kwargs):
+        super(EvaluationCreateOneFinalThreePartialForm, self).__init__(*args, **kwargs)
+        if get_language() == 'en':
+            self.fields['start_date'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['start_date'].widget.format = settings.DATE_INPUT_FORMATS[0]
+            self.fields['end_date'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['end_date'].widget.format = settings.DATE_INPUT_FORMATS[0]
+            self.fields['start_date_1'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['start_date_1'].widget.format = settings.DATE_INPUT_FORMATS[0]
+            self.fields['end_date_1'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['end_date_1'].widget.format = settings.DATE_INPUT_FORMATS[0]
+            self.fields['start_date_2'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['start_date_2'].widget.format = settings.DATE_INPUT_FORMATS[0]
+            self.fields['end_date_2'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['end_date_2'].widget.format = settings.DATE_INPUT_FORMATS[0]
+
     class Meta:
         model = models.Evaluation
         fields = (
@@ -621,8 +690,8 @@ class EvaluationCreateOneFinalTwoPartialForm(forms.ModelForm):
 
 # Marks
 class ActivityMarkCreateForm(forms.ModelForm):
-    manual_mark = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': '7.0', 'id': 'mark-create-input'}))
+    manual_mark = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '7.0', 'id': 'mark-create-input'}))
 
     class Meta:
         model = models.Activity_mark
@@ -642,8 +711,8 @@ class ActivityMarkCreateForm(forms.ModelForm):
         return manual_mark  
 
 class CompetenceMarkCreateForm(forms.ModelForm):
-    mark = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': '7.0', 'id': 'mark-create-input'}))
+    mark = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '7.0', 'id': 'mark-create-input'}))
 
     class Meta:
         model = models.Competence_mark
@@ -663,8 +732,8 @@ class CompetenceMarkCreateForm(forms.ModelForm):
         return mark  
 
 class EvaluationMarkCreateForm(forms.ModelForm):
-    manual_mark = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': '7.0', 'id': 'mark-create-input'}))
+    manual_mark = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '7.0', 'id': 'mark-create-input'}))
 
     class Meta:
         model = models.Evaluation_mark
@@ -684,8 +753,8 @@ class EvaluationMarkCreateForm(forms.ModelForm):
         return manual_mark  
         
 class ExerciseMarkCreateForm(forms.ModelForm):
-    manual_mark = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': '7.0', 'id': 'mark-create-input'}))
+    manual_mark = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '7.0', 'id': 'mark-create-input'}))
 
     class Meta:
         model = models.Exercise_mark
@@ -795,7 +864,7 @@ class StudentCreateForm(forms.ModelForm):
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     initials = forms.CharField(required=True,widget=forms.TextInput(
@@ -804,7 +873,7 @@ class StudentCreateForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(StudentCreateForm, self).__init__(*args, **kwargs)
         if get_language() == 'en':
-            self.fields['birthdate'].widget.attrs['placeholder'] = DATE_PLACEHOLDER_EN
+            self.fields['birthdate'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
             self.fields['birthdate'].widget.format = settings.DATE_INPUT_FORMATS[0]
 
 
@@ -928,7 +997,7 @@ class UserCreateForm(UserCreationForm):
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     initials = forms.CharField(required=True, widget=forms.TextInput(
@@ -941,7 +1010,7 @@ class UserCreateForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super(UserCreateForm, self).__init__(*args, **kwargs)
         if get_language() == 'en':
-            self.fields['birthdate'].widget.attrs['placeholder'] = DATE_PLACEHOLDER_EN
+            self.fields['birthdate'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
             self.fields['birthdate'].widget.format = settings.DATE_INPUT_FORMATS[0]
 
     class Meta:
@@ -1057,7 +1126,7 @@ class UserProfileForm(UserChangeForm):
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     initials = forms.CharField(required=True)
@@ -1065,7 +1134,7 @@ class UserProfileForm(UserChangeForm):
     def __init__(self, *args, **kwargs):
         super(UserProfileForm, self).__init__(*args, **kwargs)
         if get_language() == 'en':
-            self.fields['birthdate'].widget.attrs['placeholder'] = DATE_PLACEHOLDER_EN
+            self.fields['birthdate'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
             self.fields['birthdate'].widget.format = settings.DATE_INPUT_FORMATS[0]
     
     class Meta:
@@ -1110,7 +1179,7 @@ class TeacherUpdateForm(forms.ModelForm):
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     initials = forms.CharField(required=True)
@@ -1118,7 +1187,7 @@ class TeacherUpdateForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(TeacherUpdateForm, self).__init__(*args, **kwargs)
         if get_language() == 'en':
-            self.fields['birthdate'].widget.attrs['placeholder'] = DATE_PLACEHOLDER_EN
+            self.fields['birthdate'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
             self.fields['birthdate'].widget.format = settings.DATE_INPUT_FORMATS[0]
 
     class Meta:

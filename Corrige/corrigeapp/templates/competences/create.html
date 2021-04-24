@@ -37,20 +37,22 @@
                                     <div class="validate-input">
                                         <label>{% trans "Code" %}</label>
                                             {{form.code}}
-                                        <div class="form-errors">
-                                            {{ form.code.errors }}
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="grid-example col s5 xl7">
                                     <div class="validate-input">
                                         <label>{% trans "Name" %}</label>
                                         {{form.name}}
-                                        <div class="form-errors">
-                                            {{ form.name.errors }}
-                                        </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="form-errors">
+                                {% if form.code.errors %}
+                                    {% trans "Code" %}: {{ form.code.errors }}
+                                {% endif %}
+                                {% if form.name.errors %}
+                                    {% trans "Name" %}: {{ form.name.errors }}
+                                {% endif %}
                             </div>
                             <div class="row">
                                 <div class="grid-example col s2">
