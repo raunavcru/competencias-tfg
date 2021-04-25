@@ -240,7 +240,7 @@ class Activity_mark(Common):
 class Exercise(Common):
     weight = models.DecimalField('weight', max_digits=3, decimal_places=2)
 
-    statement = models.CharField(("statement"), max_length=50)
+    statement = models.CharField(("statement"), max_length=300)
 
     activity = models.ForeignKey(Activity, on_delete=models.CASCADE, related_name='activity_exercise')
 

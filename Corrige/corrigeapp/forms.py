@@ -39,23 +39,22 @@ MESSAGE_INITIALS = 'El tamaño de las iniciales no puede ser mayor que 9.'
 MESSAGE_INITIALS_EN = 'Initials can not be longer of 9 characters.'
 MESSAGE_NAME_50 = 'El tamaño del nombre no puede ser mayor que 50.'
 MESSAGE_NAME_50_EN = 'Name can not be longer of 50 characters.'
-MESSAGE_NAME = 'El tamaño del nombre no puede ser mayor que 100.'
-MESSAGE_NAME_EN = 'Name can not be longer of 100 characters.'
+MESSAGE_NAME_100 = 'El tamaño del nombre no puede ser mayor que 100.'
+MESSAGE_NAME_100_EN = 'Name can not be longer of 100 characters.'
 MESSAGE_NAME_300 = 'El tamaño del nombre no puede ser mayor que 300.'
 MESSAGE_NAME_300_EN = 'Name can not be longer of 300 characters.'
-MESSAGE_SURNAME = 'El tamaño del apellido no puede ser mayor que 100.'
-MESSAGE_SURNAME_EN = 'Surname can not be longer of 100 characters.'
-MESSAGE_GRADE = 'La calificación no puede tener más de 50 caracteres.'
-MESSAGE_GRADE_EN = 'Grade can not be longer of 50 characters.'
-MESSAGE_LEVEL_EN = 'Level can not be longer of 50 characters.'
-MESSAGE_LEVEL = 'El tamaño del nivel no puede ser mayor que 50.'
 MESSAGE_PERIOD_50 = 'El tamaño del período no puede ser mayor que 50.'
 MESSAGE_PERIOD_50_EN = 'Period can not be longer of 50 characters.'
-
+MESSAGE_STATEMENT = 'El tamaño del enunciado no puede ser mayor que 300.'
+MESSAGE_STATEMENT_EN = 'Statement can not be longer of 300 characters.'
+MESSAGE_SURNAME = 'El tamaño del apellido no puede ser mayor que 100.'
+MESSAGE_SURNAME_EN = 'Surname can not be longer of 100 characters.'
+MESSAGE_TITLE = 'El tamaño del título no puede ser mayor que 50.'
+MESSAGE_TITLE_EN = 'Title can not be longer of 50 characters.'
 
 # Messages: Range
-MESSAGE_INTENSITY = 'Intensidad debe estar entre 0.00 y 1.00.'
-MESSAGE_INTENSITY_EN = 'Intensity must be between 0.00 and 1.00.'
+MESSAGE_INTENSITY = 'Intensidad debe estar por encima de 0.00.'
+MESSAGE_INTENSITY_EN = 'Intensity must be above 0.00.'
 MESSAGE_MARK = 'Nota debe estar entre 0.00 y 10.00.'
 MESSAGE_MARK_EN = 'Mark must be between 0.00 and 10.00.'
 MESSAGE_SUBJETC_WEIGHT = 'Peso debe estar por encima de 0.00.'
@@ -113,17 +112,16 @@ class ActivityUpdateForm(forms.ModelForm):
             'is_recovery',
         )
 
+    def clean_title(self):
+        title = self.cleaned_data.get('title')
+        if len(title) > 50:
+            services.FormService().raise_error(MESSAGE_TITLE_EN, MESSAGE_TITLE)
+        return title 
+
     def clean_weight(self):
         weight = self.cleaned_data.get('weight')
-
         if float(weight) < 0.00:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_WEIGHT_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_WEIGHT)
-        
+            services.FormService().raise_error(MESSAGE_WEIGHT_EN, MESSAGE_WEIGHT)
         return weight   
 
 # Administrator
@@ -153,16 +151,13 @@ class AdministratorUpdateForm(forms.ModelForm):
     def clean_birthdate(self):
         birthdate = self.cleaned_data.get('birthdate')
         if birthdate >= now().date():
-            raise ValidationError(
-                MESSAGE_BIRTHDATE)
+            services.FormService().raise_error(MESSAGE_BIRTHDATE_EN, MESSAGE_BIRTHDATE)
         return birthdate
 
     def clean_initials(self):
         initials = self.cleaned_data.get('initials')
-        
         if len(initials) > 9:
-            raise ValidationError(
-                MESSAGE_INITIALS)
+            services.FormService().raise_error(MESSAGE_INITIALS_EN, MESSAGE_INITIALS)
         return initials
 
 # Block
@@ -173,7 +168,7 @@ class BlockCreateChildForm(forms.ModelForm):
     period = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': PLACEHOLDER_PERIOD_EVALUATION}))
     weight = forms.DecimalField(
-        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '1.0', 'id': 'weight-create-block'}))
+        widget=forms.NumberInput(attrs={'required': True, 'placeholder': '1.0', 'id': 'weight-create-block'}))
     start_date = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
@@ -313,13 +308,13 @@ class CompetenceLevel2CreateForm(forms.ModelForm):
 
     def clean_weight(self):
         weight = self.cleaned_data.get('weight')
-        if float(weight) < 0.00 or float(weight) > 1.00:
+        if float(weight) < 0.00:
             services.FormService().raise_error(MESSAGE_WEIGHT_EN, MESSAGE_WEIGHT)
         return weight
 
     def clean_subject_weight(self):
         subject_weight = self.cleaned_data.get('subject_weight')
-        if float(subject_weight) < 0.00 or float(subject_weight) > 1.00:
+        if float(subject_weight) < 0.00:
             services.FormService().raise_error(MESSAGE_SUBJETC_WEIGHT_EN, MESSAGE_SUBJETC_WEIGHT)
         return subject_weight 
 
@@ -375,13 +370,14 @@ class ExerciseUpdateForm(forms.ModelForm):
     def clean_weight(self):
         weight = self.cleaned_data.get('weight')
         if float(weight) < 0.00:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_WEIGHT_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_WEIGHT)
+            services.FormService().raise_error(MESSAGE_WEIGHT_EN, MESSAGE_WEIGHT)
         return weight    
+        
+    def clean_statement(self):
+        statement = self.cleaned_data.get('statement')
+        if len(statement) > 300:
+            services.FormService().raise_error(MESSAGE_STATEMENT_EN, MESSAGE_STATEMENT)
+        return statement
 
 # Exercices_competence
 class ExerciseCompetenceUpdateForm(forms.ModelForm):
@@ -398,27 +394,17 @@ class ExerciseCompetenceUpdateForm(forms.ModelForm):
             'weight',
         )
 
-    def clean_weight(self):
-        weight = self.cleaned_data.get('weight')
-        if float(weight) < 0.00 or float(weight) > 1.00:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_WEIGHT_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_WEIGHT)
-        return weight
-
     def clean_intensity(self):
         intensity = self.cleaned_data.get('intensity')
-        if float(intensity) < 0.00 or float(intensity) > 1.00:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_INTENSITY_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_INTENSITY)
-        return intensity     
+        if float(intensity) < 0.00:
+            services.FormService().raise_error(MESSAGE_INTENSITY_EN, MESSAGE_INTENSITY)
+        return intensity   
+
+    def clean_weight(self):
+        weight = self.cleaned_data.get('weight')
+        if float(weight) < 0.00:
+            services.FormService().raise_error(MESSAGE_WEIGHT_EN, MESSAGE_WEIGHT)
+        return weight
 
 # Evaluations
 class EvaluationCreateForm(forms.ModelForm):
@@ -457,6 +443,12 @@ class EvaluationCreateForm(forms.ModelForm):
             'end_date',
             'subject',
         )
+    
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
+        if len(name) > 50:
+            services.FormService().raise_error(MESSAGE_NAME_50_EN, MESSAGE_NAME_50)
+        return name 
 
 class EvaluationCreateAllForm(forms.ModelForm):
     
@@ -492,6 +484,12 @@ class EvaluationCreateAllForm(forms.ModelForm):
             'start_date',
             'end_date',
         )
+    
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
+        if len(name) > 50:
+            services.FormService().raise_error(MESSAGE_NAME_50_EN, MESSAGE_NAME_50)
+        return name 
 
 class EvaluationCreateChildForm(forms.ModelForm):
     
@@ -530,6 +528,12 @@ class EvaluationCreateChildForm(forms.ModelForm):
             'start_date',
             'end_date',
         )
+    
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
+        if len(name) > 50:
+            services.FormService().raise_error(MESSAGE_NAME_50_EN, MESSAGE_NAME_50)
+        return name 
 
 class EvaluationCreateOneFinalThreePartialForm(forms.ModelForm):
     
@@ -634,6 +638,12 @@ class EvaluationCreateOneFinalThreePartialForm(forms.ModelForm):
             'start_date_3',
             'end_date_3',
         )
+    
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
+        if len(name) > 50:
+            services.FormService().raise_error(MESSAGE_NAME_50_EN, MESSAGE_NAME_50)
+        return name 
 
 class EvaluationCreateOneFinalTwoPartialForm(forms.ModelForm):
     
@@ -715,6 +725,12 @@ class EvaluationCreateOneFinalTwoPartialForm(forms.ModelForm):
             'start_date_2',
             'end_date_2',
         )
+    
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
+        if len(name) > 50:
+            services.FormService().raise_error(MESSAGE_NAME_50_EN, MESSAGE_NAME_50)
+        return name 
 
 # Marks
 class ActivityMarkCreateForm(forms.ModelForm):
@@ -730,12 +746,7 @@ class ActivityMarkCreateForm(forms.ModelForm):
     def clean_manual_mark(self):
         manual_mark = self.cleaned_data.get('manual_mark')
         if float(manual_mark) < 0.00 or float(manual_mark) > 10.00:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_MARK_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_MARK)
+            services.FormService().raise_error(MESSAGE_MARK_EN, MESSAGE_MARK)
         return manual_mark  
 
 class CompetenceMarkCreateForm(forms.ModelForm):
@@ -751,12 +762,7 @@ class CompetenceMarkCreateForm(forms.ModelForm):
     def clean_mark(self):
         mark = self.cleaned_data.get('mark')
         if float(mark) < 0.00 or float(mark) > 10.00:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_MARK_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_MARK)
+            services.FormService().raise_error(MESSAGE_MARK_EN, MESSAGE_MARK)
         return mark  
 
 class EvaluationMarkCreateForm(forms.ModelForm):
@@ -772,12 +778,7 @@ class EvaluationMarkCreateForm(forms.ModelForm):
     def clean_manual_mark(self):
         manual_mark = self.cleaned_data.get('manual_mark')
         if float(manual_mark) < 0.00 or float(manual_mark) > 10.00:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_MARK_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_MARK)
+            services.FormService().raise_error(MESSAGE_MARK_EN, MESSAGE_MARK)
         return manual_mark  
         
 class ExerciseMarkCreateForm(forms.ModelForm):
@@ -793,12 +794,7 @@ class ExerciseMarkCreateForm(forms.ModelForm):
     def clean_manual_mark(self):
         manual_mark = self.cleaned_data.get('manual_mark')
         if float(manual_mark) < 0.00 or float(manual_mark) > 10.00:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_MARK_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_MARK)
+            services.FormService().raise_error(MESSAGE_MARK_EN, MESSAGE_MARK)
         return manual_mark  
 
 # Sets
@@ -828,39 +824,17 @@ class SetCreateForm(forms.ModelForm):
             'grade': forms.Select(choices=CHOICES_GRADE)
         }
 
-    def clean_level(self):
-        level = self.cleaned_data.get('level')
-        if len(level) > 50:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_LEVEL_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_LEVEL)
-        return level
-
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
+        if len(name) > 50:
+            services.FormService().raise_error(MESSAGE_NAME_50_EN, MESSAGE_NAME_50)
+        return name
 
     def clean_line(self):
         line = self.cleaned_data.get('line')
         if not line.isalpha() or len(line) > 1:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_LINE_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_LINE)
+            services.FormService().raise_error(MESSAGE_LINE_EN, MESSAGE_LINE)
         return line
-
-    def clean_name(self):
-        name = self.cleaned_data.get('name')
-        if len(name) > 100:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_NAME_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_NAME)
-        return name
 
 class SetUpdateEvaluationTypeForm(forms.ModelForm):
 
@@ -914,49 +888,29 @@ class StudentCreateForm(forms.ModelForm):
             'initials',
         )
 
-    def clean_initials(self):
-        initials = self.cleaned_data.get('initials')
-        if len(initials) > 9:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_INITIALS_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_INITIALS)
-        return initials
-
     def clean_name(self):
         name = self.cleaned_data.get('name')
         if len(name) > 100:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_NAME_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_NAME)
+            services.FormService().raise_error(MESSAGE_NAME_100_EN, MESSAGE_NAME_100)
         return name
 
     def clean_surname(self):
         surname = self.cleaned_data.get('surname')
         if len(surname) > 100:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_SURNAME_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_SURNAME)
+            services.FormService().raise_error(MESSAGE_SURNAME_EN, MESSAGE_SURNAME)
         return surname
     
     def clean_birthdate(self):
         birthdate = self.cleaned_data.get('birthdate')
         if birthdate >= now().date():
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_BIRTHDATE_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_BIRTHDATE)
+            services.FormService().raise_error(MESSAGE_BIRTHDATE_EN, MESSAGE_BIRTHDATE)
         return birthdate
+        
+    def clean_initials(self):
+        initials = self.cleaned_data.get('initials')
+        if len(initials) > 9:
+            services.FormService().raise_error(MESSAGE_INITIALS_EN, MESSAGE_INITIALS)
+        return initials
 
 # Subjects
 class SubjectCreateForm(forms.ModelForm):
@@ -979,23 +933,17 @@ class SubjectCreateForm(forms.ModelForm):
             'grade': forms.Select(choices=CHOICES_GRADE)
         }
 
-    def clean_level(self):
-        level = self.cleaned_data.get('level')
-        if len(level) > 50:
-            services.FormService().raise_error(MESSAGE_LEVEL_EN, MESSAGE_LEVEL)
-        return level
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
+        if len(name) > 100:
+            services.FormService().raise_error(MESSAGE_NAME_100, MESSAGE_NAME_100)
+        return name
 
     def clean_description(self):
         description = self.cleaned_data.get('description')
         if len(description) > 100:
             services.FormService().raise_error(MESSAGE_DESCRIPTION_100_EN, MESSAGE_DESCRIPTION_100)
         return description
-
-    def clean_name(self):
-        name = self.cleaned_data.get('name')
-        if len(name) > 100:
-            services.FormService().raise_error(MESSAGE_NAME_EN, MESSAGE_NAME)
-        return name
 
 # Users 
 class LoginForm(AuthenticationForm):
@@ -1071,10 +1019,10 @@ class UserCreateForm(UserCreationForm):
         if len(first_name) > 100:
             if get_language() == 'en':
                 raise ValidationError(
-                    MESSAGE_NAME_EN)
+                    MESSAGE_NAME_100_EN)
             else:
                 raise ValidationError(
-                    MESSAGE_NAME)
+                    MESSAGE_NAME_100)
         return first_name
 
     def clean_email(self):
@@ -1186,12 +1134,11 @@ class UserUpdateForm(forms.ModelForm):
             'email',
         )   
 
-
     def clean_first_name(self):
         first_name = self.cleaned_data.get('first_name')
         if len(first_name) > 100:
             raise ValidationError(
-                MESSAGE_NAME)
+                MESSAGE_NAME_100)
         return first_name
 
     def clean_last_name(self):
@@ -1228,14 +1175,11 @@ class TeacherUpdateForm(forms.ModelForm):
     def clean_birthdate(self):
         birthdate = self.cleaned_data.get('birthdate')
         if birthdate >= now().date():
-            raise ValidationError(
-                MESSAGE_BIRTHDATE)
+            services.FormService().raise_error(MESSAGE_BIRTHDATE_EN, MESSAGE_BIRTHDATE)
         return birthdate
 
     def clean_initials(self):
         initials = self.cleaned_data.get('initials')
-        
         if len(initials) > 9:
-            raise ValidationError(
-                MESSAGE_INITIALS)
+            services.FormService().raise_error(MESSAGE_INITIALS_EN, MESSAGE_INITIALS)
         return initials
