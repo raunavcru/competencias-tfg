@@ -35,8 +35,12 @@ MESSAGE_DESCRIPTION_100 = 'El tamaño de la descripción no puede ser mayor que 
 MESSAGE_DESCRIPTION_100_EN = 'Description can not be longer of 100 characters.'
 MESSAGE_DESCRIPTION_300 = 'El tamaño de la descripción no puede ser mayor que 300.'
 MESSAGE_DESCRIPTION_300_EN = 'Description can not be longer of 300 characters.'
+MESSAGE_FIRST_NAME = 'El tamaño del nombre no puede ser mayor que 100.'
+MESSAGE_FIRST_NAME_EN = 'First name can not be longer of 100 characters.'
 MESSAGE_INITIALS = 'El tamaño de las iniciales no puede ser mayor que 9.'
 MESSAGE_INITIALS_EN = 'Initials can not be longer of 9 characters.'
+MESSAGE_LAST_NAME = 'El tamaño del apellido no puede ser mayor que 100.'
+MESSAGE_LAST_NAME_EN = 'Last name can not be longer of 100 characters.'
 MESSAGE_NAME_50 = 'El tamaño del nombre no puede ser mayor que 50.'
 MESSAGE_NAME_50_EN = 'Name can not be longer of 50 characters.'
 MESSAGE_NAME_100 = 'El tamaño del nombre no puede ser mayor que 100.'
@@ -905,7 +909,7 @@ class StudentCreateForm(forms.ModelForm):
         if birthdate >= now().date():
             services.FormService().raise_error(MESSAGE_BIRTHDATE_EN, MESSAGE_BIRTHDATE)
         return birthdate
-        
+
     def clean_initials(self):
         initials = self.cleaned_data.get('initials')
         if len(initials) > 9:
@@ -1002,28 +1006,30 @@ class UserCreateForm(UserCreationForm):
             'password2'
         )
 
+    def clean_first_name(self):
+        first_name = self.cleaned_data.get('first_name')
+        if len(first_name) > 100:
+            services.FormService().raise_error(MESSAGE_FIRST_NAME_EN, MESSAGE_FIRST_NAME)
+        return first_name
+    
+    def clean_last_name(self):
+        last_name = self.cleaned_data.get('last_name')
+        if len(last_name) > 100:
+            services.FormService().raise_error(MESSAGE_LAST_NAME_EN, MESSAGE_LAST_NAME)
+        return last_name
+    
+    def clean_username(self):
+        username = self.cleaned_data.get('username')
+        exist = User.objects.filter(username=username)
+        if exist:
+            raise ValidationError('Usuario ya registrado')
+        return username
 
     def clean_initials(self):
         initials = self.cleaned_data.get('initials')
         if len(initials) > 9:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_INITIALS_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_INITIALS)
+            services.FormService().raise_error(MESSAGE_INITIALS_EN, MESSAGE_INITIALS)
         return initials
-
-    def clean_first_name(self):
-        first_name = self.cleaned_data.get('first_name')
-        if len(first_name) > 100:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_NAME_100_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_NAME_100)
-        return first_name
 
     def clean_email(self):
         email = self.cleaned_data.get('email')
@@ -1033,17 +1039,6 @@ class UserCreateForm(UserCreationForm):
             raise ValidationError('El email ya existe')
         return email
 
-    def clean_last_name(self):
-        last_name = self.cleaned_data.get('last_name')
-        if len(last_name) > 100:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_SURNAME_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_SURNAME)
-        return last_name
-        
     def clean_birthdate(self):
         birthdate = self.cleaned_data.get('birthdate')
         if birthdate >= now().date():
@@ -1054,13 +1049,6 @@ class UserCreateForm(UserCreationForm):
                 raise ValidationError(
                     MESSAGE_BIRTHDATE)
         return birthdate
-
-    def clean_username(self):
-        username = self.cleaned_data.get('username')
-        exist = User.objects.filter(username=username)
-        if exist:
-            raise ValidationError('Usuario ya registrado')
-        return username
 
 class UserForm(UserChangeForm):
     first_name = forms.CharField(required=True, widget=forms.TextInput(
