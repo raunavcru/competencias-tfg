@@ -21,16 +21,32 @@ evaluations_final = models.Evaluation.objects.filter(is_final=True)
 CHOICES_YES_NO = ((False, "No"), (True, "Sí"))
 CHOICES_YES_NO_EN = ((False, "No"), (True, "Yes"))
 CHOICES_LEVEL = (("1º","1º"),("2º","2º"),("3º","3º"),("4º","4º"),("5º","5º"),("6º","6º"))
-CHOICES_GRADE = (("PrimarySchool","Educación Primaria"),("SecondaryEducation","Educación Secundaria"),("SixthForm","Bachillerato"),("FurtherEducation","Grado Medio o Superior"),("University","Grado Universitario"))
-CHOICES_GRADE_EN = (("PrimarySchool","Primary School"),("SecondaryEducation","Secondary Education"),("SixthForm","Sixth Form"),("FurtherEducation","Further Education"),("University","University"))
-CHOICES_EVALUATION_TYPE_FINAL_EN =(("BY_COMPETENCES", "By Competences"), ("BY_EVALUATION_NO_RECOVERY", "By Evaluations (No recovery)"), ("BY_EVALUATION_RECOVERY", "By Evaluations (Recovery)"))
-CHOICES_EVALUATION_TYPE_FINAL =(("BY_COMPETENCES", "Por Competencias"), ("BY_EVALUATION_NO_RECOVERY", "Por evaluaciones (Sin recuperación)"), ("BY_EVALUATION_RECOVERY", "Por evaluaciones (Con recuperación)"))
+CHOICES_GRADE = (
+    ("PrimarySchool","Educación Primaria"),
+    ("SecondaryEducation","Educación Secundaria"),
+    ("SixthForm","Bachillerato"),
+    ("FurtherEducation","Grado Medio o Superior"),
+    ("University","Grado Universitario"))
+CHOICES_GRADE_EN = (
+    ("PrimarySchool","Primary School"),
+    ("SecondaryEducation","Secondary Education"),
+    ("SixthForm","Sixth Form"),
+    ("FurtherEducation","Further Education"),
+    ("University","University"))
+CHOICES_EVALUATION_TYPE_FINAL_EN =(
+    ("BY_COMPETENCES", "By Competences"), 
+    ("BY_EVALUATION_NO_RECOVERY", "By Evaluations (No recovery)"), 
+    ("BY_EVALUATION_RECOVERY", "By Evaluations (Recovery)"))
+CHOICES_EVALUATION_TYPE_FINAL =(
+    ("BY_COMPETENCES", "Por Competencias"), 
+    ("BY_EVALUATION_NO_RECOVERY", "Por evaluaciones (Sin recuperación)"), 
+    ("BY_EVALUATION_RECOVERY", "Por evaluaciones (Con recuperación)"))
 CHOICES_EVALUATION_TYPE_PARTIAL_EN =(("BY_ALL_ACTIVITIES", "By all Activities"), ("BY_RECOVERY_ACTIVITIES", "By Recovery Activities"))
 CHOICES_EVALUATION_TYPE_PARTIAL =(("BY_ALL_ACTIVITIES", "Por todas las Actividades"), ("BY_RECOVERY_ACTIVITIES", "Por Recuperaciones"))
 
 # Messages: Length
-MESSAGE_CODE_EN = 'Code can not be longer of 50 characters.'
 MESSAGE_CODE = 'El tamaño del código no puede ser mayor que 50.'
+MESSAGE_CODE_EN = 'Code can not be longer of 50 characters.'
 MESSAGE_DESCRIPTION_100 = 'El tamaño de la descripción no puede ser mayor que 100.'
 MESSAGE_DESCRIPTION_100_EN = 'Description can not be longer of 100 characters.'
 MESSAGE_DESCRIPTION_300 = 'El tamaño de la descripción no puede ser mayor que 300.'
@@ -65,6 +81,12 @@ MESSAGE_SUBJETC_WEIGHT = 'Peso debe estar por encima de 0.00.'
 MESSAGE_SUBJETC_WEIGHT_EN = 'Subject weight must be above 0.00.'
 MESSAGE_WEIGHT = 'Peso debe estar por encima de 0.00.'
 MESSAGE_WEIGHT_EN = 'Weight must be above 0.00.'
+
+# Messages: Unique
+MESSAGE_EMAIL = 'Email ya ha sido registrado.'
+MESSAGE_EMAIL_EN = 'Email has already been registered.'
+MESSAGE_USERNAME = 'Nombre de usuario ya ha sido registrado.'
+MESSAGE_USERNAME_EN = 'Username has already been registered.'
 
 # Messages: Other
 MESSAGE_BIRTHDATE = 'La fecha de cumpleaños debe ser en el pasado.'
@@ -1020,10 +1042,15 @@ class UserCreateForm(UserCreationForm):
     
     def clean_username(self):
         username = self.cleaned_data.get('username')
-        exist = User.objects.filter(username=username)
-        if exist:
-            raise ValidationError('Usuario ya registrado')
+        if User.objects.filter(username=username).exists():
+            services.FormService().raise_error(MESSAGE_USERNAME_EN, MESSAGE_USERNAME)
         return username
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if User.objects.filter(email=email).exists():
+            services.FormService().raise_error(MESSAGE_EMAIL_EN, MESSAGE_EMAIL)
+        return email
 
     def clean_initials(self):
         initials = self.cleaned_data.get('initials')
@@ -1031,23 +1058,10 @@ class UserCreateForm(UserCreationForm):
             services.FormService().raise_error(MESSAGE_INITIALS_EN, MESSAGE_INITIALS)
         return initials
 
-    def clean_email(self):
-        email = self.cleaned_data.get('email')
-        if not email:
-            raise ValidationError('El email es necesario')
-        elif User.objects.filter(email=email).exists():
-            raise ValidationError('El email ya existe')
-        return email
-
     def clean_birthdate(self):
         birthdate = self.cleaned_data.get('birthdate')
         if birthdate >= now().date():
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_BIRTHDATE_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_BIRTHDATE)
+            services.FormService().raise_error(MESSAGE_BIRTHDATE_EN, MESSAGE_BIRTHDATE)
         return birthdate
 
 class UserForm(UserChangeForm):
@@ -1068,6 +1082,24 @@ class UserForm(UserChangeForm):
             'username', 
             'email', 
         )
+    
+    def clean_first_name(self):
+        first_name = self.cleaned_data.get('first_name')
+        if len(first_name) > 100:
+            services.FormService().raise_error(MESSAGE_FIRST_NAME_EN, MESSAGE_FIRST_NAME)
+        return first_name
+
+    def clean_last_name(self):
+        last_name = self.cleaned_data.get('last_name')
+        if len(last_name) > 100:
+            services.FormService().raise_error(MESSAGE_LAST_NAME_EN, MESSAGE_LAST_NAME)
+        return last_name
+    
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if User.objects.filter(email=email).exists() and email != self.initial.get('email'):
+            services.FormService().raise_error(MESSAGE_EMAIL_EN, MESSAGE_EMAIL)
+        return email
 
 class UserPasswordUpdateForm(PasswordChangeForm):
     old_password = forms.CharField(required=True, widget=forms.PasswordInput(
@@ -1107,6 +1139,18 @@ class UserProfileForm(UserChangeForm):
             'birthdate', 
             'initials',
         )
+    
+    def clean_birthdate(self):
+        birthdate = self.cleaned_data.get('birthdate')
+        if birthdate >= now().date():
+            services.FormService().raise_error(MESSAGE_BIRTHDATE_EN, MESSAGE_BIRTHDATE)
+        return birthdate
+
+    def clean_initials(self):
+        initials = self.cleaned_data.get('initials')
+        if len(initials) > 9:
+            services.FormService().raise_error(MESSAGE_INITIALS_EN, MESSAGE_INITIALS)
+        return initials
 
 class UserUpdateForm(forms.ModelForm):
     first_name = forms.CharField(required=True, widget=forms.TextInput(
@@ -1125,16 +1169,20 @@ class UserUpdateForm(forms.ModelForm):
     def clean_first_name(self):
         first_name = self.cleaned_data.get('first_name')
         if len(first_name) > 100:
-            raise ValidationError(
-                MESSAGE_NAME_100)
+            services.FormService().raise_error(MESSAGE_FIRST_NAME_EN, MESSAGE_FIRST_NAME)
         return first_name
 
     def clean_last_name(self):
         last_name = self.cleaned_data.get('last_name')
         if len(last_name) > 100:
-            raise ValidationError(
-                MESSAGE_SURNAME)
+            services.FormService().raise_error(MESSAGE_LAST_NAME_EN, MESSAGE_LAST_NAME)
         return last_name
+    
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if User.objects.filter(email=email).exists() and email != self.initial.get('email'):
+            services.FormService().raise_error(MESSAGE_EMAIL_EN, MESSAGE_EMAIL)
+        return email
         
 # Teachers
 class TeacherUpdateForm(forms.ModelForm):
