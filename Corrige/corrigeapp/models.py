@@ -50,9 +50,9 @@ class Competence(Common):
 
     description = models.CharField(("description"), max_length=300)
 
-    weight = models.DecimalField('weight', max_digits=3, decimal_places=2, blank=True, null=True)
+    weight = models.DecimalField('weight', max_digits=5, decimal_places=2, blank=True, null=True)
 
-    subject_weight = models.DecimalField('subject_weight', max_digits=3, decimal_places=2, blank=True, null=True)
+    subject_weight = models.DecimalField('subject_weight', max_digits=5, decimal_places=2, blank=True, null=True)
 
     level = models.PositiveIntegerField('level')
 
@@ -113,7 +113,7 @@ class Evaluation(Common):
 
     period = models.CharField(("period"), max_length=50)
 
-    weight = models.DecimalField('weight', max_digits=3, decimal_places=2)
+    weight = models.DecimalField('weight', max_digits=5, decimal_places=2)
 
     parent = models.ForeignKey('self', on_delete=models.CASCADE, related_name='evaluation_parent', blank=True, null=True)
 
@@ -238,7 +238,7 @@ class Activity_mark(Common):
         return self.mark
 
 class Exercise(Common):
-    weight = models.DecimalField('weight', max_digits=3, decimal_places=2)
+    weight = models.DecimalField('weight', max_digits=5, decimal_places=2)
 
     statement = models.CharField(("statement"), max_length=300)
 
@@ -270,9 +270,9 @@ class Exercise_mark(Common):
         return self.mark
 
 class Exercise_competence(Common):
-    intensity = models.DecimalField('intensity', max_digits=3, decimal_places=2)
+    intensity = models.DecimalField('intensity', max_digits=5, decimal_places=2)
 
-    weight = models.DecimalField('weight', max_digits=3, decimal_places=2)
+    weight = models.DecimalField('weight', max_digits=5, decimal_places=2)
 
     exercise = models.ForeignKey(Exercise, on_delete=models.CASCADE, related_name='exercise_exercise_competence')
 

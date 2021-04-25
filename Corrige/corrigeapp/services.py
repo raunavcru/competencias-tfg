@@ -6,16 +6,6 @@ from . import models
 
 User = get_user_model()
 
-class ActivityService():
-
-    def is_owner(self, user: User, activity_object: models.Activity) -> bool:
-        res = False
-
-        if activity_object.created_by == user:
-            res = True
-        
-        return res
-
 class BlockService():
 
     def is_owner(self, user: User, block: models.Evaluation) -> bool:

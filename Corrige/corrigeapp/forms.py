@@ -4,7 +4,6 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm, UserChangeForm, UserCreationForm
 from django.contrib.auth.hashers import check_password
 from django.contrib.auth.password_validation import password_validators_help_texts
-from django.core.exceptions import ValidationError
 from django.utils.timezone import now
 from django.utils.translation import get_language, activate
 
@@ -1005,7 +1004,7 @@ class UserCreateForm(UserCreationForm):
     initials = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': 'ACA', 'id': 'initials-create-teacher'}))
     password1 = forms.CharField(required=True, widget=forms.PasswordInput(
-        attrs={'placeholder': '*************', 'id': 'password1-create-teacher'}))
+        attrs={'placeholder': '*************', 'id': 'password1-create-teacher'}), help_text=password_validators_help_texts())
     password2 = forms.CharField(required=True, widget=forms.PasswordInput(
         attrs={'placeholder': '*************', 'id': 'password2-create-teacher'}))
 
