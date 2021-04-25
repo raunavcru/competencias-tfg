@@ -70,5 +70,7 @@
             {% endfor %}
         </table>
 <a onClick="location.href='{% url 'sets_student_list' set_object.pk %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
+<a onClick="location.href='{% url 'marks_evaluations_next' id=set_object.pk pk=student_object.pk %}'" class="waves-effect right waves-light btn" style="margin-top:55px; margin-bottom:15px; margin-left:15px;"><i class="material-icons left">keyboard_arrow_right</i>{% trans "Next Student" %}</a>
+<a onClick="location.href='{% url 'marks_evaluations_previous'  id=set_object.pk pk=student_object.pk %}'" class="waves-effect right waves-light btn" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">keyboard_arrow_left</i>{% trans "Previous Student" %}</a>
 {% endblock %}
 

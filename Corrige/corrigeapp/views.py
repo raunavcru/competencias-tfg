@@ -1681,6 +1681,54 @@ class MarkEvaluationListView(generic.ListView):
         
         return context
 
+@method_decorator(login_required, name='dispatch')        
+class MarkEvaluationNextStudentView(generic.ListView):
+    model = models.Evaluation_mark
+    template_name = 'marks/evaluations.html'
+
+    def get(self, request, *args, **kwargs):
+        set_pk = self.kwargs.get('id')
+        set_object = models.Set.objects.get(pk=set_pk)
+        student_pk = self.kwargs.get('pk')
+        student_object = models.Student.objects.get(pk=student_pk)
+        exist = models.Set.objects.filter(pk = set_pk, students = student_object).exists()
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object) and exist:
+            
+            next_student = models.Student.objects.filter(student=set_object, pk__gt = student_pk).order_by('pk').first()
+            first_student = models.Student.objects.filter(student=set_object).order_by('pk').first()
+
+            if next_student:
+                return redirect('marks_evaluations_list', id=set_pk, pk=next_student.pk)
+            else: 
+                return redirect('marks_evaluations_list', id=set_pk, pk=first_student.pk)
+
+        else:
+            return redirect('/')
+
+@method_decorator(login_required, name='dispatch')        
+class MarkEvaluationPreviousStudentView(generic.ListView):
+    model = models.Evaluation_mark
+    template_name = 'marks/evaluations.html'
+
+    def get(self, request, *args, **kwargs):
+        set_pk = self.kwargs.get('id')
+        set_object = models.Set.objects.get(pk=set_pk)
+        student_pk = self.kwargs.get('pk')
+        student_object = models.Student.objects.get(pk=student_pk)
+        exist = models.Set.objects.filter(pk = set_pk, students = student_object).exists()
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object) and exist:
+            
+            previous_student = models.Student.objects.filter(student=set_object, pk__lt = student_pk).order_by('-pk').first()
+            last_student = models.Student.objects.filter(student=set_object).order_by('-pk').first()
+
+            if previous_student:
+                return redirect('marks_evaluations_list', id=set_pk, pk=previous_student.pk)
+            else: 
+                return redirect('marks_evaluations_list', id=set_pk, pk=last_student.pk)
+
+        else:
+            return redirect('/')
+
 @method_decorator(login_required, name='dispatch')
 class MarkExerciseCreateView(generic.UpdateView):
     model = models.Exercise_mark
