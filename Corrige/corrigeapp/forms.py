@@ -17,6 +17,7 @@ teachers = models.Teacher.objects.all()
 subjects = models.Subject.objects.all()
 evaluations_final = models.Evaluation.objects.filter(is_final=True)
 
+# Choices
 CHOICES_YES_NO = ((False, "No"), (True, "Sí"))
 CHOICES_YES_NO_EN = ((False, "No"), (True, "Yes"))
 CHOICES_LEVEL = (("1º","1º"),("2º","2º"),("3º","3º"),("4º","4º"),("5º","5º"),("6º","6º"))
@@ -27,34 +28,48 @@ CHOICES_EVALUATION_TYPE_FINAL =(("BY_COMPETENCES", "Por Competencias"), ("BY_EVA
 CHOICES_EVALUATION_TYPE_PARTIAL_EN =(("BY_ALL_ACTIVITIES", "By all Activities"), ("BY_RECOVERY_ACTIVITIES", "By Recovery Activities"))
 CHOICES_EVALUATION_TYPE_PARTIAL =(("BY_ALL_ACTIVITIES", "Por todas las Actividades"), ("BY_RECOVERY_ACTIVITIES", "Por Recuperaciones"))
 
-MESSAGE_INITIALS = 'El tamaño de las iniciales no puede ser mayor que 9'
-MESSAGE_INITIALS_EN = 'Initials can not be longer of 9 characters'
-MESSAGE_NAME = 'El tamaño del nombre no puede ser mayor que 100'
-MESSAGE_NAME_EN = 'Name can not be longer of 100 characters'
-MESSAGE_SURNAME = 'El tamaño del apellido no puede ser mayor que 100'
-MESSAGE_SURNAME_EN = 'Surname can not be longer of 100 characters'
-MESSAGE_GRADE = 'La calificación no puede tener más de 50 caracteres'
-MESSAGE_GRADE_EN = 'Grade can not be longer of 50 characters'
-MESSAGE_LEVEL_EN = 'Level can not be longer of 50 characters'
-MESSAGE_LEVEL = 'El tamaño del nivel no puede ser mayor que 50'
-MESSAGE_DESCRIPTION_EN = 'Description can not be longer of 100 characters'
-MESSAGE_DESCRIPTION = 'El tamaño de la descripción no puede ser mayor que 100'
-MESSAGE_CODE_EN = 'Code can not be longer of 50 characters'
-MESSAGE_CODE = 'El tamaño del código no puede ser mayor que 50'
+# Messages: Length
+MESSAGE_CODE_EN = 'Code can not be longer of 50 characters.'
+MESSAGE_CODE = 'El tamaño del código no puede ser mayor que 50.'
+MESSAGE_DESCRIPTION_100 = 'El tamaño de la descripción no puede ser mayor que 100.'
+MESSAGE_DESCRIPTION_100_EN = 'Description can not be longer of 100 characters.'
+MESSAGE_DESCRIPTION_300 = 'El tamaño de la descripción no puede ser mayor que 300.'
+MESSAGE_DESCRIPTION_300_EN = 'Description can not be longer of 300 characters.'
+MESSAGE_INITIALS = 'El tamaño de las iniciales no puede ser mayor que 9.'
+MESSAGE_INITIALS_EN = 'Initials can not be longer of 9 characters.'
+MESSAGE_NAME_50 = 'El tamaño del nombre no puede ser mayor que 50.'
+MESSAGE_NAME_50_EN = 'Name can not be longer of 50 characters.'
+MESSAGE_NAME = 'El tamaño del nombre no puede ser mayor que 100.'
+MESSAGE_NAME_EN = 'Name can not be longer of 100 characters.'
+MESSAGE_NAME_300 = 'El tamaño del nombre no puede ser mayor que 300.'
+MESSAGE_NAME_300_EN = 'Name can not be longer of 300 characters.'
+MESSAGE_SURNAME = 'El tamaño del apellido no puede ser mayor que 100.'
+MESSAGE_SURNAME_EN = 'Surname can not be longer of 100 characters.'
+MESSAGE_GRADE = 'La calificación no puede tener más de 50 caracteres.'
+MESSAGE_GRADE_EN = 'Grade can not be longer of 50 characters.'
+MESSAGE_LEVEL_EN = 'Level can not be longer of 50 characters.'
+MESSAGE_LEVEL = 'El tamaño del nivel no puede ser mayor que 50.'
+MESSAGE_PERIOD_50 = 'El tamaño del período no puede ser mayor que 50.'
+MESSAGE_PERIOD_50_EN = 'Period can not be longer of 50 characters.'
 
+
+# Messages: Range
+MESSAGE_INTENSITY = 'Intensidad debe estar entre 0.00 y 1.00.'
+MESSAGE_INTENSITY_EN = 'Intensity must be between 0.00 and 1.00.'
+MESSAGE_MARK = 'Nota debe estar entre 0.00 y 10.00.'
+MESSAGE_MARK_EN = 'Mark must be between 0.00 and 10.00.'
+MESSAGE_SUBJETC_WEIGHT = 'Peso debe estar por encima de 0.00.'
+MESSAGE_SUBJETC_WEIGHT_EN = 'Subject weight must be above 0.00.'
+MESSAGE_WEIGHT = 'Peso debe estar por encima de 0.00.'
+MESSAGE_WEIGHT_EN = 'Weight must be above 0.00.'
+
+# Messages: Other
 MESSAGE_BIRTHDATE = 'La fecha de cumpleaños debe ser en el pasado.'
 MESSAGE_BIRTHDATE_EN = 'Birthdate can not be past.'
-MESSAGE_INTENSITY_EN = 'Intensity must be between 0.00 and 1.00.'
-MESSAGE_INTENSITY = 'Intensidad debe estar entre 0.00 y 1.00.'
-MESSAGE_LINE_EN = 'Line must be a letter.'
 MESSAGE_LINE = 'Línea solo pueden ser un letra.'
-MESSAGE_MARK_EN = 'Mark must be between 0.00 and 10.00.'
-MESSAGE_MARK = 'Nota debe estar entre 0.00 y 10.00.'
-MESSAGE_SUBJETC_WEIGHT_EN = 'Subject weight must be above 0.00.'
-MESSAGE_SUBJETC_WEIGHT = 'Peso debe estar por encima de 0.00.'
-MESSAGE_WEIGHT_EN = 'Weight must be above 0.00.'
-MESSAGE_WEIGHT = 'Peso debe estar por encima de 0.00.'
+MESSAGE_LINE_EN = 'Line must be a letter.'
 
+# Placeholder
 PLACEHOLDER_DATE = 'dd/mm/aaaa'
 PLACEHOLDER_DATE_EN = 'mm/dd/yyyy'
 PLACEHOLDER_NAME_EVALUATION = 'Matemáticas 5º Primaria'
@@ -192,15 +207,22 @@ class BlockCreateChildForm(forms.ModelForm):
             'end_date',
         )
     
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
+        if len(name) > 50:
+            services.FormService().raise_error(MESSAGE_NAME_50_EN, MESSAGE_NAME_50)
+        return name 
+    
+    def clean_period(self):
+        period = self.cleaned_data.get('period')
+        if len(period) > 50:
+            services.FormService().raise_error(MESSAGE_PERIOD_50_EN, MESSAGE_PERIOD_50)
+        return period 
+
     def clean_weight(self):
         weight = self.cleaned_data.get('weight')
         if float(weight) < 0.00:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_WEIGHT_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_WEIGHT)
+            services.FormService().raise_error(MESSAGE_WEIGHT_EN, MESSAGE_WEIGHT)
         return weight  
 
 # Competences
@@ -211,7 +233,7 @@ class CompetenceLevel1CreateForm(forms.ModelForm):
     name = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': 'Comunicación lingüística', 'id': 'name-create-competence'}))
     description = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': 'Comunicación lingüística.	', 'id': 'description-create-competence'}))
+        attrs={'placeholder': 'Comunicación lingüística', 'id': 'description-create-competence'}))
     weight = forms.DecimalField(
         widget=forms.NumberInput(attrs={'required':True, 'placeholder': '1.0', 'id': 'weight-create-competence'}))
 
@@ -227,45 +249,25 @@ class CompetenceLevel1CreateForm(forms.ModelForm):
     def clean_code(self):
         code = self.cleaned_data.get('code')
         if len(code) > 50:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_CODE_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_CODE)
+            services.FormService().raise_error(MESSAGE_CODE_EN, MESSAGE_CODE)
         return code
-
-    def clean_description(self):
-        description = self.cleaned_data.get('description')
-        if len(description) > 300:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_DESCRIPTION_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_DESCRIPTION)
-        return description
 
     def clean_name(self):
         name = self.cleaned_data.get('name')
         if len(name) > 300:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_NAME_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_NAME)
+            services.FormService().raise_error(MESSAGE_NAME_300_EN, MESSAGE_NAME_300)
         return name
+
+    def clean_description(self):
+        description = self.cleaned_data.get('description')
+        if len(description) > 300:
+            services.FormService().raise_error(MESSAGE_DESCRIPTION_300_EN, MESSAGE_DESCRIPTION_300)
+        return description
     
     def clean_weight(self):
         weight = self.cleaned_data.get('weight')
         if float(weight) < 0.00:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_WEIGHT_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_WEIGHT)
+            services.FormService().raise_error(MESSAGE_WEIGHT_EN, MESSAGE_WEIGHT)
         return weight 
 
 class CompetenceLevel2CreateForm(forms.ModelForm):
@@ -278,8 +280,8 @@ class CompetenceLevel2CreateForm(forms.ModelForm):
         attrs={'placeholder': 'Comunicación lingüística.', 'id': 'description-create-competence'}))
     weight = forms.DecimalField(
         widget=forms.NumberInput(attrs={'required':True, 'placeholder': '1.0', 'id': 'weight-create-competence'}))
-    subject_weight = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': '1', 'id': 'subject_weight-create-competence'}))
+    subject_weight = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '1.0', 'id': 'subject_weight-create-competence'}))
 
     class Meta:
         model = models.Competence
@@ -290,28 +292,36 @@ class CompetenceLevel2CreateForm(forms.ModelForm):
             'weight',
             'subject_weight',
         )
-        
+    
+    def clean_code(self):
+        code = self.cleaned_data.get('code')
+        if len(code) > 50:
+            services.FormService().raise_error(MESSAGE_CODE_EN, MESSAGE_CODE)
+        return code
+    
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
+        if len(name) > 300:
+            services.FormService().raise_error(MESSAGE_NAME_300_EN, MESSAGE_NAME_300)
+        return name
+
+    def clean_description(self):
+        description = self.cleaned_data.get('description')
+        if len(description) > 300:
+            services.FormService().raise_error(MESSAGE_DESCRIPTION_300_EN, MESSAGE_DESCRIPTION_300)
+        return description
+
     def clean_weight(self):
         weight = self.cleaned_data.get('weight')
         if float(weight) < 0.00 or float(weight) > 1.00:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_WEIGHT_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_WEIGHT)
+            services.FormService().raise_error(MESSAGE_WEIGHT_EN, MESSAGE_WEIGHT)
         return weight
 
     def clean_subject_weight(self):
         subject_weight = self.cleaned_data.get('subject_weight')
         if float(subject_weight) < 0.00 or float(subject_weight) > 1.00:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_SUBJETC_WEIGHT_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_SUBJETC_WEIGHT)
-        return subject_weight  
+            services.FormService().raise_error(MESSAGE_SUBJETC_WEIGHT_EN, MESSAGE_SUBJETC_WEIGHT)
+        return subject_weight 
 
 class CompetenceLevel3CreateForm(forms.ModelForm):
 
@@ -329,6 +339,24 @@ class CompetenceLevel3CreateForm(forms.ModelForm):
             'name',
             'description',
         )
+    
+    def clean_code(self):
+        code = self.cleaned_data.get('code')
+        if len(code) > 50:
+            services.FormService().raise_error(MESSAGE_CODE_EN, MESSAGE_CODE)
+        return code
+
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
+        if len(name) > 300:
+            services.FormService().raise_error(MESSAGE_NAME_300_EN, MESSAGE_NAME_300)
+        return name
+
+    def clean_description(self):
+        description = self.cleaned_data.get('description')
+        if len(description) > 300:
+            services.FormService().raise_error(MESSAGE_DESCRIPTION_300_EN, MESSAGE_DESCRIPTION_300)
+        return description
 
 # Exercices
 class ExerciseUpdateForm(forms.ModelForm):
@@ -960,7 +988,7 @@ class SubjectCreateForm(forms.ModelForm):
     def clean_description(self):
         description = self.cleaned_data.get('description')
         if len(description) > 100:
-            services.FormService().raise_error(MESSAGE_DESCRIPTION_EN, MESSAGE_DESCRIPTION)
+            services.FormService().raise_error(MESSAGE_DESCRIPTION_100_EN, MESSAGE_DESCRIPTION_100)
         return description
 
     def clean_name(self):
