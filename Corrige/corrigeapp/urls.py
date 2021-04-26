@@ -58,6 +58,7 @@ urlpatterns = [
     path('marks/activities/<int:sk>/<int:id>/<int:pk>/list', views.MarkActivityListView.as_view(), name = 'marks_activities_list'),
     path('marks/activities/<int:sk>/<int:id>/<int:pk>/next', views.MarkActivityNextStudentView.as_view(), name = 'marks_activities_next'),
     path('marks/activities/<int:sk>/<int:id>/<int:pk>/previous', views.MarkActivityPreviousStudentView.as_view(), name = 'marks_activities_previous'),
+    path('marks/competences/save', views.saveCompetenceMark, name = 'marks_competences_save'),
     path('marks/competences/<int:id>/<int:pk>/create', views.MarkCompetenceCreateView.as_view(), name = 'marks_competences_create'),
     path('marks/competences/<int:id>/<int:pk>/list', views.MarkCompetenceListView.as_view(), name = 'marks_competences_list'),
     path('marks/competences/<int:id>/<int:pk>/next', views.MarkCompetenceNextStudentView.as_view(), name = 'marks_competences_next'),

@@ -2,11 +2,13 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import PasswordChangeView
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse, reverse_lazy
 from django.utils.decorators import method_decorator
 from django.utils.translation import activate, get_language
 from django.views import generic
+from django.views.decorators.csrf import csrf_exempt
 
 from . import forms
 from . import models
@@ -1542,6 +1544,13 @@ class MarkCompetenceListView(generic.ListView):
         context['exercise_pk'] = exercise_pk
         context['activity_object'] = activity_object
         context['c_mark_saved'] = c_mark_saved
+
+        if get_language() == "es":
+            context['done'] = "Actualizado"
+            context['fail'] = "Nota debe estar entre 0.00 y 10.00."
+        else:
+            context['done'] = "Updated"
+            context['fail'] = "Mark must be between 0.00 and 10.00."
         
         return context
 
@@ -2556,3 +2565,19 @@ class UserPasswordUpdateView(PasswordChangeView):
     model = User
     form_class = forms.UserPasswordUpdateForm
     success_url = reverse_lazy('home')
+
+
+# JQuery
+@csrf_exempt
+def saveCompetenceMark(request):
+    id = request.POST.get('id', '')
+    value = request.POST.get('value', '')
+    competence_mark = models.Competence_mark.objects.get(pk=id)
+
+    if value < 0.00 or value > 10.00:
+        return JsonResponse({"fail": "Error"})
+
+    competence_mark.mark = value
+    competence_mark.save()
+
+    return JsonResponse({"success": "Updated"})

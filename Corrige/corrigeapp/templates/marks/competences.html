@@ -2,7 +2,6 @@
 {% load static %}
 {% load i18n %}
 {% block content %}
-
 <div class="container">
     <h4 class="centered">{% trans "List of competences" %} {% trans "of" %} {{student_object.name}} {{student_object.surname}} </h4>
         <table class="highlight">
@@ -22,7 +21,7 @@
                             <td>{{object.competence.code}}</td> 
                             <td class="td-none" style="width:300px">{{object.competence.name}}</td>
                             <td class="td-none" style="width:500px">{{object.competence.description}}</td>
-                            <td class="center">
+                            <td class="editable" data-id="{{ object.id }}" data-type="mark">
                                 {% if object.mark or object.mark == 0 %}
                                     {{ object.mark }}
                                 {% else %}
@@ -40,4 +39,55 @@
 <a onClick="location.href='{% url 'marks_exercises_list' id=activity_object.pk pk=student_object.pk %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
 <a onClick="location.href='{% url 'marks_competences_next' id=exercise_pk pk=student_object.pk %}'" class="waves-effect right waves-light btn" style="margin-top:55px; margin-bottom:15px; margin-left:15px;"><i class="material-icons left">keyboard_arrow_right</i>{% trans "Next Student" %}</a>
 <a onClick="location.href='{% url 'marks_competences_previous' id=exercise_pk pk=student_object.pk %}'" class="waves-effect right waves-light btn" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">keyboard_arrow_left</i>{% trans "Previous Student" %}</a>
+<script>
+    $(document).ready(function(){
+        $(document).on("dblclick", ".editable", function(){
+            var value = $(this).text();
+            var input = "<input type='text' class='input-data' class='form-control'>";
+            $(this).html(input);
+            $(this).removeClass("editable");
+        });
+
+        $(document).on("blur", ".input-data", function(){
+            var value = $(this).val();
+            var td = $(this).parent("td");
+            $(this).remove();
+            td.html(value);
+            td.addClass("editable");
+            sendToServer(td.data("id"), value);
+        });
+
+        $(document).on("keypress", ".input-data", function(e){
+            var key = e.which;
+            if (key == 13){
+                var value = $(this).val();
+                var td = $(this).parent("td");
+                $(this).remove();
+                td.html(value);
+                td.addClass("editable");
+                sendToServer(td.data("id"), value);
+            }
+        });
+
+        function sendToServer(id, value){
+            console.log(id);
+            console.log(value);
+            $.ajax({
+                url:"http://127.0.0.1:8000/marks/competences/save",
+                type:"POST",
+                data:{id:id, value:value},
+            })
+            .done(function(response){
+                console.log(response);
+                M.toast({html: '{{done}}' })
+            })
+            .fail(function(response){
+                console.log("Error");
+                M.toast({html: '{{fail}}' })
+            });
+        }
+    });
+
+    
+</script>
 {% endblock %}
