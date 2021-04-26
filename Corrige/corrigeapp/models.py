@@ -2,6 +2,7 @@ from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.db import models
 from django.utils.timezone import now
+from django.utils.translation import get_language
 
 User = get_user_model()
 
@@ -81,7 +82,29 @@ class Subject(Common):
         verbose_name_plural = 'Subjects'
 
     def __str__(self):
-        return self.name + ' ' + self.level + ' ' + self.grade
+
+        if self.grade == "PrimarySchool" and get_language() == "es":
+            grade =  "Educación Primaria"
+        elif self.grade == "PrimarySchool":
+            grade =  "Primary School"
+        elif self.grade == "SecondaryEducation" and get_language() == "es":
+            grade =  "Educación Secundaria"
+        elif self.grade == "SecondaryEducation":
+            grade =  "Secondary Education"
+        elif self.grade == "SixthForm" and get_language() == "es":
+            grade =  "Bachillerato"
+        elif self.grade == "SixthForm":
+            grade =  "Sixth Form"
+        elif self.grade == "FurtherEducation" and get_language() == "es":
+            grade =  "Grado Medio o Superior"
+        elif self.grade == "FurtherEducation":
+            grade =  "Further Education"
+        elif self.grade == "University" and get_language() == "es":
+            grade =  "Grado Universitario"
+        elif self.grade == "University":
+            grade =  "University"
+
+        return self.name + ' ' + self.level + ' ' + grade
 
 class Teacher(Profile):
     subjects = models.ManyToManyField(Subject, "subjects", verbose_name=("subjects_teacher"))

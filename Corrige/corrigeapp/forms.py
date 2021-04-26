@@ -62,8 +62,8 @@ MESSAGE_NAME_100 = 'El tamaño del nombre no puede ser mayor que 100.'
 MESSAGE_NAME_100_EN = 'Name can not be longer of 100 characters.'
 MESSAGE_NAME_300 = 'El tamaño del nombre no puede ser mayor que 300.'
 MESSAGE_NAME_300_EN = 'Name can not be longer of 300 characters.'
-MESSAGE_PERIOD_50 = 'El tamaño del período no puede ser mayor que 50.'
-MESSAGE_PERIOD_50_EN = 'Period can not be longer of 50 characters.'
+MESSAGE_PERIOD = 'El tamaño del período no puede ser mayor que 50.'
+MESSAGE_PERIOD_EN = 'Period can not be longer of 50 characters.'
 MESSAGE_STATEMENT = 'El tamaño del enunciado no puede ser mayor que 300.'
 MESSAGE_STATEMENT_EN = 'Statement can not be longer of 300 characters.'
 MESSAGE_SURNAME = 'El tamaño del apellido no puede ser mayor que 100.'
@@ -236,7 +236,7 @@ class BlockCreateChildForm(forms.ModelForm):
     def clean_period(self):
         period = self.cleaned_data.get('period')
         if len(period) > 50:
-            services.FormService().raise_error(MESSAGE_PERIOD_50_EN, MESSAGE_PERIOD_50)
+            services.FormService().raise_error(MESSAGE_PERIOD_EN, MESSAGE_PERIOD)
         return period 
 
     def clean_weight(self):
@@ -473,7 +473,7 @@ class EvaluationCreateForm(forms.ModelForm):
         name = self.cleaned_data.get('name')
         if len(name) > 50:
             services.FormService().raise_error(MESSAGE_NAME_50_EN, MESSAGE_NAME_50)
-        return name 
+        return name
 
 class EvaluationCreateAllForm(forms.ModelForm):
     
@@ -495,7 +495,7 @@ class EvaluationCreateAllForm(forms.ModelForm):
     )
 
     def __init__(self, *args, **kwargs):
-        super(EvaluationCreateForm, self).__init__(*args, **kwargs)
+        super(EvaluationCreateAllForm, self).__init__(*args, **kwargs)
         if get_language() == 'en':
             self.fields['start_date'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
             self.fields['start_date'].widget.format = settings.DATE_INPUT_FORMATS[0]
@@ -538,7 +538,7 @@ class EvaluationCreateChildForm(forms.ModelForm):
     )
 
     def __init__(self, *args, **kwargs):
-        super(EvaluationCreateForm, self).__init__(*args, **kwargs)
+        super(EvaluationCreateChildForm, self).__init__(*args, **kwargs)
         if get_language() == 'en':
             self.fields['start_date'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
             self.fields['start_date'].widget.format = settings.DATE_INPUT_FORMATS[0]
@@ -559,6 +559,12 @@ class EvaluationCreateChildForm(forms.ModelForm):
         if len(name) > 50:
             services.FormService().raise_error(MESSAGE_NAME_50_EN, MESSAGE_NAME_50)
         return name 
+    
+    def clean_period(self):
+        period = self.cleaned_data.get('period')
+        if len(period) > 50:
+            services.FormService().raise_error(MESSAGE_PERIOD_EN, MESSAGE_PERIOD)
+        return period 
 
 class EvaluationCreateOneFinalThreePartialForm(forms.ModelForm):
     
@@ -669,6 +675,24 @@ class EvaluationCreateOneFinalThreePartialForm(forms.ModelForm):
         if len(name) > 50:
             services.FormService().raise_error(MESSAGE_NAME_50_EN, MESSAGE_NAME_50)
         return name 
+    
+    def clean_period_1(self):
+        period_1 = self.cleaned_data.get('period_1')
+        if len(period_1) > 50:
+            services.FormService().raise_error(MESSAGE_PERIOD_EN, MESSAGE_PERIOD)
+        return period_1
+    
+    def clean_period_2(self):
+        period_2 = self.cleaned_data.get('period_2')
+        if len(period_2) > 50:
+            services.FormService().raise_error(MESSAGE_PERIOD_EN, MESSAGE_PERIOD)
+        return period_2 
+    
+    def clean_period_3(self):
+        period_3 = self.cleaned_data.get('period_3')
+        if len(period_3) > 50:
+            services.FormService().raise_error(MESSAGE_PERIOD_EN, MESSAGE_PERIOD)
+        return period_3 
 
 class EvaluationCreateOneFinalTwoPartialForm(forms.ModelForm):
     
@@ -722,7 +746,7 @@ class EvaluationCreateOneFinalTwoPartialForm(forms.ModelForm):
     )
     
     def __init__(self, *args, **kwargs):
-        super(EvaluationCreateOneFinalThreePartialForm, self).__init__(*args, **kwargs)
+        super(EvaluationCreateOneFinalTwoPartialForm, self).__init__(*args, **kwargs)
         if get_language() == 'en':
             self.fields['start_date'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
             self.fields['start_date'].widget.format = settings.DATE_INPUT_FORMATS[0]
@@ -756,6 +780,18 @@ class EvaluationCreateOneFinalTwoPartialForm(forms.ModelForm):
         if len(name) > 50:
             services.FormService().raise_error(MESSAGE_NAME_50_EN, MESSAGE_NAME_50)
         return name 
+    
+    def clean_period_1(self):
+        period_1 = self.cleaned_data.get('period_1')
+        if len(period_1) > 50:
+            services.FormService().raise_error(MESSAGE_PERIOD_EN, MESSAGE_PERIOD)
+        return period_1
+    
+    def clean_period_2(self):
+        period_2 = self.cleaned_data.get('period_2')
+        if len(period_2) > 50:
+            services.FormService().raise_error(MESSAGE_PERIOD_EN, MESSAGE_PERIOD)
+        return period_2 
 
 # Marks
 class ActivityMarkCreateForm(forms.ModelForm):

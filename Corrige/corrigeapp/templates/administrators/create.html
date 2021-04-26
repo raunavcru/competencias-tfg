@@ -21,9 +21,9 @@
                 <div class="grid-example col s11 offset-s1">
                     <div class="center-form">
                     {% if request.get_full_path == '/administrators/create' %}
-                        <form style="padding-right:80px;" id="form-create-administrator" method="post" action="{% url 'administrators_create' %}">
+                        <form class="col s12" id="form-create-administrator" method="post" action="{% url 'administrators_create' %}">
                     {% else %}
-                        <form style="padding-right:80px;" id="form-create-administrator" method="post" action="{% url 'administrators_update' object.pk %}">
+                        <form class="col s12" id="form-create-administrator" method="post" action="{% url 'administrators_update' object.pk %}">
                     {% endif %}
                             {% csrf_token %}
                             
