@@ -45,20 +45,18 @@
                             <div class="validate-input">
                                 <label>{% trans "First name" %}</label>
                                 {{form.first_name}}
-                                <div class="form-errors">
-                                    {{ form.first_name.errors }}
-                                </div>
                             </div>
                         </div>
                         <div class="grid-example col s4">
                             <div class="validate-input">
                                 <label>{% trans "Last name" %}</label>
                                 {{form.last_name}}
-                                <div class="form-errors">
-                                    {{ form.last_name.errors }}
-                                </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="row form-errors">
+                        {{form.first_name.errors}}
+                        {{form.last_name.errors}}
                     </div>
                     <div class="row">
                         <div class="grid-example col s2">
@@ -67,20 +65,18 @@
                             <div class="validate-input">
                                 <label>{% trans "Initials" %}</label>
                                 {{profile_form.initials}}
-                                <div class="form-errors">
-                                    {{ profile_form.initials.errors }}
-                                </div>
                             </div>
                         </div>
                         <div class="grid-example col s5">
                             <div class="validate-input">
                                 <label>{% trans "Birthdate" %}</label>
                                 {{profile_form.birthdate}}
-                                <div class="form-errors">
-                                    {{ profile_form.birthdate.errors }}
-                                </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="row form-errors">
+                        {{profile_form.initials.errors}}
+                        {{profile_form.birthdate.errors}}
                     </div>
                     <div class="row" style="padding-bottom: 20px; padding-right: 20px;">
                         <div style="padding-left:20px;">

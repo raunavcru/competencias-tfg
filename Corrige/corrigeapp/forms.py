@@ -50,6 +50,8 @@ MESSAGE_DESCRIPTION_100 = 'El tamaño de la descripción no puede ser mayor que 
 MESSAGE_DESCRIPTION_100_EN = 'Description can not be longer of 100 characters.'
 MESSAGE_DESCRIPTION_300 = 'El tamaño de la descripción no puede ser mayor que 300.'
 MESSAGE_DESCRIPTION_300_EN = 'Description can not be longer of 300 characters.'
+MESSAGE_EMAIL_50 = 'El tamaño del nombre de usuario no puede ser mayor que 50.'
+MESSAGE_EMAIL_50_EN = 'Username can not be longer of 50 characters.'
 MESSAGE_FIRST_NAME = 'El tamaño del nombre no puede ser mayor que 100.'
 MESSAGE_FIRST_NAME_EN = 'First name can not be longer of 100 characters.'
 MESSAGE_INITIALS = 'El tamaño de las iniciales no puede ser mayor que 9.'
@@ -70,6 +72,8 @@ MESSAGE_SURNAME = 'El tamaño del apellido no puede ser mayor que 100.'
 MESSAGE_SURNAME_EN = 'Surname can not be longer of 100 characters.'
 MESSAGE_TITLE = 'El tamaño del título no puede ser mayor que 50.'
 MESSAGE_TITLE_EN = 'Title can not be longer of 50 characters.'
+MESSAGE_USERNAME_50 = 'El tamaño del nombre de usuario no puede ser mayor que 50.'
+MESSAGE_USERNAME_50_EN = 'Username can not be longer of 50 characters.'
 
 # Messages: Range
 MESSAGE_INTENSITY = 'Intensidad debe estar por encima de 0.00.'
@@ -1079,12 +1083,16 @@ class UserCreateForm(UserCreationForm):
         username = self.cleaned_data.get('username')
         if User.objects.filter(username=username).exists():
             services.FormService().raise_error(MESSAGE_USERNAME_EN, MESSAGE_USERNAME)
+        elif len(username) > 50:
+            services.FormService().raise_error(MESSAGE_USERNAME_50_EN, MESSAGE_USERNAME_50)
         return username
 
     def clean_email(self):
         email = self.cleaned_data.get('email')
         if User.objects.filter(email=email).exists():
             services.FormService().raise_error(MESSAGE_EMAIL_EN, MESSAGE_EMAIL)
+        elif len(email) > 50:
+            services.FormService().raise_error(MESSAGE_EMAIL_50_EN, MESSAGE_EMAIL_50)
         return email
 
     def clean_initials(self):
@@ -1130,10 +1138,20 @@ class UserForm(UserChangeForm):
             services.FormService().raise_error(MESSAGE_LAST_NAME_EN, MESSAGE_LAST_NAME)
         return last_name
     
+    def clean_username(self):
+        username = self.cleaned_data.get('username')
+        if User.objects.filter(username=username).exists() and username != self.initial.get('username'):
+            services.FormService().raise_error(MESSAGE_USERNAME_EN, MESSAGE_USERNAME)
+        elif len(username) > 50:
+            services.FormService().raise_error(MESSAGE_USERNAME_50_EN, MESSAGE_USERNAME_50)
+        return username
+
     def clean_email(self):
         email = self.cleaned_data.get('email')
         if User.objects.filter(email=email).exists() and email != self.initial.get('email'):
             services.FormService().raise_error(MESSAGE_EMAIL_EN, MESSAGE_EMAIL)
+        elif len(email) > 50:
+            services.FormService().raise_error(MESSAGE_EMAIL_50_EN, MESSAGE_EMAIL_50)
         return email
 
 class UserPasswordUpdateForm(PasswordChangeForm):
@@ -1217,6 +1235,8 @@ class UserUpdateForm(forms.ModelForm):
         email = self.cleaned_data.get('email')
         if User.objects.filter(email=email).exists() and email != self.initial.get('email'):
             services.FormService().raise_error(MESSAGE_EMAIL_EN, MESSAGE_EMAIL)
+        elif len(email) > 50:
+            services.FormService().raise_error(MESSAGE_EMAIL_50_EN, MESSAGE_EMAIL_50)
         return email
         
 # Teachers
