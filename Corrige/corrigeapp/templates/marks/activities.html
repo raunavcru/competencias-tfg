@@ -16,7 +16,7 @@
                         <th class="center td-none" id="is_recovery">{% trans "Recovery" %}</th>
                         <th class="center" id="mark">{% trans "Mark" %}</th>
                         <th class="center" id="manual_mark">{% trans "Manual mark" %}</th>
-                        <th class="center" id="evaluate">{% trans "Evaluate" %}</th> 
+                        {% comment %} <th class="center" id="evaluate">{% trans "Evaluate" %}</th>  {% endcomment %}
                         <th class="center" id="exercises">{% trans "Exercises" %}</th>
                     </tr>
                 </thead>
@@ -42,14 +42,16 @@
                                     -
                                 {% endif %}
                             </td>
-                            <td class="center">
-                                {% if object.manual_mark or object.manual_mark == 0 %}
-                                    {{object.manual_mark}}
-                                {% else %}
-                                    -
-                                {% endif %}
+                            <td class="center editable" data-id="{{ object.id }}" data-type="mark">
+                                <div style="color:#0d47a1;cursor:pointer">
+                                    {% if object.manual_mark or object.manual_mark == 0 %}
+                                        {{object.manual_mark}}
+                                    {% else %}
+                                        -
+                                    {% endif %}
+                                </div>
                             </td>
-                            <td class="center dropdown-trigger" onclick="location.href='{% url 'marks_activities_create' object.pk %}'"><em class="material-icons" style="color:#29b6f6">create</em></td>
+                            {% comment %} <td class="center dropdown-trigger" onclick="location.href='{% url 'marks_activities_create' object.pk %}'"><em class="material-icons" style="color:#29b6f6">create</em></td> {% endcomment %}
                             <td class="center dropdown-trigger" onclick="location.href='{% url 'marks_exercises_list' id=object.activity.pk pk=student_object.pk %}'"><em class="material-icons" style="color:#e53935">rate_review</em></td>
                         </tr>
                     </tbody>
@@ -58,4 +60,56 @@
 <a onClick="location.href='{% url 'marks_evaluations_list' id=set_object.pk pk=student_object.pk %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
 <a onClick="location.href='{% url 'marks_activities_next' sk=set_object.pk id=evaluation_object.pk pk=student_object.pk %}'" class="waves-effect right waves-light btn" style="margin-top:55px; margin-bottom:15px; margin-left:15px;"><i class="material-icons left">keyboard_arrow_right</i>{% trans "Next Student" %}</a>
 <a onClick="location.href='{% url 'marks_activities_previous' sk=set_object.pk id=evaluation_object.pk pk=student_object.pk %}'" class="waves-effect right waves-light btn" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">keyboard_arrow_left</i>{% trans "Previous Student" %}</a>
+<script>
+    $(document).ready(function(){
+        $(document).on("click", ".editable", function(){
+            var value = $(this).text();
+            var input = "<input type='number' class='input-data' style='width:50px;'>";
+            $(this).html(input);
+            $(this).removeClass("editable");
+        });
+
+        $(document).on("blur", ".input-data", function(){
+            var value = $(this).val();
+            var td = $(this).parent("td");
+            $(this).remove();
+            td.html(value);
+            td.addClass("editable");
+            sendToServer(td.data("id"), value, {{teacher_id}});
+        });
+
+        $(document).on("keypress", ".input-data", function(e){
+            var key = e.which;
+            if (key == 13){
+                var value = $(this).val();
+                var td = $(this).parent("td");
+                $(this).remove();
+                td.html(value);
+                td.addClass("editable");
+                sendToServer(td.data("id"), value, {{teacher_id}});
+            }
+        });
+
+        function sendToServer(id, value, user){
+            console.log(id);
+            console.log(value);
+            $.ajax({
+                url:"http://127.0.0.1:8000/marks/activities/save",
+                type:"POST",
+                data:{id:id, value:value, user:user},
+            })
+            .done(function(response){
+                console.log(response);
+                M.toast({html: '{{done}}' })
+    
+                
+            })
+            .fail(function(response){
+                console.log("Error");
+                M.toast({html: '{{fail}}' })
+                
+            });
+        }
+    });
+</script>
 {% endblock %}
