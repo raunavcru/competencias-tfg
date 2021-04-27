@@ -2241,12 +2241,16 @@ class SubjectAssignCompetenceView(generic.TemplateView):
             subject_pk = self.kwargs.get('id')
             subject_object = models.Subject.objects.get(pk=subject_pk)
 
+            parent = models.Competence.objects.filter(competence_parent=competence).first()
+
+            parents_parent = models.Competence.objects.filter(competence_parent=parent)
+
             subject_object.competences.add(competence)
+            subject_object.competences.add(parent)
+            for parent_parent in parents_parent:
+                subject_object.competences.add(parent_parent)
             subject_object.save()
-            subject_object.competences.add(competence.parent)
-            subject_object.save()
-            subject_object.competences.add(competence.parent.parent)
-            subject_object.save()
+
             return redirect('subjects_assign_competence_list', pk=subject_pk)
         else:
             return redirect('/')
