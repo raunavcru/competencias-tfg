@@ -1544,6 +1544,7 @@ class MarkCompetenceListView(generic.ListView):
         context['exercise_pk'] = exercise_pk
         context['activity_object'] = activity_object
         context['c_mark_saved'] = c_mark_saved
+        context['teacher_id'] = self.request.user.id
 
         if get_language() == "es":
             context['done'] = "Actualizado"
@@ -2572,10 +2573,15 @@ class UserPasswordUpdateView(PasswordChangeView):
 def saveCompetenceMark(request):
     id = request.POST.get('id', '')
     value = request.POST.get('value', '')
+    user_id = request.POST.get('user', '')
     competence_mark = models.Competence_mark.objects.get(pk=id)
+    user = User.objects.get(pk=user_id)
 
-    if value < 0.00 or value > 10.00:
-        return JsonResponse({"fail": "Error"})
+    if competence_mark.exercise.activity.set_activity.teacher.user == user:
+        if not value or float(value) < 0.00 or float(value) > 10.00:
+            return JsonResponse({"fail": "Error"}, status=400)
+    else:
+        return JsonResponse({"Error": "Not Permit"}, status=403)
 
     competence_mark.mark = value
     competence_mark.save()
