@@ -2380,22 +2380,37 @@ class SubjectUnassignCompetenceView(generic.TemplateView):
             competence = models.Competence.objects.get(pk=competence_pk)
             subject_pk = self.kwargs.get('id')
             subject_object = models.Subject.objects.get(pk=subject_pk)
-            parent = competence.parent
-            grandparent = competence.parent.parent
 
-            level2_list = models.Competence.objects.filter(parent = grandparent, competences = subject_object)
-            count_level2 = level2_list.count()
+            parent = models.Competence.objects.filter(competence_parent=competence).first()
 
-            level1_list = models.Competence.objects.filter(parent = parent, competences = subject_object)
-            count_level1 = level1_list.count()
+            sons = models.Competence.objects.filter(parent = parent, competences = subject_object)
+            print("sons")
+            print(sons.count())
 
-            if count_level1 == 1:
+
+            if sons.count() == 1:
+                parents_parent = models.Competence.objects.filter(competence_parent=parent)
+                for p in parents_parent:
+                    parents_count = models.Competence.objects.filter(parent = p, competences = subject_object).count()
+                    print("parents_count")
+                    print(parents_count)
+                    if parents_count == 1:
+                        subject_object.competences.remove(p)
+
                 subject_object.competences.remove(parent)
 
-            if count_level1 == 1 and count_level2 == 1:
-                subject_object.competences.remove(grandparent)
-            
             subject_object.competences.remove(competence)
+
+            # parents_parent = models.Competence.objects.filter(competence_parent=parent, competences = subject_object)
+
+            # parents_parent_count = parents_parent.count()
+
+            # subject_object.competences.add(competence)
+
+            # if parents_parent_count == 1:
+            #     subject_object.competences.add(parent)
+            #     subject_object.competences.add(parents_parent_count)
+            
             subject_object.save()
 
             return redirect('subjects_assign_competence_list', pk=subject_pk)
