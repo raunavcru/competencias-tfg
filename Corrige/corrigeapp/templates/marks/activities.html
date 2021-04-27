@@ -100,13 +100,13 @@
             })
             .done(function(response){
                 console.log(response);
-                M.toast({html: '{{done}}' })
+                M.toast({html: '{{done}}' ,classes: 'green lighten-1' })
     
                 
             })
             .fail(function(response){
                 console.log("Error");
-                M.toast({html: '{{fail}}' })
+                M.toast({html: '{{fail}}', classes: 'red lighten-1'})
                 
             });
         }

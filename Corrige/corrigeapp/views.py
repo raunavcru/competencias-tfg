@@ -2384,32 +2384,17 @@ class SubjectUnassignCompetenceView(generic.TemplateView):
             parent = models.Competence.objects.filter(competence_parent=competence).first()
 
             sons = models.Competence.objects.filter(parent = parent, competences = subject_object)
-            print("sons")
-            print(sons.count())
-
 
             if sons.count() == 1:
                 parents_parent = models.Competence.objects.filter(competence_parent=parent)
                 for p in parents_parent:
                     parents_count = models.Competence.objects.filter(parent = p, competences = subject_object).count()
-                    print("parents_count")
-                    print(parents_count)
                     if parents_count == 1:
                         subject_object.competences.remove(p)
 
                 subject_object.competences.remove(parent)
 
             subject_object.competences.remove(competence)
-
-            # parents_parent = models.Competence.objects.filter(competence_parent=parent, competences = subject_object)
-
-            # parents_parent_count = parents_parent.count()
-
-            # subject_object.competences.add(competence)
-
-            # if parents_parent_count == 1:
-            #     subject_object.competences.add(parent)
-            #     subject_object.competences.add(parents_parent_count)
             
             subject_object.save()
 
