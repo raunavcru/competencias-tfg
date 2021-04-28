@@ -1094,13 +1094,16 @@ class EvaluationCreateAllOneFinalThreePartialView(generic.CreateView):
         name = form.cleaned_data.get('name')
         start_date = form.cleaned_data.get('start_date')
         end_date = form.cleaned_data.get('end_date')
+        weight_1 = form.cleaned_data.get('weight_1'),
         period_1 = form.cleaned_data.get('period_1')
         start_date_1 = form.cleaned_data.get('start_date_1')
         end_date_1 = form.cleaned_data.get('end_date_1')
         period_2 = form.cleaned_data.get('period_2')
+        weight_2 = form.cleaned_data.get('weight_2'),
         start_date_2 = form.cleaned_data.get('start_date_2')
         end_date_2 = form.cleaned_data.get('end_date_2')
         period_3 = form.cleaned_data.get('period_3')
+        weight_3 = form.cleaned_data.get('weight_3'),
         start_date_3 = form.cleaned_data.get('start_date_3')
         end_date_3 = form.cleaned_data.get('end_date_3')
         
@@ -1110,13 +1113,13 @@ class EvaluationCreateAllOneFinalThreePartialView(generic.CreateView):
             is_final=True, period="Final", weight=1, subject=subject)
             evaluation.save()
             evaluation1 = models.Evaluation.objects.create(name=name + " " + period_1, start_date=start_date_1, end_date=end_date_1,
-            is_final=False, period=period_1, weight=1, subject=subject, parent=evaluation)
+            is_final=False, period=period_1, weight=weight_1, subject=subject, parent=evaluation)
             evaluation1.save()
             evaluation2 = models.Evaluation.objects.create(name=name + " " + period_2, start_date=start_date_2, end_date=end_date_2,
-                is_final=False, period=period_2, weight=1, subject=subject, parent=evaluation)
+                is_final=False, period=period_2, weight=weight_2, subject=subject, parent=evaluation)
             evaluation2.save()
             evaluation3 = models.Evaluation.objects.create(name=name + " " + period_3, start_date=start_date_3, end_date=end_date_3,
-                is_final=False, period=period_3, weight=1, subject=subject, parent=evaluation)
+                is_final=False, period=period_3, weight=weight_3, subject=subject, parent=evaluation)
             evaluation3.save()
         
 
@@ -1147,9 +1150,11 @@ class EvaluationCreateAllOneFinalTwoPartialView(generic.CreateView):
         start_date = form.cleaned_data.get('start_date')
         end_date = form.cleaned_data.get('end_date')
         period_1 = form.cleaned_data.get('period_1')
+        weight_1 = form.cleaned_data.get('weight_1')
         start_date_1 = form.cleaned_data.get('start_date_1')
         end_date_1 = form.cleaned_data.get('end_date_1')
         period_2 = form.cleaned_data.get('period_2')
+        weight_2 = form.cleaned_data.get('weight_2')
         start_date_2 = form.cleaned_data.get('start_date_2')
         end_date_2 = form.cleaned_data.get('end_date_2')
         
@@ -1158,10 +1163,10 @@ class EvaluationCreateAllOneFinalTwoPartialView(generic.CreateView):
             is_final=True, period="Final", weight=1, subject=subject)
             evaluation.save()
             evaluation1 = models.Evaluation.objects.create(name=name + " " + period_1, start_date=start_date_1, end_date=end_date_1,
-            is_final=False, period=period_1, weight=1, subject=subject, parent=evaluation)
+            is_final=False, period=period_1, weight=weight_1, subject=subject, parent=evaluation)
             evaluation1.save()
             evaluation2 = models.Evaluation.objects.create(name=name + " " + period_2, start_date=start_date_2, end_date=end_date_2,
-                is_final=False, period=period_2, weight=1, subject=subject, parent=evaluation)
+                is_final=False, period=period_2, weight=weight_2, subject=subject, parent=evaluation)
             evaluation2.save()
         
 
@@ -1194,7 +1199,7 @@ class EvaluationCreateChildView(generic.CreateView):
         evaluation.is_final=False
         evaluation.parent = parent
         evaluation.subject = parent.subject
-        evaluation.weight=1,
+        evaluation.weight,
         evaluation.save()
 
         return redirect('evaluations_list_partial', pk=evaluation_pk)

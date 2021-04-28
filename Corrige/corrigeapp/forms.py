@@ -490,6 +490,10 @@ class EvaluationCreateAllForm(forms.ModelForm):
     
     name = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': PLACEHOLDER_NAME_EVALUATION, 'id': 'name-create-evaluation'}))
+    period = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'placeholder': PLACEHOLDER_PERIOD_EVALUATION}))
+    weight = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '1.0', 'id': 'weight'}))
     start_date = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
@@ -517,6 +521,7 @@ class EvaluationCreateAllForm(forms.ModelForm):
         model = models.Evaluation
         fields = (
             'name',
+            'period',
             'weight',
             'start_date',
             'end_date',
@@ -527,6 +532,12 @@ class EvaluationCreateAllForm(forms.ModelForm):
         if len(name) > 50:
             services.FormService().raise_error(MESSAGE_NAME_50_EN, MESSAGE_NAME_50)
         return name 
+
+    def clean_period(self):
+        period = self.cleaned_data.get('period')
+        if len(period) > 50:
+            services.FormService().raise_error(MESSAGE_PERIOD_EN, MESSAGE_PERIOD)
+        return period 
 
     def clean_weight(self):
         weight = self.cleaned_data.get('weight')
@@ -611,6 +622,8 @@ class EvaluationCreateOneFinalThreePartialForm(forms.ModelForm):
     )
     period_1 = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': PLACEHOLDER_PERIOD_EVALUATION}))
+    weight_1 = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '1.0', 'id': 'weight_1'}))
     start_date_1 = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
@@ -627,6 +640,8 @@ class EvaluationCreateOneFinalThreePartialForm(forms.ModelForm):
     )
     period_2 = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': PLACEHOLDER_PERIOD_EVALUATION}))
+    weight_2 = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '1.0', 'id': 'weight_2'}))
     start_date_2 = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
@@ -643,6 +658,8 @@ class EvaluationCreateOneFinalThreePartialForm(forms.ModelForm):
     )
     period_3 = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': PLACEHOLDER_PERIOD_EVALUATION}))
+    weight_3 = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '1.0', 'id': 'weight_3'}))
     start_date_3 = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
@@ -682,16 +699,18 @@ class EvaluationCreateOneFinalThreePartialForm(forms.ModelForm):
         model = models.Evaluation
         fields = (
             'name',
-            'weight',
             'start_date',
             'end_date',
             'period_1',
+            'weight_1',
             'start_date_1',
             'end_date_1',
             'period_2',
+            'weight_2',
             'start_date_2',
             'end_date_2',
             'period_3',
+            'weight_3',
             'start_date_3',
             'end_date_3',
         )
@@ -720,11 +739,24 @@ class EvaluationCreateOneFinalThreePartialForm(forms.ModelForm):
             services.FormService().raise_error(MESSAGE_PERIOD_EN, MESSAGE_PERIOD)
         return period_3 
 
-    def clean_weight(self):
-        weight = self.cleaned_data.get('weight')
-        if float(weight) < 0.00:
+    def clean_weight_1(self):
+        weight_1 = self.cleaned_data.get('weight_1')
+        if float(weight_1) < 0.00:
             services.FormService().raise_error(MESSAGE_WEIGHT_EN, MESSAGE_WEIGHT)
-        return weight
+        return weight_1
+
+    def clean_weight_2(self):
+        weight_2 = self.cleaned_data.get('weight_2')
+        if float(weight_2) < 0.00:
+            services.FormService().raise_error(MESSAGE_WEIGHT_EN, MESSAGE_WEIGHT)
+        return weight_2
+
+    def clean_weight_3(self):
+        weight_3 = self.cleaned_data.get('weight_3')
+        if float(weight_3) < 0.00:
+            services.FormService().raise_error(MESSAGE_WEIGHT_EN, MESSAGE_WEIGHT)
+        return weight_3
+
 class EvaluationCreateOneFinalTwoPartialForm(forms.ModelForm):
     
     name = forms.CharField(required=True, widget=forms.TextInput(
@@ -745,6 +777,8 @@ class EvaluationCreateOneFinalTwoPartialForm(forms.ModelForm):
     )
     period_1 = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': PLACEHOLDER_PERIOD_EVALUATION}))
+    weight_1 = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '1.0', 'id': 'weight_1'}))
     start_date_1 = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
@@ -761,6 +795,8 @@ class EvaluationCreateOneFinalTwoPartialForm(forms.ModelForm):
     )
     period_2 = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': PLACEHOLDER_PERIOD_EVALUATION}))
+    weight_2 = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '1.0', 'id': 'weight_2'}))
     start_date_2 = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
@@ -796,13 +832,14 @@ class EvaluationCreateOneFinalTwoPartialForm(forms.ModelForm):
         model = models.Evaluation
         fields = (
             'name',
-            'weight',
             'start_date',
             'end_date',
             'period_1',
+            'weight_1',
             'start_date_1',
             'end_date_1',
             'period_2',
+            'weight_2',
             'start_date_2',
             'end_date_2',
         )
@@ -825,11 +862,18 @@ class EvaluationCreateOneFinalTwoPartialForm(forms.ModelForm):
             services.FormService().raise_error(MESSAGE_PERIOD_EN, MESSAGE_PERIOD)
         return period_2 
     
-    def clean_weight(self):
-        weight = self.cleaned_data.get('weight')
-        if float(weight) < 0.00:
+    def clean_weight_1(self):
+        weight_1 = self.cleaned_data.get('weight_1')
+        if float(weight_1) < 0.00:
             services.FormService().raise_error(MESSAGE_WEIGHT_EN, MESSAGE_WEIGHT)
-        return weight
+        return weight_1
+
+    def clean_weight_2(self):
+        weight_2 = self.cleaned_data.get('weight_2')
+        if float(weight_2) < 0.00:
+            services.FormService().raise_error(MESSAGE_WEIGHT_EN, MESSAGE_WEIGHT)
+        return weight_2
+
 
 # Marks
 class ActivityMarkCreateForm(forms.ModelForm):
