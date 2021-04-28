@@ -63,6 +63,19 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="grid-example col s1 xl2">
+                                </div>
+                                <div class="grid-example col s10 xl8">
+                                    <div class="validate-input">
+                                        <label>{% trans "Weight" %}</label>
+                                        {{form.weight}}
+                                        <div class="form-errors">
+                                            {{ form.weight.errors }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             {% if create_partial %}
                             <div class="row">
                                 <div class="grid-example col s2">

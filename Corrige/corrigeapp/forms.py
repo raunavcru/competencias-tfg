@@ -468,6 +468,7 @@ class EvaluationCreateForm(forms.ModelForm):
         model = models.Evaluation
         fields = (
             'name',
+            'weight',
             'start_date',
             'end_date',
             'subject',
@@ -478,6 +479,12 @@ class EvaluationCreateForm(forms.ModelForm):
         if len(name) > 50:
             services.FormService().raise_error(MESSAGE_NAME_50_EN, MESSAGE_NAME_50)
         return name
+        
+    def clean_weight(self):
+        weight = self.cleaned_data.get('weight')
+        if float(weight) < 0.00:
+            services.FormService().raise_error(MESSAGE_WEIGHT_EN, MESSAGE_WEIGHT)
+        return weight
 
 class EvaluationCreateAllForm(forms.ModelForm):
     
@@ -510,6 +517,7 @@ class EvaluationCreateAllForm(forms.ModelForm):
         model = models.Evaluation
         fields = (
             'name',
+            'weight',
             'start_date',
             'end_date',
         )
@@ -519,6 +527,12 @@ class EvaluationCreateAllForm(forms.ModelForm):
         if len(name) > 50:
             services.FormService().raise_error(MESSAGE_NAME_50_EN, MESSAGE_NAME_50)
         return name 
+
+    def clean_weight(self):
+        weight = self.cleaned_data.get('weight')
+        if float(weight) < 0.00:
+            services.FormService().raise_error(MESSAGE_WEIGHT_EN, MESSAGE_WEIGHT)
+        return weight
 
 class EvaluationCreateChildForm(forms.ModelForm):
     
@@ -553,6 +567,7 @@ class EvaluationCreateChildForm(forms.ModelForm):
         model = models.Evaluation
         fields = (
             'name',
+            'weight',
             'period',
             'start_date',
             'end_date',
@@ -569,6 +584,12 @@ class EvaluationCreateChildForm(forms.ModelForm):
         if len(period) > 50:
             services.FormService().raise_error(MESSAGE_PERIOD_EN, MESSAGE_PERIOD)
         return period 
+
+    def clean_weight(self):
+        weight = self.cleaned_data.get('weight')
+        if float(weight) < 0.00:
+            services.FormService().raise_error(MESSAGE_WEIGHT_EN, MESSAGE_WEIGHT)
+        return weight
 
 class EvaluationCreateOneFinalThreePartialForm(forms.ModelForm):
     
@@ -661,6 +682,7 @@ class EvaluationCreateOneFinalThreePartialForm(forms.ModelForm):
         model = models.Evaluation
         fields = (
             'name',
+            'weight',
             'start_date',
             'end_date',
             'period_1',
@@ -698,6 +720,11 @@ class EvaluationCreateOneFinalThreePartialForm(forms.ModelForm):
             services.FormService().raise_error(MESSAGE_PERIOD_EN, MESSAGE_PERIOD)
         return period_3 
 
+    def clean_weight(self):
+        weight = self.cleaned_data.get('weight')
+        if float(weight) < 0.00:
+            services.FormService().raise_error(MESSAGE_WEIGHT_EN, MESSAGE_WEIGHT)
+        return weight
 class EvaluationCreateOneFinalTwoPartialForm(forms.ModelForm):
     
     name = forms.CharField(required=True, widget=forms.TextInput(
@@ -769,6 +796,7 @@ class EvaluationCreateOneFinalTwoPartialForm(forms.ModelForm):
         model = models.Evaluation
         fields = (
             'name',
+            'weight',
             'start_date',
             'end_date',
             'period_1',
@@ -796,6 +824,12 @@ class EvaluationCreateOneFinalTwoPartialForm(forms.ModelForm):
         if len(period_2) > 50:
             services.FormService().raise_error(MESSAGE_PERIOD_EN, MESSAGE_PERIOD)
         return period_2 
+    
+    def clean_weight(self):
+        weight = self.cleaned_data.get('weight')
+        if float(weight) < 0.00:
+            services.FormService().raise_error(MESSAGE_WEIGHT_EN, MESSAGE_WEIGHT)
+        return weight
 
 # Marks
 class ActivityMarkCreateForm(forms.ModelForm):
