@@ -312,8 +312,6 @@ class Exercise_competence(Common):
 class Competence_mark(Common):
     mark = models.DecimalField('mark', max_digits=4, decimal_places=2, blank=True, null=True)
 
-    evaluation_type = models.CharField(("evaluation_type"), max_length=50)
-
     exercise = models.ForeignKey(Exercise, on_delete=models.CASCADE, related_name='exercise_competence_mark')
 
     competence = models.ForeignKey(Competence, on_delete=models.CASCADE, related_name='competence_competence_mark')
@@ -325,7 +323,7 @@ class Competence_mark(Common):
         verbose_name_plural = 'Competence_marks'
     
     def __str__(self):
-        return self.mark
+        return self.competence.code
 
 class Competence_evaluation(Common):
     mark = models.DecimalField('mark', max_digits=4, decimal_places=2, blank=True, null=True)

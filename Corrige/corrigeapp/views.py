@@ -1542,7 +1542,7 @@ class MarkCompetenceListView(generic.ListView):
         exercise_competences = models.Exercise_competence.objects.filter(exercise=exercise_object).order_by('competence__code')
         for ec in exercise_competences:
             if not models.Competence_mark.objects.filter(exercise=exercise_object, competence = ec.competence, student=student_object).exists():
-                c_mark = models.Competence_mark.objects.create(exercise=exercise_object, competence = ec.competence, student=student_object, evaluation_type="AUTOMATIC")
+                c_mark = models.Competence_mark.objects.create(exercise=exercise_object, competence = ec.competence, student=student_object)
                 c_mark.save()
         
         c_mark_saved = models.Competence_mark.objects.filter(exercise = exercise_object, student=student_object).order_by('competence__code')
@@ -2612,8 +2612,7 @@ def saveActivityMark(request):
     else:
         return JsonResponse({"Error": "Not Permit"}, status=403)
 
-    activity_mark.manual_mark = value
-    activity_mark.save()
+    services.MarkService().mark_activity_mark(mark=value, activity_mark=activity_mark)
 
     return JsonResponse({"success": "Updated"})
 
@@ -2631,8 +2630,7 @@ def saveCompetenceMark(request):
     else:
         return JsonResponse({"Error": "Not Permit"}, status=403)
 
-    competence_mark.mark = value
-    competence_mark.save()
+    services.MarkService().mark_competence_mark(mark=value, competence_mark=competence_mark)
 
     return JsonResponse({"success": "Updated"})
 
@@ -2652,8 +2650,7 @@ def saveEvaluationMark(request):
     else:
         return JsonResponse({"Error": "Not Permit"}, status=403)
 
-    evaluation_mark.manual_mark = value
-    evaluation_mark.save()
+    services.MarkService().mark_evaluation_mark(mark=value, set_object = set_object, evaluation_mark=evaluation_mark)
 
     return JsonResponse({"success": "Updated"})
 
@@ -2671,7 +2668,6 @@ def saveExerciseMark(request):
     else:
         return JsonResponse({"Error": "Not Permit"}, status=403)
 
-    exercise_mark.manual_mark = value
-    exercise_mark.save()
+    services.MarkService().mark_exercise_mark(mark=value, exercise_mark=exercise_mark)
 
     return JsonResponse({"success": "Updated"})
