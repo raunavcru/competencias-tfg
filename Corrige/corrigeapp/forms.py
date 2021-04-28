@@ -490,10 +490,6 @@ class EvaluationCreateAllForm(forms.ModelForm):
     
     name = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': PLACEHOLDER_NAME_EVALUATION, 'id': 'name-create-evaluation'}))
-    period = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': PLACEHOLDER_PERIOD_EVALUATION}))
-    weight = forms.DecimalField(
-        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '1.0', 'id': 'weight'}))
     start_date = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
@@ -521,8 +517,6 @@ class EvaluationCreateAllForm(forms.ModelForm):
         model = models.Evaluation
         fields = (
             'name',
-            'period',
-            'weight',
             'start_date',
             'end_date',
         )
@@ -531,19 +525,7 @@ class EvaluationCreateAllForm(forms.ModelForm):
         name = self.cleaned_data.get('name')
         if len(name) > 50:
             services.FormService().raise_error(MESSAGE_NAME_50_EN, MESSAGE_NAME_50)
-        return name 
-
-    def clean_period(self):
-        period = self.cleaned_data.get('period')
-        if len(period) > 50:
-            services.FormService().raise_error(MESSAGE_PERIOD_EN, MESSAGE_PERIOD)
-        return period 
-
-    def clean_weight(self):
-        weight = self.cleaned_data.get('weight')
-        if float(weight) < 0.00:
-            services.FormService().raise_error(MESSAGE_WEIGHT_EN, MESSAGE_WEIGHT)
-        return weight
+        return name
 
 class EvaluationCreateChildForm(forms.ModelForm):
     

@@ -1291,12 +1291,37 @@ class EvaluationUpdateView(generic.UpdateView):
             return redirect('/')
 
     def get_context_data(self, **kwargs):
+        evaluation_pk = self.kwargs.get('pk')
+        evaluation = models.Evaluation.objects.get(pk=evaluation_pk)
         context = super(EvaluationUpdateView, self).get_context_data(**kwargs)
         context['update'] = True
+
+        if not evaluation.is_final:
+            context['update_partial'] = True
+
         return context
     
+    def get_form_class(self):
+        evaluation_pk = self.kwargs.get('pk')
+        evaluation = models.Evaluation.objects.get(pk=evaluation_pk)
+
+        if evaluation.is_final:
+            return self.form_class
+        else:
+            return forms.EvaluationCreateChildForm
+    
     def form_valid(self, form):
-        evaluation = form.save()
+        evaluation_pk = self.kwargs.get('pk')
+        evaluation_saved = models.Evaluation.objects.get(pk=evaluation_pk)
+
+        evaluation = form.save(commit=False)
+
+        if evaluation_saved.is_final:
+            evaluation.period = evaluation_saved.period
+            evaluation.weight = evaluation_saved.weight
+        
+        evaluation.save()
+
         if evaluation.is_final:
             return redirect('evaluations_list_final')
         else:
