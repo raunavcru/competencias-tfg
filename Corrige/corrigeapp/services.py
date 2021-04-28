@@ -209,9 +209,6 @@ class MarkService():
         else:
             mark = mark_total/weight_total
             evaluation_mark.mark = mark
-        
-        print(weight_total)
-        print(mark_total)
 
         evaluation_mark.save()
 
@@ -306,9 +303,6 @@ class MarkService():
         else:
             mark = mark_total/weight_total
             exercise_mark.mark = mark
-        
-        print(weight_total)
-        print(mark_total)
 
         exercise_mark.save()
 
