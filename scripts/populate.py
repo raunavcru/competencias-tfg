@@ -891,7 +891,7 @@ def seed_evaluations():
                 'end_date': '2021-06-19',
                 'is_final': True,
                 'period': 'Final',
-                'weight': 1,
+                'weight': 1.0,
                 'subject': 1,
             }
     }
@@ -907,7 +907,7 @@ def seed_evaluations():
                 'end_date': '2020-12-22',
                 'is_final': False,
                 'period': '1st',
-                'weight': 1,
+                'weight': 1.0,
                 'parent': evaluation_parent,
                 'subject': 1,
             }
@@ -923,7 +923,7 @@ def seed_evaluations():
                 'end_date': '2021-03-26',
                 'is_final': False,
                 'period': '2nd',
-                'weight': 1,
+                'weight': 1.0,
                 'parent': evaluation_parent,
                 'subject': 1,
             }
@@ -939,7 +939,7 @@ def seed_evaluations():
                 'end_date': '2021-06-19',
                 'is_final': False,
                 'period': '3tr',
-                'weight': 1,
+                'weight': 1.0,
                 'parent': evaluation_parent,
                 'subject': 1,
             }
@@ -957,7 +957,7 @@ def seed_evaluations():
                 'end_date': '2021-06-19',
                 'is_final': True,
                 'period': 'Final',
-                'weight': 1,
+                'weight': 1.0,
                 'subject': 2,
             }
     }
@@ -973,7 +973,7 @@ def seed_evaluations():
                 'end_date': '2020-12-22',
                 'is_final': False,
                 'period': '1st',
-                'weight': 1,
+                'weight': 1.0,
                 'parent': evaluation_parent,
                 'subject': 2,
             }
@@ -989,7 +989,7 @@ def seed_evaluations():
                 'end_date': '2021-03-26',
                 'is_final': False,
                 'period': '2nd',
-                'weight': 1,
+                'weight': 1.0,
                 'parent': evaluation_parent,
                 'subject': 2,
             }
@@ -1005,7 +1005,7 @@ def seed_evaluations():
                 'end_date': '2021-06-19',
                 'is_final': False,
                 'period': '3tr',
-                'weight': 1,
+                'weight': 1.0,
                 'parent': evaluation_parent,
                 'subject': 2,
             }
@@ -1023,7 +1023,7 @@ def seed_evaluations():
                 'end_date': '2021-06-19',
                 'is_final': True,
                 'period': 'Final',
-                'weight': 1,
+                'weight': 1.0,
                 'subject': 3,
             }
     }
@@ -1039,7 +1039,7 @@ def seed_evaluations():
                 'end_date': '2020-12-22',
                 'is_final': False,
                 'period': '1st',
-                'weight': 1,
+                'weight': 1.0,
                 'parent': evaluation_parent,
                 'subject': 3,
             }
@@ -1055,7 +1055,7 @@ def seed_evaluations():
                 'end_date': '2021-03-26',
                 'is_final': False,
                 'period': '2nd',
-                'weight': 1,
+                'weight': 1.0,
                 'parent': evaluation_parent,
                 'subject': 3,
             }
@@ -1071,7 +1071,7 @@ def seed_evaluations():
                 'end_date': '2021-06-19',
                 'is_final': False,
                 'period': '3tr',
-                'weight': 1,
+                'weight': 1.0,
                 'parent': evaluation_parent,
                 'subject': 3,
             }
@@ -1089,7 +1089,7 @@ def seed_evaluations():
                 'end_date': '2021-06-19',
                 'is_final': True,
                 'period': 'Final',
-                'weight': 1,
+                'weight': 1.0,
                 'subject': 4,
             }
     }
@@ -1105,7 +1105,7 @@ def seed_evaluations():
                 'end_date': '2020-12-22',
                 'is_final': False,
                 'period': '1st',
-                'weight': 1,
+                'weight': 1.0,
                 'parent': evaluation_parent,
                 'subject': 4,
             }
@@ -1121,7 +1121,7 @@ def seed_evaluations():
                 'end_date': '2021-03-26',
                 'is_final': False,
                 'period': '2nd',
-                'weight': 1,
+                'weight': 1.0,
                 'parent': evaluation_parent,
                 'subject': 4,
             }
@@ -1137,7 +1137,7 @@ def seed_evaluations():
                 'end_date': '2021-06-19',
                 'is_final': False,
                 'period': '3tr',
-                'weight': 1,
+                'weight': 1.0,
                 'parent': evaluation_parent,
                 'subject': 4,
             }
@@ -1255,7 +1255,7 @@ def seed_activities():
         'fields': {
                 'title': 'Examen 2',
                 'date': '2021-01-22',
-                'weight': 1,
+                'weight': 1.0,
                 'is_recovery': False,
                 'set_activity': 1,
                 'evaluation': 3,
@@ -1270,7 +1270,7 @@ def seed_activities():
         'fields': {
                 'title': 'Examen 3',
                 'date': '2021-05-26',
-                'weight': 1,
+                'weight': 1.0,
                 'is_recovery': False,
                 'set_activity': 1,
                 'evaluation': 4,
@@ -1287,7 +1287,7 @@ def seed_activities():
         'fields': {
                 'title': 'Examen 1',
                 'date': '2020-11-04',
-                'weight': 1,
+                'weight': 1.0,
                 'is_recovery': False,
                 'set_activity': 3,
                 'evaluation': 6,
@@ -1302,7 +1302,7 @@ def seed_activities():
         'fields': {
                 'title': 'Examen 2',
                 'date': '2021-01-22',
-                'weight': 1,
+                'weight': 1.0,
                 'is_recovery': False,
                 'set_activity': 3,
                 'evaluation': 7,
@@ -1317,7 +1317,7 @@ def seed_activities():
         'fields': {
                 'title': 'Examen 3',
                 'date': '2021-05-26',
-                'weight': 1,
+                'weight': 1.0,
                 'is_recovery': False,
                 'set_activity': 3,
                 'evaluation': 8,
@@ -1335,7 +1335,7 @@ def seed_exercises():
         'pk': exercise_pk,
         'model': 'corrigeapp.Exercise',
         'fields': {
-                'weight': 1,
+                'weight': 1.0,
                 'statement': 'Example statement 1',
                 'activity': 1,
             }
@@ -1346,7 +1346,7 @@ def seed_exercises():
         'pk': exercise_pk,
         'model': 'corrigeapp.Exercise',
         'fields': {
-                'weight': 1,
+                'weight': 1.0,
                 'statement': 'Example statement 2',
                 'activity': 1,
             }
@@ -1357,7 +1357,7 @@ def seed_exercises():
         'pk': exercise_pk,
         'model': 'corrigeapp.Exercise',
         'fields': {
-                'weight': 1,
+                'weight': 1.0,
                 'statement': 'Example statement 3',
                 'activity': 1,
             }
@@ -1368,7 +1368,7 @@ def seed_exercises():
         'pk': exercise_pk,
         'model': 'corrigeapp.Exercise',
         'fields': {
-                'weight': 1,
+                'weight': 1.0,
                 'statement': 'Example statement 4',
                 'activity': 1,
             }
@@ -1379,7 +1379,7 @@ def seed_exercises():
         'pk': exercise_pk,
         'model': 'corrigeapp.Exercise',
         'fields': {
-                'weight': 1,
+                'weight': 1.0,
                 'statement': 'Example statement 5',
                 'activity': 1,
             }
@@ -1390,7 +1390,7 @@ def seed_exercises():
         'pk': exercise_pk,
         'model': 'corrigeapp.Exercise',
         'fields': {
-                'weight': 1,
+                'weight': 1.0,
                 'statement': 'Example statement 6',
                 'activity': 1,
             }
@@ -1402,7 +1402,7 @@ def seed_exercises():
         'pk': exercise_pk,
         'model': 'corrigeapp.Exercise',
         'fields': {
-                'weight': 1,
+                'weight': 1.0,
                 'statement': 'Example statement 1',
                 'activity': 2,
             }
@@ -1418,8 +1418,8 @@ def seed_exercise_competence():
         'pk': exercise_competence_pk,
         'model': 'corrigeapp.Exercise_competence',
         'fields': {
-                'intensity': 1,
-                'weight': 1,
+                'intensity': 1.0,
+                'weight': 1.0,
                 'exercise': 1,
                 'competence': 16,
             }
@@ -1431,8 +1431,8 @@ def seed_exercise_competence():
         'pk': exercise_competence_pk,
         'model': 'corrigeapp.Exercise_competence',
         'fields': {
-                'intensity': 1,
-                'weight': 1,
+                'intensity': 1.0,
+                'weight': 1.0,
                 'exercise': 2,
                 'competence': 17,
             }
@@ -1444,8 +1444,8 @@ def seed_exercise_competence():
         'pk': exercise_competence_pk,
         'model': 'corrigeapp.Exercise_competence',
         'fields': {
-                'intensity': 1,
-                'weight': 1,
+                'intensity': 1.0,
+                'weight': 1.0,
                 'exercise': 3,
                 'competence': 19,
             }
@@ -1457,8 +1457,8 @@ def seed_exercise_competence():
         'pk': exercise_competence_pk,
         'model': 'corrigeapp.Exercise_competence',
         'fields': {
-                'intensity': 1,
-                'weight': 1,
+                'intensity': 1.0,
+                'weight': 1.0,
                 'exercise': 4,
                 'competence': 21,
             }
@@ -1470,8 +1470,8 @@ def seed_exercise_competence():
         'pk': exercise_competence_pk,
         'model': 'corrigeapp.Exercise_competence',
         'fields': {
-                'intensity': 1,
-                'weight': 1,
+                'intensity': 1.0,
+                'weight': 1.0,
                 'exercise': 5,
                 'competence': 23,
             }
@@ -1483,8 +1483,8 @@ def seed_exercise_competence():
         'pk': exercise_competence_pk,
         'model': 'corrigeapp.Exercise_competence',
         'fields': {
-                'intensity': 1,
-                'weight': 1,
+                'intensity': 1.0,
+                'weight': 1.0,
                 'exercise': 6,
                 'competence': 24,
             }
