@@ -94,7 +94,7 @@
             console.log(id);
             console.log(value);
             $.ajax({
-                url:"http://127.0.0.1:8000/marks/activities/save",
+                url:"https://verumapp.herokuapp.com/marks/activities/save",
                 type:"POST",
                 data:{id:id, value:value, user:user},
             })
