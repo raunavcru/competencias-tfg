@@ -1,4 +1,5 @@
 from django.urls import path, re_path
+
 from . import views
 from . import models
 
@@ -41,6 +42,7 @@ urlpatterns = [
 
     path('exercises/competence/<int:id>/<int:pk>/delete', views.ExerciseCompetenceDeleteView.as_view(), name = 'exercise_competences_delete'),
     path('exercises/competence/<int:id>/<int:pk>/create', views.ExerciseCompetenceCreateView.as_view(), name = 'exercise_competences_create'),
+    path('exercises/competence/<int:pk>/update', views.ExerciseCompetenceUpdateView.as_view(), name = 'exercise_competences_update'),
 
     path('evaluations/create', views.EvaluationCreateView.as_view(), name = 'evaluations_create'),
     path('evaluations/create/all', views.EvaluationCreateAllView.as_view(), name = 'evaluations_create_all'),
@@ -51,16 +53,28 @@ urlpatterns = [
     path('evaluations/<int:pk>/delete', views.EvaluationDeleteView.as_view(), name='evaluations_delete'),
     path('evaluations/<int:pk>/list', views.EvaluationsListPartialView.as_view(), name = 'evaluations_list_partial'),
     path('evaluations/<int:pk>/update', views.EvaluationUpdateView.as_view(), name = 'evaluations_update'),
-
-    path('marks/activities/<int:pk>/create', views.MarkActivityCreateView.as_view(), name = 'marks_activities_create'),
+    
+    path('marks/activities/save', views.saveActivityMark, name = 'marks_activities_save'),
+    # path('marks/activities/<int:pk>/create', views.MarkActivityCreateView.as_view(), name = 'marks_activities_create'),
     path('marks/activities/<int:sk>/<int:id>/<int:pk>/list', views.MarkActivityListView.as_view(), name = 'marks_activities_list'),
-    path('marks/competences/<int:id>/<int:pk>/create', views.MarkCompetenceCreateView.as_view(), name = 'marks_competences_create'),
+    path('marks/activities/<int:sk>/<int:id>/<int:pk>/next', views.MarkActivityNextStudentView.as_view(), name = 'marks_activities_next'),
+    path('marks/activities/<int:sk>/<int:id>/<int:pk>/previous', views.MarkActivityPreviousStudentView.as_view(), name = 'marks_activities_previous'),
+    path('marks/competences/save', views.saveCompetenceMark, name = 'marks_competences_save'),
+    # path('marks/competences/<int:id>/<int:pk>/create', views.MarkCompetenceCreateView.as_view(), name = 'marks_competences_create'),
     path('marks/competences/<int:id>/<int:pk>/list', views.MarkCompetenceListView.as_view(), name = 'marks_competences_list'),
+    path('marks/competences/<int:id>/<int:pk>/next', views.MarkCompetenceNextStudentView.as_view(), name = 'marks_competences_next'),
+    path('marks/competences/<int:id>/<int:pk>/previous', views.MarkCompetencePreviousStudentView.as_view(), name = 'marks_competences_previous'),
     path('marks/competence_evaluation/<int:id>/<int:pk>/list', views.MarkCompetenceEvaluationList.as_view(), name = 'marks_competence_evaluations_list'), 
-    path('marks/evaluations/<int:id>/<int:pk>/create', views.MarkEvaluationCreateView.as_view(), name = 'marks_evaluations_create'),
+    path('marks/evaluations/save', views.saveEvaluationMark, name = 'marks_evaluations_save'),
+    # path('marks/evaluations/<int:id>/<int:pk>/create', views.MarkEvaluationCreateView.as_view(), name = 'marks_evaluations_create'),
     path('marks/evaluations/<int:id>/<int:pk>/list', views.MarkEvaluationListView.as_view(), name = 'marks_evaluations_list'),
-    path('marks/exercises/<int:pk>/create', views.MarkExerciseCreateView.as_view(), name = 'marks_exercises_create'),
+    path('marks/evaluations/<int:id>/<int:pk>/next', views.MarkEvaluationNextStudentView.as_view(), name = 'marks_evaluations_next'),
+    path('marks/evaluations/<int:id>/<int:pk>/previous', views.MarkEvaluationPreviousStudentView.as_view(), name = 'marks_evaluations_previous'),
+    path('marks/exercises/save', views.saveExerciseMark, name = 'marks_exercises_save'),
+    # path('marks/exercises/<int:pk>/create', views.MarkExerciseCreateView.as_view(), name = 'marks_exercises_create'),
     path('marks/exercises/<int:id>/<int:pk>/list', views.MarkExerciseListView.as_view(), name = 'marks_exercises_list'),
+    path('marks/exercises/<int:id>/<int:pk>/next', views.MarkExerciseNextStudentView.as_view(), name = 'marks_exercises_next'),
+    path('marks/exercises/<int:id>/<int:pk>/previous', views.MarkExercisePreviousStudentView.as_view(), name = 'marks_exercises_previous'),
 
     path('my_sets/list', views.MySetsListView.as_view(), name = 'my_sets_list'),
     path('my_subjects/list', views.SubjectsOwnerListView.as_view(), name = 'my_subjects_list'),
@@ -70,6 +84,7 @@ urlpatterns = [
 
     path('reports/set/<int:pk>/competences', views.ReportSetCompetenceEvaluationView.as_view(), name = 'report_set_competences'),
     path('reports/set/<int:pk>/evaluations', views.ReportSetEvaluationView.as_view(), name = 'report_set_evaluations'),
+    path('reports/student/<int:id>/<int:pk>', views.ReportStudentView.as_view(), name = 'report_student'),
 
     path('sets/create', views.SetCreateView.as_view(), name = 'sets_create'),
     path('sets/list', views.SetsListView.as_view(), name = 'sets_list'),

@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% load report %}
+{% block content %} 
+<div class="container">
+    <h4 class="centered">{% trans "Report" %} {% trans "of" %}  {{student.name}} {{student.surname}}</h4>   
+        <table style = "margin-top: 40px;" class="highlight">
+            <caption><h5>{% trans "Evaluations" %}</h5></caption>
+                <thead>
+                    <tr>
+                        <th id="name">{% trans "Name" %}</th>
+                        <th class="center" id="mark">{% trans "Mark" %}</th>
+                    </tr>
+                </thead>
+                {% for ev_m in student|evaluations_list:set_object %}
+                    <tbody class="center grey lighten-3">
+                        <tr class="center">
+                            <td>{{ev_m.evaluation.name}}</td>
+                            <td class="center">
+                                {% if ev_m.mark or ev_m.mark == 0 %}
+                                    {{ev_m.mark}}
+                                {% else %}
+                                    -
+                                {% endif %}
+                            </td>
+                        </tr>
+                    </tbody>
+                    {% for ac_m in student|activities_list:ev_m.evaluation %} 
+                        <tbody class="center">
+                            <tr class="center">
+                                <td>{{ac_m.activity.title}}</td>
+                                <td class="center">
+                                    {% if ac_m.mark or ac_m.mark == 0 %}
+                                        {{ac_m.mark}}
+                                    {% else %}
+                                        -
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        </tbody>
+                    {% endfor %} 
+                {% endfor %} 
+        </table>
+        <table style="margin-top: 40px;" class="highlight">
+            <caption><h5>{% trans "Competences" %}</h5></caption>
+            <thead>
+                <tr>
+                    <th id="code">{% trans "Code" %}</th>
+                    <th id="name">{% trans "Name" %}</th>
+                    <th class="center" id="mark">{% trans "Mark" %}</th>
+                </tr>
+            </thead>
+        {% for c_e in student.level2 %}
+            <tbody class="center grey lighten-3">
+                <tr class="center">
+                    <td style="width:100px">{{c_e.competence.code}}</td>
+                    <td>{{c_e.competence.name}}</td>
+                    <td style="width:100px" class="center">
+                        {% if c_e.mark or c_e.mark == 0 %}
+                            {{c_e.mark}}
+                        {% else %}
+                            -
+                        {% endif %}
+                    </td>
+                </tr>
+            </tbody>
+            {% for c_e_l1 in student|level1:c_e.competence %} 
+                <tbody class="center">
+                    <tr class="center">
+                        <td style="width:100px">{{c_e_l1.competence.code}}</td>
+                        <td>{{c_e_l1.competence.name}}</td>
+                        <td class="center">
+                            {% if c_e_l1.mark or c_e_l1.mark == 0 %}
+                                {{c_e_l1.mark}}
+                            {% else %}
+                                -
+                            {% endif %}
+                        </td>
+                    </tr>
+                </tbody>
+            {% endfor %} 
+        {% endfor %} 
+        </table>
+    <a onclick="location.href='{% url 'sets_student_list' set_object.pk %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
+</div>
+{% endblock %}

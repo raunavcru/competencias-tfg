@@ -4,16 +4,16 @@
 {% load report %}
 {% block content %} 
 <div class="container">
-    <h4 class="centered">{% trans "Report" %}</h4>   
+    <h4 class="centered">{% trans "Report of Evaluation" %}</h4>   
         <table class="highlight">
             <caption></caption>
                 <thead>
                     <tr>
-                        <th id="student">{% trans "Student" %}</th>
+                        <th class="grey lighten-4 sticky" id="student">{% trans "Student" %}</th>
                     {% for ev_th in student_th|evaluations_list:set_object %} 
-                        <th id="evaluation{{ac_th.ac_th.evaluation.pk}}" class="center grey lighten-3">{{ev_th.evaluation.name}}</th>
+                        <th id="evaluation{{ac_th.ac_th.evaluation.pk}}" class="center grey lighten-3 sticky">{{ev_th.evaluation.name}}</th>
                         {% for ac_th in student_th|activities_list:ev_th.evaluation %} 
-                            <th id="activity{{ac_th.ac_th.activity.pk}}" class="center">{{ac_th.activity.title}}</th>
+                            <th id="activity{{ac_th.ac_th.activity.pk}}" class="center grey lighten-4 sticky">{{ac_th.activity.title}}</th>
                         {% endfor %}
                     {% endfor %}
                     </tr>
@@ -31,7 +31,7 @@
                             {% endif %}
                             </td>
                             {% for ac_m in student|activities_list:ev_m.evaluation %} 
-                                <td class="center">
+                                <td class="center ">
                                 {% if ac_m.mark or ac_m.mark == 0 %}
                                     {{ac_m.mark}}
                                 {% else %}
