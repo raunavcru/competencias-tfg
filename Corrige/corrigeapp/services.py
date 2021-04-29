@@ -6,16 +6,6 @@ from . import models
 
 User = get_user_model()
 
-class ActivityService():
-
-    def is_owner(self, user: User, activity_object: models.Activity) -> bool:
-        res = False
-
-        if activity_object.created_by == user:
-            res = True
-        
-        return res
-
 class BlockService():
 
     def is_owner(self, user: User, block: models.Evaluation) -> bool:
@@ -202,7 +192,7 @@ class MarkService():
             e_m.save()
         
         evaluation_mark = models.Evaluation_mark.objects.get(evaluation = evaluation, student = student)
-        activity_mark_ls = models.Activity_mark.objects.filter(activity__evaluation = evaluation, activity__set_activity = set_object)
+        activity_mark_ls = models.Activity_mark.objects.filter(activity__evaluation = evaluation, activity__set_activity = set_object, student = student)
 
         weight_total = 0.0
         mark_total = 0.0
@@ -305,17 +295,14 @@ class MarkService():
             exercise_competence = models.Exercise_competence.objects.get(exercise=exercise, competence=competence_mark.competence)
             weight_total = weight_total + float(exercise_competence.weight)
             if competence_mark.mark:
-                if competence_mark.evaluation_type == "AUTOMATIC":
-                    mark_total = mark_total + float(competence_mark.mark * exercise_competence.weight)
-                else:
-                    mark_total = mark_total + float(competence_mark.manual_mark * exercise_competence.weight)
+                mark_total = mark_total + float(competence_mark.mark * exercise_competence.weight)
             
         
         if weight_total == 0.0:
-            evaluation_mark.mark = 0.0
+            exercise_mark.mark = 0.0
         else:
             mark = mark_total/weight_total
-            evaluation_mark.mark = mark
+            exercise_mark.mark = mark
 
         exercise_mark.save()
 

@@ -2,6 +2,7 @@ from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.db import models
 from django.utils.timezone import now
+from django.utils.translation import get_language
 
 User = get_user_model()
 
@@ -50,9 +51,9 @@ class Competence(Common):
 
     description = models.CharField(("description"), max_length=300)
 
-    weight = models.DecimalField('weight', max_digits=3, decimal_places=2, blank=True, null=True)
+    weight = models.DecimalField('weight', max_digits=5, decimal_places=2, blank=True, null=True)
 
-    subject_weight = models.DecimalField('subject_weight', max_digits=3, decimal_places=2, blank=True, null=True)
+    subject_weight = models.DecimalField('subject_weight', max_digits=5, decimal_places=2, blank=True, null=True)
 
     level = models.PositiveIntegerField('level')
 
@@ -81,7 +82,29 @@ class Subject(Common):
         verbose_name_plural = 'Subjects'
 
     def __str__(self):
-        return self.name + ' ' + self.level + ' ' + self.grade
+
+        if self.grade == "PrimarySchool" and get_language() == "es":
+            grade =  "Educación Primaria"
+        elif self.grade == "PrimarySchool":
+            grade =  "Primary School"
+        elif self.grade == "SecondaryEducation" and get_language() == "es":
+            grade =  "Educación Secundaria"
+        elif self.grade == "SecondaryEducation":
+            grade =  "Secondary Education"
+        elif self.grade == "SixthForm" and get_language() == "es":
+            grade =  "Bachillerato"
+        elif self.grade == "SixthForm":
+            grade =  "Sixth Form"
+        elif self.grade == "FurtherEducation" and get_language() == "es":
+            grade =  "Grado Medio o Superior"
+        elif self.grade == "FurtherEducation":
+            grade =  "Further Education"
+        elif self.grade == "University" and get_language() == "es":
+            grade =  "Grado Universitario"
+        elif self.grade == "University":
+            grade =  "University"
+
+        return self.name + ' ' + self.level + ' ' + grade
 
 class Teacher(Profile):
     subjects = models.ManyToManyField(Subject, "subjects", verbose_name=("subjects_teacher"))
@@ -113,7 +136,7 @@ class Evaluation(Common):
 
     period = models.CharField(("period"), max_length=50)
 
-    weight = models.DecimalField('weight', max_digits=3, decimal_places=2)
+    weight = models.DecimalField('weight', max_digits=5, decimal_places=2)
 
     parent = models.ForeignKey('self', on_delete=models.CASCADE, related_name='evaluation_parent', blank=True, null=True)
 
@@ -180,7 +203,7 @@ class Activity(Common):
 
     date = models.DateField('date')
 
-    weight = models.DecimalField('weight', max_digits=3, decimal_places=2)
+    weight = models.DecimalField('weight', max_digits=5, decimal_places=2)
 
     is_recovery = models.BooleanField(("is_recovery"))
 
@@ -238,9 +261,9 @@ class Activity_mark(Common):
         return self.mark
 
 class Exercise(Common):
-    weight = models.DecimalField('weight', max_digits=3, decimal_places=2)
+    weight = models.DecimalField('weight', max_digits=5, decimal_places=2)
 
-    statement = models.CharField(("statement"), max_length=50)
+    statement = models.CharField(("statement"), max_length=300)
 
     activity = models.ForeignKey(Activity, on_delete=models.CASCADE, related_name='activity_exercise')
 
@@ -270,9 +293,9 @@ class Exercise_mark(Common):
         return self.mark
 
 class Exercise_competence(Common):
-    intensity = models.DecimalField('intensity', max_digits=3, decimal_places=2)
+    intensity = models.DecimalField('intensity', max_digits=5, decimal_places=2)
 
-    weight = models.DecimalField('weight', max_digits=3, decimal_places=2)
+    weight = models.DecimalField('weight', max_digits=5, decimal_places=2)
 
     exercise = models.ForeignKey(Exercise, on_delete=models.CASCADE, related_name='exercise_exercise_competence')
 
@@ -289,8 +312,6 @@ class Exercise_competence(Common):
 class Competence_mark(Common):
     mark = models.DecimalField('mark', max_digits=4, decimal_places=2, blank=True, null=True)
 
-    evaluation_type = models.CharField(("evaluation_type"), max_length=50)
-
     exercise = models.ForeignKey(Exercise, on_delete=models.CASCADE, related_name='exercise_competence_mark')
 
     competence = models.ForeignKey(Competence, on_delete=models.CASCADE, related_name='competence_competence_mark')
@@ -302,7 +323,7 @@ class Competence_mark(Common):
         verbose_name_plural = 'Competence_marks'
     
     def __str__(self):
-        return self.mark
+        return self.competence.code
 
 class Competence_evaluation(Common):
     mark = models.DecimalField('mark', max_digits=4, decimal_places=2, blank=True, null=True)

@@ -6,10 +6,12 @@
         <div class="validate-input">    
             <label>{% trans "Username" %}</label>
             {{form.username}}
-            {{form.username.errors}}
         </div>
     </div>
-</div> 
+</div>
+<div class="row form-errors"> 
+    {{form.username.errors}}
+</div>
 <div class="row">
     <div class="grid-example col s1 xl2">
     </div>
@@ -17,9 +19,12 @@
         <div class="validate-input">
             <label>{% trans "Password" %}</label>
             {{form.password1}}
-            {{form.password1.errors}}
         </div>
     </div>
+</div>
+<div class="row form-errors"> 
+    {{form.password1.errors}}
+    {{form.password2.errors}}
 </div>
 <div class="row">
     <div class="grid-example col s1 xl2">
@@ -28,7 +33,6 @@
         <div class="validate-input">
             <label>{% trans "Confirm Password" %}</label>
             {{form.password2}}
-            {{form.password2.errors}}
         </div>
     </div>
 </div>

@@ -4,7 +4,6 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm, UserChangeForm, UserCreationForm
 from django.contrib.auth.hashers import check_password
 from django.contrib.auth.password_validation import password_validators_help_texts
-from django.core.exceptions import ValidationError
 from django.utils.timezone import now
 from django.utils.translation import get_language, activate
 
@@ -17,45 +16,90 @@ teachers = models.Teacher.objects.all()
 subjects = models.Subject.objects.all()
 evaluations_final = models.Evaluation.objects.filter(is_final=True)
 
+# Choices
 CHOICES_YES_NO = ((False, "No"), (True, "Sí"))
 CHOICES_YES_NO_EN = ((False, "No"), (True, "Yes"))
 CHOICES_LEVEL = (("1º","1º"),("2º","2º"),("3º","3º"),("4º","4º"),("5º","5º"),("6º","6º"))
-CHOICES_GRADE = (("PrimarySchool","Educación Primaria"),("SecondaryEducation","Educación Secundaria"),("SixthForm","Bachillerato"),("FurtherEducation","Grado Medio o Superior"),("University","Grado Universitario"))
-CHOICES_GRADE_EN = (("PrimarySchool","Primary School"),("SecondaryEducation","Secondary Education"),("SixthForm","Sixth Form"),("FurtherEducation","Further Education"),("University","University"))
-CHOICES_EVALUATION_TYPE_FINAL_EN =(("BY_COMPETENCES", "By Competences"), ("BY_EVALUATION_NO_RECOVERY", "By Evaluations (No recovery)"), ("BY_EVALUATION_RECOVERY", "By Evaluations (Recovery)"))
-CHOICES_EVALUATION_TYPE_FINAL =(("BY_COMPETENCES", "Por Competencias"), ("BY_EVALUATION_NO_RECOVERY", "Por evaluaciones (Sin recuperación)"), ("BY_EVALUATION_RECOVERY", "Por evaluaciones (Con recuperación)"))
+CHOICES_GRADE = (
+    ("PrimarySchool","Educación Primaria"),
+    ("SecondaryEducation","Educación Secundaria"),
+    ("SixthForm","Bachillerato"),
+    ("FurtherEducation","Grado Medio o Superior"),
+    ("University","Grado Universitario"))
+CHOICES_GRADE_EN = (
+    ("PrimarySchool","Primary School"),
+    ("SecondaryEducation","Secondary Education"),
+    ("SixthForm","Sixth Form"),
+    ("FurtherEducation","Further Education"),
+    ("University","University"))
+CHOICES_EVALUATION_TYPE_FINAL_EN =(
+    ("BY_COMPETENCES", "By Competences"), 
+    ("BY_EVALUATION_NO_RECOVERY", "By Evaluations (No recovery)"), 
+    ("BY_EVALUATION_RECOVERY", "By Evaluations (Recovery)"))
+CHOICES_EVALUATION_TYPE_FINAL =(
+    ("BY_COMPETENCES", "Por Competencias"), 
+    ("BY_EVALUATION_NO_RECOVERY", "Por evaluaciones (Sin recuperación)"), 
+    ("BY_EVALUATION_RECOVERY", "Por evaluaciones (Con recuperación)"))
 CHOICES_EVALUATION_TYPE_PARTIAL_EN =(("BY_ALL_ACTIVITIES", "By all Activities"), ("BY_RECOVERY_ACTIVITIES", "By Recovery Activities"))
 CHOICES_EVALUATION_TYPE_PARTIAL =(("BY_ALL_ACTIVITIES", "Por todas las Actividades"), ("BY_RECOVERY_ACTIVITIES", "Por Recuperaciones"))
 
+# Messages: Length
+MESSAGE_CODE = 'El tamaño del código no puede ser mayor que 50.'
+MESSAGE_CODE_EN = 'Code can not be longer of 50 characters.'
+MESSAGE_DESCRIPTION_100 = 'El tamaño de la descripción no puede ser mayor que 100.'
+MESSAGE_DESCRIPTION_100_EN = 'Description can not be longer of 100 characters.'
+MESSAGE_DESCRIPTION_300 = 'El tamaño de la descripción no puede ser mayor que 300.'
+MESSAGE_DESCRIPTION_300_EN = 'Description can not be longer of 300 characters.'
+MESSAGE_EMAIL_50 = 'El tamaño del nombre de usuario no puede ser mayor que 50.'
+MESSAGE_EMAIL_50_EN = 'Username can not be longer of 50 characters.'
+MESSAGE_FIRST_NAME = 'El tamaño del nombre no puede ser mayor que 100.'
+MESSAGE_FIRST_NAME_EN = 'First name can not be longer of 100 characters.'
+MESSAGE_INITIALS = 'El tamaño de las iniciales no puede ser mayor que 9.'
+MESSAGE_INITIALS_EN = 'Initials can not be longer of 9 characters.'
+MESSAGE_LAST_NAME = 'El tamaño del apellido no puede ser mayor que 100.'
+MESSAGE_LAST_NAME_EN = 'Last name can not be longer of 100 characters.'
+MESSAGE_NAME_50 = 'El tamaño del nombre no puede ser mayor que 50.'
+MESSAGE_NAME_50_EN = 'Name can not be longer of 50 characters.'
+MESSAGE_NAME_100 = 'El tamaño del nombre no puede ser mayor que 100.'
+MESSAGE_NAME_100_EN = 'Name can not be longer of 100 characters.'
+MESSAGE_NAME_300 = 'El tamaño del nombre no puede ser mayor que 300.'
+MESSAGE_NAME_300_EN = 'Name can not be longer of 300 characters.'
+MESSAGE_PERIOD = 'El tamaño del período no puede ser mayor que 50.'
+MESSAGE_PERIOD_EN = 'Period can not be longer of 50 characters.'
+MESSAGE_STATEMENT = 'El tamaño del enunciado no puede ser mayor que 300.'
+MESSAGE_STATEMENT_EN = 'Statement can not be longer of 300 characters.'
+MESSAGE_SURNAME = 'El tamaño del apellido no puede ser mayor que 100.'
+MESSAGE_SURNAME_EN = 'Surname can not be longer of 100 characters.'
+MESSAGE_TITLE = 'El tamaño del título no puede ser mayor que 50.'
+MESSAGE_TITLE_EN = 'Title can not be longer of 50 characters.'
+MESSAGE_USERNAME_50 = 'El tamaño del nombre de usuario no puede ser mayor que 50.'
+MESSAGE_USERNAME_50_EN = 'Username can not be longer of 50 characters.'
 
-DATE_PLACEHOLDER = 'dd/mm/aaaa'
-DATE_PLACEHOLDER_EN = 'mm/dd/yyyy'
-MESSAGE_INITIALS = 'El tamaño de las iniciales no puede ser mayor que 9'
-MESSAGE_INITIALS_EN = 'Initials can not be longer of 9 characters'
-MESSAGE_NAME = 'El tamaño del nombre no puede ser mayor que 100'
-MESSAGE_NAME_EN = 'Name can not be longer of 100 characters'
-MESSAGE_MARK_EN = 'Mark must be between 0.00 and 1.00.'
-MESSAGE_MARK = 'Nota debe estar entre 0.00 y 1.00.'
-MESSAGE_SURNAME = 'El tamaño del apellido no puede ser mayor que 100'
-MESSAGE_SURNAME_EN = 'Surname can not be longer of 100 characters'
-MESSAGE_BIRTHDATE = 'La fecha de cumpleaños debe ser en el pasado'
-MESSAGE_BIRTHDATE_EN = 'Birthdate can not be past'
-MESSAGE_GRADE = 'La calificación no puede tener más de 50 caracteres'
-MESSAGE_GRADE_EN = 'Grade can not be longer of 50 characters'
-MESSAGE_LEVEL_EN = 'Level can not be longer of 50 characters'
-MESSAGE_LEVEL = 'El tamaño del nivel no puede ser mayor que 50'
-MESSAGE_LINE_EN = 'Line must be a letter'
-MESSAGE_LINE = 'Línea solo pueden ser un letra'
-MESSAGE_DESCRIPTION_EN = 'Description can not be longer of 100 characters'
-MESSAGE_DESCRIPTION = 'El tamaño de la descripción no puede ser mayor que 100'
-MESSAGE_CODE_EN = 'Code can not be longer of 50 characters'
-MESSAGE_CODE = 'El tamaño del código no puede ser mayor que 50'
-MESSAGE_WEIGHT_EN = 'Weight must be between 0.00 and 1.00.'
-MESSAGE_WEIGHT = 'Peso debe estar entre 0.00 y 1.00.'
-MESSAGE_SUBJETC_WEIGHT_EN = 'Subject weight must be between 0.00 and 1.00.'
-MESSAGE_SUBJETC_WEIGHT = 'Peso sobre asignatura debe estar entre 0.00 y 1.00.'
-MESSAGE_INTENSITY_EN = 'Intensity must be between 0.00 and 1.00.'
-MESSAGE_INTENSITY = 'Intensidad debe estar entre 0.00 y 1.00.'
+# Messages: Range
+MESSAGE_INTENSITY = 'Intensidad debe estar por encima de 0.00.'
+MESSAGE_INTENSITY_EN = 'Intensity must be above 0.00.'
+MESSAGE_MARK = 'Nota debe estar entre 0.00 y 10.00.'
+MESSAGE_MARK_EN = 'Mark must be between 0.00 and 10.00.'
+MESSAGE_SUBJETC_WEIGHT = 'Peso debe estar por encima de 0.00.'
+MESSAGE_SUBJETC_WEIGHT_EN = 'Subject weight must be above 0.00.'
+MESSAGE_WEIGHT = 'Peso debe estar por encima de 0.00.'
+MESSAGE_WEIGHT_EN = 'Weight must be above 0.00.'
+
+# Messages: Unique
+MESSAGE_EMAIL = 'Email ya ha sido registrado.'
+MESSAGE_EMAIL_EN = 'Email has already been registered.'
+MESSAGE_USERNAME = 'Nombre de usuario ya ha sido registrado.'
+MESSAGE_USERNAME_EN = 'Username has already been registered.'
+
+# Messages: Other
+MESSAGE_BIRTHDATE = 'La fecha de cumpleaños debe ser en el pasado.'
+MESSAGE_BIRTHDATE_EN = 'Birthdate can not be past.'
+MESSAGE_LINE = 'Línea solo pueden ser un letra.'
+MESSAGE_LINE_EN = 'Line must be a letter.'
+
+# Placeholder
+PLACEHOLDER_DATE = 'dd/mm/aaaa'
+PLACEHOLDER_DATE_EN = 'mm/dd/yyyy'
 PLACEHOLDER_NAME_EVALUATION = 'Matemáticas 5º Primaria'
 PLACEHOLDER_PERIOD_EVALUATION = '1er Trimestre'
 
@@ -67,11 +111,11 @@ class ActivityUpdateForm(forms.ModelForm):
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
-    weight = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': '1', 'id': 'wieight-create-competence'}))
+    weight = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '1.0', 'id': 'weight-create-activity'}))
     evaluation = forms.ModelChoiceField(evaluations_final, empty_label=None)
     is_recovery = forms.ChoiceField(
         widget = forms.Select(),
@@ -83,7 +127,7 @@ class ActivityUpdateForm(forms.ModelForm):
         super(ActivityUpdateForm, self).__init__(*args, **kwargs)
         self.fields['evaluation'].queryset = self.choices
         if get_language() == 'en':
-            self.fields['date'].widget.attrs['placeholder'] = DATE_PLACEHOLDER_EN
+            self.fields['date'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
             self.fields['date'].widget.format = settings.DATE_INPUT_FORMATS[0]
             self.fields['is_recovery'].choices = CHOICES_YES_NO_EN
     
@@ -97,15 +141,16 @@ class ActivityUpdateForm(forms.ModelForm):
             'is_recovery',
         )
 
+    def clean_title(self):
+        title = self.cleaned_data.get('title')
+        if len(title) > 50:
+            services.FormService().raise_error(MESSAGE_TITLE_EN, MESSAGE_TITLE)
+        return title 
+
     def clean_weight(self):
         weight = self.cleaned_data.get('weight')
-        if float(weight) < 0.00 or float(weight) > 1.00:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_WEIGHT_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_WEIGHT)
+        if float(weight) < 0.00:
+            services.FormService().raise_error(MESSAGE_WEIGHT_EN, MESSAGE_WEIGHT)
         return weight   
 
 # Administrator
@@ -114,7 +159,7 @@ class AdministratorUpdateForm(forms.ModelForm):
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     initials = forms.CharField(required=True)
@@ -122,7 +167,7 @@ class AdministratorUpdateForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(AdministratorUpdateForm, self).__init__(*args, **kwargs)
         if get_language() == 'en':
-            self.fields['birthdate'].widget.attrs['placeholder'] = DATE_PLACEHOLDER_EN
+            self.fields['birthdate'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
             self.fields['birthdate'].widget.format = settings.DATE_INPUT_FORMATS[0]
 
     class Meta:
@@ -135,16 +180,13 @@ class AdministratorUpdateForm(forms.ModelForm):
     def clean_birthdate(self):
         birthdate = self.cleaned_data.get('birthdate')
         if birthdate >= now().date():
-            raise ValidationError(
-                MESSAGE_BIRTHDATE)
+            services.FormService().raise_error(MESSAGE_BIRTHDATE_EN, MESSAGE_BIRTHDATE)
         return birthdate
 
     def clean_initials(self):
         initials = self.cleaned_data.get('initials')
-        
         if len(initials) > 9:
-            raise ValidationError(
-                MESSAGE_INITIALS)
+            services.FormService().raise_error(MESSAGE_INITIALS_EN, MESSAGE_INITIALS)
         return initials
 
 # Block
@@ -154,22 +196,30 @@ class BlockCreateChildForm(forms.ModelForm):
         attrs={'placeholder': PLACEHOLDER_NAME_EVALUATION, 'id': 'name-create-block'}))
     period = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': PLACEHOLDER_PERIOD_EVALUATION}))
-    weight = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': '1', 'id': 'weight-create-block'}))
+    weight = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required': True, 'placeholder': '1.0', 'id': 'weight-create-block'}))
     start_date = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     end_date = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
+
+    def __init__(self, *args, **kwargs):
+        super(BlockCreateChildForm, self).__init__(*args, **kwargs)
+        if get_language() == 'en':
+            self.fields['start_date'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['start_date'].widget.format = settings.DATE_INPUT_FORMATS[0]
+            self.fields['end_date'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['end_date'].widget.format = settings.DATE_INPUT_FORMATS[0]
 
     class Meta:
         model = models.Evaluation
@@ -181,15 +231,22 @@ class BlockCreateChildForm(forms.ModelForm):
             'end_date',
         )
     
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
+        if len(name) > 50:
+            services.FormService().raise_error(MESSAGE_NAME_50_EN, MESSAGE_NAME_50)
+        return name 
+    
+    def clean_period(self):
+        period = self.cleaned_data.get('period')
+        if len(period) > 50:
+            services.FormService().raise_error(MESSAGE_PERIOD_EN, MESSAGE_PERIOD)
+        return period 
+
     def clean_weight(self):
         weight = self.cleaned_data.get('weight')
-        if float(weight) < 0.00 or float(weight) > 1.00:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_WEIGHT_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_WEIGHT)
+        if float(weight) < 0.00:
+            services.FormService().raise_error(MESSAGE_WEIGHT_EN, MESSAGE_WEIGHT)
         return weight  
 
 # Competences
@@ -200,9 +257,9 @@ class CompetenceLevel1CreateForm(forms.ModelForm):
     name = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': 'Comunicación lingüística', 'id': 'name-create-competence'}))
     description = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': 'Comunicación lingüística.	', 'id': 'description-create-competence'}))
-    weight = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': '1', 'id': 'weight-create-competence'}))
+        attrs={'placeholder': 'Comunicación lingüística', 'id': 'description-create-competence'}))
+    weight = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '1.0', 'id': 'weight-create-competence'}))
 
     class Meta:
         model = models.Competence
@@ -216,45 +273,25 @@ class CompetenceLevel1CreateForm(forms.ModelForm):
     def clean_code(self):
         code = self.cleaned_data.get('code')
         if len(code) > 50:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_CODE_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_CODE)
+            services.FormService().raise_error(MESSAGE_CODE_EN, MESSAGE_CODE)
         return code
-
-    def clean_description(self):
-        description = self.cleaned_data.get('description')
-        if len(description) > 300:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_DESCRIPTION_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_DESCRIPTION)
-        return description
 
     def clean_name(self):
         name = self.cleaned_data.get('name')
         if len(name) > 300:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_NAME_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_NAME)
+            services.FormService().raise_error(MESSAGE_NAME_300_EN, MESSAGE_NAME_300)
         return name
+
+    def clean_description(self):
+        description = self.cleaned_data.get('description')
+        if len(description) > 300:
+            services.FormService().raise_error(MESSAGE_DESCRIPTION_300_EN, MESSAGE_DESCRIPTION_300)
+        return description
     
     def clean_weight(self):
         weight = self.cleaned_data.get('weight')
-        if float(weight) < 0.00 or float(weight) > 1.00:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_WEIGHT_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_WEIGHT)
+        if float(weight) < 0.00:
+            services.FormService().raise_error(MESSAGE_WEIGHT_EN, MESSAGE_WEIGHT)
         return weight 
 
 class CompetenceLevel2CreateForm(forms.ModelForm):
@@ -264,11 +301,11 @@ class CompetenceLevel2CreateForm(forms.ModelForm):
     name = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': 'Comunicación lingüística', 'id': 'name-create-competence'}))
     description = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': 'Comunicación lingüística.	', 'id': 'description-create-competence'}))
-    weight = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': '1', 'id': 'weight-create-competence'}))
-    subject_weight = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': '1', 'id': 'subject_weight-create-competence'}))
+        attrs={'placeholder': 'Comunicación lingüística.', 'id': 'description-create-competence'}))
+    weight = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '1.0', 'id': 'weight-create-competence'}))
+    subject_weight = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '1.0', 'id': 'subject_weight-create-competence'}))
 
     class Meta:
         model = models.Competence
@@ -279,28 +316,36 @@ class CompetenceLevel2CreateForm(forms.ModelForm):
             'weight',
             'subject_weight',
         )
-        
+    
+    def clean_code(self):
+        code = self.cleaned_data.get('code')
+        if len(code) > 50:
+            services.FormService().raise_error(MESSAGE_CODE_EN, MESSAGE_CODE)
+        return code
+    
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
+        if len(name) > 300:
+            services.FormService().raise_error(MESSAGE_NAME_300_EN, MESSAGE_NAME_300)
+        return name
+
+    def clean_description(self):
+        description = self.cleaned_data.get('description')
+        if len(description) > 300:
+            services.FormService().raise_error(MESSAGE_DESCRIPTION_300_EN, MESSAGE_DESCRIPTION_300)
+        return description
+
     def clean_weight(self):
         weight = self.cleaned_data.get('weight')
-        if float(weight) < 0.00 or float(weight) > 1.00:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_WEIGHT_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_WEIGHT)
+        if float(weight) < 0.00:
+            services.FormService().raise_error(MESSAGE_WEIGHT_EN, MESSAGE_WEIGHT)
         return weight
 
     def clean_subject_weight(self):
         subject_weight = self.cleaned_data.get('subject_weight')
-        if float(subject_weight) < 0.00 or float(subject_weight) > 1.00:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_SUBJETC_WEIGHT_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_SUBJETC_WEIGHT)
-        return subject_weight  
+        if float(subject_weight) < 0.00:
+            services.FormService().raise_error(MESSAGE_SUBJETC_WEIGHT_EN, MESSAGE_SUBJETC_WEIGHT)
+        return subject_weight 
 
 class CompetenceLevel3CreateForm(forms.ModelForm):
 
@@ -318,11 +363,29 @@ class CompetenceLevel3CreateForm(forms.ModelForm):
             'name',
             'description',
         )
+    
+    def clean_code(self):
+        code = self.cleaned_data.get('code')
+        if len(code) > 50:
+            services.FormService().raise_error(MESSAGE_CODE_EN, MESSAGE_CODE)
+        return code
+
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
+        if len(name) > 300:
+            services.FormService().raise_error(MESSAGE_NAME_300_EN, MESSAGE_NAME_300)
+        return name
+
+    def clean_description(self):
+        description = self.cleaned_data.get('description')
+        if len(description) > 300:
+            services.FormService().raise_error(MESSAGE_DESCRIPTION_300_EN, MESSAGE_DESCRIPTION_300)
+        return description
 
 # Exercices
 class ExerciseUpdateForm(forms.ModelForm):
-    weight = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': '1', 'id': 'weight-create-exercice'}))
+    weight = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '1.0', 'id': 'weight-create-exercise'}))
     statement = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'id': 'statement-create-exercice'}))
 
@@ -335,21 +398,23 @@ class ExerciseUpdateForm(forms.ModelForm):
 
     def clean_weight(self):
         weight = self.cleaned_data.get('weight')
-        if float(weight) < 0.00 or float(weight) > 1.00:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_WEIGHT_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_WEIGHT)
+        if float(weight) < 0.00:
+            services.FormService().raise_error(MESSAGE_WEIGHT_EN, MESSAGE_WEIGHT)
         return weight    
+        
+    def clean_statement(self):
+        statement = self.cleaned_data.get('statement')
+        if len(statement) > 300:
+            services.FormService().raise_error(MESSAGE_STATEMENT_EN, MESSAGE_STATEMENT)
+        return statement
 
 # Exercices_competence
 class ExerciseCompetenceUpdateForm(forms.ModelForm):
-    intensity = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': '1', 'id': 'intensity-create-exercice_competence'}))
-    weight = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': '1', 'id': 'weight-create-exercice_competence'}))
+
+    intensity = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '1.0', 'id': 'intensity-create-exercise-competence'}))
+    weight = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '1.0', 'id': 'weight-create-exercise-competence'}))
 
     class Meta:
         model = models.Exercise_competence
@@ -358,27 +423,17 @@ class ExerciseCompetenceUpdateForm(forms.ModelForm):
             'weight',
         )
 
-    def clean_weight(self):
-        weight = self.cleaned_data.get('weight')
-        if float(weight) < 0.00 or float(weight) > 1.00:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_WEIGHT_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_WEIGHT)
-        return weight
-
     def clean_intensity(self):
         intensity = self.cleaned_data.get('intensity')
-        if float(intensity) < 0.00 or float(intensity) > 1.00:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_INTENSITY_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_INTENSITY)
-        return intensity     
+        if float(intensity) < 0.00:
+            services.FormService().raise_error(MESSAGE_INTENSITY_EN, MESSAGE_INTENSITY)
+        return intensity   
+
+    def clean_weight(self):
+        weight = self.cleaned_data.get('weight')
+        if float(weight) < 0.00:
+            services.FormService().raise_error(MESSAGE_WEIGHT_EN, MESSAGE_WEIGHT)
+        return weight
 
 # Evaluations
 class EvaluationCreateForm(forms.ModelForm):
@@ -389,26 +444,47 @@ class EvaluationCreateForm(forms.ModelForm):
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     end_date = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     subject = forms.ModelChoiceField(subjects, empty_label=None)
+
+    def __init__(self, *args, **kwargs):
+        super(EvaluationCreateForm, self).__init__(*args, **kwargs)
+        if get_language() == 'en':
+            self.fields['start_date'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['start_date'].widget.format = settings.DATE_INPUT_FORMATS[0]
+            self.fields['end_date'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['end_date'].widget.format = settings.DATE_INPUT_FORMATS[0]
 
     class Meta:
         model = models.Evaluation
         fields = (
             'name',
+            'weight',
             'start_date',
             'end_date',
             'subject',
         )
+    
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
+        if len(name) > 50:
+            services.FormService().raise_error(MESSAGE_NAME_50_EN, MESSAGE_NAME_50)
+        return name
+        
+    def clean_weight(self):
+        weight = self.cleaned_data.get('weight')
+        if float(weight) < 0.00:
+            services.FormService().raise_error(MESSAGE_WEIGHT_EN, MESSAGE_WEIGHT)
+        return weight
 
 class EvaluationCreateAllForm(forms.ModelForm):
     
@@ -418,16 +494,24 @@ class EvaluationCreateAllForm(forms.ModelForm):
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     end_date = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
+
+    def __init__(self, *args, **kwargs):
+        super(EvaluationCreateAllForm, self).__init__(*args, **kwargs)
+        if get_language() == 'en':
+            self.fields['start_date'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['start_date'].widget.format = settings.DATE_INPUT_FORMATS[0]
+            self.fields['end_date'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['end_date'].widget.format = settings.DATE_INPUT_FORMATS[0]
 
     class Meta:
         model = models.Evaluation
@@ -436,6 +520,12 @@ class EvaluationCreateAllForm(forms.ModelForm):
             'start_date',
             'end_date',
         )
+    
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
+        if len(name) > 50:
+            services.FormService().raise_error(MESSAGE_NAME_50_EN, MESSAGE_NAME_50)
+        return name
 
 class EvaluationCreateChildForm(forms.ModelForm):
     
@@ -447,25 +537,52 @@ class EvaluationCreateChildForm(forms.ModelForm):
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     end_date = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
+
+    def __init__(self, *args, **kwargs):
+        super(EvaluationCreateChildForm, self).__init__(*args, **kwargs)
+        if get_language() == 'en':
+            self.fields['start_date'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['start_date'].widget.format = settings.DATE_INPUT_FORMATS[0]
+            self.fields['end_date'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['end_date'].widget.format = settings.DATE_INPUT_FORMATS[0]
 
     class Meta:
         model = models.Evaluation
         fields = (
             'name',
+            'weight',
             'period',
             'start_date',
             'end_date',
         )
+    
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
+        if len(name) > 50:
+            services.FormService().raise_error(MESSAGE_NAME_50_EN, MESSAGE_NAME_50)
+        return name 
+    
+    def clean_period(self):
+        period = self.cleaned_data.get('period')
+        if len(period) > 50:
+            services.FormService().raise_error(MESSAGE_PERIOD_EN, MESSAGE_PERIOD)
+        return period 
+
+    def clean_weight(self):
+        weight = self.cleaned_data.get('weight')
+        if float(weight) < 0.00:
+            services.FormService().raise_error(MESSAGE_WEIGHT_EN, MESSAGE_WEIGHT)
+        return weight
 
 class EvaluationCreateOneFinalThreePartialForm(forms.ModelForm):
     
@@ -475,65 +592,91 @@ class EvaluationCreateOneFinalThreePartialForm(forms.ModelForm):
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     end_date = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     period_1 = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': PLACEHOLDER_PERIOD_EVALUATION}))
+    weight_1 = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '1.0', 'id': 'weight_1'}))
     start_date_1 = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     end_date_1 = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     period_2 = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': PLACEHOLDER_PERIOD_EVALUATION}))
+    weight_2 = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '1.0', 'id': 'weight_2'}))
     start_date_2 = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     end_date_2 = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     period_3 = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': PLACEHOLDER_PERIOD_EVALUATION}))
+    weight_3 = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '1.0', 'id': 'weight_3'}))
     start_date_3 = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     end_date_3 = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     
+    def __init__(self, *args, **kwargs):
+        super(EvaluationCreateOneFinalThreePartialForm, self).__init__(*args, **kwargs)
+        if get_language() == 'en':
+            self.fields['start_date'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['start_date'].widget.format = settings.DATE_INPUT_FORMATS[0]
+            self.fields['end_date'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['end_date'].widget.format = settings.DATE_INPUT_FORMATS[0]
+            self.fields['start_date_1'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['start_date_1'].widget.format = settings.DATE_INPUT_FORMATS[0]
+            self.fields['end_date_1'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['end_date_1'].widget.format = settings.DATE_INPUT_FORMATS[0]
+            self.fields['start_date_2'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['start_date_2'].widget.format = settings.DATE_INPUT_FORMATS[0]
+            self.fields['end_date_2'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['end_date_2'].widget.format = settings.DATE_INPUT_FORMATS[0]
+            self.fields['start_date_3'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['start_date_3'].widget.format = settings.DATE_INPUT_FORMATS[0]
+            self.fields['end_date_3'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['end_date_3'].widget.format = settings.DATE_INPUT_FORMATS[0]
+
     class Meta:
         model = models.Evaluation
         fields = (
@@ -541,15 +684,60 @@ class EvaluationCreateOneFinalThreePartialForm(forms.ModelForm):
             'start_date',
             'end_date',
             'period_1',
+            'weight_1',
             'start_date_1',
             'end_date_1',
             'period_2',
+            'weight_2',
             'start_date_2',
             'end_date_2',
             'period_3',
+            'weight_3',
             'start_date_3',
             'end_date_3',
         )
+    
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
+        if len(name) > 50:
+            services.FormService().raise_error(MESSAGE_NAME_50_EN, MESSAGE_NAME_50)
+        return name 
+    
+    def clean_period_1(self):
+        period_1 = self.cleaned_data.get('period_1')
+        if len(period_1) > 50:
+            services.FormService().raise_error(MESSAGE_PERIOD_EN, MESSAGE_PERIOD)
+        return period_1
+    
+    def clean_period_2(self):
+        period_2 = self.cleaned_data.get('period_2')
+        if len(period_2) > 50:
+            services.FormService().raise_error(MESSAGE_PERIOD_EN, MESSAGE_PERIOD)
+        return period_2 
+    
+    def clean_period_3(self):
+        period_3 = self.cleaned_data.get('period_3')
+        if len(period_3) > 50:
+            services.FormService().raise_error(MESSAGE_PERIOD_EN, MESSAGE_PERIOD)
+        return period_3 
+
+    def clean_weight_1(self):
+        weight_1 = self.cleaned_data.get('weight_1')
+        if float(weight_1) < 0.00:
+            services.FormService().raise_error(MESSAGE_WEIGHT_EN, MESSAGE_WEIGHT)
+        return weight_1
+
+    def clean_weight_2(self):
+        weight_2 = self.cleaned_data.get('weight_2')
+        if float(weight_2) < 0.00:
+            services.FormService().raise_error(MESSAGE_WEIGHT_EN, MESSAGE_WEIGHT)
+        return weight_2
+
+    def clean_weight_3(self):
+        weight_3 = self.cleaned_data.get('weight_3')
+        if float(weight_3) < 0.00:
+            services.FormService().raise_error(MESSAGE_WEIGHT_EN, MESSAGE_WEIGHT)
+        return weight_3
 
 class EvaluationCreateOneFinalTwoPartialForm(forms.ModelForm):
     
@@ -559,49 +747,69 @@ class EvaluationCreateOneFinalTwoPartialForm(forms.ModelForm):
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     end_date = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     period_1 = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': PLACEHOLDER_PERIOD_EVALUATION}))
+    weight_1 = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '1.0', 'id': 'weight_1'}))
     start_date_1 = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     end_date_1 = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     period_2 = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': PLACEHOLDER_PERIOD_EVALUATION}))
+    weight_2 = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '1.0', 'id': 'weight_2'}))
     start_date_2 = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     end_date_2 = forms.DateField(required=True, 
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     
+    def __init__(self, *args, **kwargs):
+        super(EvaluationCreateOneFinalTwoPartialForm, self).__init__(*args, **kwargs)
+        if get_language() == 'en':
+            self.fields['start_date'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['start_date'].widget.format = settings.DATE_INPUT_FORMATS[0]
+            self.fields['end_date'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['end_date'].widget.format = settings.DATE_INPUT_FORMATS[0]
+            self.fields['start_date_1'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['start_date_1'].widget.format = settings.DATE_INPUT_FORMATS[0]
+            self.fields['end_date_1'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['end_date_1'].widget.format = settings.DATE_INPUT_FORMATS[0]
+            self.fields['start_date_2'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['start_date_2'].widget.format = settings.DATE_INPUT_FORMATS[0]
+            self.fields['end_date_2'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
+            self.fields['end_date_2'].widget.format = settings.DATE_INPUT_FORMATS[0]
+
     class Meta:
         model = models.Evaluation
         fields = (
@@ -609,17 +817,50 @@ class EvaluationCreateOneFinalTwoPartialForm(forms.ModelForm):
             'start_date',
             'end_date',
             'period_1',
+            'weight_1',
             'start_date_1',
             'end_date_1',
             'period_2',
+            'weight_2',
             'start_date_2',
             'end_date_2',
         )
+    
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
+        if len(name) > 50:
+            services.FormService().raise_error(MESSAGE_NAME_50_EN, MESSAGE_NAME_50)
+        return name 
+    
+    def clean_period_1(self):
+        period_1 = self.cleaned_data.get('period_1')
+        if len(period_1) > 50:
+            services.FormService().raise_error(MESSAGE_PERIOD_EN, MESSAGE_PERIOD)
+        return period_1
+    
+    def clean_period_2(self):
+        period_2 = self.cleaned_data.get('period_2')
+        if len(period_2) > 50:
+            services.FormService().raise_error(MESSAGE_PERIOD_EN, MESSAGE_PERIOD)
+        return period_2 
+    
+    def clean_weight_1(self):
+        weight_1 = self.cleaned_data.get('weight_1')
+        if float(weight_1) < 0.00:
+            services.FormService().raise_error(MESSAGE_WEIGHT_EN, MESSAGE_WEIGHT)
+        return weight_1
+
+    def clean_weight_2(self):
+        weight_2 = self.cleaned_data.get('weight_2')
+        if float(weight_2) < 0.00:
+            services.FormService().raise_error(MESSAGE_WEIGHT_EN, MESSAGE_WEIGHT)
+        return weight_2
+
 
 # Marks
 class ActivityMarkCreateForm(forms.ModelForm):
-    manual_mark = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': '7.0', 'id': 'mark-create-input'}))
+    manual_mark = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '7.0', 'id': 'mark-create-input'}))
 
     class Meta:
         model = models.Activity_mark
@@ -629,18 +870,13 @@ class ActivityMarkCreateForm(forms.ModelForm):
     
     def clean_manual_mark(self):
         manual_mark = self.cleaned_data.get('manual_mark')
-        if float(manual_mark) < 0.00 or float(manual_mark) > 1.00:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_MARK_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_MARK)
+        if float(manual_mark) < 0.00 or float(manual_mark) > 10.00:
+            services.FormService().raise_error(MESSAGE_MARK_EN, MESSAGE_MARK)
         return manual_mark  
 
 class CompetenceMarkCreateForm(forms.ModelForm):
-    mark = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': '7.0', 'id': 'mark-create-input'}))
+    mark = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '7.0', 'id': 'mark-create-input'}))
 
     class Meta:
         model = models.Competence_mark
@@ -650,18 +886,13 @@ class CompetenceMarkCreateForm(forms.ModelForm):
     
     def clean_mark(self):
         mark = self.cleaned_data.get('mark')
-        if float(mark) < 0.00 or float(mark) > 1.00:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_MARK_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_MARK)
+        if float(mark) < 0.00 or float(mark) > 10.00:
+            services.FormService().raise_error(MESSAGE_MARK_EN, MESSAGE_MARK)
         return mark  
 
 class EvaluationMarkCreateForm(forms.ModelForm):
-    manual_mark = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': '7.0', 'id': 'mark-create-input'}))
+    manual_mark = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '7.0', 'id': 'mark-create-input'}))
 
     class Meta:
         model = models.Evaluation_mark
@@ -671,18 +902,13 @@ class EvaluationMarkCreateForm(forms.ModelForm):
     
     def clean_manual_mark(self):
         manual_mark = self.cleaned_data.get('manual_mark')
-        if float(manual_mark) < 0.00 or float(manual_mark) > 1.00:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_MARK_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_MARK)
+        if float(manual_mark) < 0.00 or float(manual_mark) > 10.00:
+            services.FormService().raise_error(MESSAGE_MARK_EN, MESSAGE_MARK)
         return manual_mark  
         
 class ExerciseMarkCreateForm(forms.ModelForm):
-    manual_mark = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'placeholder': '7.0', 'id': 'mark-create-input'}))
+    manual_mark = forms.DecimalField(
+        widget=forms.NumberInput(attrs={'required':True, 'placeholder': '7.0', 'id': 'mark-create-input'}))
 
     class Meta:
         model = models.Exercise_mark
@@ -692,13 +918,8 @@ class ExerciseMarkCreateForm(forms.ModelForm):
     
     def clean_manual_mark(self):
         manual_mark = self.cleaned_data.get('manual_mark')
-        if float(manual_mark) < 0.00 or float(manual_mark) > 1.00:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_MARK_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_MARK)
+        if float(manual_mark) < 0.00 or float(manual_mark) > 10.00:
+            services.FormService().raise_error(MESSAGE_MARK_EN, MESSAGE_MARK)
         return manual_mark  
 
 # Sets
@@ -728,39 +949,17 @@ class SetCreateForm(forms.ModelForm):
             'grade': forms.Select(choices=CHOICES_GRADE)
         }
 
-    def clean_level(self):
-        level = self.cleaned_data.get('level')
-        if len(level) > 50:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_LEVEL_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_LEVEL)
-        return level
-
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
+        if len(name) > 50:
+            services.FormService().raise_error(MESSAGE_NAME_50_EN, MESSAGE_NAME_50)
+        return name
 
     def clean_line(self):
         line = self.cleaned_data.get('line')
         if not line.isalpha() or len(line) > 1:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_LINE_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_LINE)
+            services.FormService().raise_error(MESSAGE_LINE_EN, MESSAGE_LINE)
         return line
-
-    def clean_name(self):
-        name = self.cleaned_data.get('name')
-        if len(name) > 100:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_NAME_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_NAME)
-        return name
 
 class SetUpdateEvaluationTypeForm(forms.ModelForm):
 
@@ -792,7 +991,7 @@ class StudentCreateForm(forms.ModelForm):
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     initials = forms.CharField(required=True,widget=forms.TextInput(
@@ -801,7 +1000,7 @@ class StudentCreateForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(StudentCreateForm, self).__init__(*args, **kwargs)
         if get_language() == 'en':
-            self.fields['birthdate'].widget.attrs['placeholder'] = DATE_PLACEHOLDER_EN
+            self.fields['birthdate'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
             self.fields['birthdate'].widget.format = settings.DATE_INPUT_FORMATS[0]
 
 
@@ -814,49 +1013,29 @@ class StudentCreateForm(forms.ModelForm):
             'initials',
         )
 
-    def clean_initials(self):
-        initials = self.cleaned_data.get('initials')
-        if len(initials) > 9:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_INITIALS_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_INITIALS)
-        return initials
-
     def clean_name(self):
         name = self.cleaned_data.get('name')
         if len(name) > 100:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_NAME_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_NAME)
+            services.FormService().raise_error(MESSAGE_NAME_100_EN, MESSAGE_NAME_100)
         return name
 
     def clean_surname(self):
         surname = self.cleaned_data.get('surname')
         if len(surname) > 100:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_SURNAME_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_SURNAME)
+            services.FormService().raise_error(MESSAGE_SURNAME_EN, MESSAGE_SURNAME)
         return surname
     
     def clean_birthdate(self):
         birthdate = self.cleaned_data.get('birthdate')
         if birthdate >= now().date():
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_BIRTHDATE_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_BIRTHDATE)
+            services.FormService().raise_error(MESSAGE_BIRTHDATE_EN, MESSAGE_BIRTHDATE)
         return birthdate
+
+    def clean_initials(self):
+        initials = self.cleaned_data.get('initials')
+        if len(initials) > 9:
+            services.FormService().raise_error(MESSAGE_INITIALS_EN, MESSAGE_INITIALS)
+        return initials
 
 # Subjects
 class SubjectCreateForm(forms.ModelForm):
@@ -879,23 +1058,17 @@ class SubjectCreateForm(forms.ModelForm):
             'grade': forms.Select(choices=CHOICES_GRADE)
         }
 
-    def clean_level(self):
-        level = self.cleaned_data.get('level')
-        if len(level) > 50:
-            services.FormService().raise_error(MESSAGE_LEVEL_EN, MESSAGE_LEVEL)
-        return level
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
+        if len(name) > 100:
+            services.FormService().raise_error(MESSAGE_NAME_100, MESSAGE_NAME_100)
+        return name
 
     def clean_description(self):
         description = self.cleaned_data.get('description')
         if len(description) > 100:
-            services.FormService().raise_error(MESSAGE_DESCRIPTION_EN, MESSAGE_DESCRIPTION)
+            services.FormService().raise_error(MESSAGE_DESCRIPTION_100_EN, MESSAGE_DESCRIPTION_100)
         return description
-
-    def clean_name(self):
-        name = self.cleaned_data.get('name')
-        if len(name) > 100:
-            services.FormService().raise_error(MESSAGE_NAME_EN, MESSAGE_NAME)
-        return name
 
 # Users 
 class LoginForm(AuthenticationForm):
@@ -925,20 +1098,20 @@ class UserCreateForm(UserCreationForm):
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     initials = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'placeholder': 'ACA', 'id': 'initials-create-teacher'}))
     password1 = forms.CharField(required=True, widget=forms.PasswordInput(
-        attrs={'placeholder': '*************', 'id': 'password1-create-teacher'}))
+        attrs={'placeholder': '*************', 'id': 'password1-create-teacher'}), help_text=password_validators_help_texts())
     password2 = forms.CharField(required=True, widget=forms.PasswordInput(
         attrs={'placeholder': '*************', 'id': 'password2-create-teacher'}))
 
     def __init__(self, *args, **kwargs):
         super(UserCreateForm, self).__init__(*args, **kwargs)
         if get_language() == 'en':
-            self.fields['birthdate'].widget.attrs['placeholder'] = DATE_PLACEHOLDER_EN
+            self.fields['birthdate'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
             self.fields['birthdate'].widget.format = settings.DATE_INPUT_FORMATS[0]
 
     class Meta:
@@ -954,65 +1127,45 @@ class UserCreateForm(UserCreationForm):
             'password2'
         )
 
+    def clean_first_name(self):
+        first_name = self.cleaned_data.get('first_name')
+        if len(first_name) > 100:
+            services.FormService().raise_error(MESSAGE_FIRST_NAME_EN, MESSAGE_FIRST_NAME)
+        return first_name
+    
+    def clean_last_name(self):
+        last_name = self.cleaned_data.get('last_name')
+        if len(last_name) > 100:
+            services.FormService().raise_error(MESSAGE_LAST_NAME_EN, MESSAGE_LAST_NAME)
+        return last_name
+    
+    def clean_username(self):
+        username = self.cleaned_data.get('username')
+        if User.objects.filter(username=username).exists():
+            services.FormService().raise_error(MESSAGE_USERNAME_EN, MESSAGE_USERNAME)
+        elif len(username) > 50:
+            services.FormService().raise_error(MESSAGE_USERNAME_50_EN, MESSAGE_USERNAME_50)
+        return username
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if User.objects.filter(email=email).exists():
+            services.FormService().raise_error(MESSAGE_EMAIL_EN, MESSAGE_EMAIL)
+        elif len(email) > 50:
+            services.FormService().raise_error(MESSAGE_EMAIL_50_EN, MESSAGE_EMAIL_50)
+        return email
 
     def clean_initials(self):
         initials = self.cleaned_data.get('initials')
         if len(initials) > 9:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_INITIALS_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_INITIALS)
+            services.FormService().raise_error(MESSAGE_INITIALS_EN, MESSAGE_INITIALS)
         return initials
 
-    def clean_first_name(self):
-        first_name = self.cleaned_data.get('first_name')
-        if len(first_name) > 100:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_NAME_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_NAME)
-        return first_name
-
-    def clean_email(self):
-        email = self.cleaned_data.get('email')
-        if not email:
-            raise ValidationError('El email es necesario')
-        elif User.objects.filter(email=email).exists():
-            raise ValidationError('El email ya existe')
-        return email
-
-    def clean_last_name(self):
-        last_name = self.cleaned_data.get('last_name')
-        if len(last_name) > 100:
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_SURNAME_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_SURNAME)
-        return last_name
-        
     def clean_birthdate(self):
         birthdate = self.cleaned_data.get('birthdate')
         if birthdate >= now().date():
-            if get_language() == 'en':
-                raise ValidationError(
-                    MESSAGE_BIRTHDATE_EN)
-            else:
-                raise ValidationError(
-                    MESSAGE_BIRTHDATE)
+            services.FormService().raise_error(MESSAGE_BIRTHDATE_EN, MESSAGE_BIRTHDATE)
         return birthdate
-
-    def clean_username(self):
-        username = self.cleaned_data.get('username')
-        exist = User.objects.filter(username=username)
-        if exist:
-            raise ValidationError('Usuario ya registrado')
-        return username
 
 class UserForm(UserChangeForm):
     first_name = forms.CharField(required=True, widget=forms.TextInput(
@@ -1032,6 +1185,34 @@ class UserForm(UserChangeForm):
             'username', 
             'email', 
         )
+    
+    def clean_first_name(self):
+        first_name = self.cleaned_data.get('first_name')
+        if len(first_name) > 100:
+            services.FormService().raise_error(MESSAGE_FIRST_NAME_EN, MESSAGE_FIRST_NAME)
+        return first_name
+
+    def clean_last_name(self):
+        last_name = self.cleaned_data.get('last_name')
+        if len(last_name) > 100:
+            services.FormService().raise_error(MESSAGE_LAST_NAME_EN, MESSAGE_LAST_NAME)
+        return last_name
+    
+    def clean_username(self):
+        username = self.cleaned_data.get('username')
+        if User.objects.filter(username=username).exists() and username != self.initial.get('username'):
+            services.FormService().raise_error(MESSAGE_USERNAME_EN, MESSAGE_USERNAME)
+        elif len(username) > 50:
+            services.FormService().raise_error(MESSAGE_USERNAME_50_EN, MESSAGE_USERNAME_50)
+        return username
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if User.objects.filter(email=email).exists() and email != self.initial.get('email'):
+            services.FormService().raise_error(MESSAGE_EMAIL_EN, MESSAGE_EMAIL)
+        elif len(email) > 50:
+            services.FormService().raise_error(MESSAGE_EMAIL_50_EN, MESSAGE_EMAIL_50)
+        return email
 
 class UserPasswordUpdateForm(PasswordChangeForm):
     old_password = forms.CharField(required=True, widget=forms.PasswordInput(
@@ -1054,7 +1235,7 @@ class UserProfileForm(UserChangeForm):
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     initials = forms.CharField(required=True)
@@ -1062,7 +1243,7 @@ class UserProfileForm(UserChangeForm):
     def __init__(self, *args, **kwargs):
         super(UserProfileForm, self).__init__(*args, **kwargs)
         if get_language() == 'en':
-            self.fields['birthdate'].widget.attrs['placeholder'] = DATE_PLACEHOLDER_EN
+            self.fields['birthdate'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
             self.fields['birthdate'].widget.format = settings.DATE_INPUT_FORMATS[0]
     
     class Meta:
@@ -1071,6 +1252,18 @@ class UserProfileForm(UserChangeForm):
             'birthdate', 
             'initials',
         )
+    
+    def clean_birthdate(self):
+        birthdate = self.cleaned_data.get('birthdate')
+        if birthdate >= now().date():
+            services.FormService().raise_error(MESSAGE_BIRTHDATE_EN, MESSAGE_BIRTHDATE)
+        return birthdate
+
+    def clean_initials(self):
+        initials = self.cleaned_data.get('initials')
+        if len(initials) > 9:
+            services.FormService().raise_error(MESSAGE_INITIALS_EN, MESSAGE_INITIALS)
+        return initials
 
 class UserUpdateForm(forms.ModelForm):
     first_name = forms.CharField(required=True, widget=forms.TextInput(
@@ -1086,20 +1279,25 @@ class UserUpdateForm(forms.ModelForm):
             'email',
         )   
 
-
     def clean_first_name(self):
         first_name = self.cleaned_data.get('first_name')
         if len(first_name) > 100:
-            raise ValidationError(
-                MESSAGE_NAME)
+            services.FormService().raise_error(MESSAGE_FIRST_NAME_EN, MESSAGE_FIRST_NAME)
         return first_name
 
     def clean_last_name(self):
         last_name = self.cleaned_data.get('last_name')
         if len(last_name) > 100:
-            raise ValidationError(
-                MESSAGE_SURNAME)
+            services.FormService().raise_error(MESSAGE_LAST_NAME_EN, MESSAGE_LAST_NAME)
         return last_name
+    
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if User.objects.filter(email=email).exists() and email != self.initial.get('email'):
+            services.FormService().raise_error(MESSAGE_EMAIL_EN, MESSAGE_EMAIL)
+        elif len(email) > 50:
+            services.FormService().raise_error(MESSAGE_EMAIL_50_EN, MESSAGE_EMAIL_50)
+        return email
         
 # Teachers
 class TeacherUpdateForm(forms.ModelForm):
@@ -1107,7 +1305,7 @@ class TeacherUpdateForm(forms.ModelForm):
         input_formats=settings.DATE_INPUT_FORMATS, 
         widget=forms.DateInput(
             format=settings.DATE_INPUT_FORMATS[0],
-            attrs={'placeholder': DATE_PLACEHOLDER}
+            attrs={'placeholder': PLACEHOLDER_DATE}
         )
     )
     initials = forms.CharField(required=True)
@@ -1115,7 +1313,7 @@ class TeacherUpdateForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(TeacherUpdateForm, self).__init__(*args, **kwargs)
         if get_language() == 'en':
-            self.fields['birthdate'].widget.attrs['placeholder'] = DATE_PLACEHOLDER_EN
+            self.fields['birthdate'].widget.attrs['placeholder'] = PLACEHOLDER_DATE_EN
             self.fields['birthdate'].widget.format = settings.DATE_INPUT_FORMATS[0]
 
     class Meta:
@@ -1128,14 +1326,11 @@ class TeacherUpdateForm(forms.ModelForm):
     def clean_birthdate(self):
         birthdate = self.cleaned_data.get('birthdate')
         if birthdate >= now().date():
-            raise ValidationError(
-                MESSAGE_BIRTHDATE)
+            services.FormService().raise_error(MESSAGE_BIRTHDATE_EN, MESSAGE_BIRTHDATE)
         return birthdate
 
     def clean_initials(self):
         initials = self.cleaned_data.get('initials')
-        
         if len(initials) > 9:
-            raise ValidationError(
-                MESSAGE_INITIALS)
+            services.FormService().raise_error(MESSAGE_INITIALS_EN, MESSAGE_INITIALS)
         return initials

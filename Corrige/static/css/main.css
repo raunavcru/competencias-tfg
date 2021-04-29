@@ -79,6 +79,11 @@ body {
     height: 100%;
 }
 
+.sticky{
+    position: sticky; 
+    top:0;
+}
+
 @media only screen and (max-width: 812px) {
     
     .div-container {
