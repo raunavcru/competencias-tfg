@@ -52,7 +52,6 @@ coverage.xml
 .pytest_cache/
 
 ## Translations
-*.mo
 *.pot
 
 ## Django stuff:
@@ -127,11 +126,6 @@ dmypy.json
 
 ## Pyre type checker
 .pyre/
-
-## Eventshow stuff
-initial_data.json
-media/profile/*
-media/event/*
 
 ## IDEs stuff
 # PyCharm and WebStorm
