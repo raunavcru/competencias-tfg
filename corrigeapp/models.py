@@ -136,7 +136,7 @@ class Evaluation(Common):
 
     period = models.CharField(("period"), max_length=50)
 
-    weight = models.DecimalField('weight', max_digits=5, decimal_places=2, blank=True, null=True)
+    weight = models.DecimalField('weight', max_digits=5, decimal_places=2)
 
     parent = models.ForeignKey('self', on_delete=models.CASCADE, related_name='evaluation_parent', blank=True, null=True)
 
