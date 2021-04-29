@@ -121,7 +121,6 @@ DATABASES = {
         'PORT': 'os.environ["DATABASE_PORT"]',
     }
 }
-print(os.environ["DATABASE_PORT"])
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators

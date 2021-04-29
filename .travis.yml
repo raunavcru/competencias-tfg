@@ -19,6 +19,8 @@ before_install:
   - sudo apt-get install -y gettext
 install:
   - pip install -r requirements.txt
+env:
+  - DATABASE_URL=postgres://pwmcmwvalxobcz:8e51eaca927828431420d9db6450e427e02c23e32f4df26b572351191d5c4c11@ec2-18-203-62-227.eu-west-1.compute.amazonaws.com:5432/dcbrkjnp1ol12u
 before_script:
   - cp ./Corrige/settings.py ./Corrige/local_settings.py
   - export PATH="/usr/lib/postgresql/13/bin:$PATH"
