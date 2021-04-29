@@ -33,20 +33,18 @@
                                     <div class="validate-input">
                                         <label>{% trans "Name" %}</label>
                                         {{form.name}}
-                                        <div class="form-errors">
-                                            {{ form.name.errors }}
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="grid-example col s6 xl5">
                                     <div class="validate-input">
                                         <label>{% trans "Surname" %}</label>
                                         {{form.surname}}
-                                        <div class="form-errors">
-                                            {{ form.surname.errors }}
-                                        </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row form-errors">
+                                {{form.name.errors}}
+                                {{form.surname.errors}}
                             </div>
                             <div class="row">
                                 <div class="grid-example col s1 xl2">

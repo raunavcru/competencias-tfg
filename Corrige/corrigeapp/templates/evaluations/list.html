@@ -7,7 +7,7 @@
     {% if list_final %}
         <a style="border-radius:5px" href="#modal1" class="right teal lighten-2 waves-effect waves-light btn-small modal-trigger"><i class="material-icons right">add</i>{% trans "Create" %}</a>
     {% else %}
-        <a style="border-radius:5px" href="{% url 'evaluations_create_child' parent_pk %}" class="right teal lighten-2 waves-effect waves-light btn-small">{% trans "Create" %}</a>
+        <a style="border-radius:5px" href="{% url 'evaluations_create_child' parent_pk %}" class="right teal lighten-2 waves-effect waves-light btn-small"><i class="material-icons right">add</i>{% trans "Create" %}</a>
     {% endif %}
         <table class="highlight">
             <caption></caption>

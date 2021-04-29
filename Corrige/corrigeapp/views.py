@@ -2,11 +2,13 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import PasswordChangeView
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse, reverse_lazy
 from django.utils.decorators import method_decorator
 from django.utils.translation import activate, get_language
 from django.views import generic
+from django.views.decorators.csrf import csrf_exempt
 
 from . import forms
 from . import models
@@ -874,7 +876,7 @@ class ExerciseUpdateView(generic.UpdateView):
         exercise_pk = self.kwargs.get('pk')
         exercise_object = models.Exercise.objects.get(pk=exercise_pk)
         activity_object = models.Activity.objects.get(pk=exercise_object.activity.pk)
-        list_exercise_competence = models.Exercise_competence.objects.filter(exercise=exercise_object)
+        list_exercise_competence = models.Exercise_competence.objects.filter(exercise=exercise_object).order_by('competence__code')
         list_competences_unassigned = models.Competence.objects.filter(level=1, competences=activity_object.set_activity.subject).exclude(competence_exercise_competence__exercise=exercise_object).order_by('code')
         context = super(ExerciseUpdateView, self).get_context_data(**kwargs)
         context['exercise_pk'] = exercise_pk
@@ -882,7 +884,6 @@ class ExerciseUpdateView(generic.UpdateView):
         context['update'] = True
         context['list_competences_assigned'] = list_exercise_competence
         context['list_competences_unassigned'] = list_competences_unassigned
-        context['exercise_competence_form'] = forms.ExerciseCompetenceUpdateForm
 
         if get_language == 'en':
             context['info'] = "Intensity indicates the competence's value about its mark. Weight indicates the competence's value about the mark of the exercise." 
@@ -926,10 +927,28 @@ class ExerciseCompetenceDeleteView(generic.DeleteView):
 @method_decorator(login_required, name='dispatch')
 class ExerciseCompetenceCreateView(generic.CreateView):
     form_class = forms.ExerciseCompetenceUpdateForm
-    template_name = EXERCISE_CREATE
+    template_name = 'exercise_competence/create.html'
 
     def get(self, request, *args, **kwargs):
-        return redirect('/')
+        exercise_pk = self.kwargs.get('pk')
+        exercise_object = models.Exercise.objects.get(pk=exercise_pk)
+        activity_object = models.Activity.objects.get(pk=exercise_object.activity.pk)
+        competence_pk = self.kwargs.get('id')
+        competence_object = models.Competence.objects.get(pk=competence_pk)
+        set_object = activity_object.set_activity
+        exist = models.Exercise_competence.objects.filter(exercise = exercise_object, competence = competence_object).exists()
+        if services.UserService().is_teacher(request.user) and competence_object.level == 1 and services.SetService().is_owner(user=request.user, set_object=set_object) and not exist:
+            return super(ExerciseCompetenceCreateView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        exercise_pk = self.kwargs.get('pk')
+        competence_pk = self.kwargs.get('id')
+        context = super(ExerciseCompetenceCreateView, self).get_context_data(**kwargs)
+        context['exercise_pk'] = exercise_pk
+        context['competence_pk'] = competence_pk
+        return context
 
     def form_valid(self, form):
         exercise_pk = self.kwargs.get('pk')
@@ -938,7 +957,9 @@ class ExerciseCompetenceCreateView(generic.CreateView):
         competence_object = models.Competence.objects.get(pk=competence_pk)
         activity_object = models.Activity.objects.get(pk=exercise_object.activity.pk)
         set_object = activity_object.set_activity
-        if services.UserService().is_teacher(self.request.user) and competence_object.level == 1 and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+        exist = models.Exercise_competence.objects.filter(exercise = exercise_object, competence = competence_object).exists()
+        if services.UserService().is_teacher(self.request.user) and competence_object.level == 1 and services.SetService().is_owner(user=self.request.user, set_object=set_object) and not exist:
+            
             exercice_competence = form.save(commit=False)
             exercice_competence.exercise = exercise_object
             exercice_competence.competence = competence_object
@@ -947,10 +968,47 @@ class ExerciseCompetenceCreateView(generic.CreateView):
             return redirect('exercises_update', pk=exercise_pk)
         else:
             return redirect('/')
-    
-    def form_invalid(self, form):
-        exercise_pk = self.kwargs.get('pk')
-        return redirect('exercises_update', pk=exercise_pk)
+
+@method_decorator(login_required, name='dispatch')
+class ExerciseCompetenceUpdateView(generic.UpdateView):
+    model = models.Exercise_competence
+    form_class = forms.ExerciseCompetenceUpdateForm
+    template_name = 'exercise_competence/create.html'
+
+    def get(self, request, *args, **kwargs):
+        exercise_competence_pk = self.kwargs.get('pk')
+        exercise_competence_object = models.Exercise_competence.objects.get(pk=exercise_competence_pk)
+        activity_object = models.Activity.objects.get(pk=exercise_competence_object.exercise.activity.pk)
+        competence_object = exercise_competence_object.competence
+        set_object = activity_object.set_activity
+        if services.UserService().is_teacher(request.user) and competence_object.level == 1 and services.SetService().is_owner(user=request.user, set_object=set_object):
+            return super(ExerciseCompetenceUpdateView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        exercise_competence_pk = self.kwargs.get('pk')
+        exercise_competence_object = models.Exercise_competence.objects.get(pk=exercise_competence_pk)
+        exercise_pk = exercise_competence_object.exercise.pk
+        context = super(ExerciseCompetenceUpdateView, self).get_context_data(**kwargs)
+        context['exercise_competence_pk'] = exercise_competence_pk
+        context['exercise_pk'] = exercise_pk
+        context['update'] = True
+        return context
+
+    def form_valid(self, form):
+        exercise_competence_pk = self.kwargs.get('pk')
+        exercise_competence_object = models.Exercise_competence.objects.get(pk=exercise_competence_pk)
+        activity_object = models.Activity.objects.get(pk=exercise_competence_object.exercise.activity.pk)
+        competence_object = exercise_competence_object.competence
+        set_object = activity_object.set_activity
+        if services.UserService().is_teacher(self.request.user) and competence_object.level == 1 and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+            
+            form.save()
+
+            return redirect('exercises_update', pk=exercise_competence_object.exercise.pk)
+        else:
+            return redirect('/')
 
 # Evaluations 
 @method_decorator(login_required, name='dispatch')
@@ -1036,13 +1094,16 @@ class EvaluationCreateAllOneFinalThreePartialView(generic.CreateView):
         name = form.cleaned_data.get('name')
         start_date = form.cleaned_data.get('start_date')
         end_date = form.cleaned_data.get('end_date')
+        weight_1 = form.cleaned_data.get('weight_1'),
         period_1 = form.cleaned_data.get('period_1')
         start_date_1 = form.cleaned_data.get('start_date_1')
         end_date_1 = form.cleaned_data.get('end_date_1')
         period_2 = form.cleaned_data.get('period_2')
+        weight_2 = form.cleaned_data.get('weight_2'),
         start_date_2 = form.cleaned_data.get('start_date_2')
         end_date_2 = form.cleaned_data.get('end_date_2')
         period_3 = form.cleaned_data.get('period_3')
+        weight_3 = form.cleaned_data.get('weight_3'),
         start_date_3 = form.cleaned_data.get('start_date_3')
         end_date_3 = form.cleaned_data.get('end_date_3')
         
@@ -1052,13 +1113,13 @@ class EvaluationCreateAllOneFinalThreePartialView(generic.CreateView):
             is_final=True, period="Final", weight=1, subject=subject)
             evaluation.save()
             evaluation1 = models.Evaluation.objects.create(name=name + " " + period_1, start_date=start_date_1, end_date=end_date_1,
-            is_final=False, period=period_1, weight=1, subject=subject, parent=evaluation)
+            is_final=False, period=period_1, weight=weight_1, subject=subject, parent=evaluation)
             evaluation1.save()
             evaluation2 = models.Evaluation.objects.create(name=name + " " + period_2, start_date=start_date_2, end_date=end_date_2,
-                is_final=False, period=period_2, weight=1, subject=subject, parent=evaluation)
+                is_final=False, period=period_2, weight=weight_2, subject=subject, parent=evaluation)
             evaluation2.save()
             evaluation3 = models.Evaluation.objects.create(name=name + " " + period_3, start_date=start_date_3, end_date=end_date_3,
-                is_final=False, period=period_3, weight=1, subject=subject, parent=evaluation)
+                is_final=False, period=period_3, weight=weight_3, subject=subject, parent=evaluation)
             evaluation3.save()
         
 
@@ -1089,9 +1150,11 @@ class EvaluationCreateAllOneFinalTwoPartialView(generic.CreateView):
         start_date = form.cleaned_data.get('start_date')
         end_date = form.cleaned_data.get('end_date')
         period_1 = form.cleaned_data.get('period_1')
+        weight_1 = form.cleaned_data.get('weight_1')
         start_date_1 = form.cleaned_data.get('start_date_1')
         end_date_1 = form.cleaned_data.get('end_date_1')
         period_2 = form.cleaned_data.get('period_2')
+        weight_2 = form.cleaned_data.get('weight_2')
         start_date_2 = form.cleaned_data.get('start_date_2')
         end_date_2 = form.cleaned_data.get('end_date_2')
         
@@ -1100,10 +1163,10 @@ class EvaluationCreateAllOneFinalTwoPartialView(generic.CreateView):
             is_final=True, period="Final", weight=1, subject=subject)
             evaluation.save()
             evaluation1 = models.Evaluation.objects.create(name=name + " " + period_1, start_date=start_date_1, end_date=end_date_1,
-            is_final=False, period=period_1, weight=1, subject=subject, parent=evaluation)
+            is_final=False, period=period_1, weight=weight_1, subject=subject, parent=evaluation)
             evaluation1.save()
             evaluation2 = models.Evaluation.objects.create(name=name + " " + period_2, start_date=start_date_2, end_date=end_date_2,
-                is_final=False, period=period_2, weight=1, subject=subject, parent=evaluation)
+                is_final=False, period=period_2, weight=weight_2, subject=subject, parent=evaluation)
             evaluation2.save()
         
 
@@ -1136,7 +1199,7 @@ class EvaluationCreateChildView(generic.CreateView):
         evaluation.is_final=False
         evaluation.parent = parent
         evaluation.subject = parent.subject
-        evaluation.weight=1,
+        evaluation.weight,
         evaluation.save()
 
         return redirect('evaluations_list_partial', pk=evaluation_pk)
@@ -1228,57 +1291,82 @@ class EvaluationUpdateView(generic.UpdateView):
             return redirect('/')
 
     def get_context_data(self, **kwargs):
+        evaluation_pk = self.kwargs.get('pk')
+        evaluation = models.Evaluation.objects.get(pk=evaluation_pk)
         context = super(EvaluationUpdateView, self).get_context_data(**kwargs)
         context['update'] = True
+
+        if not evaluation.is_final:
+            context['update_partial'] = True
+
         return context
     
+    def get_form_class(self):
+        evaluation_pk = self.kwargs.get('pk')
+        evaluation = models.Evaluation.objects.get(pk=evaluation_pk)
+
+        if evaluation.is_final:
+            return self.form_class
+        else:
+            return forms.EvaluationCreateChildForm
+    
     def form_valid(self, form):
-        evaluation = form.save()
+        evaluation_pk = self.kwargs.get('pk')
+        evaluation_saved = models.Evaluation.objects.get(pk=evaluation_pk)
+
+        evaluation = form.save(commit=False)
+
+        if evaluation_saved.is_final:
+            evaluation.period = evaluation_saved.period
+            evaluation.weight = evaluation_saved.weight
+        
+        evaluation.save()
+
         if evaluation.is_final:
             return redirect('evaluations_list_final')
         else:
             return redirect('evaluations_list_partial', pk=evaluation.parent.pk ) 
 
 # Marks 
-@method_decorator(login_required, name='dispatch')
-class MarkActivityCreateView(generic.UpdateView):
-    model = models.Activity_mark
-    form_class = forms.ActivityMarkCreateForm
-    template_name = MARK_MARK
+# @method_decorator(login_required, name='dispatch')
+# class MarkActivityCreateView(generic.UpdateView):
+#     model = models.Activity_mark
+#     form_class = forms.ActivityMarkCreateForm
+#     template_name = MARK_MARK
 
-    def get(self, request, *args, **kwargs):
-        activity_mark_pk = self.kwargs.get('pk')
-        activity_mark = models.Activity_mark.objects.get(pk=activity_mark_pk)
-        set_object = activity_mark.activity.set_activity
-        if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
-            return super(MarkActivityCreateView, self).get(self, request, *args, **kwargs)
-        else:
-            return redirect('/')
+#     def get(self, request, *args, **kwargs):
+#         activity_mark_pk = self.kwargs.get('pk')
+#         activity_mark = models.Activity_mark.objects.get(pk=activity_mark_pk)
+#         set_object = activity_mark.activity.set_activity
+#         if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+#             return super(MarkActivityCreateView, self).get(self, request, *args, **kwargs)
+#         else:
+#             return redirect('/')
 
-    def get_context_data(self, **kwargs):
-        activity_mark_pk = self.kwargs.get('pk')
-        activity_mark = models.Activity_mark.objects.get(pk=activity_mark_pk)
-        set_object = activity_mark.activity.set_activity
-        student_pk = activity_mark.student.pk
-        context = super(MarkActivityCreateView, self).get_context_data(**kwargs)
-        context['evaluation_pk'] = activity_mark.activity.evaluation.pk
-        context['student_pk'] = student_pk
-        context['set_pk'] = set_object.pk
-        context['is_activity'] = True
+#     def get_context_data(self, **kwargs):
+#         activity_mark_pk = self.kwargs.get('pk')
+#         activity_mark = models.Activity_mark.objects.get(pk=activity_mark_pk)
+#         set_object = activity_mark.activity.set_activity
+#         student_pk = activity_mark.student.pk
+#         context = super(MarkActivityCreateView, self).get_context_data(**kwargs)
+#         context['evaluation_pk'] = activity_mark.activity.evaluation.pk
+#         context['student_pk'] = student_pk
+#         context['set_pk'] = set_object.pk
+#         context['is_activity'] = True
 
-        return context
+#         return context
 
-    def form_valid(self, form):
-        activity_mark_pk = self.kwargs.get('pk')
-        activity_mark = models.Activity_mark.objects.get(pk=activity_mark_pk)
-        set_object = activity_mark.activity.set_activity
-        if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
-            mark = form.cleaned_data.get('manual_mark')
-            services.MarkService().mark_activity_mark(mark=mark, activity_mark=activity_mark)
+#     def form_valid(self, form):
+#         activity_mark_pk = self.kwargs.get('pk')
+#         activity_mark = models.Activity_mark.objects.get(pk=activity_mark_pk)
+#         set_object = activity_mark.activity.set_activity
+#         if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+#             mark = form.cleaned_data.get('manual_mark')
+#             services.MarkService().mark_activity_mark(mark=mark, activity_mark=activity_mark)
         
-            return redirect('marks_activities_list', sk=set_object.pk, id=activity_mark.activity.evaluation.pk, pk=activity_mark.student.pk)
-        else:
-            return redirect('/')
+#             return redirect('marks_activities_list', sk=set_object.pk, id=activity_mark.activity.evaluation.pk, pk=activity_mark.student.pk)
+#         else:
+#             return redirect('/')
 
 @method_decorator(login_required, name='dispatch')        
 class MarkActivityListView(generic.ListView):
@@ -1317,51 +1405,109 @@ class MarkActivityListView(generic.ListView):
         context['student_object'] = student_object
         context['evaluation_object'] = evaluation_object
         context['ac_mark_saved'] = ac_mark_saved
+        context['teacher_id'] = self.request.user.id
+
+        if get_language() == "es":
+            context['done'] = "Actualizado"
+            context['fail'] = "Nota debe estar entre 0.00 y 10.00."
+        else:
+            context['done'] = "Updated"
+            context['fail'] = "Mark must be between 0.00 and 10.00."
         
         return context
 
-@method_decorator(login_required, name='dispatch')
-class MarkCompetenceCreateView(generic.UpdateView):
-    model = models.Competence_mark
-    form_class = forms.CompetenceMarkCreateForm
-    template_name = MARK_MARK
+@method_decorator(login_required, name='dispatch')        
+class MarkActivityNextStudentView(generic.ListView):
+    model = models.Activity_mark
+    template_name = 'marks/activities.html'
 
     def get(self, request, *args, **kwargs):
-        exercise_pk = self.kwargs.get('id')
-        exercise_object = models.Exercise.objects.get(pk=exercise_pk)
-        activity_object = exercise_object.activity
-        set_object = activity_object.set_activity
-        if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
-            return super(MarkCompetenceCreateView, self).get(self, request, *args, **kwargs)
+        set_pk = self.kwargs.get('sk')
+        set_object = models.Set.objects.get(pk=set_pk)
+        student_pk = self.kwargs.get('pk')
+        student_object = models.Student.objects.get(pk=student_pk)
+        evalution_pk = self.kwargs.get('id')
+        exist = models.Set.objects.filter(pk=set_object.pk, students=student_object).exists()
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object) and exist:
+            
+            next_student = models.Student.objects.filter(student=set_object, pk__gt = student_pk).order_by('pk').first()
+            first_student = models.Student.objects.filter(student=set_object).order_by('pk').first()
+
+            if next_student:
+                return redirect('marks_activities_list', sk=set_pk, id=evalution_pk, pk=next_student.pk)
+            else: 
+                return redirect('marks_activities_list', sk=set_pk, id=evalution_pk, pk=first_student.pk)
+
         else:
             return redirect('/')
 
-    def get_context_data(self, **kwargs):
-        exercise_pk = self.kwargs.get('id')
-        competence_mark_pk = self.kwargs.get('pk')
-        competence_mark = models.Competence_mark.objects.get(pk=competence_mark_pk)
-        student_pk = competence_mark.student.pk
-        context = super(MarkCompetenceCreateView, self).get_context_data(**kwargs)
-        context['exercise_pk'] = exercise_pk
-        context['student_pk'] = student_pk
-        context['is_competence'] = True
+@method_decorator(login_required, name='dispatch')        
+class MarkActivityPreviousStudentView(generic.ListView):
+    model = models.Activity_mark
+    template_name = 'marks/activities.html'
 
-        return context
+    def get(self, request, *args, **kwargs):
+        set_pk = self.kwargs.get('sk')
+        set_object = models.Set.objects.get(pk=set_pk)
+        student_pk = self.kwargs.get('pk')
+        student_object = models.Student.objects.get(pk=student_pk)
+        evalution_pk = self.kwargs.get('id')
+        exist = models.Set.objects.filter(pk=set_object.pk, students=student_object).exists()
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object) and exist:
+            
+            previous_student = models.Student.objects.filter(student=set_object, pk__lt = student_pk).order_by('-pk').first()
+            last_student = models.Student.objects.filter(student=set_object).order_by('-pk').first()
 
-    def form_valid(self, form):
-        exercise_pk = self.kwargs.get('id')
-        exercise_object = models.Exercise.objects.get(pk=exercise_pk)
-        activity_object = exercise_object.activity
-        set_object = activity_object.set_activity
-        competence_mark_pk = self.kwargs.get('pk')
-        competence_mark = models.Competence_mark.objects.get(pk=competence_mark_pk)
-        if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
-            mark = form.cleaned_data.get('mark')
-            services.MarkService().mark_competence_mark(mark=mark, competence_mark=competence_mark)
+            if previous_student:
+                return redirect('marks_activities_list', sk=set_pk, id=evalution_pk, pk=previous_student.pk)
+            else: 
+                return redirect('marks_activities_list', sk=set_pk, id=evalution_pk, pk=last_student.pk)
+
+        else:
+            return redirect('/')
+
+# @method_decorator(login_required, name='dispatch')
+# class MarkCompetenceCreateView(generic.UpdateView):
+#     model = models.Competence_mark
+#     form_class = forms.CompetenceMarkCreateForm
+#     template_name = MARK_MARK
+
+#     def get(self, request, *args, **kwargs):
+#         exercise_pk = self.kwargs.get('id')
+#         exercise_object = models.Exercise.objects.get(pk=exercise_pk)
+#         activity_object = exercise_object.activity
+#         set_object = activity_object.set_activity
+#         if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+#             return super(MarkCompetenceCreateView, self).get(self, request, *args, **kwargs)
+#         else:
+#             return redirect('/')
+
+#     def get_context_data(self, **kwargs):
+#         exercise_pk = self.kwargs.get('id')
+#         competence_mark_pk = self.kwargs.get('pk')
+#         competence_mark = models.Competence_mark.objects.get(pk=competence_mark_pk)
+#         student_pk = competence_mark.student.pk
+#         context = super(MarkCompetenceCreateView, self).get_context_data(**kwargs)
+#         context['exercise_pk'] = exercise_pk
+#         context['student_pk'] = student_pk
+#         context['is_competence'] = True
+
+#         return context
+
+#     def form_valid(self, form):
+#         exercise_pk = self.kwargs.get('id')
+#         exercise_object = models.Exercise.objects.get(pk=exercise_pk)
+#         activity_object = exercise_object.activity
+#         set_object = activity_object.set_activity
+#         competence_mark_pk = self.kwargs.get('pk')
+#         competence_mark = models.Competence_mark.objects.get(pk=competence_mark_pk)
+#         if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+#             mark = form.cleaned_data.get('mark')
+#             services.MarkService().mark_competence_mark(mark=mark, competence_mark=competence_mark)
         
-            return redirect('marks_competences_list', id=exercise_pk, pk=competence_mark.student.pk)
-        else:
-            return redirect('/')
+#             return redirect('marks_competences_list', id=exercise_pk, pk=competence_mark.student.pk)
+#         else:
+#             return redirect('/')
 
 @method_decorator(login_required, name='dispatch')
 class MarkCompetenceEvaluationList(generic.ListView):
@@ -1426,7 +1572,7 @@ class MarkCompetenceListView(generic.ListView):
         exercise_competences = models.Exercise_competence.objects.filter(exercise=exercise_object).order_by('competence__code')
         for ec in exercise_competences:
             if not models.Competence_mark.objects.filter(exercise=exercise_object, competence = ec.competence, student=student_object).exists():
-                c_mark = models.Competence_mark.objects.create(exercise=exercise_object, competence = ec.competence, student=student_object, evaluation_type="AUTOMATIC")
+                c_mark = models.Competence_mark.objects.create(exercise=exercise_object, competence = ec.competence, student=student_object)
                 c_mark.save()
         
         c_mark_saved = models.Competence_mark.objects.filter(exercise = exercise_object, student=student_object).order_by('competence__code')
@@ -1436,49 +1582,107 @@ class MarkCompetenceListView(generic.ListView):
         context['exercise_pk'] = exercise_pk
         context['activity_object'] = activity_object
         context['c_mark_saved'] = c_mark_saved
+        context['teacher_id'] = self.request.user.id
+
+        if get_language() == "es":
+            context['done'] = "Actualizado"
+            context['fail'] = "Nota debe estar entre 0.00 y 10.00."
+        else:
+            context['done'] = "Updated"
+            context['fail'] = "Mark must be between 0.00 and 10.00."
         
         return context
 
-@method_decorator(login_required, name='dispatch')
-class MarkEvaluationCreateView(generic.UpdateView):
-    model = models.Evaluation_mark
-    form_class = forms.EvaluationMarkCreateForm
-    template_name = MARK_MARK
+@method_decorator(login_required, name='dispatch')        
+class MarkCompetenceNextStudentView(generic.ListView):
+    model = models.Competence_mark
+    template_name = 'marks/competences.html'
 
     def get(self, request, *args, **kwargs):
-        set_pk = self.kwargs.get('id')
-        set_object = models.Set.objects.get(pk=set_pk)
-        if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
-            return super(MarkEvaluationCreateView, self).get(self, request, *args, **kwargs)
+        exercise_pk = self.kwargs.get('id')
+        exercise_object = models.Exercise.objects.get(pk=exercise_pk)
+        set_object = exercise_object.activity.set_activity
+        student_pk = self.kwargs.get('pk')
+        student_object = models.Student.objects.get(pk=student_pk)
+        exist = models.Set.objects.filter(pk=set_object.pk, students=student_object).exists()
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object) and exist:
+
+            next_student = models.Student.objects.filter(student=set_object, pk__gt = student_pk).order_by('pk').first()
+            first_student = models.Student.objects.filter(student=set_object).order_by('pk').first()
+
+            if next_student:
+                return redirect('marks_competences_list', id=exercise_pk, pk=next_student.pk)
+            else: 
+                return redirect('marks_competences_list', id=exercise_pk, pk=first_student.pk)
+            
         else:
             return redirect('/')
 
-    def get_context_data(self, **kwargs):
-        set_pk = self.kwargs.get('id')
-        evaluation_mark_pk = self.kwargs.get('pk')
-        evaluation_mark = models.Evaluation_mark.objects.get(pk=evaluation_mark_pk)
-        student_pk = evaluation_mark.student.pk
-        context = super(MarkEvaluationCreateView, self).get_context_data(**kwargs)
-        context['evaluation_pk'] = evaluation_mark.evaluation.pk
-        context['student_pk'] = student_pk
-        context['set_pk'] = set_pk
-        context['is_evaluation'] = True
+@method_decorator(login_required, name='dispatch')        
+class MarkCompetencePreviousStudentView(generic.ListView):
+    model = models.Competence_mark
+    template_name = 'marks/competences.html'
 
-        return context
+    def get(self, request, *args, **kwargs):
+        exercise_pk = self.kwargs.get('id')
+        exercise_object = models.Exercise.objects.get(pk=exercise_pk)
+        set_object = exercise_object.activity.set_activity
+        student_pk = self.kwargs.get('pk')
+        student_object = models.Student.objects.get(pk=student_pk)
+        exist = models.Set.objects.filter(pk=set_object.pk, students=student_object).exists()
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object) and exist:
 
-    def form_valid(self, form):
-        set_pk = self.kwargs.get('id')
-        set_object = models.Set.objects.get(pk=set_pk)
-        evaluation_mark_pk = self.kwargs.get('pk')
-        evaluation_mark = models.Evaluation_mark.objects.get(pk=evaluation_mark_pk)
-        student_pk = evaluation_mark.student.pk
-        if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
-            mark = form.cleaned_data.get('manual_mark')
-            services.MarkService().mark_evaluation_mark(mark=mark, set_object = set_object, evaluation_mark=evaluation_mark)
+            previous_student = models.Student.objects.filter(student=set_object, pk__lt = student_pk).order_by('-pk').first()
+            last_student = models.Student.objects.filter(student=set_object).order_by('-pk').first()
+
+            if previous_student:
+                return redirect('marks_competences_list', id=exercise_pk, pk=previous_student.pk)
+            else: 
+                return redirect('marks_competences_list', id=exercise_pk, pk=last_student.pk)
+            
+        else:
+            return redirect('/')
+
+# @method_decorator(login_required, name='dispatch')
+# class MarkEvaluationCreateView(generic.UpdateView):
+#     model = models.Evaluation_mark
+#     form_class = forms.EvaluationMarkCreateForm
+#     template_name = MARK_MARK
+
+#     def get(self, request, *args, **kwargs):
+#         set_pk = self.kwargs.get('id')
+#         set_object = models.Set.objects.get(pk=set_pk)
+#         if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+#             return super(MarkEvaluationCreateView, self).get(self, request, *args, **kwargs)
+#         else:
+#             return redirect('/')
+
+#     def get_context_data(self, **kwargs):
+#         set_pk = self.kwargs.get('id')
+#         evaluation_mark_pk = self.kwargs.get('pk')
+#         evaluation_mark = models.Evaluation_mark.objects.get(pk=evaluation_mark_pk)
+#         student_pk = evaluation_mark.student.pk
+#         context = super(MarkEvaluationCreateView, self).get_context_data(**kwargs)
+#         context['evaluation_pk'] = evaluation_mark.evaluation.pk
+#         context['student_pk'] = student_pk
+#         context['set_pk'] = set_pk
+#         context['is_evaluation'] = True
+
+#         return context
+
+#     def form_valid(self, form):
+#         set_pk = self.kwargs.get('id')
+#         set_object = models.Set.objects.get(pk=set_pk)
+#         evaluation_mark_pk = self.kwargs.get('pk')
+#         evaluation_mark = models.Evaluation_mark.objects.get(pk=evaluation_mark_pk)
+#         student_pk = evaluation_mark.student.pk
+#         if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+#             mark = form.cleaned_data.get('manual_mark')
+#             services.MarkService().mark_evaluation_mark(mark=mark, set_object = set_object, evaluation_mark=evaluation_mark)
         
-            return redirect('marks_evaluations_list', id=set_object.pk, pk=student_pk)
-        else:
-            return redirect('/')
+#             return redirect('marks_evaluations_list', id=set_object.pk, pk=student_pk)
+#         else:
+#             return redirect('/')
 
 @method_decorator(login_required, name='dispatch')        
 class MarkEvaluationListView(generic.ListView):
@@ -1522,47 +1726,104 @@ class MarkEvaluationListView(generic.ListView):
         context['student_object'] = student_object
         context['parent_mark_saved'] = parent_mark_saved
         context['ev_mark_saved'] = ev_mark_saved
+        context['set_id'] = student_object.pk
+        context['teacher_id'] = self.request.user.id
+
+        if get_language() == "es":
+            context['done'] = "Actualizado"
+            context['fail'] = "Nota debe estar entre 0.00 y 10.00."
+        else:
+            context['done'] = "Updated"
+            context['fail'] = "Mark must be between 0.00 and 10.00."
         
         return context
 
-@method_decorator(login_required, name='dispatch')
-class MarkExerciseCreateView(generic.UpdateView):
-    model = models.Exercise_mark
-    form_class = forms.ExerciseMarkCreateForm
-    template_name = MARK_MARK
+@method_decorator(login_required, name='dispatch')        
+class MarkEvaluationNextStudentView(generic.ListView):
+    model = models.Evaluation_mark
+    template_name = 'marks/evaluations.html'
 
     def get(self, request, *args, **kwargs):
-        exercise_mark_pk = self.kwargs.get('pk')
-        exercise_mark = models.Exercise_mark.objects.get(pk=exercise_mark_pk)
-        set_object = exercise_mark.exercise.activity.set_activity
-        if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
-            return super(MarkExerciseCreateView, self).get(self, request, *args, **kwargs)
+        set_pk = self.kwargs.get('id')
+        set_object = models.Set.objects.get(pk=set_pk)
+        student_pk = self.kwargs.get('pk')
+        student_object = models.Student.objects.get(pk=student_pk)
+        exist = models.Set.objects.filter(pk = set_pk, students = student_object).exists()
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object) and exist:
+            
+            next_student = models.Student.objects.filter(student=set_object, pk__gt = student_pk).order_by('pk').first()
+            first_student = models.Student.objects.filter(student=set_object).order_by('pk').first()
+
+            if next_student:
+                return redirect('marks_evaluations_list', id=set_pk, pk=next_student.pk)
+            else: 
+                return redirect('marks_evaluations_list', id=set_pk, pk=first_student.pk)
+
         else:
             return redirect('/')
 
-    def get_context_data(self, **kwargs):
-        exercise_mark_pk = self.kwargs.get('pk')
-        exercise_mark = models.Exercise_mark.objects.get(pk=exercise_mark_pk)
-        student_pk = exercise_mark.student.pk
-        context = super(MarkExerciseCreateView, self).get_context_data(**kwargs)
-        context['activity_pk'] = exercise_mark.exercise.activity.pk
-        context['student_pk'] = student_pk
-        context['is_exercise'] = True
+@method_decorator(login_required, name='dispatch')        
+class MarkEvaluationPreviousStudentView(generic.ListView):
+    model = models.Evaluation_mark
+    template_name = 'marks/evaluations.html'
 
-        return context
+    def get(self, request, *args, **kwargs):
+        set_pk = self.kwargs.get('id')
+        set_object = models.Set.objects.get(pk=set_pk)
+        student_pk = self.kwargs.get('pk')
+        student_object = models.Student.objects.get(pk=student_pk)
+        exist = models.Set.objects.filter(pk = set_pk, students = student_object).exists()
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object) and exist:
+            
+            previous_student = models.Student.objects.filter(student=set_object, pk__lt = student_pk).order_by('-pk').first()
+            last_student = models.Student.objects.filter(student=set_object).order_by('-pk').first()
 
-    def form_valid(self, form):
-        exercise_mark_pk = self.kwargs.get('pk')
-        exercise_mark = models.Exercise_mark.objects.get(pk=exercise_mark_pk)
-        activity = exercise_mark.exercise.activity
-        set_object = activity.set_activity
-        if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
-            mark = form.cleaned_data.get('manual_mark')
-            services.MarkService().mark_exercise_mark(mark=mark, exercise_mark=exercise_mark)
+            if previous_student:
+                return redirect('marks_evaluations_list', id=set_pk, pk=previous_student.pk)
+            else: 
+                return redirect('marks_evaluations_list', id=set_pk, pk=last_student.pk)
+
+        else:
+            return redirect('/')
+
+# @method_decorator(login_required, name='dispatch')
+# class MarkExerciseCreateView(generic.UpdateView):
+#     model = models.Exercise_mark
+#     form_class = forms.ExerciseMarkCreateForm
+#     template_name = MARK_MARK
+
+#     def get(self, request, *args, **kwargs):
+#         exercise_mark_pk = self.kwargs.get('pk')
+#         exercise_mark = models.Exercise_mark.objects.get(pk=exercise_mark_pk)
+#         set_object = exercise_mark.exercise.activity.set_activity
+#         if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+#             return super(MarkExerciseCreateView, self).get(self, request, *args, **kwargs)
+#         else:
+#             return redirect('/')
+
+#     def get_context_data(self, **kwargs):
+#         exercise_mark_pk = self.kwargs.get('pk')
+#         exercise_mark = models.Exercise_mark.objects.get(pk=exercise_mark_pk)
+#         student_pk = exercise_mark.student.pk
+#         context = super(MarkExerciseCreateView, self).get_context_data(**kwargs)
+#         context['activity_pk'] = exercise_mark.exercise.activity.pk
+#         context['student_pk'] = student_pk
+#         context['is_exercise'] = True
+
+#         return context
+
+#     def form_valid(self, form):
+#         exercise_mark_pk = self.kwargs.get('pk')
+#         exercise_mark = models.Exercise_mark.objects.get(pk=exercise_mark_pk)
+#         activity = exercise_mark.exercise.activity
+#         set_object = activity.set_activity
+#         if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
+#             mark = form.cleaned_data.get('manual_mark')
+#             services.MarkService().mark_exercise_mark(mark=mark, exercise_mark=exercise_mark)
         
-            return redirect('marks_exercises_list', id=activity.pk, pk=exercise_mark.student.pk)
-        else:
-            return redirect('/')
+#             return redirect('marks_exercises_list', id=activity.pk, pk=exercise_mark.student.pk)
+#         else:
+#             return redirect('/')
 
 @method_decorator(login_required, name='dispatch')        
 class MarkExerciseListView(generic.ListView):
@@ -1573,8 +1834,11 @@ class MarkExerciseListView(generic.ListView):
         activity_pk = self.kwargs.get('id')
         activity_object = models.Activity.objects.get(pk=activity_pk)
         set_object = activity_object.set_activity
+        student_pk = self.kwargs.get('pk')
+        student_object = models.Student.objects.get(pk=student_pk)
+        exist = models.Set.objects.filter(pk=set_object.pk, students=student_object).exists()
         
-        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object) and exist:
             return super(MarkExerciseListView, self).get(self, request, *args, **kwargs)
         else:
             return redirect('/')
@@ -1601,8 +1865,68 @@ class MarkExerciseListView(generic.ListView):
         context['activity_object'] = activity_object
         context['evaluation_object'] = evaluation_object
         context['ex_mark_saved'] = ex_mark_saved
+        context['teacher_id'] = self.request.user.id
+
+        if get_language() == "es":
+            context['done'] = "Actualizado"
+            context['fail'] = "Nota debe estar entre 0.00 y 10.00."
+        else:
+            context['done'] = "Updated"
+            context['fail'] = "Mark must be between 0.00 and 10.00."
         
         return context
+
+@method_decorator(login_required, name='dispatch')        
+class MarkExerciseNextStudentView(generic.ListView):
+    model = models.Exercise_mark
+    template_name = 'marks/exercises.html'
+
+    def get(self, request, *args, **kwargs):
+        activity_pk = self.kwargs.get('id')
+        activity_object = models.Activity.objects.get(pk=activity_pk)
+        set_object = activity_object.set_activity
+        student_pk = self.kwargs.get('pk')
+        student_object = models.Student.objects.get(pk=student_pk)
+        exist = models.Set.objects.filter(pk=set_object.pk, students=student_object).exists()
+        
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object) and exist:
+            
+            next_student = models.Student.objects.filter(student=set_object, pk__gt = student_pk).order_by('pk').first()
+            first_student = models.Student.objects.filter(student=set_object).order_by('pk').first()
+
+            if next_student:
+                return redirect('marks_exercises_list', id=activity_pk, pk=next_student.pk)
+            else: 
+                return redirect('marks_exercises_list', id=activity_pk, pk=first_student.pk)
+
+        else:
+            return redirect('/')
+
+@method_decorator(login_required, name='dispatch')        
+class MarkExercisePreviousStudentView(generic.ListView):
+    model = models.Exercise_mark
+    template_name = 'marks/exercises.html'
+
+    def get(self, request, *args, **kwargs):
+        activity_pk = self.kwargs.get('id')
+        activity_object = models.Activity.objects.get(pk=activity_pk)
+        set_object = activity_object.set_activity
+        student_pk = self.kwargs.get('pk')
+        student_object = models.Student.objects.get(pk=student_pk)
+        exist = models.Set.objects.filter(pk=set_object.pk, students=student_object).exists()
+        
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object) and exist:
+            
+            previous_student = models.Student.objects.filter(student=set_object, pk__lt = student_pk).order_by('-pk').first()
+            last_student = models.Student.objects.filter(student=set_object).order_by('-pk').first()
+
+            if previous_student:
+                return redirect('marks_exercises_list', id=activity_pk, pk=previous_student.pk)
+            else: 
+                return redirect('marks_exercises_list', id=activity_pk, pk=last_student.pk)
+
+        else:
+            return redirect('/')
 
 # My
 @method_decorator(login_required, name='dispatch')        
@@ -1693,6 +2017,7 @@ class ReportSetEvaluationView(generic.ListView):
         if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
             students = models.Student.objects.filter(student = set_object).order_by('surname')
             for student_object in students:
+                services.MarkService().create_evaluation_mark(set_object = set_object, student = student_object)
                 services.MarkService().create_activity_mark(set_object = set_object, student = student_object)
             return super(ReportSetEvaluationView, self).get(self, request, *args, **kwargs)
         else:
@@ -1713,6 +2038,35 @@ class ReportSetEvaluationView(generic.ListView):
         set_object = models.Set.objects.get(pk=set_pk)
         queryset = models.Student.objects.filter(student = set_object).order_by('surname')
         return queryset
+
+@method_decorator(login_required, name='dispatch')
+class ReportStudentView(generic.ListView):
+    model = models.Student
+    template_name = 'reports/student.html'
+    context_object_name = 'student_list'
+
+    def get(self, request, *args, **kwargs):
+        student_pk = self.kwargs.get('pk')
+        student_object = models.Student.objects.get(pk=student_pk)
+        set_pk = self.kwargs.get('id')
+        set_object = models.Set.objects.get(pk=set_pk)
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object):
+            services.MarkService().create_evaluation_mark(set_object = set_object, student = student_object)
+            services.MarkService().create_activity_mark(set_object = set_object, student = student_object)
+            return super(ReportStudentView, self).get(self, request, *args, **kwargs)
+        else:
+            return redirect('/')
+
+    def get_context_data(self, **kwargs):
+        student_pk = self.kwargs.get('pk')
+        student_object = models.Student.objects.get(pk=student_pk)
+        set_pk = self.kwargs.get('id')
+        set_object = models.Set.objects.get(pk=set_pk)
+        context = super(ReportStudentView, self).get_context_data(**kwargs)
+        context['student'] = student_object
+        context['set_object'] = set_object
+
+        return context
 
 # Sets
 @method_decorator(login_required, name='dispatch') 
@@ -1797,8 +2151,8 @@ class SetEvaluationTypeUpdateView(generic.UpdateView):
         set_pk = self.kwargs.get('pk')
         set_object = models.Set.objects.get(pk=set_pk)
         if services.UserService().is_teacher(self.request.user) and services.SetService().is_owner(user=self.request.user, set_object=set_object):
-            form.save()
-            services.MarkService().recalculate(set_object = set_object)
+            set_saved = form.save()
+            services.MarkService().recalculate(set_object = set_saved)
 
             return redirect('my_sets_list')
         else:
@@ -1917,12 +2271,16 @@ class SubjectAssignCompetenceView(generic.TemplateView):
             subject_pk = self.kwargs.get('id')
             subject_object = models.Subject.objects.get(pk=subject_pk)
 
+            parent = models.Competence.objects.filter(competence_parent=competence).first()
+
+            parents_parent = models.Competence.objects.filter(competence_parent=parent)
+
             subject_object.competences.add(competence)
+            subject_object.competences.add(parent)
+            for parent_parent in parents_parent:
+                subject_object.competences.add(parent_parent)
             subject_object.save()
-            subject_object.competences.add(competence.parent)
-            subject_object.save()
-            subject_object.competences.add(competence.parent.parent)
-            subject_object.save()
+
             return redirect('subjects_assign_competence_list', pk=subject_pk)
         else:
             return redirect('/')
@@ -2052,22 +2410,22 @@ class SubjectUnassignCompetenceView(generic.TemplateView):
             competence = models.Competence.objects.get(pk=competence_pk)
             subject_pk = self.kwargs.get('id')
             subject_object = models.Subject.objects.get(pk=subject_pk)
-            parent = competence.parent
-            grandparent = competence.parent.parent
 
-            level2_list = models.Competence.objects.filter(parent = grandparent, competences = subject_object)
-            count_level2 = level2_list.count()
+            parent = models.Competence.objects.filter(competence_parent=competence).first()
 
-            level1_list = models.Competence.objects.filter(parent = parent, competences = subject_object)
-            count_level1 = level1_list.count()
+            sons = models.Competence.objects.filter(parent = parent, competences = subject_object)
 
-            if count_level1 == 1:
+            if sons.count() == 1:
+                parents_parent = models.Competence.objects.filter(competence_parent=parent)
+                for p in parents_parent:
+                    parents_count = models.Competence.objects.filter(parent = p, competences = subject_object).count()
+                    if parents_count == 1:
+                        subject_object.competences.remove(p)
+
                 subject_object.competences.remove(parent)
 
-            if count_level1 == 1 and count_level2 == 1:
-                subject_object.competences.remove(grandparent)
-            
             subject_object.competences.remove(competence)
+            
             subject_object.save()
 
             return redirect('subjects_assign_competence_list', pk=subject_pk)
@@ -2267,3 +2625,79 @@ class UserPasswordUpdateView(PasswordChangeView):
     model = User
     form_class = forms.UserPasswordUpdateForm
     success_url = reverse_lazy('home')
+
+
+# Ajax
+@csrf_exempt
+def saveActivityMark(request):
+    id = request.POST.get('id', '')
+    value = request.POST.get('value', '')
+    user_id = request.POST.get('user', '')
+    activity_mark = models.Activity_mark.objects.get(pk=id)
+    user = User.objects.get(pk=user_id)
+
+    if activity_mark.activity.set_activity.teacher.user == user:
+        if not value or float(value) < 0.00 or float(value) > 10.00:
+            return JsonResponse({"fail": "Error"}, status=400)
+    else:
+        return JsonResponse({"Error": "Not Permit"}, status=403)
+
+    services.MarkService().mark_activity_mark(mark=value, activity_mark=activity_mark)
+
+    return JsonResponse({"success": "Updated"})
+
+@csrf_exempt
+def saveCompetenceMark(request):
+    id = request.POST.get('id', '')
+    value = request.POST.get('value', '')
+    user_id = request.POST.get('user', '')
+    competence_mark = models.Competence_mark.objects.get(pk=id)
+    user = User.objects.get(pk=user_id)
+
+    if competence_mark.exercise.activity.set_activity.teacher.user == user:
+        if not value or float(value) < 0.00 or float(value) > 10.00:
+            return JsonResponse({"fail": "Error"}, status=400)
+    else:
+        return JsonResponse({"Error": "Not Permit"}, status=403)
+
+    services.MarkService().mark_competence_mark(mark=value, competence_mark=competence_mark)
+
+    return JsonResponse({"success": "Updated"})
+
+@csrf_exempt
+def saveEvaluationMark(request):
+    id = request.POST.get('id', '')
+    value = request.POST.get('value', '')
+    user_id = request.POST.get('user', '')
+    set_id = request.POST.get('set_id', '')
+    evaluation_mark = models.Evaluation_mark.objects.get(pk=id)
+    user = User.objects.get(pk=user_id)
+    set_object = models.Set.objects.get(pk=set_id)
+
+    if set_object.teacher.user == user:
+        if not value or float(value) < 0.00 or float(value) > 10.00:
+            return JsonResponse({"fail": "Error"}, status=400)
+    else:
+        return JsonResponse({"Error": "Not Permit"}, status=403)
+
+    services.MarkService().mark_evaluation_mark(mark=value, set_object = set_object, evaluation_mark=evaluation_mark)
+
+    return JsonResponse({"success": "Updated"})
+
+@csrf_exempt
+def saveExerciseMark(request):
+    id = request.POST.get('id', '')
+    value = request.POST.get('value', '')
+    user_id = request.POST.get('user', '')
+    exercise_mark = models.Exercise_mark.objects.get(pk=id)
+    user = User.objects.get(pk=user_id)
+
+    if exercise_mark.exercise.activity.set_activity.teacher.user == user:
+        if not value or float(value) < 0.00 or float(value) > 10.00:
+            return JsonResponse({"fail": "Error"}, status=400)
+    else:
+        return JsonResponse({"Error": "Not Permit"}, status=403)
+
+    services.MarkService().mark_exercise_mark(mark=value, exercise_mark=exercise_mark)
+
+    return JsonResponse({"success": "Updated"})

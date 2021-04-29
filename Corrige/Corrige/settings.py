@@ -45,9 +45,9 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -116,12 +116,17 @@ AUTHENTICATION_BACKENDS = (
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
+_ = lambda s: s
+
 LANGUAGES = (
     ('en', _('English')),
     ('es', _('Spanish')),
 )
 
-LANGUAGE_CODE = 'es'
+if get_language() == 'es':
+    LANGUAGE_CODE = 'es'
+else:
+    LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
 
