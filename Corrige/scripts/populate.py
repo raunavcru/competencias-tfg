@@ -235,7 +235,6 @@ def seed_competences():
                 'code': 'CC1',
                 'name': 'Comunicación lingüística',
                 'description': '3º ESO',
-                'weight': 1,
                 'level': 3,
             }
     }
@@ -250,7 +249,6 @@ def seed_competences():
                 'code': 'CC2',
                 'name': 'Competencia matemática y competencias básicas en ciencia y tecnología',
                 'description': '3º ESO',
-                'weight': 1,
                 'level': 3,
             }
     }
@@ -265,7 +263,6 @@ def seed_competences():
                 'code': 'CC3',
                 'name': 'Competencia digital',
                 'description': '3º ESO',
-                'weight': 1,
                 'level': 3,
             }
     }
@@ -280,7 +277,6 @@ def seed_competences():
                 'code': 'CC4',
                 'name': 'Aprender a aprender',
                 'description': '3º ESO',
-                'weight': 1,
                 'level': 3,
             }
     }
@@ -295,7 +291,6 @@ def seed_competences():
                 'code': 'CC5',
                 'name': 'Competencias sociales y cívicas',
                 'description': '3º ESO',
-                'weight': 1,
                 'level': 3,
             }
     }
@@ -310,7 +305,6 @@ def seed_competences():
                 'code': 'CC6',
                 'name': 'Sentido de la iniciativa y espíritu emprendedor',
                 'description': '3º ESO',
-                'weight': 1,
                 'level': 3,
             }
     }
@@ -325,7 +319,6 @@ def seed_competences():
                 'code': 'CC7',
                 'name': 'Conciencia y expresiones culturales',
                 'description': '3º ESO',
-                'weight': 1,
                 'level': 3,
             }
     }
@@ -341,7 +334,6 @@ def seed_competences():
                 'code': 'CC1',
                 'name': 'Comunicación lingüística',
                 'description': '4º ESO',
-                'weight': 1,
                 'level': 3,
             }
     }
@@ -356,7 +348,6 @@ def seed_competences():
                 'code': 'CC2',
                 'name': 'Competencia matemática y competencias básicas en ciencia y tecnología',
                 'description': '4º ESO',
-                'weight': 1,
                 'level': 3,
             }
     }
@@ -371,7 +362,6 @@ def seed_competences():
                 'code': 'CC3',
                 'name': 'Competencia digital',
                 'description': '4º ESO',
-                'weight': 1,
                 'level': 3,
             }
     }
@@ -386,7 +376,6 @@ def seed_competences():
                 'code': 'CC4',
                 'name': 'Aprender a aprender',
                 'description': '4º ESO',
-                'weight': 1,
                 'level': 3,
             }
     }
@@ -401,7 +390,6 @@ def seed_competences():
                 'code': 'CC5',
                 'name': 'Competencias sociales y cívicas',
                 'description': '4º ESO',
-                'weight': 1,
                 'level': 3,
             }
     }
@@ -416,7 +404,6 @@ def seed_competences():
                 'code': 'CC6',
                 'name': 'Sentido de la iniciativa y espíritu emprendedor',
                 'description': '4º ESO',
-                'weight': 1,
                 'level': 3,
             }
     }
@@ -431,7 +418,6 @@ def seed_competences():
                 'code': 'CC7',
                 'name': 'Conciencia y expresiones culturales',
                 'description': '4º ESO',
-                'weight': 1,
                 'level': 3,
             }
     }
@@ -449,6 +435,7 @@ def seed_competences():
                 'name': 'Reconocer e identificar las características del método científico.',
                 'description': 'FQ 3º ESO',
                 'weight': 0.15,
+                'subject_weight': 0.15,
                 'level': 2,
                 'parent': [competence_3ESO_CC2_pk],
         }
@@ -495,6 +482,7 @@ def seed_competences():
                 'name': 'Valorar la investigación científica y su impacto en la industria y en el desarrollo de la sociedad.',
                 'description': 'FQ 3º ESO',
                 'weight': 0.15,
+                'subject_weight': 0.15,
                 'level': 2,
                 'parent': [competence_3ESO_CC1_pk, competence_3ESO_CC5_pk],
         }
@@ -526,6 +514,7 @@ def seed_competences():
                 'name': 'Conocer los procedimientos científicos para determinar magnitudes.',
                 'description': 'FQ 3º ESO',
                 'weight': 0.15,
+                'subject_weight': 0.15,
                 'level': 2,
                 'parent': [competence_3ESO_CC2_pk],
         }
@@ -557,6 +546,7 @@ def seed_competences():
                 'name': 'Reconocer los materiales, e instrumentos básicos presentes en los laboratorios de Física y Química; conocer y respetar las normas de seguridad y de eliminación de residuos para la protección del medio ambiente.',
                 'description': 'FQ 3º ESO',
                 'weight': 0.15,
+                'subject_weight': 0.15,
                 'level': 2,
                 'parent': [competence_3ESO_CC2_pk],
         }
@@ -603,6 +593,7 @@ def seed_competences():
                 'name': 'Interpretar la información sobre temas científicos de carácter divulgativo que aparece en publicaciones y medios de comunicación.',
                 'description': 'FQ 3º ESO',
                 'weight': 0.15,
+                'subject_weight': 0.15,
                 'level': 2,
                 'parent': [competence_3ESO_CC1_pk, competence_3ESO_CC5_pk],
         }
@@ -650,6 +641,7 @@ def seed_competences():
                 'name': 'Desarrollar y defender pequeños trabajos de investigación en los que se ponga en práctica la aplicación del método científico y la utilización de las TIC.',
                 'description': 'FQ 3º ESO',
                 'weight': 0.15,
+                'subject_weight': 0.15,
                 'level': 2,
                 'parent': [competence_3ESO_CC2_pk],
         }
@@ -698,6 +690,7 @@ def seed_competences():
                 'name': 'Reconocer que la investigación en ciencia es una labor colectiva e interdisciplinar en constante evolución e influida por el contexto económico y político.',
                 'description': 'FQ 4º ESO',
                 'weight': 0.15,
+                'subject_weight': 0.15,
                 'level': 2,
                 'parent': [competence_4ESO_CC4_pk, competence_4ESO_CC5_pk],
         }
@@ -714,6 +707,7 @@ def seed_competences():
                 'name': 'Analizar el proceso que debe seguir una hipótesis desde que se formula hasta que es aprobada por la comunidad científica.',
                 'description': 'FQ 4º ESO',
                 'weight': 0.15,
+                'subject_weight': 0.15,
                 'level': 2,
                 'parent': [competence_4ESO_CC2_pk, competence_4ESO_CC4_pk, competence_4ESO_CC5_pk],
         }
@@ -730,6 +724,7 @@ def seed_competences():
                 'name': 'Comprobar la necesidad de usar vectores para la definición de determinadas magnitudes.',
                 'description': 'FQ 4º ESO',
                 'weight': 0.15,
+                'subject_weight': 0.15,
                 'level': 2,
                 'parent': [competence_4ESO_CC2_pk],
         }
@@ -746,6 +741,7 @@ def seed_competences():
                 'name': 'Relacionar las magnitudes fundamentales con las derivadas a través de ecuaciones de magnitudes.',
                 'description': 'FQ 4º ESO',
                 'weight': 0.15,
+                'subject_weight': 0.15,
                 'level': 2,
                 'parent': [competence_4ESO_CC2_pk],
         }
@@ -762,6 +758,7 @@ def seed_competences():
                 'name': 'Comprender que no es posible realizar medidas sin cometer errores y distinguir entre error absoluto y relativo.',
                 'description': 'FQ 4º ESO',
                 'weight': 0.15,
+                'subject_weight': 0.15,
                 'level': 2,
                 'parent': [competence_4ESO_CC2_pk, competence_4ESO_CC4_pk],
         }
@@ -778,6 +775,7 @@ def seed_competences():
                 'name': 'Expresar el valor de una medida usando el redondeo, el número de cifras significativas correctas y las unidades adecuadas.',
                 'description': 'FQ 4º ESO',
                 'weight': 0.15,
+                'subject_weight': 0.15,
                 'level': 2,
                 'parent': [competence_4ESO_CC2_pk, competence_4ESO_CC4_pk],
         }
@@ -794,6 +792,7 @@ def seed_competences():
                 'name': 'Realizar e interpretar representaciones gráficas de procesos físicos o químicos a partir de tablas de datos y de las leyes o principios involucrados.',
                 'description': 'FQ 4º ESO',
                 'weight': 0.15,
+                'subject_weight': 0.15,
                 'level': 2,
                 'parent': [competence_4ESO_CC2_pk, competence_4ESO_CC4_pk],
         }
@@ -810,6 +809,7 @@ def seed_competences():
                 'name': 'Elaborar y defender un proyecto de investigación, aplicando las TIC.',
                 'description': 'FQ 4º ESO',
                 'weight': 0.15,
+                'subject_weight': 0.15,
                 'level': 2,
                 'parent': [competence_4ESO_CC1_pk, competence_4ESO_CC3_pk, competence_4ESO_CC4_pk, competence_4ESO_CC6_pk],
         }
@@ -891,6 +891,7 @@ def seed_evaluations():
                 'end_date': '2021-06-19',
                 'is_final': True,
                 'period': 'Final',
+                'weight': 1,
                 'subject': 1,
             }
     }
@@ -906,6 +907,7 @@ def seed_evaluations():
                 'end_date': '2020-12-22',
                 'is_final': False,
                 'period': '1st',
+                'weight': 1,
                 'parent': evaluation_parent,
                 'subject': 1,
             }
@@ -921,6 +923,7 @@ def seed_evaluations():
                 'end_date': '2021-03-26',
                 'is_final': False,
                 'period': '2nd',
+                'weight': 1,
                 'parent': evaluation_parent,
                 'subject': 1,
             }
@@ -936,6 +939,7 @@ def seed_evaluations():
                 'end_date': '2021-06-19',
                 'is_final': False,
                 'period': '3tr',
+                'weight': 1,
                 'parent': evaluation_parent,
                 'subject': 1,
             }
@@ -953,6 +957,7 @@ def seed_evaluations():
                 'end_date': '2021-06-19',
                 'is_final': True,
                 'period': 'Final',
+                'weight': 1,
                 'subject': 2,
             }
     }
@@ -968,6 +973,7 @@ def seed_evaluations():
                 'end_date': '2020-12-22',
                 'is_final': False,
                 'period': '1st',
+                'weight': 1,
                 'parent': evaluation_parent,
                 'subject': 2,
             }
@@ -983,6 +989,7 @@ def seed_evaluations():
                 'end_date': '2021-03-26',
                 'is_final': False,
                 'period': '2nd',
+                'weight': 1,
                 'parent': evaluation_parent,
                 'subject': 2,
             }
@@ -998,6 +1005,7 @@ def seed_evaluations():
                 'end_date': '2021-06-19',
                 'is_final': False,
                 'period': '3tr',
+                'weight': 1,
                 'parent': evaluation_parent,
                 'subject': 2,
             }
@@ -1015,6 +1023,7 @@ def seed_evaluations():
                 'end_date': '2021-06-19',
                 'is_final': True,
                 'period': 'Final',
+                'weight': 1,
                 'subject': 3,
             }
     }
@@ -1030,6 +1039,7 @@ def seed_evaluations():
                 'end_date': '2020-12-22',
                 'is_final': False,
                 'period': '1st',
+                'weight': 1,
                 'parent': evaluation_parent,
                 'subject': 3,
             }
@@ -1045,6 +1055,7 @@ def seed_evaluations():
                 'end_date': '2021-03-26',
                 'is_final': False,
                 'period': '2nd',
+                'weight': 1,
                 'parent': evaluation_parent,
                 'subject': 3,
             }
@@ -1060,6 +1071,7 @@ def seed_evaluations():
                 'end_date': '2021-06-19',
                 'is_final': False,
                 'period': '3tr',
+                'weight': 1,
                 'parent': evaluation_parent,
                 'subject': 3,
             }
@@ -1077,6 +1089,7 @@ def seed_evaluations():
                 'end_date': '2021-06-19',
                 'is_final': True,
                 'period': 'Final',
+                'weight': 1,
                 'subject': 4,
             }
     }
@@ -1092,6 +1105,7 @@ def seed_evaluations():
                 'end_date': '2020-12-22',
                 'is_final': False,
                 'period': '1st',
+                'weight': 1,
                 'parent': evaluation_parent,
                 'subject': 4,
             }
@@ -1107,6 +1121,7 @@ def seed_evaluations():
                 'end_date': '2021-03-26',
                 'is_final': False,
                 'period': '2nd',
+                'weight': 1,
                 'parent': evaluation_parent,
                 'subject': 4,
             }
@@ -1122,6 +1137,7 @@ def seed_evaluations():
                 'end_date': '2021-06-19',
                 'is_final': False,
                 'period': '3tr',
+                'weight': 1,
                 'parent': evaluation_parent,
                 'subject': 4,
             }
@@ -1141,6 +1157,8 @@ def seed_sets():
                 'level': '3º',
                 'grade': 'SecondaryEducation',
                 'line': 'A',
+                'evaluation_type_final': 'BY_EVALUATION_RECOVERY',
+                'evaluation_type_partial': 'BY_RECOVERY_ACTIVITIES',
                 'teacher': 2,
                 'subject': 1,
                 'evaluation': 1,
@@ -1160,6 +1178,8 @@ def seed_sets():
                 'level': '3º',
                 'grade': 'SecondaryEducation',
                 'line': 'A',
+                'evaluation_type_final': 'BY_EVALUATION_RECOVERY',
+                'evaluation_type_partial': 'BY_RECOVERY_ACTIVITIES',
                 'teacher': 2,
                 'subject': 3,
                 'evaluation': 9,
@@ -1179,6 +1199,8 @@ def seed_sets():
                 'level': '4º',
                 'grade': 'SecondaryEducation',
                 'line': 'A',
+                'evaluation_type_final': 'BY_EVALUATION_RECOVERY',
+                'evaluation_type_partial': 'BY_RECOVERY_ACTIVITIES',
                 'teacher': 2,
                 'subject': 2,
                 'evaluation': 5,
@@ -1198,6 +1220,8 @@ def seed_sets():
                 'level': '4º',
                 'grade': 'SecondaryEducation',
                 'line': 'A',
+                'evaluation_type_final': 'BY_EVALUATION_RECOVERY',
+                'evaluation_type_partial': 'BY_RECOVERY_ACTIVITIES',
                 'teacher': 2,
                 'subject': 4,
                 'evaluation': 13,

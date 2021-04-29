@@ -1,0 +1,36 @@
+== Fuente 
+La opción a la hora de seleccionar una fuente ha sido seleccionado con el fin de evitarnos problemas jurídicos, así como, poderla usar en aplicaciones de fines lucatrivos. 
+
+=== Elección
+
+Nos decantamos por la Fuente Ubuntu, la cual obtuvimos del siguiente link:
+
+https://design.ubuntu.com/font/
+
+La licencia de esta fuente es copyleft permite que las tipografías sean «usadas, estudiadas, modificadas y redistribuidas libremente» cumpliendo los términos estipulados en ella.
+
+La documentación de la licencia se encuentra en la carpeta fonts, cuyo nombre es "LICENSE.txt".
+
+== Imágenes
+
+La opcioón a la hora de seleccionar las imágenes para la web fue dificil, ya que buscábamos un banco de imágenes que nos permitiera el uso comercial pensando en un hipotética uso de la misma y sin derechos de autor.
+
+=== Elección
+
+Nos decantamos por la web https://unsplash.com/, la cual tiene un gran número de imágenes muy útiles, y una licencia que nos permitía lo nombrado anteriormente.
+
+Con respecto a la licencia, dice lo siguiente:
+
+_Unsplash photos are made to be used freely. Our license reflects that._
+
+* _All photos can be downloaded and used for free._
+* _Commercial and non-commercial purposes._
+* _No permission needed (though attribution is appreciated!)._
+
+_What is not permitted 👎_
+
+* _Photos cannot be sold without significant modification._
+* _Compiling photos from Unsplash to replicate a similar or competing service._
+
+Para más información puede consultar dicha licencia en el siguiente enlace:
+https://unsplash.com/license
