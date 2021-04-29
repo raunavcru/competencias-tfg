@@ -41,6 +41,6 @@ branches:
     - release/s4/0.4
 deploy:
   provider: heroku
-  api_key: 51faecc6-7a62-40b6-a299-de3609291f76
+  api_key: 2c155dbd-fa6c-4790-9c64-aa53abc314a2
   app: verumapp
   on: release/s4/0.4
