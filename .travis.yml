@@ -5,7 +5,7 @@ python:
 services:
   - postgresql
 env:
-  - DJANGO=3.1.4 DB=postgres
+  - DJANGO=3.1.6 DB=postgres
 global:
   - PGPORT=5432
 before_install:
