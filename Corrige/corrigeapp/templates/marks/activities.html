@@ -58,9 +58,13 @@
                     </tbody>
             {% endfor %}
         </table>
+    <div class="row">
+        <a onClick="location.href='{% url 'marks_activities_next' sk=set_object.pk id=evaluation_object.pk pk=student_object.pk %}'" class="waves-effect right waves-light btn" style="margin-top:55px; margin-bottom:15px;"><i style="width:10px;" class="material-icons right">keyboard_arrow_right</i>{% trans "Next Student" %}</a>
+        <a onClick="location.href='{% url 'marks_activities_previous' sk=set_object.pk id=evaluation_object.pk pk=student_object.pk %}'" class="waves-effect left waves-light btn" style="margin-top:55px; margin-bottom:15px;"><i style="width:10px;" class="material-icons left">keyboard_arrow_left</i>{% trans "Prior Student" %}</a>
+    </div> 
+
 <a onClick="location.href='{% url 'marks_evaluations_list' id=set_object.pk pk=student_object.pk %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
-<a onClick="location.href='{% url 'marks_activities_next' sk=set_object.pk id=evaluation_object.pk pk=student_object.pk %}'" class="waves-effect right waves-light btn" style="margin-top:55px; margin-bottom:15px; margin-left:15px;"><i class="material-icons left">keyboard_arrow_right</i>{% trans "Next Student" %}</a>
-<a onClick="location.href='{% url 'marks_activities_previous' sk=set_object.pk id=evaluation_object.pk pk=student_object.pk %}'" class="waves-effect right waves-light btn" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">keyboard_arrow_left</i>{% trans "Previous Student" %}</a>
+
 <script>
     $(document).ready(function(){
         $(document).on("click", ".editable", function(){

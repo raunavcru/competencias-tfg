@@ -1605,6 +1605,31 @@ class MarkCompetenceListView(generic.ListView):
         return context
 
 @method_decorator(login_required, name='dispatch')        
+class MarkCompetenceNextExerciseView(generic.ListView):
+    model = models.Competence_mark
+    template_name = 'marks/competences.html'
+
+    def get(self, request, *args, **kwargs):
+        exercise_pk = self.kwargs.get('id')
+        exercise_object = models.Exercise.objects.get(pk=exercise_pk)
+        set_object = exercise_object.activity.set_activity
+        student_pk = self.kwargs.get('pk')
+        student_object = models.Student.objects.get(pk=student_pk)
+        exist = models.Set.objects.filter(pk=set_object.pk, students=student_object).exists()
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object) and exist:
+
+            next_exercise = models.Exercise.objects.filter(activity__set_activity=set_object, pk__gt = exercise_pk).order_by('pk').first()
+            first_exercise = models.Exercise.objects.filter(activity__set_activity=set_object).order_by('pk').first()
+
+            if next_exercise:
+                return redirect('marks_competences_list', id=next_exercise.pk, pk=student_pk)
+            else: 
+                return redirect('marks_competences_list', id=first_exercise.pk, pk=student_pk)
+            
+        else:
+            return redirect('/')
+
+@method_decorator(login_required, name='dispatch')        
 class MarkCompetenceNextStudentView(generic.ListView):
     model = models.Competence_mark
     template_name = 'marks/competences.html'
@@ -1625,6 +1650,31 @@ class MarkCompetenceNextStudentView(generic.ListView):
                 return redirect('marks_competences_list', id=exercise_pk, pk=next_student.pk)
             else: 
                 return redirect('marks_competences_list', id=exercise_pk, pk=first_student.pk)
+            
+        else:
+            return redirect('/')
+
+@method_decorator(login_required, name='dispatch')        
+class MarkCompetencePreviousExerciseView(generic.ListView):
+    model = models.Competence_mark
+    template_name = 'marks/competences.html'
+
+    def get(self, request, *args, **kwargs):
+        exercise_pk = self.kwargs.get('id')
+        exercise_object = models.Exercise.objects.get(pk=exercise_pk)
+        set_object = exercise_object.activity.set_activity
+        student_pk = self.kwargs.get('pk')
+        student_object = models.Student.objects.get(pk=student_pk)
+        exist = models.Set.objects.filter(pk=set_object.pk, students=student_object).exists()
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object) and exist:
+
+            previous_exercise = models.Exercise.objects.filter(activity__set_activity=set_object, pk__lt = exercise_pk).order_by('-pk').first()
+            last_exercise = models.Exercise.objects.filter(activity__set_activity=set_object).order_by('-pk').first()
+
+            if previous_exercise:
+                return redirect('marks_competences_list', id=previous_exercise.pk, pk=student_pk)
+            else: 
+                return redirect('marks_competences_list', id=last_exercise.pk, pk=student_pk)
             
         else:
             return redirect('/')
