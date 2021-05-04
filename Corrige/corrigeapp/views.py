@@ -154,8 +154,10 @@ class ActivitiesListView(generic.ListView):
     
     def get_context_data(self, **kwargs):
         set_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_pk)
         context = super(ActivitiesListView, self).get_context_data(**kwargs)
         context['set_pk'] = set_pk
+        context['set_object'] = set_object
         context['no_copy_list'] = True
         return context
 
@@ -182,8 +184,10 @@ class ActivitiesListCopyView(generic.ListView):
     
     def get_context_data(self, **kwargs):
         set_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_pk)
         context = super(ActivitiesListCopyView, self).get_context_data(**kwargs)
         context['set_pk'] = set_pk
+        context['set_object'] = set_object
         return context
 
     def get_queryset(self):
@@ -843,10 +847,13 @@ class ExercisesListView(generic.ListView):
         type_url = self.kwargs.get('type')
         activity_pk = self.kwargs.get('pk')
         activity_object = models.Activity.objects.get(pk=activity_pk)
-        set_pk = activity_object.set_activity.pk
+        set_object = activity_object.set_activity
+        set_pk = set_object.pk
         context = super(ExercisesListView, self).get_context_data(**kwargs)
         context['activity_pk'] = activity_pk
+        context['activity_object'] = activity_object
         context['set_pk'] = set_pk
+        context['set_object'] = set_object
         context['type_url'] = type_url
         return context
 
@@ -1530,11 +1537,13 @@ class MarkCompetenceEvaluationList(generic.ListView):
 
     def get_context_data(self, **kwargs):
         set_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_pk)
         student_pk = self.kwargs.get('id')
         student_object = models.Student.objects.get(pk=student_pk)
         context = super(MarkCompetenceEvaluationList, self).get_context_data(**kwargs)
         context['student'] = student_object
         context['set_pk'] = set_pk
+        context['set_object'] = set_object
         return context
 
     def get_queryset(self):
@@ -1565,6 +1574,7 @@ class MarkCompetenceListView(generic.ListView):
     def get_context_data(self, **kwargs):
         exercise_pk = self.kwargs.get('id')
         exercise_object = models.Exercise.objects.get(pk=exercise_pk)
+        set_object = exercise_object.activity.set_activity
         activity_object = exercise_object.activity
         evaluation_object = activity_object.evaluation
         student_pk = self.kwargs.get('pk')
@@ -1579,6 +1589,7 @@ class MarkCompetenceListView(generic.ListView):
 
         context = super(MarkCompetenceListView, self).get_context_data(**kwargs)
         context['student_object'] = student_object
+        context['set_object'] = set_object
         context['exercise_pk'] = exercise_pk
         context['activity_object'] = activity_object
         context['c_mark_saved'] = c_mark_saved
@@ -1592,6 +1603,31 @@ class MarkCompetenceListView(generic.ListView):
             context['fail'] = "Mark must be between 0.00 and 10.00."
         
         return context
+
+@method_decorator(login_required, name='dispatch')        
+class MarkCompetenceNextExerciseView(generic.ListView):
+    model = models.Competence_mark
+    template_name = 'marks/competences.html'
+
+    def get(self, request, *args, **kwargs):
+        exercise_pk = self.kwargs.get('id')
+        exercise_object = models.Exercise.objects.get(pk=exercise_pk)
+        set_object = exercise_object.activity.set_activity
+        student_pk = self.kwargs.get('pk')
+        student_object = models.Student.objects.get(pk=student_pk)
+        exist = models.Set.objects.filter(pk=set_object.pk, students=student_object).exists()
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object) and exist:
+
+            next_exercise = models.Exercise.objects.filter(activity__set_activity=set_object, pk__gt = exercise_pk).order_by('pk').first()
+            first_exercise = models.Exercise.objects.filter(activity__set_activity=set_object).order_by('pk').first()
+
+            if next_exercise:
+                return redirect('marks_competences_list', id=next_exercise.pk, pk=student_pk)
+            else: 
+                return redirect('marks_competences_list', id=first_exercise.pk, pk=student_pk)
+            
+        else:
+            return redirect('/')
 
 @method_decorator(login_required, name='dispatch')        
 class MarkCompetenceNextStudentView(generic.ListView):
@@ -1614,6 +1650,31 @@ class MarkCompetenceNextStudentView(generic.ListView):
                 return redirect('marks_competences_list', id=exercise_pk, pk=next_student.pk)
             else: 
                 return redirect('marks_competences_list', id=exercise_pk, pk=first_student.pk)
+            
+        else:
+            return redirect('/')
+
+@method_decorator(login_required, name='dispatch')        
+class MarkCompetencePreviousExerciseView(generic.ListView):
+    model = models.Competence_mark
+    template_name = 'marks/competences.html'
+
+    def get(self, request, *args, **kwargs):
+        exercise_pk = self.kwargs.get('id')
+        exercise_object = models.Exercise.objects.get(pk=exercise_pk)
+        set_object = exercise_object.activity.set_activity
+        student_pk = self.kwargs.get('pk')
+        student_object = models.Student.objects.get(pk=student_pk)
+        exist = models.Set.objects.filter(pk=set_object.pk, students=student_object).exists()
+        if services.UserService().is_teacher(request.user) and services.SetService().is_owner(user=request.user, set_object=set_object) and exist:
+
+            previous_exercise = models.Exercise.objects.filter(activity__set_activity=set_object, pk__lt = exercise_pk).order_by('-pk').first()
+            last_exercise = models.Exercise.objects.filter(activity__set_activity=set_object).order_by('-pk').first()
+
+            if previous_exercise:
+                return redirect('marks_competences_list', id=previous_exercise.pk, pk=student_pk)
+            else: 
+                return redirect('marks_competences_list', id=last_exercise.pk, pk=student_pk)
             
         else:
             return redirect('/')
@@ -1951,6 +2012,7 @@ class MySetStudentListView(generic.ListView):
         set_object = models.Set.objects.get(pk=set_object_pk)
         object_list = set_object.students.all().order_by('surname')
         context = super(MySetStudentListView, self).get_context_data(object_list=object_list, **kwargs)
+        context['set_object'] = set_object
         context['set_object_pk'] = set_object_pk
 
         return context
@@ -1996,6 +2058,7 @@ class ReportSetCompetenceEvaluationView(generic.ListView):
         student_th = models.Student.objects.filter(student = set_object).order_by('surname').first()
         context = super(ReportSetCompetenceEvaluationView, self).get_context_data(**kwargs)
         context['student_th'] = student_th
+        context['set_object'] = set_object
 
         return context
 

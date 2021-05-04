@@ -4,8 +4,9 @@
 {% load report %}
 {% block content %} 
 <div class="container">
-    <h4 class="centered">{% trans "Report of Evaluation" %}</h4>   
-        <table class="highlight">
+    <h4 class="centered">{% trans "Report of Evaluation" %}</h4>
+    <h6 class="centered">{% trans "Set" %}: {{set_object.name}}</h6>
+        <table style="margin-top:20px;" class="highlight">
             <caption></caption>
                 <thead>
                     <tr>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-21 13:11+0200\n"
+"POT-Creation-Date: 2021-05-04 12:17+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\Corrige\local_settings.py:120 .\Corrige\settings.py:120
+#: .\Corrige\local_settings.py:122 .\Corrige\settings.py:122
 msgid "English"
 msgstr ""
 
-#: .\Corrige\local_settings.py:121 .\Corrige\settings.py:121
+#: .\Corrige\local_settings.py:123 .\Corrige\settings.py:123
 msgid "Spanish"
 msgstr ""
 
@@ -35,97 +35,98 @@ msgid "Create Activity"
 msgstr "Crear actividad"
 
 #: .\corrigeapp\templates\activities\create.html:34
-#: .\corrigeapp\templates\activities\list.html:20
-#: .\corrigeapp\templates\marks\activities.html:12
+#: .\corrigeapp\templates\activities\list.html:21
+#: .\corrigeapp\templates\marks\activities.html:13
 msgid "Title"
 msgstr "Título"
 
 #: .\corrigeapp\templates\activities\create.html:47
-#: .\corrigeapp\templates\activities\list.html:21
-#: .\corrigeapp\templates\marks\activities.html:13
+#: .\corrigeapp\templates\activities\list.html:22
+#: .\corrigeapp\templates\marks\activities.html:14
 msgid "Date"
 msgstr "Fecha"
 
 #: .\corrigeapp\templates\activities\create.html:60
-#: .\corrigeapp\templates\activities\list.html:23
-#: .\corrigeapp\templates\competences\create.html:74
-#: .\corrigeapp\templates\competences\create.html:96
-#: .\corrigeapp\templates\evaluations\list_blocks.html:14
-#: .\corrigeapp\templates\evaluations\update.html:93
+#: .\corrigeapp\templates\activities\list.html:24
+#: .\corrigeapp\templates\competences\create.html:72
+#: .\corrigeapp\templates\competences\create.html:94
+#: .\corrigeapp\templates\evaluations\list_blocks.html:15
+#: .\corrigeapp\templates\evaluations\update.html:106
 #: .\corrigeapp\templates\exercise_competence\create.html:47
 #: .\corrigeapp\templates\exercises\create.html:36
 #: .\corrigeapp\templates\exercises\create.html:98
-#: .\corrigeapp\templates\exercises\list.html:14
-#: .\corrigeapp\templates\marks\activities.html:14
-#: .\corrigeapp\templates\marks\exercises.html:11
+#: .\corrigeapp\templates\exercises\list.html:15
+#: .\corrigeapp\templates\marks\activities.html:15
+#: .\corrigeapp\templates\marks\exercises.html:12
 #: .\corrigeapp\templates\subjects\competence_list.html:14
 msgid "Weight"
 msgstr "Peso"
 
 #: .\corrigeapp\templates\activities\create.html:65
-#: .\corrigeapp\templates\activities\list.html:29
-#: .\corrigeapp\templates\marks\activities.html:16
+#: .\corrigeapp\templates\activities\list.html:30
+#: .\corrigeapp\templates\marks\activities.html:17
 msgid "Recovery"
 msgstr "Recuperación"
 
 #: .\corrigeapp\templates\activities\create.html:76
-#: .\corrigeapp\templates\activities\list.html:24
-#: .\corrigeapp\templates\activities\list.html:26
-#: .\corrigeapp\templates\marks\activities.html:15
-#: .\corrigeapp\templates\sets\create.html:85
+#: .\corrigeapp\templates\activities\list.html:25
+#: .\corrigeapp\templates\activities\list.html:27
+#: .\corrigeapp\templates\marks\activities.html:7
+#: .\corrigeapp\templates\marks\activities.html:16
+#: .\corrigeapp\templates\sets\create.html:87
 msgid "Evaluation"
 msgstr "Evaluación"
 
 #: .\corrigeapp\templates\activities\create.html:81
-#: .\corrigeapp\templates\activities\list.html:95
-#: .\corrigeapp\templates\activities\list.html:97
-#: .\corrigeapp\templates\administrators\create.html:80
+#: .\corrigeapp\templates\activities\list.html:96
+#: .\corrigeapp\templates\activities\list.html:98
+#: .\corrigeapp\templates\administrators\create.html:86
 #: .\corrigeapp\templates\administrators\list.html:41
-#: .\corrigeapp\templates\competence_evaluations\list.html:33
+#: .\corrigeapp\templates\competence_evaluations\list.html:34
+#: .\corrigeapp\templates\competences\create.html:105
 #: .\corrigeapp\templates\competences\create.html:107
 #: .\corrigeapp\templates\competences\create.html:109
 #: .\corrigeapp\templates\competences\create.html:111
 #: .\corrigeapp\templates\competences\create.html:113
 #: .\corrigeapp\templates\competences\create.html:115
 #: .\corrigeapp\templates\competences\create.html:117
-#: .\corrigeapp\templates\competences\create.html:119
 #: .\corrigeapp\templates\competences\list.html:62
 #: .\corrigeapp\templates\competences\list.html:64
 #: .\corrigeapp\templates\competences\list.html:66
 #: .\corrigeapp\templates\competences\list_assign_competence.html:32
 #: .\corrigeapp\templates\evaluations\list.html:53
 #: .\corrigeapp\templates\evaluations\list.html:55
-#: .\corrigeapp\templates\evaluations\list_blocks.html:45
-#: .\corrigeapp\templates\evaluations\update.html:248
-#: .\corrigeapp\templates\evaluations\update.html:250
-#: .\corrigeapp\templates\evaluations\update.html:252
-#: .\corrigeapp\templates\evaluations\update.html:254
+#: .\corrigeapp\templates\evaluations\list_blocks.html:46
+#: .\corrigeapp\templates\evaluations\update.html:300
+#: .\corrigeapp\templates\evaluations\update.html:302
+#: .\corrigeapp\templates\evaluations\update.html:304
+#: .\corrigeapp\templates\evaluations\update.html:306
 #: .\corrigeapp\templates\exercise_competence\create.html:56
 #: .\corrigeapp\templates\exercises\create.html:58
-#: .\corrigeapp\templates\exercises\list.html:37
-#: .\corrigeapp\templates\exercises\list.html:39
-#: .\corrigeapp\templates\marks\activities.html:58
-#: .\corrigeapp\templates\marks\competences.html:40
-#: .\corrigeapp\templates\marks\evaluations.html:72
-#: .\corrigeapp\templates\marks\exercises.html:44
+#: .\corrigeapp\templates\exercises\list.html:38
+#: .\corrigeapp\templates\exercises\list.html:40
+#: .\corrigeapp\templates\marks\activities.html:68
+#: .\corrigeapp\templates\marks\competences.html:51
+#: .\corrigeapp\templates\marks\evaluations.html:84
+#: .\corrigeapp\templates\marks\exercises.html:53
 #: .\corrigeapp\templates\marks\mark.html:58
 #: .\corrigeapp\templates\marks\mark.html:60
 #: .\corrigeapp\templates\marks\mark.html:62
 #: .\corrigeapp\templates\marks\mark.html:64
 #: .\corrigeapp\templates\profile\password.html:58
-#: .\corrigeapp\templates\profile\update.html:87
+#: .\corrigeapp\templates\profile\update.html:83
 #: .\corrigeapp\templates\registration\login.html:43
-#: .\corrigeapp\templates\reports\set_competence_evaluation.html:47
-#: .\corrigeapp\templates\reports\set_evaluations.html:47
-#: .\corrigeapp\templates\reports\student.html:78
-#: .\corrigeapp\templates\sets\create.html:90
+#: .\corrigeapp\templates\reports\set_competence_evaluation.html:48
+#: .\corrigeapp\templates\reports\set_evaluations.html:48
+#: .\corrigeapp\templates\reports\student.html:86
+#: .\corrigeapp\templates\sets\create.html:92
 #: .\corrigeapp\templates\sets\list.html:98
 #: .\corrigeapp\templates\sets\update_evaluation_type.html:41
-#: .\corrigeapp\templates\students\create.html:78
-#: .\corrigeapp\templates\students\list.html:49
-#: .\corrigeapp\templates\students\list.html:51
+#: .\corrigeapp\templates\students\create.html:76
+#: .\corrigeapp\templates\students\list.html:52
+#: .\corrigeapp\templates\students\list.html:54
 #: .\corrigeapp\templates\students\list_assign_student.html:32
-#: .\corrigeapp\templates\subjects\competence_list.html:30
+#: .\corrigeapp\templates\subjects\competence_list.html:36
 #: .\corrigeapp\templates\subjects\create.html:75
 #: .\corrigeapp\templates\subjects\list.html:65
 #: .\corrigeapp\templates\subjects\list_assign_subject.html:34
@@ -135,26 +136,26 @@ msgid "Back"
 msgstr "Volver"
 
 #: .\corrigeapp\templates\activities\create.html:83
-#: .\corrigeapp\templates\activities\list.html:32
-#: .\corrigeapp\templates\activities\list.html:77
-#: .\corrigeapp\templates\administrators\create.html:87
-#: .\corrigeapp\templates\competences\create.html:128
+#: .\corrigeapp\templates\activities\list.html:33
+#: .\corrigeapp\templates\activities\list.html:78
+#: .\corrigeapp\templates\administrators\create.html:93
+#: .\corrigeapp\templates\competences\create.html:126
 #: .\corrigeapp\templates\competences\list.html:27
 #: .\corrigeapp\templates\evaluations\list.html:26
-#: .\corrigeapp\templates\evaluations\list_blocks.html:17
-#: .\corrigeapp\templates\evaluations\update.html:257
+#: .\corrigeapp\templates\evaluations\list_blocks.html:18
+#: .\corrigeapp\templates\evaluations\update.html:309
 #: .\corrigeapp\templates\exercise_competence\create.html:58
 #: .\corrigeapp\templates\exercises\create.html:60
 #: .\corrigeapp\templates\exercises\create.html:99
-#: .\corrigeapp\templates\exercises\list.html:17
+#: .\corrigeapp\templates\exercises\list.html:18
 #: .\corrigeapp\templates\profile\password.html:60
-#: .\corrigeapp\templates\profile\update.html:89
-#: .\corrigeapp\templates\sets\create.html:98
+#: .\corrigeapp\templates\profile\update.html:85
+#: .\corrigeapp\templates\sets\create.html:100
 #: .\corrigeapp\templates\sets\list.html:20
 #: .\corrigeapp\templates\sets\list.html:59
 #: .\corrigeapp\templates\sets\update_evaluation_type.html:43
-#: .\corrigeapp\templates\students\create.html:85
-#: .\corrigeapp\templates\students\list.html:19
+#: .\corrigeapp\templates\students\create.html:83
+#: .\corrigeapp\templates\students\list.html:22
 #: .\corrigeapp\templates\subjects\create.html:82
 #: .\corrigeapp\templates\subjects\list.html:20
 #: .\corrigeapp\templates\subjects\list.html:47
@@ -165,15 +166,15 @@ msgid "Edit"
 msgstr "Editar"
 
 #: .\corrigeapp\templates\activities\create.html:87
-#: .\corrigeapp\templates\administrators\create.html:82
-#: .\corrigeapp\templates\competences\create.html:123
+#: .\corrigeapp\templates\administrators\create.html:88
+#: .\corrigeapp\templates\competences\create.html:121
 #: .\corrigeapp\templates\evaluations\list.html:8
 #: .\corrigeapp\templates\evaluations\list.html:10
-#: .\corrigeapp\templates\evaluations\list_blocks.html:7
-#: .\corrigeapp\templates\evaluations\update.html:262
+#: .\corrigeapp\templates\evaluations\list_blocks.html:8
+#: .\corrigeapp\templates\evaluations\update.html:314
 #: .\corrigeapp\templates\exercises\create.html:64
-#: .\corrigeapp\templates\sets\create.html:93
-#: .\corrigeapp\templates\students\create.html:80
+#: .\corrigeapp\templates\sets\create.html:95
+#: .\corrigeapp\templates\students\create.html:78
 #: .\corrigeapp\templates\subjects\create.html:77
 #: .\corrigeapp\templates\teachers\create.html:84
 msgid "Create"
@@ -205,21 +206,21 @@ msgid "Cancel"
 msgstr "Cancelar"
 
 #: .\corrigeapp\templates\activities\delete.html:19
-#: .\corrigeapp\templates\activities\list.html:33
-#: .\corrigeapp\templates\activities\list.html:79
+#: .\corrigeapp\templates\activities\list.html:34
+#: .\corrigeapp\templates\activities\list.html:80
 #: .\corrigeapp\templates\administrators\confirm_delete.html:18
 #: .\corrigeapp\templates\competences\delete.html:32
 #: .\corrigeapp\templates\competences\list.html:28
 #: .\corrigeapp\templates\evaluations\delete.html:40
 #: .\corrigeapp\templates\evaluations\list.html:27
-#: .\corrigeapp\templates\evaluations\list_blocks.html:18
+#: .\corrigeapp\templates\evaluations\list_blocks.html:19
 #: .\corrigeapp\templates\exercises\delete.html:19
-#: .\corrigeapp\templates\exercises\list.html:18
+#: .\corrigeapp\templates\exercises\list.html:19
 #: .\corrigeapp\templates\sets\delete.html:19
 #: .\corrigeapp\templates\sets\list.html:21
 #: .\corrigeapp\templates\sets\list.html:61
 #: .\corrigeapp\templates\students\delete.html:21
-#: .\corrigeapp\templates\students\list.html:20
+#: .\corrigeapp\templates\students\list.html:23
 #: .\corrigeapp\templates\subjects\delete.html:19
 #: .\corrigeapp\templates\subjects\list.html:21
 #: .\corrigeapp\templates\subjects\list.html:49
@@ -238,36 +239,51 @@ msgstr "Lista de actividades"
 msgid "List of all activities"
 msgstr "Lista de todas las actividades"
 
-#: .\corrigeapp\templates\activities\list.html:12
+#: .\corrigeapp\templates\activities\list.html:11
+#: .\corrigeapp\templates\competence_evaluations\list.html:8
+#: .\corrigeapp\templates\evaluations\list_blocks.html:7
+#: .\corrigeapp\templates\exercises\list.html:7
+#: .\corrigeapp\templates\marks\activities.html:7
+#: .\corrigeapp\templates\marks\competences.html:7
+#: .\corrigeapp\templates\marks\evaluations.html:7
+#: .\corrigeapp\templates\marks\exercises.html:7
+#: .\corrigeapp\templates\reports\set_competence_evaluation.html:8
+#: .\corrigeapp\templates\reports\set_evaluations.html:8
+#: .\corrigeapp\templates\reports\student.html:8
+#: .\corrigeapp\templates\students\list.html:8
+msgid "Set"
+msgstr "Grupo"
+
+#: .\corrigeapp\templates\activities\list.html:13
 msgid "Create activity"
 msgstr "Crear actividad"
 
-#: .\corrigeapp\templates\activities\list.html:13
+#: .\corrigeapp\templates\activities\list.html:14
 msgid "Copy activity"
 msgstr "Copiar actividad"
 
-#: .\corrigeapp\templates\activities\list.html:27
+#: .\corrigeapp\templates\activities\list.html:28
 #: .\corrigeapp\templates\evaluations\list.html:22
-#: .\corrigeapp\templates\evaluations\update.html:241
-#: .\corrigeapp\templates\sets\create.html:77
+#: .\corrigeapp\templates\evaluations\update.html:293
+#: .\corrigeapp\templates\sets\create.html:79
 msgid "Subject"
 msgstr "Asignatura"
 
-#: .\corrigeapp\templates\activities\list.html:30
-#: .\corrigeapp\templates\activities\list.html:75
-#: .\corrigeapp\templates\activities\list.html:82
+#: .\corrigeapp\templates\activities\list.html:31
+#: .\corrigeapp\templates\activities\list.html:76
+#: .\corrigeapp\templates\activities\list.html:83
 #: .\corrigeapp\templates\exercises\list.html:6
 #: .\corrigeapp\templates\marks\exercises.html:6
 msgid "List of exercises"
 msgstr "Lista de ejercicios"
 
-#: .\corrigeapp\templates\activities\list.html:35
-#: .\corrigeapp\templates\activities\list.html:84
+#: .\corrigeapp\templates\activities\list.html:36
+#: .\corrigeapp\templates\activities\list.html:85
 msgid "Copy"
 msgstr "Copiar"
 
-#: .\corrigeapp\templates\activities\list.html:37
-#: .\corrigeapp\templates\activities\list.html:72
+#: .\corrigeapp\templates\activities\list.html:38
+#: .\corrigeapp\templates\activities\list.html:73
 #: .\corrigeapp\templates\sets\list.html:30
 #: .\corrigeapp\templates\sets\list.html:56
 #: .\corrigeapp\templates\subjects\list.html:23
@@ -285,19 +301,19 @@ msgstr "Borrar Administrador"
 msgid "Are you sure about deleting the administrator "
 msgstr "¿Estás seguro de que quieres eliminar el grupo "
 
-#: .\corrigeapp\templates\administrators\create.html:10
+#: .\corrigeapp\templates\administrators\create.html:9
 #: .\corrigeapp\templates\administrators\list.html:7
 msgid "Create Administrator"
 msgstr "Crear Administrador"
 
-#: .\corrigeapp\templates\administrators\create.html:16
+#: .\corrigeapp\templates\administrators\create.html:15
 msgid "Edit Administrator"
 msgstr "Editar Administrador"
 
-#: .\corrigeapp\templates\administrators\create.html:38
-#: .\corrigeapp\templates\profile\update.html:77
-#: .\corrigeapp\templates\students\create.html:56
-#: .\corrigeapp\templates\students\list.html:17
+#: .\corrigeapp\templates\administrators\create.html:37
+#: .\corrigeapp\templates\profile\update.html:72
+#: .\corrigeapp\templates\students\create.html:54
+#: .\corrigeapp\templates\students\list.html:20
 #: .\corrigeapp\templates\students\list_assign_student.html:14
 #: .\corrigeapp\templates\students\list_assign_student.html:43
 #: .\corrigeapp\templates\teachers\create.html:37
@@ -305,9 +321,9 @@ msgstr "Editar Administrador"
 msgid "Birthdate"
 msgstr "Fecha de nacimiento"
 
-#: .\corrigeapp\templates\administrators\create.html:52
-#: .\corrigeapp\templates\profile\update.html:68
-#: .\corrigeapp\templates\students\create.html:69
+#: .\corrigeapp\templates\administrators\create.html:49
+#: .\corrigeapp\templates\profile\update.html:66
+#: .\corrigeapp\templates\students\create.html:67
 #: .\corrigeapp\templates\teachers\create.html:48
 #: .\corrigeapp\templates\user_tr.html:6
 msgid "Initials"
@@ -326,17 +342,17 @@ msgid "Administrators"
 msgstr "Administratores"
 
 #: .\corrigeapp\templates\base.html:34
-#: .\corrigeapp\templates\marks\exercises.html:16
-#: .\corrigeapp\templates\reports\student.html:44
+#: .\corrigeapp\templates\marks\exercises.html:18
+#: .\corrigeapp\templates\reports\student.html:47
 #: .\corrigeapp\templates\sets\list.html:86
-#: .\corrigeapp\templates\students\list.html:23
+#: .\corrigeapp\templates\students\list.html:26
 #: .\corrigeapp\templates\subjects\list.html:22
 #: .\corrigeapp\templates\subjects\list.html:25
 msgid "Competences"
 msgstr "Competencias"
 
 #: .\corrigeapp\templates\base.html:35 .\corrigeapp\templates\base.html:76
-#: .\corrigeapp\templates\reports\student.html:9
+#: .\corrigeapp\templates\reports\student.html:10
 #: .\corrigeapp\templates\sets\list.html:24
 #: .\corrigeapp\templates\sets\list.html:66
 #: .\corrigeapp\templates\sets\list.html:89
@@ -408,7 +424,7 @@ msgstr "Competencias:"
 msgid "List of competences of "
 msgstr "Lista de competencias de "
 
-#: .\corrigeapp\templates\competence_evaluations\list.html:12
+#: .\corrigeapp\templates\competence_evaluations\list.html:13
 #: .\corrigeapp\templates\competences\create.html:38
 #: .\corrigeapp\templates\competences\list.html:24
 #: .\corrigeapp\templates\competences\list_assign_competence.html:11
@@ -416,11 +432,12 @@ msgstr "Lista de competencias de "
 #: .\corrigeapp\templates\exercises\create.html:95
 #: .\corrigeapp\templates\exercises\create.html:149
 #: .\corrigeapp\templates\marks\competences.html:12
+#: .\corrigeapp\templates\reports\student.html:50
 #: .\corrigeapp\templates\subjects\competence_list.html:11
 msgid "Code"
 msgstr "Código"
 
-#: .\corrigeapp\templates\competence_evaluations\list.html:13
+#: .\corrigeapp\templates\competence_evaluations\list.html:14
 #: .\corrigeapp\templates\sets\create.html:39
 #: .\corrigeapp\templates\sets\list.html:16
 #: .\corrigeapp\templates\subjects\create.html:46
@@ -430,11 +447,13 @@ msgstr "Código"
 msgid "Level"
 msgstr "Nivel"
 
-#: .\corrigeapp\templates\competence_evaluations\list.html:14
-#: .\corrigeapp\templates\marks\activities.html:17
-#: .\corrigeapp\templates\marks\evaluations.html:15
-#: .\corrigeapp\templates\marks\exercises.html:13
+#: .\corrigeapp\templates\competence_evaluations\list.html:15
+#: .\corrigeapp\templates\marks\activities.html:18
+#: .\corrigeapp\templates\marks\evaluations.html:16
+#: .\corrigeapp\templates\marks\exercises.html:14
 #: .\corrigeapp\templates\marks\mark.html:40
+#: .\corrigeapp\templates\reports\student.html:14
+#: .\corrigeapp\templates\reports\student.html:52
 msgid "Mark"
 msgstr "Nota"
 
@@ -447,21 +466,23 @@ msgstr "Crear competencia"
 msgid "Edit Competence"
 msgstr "Editar Competencia"
 
-#: .\corrigeapp\templates\competences\create.html:47
+#: .\corrigeapp\templates\competences\create.html:44
 #: .\corrigeapp\templates\competences\list.html:25
 #: .\corrigeapp\templates\competences\list_assign_competence.html:12
 #: .\corrigeapp\templates\competences\list_assign_competence.html:41
 #: .\corrigeapp\templates\evaluations\list.html:16
-#: .\corrigeapp\templates\evaluations\list_blocks.html:12
+#: .\corrigeapp\templates\evaluations\list_blocks.html:13
 #: .\corrigeapp\templates\evaluations\update.html:58
 #: .\corrigeapp\templates\exercises\create.html:96
 #: .\corrigeapp\templates\exercises\create.html:150
 #: .\corrigeapp\templates\marks\competences.html:13
-#: .\corrigeapp\templates\marks\evaluations.html:11
+#: .\corrigeapp\templates\marks\evaluations.html:12
+#: .\corrigeapp\templates\reports\student.html:13
+#: .\corrigeapp\templates\reports\student.html:51
 #: .\corrigeapp\templates\sets\create.html:34
 #: .\corrigeapp\templates\sets\list.html:15
 #: .\corrigeapp\templates\students\create.html:34
-#: .\corrigeapp\templates\students\list.html:16
+#: .\corrigeapp\templates\students\list.html:19
 #: .\corrigeapp\templates\students\list_assign_student.html:13
 #: .\corrigeapp\templates\students\list_assign_student.html:42
 #: .\corrigeapp\templates\subjects\competence_list.html:12
@@ -474,7 +495,7 @@ msgstr "Editar Competencia"
 msgid "Name"
 msgstr "Nombre"
 
-#: .\corrigeapp\templates\competences\create.html:60
+#: .\corrigeapp\templates\competences\create.html:58
 #: .\corrigeapp\templates\competences\list.html:26
 #: .\corrigeapp\templates\competences\list_assign_competence.html:13
 #: .\corrigeapp\templates\competences\list_assign_competence.html:42
@@ -487,7 +508,7 @@ msgstr "Nombre"
 msgid "Description"
 msgstr "Descripción"
 
-#: .\corrigeapp\templates\competences\create.html:80
+#: .\corrigeapp\templates\competences\create.html:78
 msgid "Subject Weight"
 msgstr "Peso sobre Asignatura"
 
@@ -563,22 +584,22 @@ msgid "List of evaluations"
 msgstr "Lista de evaluaciones"
 
 #: .\corrigeapp\templates\evaluations\list.html:18
-#: .\corrigeapp\templates\evaluations\list_blocks.html:13
-#: .\corrigeapp\templates\marks\evaluations.html:12
+#: .\corrigeapp\templates\evaluations\list_blocks.html:14
+#: .\corrigeapp\templates\marks\evaluations.html:13
 msgid "Period"
 msgstr "Período"
 
 #: .\corrigeapp\templates\evaluations\list.html:20
-#: .\corrigeapp\templates\evaluations\list_blocks.html:15
-#: .\corrigeapp\templates\evaluations\update.html:108
-#: .\corrigeapp\templates\marks\evaluations.html:13
+#: .\corrigeapp\templates\evaluations\list_blocks.html:16
+#: .\corrigeapp\templates\evaluations\update.html:121
+#: .\corrigeapp\templates\marks\evaluations.html:14
 msgid "Start date"
 msgstr "Fecha de inicio"
 
 #: .\corrigeapp\templates\evaluations\list.html:21
-#: .\corrigeapp\templates\evaluations\list_blocks.html:16
-#: .\corrigeapp\templates\evaluations\update.html:117
-#: .\corrigeapp\templates\marks\evaluations.html:14
+#: .\corrigeapp\templates\evaluations\list_blocks.html:17
+#: .\corrigeapp\templates\evaluations\update.html:130
+#: .\corrigeapp\templates\marks\evaluations.html:15
 msgid "End date"
 msgstr "Fecha de fin"
 
@@ -625,43 +646,59 @@ msgid "Create Evaluation"
 msgstr "Crear Evaluación"
 
 #: .\corrigeapp\templates\evaluations\update.html:72
-#: .\corrigeapp\templates\evaluations\update.html:87
+#: .\corrigeapp\templates\evaluations\update.html:100
 msgid "Name period"
 msgstr "Nombre del período"
 
-#: .\corrigeapp\templates\evaluations\update.html:131
+#: .\corrigeapp\templates\evaluations\update.html:85
+msgid "Weight Evaluation"
+msgstr "Peso Evaluación"
+
+#: .\corrigeapp\templates\evaluations\update.html:144
 msgid "Name evaluation 1"
 msgstr "Nombre de la evaluación 1"
 
-#: .\corrigeapp\templates\evaluations\update.html:144
+#: .\corrigeapp\templates\evaluations\update.html:157
+msgid "Weight Evaluation 1"
+msgstr "Peso Evaluación 1"
+
+#: .\corrigeapp\templates\evaluations\update.html:170
 msgid "Start date evaluation 1"
 msgstr "Fecha de inicio de la evaluación 1"
 
-#: .\corrigeapp\templates\evaluations\update.html:153
+#: .\corrigeapp\templates\evaluations\update.html:179
 msgid "End date evaluation 1"
 msgstr "Fecha final de la evaluación 1"
 
-#: .\corrigeapp\templates\evaluations\update.html:168
+#: .\corrigeapp\templates\evaluations\update.html:194
 msgid "Name evaluation 2"
 msgstr "Nombre de la evaluación 2"
 
-#: .\corrigeapp\templates\evaluations\update.html:181
+#: .\corrigeapp\templates\evaluations\update.html:207
+msgid "Weight Evaluation 2"
+msgstr "Peso Evaluación 2"
+
+#: .\corrigeapp\templates\evaluations\update.html:220
 msgid "Start date evaluation 2"
 msgstr "Fecha de inicio de la evaluación 2"
 
-#: .\corrigeapp\templates\evaluations\update.html:190
+#: .\corrigeapp\templates\evaluations\update.html:229
 msgid "End date evaluation 2"
 msgstr "Fecha final de la evaluación 2"
 
-#: .\corrigeapp\templates\evaluations\update.html:205
+#: .\corrigeapp\templates\evaluations\update.html:244
 msgid "Name evaluation 3"
 msgstr "Nombre de la evaluación 2"
 
-#: .\corrigeapp\templates\evaluations\update.html:218
+#: .\corrigeapp\templates\evaluations\update.html:257
+msgid "Weight Evaluation 3"
+msgstr "Peso Evaluación 3"
+
+#: .\corrigeapp\templates\evaluations\update.html:270
 msgid "Start date evaluation 3"
 msgstr "Fecha de inicio de la evaluación 3"
 
-#: .\corrigeapp\templates\evaluations\update.html:227
+#: .\corrigeapp\templates\evaluations\update.html:279
 msgid "End date evaluation 3"
 msgstr "Fecha final de la evaluación 3"
 
@@ -683,8 +720,8 @@ msgid "Create Exercise"
 msgstr "Crear Ejercicio"
 
 #: .\corrigeapp\templates\exercises\create.html:49
-#: .\corrigeapp\templates\exercises\list.html:15
-#: .\corrigeapp\templates\marks\exercises.html:12
+#: .\corrigeapp\templates\exercises\list.html:16
+#: .\corrigeapp\templates\marks\exercises.html:13
 msgid "Statement"
 msgstr "Enunciado"
 
@@ -700,7 +737,13 @@ msgstr "Borrar Ejercicio"
 msgid "Are you sure about deleting the exercise"
 msgstr "¿Estás seguro de que quieres eliminar el ejercicio "
 
-#: .\corrigeapp\templates\exercises\list.html:8
+#: .\corrigeapp\templates\exercises\list.html:7
+#: .\corrigeapp\templates\marks\competences.html:7
+#: .\corrigeapp\templates\marks\exercises.html:7
+msgid "Activity"
+msgstr "Actividad"
+
+#: .\corrigeapp\templates\exercises\list.html:9
 msgid "Create exercise"
 msgstr "Crear ejercicio"
 
@@ -709,7 +752,7 @@ msgid "Welcome"
 msgstr "Bienvenido"
 
 #: .\corrigeapp\templates\marks\activities.html:6
-#: .\corrigeapp\templates\marks\competences.html:7
+#: .\corrigeapp\templates\marks\competences.html:6
 #: .\corrigeapp\templates\marks\evaluations.html:6
 #: .\corrigeapp\templates\marks\exercises.html:6
 #: .\corrigeapp\templates\paginate.html:10
@@ -718,29 +761,44 @@ msgstr "Bienvenido"
 msgid "of"
 msgstr "de"
 
-#: .\corrigeapp\templates\marks\activities.html:18
+#: .\corrigeapp\templates\marks\activities.html:19
 #: .\corrigeapp\templates\marks\competences.html:15
-#: .\corrigeapp\templates\marks\evaluations.html:16
-#: .\corrigeapp\templates\marks\exercises.html:14
+#: .\corrigeapp\templates\marks\evaluations.html:17
+#: .\corrigeapp\templates\marks\exercises.html:15
 msgid "Manual mark"
 msgstr "Nota Manual"
 
-#: .\corrigeapp\templates\marks\activities.html:19
-#: .\corrigeapp\templates\marks\competences.html:16
-#: .\corrigeapp\templates\marks\evaluations.html:17
-#: .\corrigeapp\templates\marks\exercises.html:15
-msgid "Evaluate"
-msgstr "Evaluar"
-
-#: .\corrigeapp\templates\marks\activities.html:20
+#: .\corrigeapp\templates\marks\activities.html:22
 msgid "Exercises"
 msgstr "Ejercicios"
 
-#: .\corrigeapp\templates\marks\competences.html:7
+#: .\corrigeapp\templates\marks\activities.html:64
+#: .\corrigeapp\templates\marks\competences.html:44
+#: .\corrigeapp\templates\marks\evaluations.html:81
+#: .\corrigeapp\templates\marks\exercises.html:50
+msgid "Next Student"
+msgstr "Siguiente Alumno"
+
+#: .\corrigeapp\templates\marks\activities.html:65
+#: .\corrigeapp\templates\marks\competences.html:45
+#: .\corrigeapp\templates\marks\evaluations.html:82
+#: .\corrigeapp\templates\marks\exercises.html:51
+msgid "Prior Student"
+msgstr "Anterior Alumno"
+
+#: .\corrigeapp\templates\marks\competences.html:6
 msgid "List of competences"
 msgstr "Lista de competencias"
 
-#: .\corrigeapp\templates\marks\evaluations.html:18
+#: .\corrigeapp\templates\marks\competences.html:48
+msgid "Next Exercise"
+msgstr "Siguiente Ejercicio"
+
+#: .\corrigeapp\templates\marks\competences.html:49
+msgid "Prior Exercise"
+msgstr "Anterior Ejercicio"
+
+#: .\corrigeapp\templates\marks\evaluations.html:20
 #: .\corrigeapp\templates\sets\list.html:25
 #: .\corrigeapp\templates\sets\list.html:68
 msgid "Activities"
@@ -795,7 +853,7 @@ msgid "New password"
 msgstr "Nueva Contraseña"
 
 #: .\corrigeapp\templates\profile\password.html:47
-#: .\corrigeapp\templates\user_userpass_form.html:29
+#: .\corrigeapp\templates\user_userpass_form.html:34
 msgid "Confirm Password"
 msgstr "Confirmar Contraseña"
 
@@ -809,12 +867,12 @@ msgstr "Nombre de usuario"
 msgid "First name"
 msgstr "Nombre"
 
-#: .\corrigeapp\templates\profile\update.html:55
+#: .\corrigeapp\templates\profile\update.html:52
 msgid "Last name"
 msgstr "Apellidos"
 
 #: .\corrigeapp\templates\registration\login.html:33
-#: .\corrigeapp\templates\user_userpass_form.html:18
+#: .\corrigeapp\templates\user_userpass_form.html:20
 msgid "Password"
 msgstr "Contraseña"
 
@@ -823,16 +881,22 @@ msgid "Enter"
 msgstr "Entrar"
 
 #: .\corrigeapp\templates\reports\set_competence_evaluation.html:7
-#: .\corrigeapp\templates\reports\set_evaluations.html:7
-#: .\corrigeapp\templates\reports\student.html:7
-#: .\corrigeapp\templates\students\list.html:22
-msgid "Report"
-msgstr "Informe"
+msgid "Report of Competences"
+msgstr "Informe de Competencias"
 
-#: .\corrigeapp\templates\reports\set_competence_evaluation.html:12
-#: .\corrigeapp\templates\reports\set_evaluations.html:12
+#: .\corrigeapp\templates\reports\set_competence_evaluation.html:13
+#: .\corrigeapp\templates\reports\set_evaluations.html:13
 msgid "Student"
 msgstr "Alumno"
+
+#: .\corrigeapp\templates\reports\set_evaluations.html:7
+msgid "Report of Evaluation"
+msgstr "Informe de Evaluaciones"
+
+#: .\corrigeapp\templates\reports\student.html:7
+#: .\corrigeapp\templates\students\list.html:25
+msgid "Report"
+msgstr "Informe"
 
 #: .\corrigeapp\templates\sets\create.html:9
 msgid "Create Set"
@@ -843,7 +907,7 @@ msgstr "Crear Grupo"
 msgid "Edit Set"
 msgstr "Editar Grupo"
 
-#: .\corrigeapp\templates\sets\create.html:51
+#: .\corrigeapp\templates\sets\create.html:53
 #: .\corrigeapp\templates\sets\list.html:17
 #: .\corrigeapp\templates\subjects\create.html:53
 #: .\corrigeapp\templates\subjects\list.html:17
@@ -852,12 +916,12 @@ msgstr "Editar Grupo"
 msgid "Grade"
 msgstr "Grado"
 
-#: .\corrigeapp\templates\sets\create.html:57
+#: .\corrigeapp\templates\sets\create.html:59
 #: .\corrigeapp\templates\sets\list.html:18
 msgid "Line"
 msgstr "Línea"
 
-#: .\corrigeapp\templates\sets\create.html:69
+#: .\corrigeapp\templates\sets\create.html:71
 msgid "Teacher"
 msgstr "Profesor"
 
@@ -919,7 +983,7 @@ msgid "Type of partial evaluation"
 msgstr "Tipo de Evaluaciones parciales"
 
 #: .\corrigeapp\templates\students\create.html:9
-#: .\corrigeapp\templates\students\list.html:8
+#: .\corrigeapp\templates\students\list.html:11
 msgid "Create Student"
 msgstr "Crear Estudiante"
 
@@ -927,11 +991,11 @@ msgstr "Crear Estudiante"
 msgid "Edit Student"
 msgstr "Editar Alumnos"
 
-#: .\corrigeapp\templates\students\create.html:43
-#: .\corrigeapp\templates\students\list.html:15
+#: .\corrigeapp\templates\students\create.html:40
+#: .\corrigeapp\templates\students\list.html:18
 #: .\corrigeapp\templates\students\list_assign_student.html:12
 #: .\corrigeapp\templates\students\list_assign_student.html:41
-#: .\corrigeapp\templates\user_name_form.html:16
+#: .\corrigeapp\templates\user_name_form.html:13
 #: .\corrigeapp\templates\user_tr.html:4
 msgid "Surname"
 msgstr "Apellidos"
@@ -944,7 +1008,7 @@ msgstr "Borrar Estudiante"
 msgid "Are you sure about deleting the student "
 msgstr "¿Estás seguro de que quieres eliminar el estudiante "
 
-#: .\corrigeapp\templates\students\list.html:24
+#: .\corrigeapp\templates\students\list.html:27
 msgid "Marks"
 msgstr "Notas"
 
@@ -1034,3 +1098,6 @@ msgstr "Editar Profesor"
 #: .\corrigeapp\templates\teachers\list.html:6
 msgid "List of teachers"
 msgstr "Lista de profesores"
+
+#~ msgid "Evaluate"
+#~ msgstr "Evaluar"
