@@ -3,7 +3,8 @@
 {% load i18n %}
 {% block content %} 
 <div class="container">
-    <h4 class="centered">{% trans "List of exercises" %} {% trans "of" %} {{student_object.name}} {{student_object.surname}} {% trans "of" %} {{activity_object.title}}</h4>
+    <h4 class="centered">{% trans "List of exercises" %} {% trans "of" %} {{student_object.name}} {{student_object.surname}}</h4>
+    <h6 class="centered">{% trans "Set" %}: {{set_object.name}}, {% trans "Activity" %}: {{activity_object.title}}</h6>
         <table class="highlight">
             <caption></caption>
                 <thead>
@@ -43,10 +44,12 @@
                     </tbody>
             {% endfor %}
         </table>
-<a onClick="location.href='{% url 'marks_activities_list' sk=set_object.pk id=evaluation_object.pk pk=student_object.pk %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
-<a onClick="location.href='{% url 'marks_exercises_next' id=activity_object.pk pk=student_object.pk %}'" class="waves-effect right waves-light btn" style="margin-top:55px; margin-bottom:15px; margin-left:15px;"><i class="material-icons left">keyboard_arrow_right</i>{% trans "Next Student" %}</a>
-<a onClick="location.href='{% url 'marks_exercises_previous' id=activity_object.pk pk=student_object.pk %}'" class="waves-effect right waves-light btn" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">keyboard_arrow_left</i>{% trans "Previous Student" %}</a>
-</div>
+    <div class="row">
+        <a onClick="location.href='{% url 'marks_exercises_next' id=activity_object.pk pk=student_object.pk %}'" class="waves-effect right waves-light btn" style="margin-top:55px; margin-bottom:15px;"><i style="width:10px;" class="material-icons right">keyboard_arrow_right</i>{% trans "Next Student" %}</a>
+        <a onClick="location.href='{% url 'marks_exercises_previous' id=activity_object.pk pk=student_object.pk %}'" class="waves-effect left waves-light btn" style="margin-top:55px; margin-bottom:15px;"><i style="width:10px;" class="material-icons left">keyboard_arrow_left</i>{% trans "Prior Student" %}</a>
+    </div>
+    <a onClick="location.href='{% url 'marks_activities_list' sk=set_object.pk id=evaluation_object.pk pk=student_object.pk %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
+
 <script>
     $(document).ready(function(){
         $(document).on("click", ".editable", function(){
@@ -99,4 +102,5 @@
         }
     });
 </script>
+</div>
 {% endblock %}
