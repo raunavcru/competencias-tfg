@@ -24,7 +24,7 @@ Cógigos de sprint (<codigo_sprint>):
 
 * s0            (previo al comienzo del desarrollo de código)
 * s1/s2/s3/s4   (sprints 1, 2, 3, 4 respectivamente)
-* sd            (tras la finalización del desarrollo, realización de memoria)
+* d             (tras la finalización del desarrollo, realización de memoria)
 
 Nombre de las tareas (<nombre_tarea>): Nombre especificado en Jira, o abreviación. Por ejemplo, CU-07 Edición de profesores, o simplemente, CU-07. Se pueden añadir varias tareas separadas por &.
 
