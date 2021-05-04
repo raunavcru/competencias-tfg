@@ -1537,11 +1537,13 @@ class MarkCompetenceEvaluationList(generic.ListView):
 
     def get_context_data(self, **kwargs):
         set_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_pk)
         student_pk = self.kwargs.get('id')
         student_object = models.Student.objects.get(pk=student_pk)
         context = super(MarkCompetenceEvaluationList, self).get_context_data(**kwargs)
         context['student'] = student_object
         context['set_pk'] = set_pk
+        context['set_object'] = set_object
         return context
 
     def get_queryset(self):
@@ -1572,6 +1574,7 @@ class MarkCompetenceListView(generic.ListView):
     def get_context_data(self, **kwargs):
         exercise_pk = self.kwargs.get('id')
         exercise_object = models.Exercise.objects.get(pk=exercise_pk)
+        set_object = exercise_object.activity.set_activity
         activity_object = exercise_object.activity
         evaluation_object = activity_object.evaluation
         student_pk = self.kwargs.get('pk')
@@ -1586,6 +1589,7 @@ class MarkCompetenceListView(generic.ListView):
 
         context = super(MarkCompetenceListView, self).get_context_data(**kwargs)
         context['student_object'] = student_object
+        context['set_object'] = set_object
         context['exercise_pk'] = exercise_pk
         context['activity_object'] = activity_object
         context['c_mark_saved'] = c_mark_saved
