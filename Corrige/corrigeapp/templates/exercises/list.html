@@ -4,6 +4,7 @@
 {% block content %} 
 <div class="container">
     <h4 class="centered">{% trans "List of exercises" %}</h4>
+    <h6 class="centered">{% trans "Set" %}: {{set_object.name}}, {% trans "Activity" %}: {{activity_object.title}}</h6>
     {% if type_url == 1 %}  
     <a style="border-radius:5px" href="{% url 'exercises_create' activity_pk %}" class="right teal lighten-2 waves-effect waves-light btn-small">{% trans "Create exercise" %}</a>
     {% endif %}

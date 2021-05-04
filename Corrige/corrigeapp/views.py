@@ -154,8 +154,10 @@ class ActivitiesListView(generic.ListView):
     
     def get_context_data(self, **kwargs):
         set_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_pk)
         context = super(ActivitiesListView, self).get_context_data(**kwargs)
         context['set_pk'] = set_pk
+        context['set_object'] = set_object
         context['no_copy_list'] = True
         return context
 
@@ -182,8 +184,10 @@ class ActivitiesListCopyView(generic.ListView):
     
     def get_context_data(self, **kwargs):
         set_pk = self.kwargs.get('pk')
+        set_object = models.Set.objects.get(pk=set_pk)
         context = super(ActivitiesListCopyView, self).get_context_data(**kwargs)
         context['set_pk'] = set_pk
+        context['set_object'] = set_object
         return context
 
     def get_queryset(self):
@@ -843,10 +847,13 @@ class ExercisesListView(generic.ListView):
         type_url = self.kwargs.get('type')
         activity_pk = self.kwargs.get('pk')
         activity_object = models.Activity.objects.get(pk=activity_pk)
-        set_pk = activity_object.set_activity.pk
+        set_object = activity_object.set_activity
+        set_pk = set_object.pk
         context = super(ExercisesListView, self).get_context_data(**kwargs)
         context['activity_pk'] = activity_pk
+        context['activity_object'] = activity_object
         context['set_pk'] = set_pk
+        context['set_object'] = set_object
         context['type_url'] = type_url
         return context
 
@@ -1951,6 +1958,7 @@ class MySetStudentListView(generic.ListView):
         set_object = models.Set.objects.get(pk=set_object_pk)
         object_list = set_object.students.all().order_by('surname')
         context = super(MySetStudentListView, self).get_context_data(object_list=object_list, **kwargs)
+        context['set_object'] = set_object
         context['set_object_pk'] = set_object_pk
 
         return context
@@ -1996,6 +2004,7 @@ class ReportSetCompetenceEvaluationView(generic.ListView):
         student_th = models.Student.objects.filter(student = set_object).order_by('surname').first()
         context = super(ReportSetCompetenceEvaluationView, self).get_context_data(**kwargs)
         context['student_th'] = student_th
+        context['set_object'] = set_object
 
         return context
 
