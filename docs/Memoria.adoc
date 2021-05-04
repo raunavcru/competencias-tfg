@@ -18,6 +18,8 @@
 
 === Retrasos e Incidencias
 
+=== Reuniones
+
 === Costes
 
 == IV. Análisis de requisitos, diseño e implementación
@@ -39,6 +41,8 @@
 === Fuentes e Imágenes
 
 === Implementación del cálculo
+
+=== Responsive
 
 === Traducción
 
