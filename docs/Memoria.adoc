@@ -1,4 +1,4 @@
-=  Nombre
+=  Verum
 :toc:
 :toc-title: Índice general
 
@@ -35,11 +35,411 @@ Los objetivos del proyecto son:
 
 === Planificación
 
-=== Retrasos e Incidencias
+La planificación se realizara mediante Scrum, constituidos en nuestro caso por cuatro Sprints, que no son más que una serie de tiempo prefijado con el fin de crear un incremento utilizable y potencialmente entregable. A lo largo del desarrollo de nuestro proyecto habrá Sprints consecutivos, divididos en meses y estos a su vez en semanas con duración constante. Todo esto con el fin de empezar el día 1 de Enero y terminar el día 30 de Abril.
 
-=== Reuniones
+Una vez realizado cada Sprint se verá reflejado en el proyecto como un incremento en el versionado del mismo, para que así se puedan ver los cambios y avances del mismo.
 
-=== Costes
+
+_Entre corchetes se muestra la fecha en la que debe estar finalizada la tarea_
+
+===== Sprint 1: 1 de Enero al 28 de Enero.
+[grid=cols]
+|===
+|Semana 1: 1 de Enero al 7 de Enero |Semana 2: 8 de Enero al 14 de Enero |Semana 3: 15 de Enero al 21 de Enero |Semana 4: 22 de Enero al 28 de Enero
+
+| Modelo de datos. 
+
+_[3 de Enero]_
+| CU-03 Edición de alumnos. 
+
+_[11 de Enero]_
+| Populate v2. 
+
+_[20 de Enero]_
+| Despliegue de la versión 0.1.
+
+_[25 de Enero]_
+
+| Populate v1. 
+
+_[7 de Enero]_
+| CU-04 Eliminación de alumnos. 
+
+_[13 de Enero]_
+| CU-09 Listado de Grupos de clase. 
+
+_[16 de Enero]_
+| Replanificación. 
+
+_[27 de Enero]_
+
+| CU-01 Listado de alumnos. 
+
+_[4 de Enero]_
+| CU-07 Edición de profesores. 
+
+_[11 de Enero]_
+| CU-10 Creación de Grupos de clase. 
+
+_[18 de Enero]_
+|
+
+| CU-02 Creación de alumnos. 
+
+_[5 de Enero]_
+| CU-08 Eliminación de profesores. 
+
+_[13 de Enero]_
+| CU-11 Edición de Grupos de clase. 
+
+_[19 de Enero]_
+|
+
+| CU-05 Listado de profesores. 
+
+_[4 de Enero]_
+|
+| CU-12 Eliminación de Grupos de clase. 
+
+_[20 de Enero]_
+|
+
+| CU-06 Creación de profesores. 
+
+_[5 de Enero]_
+|        
+|        
+|        
+
+|===
+
+===== Sprint 2: 29 de Enero al 25 de Febrero.        
+[grid=cols]
+|===
+|Semana 1: 29 de Enero al 4 de Febrero |Semana 2: 5 de Febrero al 11 de Febrero |Semana 3: 12 de Febrero al 18 de Febrero |Semana 4:  19 de Febrero al 25 de Febrero
+
+// Fila 1 ========================================================
+
+| CU-13 Asignar alumnos a sus respectivos grupos de clase. 
+
+_[1 de Febrero]_
+| CU-47 Edición de evaluaciones
+
+_[8 de Febrero]_
+| CU-23 Asignación de competencias.
+
+_[17 de Febrero]_
+| Despliegue de la versión 0.2.
+
+_[22 de Febrero]_
+
+// Fila 2 ========================================================
+
+| CU-49 Listado de evaluaciones.
+
+_[2 de Febrero]_
+| CU-48 Eliminar evaluaciones.
+
+_[9 de Febrero]_
+| CU-24 Listado de administradores.
+
+_[13 de Febrero]_
+| Replanificación.
+
+_[24 de Febrero]_
+
+// Fila 3 ========================================================
+
+| CU-46 Creación de evaluaciones.
+
+_[4 de Febrero]_
+| CU-18 Asignar asignatura a profesores.
+
+_[11 de Febrero]_
+| CU-25 Creación de administradores.
+
+_[15 de Febrero]_
+|
+
+// Fila 4 ========================================================
+
+| CU-14 Listado de asignaturas.
+
+_[30 de Enero]_
+| CU-19 Listado de competencias.
+
+_[6 de Febrero]_
+| CU-26 Eliminación de administradores.
+
+_[16 de Febrero]_
+|
+// Fila 5 ========================================================
+
+| CU-15 Creación de asignaturas.
+
+_[1 de Febrero]_
+| CU-20 Creación de competencias.
+
+_[8 de Febrero]_
+| CU-27 Edición de usuarios.
+
+_[18 de Febrero]_
+|
+
+// Fila 6 ========================================================
+
+| CU-16 Edición de asignaturas.
+
+_[3 de Febrero]_
+| CU-21 Edición de competencias.
+
+_[10 de Febrero]_
+|
+|
+
+// Fila 7 ========================================================
+
+| CU-17 Eliminación de asignaturas.
+
+_[4 de Febrero]_
+| CU-22 Eliminación de competencias.
+
+_[11 de Febrero]_
+|
+|
+
+|===
+
+===== Sprint 3: 26 de Febrero al 25 del Marzo.        
+[grid=cols]
+|===
+|Semana 1: 26 de Febrero al 4 de Marzo |Semana 2: 5 de Marzo al 11 de Marzo |Semana 3: 12 de Marzo al 18 de Marzo |Semana 4:  19 de Marzo al 25 de Marzo      
+
+| CU-28 Listar sus grupos de clase.
+
+_[27 de Febrero]_
+| CU-34 Edición de una actividad.
+
+_[7 de Marzo]_
+| CU-40 Asignar competencias a un ejercicio con una intensidad.
+
+_[15 de Marzo]_
+| Despliegue de la versión 0.3  
+
+_[22 de Marzo]_
+
+| CU-29 Listar sus asignaturas.
+
+_[1 de Marzo]_
+| CU-35 Eliminación de una actividad. 
+
+_[8 de Marzo]_
+| CU-36 Ver las calificaciones de un alumno.   
+
+_[16 de Marzo]_
+| Replanificación. 
+
+_[24 de Marzo]_
+| CU-30 Listar las competencias de una asignatura.
+
+_[3 de Marzo]_
+| CU-37 Creación de ejercicios.
+
+_[7 de Marzo]_
+| CU-42 Modificar sus datos de usuario.  
+
+_[18 de Marzo]_
+|        
+
+| CU-31 Listar sus alumnos.
+
+_[29 de Febrero]_
+| CU-38 Edición de un ejercicio. 
+
+_[9 de Marzo]_
+| Responsive. 
+
+_[18 de Marzo]_
+|        
+
+| CU-32 Listar actividades.
+
+_[1 de Marzo]_
+
+| CU-39 Eliminación de un ejercicio. 
+
+_[10 de Marzo]_
+|        
+|        
+
+| CU-33 Creación de actividades.
+
+_[3 de Marzo]_
+| Responsive.
+
+_[11 de Marzo]_
+|        
+| 
+
+|===
+
+===== Sprint 4: 26 de Marzo al 29 de Abril.        
+[grid=cols]
+|===
+|Semana 1: 26 de Marzo al 1 de Abril |Semana 2: 2 de Abril al 8 de Abril |Semana 3: 9 de Abril al 15 de Abril |Semana 4:  16 de Abril al 22 de Abril |Semana 5:  23 de Abril al 29 de Abril   
+
+// Fila 1 ========================================================
+
+| CU-50 Listar bloques (evaluaciones).
+
+_[29 de Marzo]_
+| CU-41 Puntuar las evaluaciones, las actividades, los ejercicios y las competencias.
+
+_[7 de Abril]_
+| CU-45 Ver competencias de un alumno. 
+
+_[14 de Abril]_
+| CU-43 Generar informe de un grupo completo.   
+
+_[19 de Abril]_
+| Despliegue de la versión 1.0
+
+_[28 de Abril]_
+
+// Fila 2 ========================================================
+
+| CU-51 Crear bloques (evaluaciones).
+
+_[30 de Marzo]_
+| Responsive.
+
+_[8 de Abril]_
+| Responsive. 
+
+_[15 de Abril]_    
+| CU-44 Generar informe de un alumno.
+
+_[21 de Abril]_
+|
+
+// Fila 3 ========================================================
+
+| CU-52 Editar bloques (evaluaciones).
+
+_[31 de Marzo]_
+| 
+|        
+| Responsive.
+
+_[22 de Abril]_
+|
+
+// Fila 4 ========================================================
+
+| CU-53 Eliminar bloques (evaluaciones).
+
+_[1 de Abril]_
+| 
+|        
+|
+| 
+
+// Fila 5 ========================================================
+
+| Responsive.
+
+_[1 de Abril]_
+| 
+|        
+|
+| 
+
+|===
+
+=== Retrasos e incidencias
+
+==== Retrasos
+
+[grid=cols]
+[cols=3*,options="header"]
+|===
+| Tarea
+| Fecha prevista
+| Fecha realizada
+
+| CU-02 Creación de alumnos.
+| 5 de Enero
+| 7 de Enero
+
+| CU-09 Listado de Grupos de clase.
+| 16 de Enero
+| 17 de Enero
+
+| Despliegue de la versión 0.1.
+| 25 de Enero
+| 28 de Enero
+
+| Replanificación. 
+| 27 de Enero
+| 28 de Enero
+
+| Despliegue versión 1.0. 
+| 27 de Abril
+| 29 de Abril
+|===
+
+==== Incidencias
+
+[grid=cols]
+[cols=2*,options="header"]
+|===
+|Tarea
+|Fecha de la incidencia
+
+| Añadir CRUD de evaluaciones.
+| 28 de Enero
+
+| Reordenación casos de uso.
+| 28 de Enero
+
+| Error al mostrar botones del navbar.
+| 26 de Febrero
+
+| Error al copiar los ejercicios.
+| 19 de Marzo
+
+| Error al ocultar botones al copiar.
+| 25 de Marzo
+
+| Error de selección de nivel para los cálculos de evaluación por competencias.
+| 16 de Abril
+
+| Error de selección de nivel para los cálculos de evaluación por competencias.
+| 16 de Abril
+
+| Error 404 de fuente.
+| 19 de Abril
+
+| Error de actualización de tipo de evaluación.
+| 22 de Abril
+
+| Error de cálculo de la nota de un ejercicio.
+| 22 de Abril
+
+| Error de intervalo de nota.
+| 22 de Abril
+
+| Error al asignar una competencia.
+| 27 de Abril
+
+| Error al desasignar una competencia.
+| 27 de Abril
+|===
+
+
+== Reuniones
+
+== Costes
 
 == IV. Análisis de requisitos, diseño e implementación
 
@@ -51,6 +451,1299 @@ Los objetivos del proyecto son:
 
 === Casos de uso
 
+Para poder ver los casos de uso de manera interactiva vaya al siguiente enlace:
+
+* link:https://raunavcru.github.io/mockups-interactivos/Home_admin#livereload[Administrador]
+
+* link:https://raunavcru.github.io/mockups-interactivos/Home_profesor#livereload[Profesor]
+
+|===
+| **CU-01** Listado de alumnos.
+
+| Versión: 1.0 (29/11/2020)
+
+| Descripción:
+El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de alumnos inscrito_.
+
+| Secuencia normal:
+
+ 1.El adminsitrador desea obtener la lista de alumnos incritos.
+
+ 2.El sistema solicita las credenciales para identificarse.
+
+ 3.El administrador solicita la lista de alumnos.
+
+ 4.El administrador obtiene el listado de alumnos.
+
+
+|===
+|===
+| **CU-02**  Creación de alumnos.
+
+| Versión: 1.0 (29/11/2020)
+
+|Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de un alumno_.
+
+| Secuencia normal:
+
+1.El adminsitrador desea crear un alumno.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de alumnos.
+
+4.El administrador obtiene el listado de alumnos.
+
+5.El administrador solicita crear un alumno.
+
+6.El administrador crea un alumno.
+
+
+
+|===
+|===
+| **CU-03**  Edición de alumnos.
+
+| Versión: 1.0 (29/11/2020)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la edición de un alumno_.
+
+|Secuencia normal:
+
+1.El adminsitrador desea editar un alumno.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de alumnos.
+
+4.El administrador obtiene el listado de alumnos.
+
+5.El administrador solicita la edición un alumno.
+
+6.El administrador edita un alumno.
+
+|===
+|===
+| **CU-04**  Eliminación de alumnos.
+
+| Versión: 1.0 (29/11/2020)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de un alumno_.
+
+| Secuencia normal:
+
+1.El adminsitrador desea eliminar un alumno.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de alumnos.
+
+4.El administrador obtiene el listado de alumnos.
+
+5.El administrador solicita la eliminación un alumno.
+
+6.El administrador elimina un alumno.
+
+
+|===
+|===
+| **CU-05** Listado de profesores.
+
+| Versión: 1.0 (29/11/2020)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de profesores inscrito_.
+
+| Secuencia normal: 
+1.El adminsitrador desea obtener la lista de profesores incritos.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de profesores.
+
+4.El administrador obtiene el listado de profesores.
+
+
+|===
+|===
+| **CU-06**  Creación de profesores.
+
+| Versión: 1.0 (29/11/2020)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de un profesor_.
+
+|Secuencia normal:
+
+1.El adminsitrador desea crear un profesor.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de profesores.
+
+4.El administrador obtiene el listado de profesores.
+
+5.El administrador solicita crear un profesor.
+
+6.El administrador crea un profesor.
+
+
+|===
+|===
+| **CU-07**  Edición de profesores.
+
+| Versión: 1.0 (29/11/2020)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la edición de un profesor_.
+
+| Secuencia normal:
+
+1.El adminsitrador desea editar un profesor.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de profesores.
+
+4.El administrador obtiene el listado de profesores.
+
+5.El administrador solicita la edición un profesor.
+
+6.El administrador edita un profesor.
+
+
+|===
+|===
+| **CU-08**  Eliminación de profesores.
+
+| Versión: 1.0 (29/11/2020)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de un profesor_.
+
+| Secuencia normal:
+
+1.El adminsitrador desea eliminar un profesor.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de profesores.
+
+4.El administrador obtiene el listado de profesores.
+
+5.El administrador solicita la eliminación un profesor.
+
+6.El administrador elimina un profesor.
+
+
+|===
+|===
+| **CU-09** Listado de Grupos de clase.
+
+| Versión: 1.0 (29/11/2020)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de grupo de clase_.
+
+|Secuencia normal:
+
+1.El adminsitrador desea obtener la lista de grupos de clase.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de grupos de clase.
+
+4.El administrador obtiene el listado de grupos de clase.
+
+
+|===
+|===
+|**CU-10**  Creación de Grupos de clase.
+
+| Versión: 1.0 (29/11/2020)
+
+| Descripción:
+El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de un grupo de clase_.
+
+| Secuencia normal:
+
+1.El adminsitrador desea crear un grupos de clase.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de grupos de clase.
+
+4.El administrador obtiene el listado de grupos de clase.
+
+5.El administrador solicita crear un grupo de clase.
+
+6.El administrador crea un grupo de clase.
+
+
+|===
+|===
+| **CU-11**  Edición de Grupos de clase.
+
+| Versión: 1.0 (29/11/2020)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la edición de un grupo de clase_.
+
+| Secuencia normal:
+
+1.El adminsitrador desea editar un profesor.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de grupos de clase.
+
+4.El administrador obtiene el listado de grupos de clase.
+
+5.El administrador solicita la edición un grupoo de clase.
+
+6.El administrador edita un grupo de clase.
+
+
+|===
+|===
+|**CU-12**  Eliminación de Grupos de clase.
+
+| Versión: 1.0 (29/11/2020)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de un grupos de clase.
+
+| Secuencia normal:
+
+1. El adminsitrador desea eliminar un grupos de clase.
+
+2. El sistema solicita las credenciales para identificarse.
+
+3. El administrador solicita la lista de grupos de clase.
+
+4. El administrador obtiene el listado de grupos de clase.
+
+5. El administrador solicita la eliminación un grupo de clase.
+
+6. El administrador elimina un grupo de clase.
+
+
+|===
+|===
+| **CU-13**  Asignar alumnos a sus respectivos grupos de clase.
+
+| Versión: 1.0 (29/11/2020)
+
+|Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador asignar alumnos a sus respectivos grupos de clase_.
+
+|Secuencia normal:
+
+1.El adminsitrador desea asignar alumnos a sus respectivos grupos de clase.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de grupos de clase.
+
+4.El administrador obtiene el listado de grupos de clase.
+
+5.El administrador solicita la lista de alumnos no inscritos.
+
+6.El administrador obtiene la lista de alumnos no inscritos.
+
+7.El administrador solicita la asignación de un alumno.
+
+
+|===
+|===
+|**CU-14** Listado de asignaturas.
+
+| Versión: 1.0 (29/11/2020)
+
+|Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de asignaturas_.
+
+|Secuencia normal
+
+1.El adminsitrador desea obtener la lista de asignaturas.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de asignaturas.
+
+4.El administrador obtiene el listado de asignaturas.
+
+
+|===
+|===
+| **CU-15**  Creación de asignaturas.
+
+| Versión: 1.0 (29/11/2020)
+
+|Descripción: 
+El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de una asignatura_.
+
+|Secuencia normal:
+
+1.El adminsitrador desea crear una asignatura.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de asignaturas.
+
+4.El administrador obtiene el listado de asignaturas.
+
+5.El administrador solicita crear una asignatura.
+
+6.El administrador crea una asignatura.
+
+
+|===
+|===
+|**CU-16**  Edición de asignaturas.
+
+| Versión: 1.0 (29/11/2020)
+
+| Descripción:
+El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la edición de una asignatura_.
+
+| Secuencia normal:
+
+1.El adminsitrador desea editar una asignatura.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de asignaturas.
+
+4.El administrador obtiene el listado de asignaturas.
+
+5.El administrador solicita la edición una asignatura.
+
+6.El administrador edita una asignatura.
+
+
+|===
+|===
+| **CU-17**  Eliminación de asignaturas.
+
+| Versión: 1.0 (29/11/2020)
+
+|Descripción:El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de una asignatura.
+
+|Secuencia normal:
+
+1.El adminsitrador desea eliminar un alumno.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de asignaturas.
+
+4.El administrador obtiene el listado de asignaturas.
+
+5.El administrador solicita la eliminación una asignatura.
+
+6.El administrador elimina una asignatura.
+
+
+|===
+|===
+|**CU-18**  Asignar asignatura a profesores.
+
+| Versión: 1.0 (29/11/2020)
+
+| Descripción: 
+El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador asignar una asignatura a un profesor_.
+
+| Secuencia normal:
+
+1.El adminsitrador desea asignar una asignatura a un profesor.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de profesores.
+
+4.El administrador obtiene el listado de profesores.
+
+5.El administrador solicita la lista de asignaturas no inscritas.
+
+6.El administrador obtiene la lista de asignaturas no inscritas.
+
+7.El administrador solicita la asignación de una asignatura.
+
+
+|===
+|===
+| **CU-19** Listado de competencias.
+
+| Versión: 1.0 (29/11/2020)
+
+| Descripción:
+El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de competencias_.
+
+| Secuencia normal:
+
+ 1.El adminsitrador desea obtener la lista de competencias.
+
+ 2.El sistema solicita las credenciales para identificarse.
+
+ 3.El administrador solicita la lista de competencias.
+
+ 4.El administrador obtiene el listado de competencias.
+
+|===
+|===
+| **CU-20**  Creación de competencias.
+
+| Versión: 1.0 (29/11/2020)
+
+|Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de una competencia_.
+
+| Secuencia normal:
+
+1.El adminsitrador desea crear una competencia.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de competencias.
+
+4.El administrador obtiene el listado de competencias.
+
+5.El administrador solicita crear una competencia.
+
+6.El administrador crea una competencia.
+
+
+|===
+|===
+| **CU-21**  Edición de competencias.
+
+| Versión: 1.0 (29/11/2020)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la edición de una competencia_.
+
+|Secuencia normal:
+
+1.El adminsitrador desea editar una competencia.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de competencias.
+
+4.El administrador obtiene el listado de competencias.
+
+5.El administrador solicita la edición una competencia.
+
+6.El administrador edita una competencia.
+
+
+|===
+|===
+| **CU-22**  Eliminación de competencias.
+
+| Versión: 1.0 (29/11/2020)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de una competencia_.
+
+| Secuencia normal:
+
+1.El adminsitrador desea eleminar una competencia.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de competencias.
+
+4.El administrador obtiene el listado de competencias.
+
+5.El administrador solicita la eliminación una competencia.
+
+6.El administrador elimina una competencia.
+
+
+|===
+|===
+| **CU-23**  Asignación de competencias.
+
+| Versión: 1.0 (29/11/2020)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la asignación de competencias a una asignatura_.
+
+| Secuencia normal:
+
+1.El adminsitrador desea asignar una competencia a una asignatura.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de asignaturas.
+
+4.El administrador obtiene el listado de asignaturas.
+
+5.El administrador solicita la lista de competencias.
+
+6.El administrador obtiene el listado de competencias.
+
+5.El administrador asigna la competencia de una asignatura.
+
+
+|===
+|===
+| **CU-24** Listado de administradores.
+
+| Versión: 1.0 (29/11/2020)
+
+| Descripción:
+El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de administradores_.
+
+| Secuencia normal:
+
+ 1.El adminsitrador desea obtener la lista de administradores. 
+
+ 2.El sistema solicita las credenciales para identificarse.
+
+ 3.El administrador solicita la lista de administradores.
+
+ 4.El administrador obtiene el listado de administradores.
+
+|===
+|===
+| **CU-25**  Creación de administradores.
+
+| Versión: 1.0 (29/11/2020)
+
+|Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de un nuevo administrador_.
+
+| Secuencia normal:
+
+1.El adminsitrador desea crear un administrador.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de administradores.
+
+4.El administrador obtiene el listado de administradores.
+
+5.El administrador solicita crear un administrador.
+
+6.El administrador crea un administrador.
+
+
+
+|===
+|===
+| **CU-26**  Eliminación de administradores.
+
+| Versión: 1.0 (29/11/2020)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de un administrador_.
+
+| Secuencia normal:
+
+1.El adminsitrador desea eleminar un administrador.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de administradores.
+
+4.El administrador obtiene el listado de administradores.
+
+5.El administrador solicita la eliminación un administrador.
+
+6.El administrador elimina un administrador.
+
+
+|===
+|===
+| **CU-27**  Edición de usuarios.
+
+| Versión: 1.0 (29/11/2020)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la edición de un usuario.
+
+|Secuencia normal:
+
+1.El adminsitrador desea editar un usuario.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de usuarios.
+
+4.El administrador obtiene el listado de usuarios.
+
+5.El administrador solicita la edición un usuario.
+
+6.El administrador edita un usuario.
+
+|===
+
+|===
+| **CU-28**  Listar sus grupos de clase.
+
+| Versión: 1.0 (01/12/2020)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite listar sus grupos de clase_.
+
+|Secuencia normal:
+
+1.El profesor desea listar sus grupos de clase.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de sus grupos de clase.
+
+4.El profesor obtiene el listado de sus grupos de clase.
+
+
+|===
+
+|===
+| **CU-29**  Listar sus asignaturas.
+
+| Versión: 1.0 (01/12/2020)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite listar sus asignaturas_.
+
+|Secuencia normal:
+
+1.El profesor desea listar sus asignaturas.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de sus asignaturas.
+
+4.El profesor obtiene el listado de sus asignaturas.
+
+
+|===
+
+|===
+| **CU-30**  Listar las competencias de una asignatura.
+
+| Versión: 1.0 (01/12/2020)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite listar las competencias de una asignatura_.
+
+|Secuencia normal:
+
+1.El profesor desea listar las competencias de una asignatura.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de competencias de una asignatura.
+
+4.El profesor obtiene el listado de competencias de una asignatura.
+
+|===
+
+|===
+| **CU-31**  Listar sus alumnos.
+
+| Versión: 1.1 (15/04/2021)
+
+| Precondición: El profesor ha seleccionado el tipo de evaluación.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite listar sus alumnos_.
+
+|Secuencia normal:
+
+1.El profesor desea listar sus alumnos.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de grupos de clase.
+
+4.El profesor obtiene el listado de grupos de clase.
+
+5.El profesor solicita la lista de sus alumnos.
+
+6.El profesor obtiene el listado de sus alumnos.
+
+|===
+
+|===
+| **CU-32**  Listar actividades.
+
+| Versión: 1.1 (15/04/2021)
+
+| Precondición: El profesor ha seleccionado el tipo de evaluación.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite actividades_.
+
+|Secuencia normal:
+
+1.El profesor desea listar actividades.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de actividades.
+
+4.El profesor obtiene el listado de actividades.
+
+|===
+
+|===
+| **CU-33**  Creación de actividades.
+
+| Versión: 1.0 (01/12/2020)
+
+|Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la creación de una actividad_.
+
+| Secuencia normal:
+
+1.El profesor desea crear una actividad.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de sus grupos.
+
+4.El profesor obtiene el listado de sus grupos.
+
+5.El profesor solicita las actividades de un grupo.
+
+6.El profesor obtiene las actividades de un grupo.
+
+7.El profesor crea una actividad.
+
+|===
+|===
+| **CU-34**  Edición de una actividad.
+
+| Versión: 1.0 (01/12/2020)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la edición de una actividad_.
+
+|Secuencia normal:
+
+1.El profesor desea editar una actividad.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de sus grupos.
+
+4.El profesor obtiene el listado de sus grupos.
+
+5.El profesor solicita las actividades de un grupo.
+
+6.El profesor obtiene las actividades de un grupo.
+
+7.El profesor solicita los detalles de la actividad.
+ 
+8.El profesor obtiene los detalles de la actividad.
+
+9.El profesor edita una actividad.
+
+|===
+|===
+| **CU-35**  Eliminación de una actividad.
+
+| Versión: 1.0 (01/12/2020)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la eliminación de una actividad_.
+
+| Secuencia normal:
+
+1.El profesor desea editar una actividad.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de sus grupos.
+
+4.El profesor obtiene el listado de sus grupos.
+
+5.El profesor solicita las actividades de un grupo.
+
+6.El profesor obtiene las actividades de un grupo.
+
+7.El profesor solicita los detalles de la actividad.
+ 
+8.El profesor obtiene los detalles de la actividad.
+
+9.El profesor elimina una actividad.
+
+|===
+|===
+| **CU-36**  Ver las calificaciones de un alumno.
+
+| Versión: 1.0 (01/12/2020)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite ver las calificaciones de un alumno_.
+
+|Secuencia normal:
+
+1.El profesor desea ver las calificaciones de un alumno.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de sus grupos.
+
+4.El profesor obtiene el listado de sus grupos.
+
+5.El profesor solicita la lista de alumnos de ese grupo.
+
+6.El profesor obtiene la lista de alumnos de ese grupo.
+
+7.El profesor ve las califiaciones de un alumno.
+
+|===
+
+|===
+| **CU-37**  Creación de ejercicios.
+
+| Versión: 1.0 (01/12/2020)
+
+|Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la creación de un ejercicio_.
+
+| Secuencia normal:
+
+1.El profesor desea crear un ejercicio.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de sus grupos.
+
+4.El profesor obtiene el listado de sus grupos.
+
+5.El profesor solicita las actividades de un grupo.
+
+6.El profesor obtiene las actividades de un grupo.
+
+7.El profesor solicita los detalles de la actividad.
+ 
+8.El profesor obtiene los detalles de la actividad.
+
+9.El profesor crea un ejercicio.
+
+|===
+|===
+| **CU-38**  Edición de un ejercicio.
+
+| Versión: 1.0 (01/12/2020)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la edición de un ejercicio_.
+
+|Secuencia normal:
+
+1.El profesor desea editar un ejercicio.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de sus grupos.
+
+4.El profesor obtiene el listado de sus grupos.
+
+5.El profesor solicita las actividades de un grupo.
+
+6.El profesor obtiene las actividades de un grupo.
+
+7.El profesor solicita los detalles de la actividad.
+ 
+8.El profesor obtiene los detalles de la actividad.
+
+9.El profesor edita un ejercicio.
+
+|===
+|===
+| **CU-39**  Eliminación de un ejercicio.
+
+| Versión: 1.0 (01/12/2020)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la eliminación de un ejericio_.
+
+| Secuencia normal:
+
+1.El profesor desea eliminar un ejercicio.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de sus grupos.
+
+4.El profesor obtiene el listado de sus grupos.
+
+5.El profesor solicita las actividades de un grupo.
+
+6.El profesor obtiene las actividades de un grupo.
+
+7.El profesor solicita los detalles de la actividad.
+ 
+8.El profesor obtiene los detalles de la actividad.
+
+9.El profesor elimina un ejercicio.
+
+|===
+|===
+| **CU-40**  Asignar competencias a un ejercicio con una intensidad.
+
+| Versión: 1.0 (01/12/2020)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la asignar competencias a un ejercicio con una intensidad_.
+
+| Secuencia normal:
+
+1.El profesor desea asignar competencias a un ejercicio con una intensidad.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de sus grupos.
+
+4.El profesor obtiene el listado de sus grupos.
+
+5.El profesor solicita las actividades de un grupo.
+
+6.El profesor obtiene las actividades de un grupo.
+
+7.El profesor solicita los detalles de la actividad.
+ 
+8.El profesor obtiene los detalles de la actividad.
+
+9.El profesor solicita modificar un ejercicio.
+
+10.El profesor asigna una competencia a un ejercicio con una intensidad.
+
+|===
+|===
+| **CU-41**  Puntuar las evaluaciones, las actividades, los ejercicios y las competencias.
+
+| Versión: 1.0 (01/12/2020)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite puntuar las evaluaciones, las actividades, los ejercicios y las competencias_.
+
+| Secuencia normal:
+
+1.El profesor desea puntuar las evaluaciones, las actividades, los ejercicios y las competencias.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de sus grupos.
+
+4.El profesor obtiene el listado de sus grupos.
+
+5.El profesor solicita la lista de alumnos de ese grupo.
+
+6.El profesor obtiene la lista de alumnos de ese grupo.
+
+7.El profesor solicita ver las calificaciones.
+
+8.El profesor obtiene las calificaciones.
+
+9.El profesor solicita calificar las actividades.
+
+10.El profesor solicita calificar los ejercicios.
+
+11.El profesor solicita calificar las competencias.
+
+12.El profesor puntúa las competencias.
+
+13.El profesor obtiene las calificaciones de las competencias, ejercicios y actividades y evaluación.
+
+|===
+|===
+| **CU-42**  Modificar sus datos de usuario.
+
+| Versión: 1.0 (01/12/2020)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite modificar sus datos de usuario_.
+
+| Secuencia normal:
+
+1.El profesor desea modificar sus datos de usuario.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la modificación sus datos de usuario.
+
+4.El profesor modifica sus datos de usuario.
+
+|===
+
+|===
+| **CU-43**  Generar informe de un grupo completo.
+
+| Versión: 1.0 (09/12/2020)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite generar informe de un grupo completo_.
+
+| Secuencia normal:
+
+1.El profesor desea generar informe de un grupo completo.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de grupos de clase.
+
+4.El profesor obtiene el listado de grupos de clase.
+
+5.El profesor solicita la lista de alumnos.
+
+6.El profesor obtiene el listado de alumnos.
+
+5.El profesor solicita el informe.
+
+6.El profesor exporta el informe.
+
+|===
+
+|===
+| **CU-44**  Generar informe de un alumno.
+
+| Versión: 1.0 (09/12/2020)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite generar informe de un alumno_.
+
+| Secuencia normal:
+
+1.El profesor desea generar informe de un alumno.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de grupos de clase.
+
+4.El profesor obtiene el listado de grupos de clase.
+
+5.El profesor solicita la lista de alumnos.
+
+6.El profesor obtiene el listado de alumnos.
+
+7.El profesor ve las califiaciones de un alumno.
+
+8.El profesor exporta el informe.
+
+|===
+
+
+|===
+| **CU-45**  Ver competencias de un alumno.
+
+| Versión: 1.0 (09/12/2020)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite ver las competencias de un alumno_.
+
+| Secuencia normal:
+
+1.El profesor desea ver las competencias de un alumno.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de grupos de clase.
+
+4.El profesor obtiene el listado de grupos de clase.
+
+5.El profesor solicita la lista de alumnos.
+
+6.El profesor obtiene el listado de alumnos.
+
+7.El profesor solicita las competencias de un alumno.
+
+8.El profesor obtiene las competencias de un alumno.
+
+|===
+
+|===
+| **CU-46**  Creación de evaluaciones.
+
+| Versión: 1.0 (28/01/2021)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de una evaluación_.
+
+|Secuencia normal:
+
+1.El adminsitrador desea crear una evaluación.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de evaluaciones.
+
+4.El administrador obtiene el listado de evaluaciones.
+
+5.El administrador solicita crear una evaluación.
+
+6.El administrador crea una evaluación.
+
+
+|===
+|===
+| **CU-47**  Edición de evaluaciones.
+
+| Versión: 1.0 (28/01/2021)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la edición de una evaluación_.
+
+| Secuencia normal:
+
+1.El adminsitrador desea editar una evaluacion.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de evaluaciones.
+
+4.El administrador obtiene el listado de evaluaciones.
+
+5.El administrador solicita la edición una evaluación.
+
+6.El administrador edita una evaluación.
+
+
+|===
+|===
+| **CU-48**  Eliminación de evaluaciones.
+
+| Versión: 1.0 (28/01/2021)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de una evaluación_.
+
+| Secuencia normal:
+
+1.El adminsitrador desea eliminar una evaluación.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de evaluaciones.
+
+4.El administrador obtiene el listado de evaluaciones.
+
+5.El administrador solicita la eliminación una evaluación.
+
+6.El administrador elimina una evaluación.
+
+
+|===
+|===
+| **CU-49** Listado de evaluaciones.
+
+| Versión: 1.0 (28/01/2021)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de las evaluaciones_.
+
+|Secuencia normal:
+
+1.El adminsitrador desea obtener la lista de evaluaciones.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El administrador solicita la lista de grupos de clase.
+
+4.El administrador obtiene el listado de evaluaciones.
+
+|===
+|===
+| **CU-50** Listado de bloques (evaluaciones).
+
+| Versión: 1.1 (15/04/2021)
+
+| Precondición: El profesor ha seleccionado el tipo de evaluación.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesort solicite el listado de los bloques_.
+
+|Secuencia normal:
+
+1.El profesor desea obtener la lista de bloques.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de grupos de clase.
+
+4.El profesor obtiene el listado de grupos de clase.
+
+5.El profesor solicita la lista de bloques de un grupo de clase.
+
+6.El profesor obtiene el listado de bloques.
+
+|===
+|===
+| **CU-51** Creación de bloques (evaluaciones).
+
+| Versión: 1.0 (15/04/2021)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesort solicite la creación de un bloque_.
+
+|Secuencia normal:
+
+1.El profesor desea crear un bloque.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de grupos de clase.
+
+4.El profesor obtiene el listado de grupos de clase.
+
+5.El profesor solicita la lista de bloques de un grupo de clase.
+
+6.El profesor obtiene el listado de bloques.
+
+7.El profesor solicita la creación de un bloque.
+
+8.El profesor crea un bloque.
+
+|===
+|===
+| **CU-52** Edición de bloques (evaluaciones).
+
+| Versión: 1.0 (15/04/2021)
+
+| Precondición: El profesor ha creado un bloque.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la edición de un bloque_.
+
+|Secuencia normal:
+
+1.El profesor desea editar un bloque.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de grupos de clase.
+
+4.El profesor obtiene el listado de grupos de clase.
+
+5.El profesor solicita la lista de bloques de un grupo de clase.
+
+6.El profesor obtiene el listado de bloques.
+
+7.El profesor solicita la edición de un bloque.
+
+8.El profesor edita un bloque.
+
+|===
+|===
+| **CU-53** Eliminación de bloques (evaluaciones).
+
+| Versión: 1.0 (15/04/2021)
+
+| Precondición: El profesor ha creado un bloque.
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesort solicite la eliminación de un bloque_.
+
+|Secuencia normal:
+
+1.El profesor desea eliminar un bloque.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de grupos de clase.
+
+4.El profesor obtiene el listado de grupos de clase.
+
+5.El profesor solicita la lista de bloques de un grupo de clase.
+
+6.El profesor obtiene el listado de bloques.
+
+7.El profesor solicita la eliminación de un bloque.
+
+8.El profesor elimina un bloque.
+
+|===
+|===
+| **CU-54** Seleccionar el tipo de evaluación para las evaluaciones de un grupo de clase.
+
+| Versión: 1.0 (15/04/2021)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesort solicite seleccionar el tipo de evaluación para las evaluaciones de un grupo de clase.
+
+|Secuencia normal:
+
+1.El profesor desea seleccionar el tipo de evaluación para las evaluaciones de un grupo de clase.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de grupos de clase.
+
+4.El profesor obtiene el listado de grupos de clase.
+
+5.El profesor solicita seleccionar el tipo de evaluación.
+
+6.El profesor seleccionar el tipo de evaluación.
+
+| Postcondición: Se ha habilitado las opcciones de listar bloques, actividades y estudiantes.
+
+|===
+
 === Justificaciones de las tecnologías y herramientas utilizadas
 
 === Gestión de código
@@ -58,6 +1751,47 @@ Los objetivos del proyecto son:
 === Gestión de versiones
 
 === Fuentes e Imágenes
+
+A continuación hablaremos de la fuente escogida y de dónde hemos seleccionado las imagenes mostradas en la aplicación.
+
+==== Fuente 
+
+Para la elección de la fuente, nos decantamos por una fuente con la que no tuvieramos ningun tipo de problemas jurídicos con respecto a los derechos, así como, poderla usar en aplicaciones de fines lucatrivos. 
+
+===== Elección
+
+Decidimos finalmente decantarnos por la Fuente Ubuntu, la cual obtuvimos del siguiente link:
+
+https://design.ubuntu.com/font/
+
+La licencia de esta fuente es copyleft permite que las tipografías sean: usadas, estudiadas, modificadas y redistribuidas libremente, cumpliendo los términos estipulados en ella.
+
+La documentación de la licencia se encuentra en la carpeta fonts, cuyo nombre es "LICENSE.txt".
+
+===== Imágenes
+
+La opcioón a la hora de seleccionar las imágenes para la web fue dificil, ya que buscábamos un banco de imágenes que nos permitiera el uso comercial pensando en un hipotética uso de la misma así como también, sin derechos de autor.
+
+===== Elección
+
+Nos decantamos por la web https://unsplash.com/, la cual tiene un gran número de imágenes muy útiles, y una licencia que nos permitía lo nombrado anteriormente.
+
+Con respecto a la licencia, dice textualmente lo siguiente:
+
+_Unsplash photos are made to be used freely. Our license reflects that._
+
+* _All photos can be downloaded and used for free._
+* _Commercial and non-commercial purposes._
+* _No permission needed (though attribution is appreciated!)._
+
+_What is not permitted 👎_
+
+* _Photos cannot be sold without significant modification._
+* _Compiling photos from Unsplash to replicate a similar or competing service._
+
+Para más información puede consultar dicha licencia en el siguiente enlace:
+
+https://unsplash.com/license
 
 === Implementación del cálculo
 
@@ -106,7 +1840,6 @@ Los objetivos del proyecto son:
 | Competencias básicas
 
 |===
-
 
 == Bibliografía
 
