@@ -12,6 +12,23 @@
 
 == I. Definición de objetivos
 
+Los objetivos del proyecto son:
+
+* Desarrollar una aplicación web que permita dar funcionalidad a los profesores inscritos para la correcta evaluación mediante competencias.
+
+* Posibilitar la utlización de la aplicación
+ para todos los niveles de la enseñanza.
+
+* Implementar distintos métodos de cáculo para la evaluación y no dificultar el desarrollo de otros posibles métodos.
+
+* Permitir utilizar la aplicación para el sistema de evaluación tradicional.
+
+* Crear una interfaz simple que permita utilizar la aplicación de forma intuitiva.
+
+* Permitir la correcta visualización en distintas pantallas de sobremesa y alguna de móvil sin perder funcionalidad.
+
+* Internacionalizar la aplicación para que esté disponible en español e inglés.
+
 == II. Análisis de antecedentes y aportación realizada
 
 == III. Análisis temporal y de costes de desarrollo
@@ -71,7 +88,7 @@
 
 [grid=cols]
 |===
-| |Nombre en la aplicación |Enseñanza primaria/ESO/Bachillerato |Títulos universitarios
+|Niveles |Nombre en la aplicación |Enseñanza primaria/ESO/Bachillerato |Títulos universitarios 
 
 | Nivel 1
 | Competencias concretas
