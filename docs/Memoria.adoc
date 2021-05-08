@@ -443,10 +443,6 @@ _[1 de Abril]_
 
 == IV. Análisis de requisitos, diseño e implementación
 
-=== Diagramas
-
-=== Mockups
-
 === Requisitos
 
 === Casos de uso
@@ -1744,9 +1740,17 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 
+=== Diagramas
+
+=== Mockups
+
 === Justificaciones de las tecnologías y herramientas utilizadas
 
+include::Justificaciones.adoc[]
+
 === Gestión de código
+
+include::Gestión de código.adoc[]
 
 === Gestión de versiones
 

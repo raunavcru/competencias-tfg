@@ -1,7 +1,6 @@
-= Gestión de código
-
-== Gestión de ramas
+==== Gestión de ramas
 Ramas por defecto:
+
 * master
 * dev
 
@@ -28,7 +27,7 @@ Cógigos de sprint (<codigo_sprint>):
 
 Nombre de las tareas (<nombre_tarea>): Nombre especificado en Jira, o abreviación. Por ejemplo, CU-07 Edición de profesores, o simplemente, CU-07. Se pueden añadir varias tareas separadas por &.
 
-== Gestión de commits
+==== Gestión de commits
 Los commits deben seguir el siguiente patrón: *[<tipo_commit>] <nombre_commit>*. Además se puede añadir una descripción opcionalmente.
 
 Tipo de commit (<tipo_commit>):
@@ -40,7 +39,7 @@ Tipo de commit (<tipo_commit>):
 * test      (añadir o refactorizar tests)
 * release   (nueva release)
 
-== Pull requests
+==== Pull requests
 Para añadir funcionalidad a la rama *dev* se abrirá una pull request. El que haya desarrollado la funcionalidad se asignará a la pull request y asignará al compañero como revisor. Para que la pull request se de como válida debe de pasar el control y análisis de Travis y Sonarcloud, además del visto bueno del revisor. 
 
 Una vez que se haya hecho merge a dev, la rama se eliminará.
