@@ -1,7 +1,9 @@
-== Fuente 
+A continuación hablaremos de la fuente escogida y de dónde hemos seleccionado las imagenes mostradas en la aplicación.
+
+==== Fuente 
 La opción a la hora de seleccionar una fuente ha sido seleccionado con el fin de evitarnos problemas jurídicos, así como, poderla usar en aplicaciones de fines lucatrivos. 
 
-=== Elección
+===== Elección
 
 Nos decantamos por la Fuente Ubuntu, la cual obtuvimos del siguiente link:
 
@@ -11,11 +13,11 @@ La licencia de esta fuente es copyleft permite que las tipografías sean «usada
 
 La documentación de la licencia se encuentra en la carpeta fonts, cuyo nombre es "LICENSE.txt".
 
-== Imágenes
+==== Imágenes
 
-La opcioón a la hora de seleccionar las imágenes para la web fue dificil, ya que buscábamos un banco de imágenes que nos permitiera el uso comercial pensando en un hipotética uso de la misma y sin derechos de autor.
+La opción a la hora de seleccionar las imágenes para la web fue dificil, ya que buscábamos un banco de imágenes que nos permitiera el uso comercial pensando en un hipotética uso de la misma y sin derechos de autor.
 
-=== Elección
+===== Elección
 
 Nos decantamos por la web https://unsplash.com/, la cual tiene un gran número de imágenes muy útiles, y una licencia que nos permitía lo nombrado anteriormente.
 

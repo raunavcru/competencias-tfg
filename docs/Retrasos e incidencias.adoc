@@ -1,19 +1,19 @@
-= Retrasos
+==== Retrasos
 
 [grid=cols]
 [cols=3*,options="header"]
 |===
-|Tarea
-|Fecha prevista
-|Fecha realizado
+| Tarea
+| Fecha prevista
+| Fecha realizada
 
-|CU-02 Creación de alumnos.
-|5 de Enero
-|7 de Enero
+| CU-02 Creación de alumnos.
+| 5 de Enero
+| 7 de Enero
 
-|CU-09 Listado de Grupos de clase.
-|16 de Enero
-|17 de Enero
+| CU-09 Listado de Grupos de clase.
+| 16 de Enero
+| 17 de Enero
 
 | Despliegue de la versión 0.1.
 | 25 de Enero
@@ -22,9 +22,13 @@
 | Replanificación. 
 | 27 de Enero
 | 28 de Enero
+
+| Despliegue versión 1.0. 
+| 27 de Abril
+| 29 de Abril
 |===
 
-= Incidencias
+==== Incidencias
 
 [grid=cols]
 [cols=2*,options="header"]
@@ -32,9 +36,42 @@
 |Tarea
 |Fecha de la incidencia
 
-| Añadir CRUD de evaluaciones
+| Añadir CRUD de evaluaciones.
 | 28 de Enero
 
-| Reordenación casos de uso
+| Reordenación casos de uso.
 | 28 de Enero
+
+| Error al mostrar botones del navbar.
+| 26 de Febrero
+
+| Error al copiar los ejercicios.
+| 19 de Marzo
+
+| Error al ocultar botones al copiar.
+| 25 de Marzo
+
+| Error de selección de nivel para los cálculos de evaluación por competencias.
+| 16 de Abril
+
+| Error de selección de nivel para los cálculos de evaluación por competencias.
+| 16 de Abril
+
+| Error 404 de fuente.
+| 19 de Abril
+
+| Error de actualización de tipo de evaluación.
+| 22 de Abril
+
+| Error de cálculo de la nota de un ejercicio.
+| 22 de Abril
+
+| Error de intervalo de nota.
+| 22 de Abril
+
+| Error al asignar una competencia.
+| 27 de Abril
+
+| Error al desasignar una competencia.
+| 27 de Abril
 |===

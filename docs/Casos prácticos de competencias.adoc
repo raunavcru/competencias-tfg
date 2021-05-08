@@ -1,0 +1,21 @@
+
+[grid=cols]
+|===
+|Niveles |Nombre en la aplicación |Enseñanza primaria/ESO/Bachillerato |Títulos universitarios 
+
+| Nivel 1
+| Competencias concretas
+| Estándares de aprendizaje
+| Criterios del profesor
+
+| Nivel 2
+| Competencias específicas
+| Criterios de evaluación
+| Competencias generales y específicas
+
+| Nivel 3
+| Competencias generales
+| Competencias clave
+| Competencias básicas
+
+|===

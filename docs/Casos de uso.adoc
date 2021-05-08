@@ -1,4 +1,4 @@
-== Casos de Uso
+
 Para poder ver los casos de uso de manera interactiva vaya al siguiente enlace:
 
 * link:https://raunavcru.github.io/mockups-interactivos/Home_admin#livereload[Administrador]
