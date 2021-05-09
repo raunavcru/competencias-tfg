@@ -40,6 +40,8 @@ include::Casos de uso.adoc[]
 
 === Diagramas
 
+image::UML/uml.svg[]
+
 === Mockups
 
 === Justificaciones de las tecnologías y herramientas utilizadas
