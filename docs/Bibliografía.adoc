@@ -5,3 +5,4 @@
 * https://www.us.es/estudiar/que-estudiar/oferta-de-grados/grado-en-pedagogia
 * http://www.juntadeandalucia.es/educacion/descargasrecursos/curriculo-primaria/pdf/PDF/textocompleto.pdf
 * https://www.boe.es/diario_boe/txt.php?id=BOE-A-2015-37
+* https://docs.djangoproject.com/en/3.2/topics/i18n/translation/

@@ -6,7 +6,8 @@ Ramas por defecto:
 
 En la rama **dev** se incluirán todas las ramas de desarrollo con *pull requests*. La rama **master** solo se podrán añadir desde la rama **dev**, para incluir la release. 
 
-El resto de ramas seguirán el siguiente esquema:
+El resto de ramas seguirán el siguiente esquema: 
+
 *<codigo_rama>/<codigo_sprint>/<nombre_tarea>*
 
 Códigos de rama (<codigo_rama>):

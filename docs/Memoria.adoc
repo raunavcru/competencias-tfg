@@ -68,6 +68,8 @@ include::Cálculo.adoc[]
 
 === Traducción
 
+include::Traducción.adoc[]
+
 === Instalación
 
 == V. Manual de usuario
