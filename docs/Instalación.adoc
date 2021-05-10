@@ -1,4 +1,3 @@
-
 ===== Prerequisitos
 * Instalación de Python3: https://www.python.org/downloads/
 * Instalación PostgresSQL: https://www.postgresql.org/download/
