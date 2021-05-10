@@ -1,14 +1,14 @@
-=  Verum
-:toc:
+=  Desarrollo web para la evaluación por competencias: 
+:toc: preamble
 :toc-title: Índice general
-
-== Resumen
 
 == Índice de figuras
 
 == Índice de cuadros
 
 == Índice de código o algoritmos
+
+== Resumen
 
 == I. Definición de objetivos
 
@@ -65,6 +65,8 @@ include::Fuente e Imágenes.adoc[]
 include::Cálculo.adoc[]
 
 === Responsive
+
+include::Responsive.adoc[]
 
 === Traducción
 

@@ -2,6 +2,7 @@ Para la traducción hemos utlizado **gettext** y la etiqueta de Django _trans_, 
 
 Para internacionalizar las vistas utlizamos las etiqueta _trans_ sobre la palabra o conjunto de palabras que queremos traducir.
 
+.Ejemplo de etiqueta de traducción
 [source, html]
 ----
 <h6 class="centered">
@@ -15,11 +16,13 @@ image::images/translate-file.PNG[]
 
 Para crear dicho archivo y compilarlo debemos utizar los siguientes comando:
 
+.Comando de creación de archivo de configuración
 [source, cmd]
 ----
 django-admin makemessages -l es
 ----
 
+.Comando de compilación
 [source, cmd]
 ----
 py manage.py compilemessages 
@@ -29,6 +32,7 @@ cambiando _es_ (español) por el idioma correspondiente.
 
 Sin embargo, para traducir los errores de formulario no es posible utizar estas etiquetas, por que hemos implementado un método, valiéndose del método de gettext llamado _get_language_, que hace saltar los errores de formulario en el idioma correcto.
 
+.Método de error de validación
 [source, python]
 ----
 def raise_error(self, en_message: str, es_message: str):
