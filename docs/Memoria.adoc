@@ -1,6 +1,15 @@
-=  Desarrollo web para la evaluación por competencias: 
-:toc: preamble
+=  Desarrollo web para la evaluación por competencias
+:toc:
 :toc-title: Índice general
+
+ESCUELA TÉCNICA SUPERIOR DE INGENIERÍA INFORMÁTICA
+Trabajo fin de Grado
+Grado en Ingeniería Informática-Ingeniería del Software
+Realizado por: Alberto Cordón Arévalo y Raúl Navarro Cruz
+Dirigido por: Jorge Juan Chico
+Departamento de Tecnología Electrónica
+Sevilla, Marzo 2021
+
 
 == Índice de figuras
 
