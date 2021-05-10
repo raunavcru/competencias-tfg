@@ -1,0 +1,5 @@
+==== Requisitos de Información:
+
+**RI-01**: Un Profesor debe guardar el año de nacimiento, sus iniciales y sus asignaturas.  
+
+**RI-02**: Un Administrador debe guardar el año de nacimiento  

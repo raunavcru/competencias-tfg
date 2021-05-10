@@ -1,3 +1,5 @@
+==== Requisitos Funcionales:
+
 **RF 01**: El sistema permitirá a los administradores poder ver el listado de alumnos, así como crear, editar y eliminar dichos alumnos.
 
 **RF 02**: El sistema permitirá a los administradores poder ver el listado de profesores, así como crear, editar y eliminar dichos profesores.

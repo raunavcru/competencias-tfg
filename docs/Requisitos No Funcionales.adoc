@@ -1,0 +1,3 @@
+==== Requisitos No Funcionales:
+
+**RNF 01**: El sistema permitirá a los usuarios poder usar la aplicación en español y en inglés.
