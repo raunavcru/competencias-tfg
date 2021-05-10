@@ -824,7 +824,26 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 
 |===
-| **CU-37**  Creación de ejercicios.
+| **CU-37**  Listar ejercicios.
+
+| Versión: 1.1 (15/04/2021)
+
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite el listado de ejercicio_.
+
+|Secuencia normal:
+
+1.El profesor desea listar ejercicios.
+
+2.El sistema solicita las credenciales para identificarse.
+
+3.El profesor solicita la lista de ejercicios.
+
+4.El profesor obtiene el listado de ejercicios.
+
+|===
+
+|===
+| **CU-38**  Creación de ejercicios.
 
 | Versión: 1.0 (01/12/2020)
 
@@ -852,7 +871,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-38**  Edición de un ejercicio.
+| **CU-39**  Edición de un ejercicio.
 
 | Versión: 1.0 (01/12/2020)
 
@@ -880,7 +899,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-39**  Eliminación de un ejercicio.
+| **CU-40**  Eliminación de un ejercicio.
 
 | Versión: 1.0 (01/12/2020)
 
@@ -908,7 +927,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-40**  Asignar competencias a un ejercicio con una intensidad.
+| **CU-41**  Asignar competencias a un ejercicio con una intensidad.
 
 | Versión: 1.0 (01/12/2020)
 
@@ -938,7 +957,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-41**  Puntuar las evaluaciones, las actividades, los ejercicios y las competencias.
+| **CU-42**  Puntuar las evaluaciones, las actividades, los ejercicios y las competencias.
 
 | Versión: 1.0 (01/12/2020)
 
@@ -974,7 +993,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-42**  Modificar sus datos de usuario.
+| **CU-43**  Modificar sus datos de usuario.
 
 | Versión: 1.0 (01/12/2020)
 
@@ -993,7 +1012,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 
 |===
-| **CU-43**  Generar informe de un grupo completo.
+| **CU-44**  Generar informe de un grupo completo.
 
 | Versión: 1.0 (09/12/2020)
 
@@ -1020,7 +1039,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 
 |===
-| **CU-44**  Generar informe de un alumno.
+| **CU-45**  Generar informe de un alumno.
 
 | Versión: 1.0 (09/12/2020)
 
@@ -1048,7 +1067,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 
 |===
-| **CU-45**  Ver competencias de un alumno.
+| **CU-46**  Ver competencias de un alumno.
 
 | Versión: 1.0 (09/12/2020)
 
@@ -1075,7 +1094,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 
 |===
-| **CU-46**  Creación de evaluaciones.
+| **CU-47**  Creación de evaluaciones.
 
 | Versión: 1.0 (28/01/2021)
 
@@ -1098,7 +1117,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-47**  Edición de evaluaciones.
+| **CU-48**  Edición de evaluaciones.
 
 | Versión: 1.0 (28/01/2021)
 
@@ -1121,7 +1140,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-48**  Eliminación de evaluaciones.
+| **CU-49**  Eliminación de evaluaciones.
 
 | Versión: 1.0 (28/01/2021)
 
@@ -1144,7 +1163,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-49** Listado de evaluaciones.
+| **CU-50** Listado de evaluaciones.
 
 | Versión: 1.0 (28/01/2021)
 
@@ -1162,7 +1181,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-50** Listado de bloques (evaluaciones).
+| **CU-51** Listado de bloques (evaluaciones).
 
 | Versión: 1.1 (15/04/2021)
 
@@ -1186,7 +1205,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-51** Creación de bloques (evaluaciones).
+| **CU-52** Creación de bloques (evaluaciones).
 
 | Versión: 1.0 (15/04/2021)
 
@@ -1212,7 +1231,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-52** Edición de bloques (evaluaciones).
+| **CU-53** Edición de bloques (evaluaciones).
 
 | Versión: 1.0 (15/04/2021)
 
@@ -1240,7 +1259,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-53** Eliminación de bloques (evaluaciones).
+| **CU-54** Eliminación de bloques (evaluaciones).
 
 | Versión: 1.0 (15/04/2021)
 
@@ -1268,7 +1287,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 |===
-| **CU-54** Seleccionar el tipo de evaluación para las evaluaciones de un grupo de clase.
+| **CU-55** Seleccionar el tipo de evaluación para las evaluaciones de un grupo de clase.
 
 | Versión: 1.0 (15/04/2021)
 

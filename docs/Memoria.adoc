@@ -43,6 +43,8 @@ include::Retrasos e incidencias.adoc[]
 
 === Requisitos
 
+include::Requisitos Funcionales.adoc[]
+
 === Casos de uso
 
 include::Casos de uso.adoc[]
