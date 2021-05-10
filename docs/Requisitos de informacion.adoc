@@ -1,5 +1,19 @@
 ==== Requisitos de Información:
 
-**RI-01**: Un Profesor debe guardar el año de nacimiento, sus iniciales y sus asignaturas.  
+**RI-01**: Un Profesor debe guardar el año de nacimiento, sus iniciales,un username, una contraseña, un nombre, unos apellidos, un email y sus asignaturas.  
 
-**RI-02**: Un Administrador debe guardar el año de nacimiento  
+**RI-02**: Un Administrador debe guardar el año de nacimiento, sus iniciales, un username, una contraseña, un nombre, unos apellidos y un email. 
+
+**RI-03**: Una Competencia debe guardar un código de identifiación, un nombre, una descripción, un peso, el peso para una asignatura, un nivel y podrá tener una asignatura padre.
+
+**RI-04**: Una Asignatura debe guardar un nombre, un nivel, el grado, una descripción y una competencia asociada a ella.
+
+**RI-05**: Una Evaluación debe guardar, un nombre, una fecha de incio, una fecha de fin, indicar si es una evaluación final, una nota por competencias, una nota manual, un tipo de evaluación, una evaluación, un estudiante, un peso, una asignatura asociada, un profesor asociado, un periodo, y podrá tener una evaluación padre.
+
+**RI-06**: Un Estudiante debe guardar un nombre, unos apellidos, una fecha de nacimiento así como sus iniciales.
+
+**RI-07**: Un Grupo debe guardar un nombre, un nivel, un grado, una línea, el tipo de evaluación, un profesor, una asignatura, una evaluación y un estudiante. 
+
+**RI-08**: Un Grupo debe guardar un título, un fecha, un peso, un indicador para saber si es una recuperación, una evaluación asociada, un grupo, y una asignatura.
+
+
