@@ -1,0 +1,28 @@
+=== Pruebas de automáticas
+En el desarrollo no se ha realizado pruebas automáticas dado que las pruebas manuales cumplen su labor en menor tiempo. 
+
+=== Pruebas de formulario
+
+* Comprobamos que la vista este correctamente traducida.
+* Verificamos la obligatoriedad de los campos enviandolo completamente vacío y rellenando uno a uno, comprobando si se muestra el mensaje de obligatoriedad.
+* Comprobamos las restricciones de modelo, tanto longuitud como rango, y vemos si se muestra el error correspondiente. Esto se hace en ambos idiomas.
+* Lo enviamos correctamente y verificamos si se creado o modificado y que lleva a la vista correspondiente.
+* Comprobamos si el botoón de _Volver_ lleva a la vista correspondiente.
+* Verificamos que no se puede acceder al formulario si no tienes permiso (**GET**).
+* Comprobamos si cambiando la url del formulario no se puede crear o modificar sin permiso (**POST**).
+* Comprobamos el _reponsive_.
+
+=== Pruebas de borrado
+* Comprobamos que la vista este correctamente traducida.
+* Comprobamos si el botoón de _Volver_ lleva a la vista correspondiente.
+* Lo enviamos correctamente y verificamos si se borrado y que lleva a la vista correspondiente.
+* Verificamos que no se puede acceder a la opción de borrar si no tienes permiso (**GET**).
+* Comprobamos si cambiando la url del formulario no se puede borrar sin permiso (**POST**).
+* Comprobamos el _reponsive_.
+
+=== Pruebas de listado
+* Comprobamos que la vista este correctamente traducida.
+* Comprobamos que la vista este correctamente traducida.
+* Comprobamos que no se pueda acceder a un listado sin permiso mediante url.
+* Comprobamos si el botoón de _Volver_ lleva a la vista correspondiente.
+* Comprobamos el _reponsive_.

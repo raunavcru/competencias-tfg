@@ -35,9 +35,9 @@ include::Planificación.adoc[]
 
 include::RetrasosEIncidencias.adoc[]
 
-== Reuniones
+=== Reuniones
 
-== Costes
+=== Costes
 
 == IV. Análisis de requisitos, diseño e implementación
 
@@ -92,6 +92,8 @@ include::Instalación.adoc[]
 == V. Manual de usuario
 
 == VI. Pruebas
+
+include::Pruebas.adoc[]
 
 == VII. Comparativas con otras alternativas
 
