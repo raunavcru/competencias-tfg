@@ -21,7 +21,7 @@ Sevilla, Marzo 2021
 
 == I. Definición de objetivos
 
-include::Definición de objetivos.adoc[]
+include::DefiniciónDeObjetivos.adoc[]
 
 == II. Análisis de antecedentes y aportación realizada
 
@@ -33,7 +33,7 @@ include::Planificación.adoc[]
 
 === Retrasos e incidencias
 
-include::Retrasos e incidencias.adoc[]
+include::RetrasosEIncidencias.adoc[]
 
 == Reuniones
 
@@ -43,13 +43,13 @@ include::Retrasos e incidencias.adoc[]
 
 === Requisitos
 
-include::Requisitos Funcionales.adoc[]
+include::RequisitosFuncionales.adoc[]
 
-include::Requisitos No Funcionales.adoc[]
+include::RequisitosNoFuncionales.adoc[]
 
 === Casos de uso
 
-include::Casos de uso.adoc[]
+include::CasosDeUso.adoc[]
 
 === Diagramas
 
@@ -63,15 +63,15 @@ include::Justificaciones.adoc[]
 
 === Gestión de código
 
-include::Gestión de código.adoc[]
+include::GestiónDeCódigo.adoc[]
 
 === Gestión de versiones
 
-include::Gestión de versiones.adoc[]
+include::GestiónDeVersiones.adoc[]
 
 === Fuentes e Imágenes
 
-include::Fuente e Imágenes.adoc[]
+include::FuenteEImágenes.adoc[]
 
 === Implementación del cálculo
 
