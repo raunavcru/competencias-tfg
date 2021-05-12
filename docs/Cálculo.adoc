@@ -1,8 +1,31 @@
 
-Existen muchas formas de realizar el calculo de las notas, y dado que no podemos implemetarlos todos, se implementará de tal forma que sea posible añadir nueva funcionalidad para el cálculo. Por defecto se podrán elegir estos tipos de cálculo:
+Existen muchas formas de realizar el calculo de las notas, y dado que no podemos implemetarlos todos, se implementará de tal forma que sea posible añadir nueva funcionalidad para el cálculo. Para que el profesor pueda modificar como se va a realizar el cálculo, se ha decidido almacenar esa información el grupo, así todos los alumnos tendrán el mismo método y no suponga un coste computacional muy alto. Se ha separado la selección del método del cálculo, se puede elegir un método de cálculo para la evalaución final y otro para las evaluaciones parciales, para que sea más flexible.
 
-* Media ponderada sin recuperación.
-Se calculará mediante la media ponderada de todas las notas con pesos normalizados.
+Todos los cálculos que se realizan en el proyecto están normalizados, por lo que los pesos son bastantes flexibles y no está limitado de 0 a 10 o de 0 a 1, sino que está limitado de 0 a 999,99. Hemos pensado que el número es lo suficinete grande para que no sea un impedimento en su uso.
 
-* Media ponderada con recuperación.
-Si no hay recuperaciones se realizará como la especificada en el anterior punto, pero se ha creado una recupración, la nota estará definida por la nota de la recuperación.
+Métodos de cálculo implementados:
+
+* Evaluaciones finales:
+
+** Por competencias: Media ponderada de las competencias de nivel dos.
+** Por evaluaciones (Sin recuperación): Media ponderada de las evaluaciones parciales.
+** Por evaluaciones (Con recuperación): Si hay recuperaciones, la media poderada de estas, sino media ponderada de las evaluaciones parciales . 
+
+* Evaluciones parciales:
+
+** Por todas las actividades: Media ponderada de todas las actividades asociadas a la evaluación.
+** Por recuperaciones: Si hay recuperaciones, la media poderada de estas, sino media ponderada de todas las actividades asociadas a la evaluación.
+
+==== Añadir nuevos métodos de cálculo
+
+Los pasos son los siguiente:
+
+* En primer luagar, añadir en _forms.py_ el valor del método en base de datos y como se va a mostrar al usuario. Se deberá modificar _CHOICES_EVALUATION_TYPE_FINAL_EN_ y _CHOICES_EVALUATION_TYPE_FINAL_ para las evaluaciones finales y/o _CHOICES_EVALUATION_TYPE_PARTIAL_EN_ y _CHOICES_EVALUATION_TYPE_PARTIAL_ para las parciales.
+
+image::images/choices.PNG[]
+
+* En segundo lugar, implementar el nuevo método de cálculo en _services.py_ en las clase _MarkService()_.
+
+* En último lugar, modificar el método _calculate_evaluation_mark_ de las clase _MarkService()_ dentro de _services.py_ para ñadir en el condicional el nuevo método.
+
+image::images/calculate_evalution_mark.PNG[]
