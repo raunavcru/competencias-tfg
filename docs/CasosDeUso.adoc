@@ -376,7 +376,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-15**  Creación de asignaturas.
-| Versión: 1.0 (29/11/2020)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -404,7 +404,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 |**CU-16**  Edición de asignaturas.
-| Versión: 1.0 (29/11/2020)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -432,7 +432,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-17**  Eliminación de asignaturas.
-| Versión: 1.0 (29/11/2020)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -459,7 +459,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 |**CU-18**  Asignar asignatura a profesores.
-| Versión: 1.0 (29/11/2020)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -489,7 +489,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-19** Listado de competencias.
-| Versión: 1.0 (29/11/2020)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -513,7 +513,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-20**  Creación de competencias.
-| Versión: 1.0 (29/11/2020)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -540,7 +540,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-21**  Edición de competencias.
-| Versión: 1.0 (29/11/2020)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -567,7 +567,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-22**  Eliminación de competencias.
-| Versión: 1.0 (29/11/2020)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -594,7 +594,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-23**  Asignación de competencias.
-| Versión: 1.0 (29/11/2020)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -623,7 +623,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-24** Listado de administradores.
-| Versión: 1.0 (29/11/2020)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -647,7 +647,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-25**  Creación de administradores.
-| Versión: 1.0 (29/11/2020)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -674,7 +674,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-26**  Eliminación de administradores.
-| Versión: 1.0 (29/11/2020)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -701,7 +701,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-28**  Listar sus grupos de clase.
-| Versión: 1.0 (01/12/2020)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -724,7 +724,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-29**  Listar sus asignaturas.
-| Versión: 1.0 (01/12/2020)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -747,7 +747,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-30**  Listar las competencias de una asignatura.
-| Versión: 1.0 (01/12/2020)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -770,8 +770,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-31**  Listar sus alumnos.
-| Versión: 1.1 (15/04/2021)
-
+| Versión: 1.1 (17/05/2021)
 | Dependencias: 
 
 * RF 15.
@@ -799,7 +798,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-32**  Listar actividades.
-| Versión: 1.1 (15/04/2021)
+| Versión: 1.1 (17/05/2021)
 
 | Dependencias: 
 
@@ -824,7 +823,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-33**  Creación de actividades.
-| Versión: 1.0 (01/12/2020)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -853,7 +852,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-34**  Edición de una actividad.
-| Versión: 1.0 (01/12/2020)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -886,7 +885,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-35**  Eliminación de una actividad.
-| Versión: 1.0 (01/12/2020)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -919,7 +918,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-36**  Ver las calificaciones de un alumno.
-| Versión: 1.0 (01/12/2020)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -948,7 +947,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-37**  Listar ejercicios.
-| Versión: 1.1 (15/04/2021)
+| Versión: 1.1 (17/05/2021)
 
 | Dependencias: 
 
@@ -971,7 +970,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-38**  Creación de ejercicios.
-| Versión: 1.0 (01/12/2020)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -1004,7 +1003,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-39**  Edición de un ejercicio.
-| Versión: 1.0 (01/12/2020)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -1037,7 +1036,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-40**  Eliminación de un ejercicio.
-| Versión: 1.0 (01/12/2020)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -1070,7 +1069,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-41**  Asignar competencias a un ejercicio con una intensidad.
-| Versión: 1.0 (01/12/2020)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -1105,7 +1104,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-42**  Puntuar las evaluaciones, las actividades, los ejercicios y las competencias.
-| Versión: 1.0 (01/12/2020)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -1146,7 +1145,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-43**  Modificar sus datos de usuario.
-| Versión: 1.0 (01/12/2020)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -1169,7 +1168,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-44**  Generar informe de un grupo completo.
-| Versión: 1.0 (09/12/2020)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -1200,7 +1199,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-45**  Generar informe de un alumno.
-| Versión: 1.0 (09/12/2020)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -1231,7 +1230,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-46**  Ver competencias de un alumno.
-| Versión: 1.0 (09/12/2020)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -1262,7 +1261,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-47**  Creación de evaluaciones.
-| Versión: 1.0 (28/01/2021)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -1289,7 +1288,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-48**  Edición de evaluaciones.
-| Versión: 1.0 (28/01/2021)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -1316,7 +1315,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-49**  Eliminación de evaluaciones.
-| Versión: 1.0 (28/01/2021)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -1343,7 +1342,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-50** Listado de evaluaciones.
-| Versión: 1.0 (28/01/2021)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -1366,7 +1365,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-51** Listado de bloques (evaluaciones).
-| Versión: 1.1 (15/04/2021)
+| Versión: 1.1 (17/05/2021)
 
 | Dependencias: 
 
@@ -1395,7 +1394,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-52** Creación de bloques (evaluaciones).
-| Versión: 1.0 (15/04/2021)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -1426,7 +1425,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-53** Edición de bloques (evaluaciones).
-| Versión: 1.0 (15/04/2021)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -1459,7 +1458,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-54** Eliminación de bloques (evaluaciones).
-| Versión: 1.0 (15/04/2021)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
@@ -1492,7 +1491,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-55** Seleccionar el tipo de evaluación para las evaluaciones de un grupo de clase.
-| Versión: 1.0 (15/04/2021)
+| Versión: 1.0 (17/05/2021)
 
 | Dependencias: 
 
