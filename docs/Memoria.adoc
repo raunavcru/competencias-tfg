@@ -61,7 +61,7 @@ image::UML/uml.svg[]
 
 === Mockups
 
-
+include::Mockups.adoc[]
 
 === Justificaciones de las tecnologías y herramientas utilizadas
 
