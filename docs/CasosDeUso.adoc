@@ -219,7 +219,11 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-09** Listado de Grupos de clase.
-| Versión: 1.0 (29/11/2020)
+| Versión: 1.1 (17/05/2021)
+
+| Dependencias: 
+
+* RF 05.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de grupo de clase_.
 
@@ -238,7 +242,11 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 |**CU-10**  Creación de Grupos de clase.
-| Versión: 1.0 (29/11/2020)
+| Versión: 1.1 (17/05/2021)
+
+| Dependencias: 
+
+* RF 05.
 
 | Descripción:
 El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de un grupo de clase_.
@@ -262,9 +270,13 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-11**  Edición de Grupos de clase.
-| Versión: 1.0 (29/11/2020)
+| Versión: 1.1 (17/05/2021)
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la edición de un grupo de clase_.
+
+| Dependencias: 
+
+* RF 05.
 
 | Secuencia normal:
 
@@ -285,7 +297,11 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 |**CU-12**  Eliminación de Grupos de clase.
-| Versión: 1.0 (29/11/2020)
+| Versión: 1.1 (17/05/2021)
+
+| Dependencias: 
+
+* RF 05.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de un grupos de clase.
 
@@ -308,7 +324,11 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 | **CU-13**  Asignar alumnos a sus respectivos grupos de clase.
-| Versión: 1.0 (29/11/2020)
+| Versión: 1.1 (17/05/2021)
+
+| Dependencias: 
+
+* RF 06.
 
 |Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador asignar alumnos a sus respectivos grupos de clase_.
 
@@ -333,7 +353,11 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 [cols="a"]
 |===
 |**CU-14** Listado de asignaturas.
-| Versión: 1.0 (29/11/2020)
+| Versión: 1.1 (17/05/2021)
+
+| Dependencias: 
+
+* RF 03.
 
 |Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de asignaturas_.
 
