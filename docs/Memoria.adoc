@@ -49,6 +49,8 @@ include::RequisitosFuncionales.adoc[]
 
 include::RequisitosNoFuncionales.adoc[]
 
+include::RequisitosDeInformacion.adoc[]
+
 === Casos de uso
 
 include::CasosDeUso.adoc[]
@@ -58,6 +60,8 @@ include::CasosDeUso.adoc[]
 image::UML/uml.svg[]
 
 === Mockups
+
+
 
 === Justificaciones de las tecnologías y herramientas utilizadas
 

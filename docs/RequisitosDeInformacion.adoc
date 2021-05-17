@@ -8,12 +8,14 @@
 
 **RI-04**: Una Asignatura debe guardar un nombre, un nivel, el grado, una descripción y una competencia asociada a ella.
 
-**RI-05**: Una Evaluación debe guardar, un nombre, una fecha de incio, una fecha de fin, indicar si es una evaluación final, una nota por competencias, una nota manual, un tipo de evaluación, una evaluación, un estudiante, un peso, una asignatura asociada, un profesor asociado, un periodo, y podrá tener una evaluación padre.
+**RI-05**: Una Evaluación debe guardar, un nombre, una fecha de incio, una fecha de fin, indicar si es una evaluación final, un periodo, un peso, podrá tener una evaluación padre, una asignatura, un profesor, las notas de un alumno, una o más actividades y uno o más grupos.
 
-**RI-06**: Un Estudiante debe guardar un nombre, unos apellidos, una fecha de nacimiento así como sus iniciales.
+**RI-06**: Un Estudiante debe guardar un nombre, unos apellidos, una fecha de nacimiento, sus iniciales, las nota de una evaluación, las notas de una actividad, las notas de un ejercicio y un grupo.
 
 **RI-07**: Un Grupo debe guardar un nombre, un nivel, un grado, una línea, el tipo de evaluación, un profesor, una asignatura, una evaluación y un estudiante. 
 
-**RI-08**: Un Grupo debe guardar un título, un fecha, un peso, un indicador para saber si es una recuperación, una evaluación asociada, un grupo, y una asignatura.
+**RI-08**: Una Actividad debe guardar un título, un fecha, un peso, un indicador para saber si es una recuperación, un ejercicio asociado, una evaluación asociada, un grupo, y una asignatura.
+
+**RI-09**: Un Ejercicio debe guardar un peso, un enunciado, una nota y una competencia asociada.
 
 
