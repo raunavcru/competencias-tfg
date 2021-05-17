@@ -79,9 +79,9 @@ include::FuenteEImágenes.adoc[]
 
 include::Cálculo.adoc[]
 
-=== Responsive
+=== Adaptabilidad del diseño en diferentes resoluciones
 
-include::Responsive.adoc[]
+include::AdaptabilidadDelDiseño.adoc[]
 
 === Traducción
 

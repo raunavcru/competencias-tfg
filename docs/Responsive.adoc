@@ -1,6 +1,0 @@
-La resolución nativa de la aplicación es _1920x1080_, dado que es la resolución en la que se ha desarrollado la aplicación. La visualización de la aplicación en resoluciones de escritorio son correctas, pero las resoluciones de dispositivos móviles han sido las más complicadas de realizar. El único dispositivo móvil en el que hemos trabajado en su _responsive_ es el **iPhone X** porque es de los dispostivos más grandes, por lo tanto, el más fácil de implementar.
-
-El tratamiento de los formularios responsive no ha sido complicado dado que _Materialize_ nos daba las herramientas necesarias para hacerlo. El problema ha recaido en las listas, dado que hay mucha información repartida horizontalmente, por lo que hemos tenido que omitir información. En casi todas las lista hemosa agrupado los botones con un _modal_ para aprovechar la mayor cantidad de espacio posible. Esto ha permitido que no se pierda funcionalidad.
-
-En el resto de resoluciones móviles tampoco se pierde funcionalidad, pero cuanto menor es la pantalla peor se va a ver.
-
