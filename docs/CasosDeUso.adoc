@@ -5,76 +5,94 @@ Para poder ver los casos de uso de manera interactiva vaya al siguiente enlace:
 
 * link:https://raunavcru.github.io/mockups-interactivos/Home_profesor#livereload[Profesor]
 
+[cols="a"]
 |===
 | **CU-01** Listado de alumnos.
+| Versión: 1.1 (17/05/2021)
 
-| Versión: 1.0 (29/11/2020)
+| Dependencias: 
+
+* RF 01.
 
 | Descripción:
 El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de alumnos inscrito_.
 
 | Secuencia normal:
 
- 1.El adminsitrador desea obtener la lista de alumnos incritos.
+ 1. El adminsitrador desea obtener la lista de alumnos inscritos.
 
- 2.El sistema solicita las credenciales para identificarse.
+ 2. El sistema solicita las credenciales para identificarse.
 
- 3.El administrador solicita la lista de alumnos.
+ 3. El administrador solicita la lista de alumnos.
 
- 4.El administrador obtiene el listado de alumnos.
+ 4. El administrador obtiene el listado de alumnos.
 
 
 |===
+
+[cols="a"]
 |===
 | **CU-02**  Creación de alumnos.
+| Versión: 1.1 (17/05/2021)
 
-| Versión: 1.0 (29/11/2020)
+| Dependencias: 
 
-|Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de un alumno_.
+* RF 01.
+
+|Descripción: 
+El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de un alumno_.
 
 | Secuencia normal:
 
-1.El adminsitrador desea crear un alumno.
+1. El adminsitrador desea crear un alumno.
 
-2.El sistema solicita las credenciales para identificarse.
+2. El sistema solicita las credenciales para identificarse.
 
-3.El administrador solicita la lista de alumnos.
+3. El administrador solicita la lista de alumnos.
 
-4.El administrador obtiene el listado de alumnos.
+4. El administrador obtiene el listado de alumnos.
 
-5.El administrador solicita crear un alumno.
+5. El administrador solicita crear un alumno.
 
-6.El administrador crea un alumno.
-
-
+6. El administrador crea un alumno.
 
 |===
+
+[cols="a"]
 |===
 | **CU-03**  Edición de alumnos.
+| Versión: 1.1 (17/05/2021)
 
-| Versión: 1.0 (29/11/2020)
+| Dependencias: 
+
+* RF 01.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la edición de un alumno_.
 
 |Secuencia normal:
 
-1.El adminsitrador desea editar un alumno.
+1. El adminsitrador desea editar un alumno.
 
-2.El sistema solicita las credenciales para identificarse.
+2. El sistema solicita las credenciales para identificarse.
 
-3.El administrador solicita la lista de alumnos.
+3. El administrador solicita la lista de alumnos.
 
-4.El administrador obtiene el listado de alumnos.
+4. El administrador obtiene el listado de alumnos.
 
-5.El administrador solicita la edición un alumno.
+5. El administrador solicita la edición un alumno.
 
-6.El administrador edita un alumno.
+6. El administrador edita un alumno.
 
 |===
+
+[cols="a"]
 |===
 | **CU-04**  Eliminación de alumnos.
+| Versión: 1.1 (17/05/2021)
 
-| Versión: 1.0 (29/11/2020)
+| Dependencias: 
+
+* RF 01.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de un alumno_.
 
@@ -92,8 +110,9 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 6.El administrador elimina un alumno.
 
-
 |===
+
+
 |===
 | **CU-05** Listado de profesores.
 
@@ -588,28 +607,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 6.El administrador elimina un administrador.
 
-
-|===
-|===
-| **CU-27**  Edición de usuarios.
-
-| Versión: 1.0 (29/11/2020)
-
-| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la edición de un usuario.
-
-|Secuencia normal:
-
-1.El adminsitrador desea editar un usuario.
-
-2.El sistema solicita las credenciales para identificarse.
-
-3.El administrador solicita la lista de usuarios.
-
-4.El administrador obtiene el listado de usuarios.
-
-5.El administrador solicita la edición un usuario.
-
-6.El administrador edita un usuario.
 
 |===
 

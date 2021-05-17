@@ -2,21 +2,23 @@
 
 **RF 01**: El sistema permitirá a los administradores poder ver el listado de alumnos, así como crear, editar y eliminar dichos alumnos.
 
-**RF 02**: El sistema permitirá a los administradores poder ver el listado de profesores, así como crear, editar y eliminar dichos profesores.
+**RF 02**: El sistema permitirá a los administradores poder ver el listado de profesores, así como crear y eliminar dichos profesores.
 
-**RF 03**: El sistema permitirá a los administradores poder ver el listado de grupos de clase, así como crear, editar y eliminar dichos grupos.
+**RF 03**: El sistema permitirá a los administradores poder ver el listado de asignaturas, así como crear, editar y eliminar dichas asignaturas.
 
-**RF 04**: El sistema permitirá a los administradores poder asignar alumnos a un grupo de clase.
+**RF 04**: El sistema permitirá a los administradores poder ver el listado de evaluaciones, así como crear, editar y eliminar dichas evaluaciones.
 
-**RF 05**: El sistema permitirá a los administradores poder ver el listado de asignaturas, así como crear, editar y eliminar dichas asignaturas.
+**RF 05**: El sistema permitirá a los administradores poder ver el listado de grupos de clase, así como crear, editar y eliminar dichos grupos.
 
-**RF 06**: El sistema permitirá a los administradores poder asignar profesores a una asignatura.
+**RF 06**: El sistema permitirá a los administradores poder asignar y desasignar alumnos a un grupo de clase.
+
+**RF 06**: El sistema permitirá a los administradores poder asignar y desasignar asignaturas a un profesor.
 
 **RF 07**: El sistema permitirá a los administradores poder ver el listado de competencias, así como crear, editar y eliminar dichas competencias.
 
-**RF 08**: El sistema permitirá a los administradores poder asignar competencias a una asignatura.
+**RF 08**: El sistema permitirá a los administradores poder asignar y desasignar competencias a una asignatura.
 
-**RF 09**: El sistema permitirá a los administradores poder ver el listado de administradores, así como crear, editar y eliminar dichos administradores.
+**RF 09**: El sistema permitirá a los administradores poder ver el listado de administradores, así como crear y eliminar dichos administradores.
 
 **RF 10**: El sistema permitirá a los administradores poder editar un usuario.
 
@@ -26,28 +28,24 @@
 
 **RF 13**: El sistema permitirá a los profesores poder listar las competencias de una asignatura.
 
-**RF 14**: El sistema permitirá a los profesores poder listar sus alumnos.
+**RF 14**: El sistema permitirá a los profesores poder seleccionar el tipo de evaluación para las evaluaciones de un grupo de clase.
 
-**RF 15**: El sistema permitirá a los profesores poder ver el listado de actividades, así como crear, editar y eliminar dichas actividades.
+**RF 15**: El sistema permitirá a los profesores poder listar los alumnos de un grupo de clase.
 
-**RF 16**: El sistema permitirá a los profesores poder ver las calificaciones de un alumno.
+**RF 16**: El sistema permitirá a los profesores poder ver el listado de actividades, así como crear, editar y eliminar dichas actividades. Además permitirá copiar actividades que ya han sido creadas.
 
-**RF 17**: El sistema permitirá a los profesores poder crear ejercicios, así como editar y eliminar dichos ejercicios.
+**RF 17**: El sistema permitirá a los profesores poder ver las calificaciones de un alumno.
 
-**RF 18**: El sistema permitirá a los profesores poder asignar competencias a un ejercicio con una intensidad.
+**RF 18**: El sistema permitirá a los profesores poder crear ejercicios, así como editar y eliminar dichos ejercicios.
 
-**RF 19**: El sistema permitirá a los profesores poder puntuar evaluaciones, actividades, ejercicios y competencias.
+**RF 19**: El sistema permitirá a los profesores poder asignar competencias a un ejercicio con una intensidad. Además permitirá editar y desasignar las competencias ya asignadas.
 
-**RF 20**: El sistema permitirá a los profesores poder modificar sus datos de usuario.
+**RF 20**: El sistema permitirá a los profesores poder puntuar evaluaciones, actividades, ejercicios y competencias.
 
 **RF 21**: El sistema permitirá a los profesores poder generar informe de un grupo completo, así como el de un alumno.
 
-**RF 22**: El sistema permitirá a los profesores poder ver las competencias asignadas a un alumno.
+**RF 22**: El sistema permitirá a los profesores poder ver las competencias de un alumno.
 
-**RF 23**: El sistema permitirá a los profesores poder ver las competencias de un alumno.
+**RF 23**: El sistema permitirá a los profesores poder ver el listado de bloques, así como crear, editar y eliminar dichos bloques.
 
-**RF 24**: El sistema permitirá a los profesores poder ver el listado de evaluaciones, así como crear, editar y eliminar dichas evaluaciones.
-
-**RF 25**: El sistema permitirá a los profesores poder ver el listado de bloques (evaluaciones), así como crear, editar y eliminar dichos bloques.
-
-**RF 26**: El sistema permitirá a los profesores poder seleccionar el tipo de evaluación para las evaluaciones de un grupo de clase.
+**RF 24**: El sistema permitirá a los usuario registrados poder modificar sus datos de perfil.
