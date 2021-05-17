@@ -45,11 +45,11 @@ include::Reuniones.adoc[]
 
 === Requisitos
 
+include::RequisitosDeInformación.adoc[]
+
 include::RequisitosFuncionales.adoc[]
 
 include::RequisitosNoFuncionales.adoc[]
-
-include::RequisitosDeInformacion.adoc[]
 
 === Casos de uso
 
