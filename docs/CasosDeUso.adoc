@@ -303,7 +303,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 * RF 05.
 
-| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de un grupos de clase.
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de un grupos de clase_.
 
 | Secuencia normal:
 
@@ -378,6 +378,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 | **CU-15**  Creación de asignaturas.
 | Versión: 1.0 (29/11/2020)
 
+| Dependencias: 
+
+* RF 03.
+
 |Descripción: 
 El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de una asignatura_.
 
@@ -401,6 +405,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 |**CU-16**  Edición de asignaturas.
 | Versión: 1.0 (29/11/2020)
+
+| Dependencias: 
+
+* RF 03.
 
 | Descripción:
 El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la edición de una asignatura_.
@@ -426,6 +434,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 | **CU-17**  Eliminación de asignaturas.
 | Versión: 1.0 (29/11/2020)
 
+| Dependencias: 
+
+* RF 03.
+
 |Descripción:El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de una asignatura.
 
 |Secuencia normal:
@@ -448,6 +460,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 |**CU-18**  Asignar asignatura a profesores.
 | Versión: 1.0 (29/11/2020)
+
+| Dependencias: 
+
+* RF 06.
 
 | Descripción: 
 El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador asignar una asignatura a un profesor_.
@@ -475,6 +491,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 | **CU-19** Listado de competencias.
 | Versión: 1.0 (29/11/2020)
 
+| Dependencias: 
+
+* RF 07.
+
 | Descripción:
 El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de competencias_.
 
@@ -494,6 +514,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-20**  Creación de competencias.
 | Versión: 1.0 (29/11/2020)
+
+| Dependencias: 
+
+* RF 07.
 
 |Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de una competencia_.
 
@@ -518,6 +542,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 | **CU-21**  Edición de competencias.
 | Versión: 1.0 (29/11/2020)
 
+| Dependencias: 
+
+* RF 07.
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la edición de una competencia_.
 
 |Secuencia normal:
@@ -541,6 +569,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 | **CU-22**  Eliminación de competencias.
 | Versión: 1.0 (29/11/2020)
 
+| Dependencias: 
+
+* RF 07.
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de una competencia_.
 
 | Secuencia normal:
@@ -563,6 +595,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-23**  Asignación de competencias.
 | Versión: 1.0 (29/11/2020)
+
+| Dependencias: 
+
+* RF 08.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la asignación de competencias a una asignatura_.
 
@@ -589,6 +625,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 | **CU-24** Listado de administradores.
 | Versión: 1.0 (29/11/2020)
 
+| Dependencias: 
+
+* RF 09.
+
 | Descripción:
 El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de administradores_.
 
@@ -608,6 +648,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-25**  Creación de administradores.
 | Versión: 1.0 (29/11/2020)
+
+| Dependencias: 
+
+* RF 09.
 
 |Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de un nuevo administrador_.
 
@@ -632,6 +676,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 | **CU-26**  Eliminación de administradores.
 | Versión: 1.0 (29/11/2020)
 
+| Dependencias: 
+
+* RF 09.
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de un administrador_.
 
 | Secuencia normal:
@@ -655,6 +703,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 | **CU-28**  Listar sus grupos de clase.
 | Versión: 1.0 (01/12/2020)
 
+| Dependencias: 
+
+* RF 11.
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite listar sus grupos de clase_.
 
 |Secuencia normal:
@@ -673,6 +725,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-29**  Listar sus asignaturas.
 | Versión: 1.0 (01/12/2020)
+
+| Dependencias: 
+
+* RF 12.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite listar sus asignaturas_.
 
@@ -693,6 +749,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 | **CU-30**  Listar las competencias de una asignatura.
 | Versión: 1.0 (01/12/2020)
 
+| Dependencias: 
+
+* RF 13.
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite listar las competencias de una asignatura_.
 
 |Secuencia normal:
@@ -711,6 +771,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-31**  Listar sus alumnos.
 | Versión: 1.1 (15/04/2021)
+
+| Dependencias: 
+
+* RF 15.
 
 | Precondición: El profesor ha seleccionado el tipo de evaluación.
 
@@ -737,6 +801,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 | **CU-32**  Listar actividades.
 | Versión: 1.1 (15/04/2021)
 
+| Dependencias: 
+
+* RF 16.
+
 | Precondición: El profesor ha seleccionado el tipo de evaluación.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite actividades_.
@@ -757,6 +825,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-33**  Creación de actividades.
 | Versión: 1.0 (01/12/2020)
+
+| Dependencias: 
+
+* RF 16.
 
 |Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la creación de una actividad_.
 
@@ -782,6 +854,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-34**  Edición de una actividad.
 | Versión: 1.0 (01/12/2020)
+
+| Dependencias: 
+
+* RF 16.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la edición de una actividad_.
 
@@ -812,6 +888,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 | **CU-35**  Eliminación de una actividad.
 | Versión: 1.0 (01/12/2020)
 
+| Dependencias: 
+
+* RF 16.
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la eliminación de una actividad_.
 
 | Secuencia normal:
@@ -841,6 +921,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 | **CU-36**  Ver las calificaciones de un alumno.
 | Versión: 1.0 (01/12/2020)
 
+| Dependencias: 
+
+* RF 17.
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite ver las calificaciones de un alumno_.
 
 |Secuencia normal:
@@ -866,6 +950,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 | **CU-37**  Listar ejercicios.
 | Versión: 1.1 (15/04/2021)
 
+| Dependencias: 
+
+* RF 18.
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite el listado de ejercicio_.
 
 |Secuencia normal:
@@ -884,6 +972,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-38**  Creación de ejercicios.
 | Versión: 1.0 (01/12/2020)
+
+| Dependencias: 
+
+* RF 18.
 
 |Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la creación de un ejercicio_.
 
@@ -914,6 +1006,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 | **CU-39**  Edición de un ejercicio.
 | Versión: 1.0 (01/12/2020)
 
+| Dependencias: 
+
+* RF 18.
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la edición de un ejercicio_.
 
 |Secuencia normal:
@@ -943,6 +1039,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 | **CU-40**  Eliminación de un ejercicio.
 | Versión: 1.0 (01/12/2020)
 
+| Dependencias: 
+
+* RF 18.
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la eliminación de un ejericio_.
 
 | Secuencia normal:
@@ -971,6 +1071,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-41**  Asignar competencias a un ejercicio con una intensidad.
 | Versión: 1.0 (01/12/2020)
+
+| Dependencias: 
+
+* RF 19.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la asignar competencias a un ejercicio con una intensidad_.
 
@@ -1002,6 +1106,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-42**  Puntuar las evaluaciones, las actividades, los ejercicios y las competencias.
 | Versión: 1.0 (01/12/2020)
+
+| Dependencias: 
+
+* RF 20.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite puntuar las evaluaciones, las actividades, los ejercicios y las competencias_.
 
@@ -1040,6 +1148,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 | **CU-43**  Modificar sus datos de usuario.
 | Versión: 1.0 (01/12/2020)
 
+| Dependencias: 
+
+* RF 24.
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite modificar sus datos de usuario_.
 
 | Secuencia normal:
@@ -1058,6 +1170,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-44**  Generar informe de un grupo completo.
 | Versión: 1.0 (09/12/2020)
+
+| Dependencias: 
+
+* RF 21.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite generar informe de un grupo completo_.
 
@@ -1086,6 +1202,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 | **CU-45**  Generar informe de un alumno.
 | Versión: 1.0 (09/12/2020)
 
+| Dependencias: 
+
+* RF 21.
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite generar informe de un alumno_.
 
 | Secuencia normal:
@@ -1112,6 +1232,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-46**  Ver competencias de un alumno.
 | Versión: 1.0 (09/12/2020)
+
+| Dependencias: 
+
+* RF 22.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite ver las competencias de un alumno_.
 
@@ -1140,6 +1264,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 | **CU-47**  Creación de evaluaciones.
 | Versión: 1.0 (28/01/2021)
 
+| Dependencias: 
+
+* RF 04.
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la creación de una evaluación_.
 
 |Secuencia normal:
@@ -1162,6 +1290,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-48**  Edición de evaluaciones.
 | Versión: 1.0 (28/01/2021)
+
+| Dependencias: 
+
+* RF 04.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la edición de una evaluación_.
 
@@ -1186,6 +1318,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 | **CU-49**  Eliminación de evaluaciones.
 | Versión: 1.0 (28/01/2021)
 
+| Dependencias: 
+
+* RF 04.
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de una evaluación_.
 
 | Secuencia normal:
@@ -1209,6 +1345,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 | **CU-50** Listado de evaluaciones.
 | Versión: 1.0 (28/01/2021)
 
+| Dependencias: 
+
+* RF 04.
+
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite el listado de las evaluaciones_.
 
 |Secuencia normal:
@@ -1227,6 +1367,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-51** Listado de bloques (evaluaciones).
 | Versión: 1.1 (15/04/2021)
+
+| Dependencias: 
+
+* RF 23.
 
 | Precondición: El profesor ha seleccionado el tipo de evaluación.
 
@@ -1252,6 +1396,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-52** Creación de bloques (evaluaciones).
 | Versión: 1.0 (15/04/2021)
+
+| Dependencias: 
+
+* RF 23.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesort solicite la creación de un bloque_.
 
@@ -1279,6 +1427,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-53** Edición de bloques (evaluaciones).
 | Versión: 1.0 (15/04/2021)
+
+| Dependencias: 
+
+* RF 23.
 
 | Precondición: El profesor ha creado un bloque.
 
@@ -1309,6 +1461,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 | **CU-54** Eliminación de bloques (evaluaciones).
 | Versión: 1.0 (15/04/2021)
 
+| Dependencias: 
+
+* RF 23.
+
 | Precondición: El profesor ha creado un bloque.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesort solicite la eliminación de un bloque_.
@@ -1337,6 +1493,10 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 |===
 | **CU-55** Seleccionar el tipo de evaluación para las evaluaciones de un grupo de clase.
 | Versión: 1.0 (15/04/2021)
+
+| Dependencias: 
+
+* RF 14.
 
 | Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite seleccionar el tipo de evaluación para las evaluaciones de un grupo de clase.
 

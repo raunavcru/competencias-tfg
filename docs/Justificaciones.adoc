@@ -3,7 +3,7 @@
 [cols="5a"]
 |===
 |**Django**
-|Es un framework de Python muy completo y con una buena documentación. Tenemos experiencia en él, ya que lo hemos utilizado en otras asignaturas, y nos gustaría seguir aprendiendo y adquirir experiencia en Django para nuestro futuro profesional. 
+|Este es uno de los mejores entornos de trabajo, o xref:Glosario[Framework] de Python muy completo y con una buena documentación. Tenemos experiencia en él, ya que lo hemos utilizado en otras asignaturas, y nos gustaría seguir aprendiendo y adquirir experiencia en Django para nuestro futuro profesional. 
 |Alternativas
 |Existen otros frameworks de Python como:
 
@@ -29,7 +29,7 @@ NodeJs es otra buena alternativa. Es un framework que está creciendo continuame
 [cols="5a"]
 |===
 |**Materialize**
-|Materialize es un framework dispuesto a facilitar el diseño web en todo tipo de escenarios, escritorio o móvil. Habiendo sido recomendada y después de haber pasado por un proceso de selección, su amplia gama de posibilidades y recursos, junto a su facilidad de uso, fue sin duda el detonante de su elección.
+|Materialize es un xref:Glosario[Framework] dispuesto a facilitar el diseño web en todo tipo de escenarios, escritorio o móvil. Habiendo sido recomendada y después de haber pasado por un proceso de selección, su amplia gama de posibilidades y recursos, junto a su facilidad de uso, fue sin duda el detonante de su elección.
 |Alternativas
 |Existen algunas alternativas como:
 

@@ -6,6 +6,7 @@
 * **Ejercicio**: Parte de la que se componen las actividades. Por ejemplo, en un exámen de matemáticas, puede ser que un ejercicio sea realizar una ecuación.
 * **Grupo**: Conjunto de alumnos asignados a una asignatura de un nivel específico. Por ejemplo, una clase de 3ºB de matemáticas. 
 * **Modal**: Es un cuadro emergente que se muestra por encima de la pantalla.
+* **Framework**: Es un conjunto estandarizado de conceptos, prácticas y criterios para enfocar un tipo de problemática.
 
 === Casos prácticos de competencias
 
