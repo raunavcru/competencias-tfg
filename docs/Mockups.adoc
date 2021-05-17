@@ -44,7 +44,7 @@ image::mockups/Ver calificaciones de alumno (competencias).png[]
 
 Modificar un ejercicio:
 
-image::mockups/Modificar un ejercicio.png[] 
+image::mockups/Modificar ejercicio.png[] 
 
 
 
