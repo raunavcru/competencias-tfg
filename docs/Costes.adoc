@@ -1,0 +1,37 @@
+
+El proyecto está estimado en **300 horas** de trabajo por persona, basándonos el los 12 créditos del Trabajo Fin de Grado. Por lo tanto, el proyecto supondrá un coste temporal inicial de **600 horas**. Además, los dos miembros del equipo tienen el mismo puesto.
+
+==== Salarios
+Suponemos que cada miembro cobra unos **8,5 euros la hora**, basándonos en salarios de puestos reales. Por lo que 300 horas sumarán un coste de **2550 euros**. También supondremos un **35%** de costes de la Seguridad Social. Estos costes deberían ser calculado mensualmente, así que su coste real, que supondría un incremento entre 30 y 35%. Escogemos el más alto.
+
+[grid=cols]
+|===
+|Costes por hora (€/hora) |Salario total (€) |Coste de la Seguridad Social (€) | Coste total por persona (€) | Coste total de la empresa (€)
+
+| 8,5
+| 2550
+| 892,5
+| 3442,5
+| 6885
+
+|===
+
+==== Amortizaciones
+Lo único que tendríamos que amortizar son los ordenadores que suponen uno coste total de **2000 euros**. Este tipo de elemento se permite amortizar un **20%** anualmente.
+
+[grid=cols]
+|===
+|Valor total (€) |Coste 2020 (€) |Coste 2021 (€) | Coste total (€) 
+
+| 2000
+| 400
+| 400
+| 800
+
+|===
+
+==== Despliegue
+
+==== Coste total
+
+==== Coste real

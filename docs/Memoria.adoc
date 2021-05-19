@@ -41,6 +41,8 @@ include::Reuniones.adoc[]
 
 === Costes
 
+include::Costes.adoc[]
+
 == IV. Análisis de requisitos, diseño e implementación
 
 === Requisitos

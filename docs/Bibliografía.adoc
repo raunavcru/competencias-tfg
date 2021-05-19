@@ -6,3 +6,4 @@
 * http://www.juntadeandalucia.es/educacion/descargasrecursos/curriculo-primaria/pdf/PDF/textocompleto.pdf
 * https://www.boe.es/diario_boe/txt.php?id=BOE-A-2015-37
 * https://docs.djangoproject.com/en/3.2/topics/i18n/translation/
+* https://www.agenciatributaria.es/AEAT.internet/Inicio/_Segmentos_/Empresas_y_profesionales/Empresas/Impuesto_sobre_Sociedades/Periodos_impositivos_a_partir_de_1_1_2018/Base_imponible/Amortizacion/Tabla_de_coeficientes_de_amortizacion_lineal_.shtml
