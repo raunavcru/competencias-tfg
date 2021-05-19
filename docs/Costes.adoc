@@ -30,8 +30,43 @@ Lo único que tendríamos que amortizar son los ordenadores que suponen uno cost
 
 |===
 
+==== Licencias
+La única licencia que hemos utilizado es Photoshop que cuesta **24,19 euros al mes** y que hemos utilizado durante 5 meses.
+
+[grid=cols]
+|===
+|Coste (€/mes) |Coste total (€)
+
+| 24,19
+| 120,95
+
+|===
+
 ==== Despliegue
+Para el despliegue se utilizado la versión _Hobby_ de Heroku, que cuesta **7 dólares**, que son unos **5,74 euros**. Se ha utilizado durante 5 meses.
+
+[grid=cols]
+|===
+|Coste (€/mes) |Coste total (€)
+
+| 5,74
+| 28,7
+
+|===
 
 ==== Coste total
+
+[grid=cols]
+|===
+|Salarios (€) |Amortizaciones (€) |Licencias (€) |Despliegue (€) |Coste total (€)
+
+| 6885
+| 800
+| 120,95
+| 28,7
+| 7834,65
+
+
+|===
 
 ==== Coste real
