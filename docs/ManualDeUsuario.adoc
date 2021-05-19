@@ -1,0 +1,89 @@
+En esta sección será divida en dos partes, administrador y profesor. Estas partes serán mostradas de una manera general, con el fin de dar a entender cómo usar la aplicación y cada parte de esta.
+
+==== Administrador
+
+Empezaremos enseñando la panatalla de inicio, en ella podremos ver un menú superior con las secciones disponibles al ser administrador.
+
+image::imagenes-manual-usuario/Inicio.png[]
+
+En la sección *Administrators* podremos ver el listado de administradores que contiene el sistema.
+
+image::imagenes-manual-usuario/administrador_list.png[]
+
+Arriba a la derecha podremos ver el botón para crear un administrador, al pulsarlo nos redirijirá hacia el formulario de creación.
+
+image::imagenes-manual-usuario/administrador_create.png[]
+
+Una vez rellenado los campos solo debemos darle al botón crear para terminar.
+
+image::imagenes-manual-usuario/administrador_create_boton.png[]
+
+Una vez acabado podremos ver el nuevo administrador creado.
+
+image::imagenes-manual-usuario/administrador_list_creado.png[]
+
+También justo debajo del botón crear ususario podemos ver dos botones más, para editar y eliminar ese administrador.
+
+Todos estos comportamientos (crear, editar y eliminar se repiten la forma de acción en el sistema).
+
+Para estas acciones al igual que la creación, solo hará falta pulsar el botón correspondiente.
+
+Para la acción de editar nos redirigirá al formulario de edición.
+
+image::imagenes-manual-usuario/administrador_editar.png[]
+
+Y para eliminar tendremos un mensaje informativo sobre el mismo.
+
+image::imagenes-manual-usuario/administrador_delete.png[]
+
+Pasaremos ahora al apartado de *Competences*. Podremos observar que al pulsar en ella aparece un desplegable, para así poder ver las competencias por nivel.
+
+image::imagenes-manual-usuario/competencias_level_3.png[]
+
+Dentro de las competencias de nivel 3 podremos observar un apartado llamado Level 2, el cual nos lleva a las competencias de nivel inferior asociadas a esta.
+
+image::imagenes-manual-usuario/competencias_level_2_asociada.png[]
+
+Una vez en ella también podremos ver la de nivel inferior asociada a esta.
+
+En todas estas secciones podremos crear editar y eliminar competencias. Al eliminar competecias, si estas tienes otras de nivel inferior asociadas, se eliminaran también.
+
+En la pestaña *Evaluations* podremos ver el listado de las evaluaciones finales, así como editarlas y eliminarlas.
+
+image::imagenes-manual-usuario/evaluations_list.png[]
+
+En esta pestaña aparece un nuevo apartado, Partial evaluations, en el cual podremos ver las evaluaciones parciales que le corresponde.
+
+image::imagenes-manual-usuario/evaluations_list_list.png[]
+
+Pasando a la pestaña *Students* podremos ver el listado de todos los estudiantes, crearlos o eliminarlos.
+
+image::imagenes-manual-usuario/student_list.png[]
+
+Pasando a la pestaña *Teachers* podremos ver el listado de todos los estudiantes, así como asignar grupos a un profesor.
+
+image::imagenes-manual-usuario/teacher_list.png[]
+
+Podremos asignar o desasignar asignaturas a un profesor, para ello solo debemos pulsar en el botón Assign para asignar o Unassign para desasignar.
+
+image::imagenes-manual-usuario/subject_list_assign.png[]
+
+Pasamos a la sección *Sets* en la que podremos ver el listado de los mismos.
+
+image::imagenes-manual-usuario/set_list.png[]
+
+Asi como assignar alumnos a un grupo.
+
+image::imagenes-manual-usuario/student_list_assign.png[]
+
+En el apartado *Subjects* podremos ver el listado de las mismas.
+
+image::imagenes-manual-usuario/subject_list.png[]
+
+Así como asignar competencias a estas.
+
+image::imagenes-manual-usuario/subject_competence.png[]
+
+En el último apartado podremos ver la sección de usuario, algo que se repite tanto en Administrador como Profesor, y en ellas el usuario podrá, ver y editar su datos, cambiar su contraseña o salir de la aplicación.
+
+image::imagenes-manual-usuario/perfil.png[]
