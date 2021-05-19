@@ -1,6 +1,6 @@
-En esta sección será divida en dos partes, administrador y profesor. Estas partes serán mostradas de una manera general, con el fin de dar a entender cómo usar la aplicación y cada parte de esta.
+En esta sección será divida en dos, administrador y profesor. Estas partes serán mostradas de una manera general, con el fin de dar a entender cómo usar la aplicación y cada parte de esta.
 
-==== Administrador
+=== Administrador
 
 Empezaremos enseñando la panatalla de inicio, en ella podremos ver un menú superior con las secciones disponibles al ser administrador.
 

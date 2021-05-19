@@ -99,6 +99,8 @@ include::Instalación.adoc[]
 
 == V. Manual de usuario
 
+include::ManualDeUsuario.adoc[]
+
 == VI. Pruebas
 
 include::Pruebas.adoc[]
