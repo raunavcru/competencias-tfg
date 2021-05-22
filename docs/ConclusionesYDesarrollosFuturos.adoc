@@ -1,0 +1,26 @@
+
+=== Conclusiones
+
+* Django nos ha permitido un desarrollo rápido de los casos de uso.
+
+* Asciidoc nos ha permitido interactuar con la documentación como si fuera cualquier archivo de código.
+
+* El análisis de código mediante SonarCloud ha concluido en un código más limpio.
+
+* Realizar parte de la documentación antes del desarrollo nos ha aclarado el problema a resolver.
+
+* Hemos aprendido la problemática de la implementación del sistema de competencias.
+
+* Hemos aprendido a tener cuidado con los derechos de autor de fuentes e imágenes.
+
+* Hemos aprendido a internacionalizar aplicaciones web en Python.
+
+=== Mejoras
+
+* Particularizar peso de competencias específicas (nivel 2) sobre cada competencia clave a la que afecta (nivel 3).
+
+* Asignar más competencias claves (nivel 3) como padre de un a competencia específica (nivel 2).
+
+* Filtros y/o ordenaciones sobre tablas.
+
+* Añadir buscadores en los campos de los formulario dedicados a relaciones.
