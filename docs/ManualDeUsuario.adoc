@@ -87,3 +87,56 @@ image::imagenes-manual-usuario/subject_competence.png[]
 En el último apartado podremos ver la sección de usuario, algo que se repite tanto en Administrador como Profesor, y en ellas el usuario podrá, ver y editar su datos, cambiar su contraseña o salir de la aplicación.
 
 image::imagenes-manual-usuario/perfil.png[]
+
+=== Profesor
+
+La pantalla de inicio es la misma que la de administración, en el menú si podremos ver cambios.
+
+En el apartado *My Sets* en ella podremos ver el listado de grupos que tiene el profesor. En ella podremos ver varias partes
+
+image::imagenes-manual-usuario/profesor_mis_asignaturas.png[]
+
+Empezaremos por el apartado *Evaluations*, en esta parte podremos ver las evaluaciones asociadas y la creación de las mismas
+
+image::imagenes-manual-usuario/profesor_evaluaciones.png[]
+
+En el apartado *Activities* podremos ver la lista de actividades así como ver si es una recuperación, la lista de ejercicios y la opcion de crear una actividad, o copiarla.
+
+image::imagenes-manual-usuario/profesor_actividades.png[]
+
+
+En el apartado *Reports* podremos ver las dos opciones de salida, por competencias y por evaluaciones. 
+
+image::imagenes-manual-usuario/profesor_reportes.png[]
+
+Por competencias:
+
+image::imagenes-manual-usuario/profesor_report_competences.png[]
+
+Por evaluación:
+
+image::imagenes-manual-usuario/profesor_report_evaluations.png[]
+
+En el apartado *List of students* podremos ver el listado de studiantes y la opción de obtener el reporte de las notas de ese alumnos así como ver las competencias y las notas.
+
+image::imagenes-manual-usuario/profesor_lista_estudiantes.png[]
+
+Reporte:
+
+image::imagenes-manual-usuario/profesor_report_alumno.png[]
+
+Competencias:
+
+image::imagenes-manual-usuario/profesor_competencias_alumno.png[]
+
+Notas, en esta pantalla podremos modificar el apartado *Manual mark*. Dentro del apartado activities podremos ver el listado de actividades, dentro ejercicios y las competencias asignadas a estos:
+
+image::imagenes-manual-usuario/profesor_alumno_calificacion.png[]
+
+En el apartado *Evaluation type* podremos seleccionar el tipo de evaluacion.
+
+image::imagenes-manual-usuario/profesor_evaluacion_tipo.png[]
+
+Y por último el apartado *My Subjects* en el que podremos ver el listado de asignaturas y las competencias asociadas.
+
+image::imagenes-manual-usuario/profesor_mysubject.png[]
