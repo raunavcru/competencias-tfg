@@ -24,3 +24,5 @@
 * Filtros y/o ordenaciones sobre tablas.
 
 * Añadir buscadores en los campos de los formulario dedicados a relaciones.
+
+* Implementar alguna manera de añadir muchos datos sobre alumnos, profesores, competencias, etc.
