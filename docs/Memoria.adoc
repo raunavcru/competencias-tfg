@@ -25,6 +25,8 @@ include::DefiniciónDeObjetivos.adoc[]
 
 == II. Análisis de antecedentes y aportación realizada
 
+include::AntecedentesYAportaciónRealizada.adoc[]
+
 == III. Análisis temporal y de costes de desarrollo
 
 === Planificación
