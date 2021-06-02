@@ -1,0 +1,59 @@
+Para empezar a comparar con otras alternativas, hemos realizado una búsqueda exaustiva de los competidores. Hemos encontrado cuatro grandes alternativas: Additio, Moodle, Google Classroom y Enseñanza Virtual.
+
+En la siguiente tabla mostraremos de manera visual una comparativa sencilla de nuestra aplicación con las mencionadas anteriormente.
+
+[cols="6"]
+[grid=cols]
+|===
+| ^|Verum ^|Additio ^|Moodle ^|Google Classroom ^|Enseñanza Virtual
+
+| Permite puntuar competencias dentro de un ejercicio
+^.^| Sí 
+^.^| 
+^.^| No
+^.^| No
+^.^| No
+
+| Permite gestionar evaluaciones
+^.^| Sí
+^.^| 
+^.^| No
+^.^| No
+^.^| Sí
+
+| Permite generar informes de las calificaciones de las competencias de un grupo
+^.^| Sí
+^.^| 
+^.^| No
+^.^| No
+^.^| No
+
+| Permite generar informes de las calificaciones de las evaluaciones de un grupo
+^.^| Sí
+^.^| 
+^.^| No
+^.^| No
+^.^| Sí
+
+| Permite generar informes de las calificaciones de las competencias de un alumno
+^.^| Sí
+^.^| 
+^.^| No
+^.^| No
+^.^| No
+
+| Permite generar informes de las calificaciones de las evaluaciones de un alumno 
+^.^| Sí
+^.^| 
+^.^| No
+^.^| No
+^.^| No
+
+| Es gratuito
+^.^| Sí
+^.^| No
+^.^| Sí
+^.^| Sí
+^.^| No
+
+|===

@@ -109,6 +109,8 @@ include::Pruebas.adoc[]
 
 == VII. Comparativas con otras alternativas
 
+include::ComparativasConOtrasAlternativas.adoc[]
+
 == VIII. Conclusiones y desarrollos futuros
 
 include::ConclusionesYDesarrollosFuturos.adoc[]
