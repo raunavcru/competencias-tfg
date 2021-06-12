@@ -196,7 +196,7 @@ _[7 de Marzo]_
 | CU-40 Asignar competencias a un ejercicio con una intensidad.
 
 _[15 de Marzo]_
-| Despliegue de la versión 0.3  
+| Despliegue de la versión 0.3.  
 
 _[22 de Marzo]_
 
@@ -274,7 +274,7 @@ _[14 de Abril]_
 | CU-43 Generar informe de un grupo completo.   
 
 _[19 de Abril]_
-| Despliegue de la versión 1.0
+| Despliegue de la versión 0.4.
 
 _[28 de Abril]_
 
