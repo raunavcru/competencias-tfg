@@ -1,6 +1,7 @@
 =  Desarrollo web para la evaluación por competencias
 :toc:
 :toc-title: Índice general
+:table-caption: Tabla
 
 ESCUELA TÉCNICA SUPERIOR DE INGENIERÍA INFORMÁTICA
 Trabajo fin de Grado

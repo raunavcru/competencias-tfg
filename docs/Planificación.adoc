@@ -3,13 +3,16 @@ La planificación se realizara mediante la metodología _Scrum_, constituidos en
 
 Una vez realizado cada _Sprint_ se verá reflejado en el proyecto como un incremento en el versionado del mismo, para que así se puedan ver los cambios y avances del mismo. Para más información del versionado véase xref:Gestión de versiones[Gestión de versiones].
 
-En cada celda se mostrará el nombre de la tarea o el caso de uso y la fecha en la que debe estar finalizada la tarea entre corchetes.
-
 Los _Sprints_ son los siguintes:
 
-* Sprint 1: 1 de Enero al 28 de Enero. Véase xref:Table 1[Planificación Sprint 1]
+* Sprint 1: 1 de Enero al 28 de Enero. Véase Tabla 1.
+* Sprint 2: 29 de Enero al 25 de Febrero. Véase Tabla 2.
+* Sprint 3: 26 de Febrero al 25 del Marzo. Véase Tabla 3.
+* Sprint 4: 26 de Marzo al 29 de Abril. Véase Tabla 4.
 
-==== Sprint 1: 1 de Enero al 28 de Enero.
+Las tablas tienen una cabecera con cada una de las semanas de desarrollo con sus fechas de inicio y de fin. En cada celda se mostrará el nombre de la tarea o el caso de uso y la fecha en la que debe estar finalizada la tarea entre corchetes.
+
+La estrategia respecto a las tareas ha consistido en especificar solo la fecha fin, para que no hubiera problema en adelantar tareas. Además se ha buscado un tiempo para el desarrollo de las tareas amplio. Todo esto nos ha permitido un mayor margen de maniobra ante impedimentos surgidos de otras asignaturas de la carrera. Gracias a esta estrategia el desarrollo ha tenido una presión menor, las desviaciones de la planificación inicial se han mantenido al mínimo y hemos podido resolver las incidencias con un impacto bajo. Véase xref:Retrasos e incidencias[Retrasos e incidencias]
 
 .Planificación Sprint 1
 [grid=cols]
@@ -80,9 +83,7 @@ _[5 de Enero]_
 |        
 |        
 
-|===
-
-==== Sprint 2: 29 de Enero al 25 de Febrero.    
+|=== 
 
 .Planificación Sprint 2
 [grid=cols]
@@ -181,8 +182,6 @@ _[11 de Febrero]_
 
 |===
 
-==== Sprint 3: 26 de Febrero al 25 del Marzo. 
-
 .Planificación Sprint 3
 [grid=cols]
 |===
@@ -255,8 +254,6 @@ _[11 de Marzo]_
 | 
 
 |===
-
-==== Sprint 4: 26 de Marzo al 29 de Abril.   
 
 .Planificación Sprint 4
 [grid=cols]
