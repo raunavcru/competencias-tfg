@@ -1,12 +1,17 @@
 
-La planificación se realizara mediante Scrum, constituidos en nuestro caso por cuatro Sprints, que no son más que una serie de tiempo prefijado con el fin de crear un incremento utilizable y potencialmente entregable. A lo largo del desarrollo de nuestro proyecto habrá Sprints consecutivos, divididos en meses y estos a su vez en semanas con duración constante. Todo esto con el fin de empezar el día 1 de Enero y terminar el día 30 de Abril.
+La planificación se realizara mediante la metodología _Scrum_, constituidos en nuestro caso por cuatro _Sprints_, que no son más que una serie de tiempo prefijado con el fin de crear un incremento utilizable y potencialmente entregable. A lo largo del desarrollo de nuestro proyecto habrá _Sprints_ consecutivos con una duración de cuatro semanas, a escepción del último que se extiende hasta las cinco semanas. Todo esto con el fin de empezar el día 1 de Enero y terminar el día 30 de Abril.
 
-Una vez realizado cada Sprint se verá reflejado en el proyecto como un incremento en el versionado del mismo, para que así se puedan ver los cambios y avances del mismo.
+Una vez realizado cada _Sprint_ se verá reflejado en el proyecto como un incremento en el versionado del mismo, para que así se puedan ver los cambios y avances del mismo. Para más información del versionado véase xref:Gestión de versiones[Gestión de versiones].
 
+En cada celda se mostrará el nombre de la tarea o el caso de uso y la fecha en la que debe estar finalizada la tarea entre corchetes.
 
-_Entre corchetes se muestra la fecha en la que debe estar finalizada la tarea_
+Los _Sprints_ son los siguintes:
+
+* Sprint 1: 1 de Enero al 28 de Enero. Véase xref:Table 1[Planificación Sprint 1]
 
 ==== Sprint 1: 1 de Enero al 28 de Enero.
+
+.Planificación Sprint 1
 [grid=cols]
 |===
 |Semana 1: 1 de Enero al 7 de Enero |Semana 2: 8 de Enero al 14 de Enero |Semana 3: 15 de Enero al 21 de Enero |Semana 4: 22 de Enero al 28 de Enero
@@ -77,7 +82,9 @@ _[5 de Enero]_
 
 |===
 
-==== Sprint 2: 29 de Enero al 25 de Febrero.        
+==== Sprint 2: 29 de Enero al 25 de Febrero.    
+
+.Planificación Sprint 2
 [grid=cols]
 |===
 |Semana 1: 29 de Enero al 4 de Febrero |Semana 2: 5 de Febrero al 11 de Febrero |Semana 3: 12 de Febrero al 18 de Febrero |Semana 4:  19 de Febrero al 25 de Febrero
@@ -174,7 +181,9 @@ _[11 de Febrero]_
 
 |===
 
-==== Sprint 3: 26 de Febrero al 25 del Marzo.        
+==== Sprint 3: 26 de Febrero al 25 del Marzo. 
+
+.Planificación Sprint 3
 [grid=cols]
 |===
 |Semana 1: 26 de Febrero al 4 de Marzo |Semana 2: 5 de Marzo al 11 de Marzo |Semana 3: 12 de Marzo al 18 de Marzo |Semana 4:  19 de Marzo al 25 de Marzo      
@@ -247,7 +256,9 @@ _[11 de Marzo]_
 
 |===
 
-==== Sprint 4: 26 de Marzo al 29 de Abril.        
+==== Sprint 4: 26 de Marzo al 29 de Abril.   
+
+.Planificación Sprint 4
 [grid=cols]
 |===
 |Semana 1: 26 de Marzo al 1 de Abril |Semana 2: 2 de Abril al 8 de Abril |Semana 3: 9 de Abril al 15 de Abril |Semana 4:  16 de Abril al 22 de Abril |Semana 5:  23 de Abril al 29 de Abril   

@@ -29,6 +29,8 @@ include::AntecedentesYAportaciónRealizada.adoc[]
 
 == III. Análisis temporal y de costes de desarrollo
 
+include::AnálisisTemporalYSeCostesDeDesarrollo.adoc[]
+
 === Planificación
 
 include::Planificación.adoc[]

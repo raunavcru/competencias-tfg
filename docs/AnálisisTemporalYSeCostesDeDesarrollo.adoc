@@ -1,0 +1,2 @@
+
+En este capítulo desarrollaremos nuestra gestión del tiempo del proyecto y detallaremos los costes derivados de realizar el Trbajo Fin de Grado. Empezaremos especificando la planificación final de los casos de uso a lo largo de los meses de desarrollo, continuando con las desviaciones del plan y las incidencias que nos han acontecido, terminado los por la gestión de costes.
