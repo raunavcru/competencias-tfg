@@ -5,3 +5,125 @@ En el apartado de las reuniones, tuvimos de varios tipos:
 * Una reunión fija de dos horas o más entre lo miembros del grupo una vez acabada la reunión con el tutor. En estas reuniones ibamos asignando y reorganizando las tareas, así como hablando de las incidencias y dudas con respecto a las tareas.
 
 * Alguna reunión esporádica de horas indefinidas.
+
+.Tabla de reuniones
+[grid=cols]
+[cols=3*,options="header"]
+|===
+| Fecha
+| Tipo de reunión
+| Resumen
+
+| 14/9/2020
+| Con profesor.
+| Primera reunión del proyecto.
+
+| 13/10/2020
+| Con profesor.
+| Ideas para especificaciones.
+
+| 20/10/2020
+| Con profesor.
+| 
+
+| 27/10/2020
+| Con profesor.
+| Revisión del modelo de datos y de los primeros _mockups_.
+
+| 3/11/2020
+| Con profesor.
+|
+
+| 6/11/2020
+| Con profesor.
+|
+
+| 10/11/2020
+| Con profesor.
+|
+
+| 13/11/2020
+| Con profesor.
+| Cambios en el modelo de datos y _mockups_.
+
+| 20/11/2020
+| Con profesor.
+| Cambios en la especificaciones, en el modelo de datos y en el modelo de datos.
+
+| 27/11/2020
+| Con profesor.
+| 
+
+| 04/12/2020
+| Con profesor.
+| Revisión de las justificaciones y _mockups_.
+
+| 11/12/2020
+| Con profesor.
+| Revisión de las justificaciones y del modelo de datos.
+
+| 18/12/2020
+| Con profesor.
+| 
+
+| 08/01/2021
+| Con profesor.
+| Revisión del modelo de datos.
+
+| 15/01/2021
+| Con profesor.
+| Revisión del desarrollo.
+
+| 22/01/2021
+| Con profesor.
+| Revisión del desarrollo.
+
+| 05/02/2021
+| Con profesor.
+| Revisión del desarrollo.
+
+| 08/02/2021
+| Con profesor.
+| Revisión del desarrollo.
+
+| 19/02/2021
+| Con profesor.
+| Revisión del desarrollo.
+
+| 26/02/2021
+| Con profesor.
+| Revisión del desarrollo.
+
+| 12/03/2021
+| Con profesor.
+| Revisión del desarrollo.
+
+| 24/03/2021
+| Con profesor.
+| Revisión del desarrollo.
+
+| 08/04/2021
+| Con profesor.
+| Revisión del desarrollo.
+
+| 15/04/2021
+| Con profesor.
+| Revisión del desarrollo.
+
+| 22/04/2021
+| Con profesor.
+| Revisión del desarrollo.
+
+| 29/04/2021
+| Con profesor.
+| Revisión del desarrollo y de la estructura de la memoria.
+
+| 13/05/2021
+| Con profesor.
+| Revisión del contenido de la memoria.
+
+| 10/06/2021
+| Con profesor.
+| Revisión del contenido de la memoria.
+
+|===
