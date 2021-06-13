@@ -8,6 +8,7 @@ Para empezar a comparar con otras alternativas, hemos realizado una búsqueda ex
 
 En la siguiente tabla mostraremos de manera visual una comparativa sencilla de nuestra aplicación con las mencionadas anteriormente.
 
+.Comparativas con otras alternativas
 [cols="6"]
 [grid=cols]
 |===

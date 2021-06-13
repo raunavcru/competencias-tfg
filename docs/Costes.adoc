@@ -4,6 +4,7 @@ El proyecto está estimado en **300 horas** de trabajo por persona, basándonos 
 ==== Salarios
 Suponemos que cada miembro cobra unos **8,5 euros la hora**, basándonos en salarios de puestos reales. Por lo que 300 horas sumarán un coste de **2550 euros**. También supondremos un **35%** de costes de la Seguridad Social. Estos costes deberían ser calculado mensualmente, así que su coste real, que supondría un incremento entre 30 y 35%. Escogemos el más alto.
 
+.Salarios
 [grid=cols]
 |===
 |Costes por hora (€/hora) |Salario total (€) |Coste de la Seguridad Social (€) | Coste total por persona (€) | Coste total de la empresa (€)
@@ -19,6 +20,7 @@ Suponemos que cada miembro cobra unos **8,5 euros la hora**, basándonos en sala
 ==== Amortizaciones
 Lo único que tendríamos que amortizar son los ordenadores que suponen uno coste total de **2000 euros**. Este tipo de elemento se permite amortizar un **20%** anualmente.
 
+.Amortizaciones
 [grid=cols]
 |===
 |Valor total (€) |Coste 2020 (€) |Coste 2021 (€) | Coste total (€) 
@@ -33,6 +35,7 @@ Lo único que tendríamos que amortizar son los ordenadores que suponen uno cost
 ==== Licencias
 La única licencia que hemos utilizado es Photoshop que cuesta **24,19 euros al mes** y que hemos utilizado durante 5 meses.
 
+.Licencias
 [grid=cols]
 |===
 |Coste (€/mes) |Coste total (€)
@@ -45,6 +48,7 @@ La única licencia que hemos utilizado es Photoshop que cuesta **24,19 euros al 
 ==== Despliegue
 Para el despliegue se utilizado la versión _Hobby_ de Heroku, que cuesta **7 dólares**, que son unos **5,74 euros**. Se ha utilizado durante 5 meses.
 
+.Despliegue
 [grid=cols]
 |===
 |Coste (€/mes) |Coste total (€)
@@ -56,6 +60,7 @@ Para el despliegue se utilizado la versión _Hobby_ de Heroku, que cuesta **7 d�
 
 ==== Coste total
 
+.Coste total
 [grid=cols]
 |===
 |Salarios (€) |Amortizaciones (€) |Licencias (€) |Despliegue (€) |Coste total (€)

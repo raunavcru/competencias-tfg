@@ -1,5 +1,6 @@
 ==== Tecnologías image:./images/icons/tecnologia.png[Icono,17,17]
 
+.Django
 [cols="5a"]
 |===
 |**Django**
@@ -26,6 +27,7 @@ NodeJs es otra buena alternativa. Es un framework que está creciendo continuame
 * https://insights.stackoverflow.com/survey/2020#technology-programming-scripting-and-markup-languages-all-respondents
 |===
 
+.Materialize
 [cols="5a"]
 |===
 |**Materialize**
@@ -57,6 +59,7 @@ Gráficamente Materialize esta muy por encima de Boostrap o Foundation, debido a
 
 |===
 
+.PostgreSQL
 [cols="6a"]
 |===
 |**PostgreSQL**
@@ -92,6 +95,7 @@ En comparación con las alternativas expuestas, Heroku permite desplegar version
 * https://rubygarage.org/blog/heroku-vs-amazon-web-services
 |===
 
+.Travis
 |===
 |**Travis**
 |Es una herramienta de integración continua que hemos usado en varias asignaturas que nos va a permitir ejecutar nuestros test y comprobar si han surgido fallos al añadir código al repositorio, además vamos a poder conectarlo con SonarCloud.
@@ -104,6 +108,7 @@ En comparación con las alternativas expuestas, Heroku permite desplegar version
 * https://www.lambdatest.com/blog/travis-ci-vs-jenkins/
 |===
 
+.Sonarcloud
 [cols="6a"]
 |===
 |**Sonarcloud**
@@ -124,6 +129,7 @@ SonarQube tienen un mantenimiento de código más costoso, haciendo que sea nece
 * https://stackshare.io/stackups/codacy-vs-sonarqube
 |===
 
+.Asciidoc
 |===
 |**Asciidoc** 
 |La forma más habitual de redactar sería en formato Word, pero veíamos necesario que toda la documentación estuviese junto al código. Por eso, elegimos Asciidoc, que nos permite redactar nuestros documentos de forma personalizada con un lenguaje sencillo y fácil de aprender.
@@ -133,35 +139,34 @@ SonarQube tienen un mantenimiento de código más costoso, haciendo que sea nece
 
 ==== Herramientas  image:./images/icons/herramienta.png[Icono,17,17]
 
+.Adobe XD
 |===
 |**Adobe XD**
 |Elegimos Adobe XD por la gran versatilidad en sus apartados para la realización de mockups para el proyecto. Dada a su gran facilidad de uso y sus múltiples plantillas y extensiones, su elección fue en nuestra opinión lo más recomendable. También nos ha permitido hacer mockups interactivos de forma sencilla.
 
 |===
 
+.Visual Studio Code
 |===
 |**Visual Studio Code**
 |Es un editor de código desarrollado por Microsoft y que está siendo muy usado estos últimos años. Nos permite programar en múltiples lenguajes de forma personalizada con las numerosas extensiones que acompañan al editor. Además implementa una consola de depuración y está vinculado directamente con Git. Lo elegimos, aparte de los puntos anteriores, porque tenemos experiencia en él y es fácil de usar.
 |===
 
+.Clockify
 |===
 |**Clockify**
 |Nos permite medir nuestro gasto temporal en nuestras tareas de manera sencilla. Existen muchas herramientas de este tipo, pero esta es la que más hemos utilizado, y nos sirve perfectamente para nuestro trabajo. 
 |===
 
-
+.Github
 |===
 |**Github**
 |Poco que decir en este apartado, GitHub es la plataforma de control de versiones más utilizada. Dado su conocimiento de uso por parte de los miembros del grupo de trabajo, decidimos sin dudarlo su elección.
 |===
 
+.Jira
 |===
 |**Jira**
 |Jira es una herramienta de gran utilidad para equipos de todo tipo. Siendo también de gran ayuda para gestión de trabajo en todo tipo de casos, y en especial para el desarrollo software.
 Con todo esto y con el conocimiento de que se usa en entornos laborales de grandes empresas como Everis, decidimos utilizarla y aprender como funciona.
-|===
-
-|===
-|**Slack**
-|Es una herramienta de comunicación que se usa en nuestro entorno profesional, además es mucho más formal que Whatsapp o Telegram, que se mezcla el trabajo con conversaciones informales.
 |===
