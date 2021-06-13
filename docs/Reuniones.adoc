@@ -2,7 +2,7 @@ En el apartado de las reuniones, tuvimos de varios tipos:
 
 * Una reunión semanal con el tutor, con el fin de recibir feedback y ver el avance del proyecto. En las que uno de los compañeros enseñaba el proyecto y el otro cogía apuntes.
 
-* Una reunión fija de dos horas o más entre lo miembros del grupo una vez acabada la reunión con el tutor. En estas reuniones ibamos asignando y reorganizando las tareas, así como hablando de las incidencias y dudas con respecto a las tareas.
+* Una reunión fija semanal de dos horas o más entre lo miembros del grupo después de la reunión con el tutor. En estas reuniones ibamos asignando y reorganizando las tareas, así como hablando de las incidencias y dudas con respecto a las tareas.
 
 * Alguna reunión esporádica de horas indefinidas.
 
@@ -18,112 +18,184 @@ En el apartado de las reuniones, tuvimos de varios tipos:
 | Con profesor.
 | Primera reunión del proyecto.
 
+| 15/9/2020
+| Interna.
+| Primera reunión del proyecto.
+
 | 13/10/2020
 | Con profesor.
 | Ideas para especificaciones.
 
-| 20/10/2020
-| Con profesor.
-| 
+| 15/10/2020
+| Interna.
+| Ideas para especificaciones.
+
+| 16/10/2020
+| Interna.
+| Ideas para especificaciones.
 
 | 27/10/2020
 | Con profesor.
 | Revisión del modelo de datos y de los primeros _mockups_.
 
-| 3/11/2020
-| Con profesor.
-|
-
-| 6/11/2020
-| Con profesor.
-|
-
-| 10/11/2020
-| Con profesor.
-|
+| 28/10/2020
+| Interna.
+| Modificación del modelo de datos.
 
 | 13/11/2020
 | Con profesor.
 | Cambios en el modelo de datos y _mockups_.
 
+| 14/11/2020
+| Interna.
+| Modificación del modelo de datos.
+
 | 20/11/2020
 | Con profesor.
-| Cambios en la especificaciones, en el modelo de datos y en el modelo de datos.
+| Cambios en la especificaciones, en el modelo de datos y _mockups_.
 
-| 27/11/2020
-| Con profesor.
-| 
+| 21/11/2020
+| Interna.
+| Cambios en la especificaciones, en el modelo de datos y _mockups_.
 
 | 04/12/2020
 | Con profesor.
+| Revisión de las justificaciones y _mockups_.
+
+| 06/12/2020
+| Interna.
 | Revisión de las justificaciones y _mockups_.
 
 | 11/12/2020
 | Con profesor.
 | Revisión de las justificaciones y del modelo de datos.
 
+| 12/12/2020
+| Interna.
+| Cambios de las justificaciones y del modelo de datos.
+
 | 18/12/2020
-| Con profesor.
-| 
+| Interna.
+| Cambios de las justificaciones.
 
 | 08/01/2021
 | Con profesor.
 | Revisión del modelo de datos.
 
+| 11/01/2021
+| Interna.
+| Cambios en el modelo de datos.
+
 | 15/01/2021
 | Con profesor.
+| Revisión del desarrollo.
+
+| 17/01/2021
+| Interna.
 | Revisión del desarrollo.
 
 | 22/01/2021
 | Con profesor.
 | Revisión del desarrollo.
 
+| 23/01/2021
+| Interna.
+| Revisión del desarrollo.
+
 | 05/02/2021
 | Con profesor.
+| Revisión del desarrollo.
+
+| 06/02/2021
+| Interna.
 | Revisión del desarrollo.
 
 | 08/02/2021
 | Con profesor.
 | Revisión del desarrollo.
 
+| 10/02/2021
+| Interna.
+| Revisión del desarrollo.
+
 | 19/02/2021
 | Con profesor.
+| Revisión del desarrollo.
+
+| 20/02/2021
+| Interna.
 | Revisión del desarrollo.
 
 | 26/02/2021
 | Con profesor.
 | Revisión del desarrollo.
 
+| 28/02/2021
+| Interna.
+| Revisión del desarrollo.
+
 | 12/03/2021
 | Con profesor.
+| Revisión del desarrollo.
+
+| 15/03/2021
+| Interna.
 | Revisión del desarrollo.
 
 | 24/03/2021
 | Con profesor.
 | Revisión del desarrollo.
 
+| 25/03/2021
+| Interna.
+| Revisión del desarrollo.
+
 | 08/04/2021
 | Con profesor.
+| Revisión del desarrollo.
+
+| 09/04/2021
+| Interna.
 | Revisión del desarrollo.
 
 | 15/04/2021
 | Con profesor.
 | Revisión del desarrollo.
 
+| 17/04/2021
+| Interna.
+| Revisión del desarrollo.
+
 | 22/04/2021
 | Con profesor.
+| Revisión del desarrollo.
+
+| 23/04/2021
+| Interna.
 | Revisión del desarrollo.
 
 | 29/04/2021
 | Con profesor.
 | Revisión del desarrollo y de la estructura de la memoria.
 
+| 30/04/2021
+| Interna.
+| Revisión del desarrollo y de la estructura de la memoria.
+
 | 13/05/2021
 | Con profesor.
 | Revisión del contenido de la memoria.
 
+| 15/05/2021
+| Interna.
+| Revisión del contenido de la memoria.
+
 | 10/06/2021
 | Con profesor.
+| Revisión del contenido de la memoria.
+
+| 12/06/2021
+| Interna.
 | Revisión del contenido de la memoria.
 
 |===
