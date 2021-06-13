@@ -3,6 +3,10 @@ En el desarrollo no se ha realizado pruebas automáticas dado que necesitan una 
 
 === Pruebas de formulario
 
+Un tipo de prueba muy común en el mundo del software son las pruebas de los formulario. Estos son un apartado crucial de las aplicaciones puesto que envian los datos directamente a la base de datos. Esto tiene un peligro, y es que si un usuario introduce un dato incorrecto podría llegar a destruir o corromper la base de datos de la aplicación web.
+
+Con estas pruebas nos hemos asegurado que este tipo de peligros no sucedan en nuestra aplicación. Para ello hemos realizado las siguientes pruebas manuales:
+
 * Comprobamos que la vista este correctamente traducida.
 * Verificamos la obligatoriedad de los campos enviandolo completamente vacío y rellenando uno a uno, comprobando si se muestra el mensaje de obligatoriedad.
 * Comprobamos las restricciones de modelo, tanto longuitud como rango, y vemos si se muestra el error correspondiente. Esto se hace en ambos idiomas.
@@ -13,6 +17,11 @@ En el desarrollo no se ha realizado pruebas automáticas dado que necesitan una 
 * Comprobamos el _reponsive_.
 
 === Pruebas de borrado
+
+En este apartado hemos intentado que ningún usuario pueda realizar esta acción sin los permisos correspondientes. También hemos comprobado la función de dichos métodos.
+
+Con estas pruebas nos hemos asegurado que lo nombrado anteriormente esté correcto. Para ello hemos realizado las siguientes pruebas manuales:
+
 * Comprobamos que la vista este correctamente traducida.
 * Comprobamos si el botón de _Volver_ lleva a la vista correspondiente.
 * Lo enviamos correctamente y verificamos si se borrado y que lleva a la vista correspondiente.
@@ -21,6 +30,11 @@ En el desarrollo no se ha realizado pruebas automáticas dado que necesitan una 
 * Comprobamos el _reponsive_.
 
 === Pruebas de listado
+
+En el apartado de listados hemos intentado asegurar que los usuarios sin permisos para poder ver los mismos no pudieran hacerlo. También hemos comprobado el formato y vista correcta de los listados de la aplicación.
+
+Para ello hemos realizado las siguientes pruebas manuales:
+
 * Comprobamos que la vista este correctamente traducida.
 * Comprobamos que la vista este correctamente traducida.
 * Comprobamos que no se pueda acceder a un listado sin permiso mediante url.
