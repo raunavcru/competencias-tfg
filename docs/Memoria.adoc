@@ -28,6 +28,10 @@ include::DefiniciónDeObjetivos.adoc[]
 
 include::AntecedentesYAportaciónRealizada.adoc[]
 
+===  Comparativas con otras alternativas
+
+include::ComparativasConOtrasAlternativas.adoc[]
+
 == III. Análisis temporal y de costes de desarrollo
 
 include::AnálisisTemporalYDeCostesDeDesarrollo.adoc[]
@@ -110,11 +114,7 @@ include::ManualDeUsuario.adoc[]
 
 include::Pruebas.adoc[]
 
-== VII. Comparativas con otras alternativas
-
-include::ComparativasConOtrasAlternativas.adoc[]
-
-== VIII. Conclusiones y desarrollos futuros
+== VII. Conclusiones y desarrollos futuros
 
 include::ConclusionesYDesarrollosFuturos.adoc[]
 
