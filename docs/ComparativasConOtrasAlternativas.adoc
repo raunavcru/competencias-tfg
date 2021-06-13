@@ -1,3 +1,9 @@
+El mundo de la evaluación online ha cambiado radicalmente en este último año. El problema de no poder asistir a las clases ni a los exámenes a causa de la pandemia producida por el COVID-19 ha dejado a muchos educadores sin otra opción que la de enseñar mediante la web.
+
+Los métodos de evaluación son diversos, cada educador tiene el suyo propio. El uso del papel a la hora de evaluar un alumno ya es algo casi del pasado. Las aplicaciones web realizan y guardan todo ese trabajo, facilitando al profesor un sitio donde poder hacerlo de forma segura, fácil y rápida. 
+
+Por desgracia, no todas las aplicaciones web se asemejan a los tipos de evaluación de los educadores, ni tan siquiera siguen un patrón homogéneo, e incluso muchas de ellas no tienen en cuenta el sistema de competencias. Esto último puede ser un error muy grave por parte de las aplicaciones, ya que en España las competencias es algo obligatorio y esencial para la evaluación de un alumno. Este es uno de los factores que si tiene en cuenta Verum.
+
 Para empezar a comparar con otras alternativas, hemos realizado una búsqueda exaustiva de los competidores. Hemos encontrado cuatro grandes alternativas: Additio, Moodle, Google Classroom y Enseñanza Virtual.
 
 En la siguiente tabla mostraremos de manera visual una comparativa sencilla de nuestra aplicación con las mencionadas anteriormente.
