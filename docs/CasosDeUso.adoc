@@ -1,9 +1,6 @@
-
-Para poder ver los casos de uso de manera interactiva vaya al siguiente enlace:
-
-* link:https://raunavcru.github.io/mockups-interactivos/Home_admin#livereload[Administrador]
-
-* link:https://raunavcru.github.io/mockups-interactivos/Home_profesor#livereload[Profesor]
+En este aparado hemos tenido en cuenta la importancia de los casos de uso en una aplicación web. En nuestro caso en particular hemos querido que fueran lo más detallado posible.
+Todos estos que veremos a continuación han sido previamente estudiados y hablados con el tutor con el fin de intentar tener todos los posibles de cara al uso de la aplicación por parte de un educador.
+En ellos podremos ver tanto los casos de uso de un profesor, como de un administrador. Podrán diferenciarse en el subapartado Descripción en el cual se nombra el rol al cual va reflejado el caso de uso.
 
 [cols="a"]
 |===
