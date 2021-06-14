@@ -70,7 +70,9 @@ include::RequisitosNoFuncionales.adoc[]
 
 include::CasosDeUso.adoc[]
 
-=== Diagramas
+=== Modelo de datos
+
+include::ModeloDeDatos.adoc[]
 
 image::UML/uml.svg[]
 
