@@ -1,16 +1,18 @@
+En esta apartado hablaremos que los gastos de la realización de todo el proyecto, ya sea documentación, reuniones o desarrollo de la aplicación. Empezaremos con la parte más cuantiosa, que son los salarios, depués especificaremos apartados menos costosos y terminaremos con los costes totales, que separaremos en teórico y real.
 
 El proyecto está estimado en **300 horas** de trabajo por persona, basándonos el los 12 créditos del Trabajo Fin de Grado. Por lo tanto, el proyecto supondrá un coste temporal inicial de **600 horas**. Además, los dos miembros del equipo tienen el mismo puesto.
 
 ==== Salarios
-Suponemos que cada miembro cobra unos **8,5 euros la hora**, basándonos en salarios de puestos reales. Por lo que 300 horas sumarán un coste de **2550 euros**. También supondremos un **35%** de costes de la Seguridad Social. Estos costes deberían ser calculado mensualmente, así que su coste real, que supondría un incremento entre 30 y 35%. Escogemos el más alto.
+Suponemos que cada miembro cobra unos **8,5 euros la hora**, basándonos en salarios de puestos reales. Por lo que 300 horas sumarán un coste de **2550 euros**. También supondremos un **35%** de costes de la Seguridad Social. Estos costes deberían ser calculado mensualmente, así que su coste real, que supondría un incremento entre 30 y 35%. Escogemos el más alto. Además asumiremos que ha habido un sobrecoste por costes por formación, es decir, costes que se han producido al dedicar tiempo en cubrir falta de conocimiento en el desarrollo. Valoramos este sobrecoste del **10%** del **salario total**. Desglosaremos este coste en la **Tabla 9**.
 
 .Salarios
 [grid=cols]
 |===
-|Costes por hora (€/hora) |Salario total (€) |Coste de la Seguridad Social (€) | Coste total por persona (€) | Coste total de la empresa (€)
+|Costes por hora (€/hora) |Salario total (€) |Coste de formación (€) |Coste de la Seguridad Social (€) | Coste total por persona (€) | Coste total de la empresa (€)
 
 | 8,5
 | 2550
+| 510
 | 892,5
 | 3442,5
 | 6885
@@ -18,7 +20,7 @@ Suponemos que cada miembro cobra unos **8,5 euros la hora**, basándonos en sala
 |===
 
 ==== Amortizaciones
-Lo único que tendríamos que amortizar son los ordenadores que suponen uno coste total de **2000 euros**. Este tipo de elemento se permite amortizar un **20%** anualmente.
+Una amortización es una sucesión de pagos para saldar el coste de bienes física para el funcionamiento de la empresa. Lo único que tendríamos que amortizar son los dos ordenadores que suponen uno coste total de **2000 euros**. Este tipo de elemento se permite amortizar un **20%** anualmente. Se desglosará en la **Tabla 10**.
 
 .Amortizaciones
 [grid=cols]
@@ -33,7 +35,7 @@ Lo único que tendríamos que amortizar son los ordenadores que suponen uno cost
 |===
 
 ==== Licencias
-La única licencia que hemos utilizado es Photoshop que cuesta **24,19 euros al mes** y que hemos utilizado durante 5 meses.
+Esta serán las versiones de pago de servicios digitales. La única licencia que hemos utilizado es Photoshop que cuesta **24,19 euros al mes** y que hemos utilizado durante 5 meses. Lo resumiremos en la **Tabla 11**.
 
 .Licencias
 [grid=cols]
@@ -45,8 +47,8 @@ La única licencia que hemos utilizado es Photoshop que cuesta **24,19 euros al 
 
 |===
 
-==== Despliegue
-Para el despliegue se utilizado la versión _Hobby_ de Heroku, que cuesta **7 dólares**, que son unos **5,74 euros**. Se ha utilizado durante 5 meses.
+==== Servicios en la nube
+Estos son servidores que dan servicio a través de Internet. sPara el despliegue se utilizado la versión _Hobby_ de Heroku, que cuesta **7 dólares**, que son unos **5,74 euros**. Se ha utilizado durante 5 meses. Lo resumiremos en la **Tabla 12**.
 
 .Despliegue
 [grid=cols]
@@ -58,7 +60,8 @@ Para el despliegue se utilizado la versión _Hobby_ de Heroku, que cuesta **7 d�
 
 |===
 
-==== Coste total
+==== Coste teórico total
+Reuniendo los datos mencionados en los apartados anteriores podemos resumir los costes en la **Tabla 13**.
 
 .Coste total
 [grid=cols]
