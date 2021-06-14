@@ -74,7 +74,19 @@ Reuniendo los datos mencionados en los apartados anteriores podemos resumir los 
 | 28,7
 | 7834,65
 
-
 |===
 
-==== Coste real
+==== Coste real total
+Aunque se planificó inicialmente una inversión de 600 horas en el proyecto, se han producido una leve desviación del **X%** en la realización del proyecto que aumentará el coste en salarios. Esta desviación la podemos atribuir a los xref:Retrasos e incidencias[retrasos e incidencias] que se han producido en el proyecto. Concretaremos este sobrecoste en la **Tabla 14**.
+
+.Coste real
+[grid=cols]
+|===
+|Coste en salarios teóricos (€) |Coste en salarios reales (€) |Coste teórico total (€) |Coste real total (€)
+
+| 6885
+| 
+| 7834,65
+| 
+
+|===
