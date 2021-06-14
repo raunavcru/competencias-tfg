@@ -5,14 +5,14 @@ Una vez realizado cada _Sprint_ se verá reflejado en el proyecto como un increm
 
 Los _Sprints_ son los siguintes:
 
-* Sprint 1: 1 de Enero al 28 de Enero. Véase Tabla 1.
-* Sprint 2: 29 de Enero al 25 de Febrero. Véase Tabla 2.
-* Sprint 3: 26 de Febrero al 25 del Marzo. Véase Tabla 3.
-* Sprint 4: 26 de Marzo al 29 de Abril. Véase Tabla 4.
+* Sprint 1: 1 de enero al 28 de enero. Véase **Tabla 1**.
+* Sprint 2: 29 de enero al 25 de febrero. Véase **Tabla 2**.
+* Sprint 3: 26 de febrero al 25 del marzo. Véase **Tabla 3**.
+* Sprint 4: 26 de marzo al 29 de abril. Véase **Tabla 4**.
 
 Las tablas tienen una cabecera con cada una de las semanas de desarrollo con sus fechas de inicio y de fin. En cada celda se mostrará el nombre de la tarea o el caso de uso y la fecha en la que debe estar finalizada la tarea entre corchetes.
 
-La estrategia respecto a las tareas ha consistido en especificar solo la fecha fin, para que no hubiera problema en adelantar tareas. Además se ha buscado un tiempo para el desarrollo de las tareas amplio. Todo esto nos ha permitido un mayor margen de maniobra ante impedimentos surgidos de otras asignaturas de la carrera. Gracias a esta estrategia el desarrollo ha tenido una presión menor, las desviaciones de la planificación inicial se han mantenido al mínimo y hemos podido resolver las incidencias con un impacto bajo. Véase xref:Retrasos e incidencias[Retrasos e incidencias]
+La estrategia respecto a las tareas ha consistido en especificar solo la fecha fin, para que no hubiera problema en adelantar tareas. Además se ha buscado un tiempo para el desarrollo de las tareas amplio. Todo esto nos ha permitido un mayor margen de maniobra ante impedimentos surgidos de otras asignaturas de la carrera. Gracias a esta estrategia el desarrollo ha tenido una presión menor, las desviaciones de la planificación inicial se han mantenido al mínimo y hemos podido resolver las incidencias con un impacto bajo. Véase xref:Retrasos e incidencias[Retrasos e incidencias].
 
 .Planificación Sprint 1
 [grid=cols]
