@@ -1,0 +1,2 @@
+Sabemos que un gran apartado de la creación de una aplicación web es el Modelo de datos. Este no es más que un diagramas para visualizar, especificar, construir y documentar el sistema. Algo que es crucial, se asemeja a los que serían los pilares de una casa.
+Por todo esto hemos realizado una gran implicación y dedicación a este diagrama con el fin de que no hubiese ningún tipo de cambio. Pero las cosas no son siempre como deseamos.
