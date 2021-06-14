@@ -1,5 +1,7 @@
 === Pruebas de automáticas
 En el desarrollo no se ha realizado pruebas automáticas dado que necesitan una mayor inversión de tiempo que las pruebas manuales, las cuales cumplen su función correctamente. Además no es lo suficientemente grande y complejo para necesitar la automatización de las pruebas. Hemos visto más importante invertir el tiempo en el desarrollo que en implementar pruebas automáticas.
+Para las pruebas realizadas que redactamos a continuación, hemos utilizado los navegadores de Google Chrome y Mozilla en las versiones: Versión 91.0.4472.101 (Build oficial) (64 bits) para Chrome y 89.0 (64-bit) para Mozilla.
+En el apartado responsive, todo esto ha sido testeado usando Google Chrome, el cual, ofrece una gran ventaja con su herrramienta de desarrolladores, esta se activa con el botón F12. En uno de sus múltiples apartados utilizamos la función de cambio de resolución para poder comprobar bien este apartado. Usamos la opción iPhoneX, ya que posee las medidas más parecidas a un teléfono móvil actual.
 
 === Pruebas de formulario
 
