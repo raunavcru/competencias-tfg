@@ -1,5 +1,9 @@
 ==== Requisitos Funcionales:
 
+Este tipo de requisitos se basan en la definición de una funcionalidad del sistema o los componentes software. Esta debe tener en cuenta las entradas y las salidas.
+
+En nuestro caso, hemos creado veintucuatro de estos:
+
 **RF 01**: El sistema permitirá a los administradores poder ver el listado de alumnos, así como crear, editar y eliminar dichos alumnos.
 
 **RF 02**: El sistema permitirá a los administradores poder ver el listado de profesores, así como crear y eliminar dichos profesores.
