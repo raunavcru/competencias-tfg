@@ -4,7 +4,7 @@ También en el directorio de docs podremos encontrar mockups-interactivos, en lo
 
 Dividiremos esta guía en dos partes, administrador y profesor.
 
-* Administrador:
+==== Administrador:
 
 Aquí podermos ver la creación de un alumno:
 
@@ -24,7 +24,7 @@ La eliminación de estos de un grupo:
 image::mockups/Eliminar alumnos.png[]
 
 
-* Profesor:
+==== Profesor:
 
 El listado de alumnos de un grupo al que pertenece:
 

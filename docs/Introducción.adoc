@@ -1,2 +1,9 @@
-Hablar sobre el sistema de evaluación actual
-Hablar sobre como hemos enfocado el problema
+La evaluación es un concepto que lleva estando entre nosotros desde el siglo XIX, pero por ser algo tan antiguo no significa que no sea complejo.
+
+La evaluación del alumnado, algo que hablaremos más adelante, es algo muy complejo y que lleva trayendo a los educadores quebraderos de cabeza desde hace muchos años.
+
+Las competencias aparecieron en nuestro país en 2006 y desde entoces su manera de evaluarlas ha sido bastante dificil. Durante los últimos años, nuestro sistema educativo consta con asignaturas que a su vez contiene una serie de competencias que el alumno debe aprobar a lo largo de su curso académico.
+
+Nuestra finalidad con Verum es la creación de una aplicación web que facilite al educador la forma de evaluar las competencias de un alumno lo más sencilla posible. Por eso hemos realizado una aplicación web loenfocada al sistema educativo actual.
+
+Este apartado lo dividiremos en tres: Definición de objetivos, Análisis de antecedentes y aportación realizada y Comparativas con otras alternativas.
