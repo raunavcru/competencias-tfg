@@ -10,4 +10,26 @@
 
 === Casos prácticos de competencias
 
-include::Casos prácticos de competencias.adoc[]
+En la siguiente tabla detallaremos los nombres que tienen los tres niveles de competencias en los diferentes niveles de enseñanza, ya que la nomenclatura difiere. 
+
+.Casos prácticos de competencias
+[grid=cols]
+|===
+|Niveles |Nombre en la aplicación |Enseñanza primaria/ESO/Bachillerato |Títulos universitarios 
+
+| Nivel 1
+| Competencias concretas
+| Estándares de aprendizaje
+| Criterios del profesor
+
+| Nivel 2
+| Competencias específicas
+| Criterios de evaluación
+| Competencias generales y específicas
+
+| Nivel 3
+| Competencias generales
+| Competencias clave
+| Competencias básicas
+
+|===
