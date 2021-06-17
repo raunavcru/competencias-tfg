@@ -58,6 +58,8 @@ include::Costes.adoc[]
 
 == III. Análisis de requisitos, diseño e implementación
 
+include::IntroduccionAnalisisDeRequisitos.adoc[]
+
 === Requisitos
 
 include::RequisitosDeInformación.adoc[]

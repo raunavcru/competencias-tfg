@@ -1,4 +1,0 @@
-Los requisitos de una aplicación web en el apartado de software son una descripción completa del comportamiento del sistema a desarrollar.
-Estos mismos determinan qué debe hacer el sistema, no cómo debe hacerlo.
-Nosotros en nuestro caso hemos querido hacer incapié de manera más específica a los requisitos de Verum. Por eso hemos desglosado los requisitos en tres grandes: Requisitos de información, Requisitos Funcionales y Requisitos no Funcionales. Hablaremos en más profundidas en cada uno de ellos.
-

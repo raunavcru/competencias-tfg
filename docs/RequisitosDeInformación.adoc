@@ -1,6 +1,6 @@
 ==== Requisitos de Información:
 
-Este tipo de requisitos describen la información que debe guardare el sistema para poder cumplir sus objetivos. Estos deben identificar que es lo relevante para así guardar información sobre ello en un futuro.
+Este tipo de requisitos describen la información que debe guardare el sistema para poder cumplir sus objetivos. Estos, deben identificar que es lo relevante para así guardar la información sobre ellos en un futuro.
 
 En nuestro caso hemos realizado nueve requisitos de información, los cuales son los siguientes:
 

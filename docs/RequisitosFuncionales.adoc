@@ -1,8 +1,12 @@
 ==== Requisitos Funcionales:
 
-Este tipo de requisitos se basan en la definición de una funcionalidad del sistema o los componentes software. Esta debe tener en cuenta las entradas y las salidas.
+Este tipo de requisitos se basan en la definición de una funcionalidad del sistema o los componentes software. Esta, debe tener en cuenta las entradas y las salidas.
 
-En nuestro caso, hemos creado veintucuatro de estos:
+Este tipo de requisito de forma general se realiza siempre una vez finalizados los casos de uso, ya que en estos, se contemplan lo que debe hacer la aplicación a alto nivel.
+
+De forma resumida, un requisito funcional deberá explicar de forma clara y concisa qué es lo que se *permitirá* hacer en la aplicación.
+
+En nuestro caso, hemos creado veintucuatro de estos, los cuales se han tenido en cuenta los roles:
 
 **RF 01**: El sistema permitirá a los administradores poder ver el listado de alumnos, así como crear, editar y eliminar dichos alumnos.
 
