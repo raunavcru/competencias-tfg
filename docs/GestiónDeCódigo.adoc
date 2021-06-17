@@ -6,7 +6,7 @@ Dividiremos este apartado en tres con el fin de desglosar de manera más detalla
  
 ==== Gestión de ramas
 
-Hemos sido muy estrictos en este apartado, en el cual hemos seguido las siguientes pautas.
+Una es un espacio de trbajo paralelo que deriva de una versión común. Hemos sido muy estrictos en este apartado, en el cual hemos seguido las siguientes pautas.
 
 Tenemos dos Ramas por defecto:
 
