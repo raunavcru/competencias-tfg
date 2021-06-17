@@ -1,5 +1,5 @@
 
-=== Conclusiones
+Finalmente, tras más de 600 horas de trabajo y casi nueve meses de dedicado al proyecto, podemos decir con sinceridad con total sinceridad que la aplicación a cumplido nuestras expectativas. Hemos desarrollado una aplicación funcional que resuelve el problema planteado sobre la evaluación por competencias. Aún así, creemos que necesita una serie de mejoras que faltarían para que se pudiera utilizar de forma óptima en la enseñanza. Estas mejoras se hablarán en el siguiente apartado.
 
 * Django nos ha permitido un desarrollo rápido de los casos de uso.
 
@@ -21,8 +21,8 @@
 
 * Asignar más competencias claves (nivel 3) como padre de un a competencia específica (nivel 2).
 
+* Implementar alguna manera de añadir muchos datos sobre alumnos, profesores, competencias, etc.
+
 * Filtros y/o ordenaciones sobre tablas.
 
 * Añadir buscadores en los campos de los formulario dedicados a relaciones.
-
-* Implementar alguna manera de añadir muchos datos sobre alumnos, profesores, competencias, etc.
