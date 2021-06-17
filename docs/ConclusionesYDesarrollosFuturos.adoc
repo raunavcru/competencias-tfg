@@ -1,5 +1,7 @@
 
-Finalmente, tras más de 600 horas de trabajo y casi nueve meses de dedicado al proyecto, podemos decir con sinceridad con total sinceridad que la aplicación a cumplido nuestras expectativas. Hemos desarrollado una aplicación funcional que resuelve el problema planteado sobre la evaluación por competencias. Aún así, creemos que necesita una serie de mejoras que faltarían para que se pudiera utilizar de forma óptima en la enseñanza. Estas mejoras se hablarán en el siguiente apartado.
+Finalmente, tras más de 600 horas de trabajo y casi nueve meses de dedicado al proyecto, podemos decir con sinceridad con total sinceridad que la aplicación a cumplido nuestras expectativas. Hemos desarrollado una aplicación funcional que resuelve el problema planteado sobre la evaluación por competencias en todos los niveles de la educación. Aún así, creemos que necesita una serie de mejoras que faltarían para que se pudiera utilizar de forma óptima en la enseñanza. Estas mejoras se hablarán en el siguiente apartado.
+
+Ahora vamos a citas una sucesión de conclusiones más específicas. Son las siguientes:
 
 * Django nos ha permitido un desarrollo rápido de los casos de uso.
 
@@ -9,7 +11,17 @@ Finalmente, tras más de 600 horas de trabajo y casi nueve meses de dedicado al 
 
 * Realizar parte de la documentación antes del desarrollo nos ha aclarado el problema a resolver.
 
+* Tener disponible la planificación detallada desde el primer día de desarrollo no ha permitido minimizar las desviaciones el plan.
+
+* Las reuniones han sido clave en el cumplimiento de los plazos.
+
+* Hemos aumentado nuestra experiencia en el despliegue en la nube.
+
+* Hemos aprendido a ser autodidacta en la búsqueda de soluciones a problemas y fallos en el proyecto.
+
 * Hemos aprendido la problemática de la implementación del sistema de competencias.
+
+* Hemos aprendido sobre la eduación desde el punto de vista del profesor.
 
 * Hemos aprendido a tener cuidado con los derechos de autor de fuentes e imágenes.
 
@@ -17,12 +29,20 @@ Finalmente, tras más de 600 horas de trabajo y casi nueve meses de dedicado al 
 
 === Mejoras
 
+En este apartado hablaremos de las mejoras que, como hemos mencionado con anterioridad, vemos necesarias, además, nombraremos otras mejoras que, aunque no son indispensables, mejorarían la experiencia del usuario en la aplicación.
+
+Las más importantes son:
+
 * Particularizar peso de competencias específicas (nivel 2) sobre cada competencia clave a la que afecta (nivel 3).
 
 * Asignar más competencias claves (nivel 3) como padre de un a competencia específica (nivel 2).
 
 * Implementar alguna manera de añadir muchos datos sobre alumnos, profesores, competencias, etc.
 
+Además las otras mejoras son:
+
 * Filtros y/o ordenaciones sobre tablas.
 
 * Añadir buscadores en los campos de los formulario dedicados a relaciones.
+
+* Paginar las tablas cuando hay más de una en una misma pantalla.
