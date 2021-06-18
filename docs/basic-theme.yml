@@ -1,0 +1,8 @@
+extends: default
+page:
+  margin: [2.5cm, 3cm, 2.5cm, 3cm]
+base:
+  font-family: Helvetica
+  font-size: 11
+literal:
+  background-color: #ba3232
