@@ -1,11 +1,53 @@
 
 * https://www.boe.es/diario_boe/txt.php?id=BOE-A-2014-2222
+
 * https://www.boe.es/boe/dias/2020/12/30/pdfs/BOE-A-2020-17264.pdf
+
 * https://www.us.es/estudiar/que-estudiar/oferta-de-grados/grado-en-ingenieria-informatica-ingenieria-del-software
+
 * https://www.us.es/estudiar/que-estudiar/oferta-de-grados/grado-en-pedagogia
+
 * http://www.juntadeandalucia.es/educacion/descargasrecursos/curriculo-primaria/pdf/PDF/textocompleto.pdf
 * https://www.boe.es/diario_boe/txt.php?id=BOE-A-2015-37
+
 * https://docs.djangoproject.com/en/3.2/topics/i18n/translation/
+
 * https://www.agenciatributaria.es/AEAT.internet/Inicio/_Segmentos_/Empresas_y_profesionales/Empresas/Impuesto_sobre_Sociedades/Periodos_impositivos_a_partir_de_1_1_2018/Base_imponible/Amortizacion/Tabla_de_coeficientes_de_amortizacion_lineal_.shtml
+
 * https://www.adobe.com/es/creativecloud/plans.html?filter=design&plan=individual&promoid=TKZTLDFL&mv=other
+
 * https://www.heroku.com/pricing
+
+* https://www.monocubed.com/django-vs-node-js/
+
+* https://www.upgrad.com/blog/
+django-vs-nodejs-difference-between-django-and-nodejs/
+
+* https://openwebinars.net/blog/
+los-4-mejores-frameworks-para-aplicaciones-de-python/
+
+* http://ccbv.co.uk/
+
+* https://insights.stackoverflow.com/survey/2019#technology
+
+* https://insights.stackoverflow.com/survey/2020#technology-programming-scripting-and-markup-languages-all-respondents
+
+* http://www.rafelsanso.com/bootstrap-vs-material-design/
+
+* https://stackshare.io/stackups/
+foundation-vs-materialize#:~:text=You%20can%20quickly%20prototype%20and,framework%20based%20on%20Material%20Design.
+
+* https://www.slant.co/versus/505/521/~foundation_vs_materialize
+
+* https://stackshare.io/stackups/firebase-vs-heroku
+
+* https://rubygarage.org/blog/heroku-vs-amazon-web-services
+
+* https://www.guru99.com/jenkins-vs-travis.html
+
+* https://www.lambdatest.com/blog/travis-ci-vs-jenkins/
+
+* https://stackshare.io/stackups/codacy-vs-codebeat-vs-sonarqube
+
+* https://stackshare.io/stackups/codacy-vs-sonarqube
+
