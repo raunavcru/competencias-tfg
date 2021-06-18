@@ -76,8 +76,6 @@ include::CasosDeUso.adoc[]
 
 include::ModeloDeDatos.adoc[]
 
-image::UML/uml.svg[]
-
 === Mockups
 
 include::Mockups.adoc[]
