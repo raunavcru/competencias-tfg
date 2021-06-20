@@ -1,7 +1,6 @@
 :doctype: book
 :source-highlighter: coderay
-:imagesdir: images
-:front-cover-image: image:portada2.png[Front Cover,1050,1600]
+:front-cover-image: image::images/portada2.png[Front Cover,1050,1600]
 
 
 

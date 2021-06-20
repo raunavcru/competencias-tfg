@@ -4,17 +4,9 @@ Los métodos de evaluación son diversos, cada educador tiene el suyo propio. El
 
 Por desgracia, no todas las aplicaciones web se asemejan a los tipos de evaluación de los educadores, ni tan siquiera siguen un patrón homogéneo, e incluso muchas de ellas no tienen en cuenta el sistema de competencias. Esto último puede ser un error muy grave por parte de las aplicaciones, ya que en España las competencias es algo obligatorio y esencial para la evaluación de un alumno. Este es uno de los factores que si tiene en cuenta Verum.
 
-Para empezar a comparar con otras alternativas, hemos realizado una búsqueda exaustiva de los competidores. Hemos encontrado cuatro grandes alternativas: Additio, Moodle, Google Classroom y Enseñanza Virtual.
+Para empezar a comparar con otros competidores, hemos realizado una búsqueda exhaustiva de las alternitivas a nuestra aplicación. Las cuatro mayores alternativas son Additio, Moodle, Google Classroom y Enseñanza Virtual, aunque nuestro competidor real es Additio, ya que el resto serían más un asociado que un competidor.
 
-* decir que additio es el mayor competidor
-
-* decir que vamos a hablar solo de additio y de la nuestra
-
-* aditio puntua la de nivel 3 y nosotros la de nivel 1
-
-* additio no pondera las competencias de nivel 2 y 1 y nosotros si
-
-* 
+Centrándonos en una comaparativa entre Additio Y Verum, podemos observar que la principal diferencia es como se gestionan las competencias. En primer lugar, al asignar competencias a un ejercicio, Additio no permitirá elegir las competencias de nivel mayor, las nivel 3, frente a Verum, que permite elegir las de nivel 1, las de menor nivel. Otra diferencia recae en que Additio permite que las competencias de nivel 1 estén relacionadas sin ponderación a las de nivel 3. Sim embargo, Verum permite una relación ponderada de niveles consecutivos, es decir, las de nivel 1 una de nivel 2, y las de nivel 2 con las de nivel 3. Otra diferencia es el coste de uso, mientras que Verum es gratuito, Additio tiene un coste de aproximadamente 9 euros al año.
 
 En la siguiente tabla mostraremos de manera visual una comparativa sencilla de nuestra aplicación con las mencionadas anteriormente.
 
@@ -24,9 +16,16 @@ En la siguiente tabla mostraremos de manera visual una comparativa sencilla de n
 |===
 | ^|Verum ^|Additio ^|Moodle ^|Google Classroom ^|Enseñanza Virtual
 
-| Permite puntuar competencias dentro de un ejercicio
-^.^| Sí 
+| Se puede usar el todos los niveles educativos.
 ^.^| Sí
+^.^| Sí
+^.^| Sí
+^.^| Sí
+^.^| No
+
+| Permite puntuar competencias dentro de un ejercicio
+^.^| Sí (Nivel 1)
+^.^| Sí (Nivel 3)
 ^.^| No
 ^.^| No
 ^.^| No
