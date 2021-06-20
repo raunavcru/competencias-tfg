@@ -108,7 +108,7 @@ include::Traducción.adoc[]
 
 include::Pruebas.adoc[]
 
-== VI. Conclusiones y desarrollos futuros
+== V. Conclusiones y desarrollos futuros
 
 include::ConclusionesYDesarrollosFuturos.adoc[]
 
