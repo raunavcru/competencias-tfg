@@ -1,16 +1,19 @@
-=  Desarrollo web para la evaluación por competencias
+= Desarrollo web para la evaluación por competencias
+Realizado por: Alberto Cordón Arévalo y Raúl Navarro Cruz. 
+v1.0, 2021-06-30
+:doctype: book
+:toc: left
+:source-highlighter: coderay
+:imagesdir: images
+:front-cover-image: image:portada2.png[Front Cover,1050,1600]
+
+
+
+
+
 :toc:
 :toc-title: Índice general
 :table-caption: Tabla
-
-ESCUELA TÉCNICA SUPERIOR DE INGENIERÍA INFORMÁTICA
-Trabajo fin de Grado
-Grado en Ingeniería Informática-Ingeniería del Software
-Realizado por: Alberto Cordón Arévalo y Raúl Navarro Cruz
-Dirigido por: Jorge Juan Chico
-Departamento de Tecnología Electrónica
-Sevilla, Marzo 2021
-
 
 == Índice de figuras
 

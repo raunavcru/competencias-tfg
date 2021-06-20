@@ -6,6 +6,16 @@ Por desgracia, no todas las aplicaciones web se asemejan a los tipos de evaluaci
 
 Para empezar a comparar con otras alternativas, hemos realizado una búsqueda exaustiva de los competidores. Hemos encontrado cuatro grandes alternativas: Additio, Moodle, Google Classroom y Enseñanza Virtual.
 
+* decir que additio es el mayor competidor
+
+* decir que vamos a hablar solo de additio y de la nuestra
+
+* aditio puntua la de nivel 3 y nosotros la de nivel 1
+
+* additio no pondera las competencias de nivel 2 y 1 y nosotros si
+
+* 
+
 En la siguiente tabla mostraremos de manera visual una comparativa sencilla de nuestra aplicación con las mencionadas anteriormente.
 
 .Comparativas con otras alternativas
@@ -16,42 +26,49 @@ En la siguiente tabla mostraremos de manera visual una comparativa sencilla de n
 
 | Permite puntuar competencias dentro de un ejercicio
 ^.^| Sí 
-^.^| 
+^.^| Sí
 ^.^| No
 ^.^| No
 ^.^| No
 
 | Permite gestionar evaluaciones
 ^.^| Sí
-^.^| 
+^.^| Sí
 ^.^| No
 ^.^| No
 ^.^| Sí
 
+| Permite gestionar todos los niveles de las competencias
+^.^| Sí 
+^.^| No
+^.^| No
+^.^| No
+^.^| No
+
 | Permite generar informes de las calificaciones de las competencias de un grupo
 ^.^| Sí
-^.^| 
+^.^| Solo las de nivel 3
 ^.^| No
 ^.^| No
 ^.^| No
 
 | Permite generar informes de las calificaciones de las evaluaciones de un grupo
 ^.^| Sí
-^.^| 
+^.^| Sí
 ^.^| No
 ^.^| No
 ^.^| Sí
 
 | Permite generar informes de las calificaciones de las competencias de un alumno
 ^.^| Sí
-^.^| 
+^.^| Solo las de nivel 3
 ^.^| No
 ^.^| No
 ^.^| No
 
 | Permite generar informes de las calificaciones de las evaluaciones de un alumno 
 ^.^| Sí
-^.^| 
+^.^| Sí
 ^.^| No
 ^.^| No
 ^.^| No
