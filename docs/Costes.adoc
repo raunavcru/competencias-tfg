@@ -66,7 +66,7 @@ Reuniendo los datos mencionados en los apartados anteriores podemos resumir los 
 .Coste total
 [grid=cols]
 |===
-|Salarios (€) |Amortizaciones (€) |Licencias (€) |Despliegue (€) |Coste total (€)
+|Salarios (€) |Amortizaciones (€) |Licencias (€) |Servicios en la nube (€) |Coste total (€)
 
 | 6885
 | 800
