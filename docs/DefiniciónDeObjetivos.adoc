@@ -4,7 +4,7 @@ En nuestro caso nosotros quisimos dejar claros los objetivos del proyecto.
 
 Queríamos desarrollar uan aplicación web que permitiera dar funcionalidad a los profesores inscritos con el fin de evaluar las competencias de manera correcta y sencilla. Todo esto siendo enfocado para que fuera usada en todos los niveles de enseñanza.
 
-Con motivo de que sabemos que la tegnología web va en un avance contínuo, dejamos la posibilidad de utilizar la aplicación para cualquiero tipo de enseñanza
+Con motivo de que sabemos que la tecnología web va en un avance contínuo, dejamos la posibilidad de utilizar la aplicación para cualquiero tipo de enseñanza.
 
 Otro punto importante era el sistema de evaluación, el cual lo enfocamos para que hubiese variedad de tipos, teniendo en cuenta el sistema de evaluación tradicional y no dificultar el desarrollo de otros posibles métodos.
 
