@@ -1,7 +1,7 @@
 
-El desarrollo de este proyecto surge de la necesidad de un aherramienta que lleve a la práctica de forma correcta la evaluación por competencias que es está presente el todos los niveles de nuestro sistema educativo. 
+El desarrollo de este proyecto surge de la necesidad de una herramienta que lleve a la práctica de forma correcta la evaluación por competencias que es está presente el todos los niveles de nuestro sistema educativo. 
 
-El objetivo principal del proyecto es el desarrollo de una aplicación web que de implemente toda la funcionalidad necesaria para un profesor pueda gestionar la puntuaciones de sus alumnos dentro del ámbito de la evaluación por competencias, sin restringir la posibilidad del uso de la aplicación para una tipo de evaluación tradicional.
+El objetivo principal del proyecto es el desarrollo de una aplicación web que implemente toda la funcionalidad necesaria para un profesor pueda gestionar la puntuaciones de sus alumnos dentro del ámbito de la evaluación por competencias, sin restringir la posibilidad del uso de la aplicación para una tipo de evaluación tradicional.
 
 La memoria está compuesta de seis capítulos donde se expondrá el tema a resolver y como se ha desarrollado. Además al final se encuentra una serie de apartado, en los que se encuentra el xref:Glosario[glosario de términos], xref:Bibliografía[bibliografía] y los xref:Apéndices[apéndices]. Este último se divide el manual de usuario, donde veremos algunas funcionalidades, y instalación, donde comentaremos donde y como descargar y configurar las herramientas para poner en marcha la aplicación.
 
