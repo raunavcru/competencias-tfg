@@ -6,12 +6,6 @@
 :toc-title: Índice general
 :table-caption: Tabla
 
-== Índice de figuras
-
-== Índice de cuadros
-
-== Índice de código o algoritmos
-
 == Resumen
 
 include::Resumen.adoc[]
