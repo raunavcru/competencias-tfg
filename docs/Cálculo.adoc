@@ -11,7 +11,7 @@ Los métodos de cálculo implementados son los siguientes:
 
 ** Por competencias: Media ponderada de las competencias de nivel dos.
 ** Por evaluaciones (Sin recuperación): Media ponderada de las evaluaciones parciales.
-** Por evaluaciones (Con recuperación): Si hay recuperaciones, la media poderada de estas, sino media ponderada de las evaluaciones parciales . 
+** Por evaluaciones (Con recuperación): Si hay recuperaciones, la media ponderada de estas, sino media ponderada de las evaluaciones parciales. 
 
 * Evaluciones parciales:
 
