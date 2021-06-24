@@ -5,7 +5,8 @@
 {% block content %} 
 <div class="container">
     <h4 class="centered">{% trans "Report" %} {% trans "of" %}  {{student.name}} {{student.surname}}</h4>   
-        <table style = "margin-top: 40px;" class="highlight">
+    <h6 class="centered">{% trans "Set" %}: {{set_object.name}}</h6>
+        <table style = "margin-top: 10px;" class="highlight">
             <caption><h5>{% trans "Evaluations" %}</h5></caption>
                 <thead>
                     <tr>
