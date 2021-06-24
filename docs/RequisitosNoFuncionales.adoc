@@ -1,6 +1,6 @@
 ==== Requisitos No Funcionales:
 
-Estos requisitos son de normal los más escasos, ya que se basan en aspectos de calidad, como la usabibilidad, disponibilidad, fiabilidad, rendimiento, etc.
+Estos requisitos son de normal los más escasos, ya que se basan en aspectos de calidad, como la usabilidad, disponibilidad, fiabilidad, rendimiento, etc.
 
 Se podrían definir, como aquellos requisitos que no describen información a guardar. También podría entenderse como que son aquellas restricciones que pone el cliente.
 

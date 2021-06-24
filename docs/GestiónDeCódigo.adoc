@@ -6,7 +6,7 @@ Dividiremos este apartado en tres con el fin de desglosar de manera más detalla
  
 ==== Gestión de ramas
 
-Una rama es un espacio de trbajo paralelo que deriva de una versión común. Hemos sido muy estrictos en este apartado, en el cual hemos seguido las siguientes pautas.
+Una rama es un espacio de trabajo paralelo que deriva de una versión común. Hemos sido muy estrictos en este apartado, en el cual hemos seguido las siguientes pautas.
 
 Tenemos dos Ramas por defecto:
 
@@ -29,7 +29,7 @@ Códigos de rama (<codigo_rama>):
 * test/     (añadir o refactorizar tests)
 * release/  (nueva release)
 
-Cógigos de sprint (<codigo_sprint>):
+Códigos de sprint (<codigo_sprint>):
 
 * s0            (previo al comienzo del desarrollo de código)
 * s1/s2/s3/s4   (sprints 1, 2, 3, 4 respectivamente)

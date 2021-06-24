@@ -1,4 +1,4 @@
-==== Prerequisitos
+==== Prerrequisitos
 * Instalación de Python3: https://www.python.org/downloads/
 * Instalación PostgresSQL: https://www.postgresql.org/download/
 
@@ -25,7 +25,7 @@ workon <NombreEntorno>
 ==== Configuración
 * Creamos la base de datos en PostgresSQL.
 * Creamos el archivo local_settings.py, lo rellenamos con la copia del contenido de settings.py y configuramos el apartado **DATABASES** para conectarlo a nuestra base de datos.
-* Instalamos los requitos e migramos el modelo.
+* Instalamos los requisitos e migramos el modelo.
 
 .Comando de instalación de requitos del proyecto
 [source, cmd]

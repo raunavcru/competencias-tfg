@@ -2,7 +2,7 @@ En esta sección será divida en dos, administrador y profesor. Estas partes ser
 
 ==== Administrador
 
-Empezaremos enseñando la panatalla de inicio, en ella podremos ver un menú superior con las secciones disponibles al ser administrador.
+Empezaremos enseñando la pantalla de inicio, en ella podremos ver un menú superior con las secciones disponibles al ser administrador.
 
 image::imagenes-manual-usuario/Inicio.png[]
 
@@ -10,7 +10,7 @@ En la sección *Administrators* podremos ver el listado de administradores que c
 
 image::imagenes-manual-usuario/administrador_list.png[]
 
-Arriba a la derecha podremos ver el botón para crear un administrador, al pulsarlo nos redirijirá hacia el formulario de creación.
+Arriba a la derecha podremos ver el botón para crear un administrador, al pulsarlo nos redirigirá hacia el formulario de creación.
 
 image::imagenes-manual-usuario/administrador_create.png[]
 
@@ -22,7 +22,7 @@ Una vez acabado podremos ver el nuevo administrador creado.
 
 image::imagenes-manual-usuario/administrador_list_creado.png[]
 
-También justo debajo del botón crear ususario podemos ver dos botones más, para editar y eliminar ese administrador.
+También justo debajo del botón crear usuario podemos ver dos botones más, para editar y eliminar ese administrador.
 
 Todos estos comportamientos (crear, editar y eliminar se repiten la forma de acción en el sistema).
 
@@ -46,7 +46,7 @@ image::imagenes-manual-usuario/competencias_level_2_asociada.png[]
 
 Una vez en ella también podremos ver la de nivel inferior asociada a esta.
 
-En todas estas secciones podremos crear editar y eliminar competencias. Al eliminar competecias, si estas tienes otras de nivel inferior asociadas, se eliminaran también.
+En todas estas secciones podremos crear editar y eliminar competencias. Al eliminar competencias, si estas tienes otras de nivel inferior asociadas, se eliminaran también.
 
 En la pestaña *Evaluations* podremos ver el listado de las evaluaciones finales, así como editarlas y eliminarlas.
 
@@ -100,7 +100,7 @@ Empezaremos por el apartado *Evaluations*, en esta parte podremos ver las evalua
 
 image::imagenes-manual-usuario/profesor_evaluaciones.png[]
 
-En el apartado *Activities* podremos ver la lista de actividades así como ver si es una recuperación, la lista de ejercicios y la opcion de crear una actividad, o copiarla.
+En el apartado *Activities* podremos ver la lista de actividades así como ver si es una recuperación, la lista de ejercicios y la opción de crear una actividad, o copiarla.
 
 image::imagenes-manual-usuario/profesor_actividades.png[]
 
@@ -117,7 +117,7 @@ Por evaluación:
 
 image::imagenes-manual-usuario/profesor_report_evaluations.png[]
 
-En el apartado *List of students* podremos ver el listado de studiantes y la opción de obtener el reporte de las notas de ese alumnos así como ver las competencias y las notas.
+En el apartado *List of students* podremos ver el listado de estudiantes y la opción de obtener el reporte de las notas de ese alumnos así como ver las competencias y las notas.
 
 image::imagenes-manual-usuario/profesor_lista_estudiantes.png[]
 
@@ -133,7 +133,7 @@ Notas, en esta pantalla podremos modificar el apartado *Manual mark*. Dentro del
 
 image::imagenes-manual-usuario/profesor_alumno_calificacion.png[]
 
-En el apartado *Evaluation type* podremos seleccionar el tipo de evaluacion.
+En el apartado *Evaluation type* podremos seleccionar el tipo de evaluación.
 
 image::imagenes-manual-usuario/profesor_evaluacion_tipo.png[]
 

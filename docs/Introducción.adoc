@@ -2,7 +2,7 @@ La evaluación es un concepto que lleva estando entre nosotros desde el siglo XI
 
 La evaluación del alumnado, algo que hablaremos más adelante. Todo esto es un tema que lleva trayendo a los educadores quebraderos de cabeza desde hace muchos años.
 
-Las competencias aparecieron en nuestro país en 2006 y desde entoces su manera de evaluarlas ha sido bastante dificil. Durante los últimos años, nuestro sistema educativo consta con asignaturas que a su vez contienen una serie de competencias que el alumno debe aprobar a lo largo de su curso académico.
+Las competencias aparecieron en nuestro país en 2006 y desde entonces su manera de evaluarlas ha sido bastante difícil. Durante los últimos años, nuestro sistema educativo consta con asignaturas que a su vez contienen una serie de competencias que el alumno debe aprobar a lo largo de su curso académico.
 
 Nuestra finalidad con Verum es la creación de una aplicación web que facilite al educador la forma de evaluar las competencias de un alumno lo más sencilla posible. Por eso hemos realizado una aplicación web enfocada al sistema educativo actual.
 

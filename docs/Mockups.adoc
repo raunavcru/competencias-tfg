@@ -1,4 +1,4 @@
-En esta sección mostraremos algunos de los mockups creados previamente al desarrollo de la aplicación. El resto de mockups se encuentran disponibles dentro del repositorio de GitHub, en la sección docs/mockups.
+En esta sección mostraremos algunos de los mockups creados previamente al desarrollo de la aplicación. El resto de _mockups_ se encuentran disponibles dentro del repositorio de GitHub, en la sección docs/mockups.
 
 También en el directorio de docs podremos encontrar mockups-interactivos, en los que podremos ver de manera interactiva todos los mockups creados.
 
@@ -6,7 +6,7 @@ Dividiremos esta guía en dos partes, administrador y profesor.
 
 ==== Administrador:
 
-Aquí podermos ver la creación de un alumno:
+Aquí podremos ver la creación de un alumno:
 
 image::mockups/Crear Alumno.png[]
 

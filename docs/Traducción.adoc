@@ -30,7 +30,7 @@ py manage.py compilemessages
 
 cambiando _es_ (español) por el idioma correspondiente.
 
-Sin embargo, para traducir los errores de formulario no es posible utizar estas etiquetas, por que hemos implementado un método, valiéndose del método de gettext llamado _get_language_, que hace saltar los errores de formulario en el idioma correcto.
+Sin embargo, para traducir los errores de formulario no es posible utilizar estas etiquetas, por que hemos implementado un método, valiéndose del método de gettext llamado _get_language_, que hace saltar los errores de formulario en el idioma correcto.
 
 .Método de error de validación
 [source, python]

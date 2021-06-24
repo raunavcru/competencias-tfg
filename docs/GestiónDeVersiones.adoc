@@ -9,6 +9,6 @@ Las versiones existentes son las siguientes:
 
 * **0.1**: Versión que incorpora todo el sprint 1. Incluye la primera parte de la funcionalidad del administrador, así como el modelo de datos y el primer _populate_.
 * **0.2**: Versión que incorpora todo el sprint 2. Incluye más funcionalidad del administrador.
-* **0.2.1**: Correción de algunos errores de la version **0.2**.
+* **0.2.1**: Corrección de algunos errores de la version **0.2**.
 * **0.3**: Versión que incorpora todo el sprint 3. Incluye la mayor parte de la funcionalidad del profesor.
 * **0.4**: Versión que incorpora todo el sprint 4. Incluye el resto de funcionalidad.

@@ -2,4 +2,4 @@ En la ingeniería informática, los requisitos cumplen el papel de entrada en la
 
 Los tipos de requisitos son variados, y cada uno de estos cumplen una función específica. El conjunto de todos los tipos de requisitos forman una exigencia en forma de documentación sobre el contenido del producto final.
 
-Nosotros hemos dividios los requisitos en tres: Requisitos de Información, Requisitos funcionales y Requisitos no funcionales. A continuación hablaremos de forma más detallada de cada uno de estos.
+Nosotros hemos divididos los requisitos en tres: Requisitos de Información, Requisitos funcionales y Requisitos no funcionales. A continuación hablaremos de forma más detallada de cada uno de estos.

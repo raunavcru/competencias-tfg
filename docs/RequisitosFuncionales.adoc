@@ -6,7 +6,7 @@ Este tipo de requisito de forma general se realiza siempre una vez finalizados l
 
 De forma resumida, un requisito funcional deberá explicar de forma clara y concisa qué es lo que se *permitirá* hacer en la aplicación.
 
-En nuestro caso, hemos creado veintucuatro de estos, los cuales se han tenido en cuenta los roles:
+En nuestro caso, hemos creado veinticuatro de estos, los cuales se han tenido en cuenta los roles:
 
 **RF 01**: El sistema permitirá a los administradores poder ver el listado de alumnos, así como crear, editar y eliminar dichos alumnos.
 

@@ -2,7 +2,7 @@ A la hora de empezar la búsqueda de las tecnologías tuvimos varios factores a 
 
 En cuanto a la búsqueda del lenguaje de programación a usar, ambos lo tuvimos claro. Sabíamos del potencial de Python para el uso de aplicaciones web. El conocimiento del lenguaje por parte del grupo era dispar, puesto que uno de nosotros, apenas conocía el lenguaje. A sabiendas de que en una de las asignaturas que se imparte en el último año de la carrera se iba a utilizar el framework de Django, no dudamos en elegirlo.
 
-El resto de aplicaciones usadas durante el desarrolo fue elegido por que queríamos usar entornos lo más parecidos a la realidad posibles. A causa de esto elegimos Jira, ya que es una aplicación web para la gestión de trabajo, y esta especializada en metodologías ágiles, algo que ibamos a usar para el desarrollo.
+El resto de aplicaciones usadas durante el desarrollo fue elegido por que queríamos usar entornos lo más parecidos a la realidad posibles. A causa de esto elegimos Jira, ya que es una aplicación web para la gestión de trabajo, y esta especializada en metodologías ágiles, algo que íbamos a usar para el desarrollo.
 
 Este apartado será desglosado en dos: Tecnologías y Herramientas. Donde hablaremos de manera más específicas de cada una de ellas, y el por qué la elegimos.
 
@@ -20,7 +20,7 @@ Este apartado será desglosado en dos: Tecnologías y Herramientas. Donde hablar
 * Bottle.
 * Pyramid.
 
-Bottle y Flask son microframework mucho más simples que Django y se utilizan para proyectos más sencillos que el nuestro.
+Bottle y Flask son _microframework_ mucho más simples que Django y se utilizan para proyectos más sencillos que el nuestro.
 
 Pyramid es una buena opción, mucho más ligero que Django, esto provoca que sea menos completo. Django no necesita otras librerías para el desarrollo de la aplicación, al contrario que Pyramid, que aparte del enrutamiento y la autenticación, necesita librerías externas.
 
@@ -79,7 +79,7 @@ A diferencia de la versión gratuita de Firebase, la cual, es bastante simple, t
 
 Comparándola con Heroku, AWS no es apto para personas principiantes, ya que la complejidad del mismo es bastante elevada.
 
-En comparación con las alternativas expuestas, Heroku permite desplegar versiones, rollbacks, gestionar dependencias, como también desarrollar casi con cualquier lenguaje de programación: Java, Ruby, NodeJS…
+En comparación con las alternativas expuestas, Heroku permite desplegar versiones, _rollbacks_, gestionar dependencias, como también desarrollar casi con cualquier lenguaje de programación: Java, Ruby, NodeJS…
 |===
 .Travis
 |===
@@ -118,7 +118,7 @@ SonarQube tienen un mantenimiento de código más costoso, haciendo que sea nece
 .Adobe XD
 |===
 |**Adobe XD**
-|Elegimos Adobe XD por la gran versatilidad en sus apartados para la realización de mockups para el proyecto. Dada a su gran facilidad de uso y sus múltiples plantillas y extensiones, su elección fue en nuestra opinión lo más recomendable. También nos ha permitido hacer mockups interactivos de forma sencilla.
+|Elegimos Adobe XD por la gran versatilidad en sus apartados para la realización de _mockups_ para el proyecto. Dada a su gran facilidad de uso y sus múltiples plantillas y extensiones, su elección fue en nuestra opinión lo más recomendable. También nos ha permitido hacer _mockups_ interactivos de forma sencilla.
 
 |===
 

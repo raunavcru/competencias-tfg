@@ -12,7 +12,7 @@ En nuestro caso hemos realizado nueve requisitos de información, los cuales son
 
 **RI-04**: Un Administrador debe guardar el año de nacimiento, sus iniciales, un nombre de usuario, una contraseña, un nombre, unos apellidos y un email. 
 
-**RI-05**: Una Evaluación debe guardar un nombre, una fecha de incio y de fin, un período, una asignatura, una o más actividades. La Evaluaciones pueden ser final o parciales. Las parciales deben guardar el peso sobre la final. Si una evaluación parcial es creada por un profesor se llamará Bloque.
+**RI-05**: Una Evaluación debe guardar un nombre, una fecha de inicio y de fin, un período, una asignatura, una o más actividades. La Evaluaciones pueden ser final o parciales. Las parciales deben guardar el peso sobre la final. Si una evaluación parcial es creada por un profesor se llamará Bloque.
 
 **RI-06**: Un Grupo debe guardar un nombre, un nivel, un grado, una línea, un profesor, una asignatura, una evaluación y una lista de alumnos. 
 
