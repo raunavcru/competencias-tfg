@@ -31,27 +31,30 @@ class MarkService():
 
     def calculate_activity_mark(self, activity: models.Activity, student: models.Student) -> None:
         if not models.Activity_mark.objects.filter(activity = activity, student = student).exists():
-            a_m = models.Exercise_mark.objects.create(activity = activity, student = student)
+            a_m = models.Activity_mark.objects.create(activity = activity, student = student, evaluation_type = "AUTOMATIC")
             a_m.save()
         
         activity_mark = models.Activity_mark.objects.get(activity = activity, student = student)
-        exercise_mark_ls = models.Exercise_mark.objects.filter(exercise__activity=activity).order_by('exercise')
+        exercise_mark_ls = models.Exercise_mark.objects.filter(exercise__activity=activity, student = student).order_by('exercise')
 
         weight_total = 0.0
         mark_total = 0.0
-        if exercise_mark_ls:
-            for exercise_mark in exercise_mark_ls:
-                weight_total = weight_total + float(exercise_mark.exercise.weight)
+        for exercise_mark in exercise_mark_ls:
+            weight_total = weight_total + float(exercise_mark.exercise.weight)
 
-                if exercise_mark.evaluation_type == "AUTOMATIC" and exercise_mark.mark:
-                    mark_total = mark_total + float(exercise_mark.mark * exercise_mark.exercise.weight)
-                elif exercise_mark.evaluation_type == "MANUAL" and exercise_mark.manual_mark:
-                    mark_total = mark_total + float(exercise_mark.manual_mark * exercise_mark.exercise.weight)
-            
+            if exercise_mark.evaluation_type == "AUTOMATIC" and exercise_mark.mark:
+                mark_total = mark_total + float(exercise_mark.mark * exercise_mark.exercise.weight)
+            elif exercise_mark.evaluation_type == "MANUAL" and exercise_mark.manual_mark:
+                mark_total = mark_total + float(exercise_mark.manual_mark * exercise_mark.exercise.weight)
+        
+        if weight_total == 0.0:
+            activity_mark.mark = 0.0
+        else:
             mark = mark_total/weight_total
 
             activity_mark.mark = mark
-            activity_mark.save()
+
+        activity_mark.save()
 
         self.calculate_evaluation_mark(evaluation = activity.evaluation, set_object = activity.set_activity, student = student)
 
@@ -158,7 +161,7 @@ class MarkService():
 
     def calculate_evaluation_mark_by_competences(self, evaluation: models.Evaluation, set_object: models.Set, student: models.Student) -> None:
         if not models.Evaluation_mark.objects.filter(evaluation = evaluation, student = student).exists():
-            e_m = models.Evaluation_mark.objects.create(evaluation = evaluation, student = student)
+            e_m = models.Evaluation_mark.objects.create(evaluation = evaluation, student = student, evaluation_type = "AUTOMATIC")
             e_m.save()
         
         evaluation_mark = models.Evaluation_mark.objects.get(evaluation = evaluation, student = student)
@@ -188,7 +191,7 @@ class MarkService():
 
     def calculate_evaluation_mark_by_all_activities(self, evaluation: models.Evaluation, set_object: models.Set, student: models.Student) -> None:
         if not models.Evaluation_mark.objects.filter(evaluation = evaluation, student = student).exists():
-            e_m = models.Evaluation_mark.objects.create(evaluation = evaluation, student = student)
+            e_m = models.Evaluation_mark.objects.create(evaluation = evaluation, student = student, evaluation_type = "AUTOMATIC")
             e_m.save()
         
         evaluation_mark = models.Evaluation_mark.objects.get(evaluation = evaluation, student = student)
@@ -222,7 +225,7 @@ class MarkService():
 
     def calculate_evaluation_mark_by_partial_evaluations(self, evaluation: models.Evaluation, set_object: models.Set, student: models.Student) -> None:
         if not models.Evaluation_mark.objects.filter(evaluation = evaluation, student = student).exists():
-            e_m = models.Evaluation_mark.objects.create(evaluation = evaluation, student = student)
+            e_m = models.Evaluation_mark.objects.create(evaluation = evaluation, student = student, evaluation_type = "AUTOMATIC")
             e_m.save()
         
         evaluation_mark_final = models.Evaluation_mark.objects.get(evaluation = evaluation, student = student)
@@ -251,7 +254,7 @@ class MarkService():
 
     def calculate_evaluation_mark_by_recovery_activities(self, evaluation: models.Evaluation, set_object: models.Set, student: models.Student) -> None:
         if not models.Evaluation_mark.objects.filter(evaluation = evaluation, student = student).exists():
-            e_m = models.Evaluation_mark.objects.create(evaluation = evaluation, student = student)
+            e_m = models.Evaluation_mark.objects.create(evaluation = evaluation, student = student, evaluation_type = "AUTOMATIC")
             e_m.save()
         
         evaluation_mark = models.Evaluation_mark.objects.get(evaluation = evaluation, student = student)
@@ -283,11 +286,11 @@ class MarkService():
 
     def calculate_exercise_mark(self, exercise: models.Exercise, student: models.Student) -> None:
         if not models.Exercise_mark.objects.filter(exercise = exercise, student = student).exists():
-            e_m = models.Exercise_mark.objects.create(exercise = exercise, student = student)
+            e_m = models.Exercise_mark.objects.create(exercise = exercise, student = student, evaluation_type = "AUTOMATIC")
             e_m.save()
         
         exercise_mark = models.Exercise_mark.objects.get(exercise = exercise, student = student)
-        competence_mark_ls = models.Competence_mark.objects.filter(exercise=exercise).order_by('competence')
+        competence_mark_ls = models.Competence_mark.objects.filter(exercise=exercise, student = student).order_by('competence')
 
         weight_total = 0.0
         mark_total = 0.0
@@ -314,7 +317,7 @@ class MarkService():
 
         for activity in activities:
             if not models.Activity_mark.objects.filter(activity = activity, student = student).exists():
-                ac_m = models.Activity_mark.objects.create(activity = activity, student = student)
+                ac_m = models.Activity_mark.objects.create(activity = activity, student = student, evaluation_type = "AUTOMATIC")
                 ac_m.save()
 
     def create_competence_evaluation(self, set_object: models.Set, student: models.Student) -> None:
@@ -336,7 +339,7 @@ class MarkService():
 
         for evaluation in evaluations:
             if not models.Evaluation_mark.objects.filter(evaluation = evaluation, student = student).exists():
-                ev_m = models.Evaluation_mark.objects.create(evaluation = evaluation, student = student)
+                ev_m = models.Evaluation_mark.objects.create(evaluation = evaluation, student = student, evaluation_type = "AUTOMATIC")
                 ev_m.save()
                     
     def mark_activity_mark(self, mark: float, activity_mark: models.Activity_mark) -> None:
