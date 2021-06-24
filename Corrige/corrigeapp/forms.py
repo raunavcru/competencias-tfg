@@ -468,7 +468,6 @@ class EvaluationCreateForm(forms.ModelForm):
         model = models.Evaluation
         fields = (
             'name',
-            'weight',
             'start_date',
             'end_date',
             'subject',
@@ -479,12 +478,6 @@ class EvaluationCreateForm(forms.ModelForm):
         if len(name) > 50:
             services.FormService().raise_error(MESSAGE_NAME_50_EN, MESSAGE_NAME_50)
         return name
-        
-    def clean_weight(self):
-        weight = self.cleaned_data.get('weight')
-        if float(weight) < 0.00:
-            services.FormService().raise_error(MESSAGE_WEIGHT_EN, MESSAGE_WEIGHT)
-        return weight
 
 class EvaluationCreateAllForm(forms.ModelForm):
     
