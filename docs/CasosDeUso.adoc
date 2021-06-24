@@ -14,7 +14,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 | Secuencia normal:
 
- 1. El adminsitrador desea obtener la lista de alumnos inscritos.
+ 1. El administrador desea obtener la lista de alumnos inscritos.
 
  2. El sistema solicita las credenciales para identificarse.
 
@@ -39,7 +39,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 | Secuencia normal:
 
-1. El adminsitrador desea crear un alumno.
+1. El administrador desea crear un alumno.
 
 2. El sistema solicita las credenciales para identificarse.
 
@@ -66,7 +66,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |Secuencia normal:
 
-1. El adminsitrador desea editar un alumno.
+1. El administrador desea editar un alumno.
 
 2. El sistema solicita las credenciales para identificarse.
 
@@ -93,7 +93,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 | Secuencia normal:
 
-1. El adminsitrador desea eliminar un alumno.
+1. El administrador desea eliminar un alumno.
 
 2. El sistema solicita las credenciales para identificarse.
 
@@ -120,7 +120,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 | Secuencia normal: 
 
-1. El adminsitrador desea obtener la lista de profesores inscritos.
+1. El administrador desea obtener la lista de profesores inscritos.
 
 2. El sistema solicita las credenciales para identificarse.
 
@@ -143,7 +143,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |Secuencia normal:
 
-1. El adminsitrador desea crear un profesor.
+1. El administrador desea crear un profesor.
 
 2. El sistema solicita las credenciales para identificarse.
 
@@ -170,7 +170,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 | Secuencia normal:
 
-1. El adminsitrador desea editar un profesor.
+1. El administrador desea editar un profesor.
 
 2. El sistema solicita las credenciales para identificarse.
 
@@ -197,7 +197,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 | Secuencia normal:
 
-1. El adminsitrador desea eliminar un profesor.
+1. El administrador desea eliminar un profesor.
 
 2. El sistema solicita las credenciales para identificarse.
 
@@ -224,7 +224,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |Secuencia normal:
 
-1. El adminsitrador desea obtener la lista de grupos de clase.
+1. El administrador desea obtener la lista de grupos de clase.
 
 2. El sistema solicita las credenciales para identificarse.
 
@@ -248,7 +248,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 | Secuencia normal:
 
-1. El adminsitrador desea crear un grupos de clase.
+1. El administrador desea crear un grupos de clase.
 
 2. El sistema solicita las credenciales para identificarse.
 
@@ -275,7 +275,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 | Secuencia normal:
 
-1. El adminsitrador desea editar un profesor.
+1. El administrador desea editar un profesor.
 
 2. El sistema solicita las credenciales para identificarse.
 
@@ -283,7 +283,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 4. El administrador obtiene el listado de grupos de clase.
 
-5. El administrador solicita la edición un grupoo de clase.
+5. El administrador solicita la edición un grupo de clase.
 
 6. El administrador edita un grupo de clase.
 
@@ -302,7 +302,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 | Secuencia normal:
 
-1. El adminsitrador desea eliminar un grupos de clase.
+1. El administrador desea eliminar un grupos de clase.
 
 2. El sistema solicita las credenciales para identificarse.
 
@@ -329,7 +329,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |Secuencia normal:
 
-1. El adminsitrador desea asignar alumnos a sus respectivos grupos de clase.
+1. El administrador desea asignar alumnos a sus respectivos grupos de clase.
 
 2. El sistema solicita las credenciales para identificarse.
 
@@ -358,7 +358,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |Secuencia normal
 
-1. El adminsitrador desea obtener la lista de asignaturas.
+1. El administrador desea obtener la lista de asignaturas.
 
 2. El sistema solicita las credenciales para identificarse.
 
@@ -382,7 +382,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |Secuencia normal:
 
-1. El adminsitrador desea crear una asignatura.
+1. El administrador desea crear una asignatura.
 
 2. El sistema solicita las credenciales para identificarse.
 
@@ -410,7 +410,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 | Secuencia normal:
 
-1. El adminsitrador desea editar una asignatura.
+1. El administrador desea editar una asignatura.
 
 2. El sistema solicita las credenciales para identificarse.
 
@@ -437,7 +437,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |Secuencia normal:
 
-1. El adminsitrador desea eliminar un alumno.
+1. El administrador desea eliminar un alumno.
 
 2. El sistema solicita las credenciales para identificarse.
 
@@ -465,7 +465,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 | Secuencia normal:
 
-1. El adminsitrador desea asignar una asignatura a un profesor.
+1. El administrador desea asignar una asignatura a un profesor.
 
 2. El sistema solicita las credenciales para identificarse.
 
@@ -495,7 +495,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 | Secuencia normal:
 
-1. El adminsitrador desea obtener la lista de competencias.
+1. El administrador desea obtener la lista de competencias.
 
 2. El sistema solicita las credenciales para identificarse.
 
@@ -518,7 +518,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 | Secuencia normal:
 
-1. El adminsitrador desea crear una competencia.
+1. El administrador desea crear una competencia.
 
 2. El sistema solicita las credenciales para identificarse.
 
@@ -545,7 +545,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |Secuencia normal:
 
-1. El adminsitrador desea editar una competencia.
+1. El administrador desea editar una competencia.
 
 2. El sistema solicita las credenciales para identificarse.
 
@@ -572,7 +572,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 | Secuencia normal:
 
-1. El adminsitrador desea eleminar una competencia.
+1. El administrador desea eliminar una competencia.
 
 2. El sistema solicita las credenciales para identificarse.
 
@@ -599,7 +599,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 | Secuencia normal:
 
-1. El adminsitrador desea asignar una competencia a una asignatura.
+1. El administrador desea asignar una competencia a una asignatura.
 
 2. El sistema solicita las credenciales para identificarse.
 
@@ -629,7 +629,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 | Secuencia normal:
 
-1. El adminsitrador desea obtener la lista de administradores. 
+1. El administrador desea obtener la lista de administradores. 
 
 2. El sistema solicita las credenciales para identificarse.
 
@@ -652,7 +652,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 | Secuencia normal:
 
-1. El adminsitrador desea crear un administrador.
+1. El administrador desea crear un administrador.
 
 2. El sistema solicita las credenciales para identificarse.
 
@@ -679,7 +679,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 | Secuencia normal:
 
-1. El adminsitrador desea eleminar un administrador.
+1. El administrador desea eliminar un administrador.
 
 2. El sistema solicita las credenciales para identificarse.
 
@@ -935,7 +935,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 6. El profesor obtiene la lista de alumnos de ese grupo.
 
-7. El profesor ve las califiaciones de un alumno.
+7. El profesor ve las calificaciones de un alumno.
 
 |===
 
@@ -1037,7 +1037,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 * RF 18.
 
-| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la eliminación de un ejericio_.
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la eliminación de un ejercicio_.
 
 | Secuencia normal:
 
@@ -1216,7 +1216,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 6. El profesor obtiene el listado de alumnos.
 
-7. El profesor ve las califiaciones de un alumno.
+7. El profesor ve las calificaciones de un alumno.
 
 8. El profesor exporta el informe.
 
@@ -1266,7 +1266,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |Secuencia normal:
 
-1. El adminsitrador desea crear una evaluación.
+1. El administrador desea crear una evaluación.
 
 2. El sistema solicita las credenciales para identificarse.
 
@@ -1293,7 +1293,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 | Secuencia normal:
 
-1. El adminsitrador desea editar una evaluacion.
+1. El administrador desea editar una evaluación.
 
 2. El sistema solicita las credenciales para identificarse.
 
@@ -1320,7 +1320,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 | Secuencia normal:
 
-1. El adminsitrador desea eliminar una evaluación.
+1. El administrador desea eliminar una evaluación.
 
 2. El sistema solicita las credenciales para identificarse.
 
@@ -1347,7 +1347,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |Secuencia normal:
 
-1. El adminsitrador desea obtener la lista de evaluaciones.
+1. El administrador desea obtener la lista de evaluaciones.
 
 2. El sistema solicita las credenciales para identificarse.
 
@@ -1368,7 +1368,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 | Precondición: El profesor ha seleccionado el tipo de evaluación.
 
-| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesort solicite el listado de los bloques_.
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite el listado de los bloques_.
 
 |Secuencia normal:
 
@@ -1395,7 +1395,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 * RF 23.
 
-| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesort solicite la creación de un bloque_.
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la creación de un bloque_.
 
 |Secuencia normal:
 
@@ -1461,7 +1461,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 | Precondición: El profesor ha creado un bloque.
 
-| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesort solicite la eliminación de un bloque_.
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el profesor solicite la eliminación de un bloque_.
 
 |Secuencia normal:
 
@@ -1508,6 +1508,6 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 6. El profesor seleccionar el tipo de evaluación.
 
-| Postcondición: Se ha habilitado las opcciones de listar bloques, actividades y estudiantes.
+| Postcondición: Se ha habilitado las opciones de listar bloques, actividades y estudiantes.
 
 |===
