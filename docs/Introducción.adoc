@@ -1,17 +1,4 @@
-#La evaluación es un concepto que lleva estando entre nosotros desde el siglo XIX, pero por ser algo tan antiguo no significa que no sea complejo.#
-
-////
-La frase es un poco infantil. Si se cita un dato concreto hay que decir de qué fuente se ha obtenido el dato. No se evaluaba antes del S.XIX? No se evaluaba en las escuelas de la Grecia antigua? Alguien piensa que los jeroglíficos egipcios son fáciles por el hecho de ser antiguos?
-////
-
-// Revisar
 La *evaluación* de los alumnos, entendida como la valoración del grado de adquisición de conocimientos y competencias por parte de los alumnos, es una tarea esencial del proceso de enseñanza-aprendizaje, y es un problema que ha traídos de cabeza a los educadores desde hace siglos.
-
-////
-La evaluación del alumnado, algo que hablaremos más adelante. Todo esto es un tema que lleva trayendo a los educadores quebraderos de cabeza desde hace muchos años.
-
-Las competencias aparecieron en nuestro país en 2006 y desde entonces su manera de evaluarlas ha sido bastante difícil. Durante los últimos años, nuestro sistema educativo consta con asignaturas que a su vez contienen una serie de competencias que el alumno debe aprobar a lo largo de su curso académico.
-////
 
 A menudo, el resultado de la evaluación se representa cuantitativamente mediante una calificación numérica que indica (o debe indicar) el grado de destreza del alumno y si éste es suficiente o no para dar la materia por superada.
 
