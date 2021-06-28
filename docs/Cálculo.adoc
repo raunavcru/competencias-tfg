@@ -1,7 +1,7 @@
 
-Existen muchas formas de realizar el cálculo de las notas, y dado que no podemos implementarlos todos, se desarrollará de tal forma que sea posible añadir nueva funcionalidad para el cálculo. Para que el profesor pueda modificar como se va a realizar el cálculo, se ha decidido almacenar esa información en el grupo, así todos los alumnos tendrán el mismo método y no supone un coste computacional muy alto. Se ha separado la selección del método del cálculo, pudiéndose elegir un método de cálculo para la evaluación final y otro para las evaluaciones parciales, para que sea más flexible.
+Existen muchas formas de realizar el cálculo de las notas, y dado que no podemos implementarlas todas, se desarrollará de tal forma que sea posible añadir nueva funcionalidad para el cálculo. Para que el profesor pueda modificar cómo se va a realizar el cálculo, se ha decidido almacenar esa información en el grupo, así todos los alumnos tendrán el mismo método y no supone un coste computacional muy alto. Se ha separado la selección del método del cálculo, pudiéndose elegir un método de cálculo para la evaluación final y otro para las evaluaciones parciales, para que sea más flexible.
 
-Todos los cálculos que se realizan en el proyecto están normalizados, por lo que los pesos son bastantes flexibles y no están limitados de 0 a 10 o de 0 a 1, sino que están limitados de 0 a 999,99. Hemos pensado que el número es lo suficiente grande para que no sea un impedimento en su uso.
+Todos los cálculos que se realizan en el proyecto están normalizados, por lo que los pesos son bastantes flexibles y no están limitados de 0 a 10 o de 0 a 1, sino que están limitados de 0 a 999,99. Hemos pensado que el número es lo suficientemente grande para que no sea un impedimento en su uso.
 
 Para mejorar el rendimiento todo lo posible, cuando se puntúa manualmente algún apartado, siempre se calcula "hacia arriba", es decir, que si puntúas una competencia se calculará la nota total de la competencia y la nota del ejercicio, después la nota de la actividad y por último la nota de las evaluaciones, primero las parciales y luego la final. Además, si se puntúa manualmente un ejercicio no se calculará las competencias, pero si la actividad y las evaluaciones.
 
@@ -20,9 +20,9 @@ Los métodos de cálculo implementados son los siguientes:
 
 Al cambiar el método de cálculo de un grupo de clase, se necesita recalcular las evaluaciones de todos los alumnos de esa clase, por lo que necesariamente es el apartado con menor rendimiento.
 
-Para mejorar la experiencia de usuario en la puntuación se ha optado por añadir una funcionalidad que permita puntuar cada una de la partes en la propia tabla. Esto es un progreso respecto a nuestra primera idea. Esta era que al usuario se le presentase una pantalla para que pudiera introducir la nota. Al tener que hacer click en demasiadas ocasiones esta funcionalidad se volvía un poco engorrosa.
+Para mejorar la experiencia de usuario en la puntuación se ha optado por añadir una funcionalidad que permita puntuar cada una de las partes en la propia tabla. Esto es un progreso respecto a nuestra primera idea. Esta era que al usuario se le presentase una pantalla para que pudiera introducir la nota. Al tener que hacer click en demasiadas ocasiones esta funcionalidad se volvía un poco engorrosa.
 
-Además se ha añadido otro par de funcionalidades que mejorar la experiencia de usuario. La primera consiste en poder pasar entre la pantalla de un ejercicio concreto de un alumno al siguiente. Esto permite al profesor puntuar un ejercicio en todos los alumnos sin tener que volver a la página donde se lista los alumnos de un grupo de clase. La otra funcionalidad es pasar, por ejemplo de un ejercicio a otro de un alumno o pasar de una actividad a la siguiente.
+Además se ha añadido otro par de funcionalidades que mejoran la experiencia de usuario. La primera consiste en poder pasar entre la pantalla de un ejercicio concreto de un alumno al siguiente. Esto permite al profesor puntuar un ejercicio en todos los alumnos sin tener que volver a la página donde se lista los alumnos de un grupo de clase. La otra funcionalidad es pasar, por ejemplo de un ejercicio a otro de un alumno o pasar de una actividad a la siguiente.
 
 ==== Añadir nuevos métodos de cálculo
 
