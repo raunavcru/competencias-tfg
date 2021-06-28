@@ -1,10 +1,3 @@
-////
-jjc:
-* Suavizar afirmaciones categóricas.
-* Incluir referencias
-* "Web", no "web".
-////
-
 El mundo de la evaluación online ha cambiado en este último año. El problema de no poder asistir a las clases ni a los exámenes a causa de la pandemia producida por el COVID-19 [1] ha dejado a muchos educadores sin otra opción que la de enseñar mediante la Web.[2]
 
 Los métodos de evaluación son diversos, cada educador tiene el suyo propio. El uso del papel a la hora de evaluar un alumno ya es algo casi del pasado. Las aplicaciones web realizan y guardan todo ese trabajo, facilitando al profesor un sitio donde poder evaluar de forma segura, fácil y rápida.
@@ -14,8 +7,9 @@ Por desgracia, no todas las aplicaciones web se asemejan a los tipos de evaluaci
 Para empezar a comparar con nuestra aplicación, hemos realizado una búsqueda de las principales alternativas.
 Las tres primeras aplicaciones se suelen usar dentro de los siguientes ámbitos educativos: Educación Infantil, Educación Primaria, Educación Secundaria Obligatoria (ESO) y Bachillerato. Estas serían: Google Classroom, Additio y Moodle. La siguiente sería Blackboard, la cual es la plataforma utilizada por la Universidad de Sevilla y que por tanto solo se usaría en el ámbito Universitario. 
 
-Centrándonos en una comparativa entre Additio y Verum, podemos observar que la principal diferencia es como se gestionan las competencias. En primer lugar, al asignar competencias a un ejercicio, Additio no permitirá elegir las competencias de nivel mayor, las nivel 3, frente a Verum, que permite elegir las de nivel 1, las de menor nivel. Otra diferencia recae en que Additio permite que las competencias de nivel 1 estén relacionadas sin ponderación a las de nivel 3. Sim embargo, Verum permite una relación ponderada de niveles consecutivos, es decir, las de nivel 1 una de nivel 2, y las de nivel 2 con las de nivel 3. Otra diferencia es el coste de uso, mientras que Verum se va a liberar como un proyecto libre, Additio tiene un coste de aproximadamente 9 euros al año.
-// Elaborar más: ejemplo de competencias de nivel 1, 2 y 3 en enseñanza media; Verum se va a publicar como proyecto libre, etc.
+Centrándonos en una comparativa entre Additio y Verum, podemos observar que la principal diferencia es como se gestionan las competencias. En primer lugar, al asignar competencias a un ejercicio, Additio no permitirá elegir las competencias de nivel mayor, las de nivel 3, frente a Verum, que permite elegir las de nivel 1, las de menor nivel. Otra diferencia recae en que Additio permite que las competencias de nivel 1 estén relacionadas sin ponderación a las de nivel 3. Sim embargo, Verum permite una relación ponderada de niveles consecutivos, es decir, las de nivel 1 una de nivel 2, y las de nivel 2 con las de nivel 3. Otra diferencia es el coste de uso, mientras que Verum se va a liberar como un proyecto libre, Additio tiene un coste de aproximadamente 9 euros al año.
+
+Un ejemplo del sistema de competencias sería el siguiente. Una competencia se divide en tres niveles: nivel uno, nivel dos y nivel tres. Cuanto menor sea su nivel, más concreta es. Pondremos como ejemplo la competencia de nivel tres _La actividad científica._, la cual contiene una serie de competencias de nivel dos, un ejemplo de esta sería: _Reconocer e identificar las características del método científico. CMCT._ . Esta a su vez contiene una competencia aún más específica de nivel uno, que sería: _Formula hipótesis para explicar fenómenos cotidianos utilizando teorías y modelos científicos_. [72] [89]
 
 En la siguiente tabla mostraremos de manera visual una comparativa sencilla de nuestra aplicación con las mencionadas anteriormente.
 
@@ -25,7 +19,7 @@ En la siguiente tabla mostraremos de manera visual una comparativa sencilla de n
 |===
 | ^|Verum ^|Additio ^|Moodle ^|Google Classroom ^|Enseñanza Virtual
 
-| Se puede usar el todos los niveles educativos.
+| Se puede usar en todos los niveles educativos.
 ^.^| Sí
 ^.^| Sí
 ^.^| Sí

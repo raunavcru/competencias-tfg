@@ -1,4 +1,3 @@
-
 El desarrollo de este proyecto surge de la necesidad de una herramienta que lleve a la práctica de forma correcta la evaluación por competencias que está presente el todos los niveles de nuestro sistema educativo.
 
 El objetivo principal del proyecto es el desarrollo de una aplicación web que implemente toda la funcionalidad necesaria para que un profesor pueda gestionar las puntuaciones de sus alumnos dentro del ámbito de la evaluación por competencias, sin restringir la posibilidad del uso de la aplicación para un tipo de evaluación tradicional basada en la ponderación de pruebas.
