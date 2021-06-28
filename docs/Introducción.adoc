@@ -8,33 +8,7 @@ La finalidad de este Proyecto es la creación de una aplicación web (*Verum*) q
 
 Este capítulo se divide en tres apartados principales: la definición de objetivos, el análisis de antecedentes y aportación realizada, y la comparativas con otras alternativas.
 
-=== Análisis de antecedentes y aportación realizada
-
-////
-jjc: (redactar)
-Esto ya se comenta al principio de la introducción. Aquí no hay que repetir lo mismo, sino profundizar en lo que ya se ha dicho.
-
-Antecedentes:
-* Comentar ejemplo concreto de enseñanzas medias con referencia a BOE y BOJA.
-* Comentar ejemplo concreto enseñanzas universitarias.
-* La evaluación sumativa no permite ver claramente las competencias superadas.
-* En enseñanzas medias e inferiores, la normativa exige que se informe sobre competencias superadas, pero la información que se proporciona es "grosera" porque no se cuenta con herramientas adecuadas.
-* Pese a que existen iniciativas para solucionar esto (Additio, alguna otra?) no conocemos ninguna herramienta que trate el problema como algo central.
-
-Aportación:
-* Una aplicación que permite llevar a la práctica una evaluación por competencias tal como se dice en BOE y BOJA (enseñanzas medias y universidad).
-* El profesor piensa en qué competencias quiere evaluar y prepara ejercicios adecuados. El sistema lleva la cuenta del progreso del estudiante en cada competencia.
-* Se consigue una evaluación por competencias con prácticamente el mismo esfuerzo que la evaluación sumativa tradicional, a la vez que se obtiene una evaluación sumativa.
-
-////
-
-////
-La sistema educativo actual esta basado en un sistema de competencias, las cuales el alumno debe aprender y aprobar a lo largo de una asignatura. Este sistema no se lleva bien a la práctica, ya que se centra en la puntuación de los ejercicios y los exámenes, sin evaluar el conocimiento del alumno sobre las competencias de manera específica.
-
-El profesorado evalúa las competencias de un examen _a posteriori_, con la nota la calificación de dicho exámen, en vez de puntuar dichas competencias de manera concreta. Esta forma de actuar hace que el conocimiento adquirido de las competencias por parte de un alumno no sea valorado correctamente. Por ejemplo, en un exámen en el que se plasman cuatro competencias y tenga una calificación final de 7.0, estas cuatro competencias no tiene por que tener la calificación de 7.0, si no que estas variarán dependiendo del conocimiento del alumno.
-
-La aportación que hemos realizado ha sido la posibilidad de calificar una competencia a un alumno de manera individual. Hemos permitido que se creen exámenes en torno a las competencias, lo que permite una calificación individual y correcta de las mismas. Esto hace que la calificación de las competencias de un alumno sea mucho más precisa.
-////
+=== I.I Análisis de antecedentes y aportación realizada
 
 Para las enseñanzas medias, el Ministerio de Educación, Cultura y Deporte a través del Boletín Oficial del Estado, enumera siete competencias claves [72], es decir, competencias de nivel tres. Además especifica que las asignaturas constan de bloques de contenidos, que a su vez, derivan en una serie de criterios de evaluación (competencias de nivel dos), y estos, están relacionados con estándares de aprendizaje evaluables (competencias de nivel uno) [89]. Es decir cada bloque de contenido está asociado a un grupo de competencias de nivel uno y dos. Por ejemplo, Física y Química de 2º y 3º de la ESO, consta de cinco bloques, el último de ellos, llamado "La energía", tiene seis competencias de nivel dos, y estas, están relacionadas con una a cuatro competencias de nivel uno.
 
@@ -44,13 +18,98 @@ Aunque las competencias están perfectamente descritas, no se puede saber con cl
 
 La aportación que hemos realizado ha sido la posibilidad de calificar una competencia a un alumno de manera individual. Hemos permitido que se creen exámenes en torno a las competencias, lo que permite una calificación individual y correcta de las mismas. Esto hace que la calificación sobre el conocimiento de un alumno sobre una competencia sea mucho más precisa. Además este sistema no requiere prácticamente el mismo esfuerzo que la evaluación sumativa tradicional.
 
-===  Comparativas con otras alternativas
+===  I.II Comparativas con otras alternativas
 
+El mundo de la evaluación online ha cambiado en este último año. El problema de no poder asistir a las clases ni a los exámenes a causa de la pandemia producida por el COVID-19 [2] ha dejado a muchos educadores sin otra opción que la de enseñar mediante la Web.[2]
 
+Los métodos de evaluación son diversos, cada educador tiene el suyo propio. El uso del papel a la hora de evaluar un alumno ya es algo casi del pasado. Las aplicaciones web realizan y guardan todo ese trabajo, facilitando al profesor un sitio donde poder evaluar de forma segura, fácil y rápida.
 
-=== Definición de objetivos
+Por desgracia, no todas las aplicaciones web se asemejan a los tipos de evaluación de los educadores, ni tan siquiera siguen un patrón homogéneo, e incluso muchas de ellas no tienen en cuenta el sistema de competencias. Esto último puede ser un error muy grave por parte de las aplicaciones, ya que en España las competencias es algo obligatorio y esencial para la evaluación de un alumno. Este es uno de los factores que sí tiene en cuenta Verum.
 
-// jjc: Revisar/completar redacción
+Para empezar a comparar con nuestra aplicación, hemos realizado una búsqueda de las principales alternativas.
+Las tres primeras aplicaciones se suelen usar dentro de los siguientes ámbitos educativos: Educación Infantil, Educación Primaria, Educación Secundaria Obligatoria (ESO) y Bachillerato. Estas serían: Google Classroom, Additio y Moodle. La siguiente sería Blackboard, la cual es la plataforma utilizada por la Universidad de Sevilla y que por tanto solo se usaría en el ámbito Universitario. 
+
+Centrándonos en una comparativa entre Additio y Verum, podemos observar que la principal diferencia es como se gestionan las competencias. En primer lugar, al asignar competencias a un ejercicio, Additio no permitirá elegir las competencias de nivel mayor, las de nivel 3, frente a Verum, que permite elegir las de nivel 1, las de menor nivel. Otra diferencia recae en que Additio permite que las competencias de nivel 1 estén relacionadas sin ponderación a las de nivel 3. Sim embargo, Verum permite una relación ponderada de niveles consecutivos, es decir, las de nivel 1 una de nivel 2, y las de nivel 2 con las de nivel 3. Otra diferencia es el coste de uso, mientras que Verum se va a liberar como un proyecto libre, Additio tiene un coste de aproximadamente 9 euros al año.
+
+Un ejemplo del sistema de competencias sería el siguiente. Una competencia se divide en tres niveles: nivel uno, nivel dos y nivel tres. Cuanto menor sea su nivel, más concreta es. Pondremos como ejemplo la competencia de nivel tres _La actividad científica._, la cual contiene una serie de competencias de nivel dos, un ejemplo de esta sería: _Reconocer e identificar las características del método científico. CMCT._ . Esta a su vez contiene una competencia aún más específica de nivel uno, que sería: _Formula hipótesis para explicar fenómenos cotidianos utilizando teorías y modelos científicos_. [72] [89]
+
+En la siguiente tabla mostraremos de manera visual una comparativa sencilla de nuestra aplicación con las mencionadas anteriormente.
+
+.Comparativas con otras alternativas
+[cols="6"]
+[grid=cols]
+|===
+| ^|Verum ^|Additio ^|Moodle ^|Google Classroom ^|Enseñanza Virtual
+
+| Se puede usar en todos los niveles educativos.
+^.^| Sí
+^.^| Sí
+^.^| Sí
+^.^| Sí
+^.^| No
+
+| Permite puntuar competencias dentro de un ejercicio
+^.^| Sí (Nivel 1)
+^.^| Sí (Nivel 3)
+^.^| No
+^.^| No
+^.^| No
+
+| Permite gestionar evaluaciones
+^.^| Sí
+^.^| Sí
+^.^| No
+^.^| No
+^.^| Sí
+
+| Permite gestionar todos los niveles de las competencias
+^.^| Sí
+^.^| No
+^.^| No
+^.^| No
+^.^| No
+
+| Permite generar informes de las calificaciones de las competencias de un grupo
+^.^| Sí
+^.^| Solo las de nivel 3
+^.^| No
+^.^| No
+^.^| No
+
+| Permite generar informes de las calificaciones de las evaluaciones de un grupo
+^.^| Sí
+^.^| Sí
+^.^| No
+^.^| No
+^.^| Sí
+
+| Permite generar informes de las calificaciones de las competencias de un alumno
+^.^| Sí
+^.^| Solo las de nivel 3
+^.^| No
+^.^| No
+^.^| No
+
+| Permite generar informes de las calificaciones de las evaluaciones de un alumno
+^.^| Sí
+^.^| Sí
+^.^| No
+^.^| No
+^.^| No
+
+| Es gratuito
+^.^| Sí
+^.^| No
+^.^| Sí
+^.^| Sí
+^.^| No
+
+|===
+
+En conclusión, todas las aplicaciones tienen sus ventajas y desventajas, algunas más que otras, pero en general Verum es la más completa.
+
+=== I.III Definición de objetivos
+
 Como hemos comentado, la finalidad del proyecto se concreta en una aplicación web que facilite la evaluación por competencias. Esta finalidad se concreta en los siguientes objetivos específicos de la aplicación, que definen, así mismo, el alcance del mismo:
 
 * Permitir la evaluación por competencias de forma correcta y sencilla, permitiendo al educador tomar decisiones en función de los resultados obtenidos por los estudiantes como, por ejemplo, programar pruebas que evalúen competencias específicas no superadas por los estudiantes.

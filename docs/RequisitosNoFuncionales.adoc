@@ -1,9 +1,0 @@
-==== Requisitos No Funcionales:
-
-Estos requisitos son de normal los más escasos, ya que se basan en aspectos de calidad, como la usabilidad, disponibilidad, fiabilidad, rendimiento, etc.
-
-Se podrían definir, como aquellos requisitos que no describen información a guardar. También podría entenderse como que son aquellas restricciones que pone el cliente.
-
-En nuestro caso solo hemos visto oportuno uno de ellos:
- 
-**RNF 01**: El sistema permitirá a los usuarios poder usar la aplicación en español y en inglés.

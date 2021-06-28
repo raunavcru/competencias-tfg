@@ -40,55 +40,7 @@ include::Costes.adoc[]
 
 == III. Análisis de requisitos, diseño e implementación
 
-include::IntroduccionAnalisisDeRequisitos.adoc[]
-
-=== Requisitos
-
-include::RequisitosDeInformación.adoc[]
-
-include::RequisitosFuncionales.adoc[]
-
-include::RequisitosNoFuncionales.adoc[]
-
-=== Casos de uso
-
-include::CasosDeUso.adoc[]
-
-=== Modelo de datos
-
-include::ModeloDeDatos.adoc[]
-
-=== Mockups
-
-include::Mockups.adoc[]
-
-=== Justificaciones de las tecnologías y herramientas utilizadas
-
-include::Justificaciones.adoc[]
-
-=== Gestión de código
-
-include::GestiónDeCódigo.adoc[]
-
-=== Gestión de versiones
-
-include::GestiónDeVersiones.adoc[]
-
-=== Fuentes e Imágenes
-
-include::FuenteEImágenes.adoc[]
-
-=== Implementación del cálculo
-
-include::Cálculo.adoc[]
-
-=== Adaptabilidad del diseño en diferentes resoluciones
-
-include::AdaptabilidadDelDiseño.adoc[]
-
-=== Traducción
-
-include::Traducción.adoc[]
+include::AnálisisDeRequisitosDiseñoImplementación.adoc[]
 
 == IV. Pruebas
 
