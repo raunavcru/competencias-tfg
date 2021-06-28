@@ -1925,7 +1925,7 @@ Las versiones existentes son las siguientes:
 * **0.3**: Versión que incorpora todo el sprint 3. Incluye la mayor parte de la funcionalidad del profesor.
 * **0.4**: Versión que incorpora todo el sprint 4. Incluye el resto de funcionalidad.
 
-=== III.IIX Fuentes e Imágenes
+=== III.VIII Fuentes e Imágenes
 
 El apartado visual dentro de una aplicación web se le conoce como el _frontend_.Este tiene muchos factores, el color, la forma, las imágenes, etc. En nuestro caso le pusimos mucho hincapié a todo esto, pero especialmente al apartado de las imágenes y la fuente. 
 
@@ -1933,12 +1933,12 @@ Para ambas cosas nos pusimos a estudiar, ya que este apartado tiene temas de der
 
 A continuación, hablaremos de la fuente escogida y de dónde hemos seleccionado las imágenes mostradas en la aplicación.
 
-==== III.IIX.I Fuente 
+==== III.VIII.I Fuente 
 La opción a la hora de seleccionar una fuente ha sido elegida con el fin de evitarnos problemas jurídicos, así como poderla usar en aplicaciones de fines lucrativos.
 
 Este fué uno de los factores más importantes de cara a la elección de una fuente. Otro de ellos fué la elección de una fuente que se use habitualmente y que nos fuera de fácil acceso y visualmente atractiva.
 
-===== III.IIX.I.I Elección
+===== III.VIII.I.I Elección
 
 Nos decantamos por la Fuente Ubuntu, la cual obtuvimos del siguiente link:
 
@@ -1948,13 +1948,13 @@ La licencia de esta fuente es _copyleft_ permite que las tipografías sean «usa
 
 La documentación de la licencia se encuentra en la carpeta _fonts_, cuyo nombre es "LICENSE.txt".
 
-==== III.IIX.II Imágenes
+==== III.VIII.II Imágenes
 
 Esta tarea sin duda fue una de las más difíciles de encontrar, puesto que todos los bancos de imágenes tenían derechos de autor y muchas trabas legales para su uso.
 
 La opción a la hora de seleccionar las imágenes para la web fue difícil, ya que buscábamos un banco de imágenes que nos permitiera el uso comercial pensando en un hipotético uso de la misma y sin derechos de autor.
 
-===== III.IIX.II.I Elección
+===== III.VIII.II.I Elección
 
 Nos decantamos por la web https://unsplash.com/, la cual tiene un gran número de imágenes muy útiles, y una licencia que nos permitía lo nombrado anteriormente.
 
