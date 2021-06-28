@@ -18,18 +18,6 @@ include::Resumen.adoc[]
 
 include::Introducción.adoc[]
 
-=== Definición de objetivos
-
-include::DefiniciónDeObjetivos.adoc[]
-
-=== Análisis de antecedentes y aportación realizada
-
-include::AntecedentesYAportaciónRealizada.adoc[]
-
-===  Comparativas con otras alternativas
-
-include::ComparativasConOtrasAlternativas.adoc[]
-
 == II. Análisis temporal y de costes de desarrollo
 
 include::AnálisisTemporalYDeCostesDeDesarrollo.adoc[]
