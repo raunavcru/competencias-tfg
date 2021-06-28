@@ -1,5 +1,25 @@
+////
+jjc: (redactar)
+Esto ya se comenta al principio de la introducción. Aquí no hay que repetir lo mismo, sino profundizar en lo que ya se ha dicho.
+
+Antecedentes:
+* Comentar ejemplo concreto de enseñanzas medias con referencia a BOE y BOJA.
+* Comentar ejemplo concreto enseñanzas universitarias.
+* La evaluación sumativa no permite ver claramente las competencias superadas.
+* En enseñanzas medias e inferiores, la normativa exige que se informe sobre competencias superadas, pero la información que se proporciona es "grosera" porque no se cuenta con herramientas adecuadas.
+* Pese a que existen iniciativas para solucionar esto (Additio, alguna otra?) no conocemos ninguna herramienta que trate el problema como algo central.
+
+Aportación:
+* Una aplicación que permite llevar a la práctica una evaluación por competencias tal como se dice en BOE y BOJA (enseñanzas medias y universidad).
+* El profesor piensa en qué competencias quiere evaluar y prepara ejercicios adecuados. El sistema lleva la cuenta del progreso del estudiante en cada competencia.
+* Se consigue una evaluación por competencias con prácticamente el mismo esfuerzo que la evaluación sumativa tradicional, a la vez que se obtiene una evaluación sumativa.
+
+////
+
+////
 La sistema educativo actual esta basado en un sistema de competencias, las cuales el alumno debe aprender y aprobar a lo largo de una asignatura. Este sistema no se lleva bien a la práctica, ya que se centra en la puntuación de los ejercicios y los exámenes, sin evaluar el conocimiento del alumno sobre las competencias de manera específica.
 
 El profesorado evalúa las competencias de un examen _a posteriori_, con la nota la calificación de dicho exámen, en vez de puntuar dichas competencias de manera concreta. Esta forma de actuar hace que el conocimiento adquirido de las competencias por parte de un alumno no sea valorado correctamente. Por ejemplo, en un exámen en el que se plasman cuatro competencias y tenga una calificación final de 7.0, estas cuatro competencias no tiene por que tener la calificación de 7.0, si no que estas variarán dependiendo del conocimiento del alumno.
 
 La aportación que hemos realizado ha sido la posibilidad de calificar una competencia a un alumno de manera individual. Hemos permitido que se creen exámenes en torno a las competencias, lo que permite una calificación individual y correcta de las mismas. Esto hace que la calificación de las competencias de un alumno sea mucho más precisa.
+////
