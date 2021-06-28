@@ -5,7 +5,7 @@ En la ingeniería informática, los requisitos cumplen el papel de entrada en la
 
 Los tipos de requisitos son variados, y cada uno de estos cumplen una función específica. El conjunto de todos los tipos de requisitos forman una exigencia en forma de documentación sobre el contenido del producto final.
 
-Nosotros hemos dividido los requisitos en tres: Requisitos de Información, Requisitos funcionales y Requisitos no funcionales. A continuación hablaremos de forma más detallada de cada uno de estos.
+Nosotros hemos dividido los requisitos en tres: Requisitos de Información, Requisitos funcionales y Requisitos no funcionales. A continuación, hablaremos de forma más detallada de cada uno de estos.
 
 ==== III.I.I Requisitos de Información:
 
@@ -13,11 +13,11 @@ Este tipo de requisitos describen la información que debe guardar el sistema pa
 
 En nuestro caso hemos realizado nueve requisitos de información, los cuales son los siguientes:
 
-**RI-01**: Una Competencia debe guardar un código de identificación, un nombre y una descripción y su tipo. Las Competencias se dividen en concretas (nivel 1), específicas (nivel 2) y generales (nivel 3). Además debe guardar el peso sobre el nivel superior, las puntuaciones de los alumnos y, si es una competencia específica, el peso sobre la asignatura asociada.
+**RI-01**: Una Competencia debe guardar un código de identificación, un nombre y una descripción y su tipo. Las Competencias se dividen en concretas (nivel 1), específicas (nivel 2) y generales (nivel 3). Además, debe guardar el peso sobre el nivel superior, las puntuaciones de los alumnos y, si es una competencia específica, el peso sobre la asignatura asociada.
 
 **RI-02**: Una Asignatura debe guardar un nombre, un nivel, el grado, una descripción y las competencias asociadas a ella.
 
-**RI-03**: Un Profesor debe guardar el año de nacimiento, sus iniciales, un nombre de usuario, una contraseña, un nombre, unos apellidos y un email. Además debe guardar las asignaturas asociadas.
+**RI-03**: Un Profesor debe guardar el año de nacimiento, sus iniciales, un nombre de usuario, una contraseña, un nombre, unos apellidos y un email. Además, debe guardar las asignaturas asociadas.
 
 **RI-04**: Un Administrador debe guardar el año de nacimiento, sus iniciales, un nombre de usuario, una contraseña, un nombre, unos apellidos y un email. 
 
@@ -27,13 +27,13 @@ En nuestro caso hemos realizado nueve requisitos de información, los cuales son
 
 **RI-07**: Una Actividad debe guardar un título, una fecha, un indicador para saber si es una recuperación, una lista de ejercicios, una evaluación asociada y el peso sobre ella, un grupo, y una asignatura.
 
-**RI-08**: Un Ejercicio debe guardar un peso sobre la actividad, un enunciado, una nota y una lista de competencias. Además debe guardar el peso de cada competencia sobre el ejercicio y su intensidad.
+**RI-08**: Un Ejercicio debe guardar un peso sobre la actividad, un enunciado, una nota y una lista de competencias. Además, debe guardar el peso de cada competencia sobre el ejercicio y su intensidad.
 
 **RI-09**: Un Estudiante debe guardar un nombre, unos apellidos, una fecha de nacimiento, sus iniciales y las notas en evaluaciones, actividades, ejercicios y competencias.
 
 ==== III.I.II Requisitos Funcionales:
 
-Este tipo de requisito se basa en la definición de una funcionalidad del sistema o los componentes software. Esta, debe tener en cuenta las entradas y las salidas.
+Este tipo de requisito se basa en la definición de una funcionalidad del sistema o los componentes _software_. Esta, debe tener en cuenta las entradas y las salidas.
 
 Además, este tipo de requisito, de forma general, se define siempre una vez finalizados los casos de uso, ya que en estos, se contemplan lo que debe hacer la aplicación a alto nivel.
 
@@ -73,13 +73,13 @@ En nuestro caso, hemos creado veinticuatro de estos, los cuales se han tenido en
 
 **RF 15**: El sistema permitirá a los profesores poder listar los alumnos de un grupo de clase.
 
-**RF 16**: El sistema permitirá a los profesores poder ver el listado de actividades, así como crear, editar y eliminar dichas actividades. Además permitirá copiar actividades que ya han sido creadas.
+**RF 16**: El sistema permitirá a los profesores poder ver el listado de actividades, así como crear, editar y eliminar dichas actividades. Además, permitirá copiar actividades que ya han sido creadas.
 
 **RF 17**: El sistema permitirá a los profesores poder ver las calificaciones de un alumno.
 
 **RF 18**: El sistema permitirá a los profesores poder crear ejercicios, así como editar y eliminar dichos ejercicios.
 
-**RF 19**: El sistema permitirá a los profesores poder asignar competencias a un ejercicio con una intensidad. Además permitirá editar y desasignar las competencias ya asignadas.
+**RF 19**: El sistema permitirá a los profesores poder asignar competencias a un ejercicio con una intensidad. Además, permitirá editar y desasignar las competencias ya asignadas.
 
 **RF 20**: El sistema permitirá a los profesores poder puntuar evaluaciones, actividades, ejercicios y competencias.
 
@@ -353,7 +353,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 | Secuencia normal:
 
-1. El administrador desea crear un grupos de clase.
+1. El administrador desea crear un grupo de clase.
 
 2. El sistema solicita las credenciales para identificarse.
 
@@ -403,11 +403,11 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 * RF 05.
 
-| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de un grupos de clase_.
+| Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de un grupo de clase_.
 
 | Secuencia normal:
 
-1. El administrador desea eliminar un grupos de clase.
+1. El administrador desea eliminar un grupo de clase.
 
 2. El sistema solicita las credenciales para identificarse.
 
@@ -1619,17 +1619,17 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 === III.III Modelo de datos
 
-Sabemos que un parte muy importante del desarrollo de una aplicación web es el modelado de los datos. Este no es más que una estructura que nos permite visualizar, especificar y documentar que datos se van a guardar y como. Además sirve de punto de apoyo para construir la aplicación. Algo que es crucial, se asemeja a los que serían los cimientos de una casa. Por ello hemos realizado una gran implicación y dedicación al modelo con el fin de que se pudiera construir toda la funcionalidad alrededor de este.
+Sabemos que un parte muy importante del desarrollo de una aplicación web es el modelado de los datos. Este no es más que una estructura que nos permite visualizar, especificar y documentar que datos se van a guardar y como. Además, sirve de punto de apoyo para construir la aplicación. Algo que es crucial, se asemeja a los que serían los cimientos de una casa. Por ello hemos realizado una gran implicación y dedicación al modelo con el fin de que se pudiera construir toda la funcionalidad alrededor de este.
 
-A lo largo del apartado iremos mostrando partes del modelo que nos resultan interesantes mediante el uso de diagramas. En primer lugar veremos la totalidad del modelo en la siguiente imagen.
+A lo largo del apartado iremos mostrando partes del modelo que nos resultan interesantes mediante el uso de diagramas. En primer lugar, veremos la totalidad del modelo en la siguiente imagen.
 
 image::UML/uml.svg[Modelo general]
 
 Para gestionar los actores que interactúan con el sistema hemos diseñado de una estructura que parte de una clase, es decir, un arquetipo para la creación de datos, llamada _User_ (Usuario) proveniente de xref:Justificaciones de las tecnologías y herramientas utilizadas[Django]. Este objeto recoge nombre, apellidos y datos de registro como el nombre de usuario, el correo electrónico y la contraseña. Para almacenar más datos hemos creado el objeto _Profile_ (Perfil) que servirá como patrón de los objetos que representan los actores del sistema, _Administrator_ (Administrador) y _Teacher_ (Profesor). Lo veremos gráficamente en la siguiente imagen.
 
-image::UML/uml-user.svg[Modelo de los usuario]
+image::UML/uml-user.svg[Modelo de los usuarios]
 
-Hemos creado un clase para cada una de las partes que se pueden evaluar. Estas son _Evaluation_ (Evaluación), _Activity_ (Actividad), _Exercise_ (Ejercicio) y _Competence_ (Competencia). Lo veremos mejor en la siguiente imagen.
+Hemos creado una clase para cada una de las partes que se pueden evaluar. Estas son _Evaluation_ (Evaluación), _Activity_ (Actividad), _Exercise_ (Ejercicio) y _Competence_ (Competencia). Lo veremos mejor en la siguiente imagen.
 
 image::UML/uml-evaluation.svg[Modelo de evaluacion]
 
@@ -1653,7 +1653,7 @@ También en el directorio de docs podremos encontrar mockups-interactivos, en lo
 
 Dividiremos esta guía en dos partes, administrador y profesor.
 
-==== Administrador:
+==== Administrador
 
 Aquí podremos ver la creación de un alumno:
 
@@ -1673,7 +1673,7 @@ La eliminación de estos de un grupo:
 image::mockups/Eliminar alumnos.png[]
 
 
-==== Profesor:
+==== Profesor
 
 El listado de alumnos de un grupo al que pertenece:
 
@@ -1695,15 +1695,15 @@ Modificar un ejercicio:
 
 image::mockups/Modificar ejercicio.png[] 
 
-=== III.V Justificaciones de las tecnologías y herramientas utilizadas
+=== III.V Justificación de las tecnologías y herramientas utilizadas
 
 A la hora de empezar la búsqueda de las tecnologías tuvimos varios factores a tener en cuenta. Uno de ellos era la profesionalidad y otro era la fiabilidad.
 
-En cuanto a la búsqueda del lenguaje de programación a usar, ambos lo tuvimos claro. Sabíamos del potencial de Python para el uso de aplicaciones web. El conocimiento del lenguaje por parte del grupo era dispar, puesto que uno de nosotros, apenas conocía el lenguaje. A sabiendas de que en una de las asignaturas que se imparte en el último año de la carrera se iba a utilizar el framework de Django, no dudamos en elegirlo.
+En cuanto a la búsqueda del lenguaje de programación a usar, ambos lo tuvimos claro. Sabíamos del potencial de Python para el uso de aplicaciones web. Fue elegido por su madurez algo que más abajo se justifica en detalle.
 
-El resto de aplicaciones usadas durante el desarrollo fue elegido por que queríamos usar entornos lo más parecidos a la realidad posibles. A causa de esto elegimos Jira, ya que es una aplicación web para la gestión de trabajo, y esta especializada en metodologías ágiles, algo que íbamos a usar para el desarrollo.
+El resto de las aplicaciones usadas durante el desarrollo fue elegido por que queríamos usar entornos lo más parecidos a la realidad posibles. A causa de esto elegimos Jira, ya que es una aplicación web para la gestión de trabajo, y está especializada en metodologías ágiles, algo que íbamos a usar para el desarrollo.
 
-Este apartado será desglosado en dos: Tecnologías y Herramientas. Donde hablaremos de manera más específicas de cada una de ellas, y el por qué la elegimos.
+Este apartado será desglosado en dos: Tecnologías y Herramientas donde hablaremos de manera más específicas de cada una de ellas, y el por qué la elegimos.
 
 ==== Tecnologías image:./images/icons/tecnologia.png[Icono,17,17]
 
@@ -1743,18 +1743,18 @@ Materialize no necesita jQuery para su uso, aunque puedes usarlo si así lo dese
  
 Otro punto a su favor en comparación con Bootstrap o Foundation es su estética, la cual es muy atractiva,  obteniendo un resultado homogéneo.
  
-Una de los puntos negativos por parte de Bootstrap son los problemas entre versión y versión, ya que cambia la nomenclatura de sus elementos, cosa que con Materialize no ocurre.
+Uno de los puntos negativos por parte de Bootstrap son los problemas entre versión y versión, ya que cambia la nomenclatura de sus elementos, cosa que con Materialize no ocurre.
  
 A diferencia de sus alternativas, Materialize tiene una gran documentación, la cual, es más fácil de entender para alguien que acaba de empezar, así como una amplia cantidad de ejemplos visuales.
  
-Gráficamente Materialize esta muy por encima de Boostrap o Foundation, debido a su variedad de color y a sus componentes adicionales.
+Gráficamente Materialize está muy por encima de Boostrap o Foundation, debido a su variedad de color y a sus componentes adicionales.
 |===
 
 .PostgreSQL
 [cols="6a"]
 |===
 |**PostgreSQL**
-|Es una base de datos SQL gratuita diseñada para ambientes de alto volumen. Tenemos experiencia en esta base de datos por varias asignaturas. Además dispone de una herramienta gráfica muy útil que facilita mucho su utilización.
+|Es una base de datos SQL gratuita diseñada para ambientes de alto volumen. Tenemos experiencia en esta base de datos por varias asignaturas. Además, dispone de una herramienta gráfica muy útil que facilita mucho su utilización.
 |Alternativas
 |Existen otras alternativas como:
 
@@ -1785,7 +1785,7 @@ En comparación con las alternativas expuestas, Heroku permite desplegar version
 |**Travis**
 |Es una herramienta de integración continua que hemos usado en varias asignaturas que nos va a permitir ejecutar nuestros test y comprobar si han surgido fallos al añadir código al repositorio, además vamos a poder conectarlo con SonarCloud.
 |Alternativa
-|La segunda opción es Jenkins. El mayor ventaja que podemos destacar de Travis frente Jenkins es no que necesita ningún tipo de instalación, solo se configura un solo archivo y se puede utilizar a la perfección.
+|La segunda opción es Jenkins. La mayor ventaja que podemos destacar de Travis frente Jenkins es no que necesita ningún tipo de instalación, solo se configura un solo archivo y se puede utilizar a la perfección.
 |===
 
 .Sonarcloud
@@ -1824,7 +1824,7 @@ SonarQube tienen un mantenimiento de código más costoso, haciendo que sea nece
 .Visual Studio Code
 |===
 |**Visual Studio Code**
-|Es un editor de código desarrollado por Microsoft y que está siendo muy usado estos últimos años. Nos permite programar en múltiples lenguajes de forma personalizada con las numerosas extensiones que acompañan al editor. Además implementa una consola de depuración y está vinculado directamente con Git. Lo elegimos, aparte de los puntos anteriores, porque tenemos experiencia en él y es fácil de usar.
+|Es un editor de código desarrollado por Microsoft y que está siendo muy usado estos últimos años. Nos permite programar en múltiples lenguajes de forma personalizada con las numerosas extensiones que acompañan al editor. Además, implementa una consola de depuración y está vinculado directamente con Git. Lo elegimos, aparte de los puntos anteriores, porque tenemos experiencia en él y es fácil de usar.
 |===
 
 .Clockify
@@ -1842,15 +1842,15 @@ SonarQube tienen un mantenimiento de código más costoso, haciendo que sea nece
 .Jira
 |===
 |**Jira**
-|Jira es una herramienta de gran utilidad para equipos de todo tipo. Siendo también de gran ayuda para gestión de trabajo en todo tipo de casos, y en especial para el desarrollo software.
-Con todo esto y con el conocimiento de que se usa en entornos laborales de grandes empresas como Everis, decidimos utilizarla y aprender como funciona.
+|Jira es una herramienta de gran utilidad para equipos de todo tipo. Siendo también de gran ayuda para gestión de trabajo en todo tipo de casos, y en especial para el desarrollo _software_.
+Con todo esto y con el conocimiento de que se usa en entornos laborales de grandes empresas como Everis, decidimos utilizarla y aprender cómo funciona.
 |===
 
 === III.VI Gestión de código
 
-Este apartado es una parte crucial a la hora de trabajar en grupo con un software. En nuestro caso hemos usado Git, el cual es una gran herramienta que se basa en la creación de ramas para el trabajo en paralelo. 
+Este apartado es una parte crucial a la hora de trabajar en grupo con un _software_. En nuestro caso hemos usado Git, el cual es una gran herramienta que se basa en la creación de ramas para el trabajo en paralelo. 
 
-Algo muy importante a la hora de trabajar con Git es llevar una metodología, nosotros hemos usado la más conocida por parte de ambos, GitFlow. Esto ha dado lugar a una mejora del  desarrollo continuo de las prácticas.
+Algo muy importante a la hora de trabajar con Git es llevar una metodología, nosotros hemos usado la más conocida por parte de ambos: GitFlow. Esto ha dado lugar a una mejora del desarrollo continuo de las prácticas.
 
 Dividiremos este apartado en tres con el fin de desglosar de manera más detallada los mismos: Gestión de ramas, Gestión de commits y Pull requests
  
@@ -1865,7 +1865,7 @@ Tenemos dos Ramas por defecto:
 
 En la rama **dev** se incluirán todas las ramas de desarrollo con *pull requests*. La rama **master** solo se podrán añadir desde la rama **dev**, para incluir la release. 
 
-El resto de ramas seguirán el siguiente esquema: 
+El resto de las ramas seguirán el siguiente esquema: 
 
 *<codigo_rama>/<codigo_sprint>/<nombre_tarea>*
 
@@ -1891,7 +1891,7 @@ Nombre de las tareas (<nombre_tarea>): Nombre especificado en Jira, o abreviaci�
 
 El comando git commit se basa en guardar todos los cambios realizados en local junto a una breve descripción del usuario con el fin de dar sentido al trabajo realizado.
 
-Los commits deben seguir el siguiente patrón: *[<tipo_commit>] <nombre_commit>*. Además se puede añadir una descripción opcionalmente.
+Los commits deben seguir el siguiente patrón: *[<tipo_commit>] <nombre_commit>*. Además, se puede añadir una descripción opcionalmente.
 
 Tipo de commit (<tipo_commit>):
 
@@ -1904,7 +1904,7 @@ Tipo de commit (<tipo_commit>):
 
 ==== Pull requests
 
-Para añadir funcionalidad a la rama *dev* se abrirá una pull request. Esto se basa en hacer una petición de la tarea realizada, con el fin de añadirla a el proyecto. El que haya desarrollado la funcionalidad se asignará a la pull request y asignará al compañero como revisor. Para que la pull request se de como válida debe de pasar el control y análisis de Travis y Sonarcloud, además del visto bueno del revisor. 
+Para añadir funcionalidad a la rama *dev* se abrirá una pull request. Esto se basa en hacer una petición de la tarea realizada, con el fin de añadirla a el proyecto. El que haya desarrollado la funcionalidad se asignará a la pull request y asignará al compañero como revisor. Para que la pull request se como válida debe de pasar el control y análisis de Travis y Sonarcloud, además del visto bueno del revisor. 
 
 Una vez que se haya hecho merge a dev, la rama se eliminará.
 
@@ -1915,7 +1915,7 @@ En este apartado detallaremos como hemos nombrado a las versiones relacionadas a
 
 * **X**: Versión mayor.
 * **Y**: Versión menor.
-* **Z**: Versión ene el que se solventan _bugs_ de la versión anterior.
+* **Z**: Versión en el que se solventan _bugs_ de la versión anterior.
 
 Las versiones existentes son las siguientes:
 
@@ -1927,14 +1927,14 @@ Las versiones existentes son las siguientes:
 
 === III.IIX Fuentes e Imágenes
 
-El apartado visual dentro de una aplicación web se le conoce como el frontend, este tiene muchos factores, el color, la forma, las imágenes, etc. En nuestro caso le pusimos mucho hincapié a todo esto, pero especialmente al apartado de las imágenes y la fuente. 
+El apartado visual dentro de una aplicación web se le conoce como el _frontend_.Este tiene muchos factores, el color, la forma, las imágenes, etc. En nuestro caso le pusimos mucho hincapié a todo esto, pero especialmente al apartado de las imágenes y la fuente. 
 
 Para ambas cosas nos pusimos a estudiar, ya que este apartado tiene temas de derechos, algo que es un poco controvertido. Estuvimos buscando algo que se adaptara lo mejor posible a nuestra web, algo cotidiano y sencillo. Nuestra finalidad era que una persona que no tuviese ningún conocimiento sobre la informática considerase nuestra web acogedora y visualmente atractiva.
 
-A continuación hablaremos de la fuente escogida y de dónde hemos seleccionado las imágenes mostradas en la aplicación.
+A continuación, hablaremos de la fuente escogida y de dónde hemos seleccionado las imágenes mostradas en la aplicación.
 
 ==== III.IIX.I Fuente 
-La opción a la hora de seleccionar una fuente ha sido elegida con el fin de evitarnos problemas jurídicos, así como, poderla usar en aplicaciones de fines lucrativos.
+La opción a la hora de seleccionar una fuente ha sido elegida con el fin de evitarnos problemas jurídicos, así como poderla usar en aplicaciones de fines lucrativos.
 
 Este fué uno de los factores más importantes de cara a la elección de una fuente. Otro de ellos fué la elección de una fuente que se use habitualmente y que nos fuera de fácil acceso y visualmente atractiva.
 
@@ -1952,7 +1952,7 @@ La documentación de la licencia se encuentra en la carpeta _fonts_, cuyo nombre
 
 Esta tarea sin duda fue una de las más difíciles de encontrar, puesto que todos los bancos de imágenes tenían derechos de autor y muchas trabas legales para su uso.
 
-La opción a la hora de seleccionar las imágenes para la web fue difícil, ya que buscábamos un banco de imágenes que nos permitiera el uso comercial pensando en un hipotética uso de la misma y sin derechos de autor.
+La opción a la hora de seleccionar las imágenes para la web fue difícil, ya que buscábamos un banco de imágenes que nos permitiera el uso comercial pensando en un hipotético uso de la misma y sin derechos de autor.
 
 ===== III.IIX.II.I Elección
 
@@ -1999,7 +1999,7 @@ Al cambiar el método de cálculo de un grupo de clase, se necesita recalcular l
 
 Para mejorar la experiencia de usuario en la puntuación se ha optado por añadir una funcionalidad que permita puntuar cada una de las partes en la propia tabla. Esto es un progreso respecto a nuestra primera idea. Esta era que al usuario se le presentase una pantalla para que pudiera introducir la nota. Al tener que hacer click en demasiadas ocasiones esta funcionalidad se volvía un poco engorrosa.
 
-Además se ha añadido otro par de funcionalidades que mejoran la experiencia de usuario. La primera consiste en poder pasar entre la pantalla de un ejercicio concreto de un alumno al siguiente. Esto permite al profesor puntuar un ejercicio en todos los alumnos sin tener que volver a la página donde se lista los alumnos de un grupo de clase. La otra funcionalidad es pasar, por ejemplo de un ejercicio a otro de un alumno o pasar de una actividad a la siguiente.
+Además, se ha añadido otro par de funcionalidades que mejoran la experiencia de usuario. La primera consiste en poder pasar entre la pantalla de un ejercicio concreto de un alumno al siguiente. Esto permite al profesor puntuar un ejercicio en todos los alumnos sin tener que volver a la página donde se lista los alumnos de un grupo de clase. La otra funcionalidad es pasar por ejemplo, de un ejercicio a otro de un alumno o pasar de una actividad a la siguiente.
 
 ==== III.IX.I Añadir nuevos métodos de cálculo
 
@@ -2009,7 +2009,7 @@ Los pasos son los siguiente:
 
 image::images/choices.PNG[]
 
-* En segundo lugar, implementar el nuevo método de cálculo en _services.py_ en las clase _MarkService()_.
+* En segundo lugar, implementar el nuevo método de cálculo en _services.py_ en la clase _MarkService()_.
 
 * En último lugar, modificar el método _calculate_evaluation_mark_ de las clase _MarkService()_ dentro de _services.py_ para ñadir en el condicional el nuevo método.
 
@@ -2027,7 +2027,7 @@ En el resto de resoluciones móviles tampoco se pierde funcionalidad, pero cuant
 
 Para la traducción hemos utilizado **gettext** y la etiqueta de Django _trans_, los cuales nos permite traducir elementos concretos de las vistas y obtener información del idioma actual de la aplicación.
 
-Para internacionalizar las vistas utilizamos las etiqueta _trans_ sobre la palabra o conjunto de palabras que queremos traducir.
+Para internacionalizar las vistas utilizamos las etiquetas _trans_ sobre la palabra o conjunto de palabras que queremos traducir.
 
 .Ejemplo de etiqueta de traducción
 [source, html]
@@ -2041,7 +2041,7 @@ Después debemos tener un archivo de configuración de cada idioma al que queram
 
 image::images/translate-file.PNG[]
 
-Para crear dicho archivo y compilarlo debemos utilizar los siguientes comando:
+Para crear dicho archivo y compilarlo debemos utilizar los siguientes comandos:
 
 .Comando de creación de archivo de configuración
 [source, cmd]
@@ -2057,7 +2057,7 @@ py manage.py compilemessages
 
 cambiando _es_ (español) por el idioma correspondiente.
 
-Sin embargo, para traducir los errores de formulario no es posible utilizar estas etiquetas, por que hemos implementado un método, valiéndose del método de gettext llamado _get_language_, que hace saltar los errores de formulario en el idioma correcto.
+Sin embargo, para traducir los errores de formulario no es posible utilizar estas etiquetas, porque hemos implementado un método, valiéndose del método de gettext llamado _get_language_, que hace saltar los errores de formulario en el idioma correcto.
 
 .Método de error de validación
 [source, python]
