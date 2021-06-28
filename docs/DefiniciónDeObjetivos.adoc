@@ -1,6 +1,9 @@
+// Este apartado puede ir como final de la introducción. Ya se ha comentado antes la finalidad, así que aquí basta con enumerar los objetivos más específicos, como lista de puntos.
+
+////
 Algo fundamental a la hora de empezar un proyecto es tener una finalidad clara y concisa, para no tener errores a lo largo del desarrollo.
 
-En nuestro caso nosotros quisimos dejar claros los objetivos del proyecto. 
+En nuestro caso nosotros quisimos dejar claros los objetivos del proyecto.
 
 Queríamos desarrollar uan aplicación web que permitiera dar funcionalidad a los profesores inscritos con el fin de evaluar las competencias de manera correcta y sencilla. Todo esto siendo enfocado para que fuera usada en todos los niveles de enseñanza.
 
@@ -8,8 +11,19 @@ Con motivo de que sabemos que la tecnología web va en un avance contínuo, deja
 
 Otro punto importante era el sistema de evaluación, el cual lo enfocamos para que hubiese variedad de tipos, teniendo en cuenta el sistema de evaluación tradicional y no dificultar el desarrollo de otros posibles métodos.
 
-El apartado visual debía ser sencillo, ya que no todo el mundo puede entender las aplicaciones más complejas. Algo que haría que hubiesen usuario que no llegaran a usarla. 
+El apartado visual debía ser sencillo, ya que no todo el mundo puede entender las aplicaciones más complejas. Algo que haría que hubiesen usuario que no llegaran a usarla.
 
 Había que tener en cuenta que no todo el mundo trabaja desde una misma resolución de pantalla, y eso era un atributo crucial. Así que pensamos en la adaptación a diferentes resoluciones.
 
 Y por último la internacionalización de la aplicación para que pueda ser usada tanto en español como en inglés.
+////
+
+// jjc: Revisar/completar redacción
+Como hemos comentado, finalidad del proyecto se concreta en una aplicación web que facilite la evaluación por competencias. Esta finalidad se concreta en los siguientes objetivos específicos de la aplicación, que definen, así mismo, el alcance del mismo:
+
+* Permitir la evaluación por competencias de forma correcta y sencilla, permitiendo al educador tomar decisiones en función de los resultados obtenidos por los estudiantes como, por ejemplo, programar pruebas que evalúen competencias específicas no superadas por los estudiantes.
+* Ser de aplicación a todos los niveles de la enseñanza mediante la configuración de la aplicación por parte de un administrador.
+* Permitir y facilitar, así mismo, una calificación tradicional sumativa con objeto de poder adaptar los procedimiento pre-existentes y comparar los resultados con los obtenidos mediante la evaluación por competencias.
+* Tener gran flexibilidad a la hora de establecer las ponderaciones que generan las calificaciones, teniendo en cuenta diversos esquemas de evaluación (gestión de recuperaciones, etc.).
+* Dotar a la aplicación de una interfaz visual sencilla y adaptable a una diversidad de dispositivos y formatos de pantalla con objeto de facilitar el uso y adopción de la herramienta.
+* Tener en cuenta la internacionalización de la aplicación desde el principio para permitir su fácil traducción a otros idiomas y el posterior desarrollo del código en un ambiente internacional.
