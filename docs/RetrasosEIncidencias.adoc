@@ -1,5 +1,5 @@
 
-Gracias a la estrategia que hemos comentado en el apartado de xref:Planificación[Planificación] hemos podido mantener los retrasos al mínimo, siendo el desvío grave un total de tres días. También han surgido una serie de incidencias que se han solventado a lo largo del desarrollo. A lo largo de esta sección concretaremos cuales son estos retrasos (Véase Tabla 5) e incidencias (Véase Tabla 6).
+Gracias a la estrategia que hemos comentado en el apartado de xref:Planificación[Planificación] hemos podido mantener los retrasos al mínimo, siendo el desvío grave un total de tres días. También han surgido una serie de incidencias que se han solventado a lo largo del desarrollo. A lo largo de esta sección concretamos cuales son estos retrasos (Véase Tabla 5) e incidencias (Véase Tabla 6).
 
 ==== Retrasos
 
@@ -36,7 +36,7 @@ En la **Tabla 5** veremos la lista de los retrasos que ha surgido en el proyecto
 
 ==== Incidencias
 
-En la **Tabla 6** observaremos la lista de incidencias que hemos tenido a los largo del proyecto. Las incidencias más graves han sido la falta del _CRUD_ de evaluaciones con anterioridad, lo que nos ha provocado tener que replanificar la dos primera semanas del _Sprint_ 2, y la identificación de un par de fallos al asignar y desasignar competencias, que retraso el despliegue de la versión 0.4.
+En la **Tabla 6** observaremos la lista de incidencias que hemos tenido a lo largo del proyecto. Las incidencias más graves han sido la falta del _CRUD_ de evaluaciones con anterioridad, lo que nos ha provocado tener que replanificar la dos primera semanas del _Sprint_ 2, y la identificación de un par de fallos al asignar y desasignar competencias, que retrasó el despliegue de la versión 0.4.
 
 .Tabla de incidencias
 [grid=cols]
@@ -51,7 +51,7 @@ En la **Tabla 6** observaremos la lista de incidencias que hemos tenido a los la
 | Reordenación casos de uso.
 | 28 de Enero
 
-| Error al mostrar botones del navbar.
+| Error al mostrar botones de la barra de navegación.
 | 26 de Febrero
 
 | Error al copiar los ejercicios.
