@@ -1,10 +1,10 @@
 Para mantener a los miembros del grupo informado de la evolución de las tareas de desarrollo y documentación, y recibir la opinión del tutor acerca de estas, las reuniones han jugado un papel muy importante.
 
-Hemos diferenciado varias tipos:
+Hemos diferenciado varios tipos:
 
-* Una reunión semanal con el tutor, con el fin de recibir feedback y ver el avance del proyecto. En las que uno de los compañeros enseñaba el proyecto y el otro cogía apuntes.
+* Una reunión semanal con el tutor, con el fin de recibir _feedback_ y ver el avance del proyecto. En las que uno de los compañeros enseñaba el proyecto y el otro cogía apuntes.
 
-* Una reunión fija semanal de dos horas o más entre lo miembros del grupo después de la reunión con el tutor. En estas reuniones íbamos asignando y reorganizando las tareas, así como hablando de las incidencias y dudas con respecto a las tareas.
+* Una reunión fija semanal de dos horas o más entre los miembros del grupo después de la reunión con el tutor. En estas reuniones íbamos asignando y reorganizando las tareas, así como hablando de las incidencias y dudas con respecto a las tareas.
 
 * Alguna reunión esporádica de horas indefinidas.
 
@@ -56,11 +56,11 @@ En la **Tabla** 8 están listadas todas las reuniones, ya sean con el profesor o
 
 | 20/11/2020
 | Con profesor.
-| Cambios en la especificaciones, en el modelo de datos y _mockups_.
+| Cambios en las especificaciones, en el modelo de datos y _mockups_.
 
 | 21/11/2020
 | Interna.
-| Cambios en la especificaciones, en el modelo de datos y _mockups_.
+| Cambios en las especificaciones, en el modelo de datos y _mockups_.
 
 | 04/12/2020
 | Con profesor.
