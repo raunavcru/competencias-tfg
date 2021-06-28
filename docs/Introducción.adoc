@@ -1,9 +1,22 @@
-La evaluación es un concepto que lleva estando entre nosotros desde el siglo XIX, pero por ser algo tan antiguo no significa que no sea complejo.
+#La evaluación es un concepto que lleva estando entre nosotros desde el siglo XIX, pero por ser algo tan antiguo no significa que no sea complejo.#
 
+////
+La frase es un poco infantil. Si se cita un dato concreto hay que decir de qué fuente se ha obtenido el dato. No se evaluaba antes del S.XIX? No se evaluaba en las escuelas de la Grecia antigua? Alguien piensa que los jeroglíficos egipcios son fáciles por el hecho de ser antiguos?
+////
+
+// Revisar
+La *evaluación* de los alumnos, entendida como la valoración del grado de adquisición de conocimientos y competencias por parte de los alumnos, es una tarea esencial del proceso de enseñanza-aprendizaje, y es un problema que ha traídos de cabeza a los educadores desde hace siglos.
+
+////
 La evaluación del alumnado, algo que hablaremos más adelante. Todo esto es un tema que lleva trayendo a los educadores quebraderos de cabeza desde hace muchos años.
 
 Las competencias aparecieron en nuestro país en 2006 y desde entonces su manera de evaluarlas ha sido bastante difícil. Durante los últimos años, nuestro sistema educativo consta con asignaturas que a su vez contienen una serie de competencias que el alumno debe aprobar a lo largo de su curso académico.
+////
 
-Nuestra finalidad con Verum es la creación de una aplicación web que facilite al educador la forma de evaluar las competencias de un alumno lo más sencilla posible. Por eso hemos realizado una aplicación web enfocada al sistema educativo actual.
+A menudo, el resultado de la evaluación se representa cuantitativamente mediante una calificación numérica que indica (o debe indicar) el grado de destreza del alumno y si éste es suficiente o no para dar la materia por superada.
 
-Este apartado lo dividiremos en tres: Definición de objetivos, Análisis de antecedentes y aportación realizada y Comparativas con otras alternativas.
+Si bien el resultado de la evaluación debería proporcionar información sobre qué conocimientos y competencias ha adquirido el estudiante y en qué grado, a menudo los métodos de evaluación que se emplean en la práctica son de tipo sumativo, en los que se obtiene una calificación mediante la suma y promedio de calificaciones de pruebas parciales donde es difícil establecer a posteriori qué competencias concretas no han sido superadas y en qué grado. Este hecho colisiona con la definición en base a competencias que se hace en términos oficiales de los estudios a todos los niveles, desde la educación primaria hasta los grados universitarios, ya que, en la práctica, no es posible o resulta enormemente costoso, evaluar a los alumnos en base a esas mismas competencias que definen los estudios que cursan.
+
+La finalidad de este Proyecto es la creación de una aplicación web (*Verum*) que facilite al educador la evaluación por competencias de los alumnos de la forma más sencilla y eficiente posible, permitiendo la configuración de la misma para su aplicación a todos los niveles educativos que encontramos en nuestro entorno, con énfasis en la educación primaria y secundaria.
+
+Este capítulo se divide en tres apartados principales: la definición de objetivos, el análisis de antecedentes y aportación realizada, y la comparativas con otras alternativas.

@@ -1,12 +1,21 @@
-El mundo de la evaluación online ha cambiado radicalmente en este último año. El problema de no poder asistir a las clases ni a los exámenes a causa de la pandemia producida por el COVID-19 ha dejado a muchos educadores sin otra opción que la de enseñar mediante la web.
+////
+jjc:
+* Suavizar afirmaciones categóricas.
+* Incluir referencias
+* "Web", no "web".
+////
 
-Los métodos de evaluación son diversos, cada educador tiene el suyo propio. El uso del papel a la hora de evaluar un alumno ya es algo casi del pasado. Las aplicaciones web realizan y guardan todo ese trabajo, facilitando al profesor un sitio donde poder hacerlo de forma segura, fácil y rápida. 
+El mundo de la evaluación online ha cambiado radicalmente en este último año. El problema de no poder asistir a las clases ni a los exámenes a causa de la pandemia producida por el COVID-19 ha dejado a muchos educadores sin otra opción que la de enseñar mediante la Web. #referencias#.
 
-Por desgracia, no todas las aplicaciones web se asemejan a los tipos de evaluación de los educadores, ni tan siquiera siguen un patrón homogéneo, e incluso muchas de ellas no tienen en cuenta el sistema de competencias. Esto último puede ser un error muy grave por parte de las aplicaciones, ya que en España las competencias es algo obligatorio y esencial para la evaluación de un alumno. Este es uno de los factores que si tiene en cuenta Verum.
+Los métodos de evaluación son diversos, cada educador tiene el suyo propio. #El uso del papel a la hora de evaluar un alumno ya es algo casi del pasado#. Las aplicaciones web realizan y guardan todo ese trabajo, facilitando al profesor un sitio donde poder hacerlo de forma segura, fácil y rápida.
 
-Para empezar a comparar con otros competidores, hemos realizado una búsqueda exhaustiva de las alternativas a nuestra aplicación. Las cuatro mayores alternativas son Additio, Moodle, Google Classroom y Enseñanza Virtual, aunque nuestro competidor real es Additio, ya que el resto serían más un asociado que un competidor.
+Por desgracia, no todas las aplicaciones web se asemejan a los tipos de evaluación de los educadores, ni tan siquiera siguen un patrón homogéneo, e incluso muchas de ellas no tienen en cuenta el sistema de competencias. Esto último puede ser un error muy grave por parte de las aplicaciones, ya que en España las competencias es algo obligatorio y esencial para la evaluación de un alumno. Este es uno de los factores que sí tiene en cuenta Verum.
+
+Para empezar a comparar con otras alternativas, hemos realizado una búsqueda exhaustiva de las alternativas a nuestra aplicación. Las cuatro mayores alternativas son Additio, Moodle, Google Classroom y Enseñanza Virtual, aunque nuestro competidor real es Additio, ya que el resto serían más un asociado que un competidor.
+// Este párrafo hay que explicarlo mejor, elaborar más: EV realmente de Blackboard (hay que explicar qué es EV), ¿Por qué Additio es realmente el único competidor? ¿Por qué los otros son colaboradores?.
 
 Centrándonos en una comparativa entre Additio y Verum, podemos observar que la principal diferencia es como se gestionan las competencias. En primer lugar, al asignar competencias a un ejercicio, Additio no permitirá elegir las competencias de nivel mayor, las nivel 3, frente a Verum, que permite elegir las de nivel 1, las de menor nivel. Otra diferencia recae en que Additio permite que las competencias de nivel 1 estén relacionadas sin ponderación a las de nivel 3. Sim embargo, Verum permite una relación ponderada de niveles consecutivos, es decir, las de nivel 1 una de nivel 2, y las de nivel 2 con las de nivel 3. Otra diferencia es el coste de uso, mientras que Verum es gratuito, Additio tiene un coste de aproximadamente 9 euros al año.
+// Elaborar más: ejemplo de competencias de nivel 1, 2 y 3 en enseñanza media; Verum se va a publicar como proyecto libre, etc.
 
 En la siguiente tabla mostraremos de manera visual una comparativa sencilla de nuestra aplicación con las mencionadas anteriormente.
 
@@ -38,7 +47,7 @@ En la siguiente tabla mostraremos de manera visual una comparativa sencilla de n
 ^.^| Sí
 
 | Permite gestionar todos los niveles de las competencias
-^.^| Sí 
+^.^| Sí
 ^.^| No
 ^.^| No
 ^.^| No
@@ -65,7 +74,7 @@ En la siguiente tabla mostraremos de manera visual una comparativa sencilla de n
 ^.^| No
 ^.^| No
 
-| Permite generar informes de las calificaciones de las evaluaciones de un alumno 
+| Permite generar informes de las calificaciones de las evaluaciones de un alumno
 ^.^| Sí
 ^.^| Sí
 ^.^| No
@@ -80,3 +89,5 @@ En la siguiente tabla mostraremos de manera visual una comparativa sencilla de n
 ^.^| No
 
 |===
+
+// Escribir algo a modo de conclusión de apartado/capítulo.
