@@ -1,3 +1,5 @@
+===  Manual de usuario
+
 En esta sección será divida en dos, administrador y profesor. Estas partes serán mostradas de una manera general, con el fin de dar a entender cómo usar la aplicación y cada parte de esta.
 
 ==== Administrador
@@ -46,7 +48,7 @@ image::imagenes-manual-usuario/competencias_level_2_asociada.png[]
 
 Una vez en ella también podremos ver la de nivel inferior asociada a esta.
 
-En todas estas secciones podremos crear editar y eliminar competencias. Al eliminar competencias, si estas tienes otras de nivel inferior asociadas, se eliminaran también.
+En todas estas secciones podremos crear, editar y eliminar competencias. Al eliminar competencias, si estas tienes otras de nivel inferior asociadas, se eliminarán también.
 
 En la pestaña *Evaluations* podremos ver el listado de las evaluaciones finales, así como editarlas y eliminarlas.
 
@@ -140,3 +142,7 @@ image::imagenes-manual-usuario/profesor_evaluacion_tipo.png[]
 Y por último el apartado *My Subjects* en el que podremos ver el listado de asignaturas y las competencias asociadas.
 
 image::imagenes-manual-usuario/profesor_mysubject.png[]
+
+=== Instalación
+
+include::Instalación.adoc[]

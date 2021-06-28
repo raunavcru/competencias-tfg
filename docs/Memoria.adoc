@@ -22,22 +22,6 @@ include::Introducción.adoc[]
 
 include::AnálisisTemporalYDeCostesDeDesarrollo.adoc[]
 
-=== Planificación
-
-include::Planificación.adoc[]
-
-=== Retrasos e incidencias
-
-include::RetrasosEIncidencias.adoc[]
-
-=== Reuniones
-
-include::Reuniones.adoc[]
-
-=== Costes
-
-include::Costes.adoc[]
-
 == III. Análisis de requisitos, diseño e implementación
 
 include::AnálisisDeRequisitosDiseñoImplementación.adoc[]
@@ -60,10 +44,4 @@ include::Bibliografía.adoc[]
 
 == Apéndices
 
-===  Manual de usuario
-
-include::ManualDeUsuario.adoc[]
-
-=== Instalación
-
-include::Instalación.adoc[]
+include::Apéndices.adoc[]

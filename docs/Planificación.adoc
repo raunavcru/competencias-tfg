@@ -1,5 +1,5 @@
 
-La planificación se realizará mediante la metodología _Scrum_ [3], constituidos en nuestro caso por cuatro _Sprints_, que no son más que una serie de tiempo prefijado con el fin de crear un incremento utilizable y potencialmente entregable. A lo largo del desarrollo de nuestro proyecto habrá _Sprints_ consecutivos con una duración de cuatro semanas, a escepción del último que se extiende hasta las cinco semanas. Todo esto con el fin de empezar el día 1 de Enero y terminar el día 30 de Abril.
+La planificación se realizará mediante la metodología _Scrum_ [3], constituidos en nuestro caso por cuatro _Sprints_, que no son más que una serie de tiempo prefijado con el fin de crear un incremento utilizable y potencialmente entregable. A lo largo del desarrollo de nuestro proyecto habrá _Sprints_ consecutivos con una duración de cuatro semanas, a excepción del último que se extiende hasta las cinco semanas. Todo esto con el fin de empezar el día 1 de Enero y terminar el día 30 de Abril.
 
 Una vez realizado cada _Sprint_ se verá reflejado en el proyecto como un incremento en el versionado del mismo, para que así se puedan ver los cambios y avances de este. Para más información del versionado véase xref:Gestión de versiones[Gestión de versiones].
 
