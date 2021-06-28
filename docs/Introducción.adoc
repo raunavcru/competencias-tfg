@@ -7,3 +7,55 @@ Si bien el resultado de la evaluación debería proporcionar información sobre 
 La finalidad de este Proyecto es la creación de una aplicación web (*Verum*) que facilite al educador la evaluación por competencias de los alumnos de la forma más sencilla y eficiente posible, permitiendo la configuración de la misma para su aplicación a todos los niveles educativos que encontramos en nuestro entorno, con énfasis en la educación primaria y secundaria.
 
 Este capítulo se divide en tres apartados principales: la definición de objetivos, el análisis de antecedentes y aportación realizada, y la comparativas con otras alternativas.
+
+=== Análisis de antecedentes y aportación realizada
+
+////
+jjc: (redactar)
+Esto ya se comenta al principio de la introducción. Aquí no hay que repetir lo mismo, sino profundizar en lo que ya se ha dicho.
+
+Antecedentes:
+* Comentar ejemplo concreto de enseñanzas medias con referencia a BOE y BOJA.
+* Comentar ejemplo concreto enseñanzas universitarias.
+* La evaluación sumativa no permite ver claramente las competencias superadas.
+* En enseñanzas medias e inferiores, la normativa exige que se informe sobre competencias superadas, pero la información que se proporciona es "grosera" porque no se cuenta con herramientas adecuadas.
+* Pese a que existen iniciativas para solucionar esto (Additio, alguna otra?) no conocemos ninguna herramienta que trate el problema como algo central.
+
+Aportación:
+* Una aplicación que permite llevar a la práctica una evaluación por competencias tal como se dice en BOE y BOJA (enseñanzas medias y universidad).
+* El profesor piensa en qué competencias quiere evaluar y prepara ejercicios adecuados. El sistema lleva la cuenta del progreso del estudiante en cada competencia.
+* Se consigue una evaluación por competencias con prácticamente el mismo esfuerzo que la evaluación sumativa tradicional, a la vez que se obtiene una evaluación sumativa.
+
+////
+
+////
+La sistema educativo actual esta basado en un sistema de competencias, las cuales el alumno debe aprender y aprobar a lo largo de una asignatura. Este sistema no se lleva bien a la práctica, ya que se centra en la puntuación de los ejercicios y los exámenes, sin evaluar el conocimiento del alumno sobre las competencias de manera específica.
+
+El profesorado evalúa las competencias de un examen _a posteriori_, con la nota la calificación de dicho exámen, en vez de puntuar dichas competencias de manera concreta. Esta forma de actuar hace que el conocimiento adquirido de las competencias por parte de un alumno no sea valorado correctamente. Por ejemplo, en un exámen en el que se plasman cuatro competencias y tenga una calificación final de 7.0, estas cuatro competencias no tiene por que tener la calificación de 7.0, si no que estas variarán dependiendo del conocimiento del alumno.
+
+La aportación que hemos realizado ha sido la posibilidad de calificar una competencia a un alumno de manera individual. Hemos permitido que se creen exámenes en torno a las competencias, lo que permite una calificación individual y correcta de las mismas. Esto hace que la calificación de las competencias de un alumno sea mucho más precisa.
+////
+
+Para las enseñanzas medias, el Ministerio de Educación, Cultura y Deporte a través del Boletín Oficial del Estado, enumera siete competencias claves [72], es decir, competencias de nivel tres. Además especifica que las asignaturas constan de bloques de contenidos, que a su vez, derivan en una serie de criterios de evaluación (competencias de nivel dos), y estos, están relacionados con estándares de aprendizaje evaluables (competencias de nivel uno) [89]. Es decir cada bloque de contenido está asociado a un grupo de competencias de nivel uno y dos. Por ejemplo, Física y Química de 2º y 3º de la ESO, consta de cinco bloques, el último de ellos, llamado "La energía", tiene seis competencias de nivel dos, y estas, están relacionadas con una a cuatro competencias de nivel uno.
+
+Para las enseñanzas universitarias es distinto, las competencias generales y específicas (nivel dos y las competencias básicas (nivel tres) están definidas por las propias universidades [44]. Además, los criterios del profesor (competencias de nivel uno) son especificadas por los departamentos y profesores de la universidad. Por ejemplo, en nuestro grado, Ingeniería del Software, la Universidad de Sevilla define cinco competencias básicas, catorce generales y treinta y cinco específicas [67].
+
+Aunque las competencias están perfectamente descritas, no se puede saber con claridad si se han superado las competencias ni con qué intensidad, dado que los exámenes están pensados en base al contenido y no en las competencias. La única forma de calcular las calificaciones de las competencias es a través de las notas de los exámenes. Esto es lo contrario a lo que se debería hacer, obtener la calificación total del alumno a través competencias que tiene el alumno sobre la asignatura.
+
+La aportación que hemos realizado ha sido la posibilidad de calificar una competencia a un alumno de manera individual. Hemos permitido que se creen exámenes en torno a las competencias, lo que permite una calificación individual y correcta de las mismas. Esto hace que la calificación sobre el conocimiento de un alumno sobre una competencia sea mucho más precisa. Además este sistema no requiere prácticamente el mismo esfuerzo que la evaluación sumativa tradicional.
+
+===  Comparativas con otras alternativas
+
+
+
+=== Definición de objetivos
+
+// jjc: Revisar/completar redacción
+Como hemos comentado, la finalidad del proyecto se concreta en una aplicación web que facilite la evaluación por competencias. Esta finalidad se concreta en los siguientes objetivos específicos de la aplicación, que definen, así mismo, el alcance del mismo:
+
+* Permitir la evaluación por competencias de forma correcta y sencilla, permitiendo al educador tomar decisiones en función de los resultados obtenidos por los estudiantes como, por ejemplo, programar pruebas que evalúen competencias específicas no superadas por los estudiantes.
+* Ser de aplicación a todos los niveles de la enseñanza mediante la configuración de la aplicación por parte de un administrador.
+* Permitir y facilitar, así mismo, una calificación tradicional sumativa con objeto de poder adaptar los procedimiento pre-existentes y comparar los resultados con los obtenidos mediante la evaluación por competencias.
+* Tener gran flexibilidad a la hora de establecer las ponderaciones que generan las calificaciones, teniendo en cuenta diversos esquemas de evaluación (gestión de recuperaciones, etc.).
+* Dotar a la aplicación de una interfaz visual sencilla y adaptable a una diversidad de dispositivos y formatos de pantalla con objeto de facilitar el uso y adopción de la herramienta.
+* Tener en cuenta la internacionalización de la aplicación desde el principio para permitir su fácil traducción a otros idiomas y el posterior desarrollo del código en un ambiente internacional.

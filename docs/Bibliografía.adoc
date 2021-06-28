@@ -1,4 +1,5 @@
 
+[1] Fernández Carmen  2021/01/21. ¿Qué ha aprendido la educación con la Covid-19? La Vanguardia. Recuperado de: https://www.lavanguardia.com/vida/formacion/20210121/6185948/que-aprendido-educacion-covid19-brl.html
 
 [72] Orden ECD/65/2015, de 21 de enero, por la que se describen las relaciones entre las competencias, los contenidos y los criterios de evaluación de la educación primaria, la educación secundaria obligatoria y el bachillerato. Boletín Oficial del Estado, núm. 25, de 29 de enero de 2015, páginas 6986 a 7003. Recuperada de https://www.boe.es/eli/es/o/2015/01/21/ecd65
 
@@ -62,7 +63,7 @@
 
 * https://stackshare.io/stackups/codacy-vs-sonarqube
 
-[1] Fernández Carmen  2021/01/21. ¿Qué ha aprendido la educación con la Covid-19? La Vanguardia. Recuperado de: https://www.lavanguardia.com/vida/formacion/20210121/6185948/que-aprendido-educacion-covid19-brl.html
+
 
 
 
