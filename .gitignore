@@ -128,10 +128,8 @@ dmypy.json
 ## Pyre type checker
 .pyre/
 
-## Eventshow stuff
+## Verum stuff
 initial_data.json
-media/profile/*
-media/event/*
 
 ## IDEs stuff
 # PyCharm and WebStorm
@@ -196,5 +194,5 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
-Corrige/corrigeapp/migrations
+Verum/verumapp/migrations
 
