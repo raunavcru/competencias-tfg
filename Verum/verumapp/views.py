@@ -440,8 +440,7 @@ class BlocksListView(generic.ListView):
     def get_queryset(self):
         set_pk = self.kwargs.get('pk')
         set_object = models.Set.objects.get(pk=set_pk)
-        teacher = models.Teacher.objects.get(user=self.request.user)
-        queryset = models.Evaluation.objects.filter(evaluation_set = set_object).order_by('name') | models.Evaluation.objects.filter(parent = set_object.evaluation).order_by('name') | models.Evaluation.objects.filter(teacher = teacher).order_by('name')
+        queryset = models.Evaluation.objects.filter(evaluation_set = set_object).order_by('name') | models.Evaluation.objects.filter(parent = set_object.evaluation).order_by('name')
         return queryset
 
 @method_decorator(login_required, name='dispatch')

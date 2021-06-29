@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class CorrigeappConfig(AppConfig):
-    name = 'corrigeapp'
+class VerumappConfig(AppConfig):
+    name = 'verumapp'
