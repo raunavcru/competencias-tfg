@@ -4,5 +4,6 @@ page:
 base:
   font-family: Helvetica
   font-size: 11
+  align: justify
 literal:
   background-color: #ba3232

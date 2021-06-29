@@ -36,7 +36,7 @@ Algunas mejoras relevantes, ya que afectan al modelo de datos, serían las sigui
 
 * Asignar más competencias claves (nivel 3) como padre de una competencia específica (nivel 2).
 
-* Implementar alguna manera de añadir muchos datos sobre alumnos, profesores, competencias, etc.
+* Implementar alguna manera de añadir de forma masiva datos en la aplicación.
 
 Además las otras mejoras son:
 
