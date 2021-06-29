@@ -26,7 +26,7 @@ Unas conclusiones más específicas son las siguientes:
 
 * Hemos aprendido a internacionalizar aplicaciones web en Python.
 
-=== Mejoras
+=== V.I Mejoras
 
 A la finalización de este Trabajo de Fin de Estudios, la aplicación puede considerarse funcional pero, debido a su naturaleza y a la gran cantidad de escenarios a los que puede aplicarse, cabe pensar en extensiones y mejoras de diversos tipos que podrían implementarse para extender las capacidades de la aplicación o bien para facilitar aún más su uso. A continuación listamos algunas de estas posibles mejoras.
 

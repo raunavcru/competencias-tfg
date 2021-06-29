@@ -1653,7 +1653,7 @@ También en el directorio de docs podremos encontrar mockups-interactivos, en lo
 
 Dividiremos esta guía en dos partes, administrador y profesor.
 
-==== Administrador
+==== III.IV.I Administrador
 
 Aquí podremos ver la creación de un alumno:
 
@@ -1673,7 +1673,7 @@ La eliminación de estos de un grupo:
 image::mockups/Eliminar alumnos.png[]
 
 
-==== Profesor
+==== III.IV.II Profesor
 
 El listado de alumnos de un grupo al que pertenece:
 
@@ -1705,7 +1705,7 @@ El resto de las aplicaciones usadas durante el desarrollo fue elegido por que qu
 
 Este apartado será desglosado en dos: Tecnologías y Herramientas donde hablaremos de manera más específicas de cada una de ellas, y el por qué la elegimos.
 
-==== Tecnologías image:./images/icons/tecnologia.png[Icono,17,17]
+==== III.V.I Tecnologías image:./images/icons/tecnologia.png[Icono,17,17]
 
 .Django
 [cols="5a"]
@@ -1812,7 +1812,7 @@ SonarQube tienen un mantenimiento de código más costoso, haciendo que sea nece
 |Como segunda opción tenemos a Markdown, un lenguaje de marcado ligero más extendido que Asciidoc, por lo que hay muchas más herramientas que lo soportan. Al contrario que Asciidoc, carece de un estándar, por lo que al redactar algo con una ligera complejidad, cada herramienta puede interpretarlo de distinta forma.
 |===
 
-==== Herramientas  image:./images/icons/herramienta.png[Icono,17,17]
+==== III.V.II Herramientas  image:./images/icons/herramienta.png[Icono,17,17]
 
 .Adobe XD
 |===
@@ -1854,7 +1854,7 @@ Algo muy importante a la hora de trabajar con Git es llevar una metodología, no
 
 Dividiremos este apartado en tres con el fin de desglosar de manera más detallada los mismos: Gestión de ramas, Gestión de commits y Pull requests
  
-==== Gestión de ramas
+==== III.VI.I Gestión de ramas
 
 Una rama es un espacio de trabajo paralelo que deriva de una versión común. Hemos sido muy estrictos en este apartado, en el cual hemos seguido las siguientes pautas.
 
@@ -1887,7 +1887,7 @@ Códigos de sprint (<codigo_sprint>):
 
 Nombre de las tareas (<nombre_tarea>): Nombre especificado en Jira, o abreviación. Por ejemplo, CU-07 Edición de profesores, o simplemente, CU-07. Se pueden añadir varias tareas separadas por &.
 
-==== Gestión de commits
+==== III.VI.II Gestión de commits
 
 El comando git commit se basa en guardar todos los cambios realizados en local junto a una breve descripción del usuario con el fin de dar sentido al trabajo realizado.
 
@@ -1902,7 +1902,7 @@ Tipo de commit (<tipo_commit>):
 * test      (añadir o refactorizar tests)
 * release   (nueva release)
 
-==== Pull requests
+==== III.VI.III Pull requests
 
 Para añadir funcionalidad a la rama *dev* se abrirá una pull request. Esto se basa en hacer una petición de la tarea realizada, con el fin de añadirla a el proyecto. El que haya desarrollado la funcionalidad se asignará a la pull request y asignará al compañero como revisor. Para que la pull request se cómo válida debe de pasar el control y análisis de Travis y Sonarcloud, además del visto bueno del revisor. 
 
@@ -2057,7 +2057,7 @@ py manage.py compilemessages
 
 cambiando _es_ (español) por el idioma correspondiente.
 
-Sin embargo, para traducir los errores de formulario no es posible utilizar estas etiquetas, porque hemos implementado un método, valiéndose del método de gettext llamado _get_language_, que hace saltar los errores de formulario en el idioma correcto.
+Sin embargo, para traducir los errores de formulario no es posible utilizar estas etiquetas, porque hemos implementado un método, que podemos ver en la bloque de código, valiéndose del método de *gettext* llamado _get_language_, que hace saltar los errores de formulario en el idioma correcto.
 
 .Método de error de validación
 [source, python]
