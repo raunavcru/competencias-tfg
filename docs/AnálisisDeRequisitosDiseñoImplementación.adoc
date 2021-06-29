@@ -35,7 +35,7 @@ En nuestro caso hemos realizado nueve requisitos de información, los cuales son
 
 Este tipo de requisito se basa en la definición de una funcionalidad del sistema o los componentes _software_. Esta, debe tener en cuenta las entradas y las salidas.
 
-Además, este tipo de requisito, de forma general, se define siempre una vez finalizados los casos de uso, ya que en estos, se contemplan lo que debe hacer la aplicación a alto nivel.
+Además, este tipo de requisito, de forma general, se define siempre una vez finalizados los casos de uso ya que,en estos, se contemplan lo que debe hacer la aplicación a alto nivel.
 
 De forma resumida, un requisito funcional deberá explicar de forma clara y concisa qué es lo que se *permitirá* hacer en la aplicación.
 
@@ -538,7 +538,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 * RF 03.
 
-|Descripción:El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de una asignatura.
+|Descripción: El sistema deberá comportarse como se describe en el siguiente caso de uso cuando _el administrador solicite la eliminación de una asignatura.
 
 |Secuencia normal:
 
@@ -1633,7 +1633,7 @@ Hemos creado una clase para cada una de las partes que se pueden evaluar. Estas 
 
 image::UML/uml-evaluation.svg[Modelo de evaluacion]
 
-Necesitábamos una clase intermedia entre _Exercise_ (Ejercicio) y _Competence_ (Competencia) que pudiese almacenar una serie de datos que no podrían almacenar en ninguna de las dos, ya que estos no se podrían almacenar en una sola clase. Esta clase es _Exercise_competence_ que, como podemos ver en la siguiente imagen, guarda _intensity_ (intensidad) y _weight_ (peso). La diferencia entre estos conceptos es que el primero marca la "fuerza" con que se debe utilizar la competencia en el ejercicio, y la segunda es la importancia que tiene la competencia en el ejercicio.
+Necesitábamos una clase intermedia entre _Exercise_ (Ejercicio) y _Competence_ (Competencia) que pudiese almacenar una serie de datos que no podrían almacenar en ninguna de las dos, ya que estos no se podrían almacenar en una sola clase. Esta clase es _Exercise_competence_ que, como podemos ver en la siguiente imagen, guarda _intensity_ (intensidad) y _weight_ (peso). La diferencia entre estos conceptos es que la primera marca la "fuerza" con que se debe utilizar la competencia en el ejercicio, y la segunda es la importancia que tiene la competencia en el ejercicio.
 
 image::UML/uml-exercise-competence.svg[Exercise Competence]
 
@@ -1904,7 +1904,7 @@ Tipo de commit (<tipo_commit>):
 
 ==== Pull requests
 
-Para añadir funcionalidad a la rama *dev* se abrirá una pull request. Esto se basa en hacer una petición de la tarea realizada, con el fin de añadirla a el proyecto. El que haya desarrollado la funcionalidad se asignará a la pull request y asignará al compañero como revisor. Para que la pull request se como válida debe de pasar el control y análisis de Travis y Sonarcloud, además del visto bueno del revisor. 
+Para añadir funcionalidad a la rama *dev* se abrirá una pull request. Esto se basa en hacer una petición de la tarea realizada, con el fin de añadirla a el proyecto. El que haya desarrollado la funcionalidad se asignará a la pull request y asignará al compañero como revisor. Para que la pull request se cómo válida debe de pasar el control y análisis de Travis y Sonarcloud, además del visto bueno del revisor. 
 
 Una vez que se haya hecho merge a dev, la rama se eliminará.
 
@@ -2011,7 +2011,7 @@ image::images/choices.PNG[]
 
 * En segundo lugar, implementar el nuevo método de cálculo en _services.py_ en la clase _MarkService()_.
 
-* En último lugar, modificar el método _calculate_evaluation_mark_ de las clase _MarkService()_ dentro de _services.py_ para ñadir en el condicional el nuevo método.
+* En último lugar, modificar el método _calculate_evaluation_mark_ de la clase _MarkService()_ dentro de _services.py_ para ñadir en el condicional el nuevo método.
 
 image::images/calculate_evaluation_mark.PNG[]
 
