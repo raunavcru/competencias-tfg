@@ -1,6 +1,6 @@
 :doctype: book
 :source-highlighter: coderay
-:front-cover-image: image:images/portada2.png[Front Cover,1050,1600]
+:front-cover-image: image:images/portada.png[Front Cover,1050,1600]
 
 :toc:
 :toc-title: Índice general
