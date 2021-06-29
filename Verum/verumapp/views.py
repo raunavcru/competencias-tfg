@@ -1786,7 +1786,7 @@ class MarkEvaluationListView(generic.ListView):
         context['student_object'] = student_object
         context['parent_mark_saved'] = parent_mark_saved
         context['ev_mark_saved'] = ev_mark_saved
-        context['set_id'] = student_object.pk
+        context['set_id'] = set_object.pk
         context['teacher_id'] = self.request.user.id
 
         if get_language() == "es":
