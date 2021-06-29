@@ -2005,13 +2005,13 @@ Además, se ha añadido otro par de funcionalidades que mejoran la experiencia d
 
 Los pasos son los siguiente:
 
-* En primer lugar, añadir en _forms.py_ el valor del método en base de datos y como se va a mostrar al usuario. Se deberá modificar _CHOICES_EVALUATION_TYPE_FINAL_EN_ y _CHOICES_EVALUATION_TYPE_FINAL_ para las evaluaciones finales y/o _CHOICES_EVALUATION_TYPE_PARTIAL_EN_ y _CHOICES_EVALUATION_TYPE_PARTIAL_ para las parciales.
+* En primer lugar, añadir en _forms.py_ el valor del método en base de datos y cómo se va a mostrar al usuario. Se deberá modificar _CHOICES_EVALUATION_TYPE_FINAL_EN_ y _CHOICES_EVALUATION_TYPE_FINAL_ para las evaluaciones finales y/o _CHOICES_EVALUATION_TYPE_PARTIAL_EN_ y _CHOICES_EVALUATION_TYPE_PARTIAL_ para las parciales. En la siguiente imagen podemos ver la parte del código que se debe modificar.
 
 image::images/choices.PNG[]
 
 * En segundo lugar, implementar el nuevo método de cálculo en _services.py_ en la clase _MarkService()_.
 
-* En último lugar, modificar el método _calculate_evaluation_mark_ de la clase _MarkService()_ dentro de _services.py_ para ñadir en el condicional el nuevo método.
+* En último lugar, modificar el método _calculate_evaluation_mark_ de la clase _MarkService()_ dentro de _services.py_ para añadir en el condicional el nuevo método. Podemos verlo en la siguiente imagen.
 
 image::images/calculate_evaluation_mark.PNG[]
 
@@ -2027,7 +2027,7 @@ En el resto de resoluciones móviles tampoco se pierde funcionalidad, pero cuant
 
 Para la traducción hemos utilizado **gettext** y la etiqueta de Django _trans_, los cuales nos permite traducir elementos concretos de las vistas y obtener información del idioma actual de la aplicación.
 
-Para internacionalizar las vistas utilizamos las etiquetas _trans_ sobre la palabra o conjunto de palabras que queremos traducir.
+Para internacionalizar las vistas utilizamos las etiquetas _trans_ sobre la palabra o conjunto de palabras que queremos traducir. Podemos ver un ejemplo en el siguiente bloque de código.
 
 .Ejemplo de etiqueta de traducción
 [source, html]
@@ -2037,7 +2037,7 @@ Para internacionalizar las vistas utilizamos las etiquetas _trans_ sobre la pala
 </h6>  
 ----
 
-Después debemos tener un archivo de configuración de cada idioma al que queramos traducir.
+Después debemos tener un archivo de configuración de cada idioma al que queramos traducir. En la siguiente imagen se muestra como se debe ordenar los archivos.
 
 image::images/translate-file.PNG[]
 
