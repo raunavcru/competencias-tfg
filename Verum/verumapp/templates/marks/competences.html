@@ -13,7 +13,6 @@
                         <th class="td-none" id="name">{% trans "Name" %}</th>
                         <th class="td-none" id="description">{% trans "Description" %}</th>   
                         <th class="center" id="manual_mark">{% trans "Manual mark" %}</th>    
-                        {% comment %} <th class="center" id="evaluate">{% trans "Evaluate" %}</th>                {% endcomment %}
                     </tr>
                 </thead>
                 {% for object in c_mark_saved %}
@@ -31,7 +30,6 @@
                                     {% endif %}
                                 </div>
                             </td>
-                            {% comment %} <td class="center dropdown-trigger" onclick="location.href='{% url 'marks_competences_create' id=exercise_pk pk=object.pk %}'"><em class="material-icons" style="color:#29b6f6">create</em></td> {% endcomment %}
                         </tr>
                     </tbody>
                 {% endfor %}
