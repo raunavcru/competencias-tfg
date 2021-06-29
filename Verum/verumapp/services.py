@@ -264,7 +264,7 @@ class MarkService():
         mark_total = 0.0
         if activity_mark_ls:
             for activity_mark in activity_mark_ls:
-                weight_total = weight_total + float(activity_mark.weight)
+                weight_total = weight_total + float(activity_mark.activity.weight)
 
                 if activity_mark.evaluation_type == "AUTOMATIC" and activity_mark.mark:
                     mark_total = mark_total + float(activity_mark.mark * activity_mark.activity.weight)
