@@ -7,8 +7,9 @@
 :table-caption: Tabla
 :pagenums:
 
+== Glosario
 
-// jjc: es confuso tener archivos para capítulos y para apartados, especialmente porque hay apartados muy cortos. Mejor un archivo para cada capítulo.
+include::Glosario.adoc[]
 
 == Resumen
 
@@ -33,10 +34,6 @@ include::Pruebas.adoc[]
 == V. Conclusiones y desarrollos futuros
 
 include::ConclusionesYDesarrollosFuturos.adoc[]
-
-== Glosario
-
-include::Glosario.adoc[]
 
 == Bibliografía
 

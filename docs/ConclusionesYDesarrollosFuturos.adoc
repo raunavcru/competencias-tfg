@@ -1,7 +1,6 @@
+Finalmente, tras más de 600 horas de trabajo y casi nueve meses de dedicación al proyecto, podemos decir con total sinceridad que la aplicación desarrollada cumple los objetivos propuestos. Aun así, creemos que necesita una serie de mejoras que faltarían para que se pudiera utilizar de forma óptima en la enseñanza.
 
-Finalmente, tras más de 600 horas de trabajo y casi nueve meses de dedicación al proyecto, podemos decir con sinceridad con total sinceridad que la aplicación ha cumplido nuestras expectativas. Hemos desarrollado una aplicación funcional que resuelve el problema planteado sobre la evaluación por competencias en todos los niveles de la educación. Aun así, creemos que necesita una serie de mejoras que faltarían para que se pudiera utilizar de forma óptima en la enseñanza. Estas mejoras se hablarán en el siguiente apartado.
-
-Ahora vamos a citar una sucesión de conclusiones más específicas. Son las siguientes:
+Unas conclusiones más específicas son las siguientes:
 
 * Django nos ha permitido un desarrollo rápido de los casos de uso.
 
@@ -29,9 +28,9 @@ Ahora vamos a citar una sucesión de conclusiones más específicas. Son las sig
 
 === Mejoras
 
-En este apartado hablaremos de las mejoras que, como hemos mencionado con anterioridad, vemos necesarias, además, nombraremos otras mejoras que, aunque no son indispensables, mejorarían la experiencia del usuario en la aplicación.
+A la finalización de este Trabajo de Fin de Estudios, la aplicación puede considerarse funcional pero, debido a su naturaleza y a la gran cantidad de escenarios a los que puede aplicarse, cabe pensar en extensiones y mejoras de diversos tipos que podrían implementarse para extender las capacidades de la aplicación o bien para facilitar aún más su uso. A continuación listamos algunas de estas posibles mejoras.
 
-Las más importantes son:
+Algunas mejoras relevantes, ya que afectan al modelo de datos, serían las siguientes:
 
 * Particularizar peso de competencias específicas (nivel 2) sobre cada competencia clave a la que afecta (nivel 3).
 
