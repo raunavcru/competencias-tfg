@@ -27,13 +27,13 @@ Los métodos de evaluación son diversos, cada educador tiene el suyo propio. El
 Por desgracia, no todas las aplicaciones web se asemejan a los tipos de evaluación de los educadores, ni tan siquiera siguen un patrón homogéneo, e incluso muchas de ellas no tienen en cuenta el sistema de competencias. Esto último puede ser un error muy grave por parte de las aplicaciones, ya que en España las competencias son algo obligatorio y esencial para la evaluación de un alumno. Este es uno de los factores que sí tiene en cuenta Verum.
 
 Para empezar a comparar con nuestra aplicación, hemos realizado una búsqueda de las principales alternativas.
-Las tres primeras aplicaciones se suelen usar dentro de los siguientes ámbitos educativos: Educación Infantil, Educación Primaria, Educación Secundaria Obligatoria (ESO) y Bachillerato. Estas serían: Google Classroom, Additio y Moodle. La siguiente sería Blackboard, la cual es la plataforma utilizada por la Universidad de Sevilla y que por tanto solo se usaría en el ámbito Universitario. 
+Las tres primeras aplicaciones se suelen usar dentro de los siguientes ámbitos educativos: Educación Infantil, Educación Primaria, Educación Secundaria Obligatoria (ESO) y Bachillerato. Estas serían: Google Classroom, Additio y Moodle. La siguiente sería Blackboard, la cual es la plataforma utilizada por la Universidad de Sevilla y que está muy extendida en el ámbito universitario.
 
 De todos estos sistemas, el único que tienen en cuenta de forma específica la evaluación por competencias es Additio.
 
-Centrándonos en una comparativa entre Additio y Verum, podemos observar que la principal diferencia es como se gestionan las competencias. En primer lugar, al asignar competencias a un ejercicio, Additio no permitirá elegir las competencias de nivel mayor, las de nivel 3, frente a Verum, que permite elegir las de nivel 1, las de menor nivel. Otra diferencia recae en que Additio permite que las competencias de nivel 1 estén relacionadas sin ponderación a las de nivel 3. Sim embargo, Verum permite una relación ponderada de niveles consecutivos, es decir, las de nivel 1 con las de nivel 2, y las de nivel 2 con las de nivel 3. Otra diferencia es el coste de uso, mientras que Verum se va a liberar como un proyecto libre, Additio tiene un coste de aproximadamente 9 euros al año por profesor.
-
 Un ejemplo del sistema de competencias sería el siguiente. Cada competencia se clasifica en uno de tres niveles: nivel uno, nivel dos y nivel tres. Cuanto menor sea su nivel, más concreta es. Pondremos como ejemplo la competencia de nivel tres _La actividad científica._, la cual contiene una serie de competencias de nivel dos, un ejemplo de esta sería: _Reconocer e identificar las características del método científico. CMCT._ . Esta a su vez contiene una competencia aún más específica de nivel uno, que sería: _Formula hipótesis para explicar fenómenos cotidianos utilizando teorías y modelos científicos_. [3] [5]
+
+Centrándonos en una comparativa entre Additio y Verum, podemos observar que la principal diferencia es como se gestionan las competencias. En primer lugar, al asignar competencias a un ejercicio, Additio no permitirá elegir las competencias de nivel mayor, las de nivel 3, frente a Verum, que permite elegir las de nivel 1, las de menor nivel. Otra diferencia recae en que Additio permite que las competencias de nivel 1 estén relacionadas sin ponderación a las de nivel 3. Sim embargo, Verum permite una relación ponderada de niveles consecutivos, es decir, las de nivel 1 con las de nivel 2, y las de nivel 2 con las de nivel 3. Otra diferencia es el coste de uso, mientras que Verum se va a liberar como un proyecto libre, Additio tiene un coste de aproximadamente 9 euros al año por profesor.
 
 En la siguiente tabla mostraremos de manera visual una comparativa sencilla de nuestra aplicación con las mencionadas anteriormente.
 
@@ -64,7 +64,7 @@ En la siguiente tabla mostraremos de manera visual una comparativa sencilla de n
 ^.^| No
 ^.^| Sí
 
-| Permite gestionar todos los niveles de las competencias
+| Permite gestionar todos los niveles de competencias
 ^.^| Sí
 ^.^| No
 ^.^| No

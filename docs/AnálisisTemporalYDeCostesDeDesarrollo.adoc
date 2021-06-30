@@ -17,6 +17,7 @@ Las tablas tienen una cabecera con cada una de las semanas de desarrollo con sus
 
 La estrategia respecto a las tareas ha consistido en especificar solo la fecha final, para que no hubiera problema en adelantar tareas. Además, se ha buscado un tiempo para el desarrollo de las tareas amplio. Todo esto nos ha permitido un mayor margen de maniobra ante impedimentos surgidos de otras asignaturas de la carrera. Gracias a esta estrategia el desarrollo ha tenido una presión menor, las desviaciones de la planificación inicial se han mantenido al mínimo y hemos podido resolver las incidencias con un impacto bajo. Véase xref:Retrasos e incidencias[Retrasos e incidencias].
 
+
 .Planificación Sprint 1
 [grid=cols]
 |===
