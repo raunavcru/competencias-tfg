@@ -1,0 +1,179 @@
+===  Manual de usuario
+
+En esta sección será divida en dos, administrador y profesor. Estas partes serán mostradas de una manera general, con el fin de dar a entender cómo usar la aplicación y cada parte de esta.
+
+==== Administrador
+
+Empezaremos enseñando la pantalla de inicio, en ella podremos ver un menú superior con las secciones disponibles al ser administrador.
+
+.Inicio
+image::imagenes-manual-usuario/Inicio.png[]
+
+En la sección *Administrators* podremos ver el listado de administradores que contiene el sistema.
+
+.Listado de administradores
+image::imagenes-manual-usuario/administrador_list.png[]
+
+Arriba a la derecha podremos ver el botón para crear un administrador, al pulsarlo nos redirigirá hacia el formulario de creación.
+
+.Creación un administrador
+image::imagenes-manual-usuario/administrador_create.png[]
+
+Una vez rellenado los campos solo debemos darle al botón crear para terminar.
+
+.Botón para la creación de un administrador
+image::imagenes-manual-usuario/administrador_create_boton.png[]
+
+Una vez acabado podremos ver el nuevo administrador creado.
+
+.Listado de administradores
+image::imagenes-manual-usuario/administrador_list_creado.png[]
+
+También justo debajo del botón crear usuario podemos ver dos botones más, para editar y eliminar ese administrador.
+
+Todos estos comportamientos (crear, editar y eliminar se repiten la forma de acción en el sistema).
+
+Para estas acciones al igual que la creación, solo hará falta pulsar el botón correspondiente.
+
+Para la acción de editar nos redirigirá al formulario de edición.
+
+.Edición de un administrador
+image::imagenes-manual-usuario/administrador_editar.png[]
+
+Y para eliminar tendremos un mensaje informativo sobre el mismo.
+
+.Eliminación de un administrador
+image::imagenes-manual-usuario/administrador_delete.png[]
+
+Pasaremos ahora al apartado de *Competences*. Podremos observar que al pulsar en ella aparece un desplegable, para así poder ver las competencias por nivel.
+
+.Listado de competencias de nivel 3
+image::imagenes-manual-usuario/competencias_level_3.png[]
+
+Dentro de las competencias de nivel 3 podremos observar un apartado llamado Level 2, el cual nos lleva a las competencias de nivel inferior asociadas a esta.
+
+.Listado de competencias de nivel 1
+image::imagenes-manual-usuario/competencias_level_2_asociada.png[]
+
+Una vez en ella también podremos ver la de nivel inferior asociada a esta.
+
+En todas estas secciones podremos crear, editar y eliminar competencias. Al eliminar competencias, si estas tienes otras de nivel inferior asociadas, se eliminarán también.
+
+En la pestaña *Evaluations* podremos ver el listado de las evaluaciones finales, así como editarlas y eliminarlas.
+
+.Listado de evaluaciones
+image::imagenes-manual-usuario/evaluations_list.png[]
+
+En esta pestaña aparece un nuevo apartado, Partial evaluations, en el cual podremos ver las evaluaciones parciales que le corresponde.
+
+.Listado de evaluaciones parciales
+image::imagenes-manual-usuario/evaluations_list_list.png[]
+
+Pasando a la pestaña *Students* podremos ver el listado de todos los estudiantes, crearlos o eliminarlos.
+
+.Listado de estudiantes
+image::imagenes-manual-usuario/student_list.png[]
+
+Pasando a la pestaña *Teachers* podremos ver el listado de todos los estudiantes, así como asignar grupos a un profesor.
+
+.Listado de profesores
+image::imagenes-manual-usuario/teacher_list.png[]
+
+Podremos asignar o desasignar asignaturas a un profesor, para ello solo debemos pulsar en el botón Assign para asignar o Unassign para desasignar.
+
+.Asignación de asignaturas a un profesor
+image::imagenes-manual-usuario/subject_list_assign.png[]
+
+Pasamos a la sección *Sets* en la que podremos ver el listado de los mismos.
+
+.Listado de grupos
+image::imagenes-manual-usuario/set_list.png[]
+
+Asi como assignar alumnos a un grupo.
+
+.Asignación de alumno a grupo
+image::imagenes-manual-usuario/student_list_assign.png[]
+
+En el apartado *Subjects* podremos ver el listado de las mismas.
+
+.Listado de asignaturas
+image::imagenes-manual-usuario/subject_list.png[]
+
+Así como asignar competencias a estas.
+
+.Asignación de competencia a una asignatura
+image::imagenes-manual-usuario/subject_competence.png[]
+
+En el último apartado podremos ver la sección de usuario, algo que se repite tanto en Administrador como Profesor, y en ellas el usuario podrá, ver y editar su datos, cambiar su contraseña o salir de la aplicación.
+
+.Edición de datos de usuario
+image::imagenes-manual-usuario/perfil.png[]
+
+==== Profesor
+
+La pantalla de inicio es la misma que la de administración, en el menú si podremos ver cambios.
+
+En el apartado *My Sets* en ella podremos ver el listado de grupos que tiene el profesor. En ella podremos ver varias partes
+
+.Listado de grupos asignados a un profesor
+image::imagenes-manual-usuario/profesor_mis_asignaturas.png[]
+
+Empezaremos por el apartado *Evaluations*, en esta parte podremos ver las evaluaciones asociadas y la creación de las mismas
+
+.Evaluaciones asociadas a un profesor
+image::imagenes-manual-usuario/profesor_evaluaciones.png[]
+
+En el apartado *Activities* podremos ver la lista de actividades así como ver si es una recuperación, la lista de ejercicios y la opción de crear una actividad, o copiarla.
+
+.Listado de actividades
+image::imagenes-manual-usuario/profesor_actividades.png[]
+
+
+En el apartado *Reports* podremos ver las dos opciones de salida, por competencias y por evaluaciones. 
+
+.Opciones de generación de informe
+image::imagenes-manual-usuario/profesor_reportes.png[]
+
+Por competencias:
+
+.Informe por competencias
+image::imagenes-manual-usuario/profesor_report_competences.png[]
+
+Por evaluación:
+
+.Informe por evaluaciones
+image::imagenes-manual-usuario/profesor_report_evaluations.png[]
+
+En el apartado *List of students* podremos ver el listado de estudiantes y la opción de obtener el reporte de las notas de ese alumnos así como ver las competencias y las notas.
+
+.Listado de estudiantes
+image::imagenes-manual-usuario/profesor_lista_estudiantes.png[]
+
+Reporte:
+
+.Informe por evaluaciones individuales
+image::imagenes-manual-usuario/profesor_report_alumno.png[]
+
+Competencias:
+
+.Informe por competencias individuales
+image::imagenes-manual-usuario/profesor_competencias_alumno.png[]
+
+Notas, en esta pantalla podremos modificar el apartado *Manual mark*. Dentro del apartado activities podremos ver el listado de actividades, dentro ejercicios y las competencias asignadas a estos:
+
+.Lista de evaluaciones individuales
+image::imagenes-manual-usuario/profesor_alumno_calificacion.png[]
+
+En el apartado *Evaluation type* podremos seleccionar el tipo de evaluación.
+
+.Selección de tipo de evaluación
+image::imagenes-manual-usuario/profesor_evaluacion_tipo.png[]
+
+Y por último el apartado *My Subjects* en el que podremos ver el listado de asignaturas y las competencias asociadas.
+
+.Listado de asignaturas
+image::imagenes-manual-usuario/profesor_mysubject.png[]
+
+=== Instalación
+
+include::Instalación.adoc[]

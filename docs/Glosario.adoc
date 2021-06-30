@@ -1,0 +1,35 @@
+* **Actividad**: Tarea que crea un profesor para evaluar una o varias competencias de un alumno. Pueden ser pruebas, exámenes, ejercicios de clases, salidas extraescolares, trabajos grupales, etc.
+* **Competencia concreta**: Competencia de nivel 1. Competencia muy delimitada, asociada a una asignatura, que se puede puntuar directamente.
+* **Competencia específica**: Competencia de nivel 2. Competencia estrechamente relacionada con una asignatura. Se calcula a partir de las competencias concretas.
+* **Competencia general**: Competencia de nivel 3. Competencia de alto nivel que engloba varias asignaturas y habilidades.
+* **Diseño responsive**: Consiste en configurar los elementos de la vista de la web para adaptarlos para diferentes resoluciones.
+* **Ejercicio**: Parte de la que se componen las actividades. Por ejemplo, en un exámen de matemáticas, puede ser que un ejercicio sea realizar una ecuación.
+* **Grupo**: Conjunto de alumnos asignados a una asignatura de un nivel específico. Por ejemplo, una clase de 3ºB de matemáticas. 
+* **Modal**: Es un cuadro emergente que se muestra por encima de la pantalla.
+* **Framework**: Es un conjunto estandarizado de conceptos, prácticas y criterios para enfocar un tipo de problemática.
+
+=== Casos prácticos de competencias
+
+En la siguiente tabla detallaremos los nombres que tienen los tres niveles de competencias en los diferentes niveles de enseñanza, ya que la nomenclatura difiere. 
+
+.Casos prácticos de competencias
+[grid=cols]
+|===
+|Niveles |Nombre en la aplicación |Enseñanza primaria/ESO/Bachillerato |Títulos universitarios 
+
+| Nivel 1
+| Competencias concretas
+| Estándares de aprendizaje
+| Criterios del profesor
+
+| Nivel 2
+| Competencias específicas
+| Criterios de evaluación
+| Competencias generales y específicas
+
+| Nivel 3
+| Competencias generales
+| Competencias clave
+| Competencias básicas
+
+|===
