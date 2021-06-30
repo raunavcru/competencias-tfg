@@ -12,23 +12,23 @@
 
 include::Resumen.adoc[]
 
-== I. Introducción
+== 1. Introducción
 
 include::Introducción.adoc[]
 
-== II. Análisis temporal y de costes de desarrollo
+== 2. Análisis temporal y de costes de desarrollo
 
 include::AnálisisTemporalYDeCostesDeDesarrollo.adoc[]
 
-== III. Análisis de requisitos, diseño e implementación
+== 3. Análisis de requisitos, diseño e implementación
 
 include::AnálisisDeRequisitosDiseñoImplementación.adoc[]
 
-== IV. Pruebas
+== 4. Pruebas
 
 include::Pruebas.adoc[]
 
-== V. Conclusiones y desarrollos futuros
+== 5. Conclusiones y desarrollos futuros
 
 include::ConclusionesYDesarrollosFuturos.adoc[]
 

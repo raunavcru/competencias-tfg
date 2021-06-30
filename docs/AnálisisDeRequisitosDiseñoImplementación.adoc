@@ -1948,7 +1948,7 @@ Este fué uno de los factores más importantes de cara a la elección de una fue
 
 ===== III.VIII.I.I Elección
 
-Nos decantamos por la Fuente Ubuntu, la cual obtuvimos de su página Web [].
+Nos decantamos por la Fuente Ubuntu, la cual obtuvimos de su página web [].
 
 La licencia de esta fuente es _copyleft_ permite que las tipografías sean «usadas, estudiadas, modificadas y redistribuidas libremente» cumpliendo los términos estipulados en ella.
 
@@ -1977,7 +1977,7 @@ _What is not permitted 👎_
 * _Photos cannot be sold without significant modification._
 * _Compiling photos from Unsplash to replicate a similar or competing service._
 
-Para más información puede consultar dicha licencia en la página Web de Unsplash [].
+Para más información puede consultar dicha licencia en la página web de Unsplash [].
 
 === III.IX Implementación del cálculo
 

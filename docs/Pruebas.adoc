@@ -4,7 +4,7 @@ Para las pruebas realizadas que redactamos a continuación, hemos utilizado los 
 
 En el apartado de xref:Adaptabilidad del diseño en diferentes resoluciones[adaptabilidad del diseño], todo esto ha sido testeado usando Google Chrome, el cual, ofrece una gran ventaja por su herramienta para desarrolladores, que se activa con la tecla F12. En uno de sus múltiples apartados utilizamos la función de cambio de resolución para poder comprobar bien este apartado. Usamos la opción iPhoneX, ya que posee las medidas más parecidas a un teléfono móvil actual.
 
-=== IV.I Pruebas de formulario
+=== 4.1 Pruebas de formulario
 
 Un tipo de prueba muy común en el mundo del _software_ son las pruebas de los formularios. Este es un apartado crucial de las aplicaciones puesto que envían los datos directamente a la base de datos. Este tiene un peligro, y es que si un usuario introduce un dato incorrecto podría llegar a destruir o corromper la base de datos de la aplicación web.
 
@@ -19,7 +19,7 @@ Con estas pruebas nos hemos asegurado de que este tipo de peligros no sucedan en
 * Comprobamos si cambiando la _URL_ del formulario no se puede crear o modificar sin permiso (**POST**).
 * Comprobamos la adaptabilidad del diseño.
 
-=== IV.II Pruebas de borrado
+=== 4.2 Pruebas de borrado
 
 En este apartado nos hemos asegurado que ningún usuario pueda realizar esta acción sin los permisos correspondientes. También hemos comprobado la función de dichos métodos.
 
@@ -32,7 +32,7 @@ Con estas pruebas nos hemos asegurado que lo nombrado anteriormente es correcto.
 * Comprobamos si cambiando la url del formulario no se puede borrar sin permiso (**POST**).
 * Comprobamos la adaptabilidad del diseño.
 
-=== IV.III Pruebas de listado
+=== 4.3 Pruebas de listado
 
 En el apartado de listados nos hemos asegurado de que los usuarios sin permisos para poder ver los mismos no pudieran hacerlo. También hemos comprobado el formato y vista correcta de los listados de la aplicación.
 

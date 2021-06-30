@@ -1,77 +1,83 @@
-[1] Abellán Encarna. Scrum: qué es y cómo funciona esta metodología. Wearemarketing. Recuperada el 28 de junio de 2021, de https://www.wearemarketing.com/es/blog/metodologia-scrum-que-es-y-como-funciona.html
+[1] Abellán, E. (2020). Scrum: qué es y cómo funciona esta metodología. Wearemarketing. Recuperada el 28 de junio de 2021, de https://www.wearemarketing.com/es/blog/metodologia-scrum-que-es-y-como-funciona.html
 
-[] Additio. Página principal de Additio. Recuperada el 30 de junio de 2021, de https://www.additioapp.com/es/
+[2] Additio. Página principal de Additio. Recuperada el 30 de junio de 2021, de https://www.additioapp.com/es/
 
-[] Adobe. Adobe XD. Recuperada el 30 de junio de 2021, de https://www.adobe.com/es/products/xd.html
+[3] Adobe. Adobe XD. Recuperada el 30 de junio de 2021, de https://www.adobe.com/es/products/xd.html
 
-[] Apple. Iphone X. Recuperada el 30 de junio de 2021, de https://www.apple.com/es/shop/product/FQAC2QL/A/iPhone-X-de-64-GB-reacondicionado-Gris-espacial
+[4] Apple. Iphone X. Recuperada el 30 de junio de 2021, de https://www.apple.com/es/shop/product/FQAC2QL/A/iPhone-X-de-64-GB-reacondicionado-Gris-espacial
 
-[] AsciiDoc. Página principal de AsciiDoc. Recuperada el 30 de junio de 2021, de https://asciidoc.org/
+[5] AsciiDoc. Página principal de AsciiDoc. Recuperada el 30 de junio de 2021, de https://asciidoc.org/
 
-[] Atlassian. Flujo de trabajo de Gitflow. Recuperada el 30 de junio de 2021, de https://www.atlassian.com/es/git/tutorials/comparing-workflows/gitflow-workflow
+[6] Atlassian. Flujo de trabajo de Gitflow. Recuperada el 30 de junio de 2021, de https://www.atlassian.com/es/git/tutorials/comparing-workflows/gitflow-workflow
 
-[] Atlassian. Jira. Recuperada el 30 de junio de 2021, de https://www.atlassian.com/software/jira
+[7] Atlassian. Jira. Recuperada el 30 de junio de 2021, de https://www.atlassian.com/software/jira
 
-[] AWS. Página principal de AWS. Recuperada el 30 de junio de 2021, de https://aws.amazon.com/es/
+[8] AWS. Página principal de AWS. Recuperada el 30 de junio de 2021, de https://aws.amazon.com/es/
 
-[] Blackboard. Página principal de Blackboard. Recuperada el 30 de junio de 2021, de https://www.blackboard.com/es-es
+[9] Blackboard. Página principal de Blackboard. Recuperada el 30 de junio de 2021, de https://www.blackboard.com/es-es
 
-[] Bootstrap. Página principal de Bootstrap. Recuperada el 30 de junio de 2021, de https://getbootstrap.com/
+[10] Bootstrap. Página principal de Bootstrap. Recuperada el 30 de junio de 2021, de https://getbootstrap.com/
 
-[] Bottle. Bottle: Python Web Framework. Recuperada el 30 de junio de 2021, de https://bottlepy.org/docs/dev/
+[11] Bottle. Bottle: Python Web Framework. Recuperada el 30 de junio de 2021, de https://bottlepy.org/docs/dev/
 
-[] Clockify. Página principal de Clockify. Recuperada el 30 de junio de 2021, de https://clockify.me/
+[12] Clockify. Página principal de Clockify. Recuperada el 30 de junio de 2021, de https://clockify.me/
 
-[] Codacy. Página principal de Codacy. Recuperada el 30 de junio de 2021, de https://www.codacy.com/
+[13] Codacy. Página principal de Codacy. Recuperada el 30 de junio de 2021, de https://www.codacy.com/
 
-[] Django. Meet Django. Recuperada el 30 de junio de 2021, de https://www.djangoproject.com/
+[14] Django. Meet Django. Recuperada el 30 de junio de 2021, de https://www.djangoproject.com/
 
-[2] Fernández Carmen. ¿Qué ha aprendido la educación con la Covid-19? La Vanguardia. Recuperada el 28 de junio de 2021 https://www.lavanguardia.com/vida/formacion/20210121/6185948/que-aprendido-educacion-covid19-brl.html
+[15] Fernández, C. (2021). ¿Qué ha aprendido la educación con la Covid-19? La Vanguardia. Recuperada el 28 de junio de 2021 https://www.lavanguardia.com/vida/formacion/20210121/6185948/que-aprendido-educacion-covid19-brl.html
 
-[] Firebase. Página principal de Firebase. Recuperada el 30 de junio de 2021, de https://firebase.google.com/?hl=es
+[16] Firebase. Página principal de Firebase. Recuperada el 30 de junio de 2021, de https://firebase.google.com/?hl=es
 
-[] Flask. Página principal de Flask. Recuperada el 30 de junio de 2021, de https://flask.palletsprojects.com/en/2.0.x/
+[17] Flask. Página principal de Flask. Recuperada el 30 de junio de 2021, de https://flask.palletsprojects.com/en/2.0.x/
 
-[] Foundation. Página principal de Foundation. Recuperada el 30 de junio de 2021, de https://get.foundation/
+[18] Foundation. Página principal de Foundation. Recuperada el 30 de junio de 2021, de https://get.foundation/
 
-[] Git. Página principal de Git. Recuperada el 30 de junio de 2021, de https://git-scm.com/
+[19] Git. Página principal de Git. Recuperada el 30 de junio de 2021, de https://git-scm.com/
 
-[] Github. Página principal de Github. Recuperada el 30 de junio de 2021, de https://github.com/
+[20] Github. Página principal de Github. Recuperada el 30 de junio de 2021, de https://github.com/
 
-[] Google Classroom. Página principal de Google Classroom. Recuperada el 30 de junio de 2021, de https://classroom.google.com/
+[21] Google Classroom. Página principal de Google Classroom. Recuperada el 30 de junio de 2021, de https://classroom.google.com/
 
-[] Heroku. Página principal de Heroku. Recuperada el 30 de junio de 2021, de https://www.heroku.com/
+[22] Heroku. Página principal de Heroku. Recuperada el 30 de junio de 2021, de https://www.heroku.com/
 
-[] Jenkins. Página principal de Jenkins. Recuperada el 30 de junio de 2021, de https://www.jenkins.io/
+[23] Jenkins. Página principal de Jenkins. Recuperada el 30 de junio de 2021, de https://www.jenkins.io/
 
-[] MariaDB Foundation. MariaDB Server. Recuperada el 30 de junio de 2021, de https://mariadb.org/
+[24] MariaDB Foundation. MariaDB Server. Recuperada el 30 de junio de 2021, de https://mariadb.org/
 
-[] Markdown. Qué es Markdown. Recuperada el 30 de junio de 2021, de https://markdown.es/
+[25] Markdown. Qué es Markdown. Recuperada el 30 de junio de 2021, de https://markdown.es/
 
-[] Materialize. Página principal de Materialize. Recuperada el 30 de junio de 2021, de https://materializecss.com/
+[26] Materialize. Página principal de Materialize. Recuperada el 30 de junio de 2021, de https://materializecss.com/
 
-[3] Orden ECD/65/2015, de 21 de enero, por la que se describen las relaciones entre las competencias, los contenidos y los criterios de evaluación de la educación primaria, la educación secundaria obligatoria y el bachillerato. Boletín Oficial del Estado, núm. 25, de 29 de enero de 2015, páginas 6986 a 7003. Recuperada de https://www.boe.es/eli/es/o/2015/01/21/ecd65
+[27] Moodle. Empezar es fácil. Recuperada el 30 de junio de 2021, de https://moodle.org/?lang=es
 
-[4] Organización Mundial de la Salud. Información básica sobre la COVID-19. Recuperada el 28 de junio de 2021, de https://www.who.int/es/emergencies/diseases/novel-coronavirus-2019/question-and-answers-hub/q-a-detail/coronavirus-disease-covid-19
+[28] MySQL. Página principal de MySQL. Recuperada el 30 de junio de 2021, de https://www.mysql.com/
 
-[] PostgreSQL. Página principal de PostgreSQL. Recuperada el 30 de junio de 2021, de https://www.postgresql.org/
+[29] Orden ECD/65/2015, de 21 de enero, por la que se describen las relaciones entre las competencias, los contenidos y los criterios de evaluación de la educación primaria, la educación secundaria obligatoria y el bachillerato. Boletín Oficial del Estado, núm. 25, de 29 de enero de 2015, páginas 6986 a 7003. Recuperada de https://www.boe.es/eli/es/o/2015/01/21/ecd65
 
-[] Pyramid. Página principal de Pyramid. Recuperada el 30 de junio de 2021, de https://trypyramid.com/
+[30] Organización Mundial de la Salud (2020). Información básica sobre la COVID-19. Recuperada el 28 de junio de 2021, de https://www.who.int/es/emergencies/diseases/novel-coronavirus-2019/question-and-answers-hub/q-a-detail/coronavirus-disease-covid-19
 
-[5] Real Decreto 1105/2014, de 26 de diciembre, por el que se establece el currículo básico de la Educación Secundaria Obligatoria y del Bachillerato. Boletín Oficial del Estado, núm. 3, de 3 de enero de 2015, páginas 169 a 546. Recuperada de https://www.boe.es/eli/es/rd/2014/12/26/1105
+[31] PostgreSQL. Página principal de PostgreSQL. Recuperada el 30 de junio de 2021, de https://www.postgresql.org/
 
-[6] Real Decreto 1393/2007, de 29 de octubre, por el que se establece la ordenación de las enseñanzas universitarias oficiales. Boletín Oficial del Estado, núm. 260, de 30/10/2007. Recuperada de https://www.boe.es/eli/es/rd/2007/10/29/1393/con
+[32] Pyramid. Página principal de Pyramid. Recuperada el 30 de junio de 2021, de https://trypyramid.com/
 
-[] SonarCloud. Página principal de SonarCloud. Recuperada el 30 de junio de 2021, de https://sonarcloud.io/
+[33] Real Decreto 1105/2014, de 26 de diciembre, por el que se establece el currículo básico de la Educación Secundaria Obligatoria y del Bachillerato. Boletín Oficial del Estado, núm. 3, de 3 de enero de 2015, páginas 169 a 546. Recuperada de https://www.boe.es/eli/es/rd/2014/12/26/1105
 
-[] Travis. Test and Deploy with Confidence. Recuperada el 30 de junio de 2021, de https://travis-ci.org/
+[34] Real Decreto 1393/2007, de 29 de octubre, por el que se establece la ordenación de las enseñanzas universitarias oficiales. Boletín Oficial del Estado, núm. 260, de 30/10/2007. Recuperada de https://www.boe.es/eli/es/rd/2007/10/29/1393/con
 
-[] Ubuntu. Ubuntu font. Recuperada el 30 de junio de 2021, de https://design.ubuntu.com/font/
+[35] SonarCloud. Página principal de SonarCloud. Recuperada el 30 de junio de 2021, de https://sonarcloud.io/
 
-[7] Universidad de Sevilla. Grado en Ingeniería Informática-Ingeniería del Software. Recuperada el 28 de junio de 2021, de https://www.us.es/estudiar/que-estudiar/oferta-de-grados/grado-en-ingenieria-informatica-ingenieria-del-software
+[36] Sonarqube. Página principal de Sonarqube. Recuperada el 30 de junio de 2021, de https://www.sonarqube.org/
 
-[] Unsplash. License. Recuperada el 30 de junio de 2021, de https://unsplash.com/license
+[37] Travis. Test and Deploy with Confidence. Recuperada el 30 de junio de 2021, de https://travis-ci.org/
 
-[] Unsplash. Página principal de Unsplash. Recuperada el 30 de junio de 2021, de https://unsplash.com/
+[38] Ubuntu. Ubuntu font. Recuperada el 30 de junio de 2021, de https://design.ubuntu.com/font/
 
-[] Visual Studio Code. Página principal de Visual Studio Code. Recuperada el 30 de junio de 2021, de https://code.visualstudio.com/
+[39] Universidad de Sevilla. Grado en Ingeniería Informática-Ingeniería del Software. Recuperada el 28 de junio de 2021, de https://www.us.es/estudiar/que-estudiar/oferta-de-grados/grado-en-ingenieria-informatica-ingenieria-del-software
+
+[40] Unsplash. License. Recuperada el 30 de junio de 2021, de https://unsplash.com/license
+
+[41] Unsplash. Página principal de Unsplash. Recuperada el 30 de junio de 2021, de https://unsplash.com/
+
+[42] Visual Studio Code. Página principal de Visual Studio Code. Recuperada el 30 de junio de 2021, de https://code.visualstudio.com/
