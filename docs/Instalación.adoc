@@ -1,0 +1,60 @@
+==== Prerrequisitos
+* Instalación de Python3: https://www.python.org/downloads/
+* Instalación PostgresSQL: https://www.postgresql.org/download/
+
+==== (Opcional) Entorno virtual
+
+.Comando de instalación del entorno virtual
+[source, cmd]
+----
+pip install virtualenvwrapper-win
+----
+
+.Comando de creación del entorno virtual
+[source, cmd]
+----
+mkvirtualenv <NombreEntorno>
+----
+
+.Comando de uso del entorno virtual
+[source, cmd]
+----
+workon <NombreEntorno>
+----
+
+==== Configuración
+* Creamos la base de datos en PostgresSQL.
+* Creamos el archivo local_settings.py, lo rellenamos con la copia del contenido de settings.py y configuramos el apartado **DATABASES** para conectarlo a nuestra base de datos.
+* Instalamos los requisitos e migramos el modelo.
+
+.Comando de instalación de requitos del proyecto
+[source, cmd]
+----
+pip install -r requirements.txt
+----
+
+.Comando de creación de las migraciones
+[source, cmd]
+----
+py manage.py makemigrations
+----
+
+.Comando para migrar a la base de datos
+[source, cmd]
+----
+py manage.py migrate
+----
+
+==== Comandos usuales
+
+.Comando para poblar la base de datos
+[source, cmd]
+----
+py manage.py runscript populate
+----
+
+.Comando para ejecutar el servidor
+[source, cmd]
+----
+py manage.py runserver
+----

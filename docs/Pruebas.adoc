@@ -1,0 +1,44 @@
+La realización de pruebas es una actividad fundamental en el desarrollo de un proyecto web, ya que permite dar a los usuarios y/o clientes una aplicación que ha demostrado su fiabilidad y calidad en el proceso y la finalización del desarrollo. Como el proyecto no era lo suficientemente grande y complejo, las pruebas manuales cumplían correctamente su función. Por esto no hemos visto necesario la implementación de pruebas automáticas, las cuales requerirían una mayor inversión de tiempo que las pruebas manuales. Así que hemos preferido dedicarle este tiempo al propio desarrollo.
+
+Para las pruebas realizadas que redactamos a continuación, hemos utilizado los navegadores de Google Chrome y Mozilla en las versiones: Versión 91.0.4472.101 (Build oficial) (64 bits) para Chrome y 89.0 (64-bit) para Mozilla.
+
+En el apartado de xref:Adaptabilidad del diseño en diferentes resoluciones[adaptabilidad del diseño], todo esto ha sido testeado usando Google Chrome, el cual, ofrece una gran ventaja por su herramienta para desarrolladores, que se activa con la tecla F12. En uno de sus múltiples apartados utilizamos la función de cambio de resolución para poder comprobar bien este apartado. Usamos la opción iPhoneX, ya que posee las medidas más parecidas a un teléfono móvil actual.
+
+=== 4.1 Pruebas de formulario
+
+Un tipo de prueba muy común en el mundo del _software_ son las pruebas de los formularios. Este es un apartado crucial de las aplicaciones puesto que envían los datos directamente a la base de datos. Este tiene un peligro, y es que si un usuario introduce un dato incorrecto podría llegar a destruir o corromper la base de datos de la aplicación web.
+
+Con estas pruebas nos hemos asegurado de que este tipo de peligros no sucedan en nuestra aplicación. Para ello hemos realizado las siguientes pruebas manuales:
+
+* Comprobamos que la vista esté correctamente traducida.
+* Verificamos la obligatoriedad de los campos enviando el formulario completamente vacío y rellenando uno a uno, comprobando si se muestra el mensaje de obligatoriedad.
+* Comprobamos las restricciones de modelo, tanto longitud como rango, y vemos si se muestra el error correspondiente. Esto se hace en ambos idiomas.
+* Lo enviamos correctamente y verificamos si se ha creado o modificado y que lleva a la vista correspondiente.
+* Comprobamos si el botón de _Volver_ lleva a la vista correspondiente.
+* Verificamos que no se puede acceder al formulario si no tienes permiso (**GET**).
+* Comprobamos si cambiando la _URL_ del formulario no se puede crear o modificar sin permiso (**POST**).
+* Comprobamos la adaptabilidad del diseño.
+
+=== 4.2 Pruebas de borrado
+
+En este apartado nos hemos asegurado que ningún usuario pueda realizar esta acción sin los permisos correspondientes. También hemos comprobado la función de dichos métodos.
+
+Con estas pruebas nos hemos asegurado que lo nombrado anteriormente es correcto. Para ello hemos realizado las siguientes pruebas manuales:
+
+* Comprobamos que la vista esté correctamente traducida.
+* Comprobamos si el botón de _Volver_ lleva a la vista correspondiente.
+* Lo enviamos correctamente y verificamos si se ha borrado y que lleva a la vista correspondiente.
+* Verificamos que no se puede acceder a la opción de borrar si no tienes permiso (**GET**).
+* Comprobamos si cambiando la url del formulario no se puede borrar sin permiso (**POST**).
+* Comprobamos la adaptabilidad del diseño.
+
+=== 4.3 Pruebas de listado
+
+En el apartado de listados nos hemos asegurado de que los usuarios sin permisos para poder ver los mismos no pudieran hacerlo. También hemos comprobado el formato y vista correcta de los listados de la aplicación.
+
+Para ello hemos realizado las siguientes pruebas manuales:
+
+* Comprobamos que la vista esté correctamente traducida.
+* Comprobamos que no se pueda acceder a un listado sin permiso mediante url.
+* Comprobamos si el botón de _Volver_ lleva a la vista correspondiente.
+* Comprobamos la adaptabilidad del diseño.

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+
+<div class="div-container" >
+	<div style="background-color:white; border-radius: 10px;  box-shadow: 2px 2px 10px #666;">
+        <div class="center"  style="background-color:#f05060; padding-top:1px; border-top-right-radius: 10px; border-top-left-radius:10px; color:white;">
+        <h3 style="text-align:center; padding-bottom:20px;">
+            {% trans "Delete Teacher" %}  
+        </h3>
+        </div>
+        <div  style="padding-bottom:15px;" class="container">
+    <form action="{% url 'teachers_delete' object.pk %}" method="post">
+        {% csrf_token %}
+        <h1 class="center title-delete flow-text">{% trans "Are you sure about deleting the teacher " %}<a>{{object.user.first_name}} {{object.user.last_name}}</a>?</h1>
+
+        <div class="center">
+            <a style="border-radius:5px; background-color:#BBBBBB" href="{% url 'teachers_list'%}" class="waves-effect waves-light btn-large button-delete">{% trans "Cancel" %}</a>
+            <button style="border-radius:5px; background-color:#f05060" class="waves-effect waves-light btn-large button-delete delete-yes" type="submit">{% trans "Delete" %}</button>
+        </div>
+    </form>
+</div>
+</div>
+</div>
+
+{% endblock %}

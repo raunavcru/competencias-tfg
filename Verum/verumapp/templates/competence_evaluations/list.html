@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+
+<div class="container">
+    <h4 class="centered">{% trans "List of competences of "  %} {{student.surname}} {{student.name}}</h4>
+    <h6 class="centered">{% trans "Set" %}: {{set_object.name}}</h6>
+        <table class="highlight">
+            <caption></caption>
+                <thead>
+                    <tr>
+                        <th id="competence">{% trans "Code" %}</th>
+                        <th class="center" id="level">{% trans "Level" %}</th>
+                        <th class="center" id="mark">{% trans "Mark" %}</th>
+                    </tr>
+                </thead>
+                {% for object in competence_student_list %} 
+                    <tbody>
+                        <tr class="center">
+                            <td>{{object.competence.code}}</td>
+                            <td class="center">{{object.competence.level}}</td>
+                                {% if object.mark or object.mark == 0%}
+                                    <td class="center">{{object.mark}}</td>                                 
+                                {% else %}
+                                    <td class="center">-</td>
+                                {% endif %}
+                        </tr>
+                    </tbody>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% include 'paginate.html' %}
+<a onClick="location.href='{% url 'sets_student_list' set_pk %}'" class="waves-effect waves-light btn pink lighten-2" style="margin-top:55px; margin-bottom:15px;"><i class="material-icons left">arrow_back</i>{% trans "Back" %}</a>
+</div>
+{% endblock %}

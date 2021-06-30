@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+<div class="div-container" >
+	<div style="background-color:white; border-radius: 10px;  box-shadow: 2px 2px 10px #666;">
+        <div class="center"  style="background-color:#f05060; padding-top:1px; border-top-right-radius: 10px; border-top-left-radius:10px; color:white;">
+        {% if teacher %}
+            <h3 style="text-align:center; padding-bottom:20px;">
+                {% trans "Delete Block" %}  
+            </h3>
+        {% else %}
+            <h3 style="text-align:center; padding-bottom:20px;">
+                {% trans "Delete Evaluation" %}  
+            </h3>
+        {% endif %}
+        </div>
+
+        <div  style="padding-bottom:15px;" class="container">
+        {% if teacher %}
+            <form action="{% url 'blocks_delete' object.pk %}" method="post">
+        {% else %}
+            <form action="{% url 'evaluations_delete' object.pk %}" method="post">
+        {% endif %}
+                {% csrf_token %}
+                {% if teacher %}
+                <h1 class="center title-delete flow-text">{% trans "Are you sure about deleting the block " %}<a>{{object.name}}</a>?</h1>
+                {% else %}
+                    <h1 class="center title-delete flow-text">{% trans "Are you sure about deleting the evaluation " %}<a>{{object.name}}</a>?</h1>
+                {% endif %}
+
+                <div class="center">
+                    {% if teacher %}
+                        <a style="border-radius:5px; background-color:#BBBBBB" href="{% url 'blocks_list' set_pk %}" class="waves-effect waves-light btn-large button-delete">{% trans "Cancel" %}</a>
+                    {% elif object.is_final %}
+                        <a style="border-radius:5px; background-color:#BBBBBB" href="{% url 'evaluations_list_final' %}" class="waves-effect waves-light btn-large button-delete">{% trans "Cancel" %}</a>
+                    {% else %}
+                        <a style="border-radius:5px; background-color:#BBBBBB" href="{% url 'evaluations_list_partial' object.parent.pk %}" class="waves-effect waves-light btn-large button-delete">{% trans "Cancel" %}</a>
+                    {% endif %}
+                        <button style="border-radius:5px; background-color:#f05060" class="waves-effect waves-light btn-large button-delete delete-yes" type="submit"> 
+                            {% trans "Delete" %}
+                        </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

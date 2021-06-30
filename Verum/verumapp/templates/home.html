@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+
+
+  <div class="parallax-container">
+    <div class="center" style="padding-top:100px; filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.9));">
+      <img alt="verum" class="responsive-img" src="{% static 'images/pruebalogo.png' %}" >     
+    </div>  
+    <div class="parallax "><img alt="corrigeverum"  src="static/images/fondo-prueba.png"></div>
+  </div>
+  <div class="section pink lighten-5">
+    <div class="centrado">
+      <h3>{% trans "Welcome" %} {{user.username}}</h3>
+    </div>
+  </div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.parallax');
+    var instances = M.Parallax.init(elems, options);
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.parallax');
+    var instances = M.Parallax.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.parallax').parallax();
+  });
+</script>
+
+{% endblock %}
