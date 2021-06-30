@@ -1856,11 +1856,11 @@ Con todo esto y con el conocimiento de que se usa en entornos laborales de grand
 
 === III.VI Gestión de código
 
-Este apartado es una parte crucial a la hora de trabajar en grupo con un _software_. En nuestro caso hemos usado Git, el cual es una gran herramienta que se basa en la creación de ramas para el trabajo en paralelo. 
+Este apartado es una parte crucial a la hora de trabajar en grupo con un _software_. En nuestro caso hemos usado Git [], el cual es una gran herramienta que se basa en la creación de ramas para el trabajo en paralelo. 
 
-Algo muy importante a la hora de trabajar con Git es llevar una metodología, nosotros hemos usado la más conocida por parte de ambos: GitFlow. Esto ha dado lugar a una mejora del desarrollo continuo de las prácticas.
+Algo muy importante a la hora de trabajar con Git es llevar una metodología, nosotros hemos usado la más conocida por parte de ambos: GitFlow []. Esto ha dado lugar a una mejora del desarrollo continuo de las prácticas.
 
-Dividiremos este apartado en tres con el fin de desglosar de manera más detallada los mismos: Gestión de ramas, Gestión de commits y Pull requests
+Dividiremos este apartado en tres con el fin de desglosar de manera más detallada los mismos: Gestión de ramas, Gestión de _commits_ y _Pull requests_.
  
 ==== III.VI.I Gestión de ramas
 
@@ -1948,9 +1948,7 @@ Este fué uno de los factores más importantes de cara a la elección de una fue
 
 ===== III.VIII.I.I Elección
 
-Nos decantamos por la Fuente Ubuntu, la cual obtuvimos del siguiente link:
-
-https://design.ubuntu.com/font/
+Nos decantamos por la Fuente Ubuntu, la cual obtuvimos de su página Web [].
 
 La licencia de esta fuente es _copyleft_ permite que las tipografías sean «usadas, estudiadas, modificadas y redistribuidas libremente» cumpliendo los términos estipulados en ella.
 
@@ -1964,7 +1962,7 @@ La opción a la hora de seleccionar las imágenes para la web fue difícil, ya q
 
 ===== III.VIII.II.I Elección
 
-Nos decantamos por la web https://unsplash.com/, la cual tiene un gran número de imágenes muy útiles, y una licencia que nos permitía lo nombrado anteriormente.
+Nos decantamos por la web **Unsplash** [], la cual tiene un gran número de imágenes muy útiles, y una licencia que nos permitía lo nombrado anteriormente.
 
 Con respecto a la licencia, dice lo siguiente:
 
@@ -1979,8 +1977,7 @@ _What is not permitted 👎_
 * _Photos cannot be sold without significant modification._
 * _Compiling photos from Unsplash to replicate a similar or competing service._
 
-Para más información puede consultar dicha licencia en el siguiente enlace:
-https://unsplash.com/license
+Para más información puede consultar dicha licencia en la página Web de Unsplash [].
 
 === III.IX Implementación del cálculo
 
@@ -2025,7 +2022,7 @@ image::images/calculate_evaluation_mark.PNG[]
 
 === III.X Adaptabilidad del diseño en diferentes resoluciones
 
-La resolución nativa de la aplicación es _1920x1080_, dado que es la resolución en la que se ha desarrollado la aplicación. La visualización de la aplicación en resoluciones de escritorio son correctas, pero las resoluciones de dispositivos móviles han sido las más complicadas de realizar. El único dispositivo móvil en el que hemos trabajado en su adaptabilidad, es decir en su xref:Glosario[diseño responsive], es el **iPhone X** porque es de los dispositivos más grandes, por lo tanto, el más fácil de implementar.
+La resolución nativa de la aplicación es _1920x1080_, dado que es la resolución en la que se ha desarrollado la aplicación. La visualización de la aplicación en resoluciones de escritorio son correctas, pero las resoluciones de dispositivos móviles han sido las más complicadas de realizar. El único dispositivo móvil en el que hemos trabajado en su adaptabilidad, es decir en su xref:Glosario[diseño responsive], es el **iPhone X** [] porque es de los dispositivos más grandes, por lo tanto, el más fácil de implementar.
 
 El tratamiento de los formularios en pantallas más pequeñas no ha sido complicado dado que xref:Justificaciones de las tecnologías y herramientas utilizadas[Materialize] nos daba las herramientas necesarias para hacerlo. El problema ha recaído en las listas, dado que hay mucha información repartida horizontalmente, por lo que hemos tenido que omitir información. En casi todas las listas se ha agrupado los botones con un cuadro emergente, es decir, un xref:Glosario[modal], para aprovechar la mayor cantidad de espacio posible. Esto ha permitido que no se pierda funcionalidad.
 
