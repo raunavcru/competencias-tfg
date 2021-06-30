@@ -1726,13 +1726,13 @@ Este apartado será desglosado en dos: Tecnologías y Herramientas donde hablare
 [cols="5a"]
 |===
 |**Django**
-|Este es uno de los mejores entornos de trabajo, o xref:Glosario[Framework] de Python muy completo y con una buena documentación. Tenemos experiencia en él, ya que lo hemos utilizado en otras asignaturas, y nos gustaría seguir aprendiendo y adquirir experiencia en Django [14] para nuestro futuro profesional. 
+|Este es uno de los mejores entornos de trabajo, o xref:Glosario[Framework] de Python muy completo y con una buena documentación. Tenemos experiencia en él, ya que lo hemos utilizado en otras asignaturas, y nos gustaría seguir aprendiendo y adquirir experiencia en Django [Django, 2021] para nuestro futuro profesional. 
 |Alternativas
 |Existen otros frameworks de Python como:
 
-* Flask. [17]
-* Bottle. [11]
-* Pyramid. [32]
+* Flask. [Flask, 2021]
+* Bottle. [Bottle, 2021]
+* Pyramid. [Pyramid, 2021]
 
 Bottle y Flask son _microframework_ mucho más simples que Django y se utilizan para proyectos más sencillos que el nuestro.
 
@@ -1744,12 +1744,12 @@ NodeJs es otra buena alternativa. Es un framework que está creciendo continuame
 [cols="5a"]
 |===
 |**Materialize**
-|Materialize [26] es un xref:Glosario[Framework] dispuesto a facilitar el diseño web en todo tipo de escenarios, escritorio o móvil. Habiendo sido recomendada y después de haber pasado por un proceso de selección, su amplia gama de posibilidades y recursos, junto a su facilidad de uso, fue sin duda el detonante de su elección.
+|Materialize [Materialize, 2021] es un xref:Glosario[Framework] dispuesto a facilitar el diseño web en todo tipo de escenarios, escritorio o móvil. Habiendo sido recomendada y después de haber pasado por un proceso de selección, su amplia gama de posibilidades y recursos, junto a su facilidad de uso, fue sin duda el detonante de su elección.
 |Alternativas
 |Existen algunas alternativas como:
 
-* Boostrap [10]
-* Foundation [18]
+* Boostrap [Bootstrap, 2021]
+* Foundation [Foundation, 2021]
 
 A diferencia de las alternativas, Materialize se basa en la normativa Material design. La creación de esta normativa por parte de Google hace que sea algo con lo que los usuarios están más familiarizados a usar.
 Es de esperar que su soporte.
@@ -1769,12 +1769,12 @@ Gráficamente Materialize está muy por encima de Boostrap o Foundation, debido 
 [cols="6a"]
 |===
 |**PostgreSQL**
-|Es una base de datos SQL gratuita diseñada para ambientes de alto volumen. [31] Tenemos experiencia en esta base de datos por varias asignaturas. Además, dispone de una herramienta gráfica muy útil que facilita mucho su utilización.
+|Es una base de datos SQL gratuita diseñada para ambientes de alto volumen. [PostgreSQL, 2021] Tenemos experiencia en esta base de datos por varias asignaturas. Además, dispone de una herramienta gráfica muy útil que facilita mucho su utilización.
 |Alternativas
 |Existen otras alternativas como:
 
-* MySQL [28]
-* MariaDB [24]
+* MySQL [MySQL, 2021]
+* MariaDB [MariaDB, 2021]
 
 MySQL es la opción más extendida, pero su licencia puede ser un problema, ya que está sujeta a las decisiones de Oracle. La segunda alternativa es MariaDB, un fork de MySQL de código abierto. La gran diferencia de PostgreSQL con esta última, como hemos comentado anteriormente, es que está pensada para alto volumen. Este ha sido el origen de nuestra elección.    
 |===
@@ -1782,12 +1782,12 @@ MySQL es la opción más extendida, pero su licencia puede ser un problema, ya q
 [cols="6a"]
 |===
 |**Heroku**
-|Es una plataforma en nube gratuita [22] que hemos utilizado anteriormente que está recomendada cuando se usa junto a Django y PostgreSQL.
+|Es una plataforma en nube gratuita [Heroku, 2021] que hemos utilizado anteriormente que está recomendada cuando se usa junto a Django y PostgreSQL.
 |Alternativas
 |Existen algunas alternativas como:
 
-* AWS [8]
-* Firebase [16]
+* AWS [AWS, 2021]
+* Firebase [Firebase, 2021]
 
 A diferencia de la versión gratuita de Firebase, la cual, es bastante simple, teniendo limitaciones en el espacio de almacenamiento y el número de usuarios simultáneos. Por tanto, para trabajar con ella de manera profesional, deberás pagar, en cambio, Heroku es gratuito para aplicaciones de poco consumo.
 
@@ -1798,21 +1798,21 @@ En comparación con las alternativas expuestas, Heroku permite desplegar version
 
 |===
 |**Travis**
-|Es una herramienta de integración continua que hemos usado en varias asignaturas que nos va a permitir ejecutar nuestros test y comprobar si han surgido fallos al añadir código al repositorio, además vamos a poder conectarlo con SonarCloud [35].
+|Es una herramienta de integración continua que hemos usado en varias asignaturas que nos va a permitir ejecutar nuestros test y comprobar si han surgido fallos al añadir código al repositorio, además vamos a poder conectarlo con SonarCloud [SonarCloud, 2021].
 |Alternativa
-|La segunda opción es Jenkins [23]. La mayor ventaja que podemos destacar de Travis [37] frente Jenkins es no que necesita ningún tipo de instalación, solo se configura un solo archivo y se puede utilizar a la perfección.
+|La segunda opción es Jenkins [Jenkins, 2021]. La mayor ventaja que podemos destacar de Travis [Travis, 2021] frente Jenkins es no que necesita ningún tipo de instalación, solo se configura un solo archivo y se puede utilizar a la perfección.
 |===
 
 
 [cols="6a"]
 |===
 |**Sonarcloud**
-|Nos va a permitir analizar el código de nuestra aplicación de forma automática conectándose a GitHub [20] mediante Travis.
+|Nos va a permitir analizar el código de nuestra aplicación de forma automática conectándose a GitHub [Github, 2021] mediante Travis.
 |Alternativas
 |Existen algunas alternativas como:
 
-* Codacy [13]
-* SonarQube [36]
+* Codacy [Codacy, 2021]
+* SonarQube [Sonarqube, 2021]
 
 A diferencia de Sonarcloud Codacy no tiene soporte para Git privado o Azure DevOps git.
 
@@ -1822,9 +1822,9 @@ SonarQube tienen un mantenimiento de código más costoso, haciendo que sea nece
 
 |===
 |**Asciidoc** 
-|La forma más habitual de redactar sería en formato Word, pero veíamos necesario que toda la documentación estuviese junto al código. Por eso, elegimos Asciidoc [5], que nos permite redactar nuestros documentos de forma personalizada con un lenguaje sencillo y fácil de aprender.
+|La forma más habitual de redactar sería en formato Word, pero veíamos necesario que toda la documentación estuviese junto al código. Por eso, elegimos Asciidoc [AsciiDoc, 2021], que nos permite redactar nuestros documentos de forma personalizada con un lenguaje sencillo y fácil de aprender.
 |Alternativa
-|Como segunda opción tenemos a Markdown [25], un lenguaje de marcado ligero más extendido que Asciidoc, por lo que hay muchas más herramientas que lo soportan. Al contrario que Asciidoc, carece de un estándar, por lo que al redactar algo con una ligera complejidad, cada herramienta puede interpretarlo de distinta forma.
+|Como segunda opción tenemos a Markdown [Markdown, 2021], un lenguaje de marcado ligero más extendido que Asciidoc, por lo que hay muchas más herramientas que lo soportan. Al contrario que Asciidoc, carece de un estándar, por lo que al redactar algo con una ligera complejidad, cada herramienta puede interpretarlo de distinta forma.
 |===
 
 ==== 3.5.2 Herramientas  image:./images/icons/herramienta.png[Icono,17,17]
@@ -1832,40 +1832,40 @@ SonarQube tienen un mantenimiento de código más costoso, haciendo que sea nece
 
 |===
 |**Adobe XD**
-|Elegimos Adobe XD [3] por la gran versatilidad en sus apartados para la realización de _mockups_ para el proyecto. Dada a su gran facilidad de uso y sus múltiples plantillas y extensiones, su elección fue en nuestra opinión lo más recomendable. También nos ha permitido hacer _mockups_ interactivos de forma sencilla.
+|Elegimos Adobe XD [Adobe, 2021] por la gran versatilidad en sus apartados para la realización de _mockups_ para el proyecto. Dada a su gran facilidad de uso y sus múltiples plantillas y extensiones, su elección fue en nuestra opinión lo más recomendable. También nos ha permitido hacer _mockups_ interactivos de forma sencilla.
 
 |===
 
 
 |===
 |**Visual Studio Code**
-|Es un editor de código desarrollado por Microsoft y que está siendo muy usado estos últimos años. [42] Nos permite programar en múltiples lenguajes de forma personalizada con las numerosas extensiones que acompañan al editor. Además, implementa una consola de depuración y está vinculado directamente con Git. Lo elegimos, aparte de los puntos anteriores, porque tenemos experiencia en él y es fácil de usar.
+|Es un editor de código desarrollado por Microsoft y que está siendo muy usado estos últimos años. [Visual Studio Code, 2021] Nos permite programar en múltiples lenguajes de forma personalizada con las numerosas extensiones que acompañan al editor. Además, implementa una consola de depuración y está vinculado directamente con Git. Lo elegimos, aparte de los puntos anteriores, porque tenemos experiencia en él y es fácil de usar.
 |===
 
 
 |===
 |**Clockify**
-|Nos permite medir nuestro gasto temporal en nuestras tareas de manera sencilla. [12] Existen muchas herramientas de este tipo, pero esta es la que más hemos utilizado, y nos sirve perfectamente para nuestro trabajo. 
+|Nos permite medir nuestro gasto temporal en nuestras tareas de manera sencilla. [Clockify, 2021] Existen muchas herramientas de este tipo, pero esta es la que más hemos utilizado, y nos sirve perfectamente para nuestro trabajo. 
 |===
 
 
 |===
 |**Github**
-|Poco que decir en este apartado, GitHub [20] es la plataforma de control de versiones más utilizada. Dado su conocimiento de uso por parte de los miembros del grupo de trabajo, decidimos sin dudarlo su elección.
+|Poco que decir en este apartado, GitHub [Github, 2021] es la plataforma de control de versiones más utilizada. Dado su conocimiento de uso por parte de los miembros del grupo de trabajo, decidimos sin dudarlo su elección.
 |===
 
 
 |===
 |**Jira**
-|Jira [7] es una herramienta de gran utilidad para equipos de todo tipo. Siendo también de gran ayuda para gestión de trabajo en todo tipo de casos, y en especial para el desarrollo _software_.
+|Jira [Atlassian, 2021b] es una herramienta de gran utilidad para equipos de todo tipo. Siendo también de gran ayuda para gestión de trabajo en todo tipo de casos, y en especial para el desarrollo _software_.
 Con todo esto y con el conocimiento de que se usa en entornos laborales de grandes empresas como Everis, decidimos utilizarla y aprender cómo funciona.
 |===
 
 === 3.6 Gestión de código
 
-Este apartado es una parte crucial a la hora de trabajar en grupo con un _software_. En nuestro caso hemos usado Git [19], el cual es una gran herramienta que se basa en la creación de ramas para el trabajo en paralelo. 
+Este apartado es una parte crucial a la hora de trabajar en grupo con un _software_. En nuestro caso hemos usado Git [Git, 2021], el cual es una gran herramienta que se basa en la creación de ramas para el trabajo en paralelo. 
 
-Algo muy importante a la hora de trabajar con Git es llevar una metodología, nosotros hemos usado la más conocida por parte de ambos: GitFlow [6]. Esto ha dado lugar a una mejora del desarrollo continuo de las prácticas.
+Algo muy importante a la hora de trabajar con Git es llevar una metodología, nosotros hemos usado la más conocida por parte de ambos: GitFlow [Atlassian, 2021a]. Esto ha dado lugar a una mejora del desarrollo continuo de las prácticas.
 
 Dividiremos este apartado en tres con el fin de desglosar de manera más detallada los mismos: Gestión de ramas, Gestión de _commits_ y _Pull requests_.
  
@@ -1955,7 +1955,7 @@ Este fué uno de los factores más importantes de cara a la elección de una fue
 
 ===== 3.8.1.1 Elección
 
-Nos decantamos por la Fuente Ubuntu, la cual obtuvimos de su página Web [38].
+Nos decantamos por la Fuente Ubuntu, la cual obtuvimos de su página web [Ubuntu, 2021].
 
 La licencia de esta fuente es _copyleft_ permite que las tipografías sean «usadas, estudiadas, modificadas y redistribuidas libremente» cumpliendo los términos estipulados en ella.
 
@@ -1969,7 +1969,7 @@ La opción a la hora de seleccionar las imágenes para la web fue difícil, ya q
 
 ===== 3.8.2.1 Elección
 
-Nos decantamos por la web **Unsplash** [41], la cual tiene un gran número de imágenes muy útiles, y una licencia que nos permitía lo nombrado anteriormente.
+Nos decantamos por la web **Unsplash** [Unsplash, 2021b], la cual tiene un gran número de imágenes muy útiles, y una licencia que nos permitía lo nombrado anteriormente.
 
 Con respecto a la licencia, dice lo siguiente:
 
@@ -1984,7 +1984,7 @@ _What is not permitted 👎_
 * _Photos cannot be sold without significant modification._
 * _Compiling photos from Unsplash to replicate a similar or competing service._
 
-Para más información puede consultar dicha licencia en la página Web de Unsplash [40].
+Para más información puede consultar dicha licencia en la página Web de Unsplash [Unsplash, 2021a].
 
 === 3.9 Implementación del cálculo
 
@@ -2031,7 +2031,7 @@ image::images/calculate_evaluation_mark.PNG[]
 
 === 3.10 Adaptabilidad del diseño en diferentes resoluciones
 
-La resolución nativa de la aplicación es _1920x1080_, dado que es la resolución en la que se ha desarrollado la aplicación. La visualización de la aplicación en resoluciones de escritorio son correctas, pero las resoluciones de dispositivos móviles han sido las más complicadas de realizar. El único dispositivo móvil en el que hemos trabajado en su adaptabilidad, es decir en su xref:Glosario[diseño responsive], es el **iPhone X** [4] porque es de los dispositivos más grandes, por lo tanto, el más fácil de implementar.
+La resolución nativa de la aplicación es _1920x1080_, dado que es la resolución en la que se ha desarrollado la aplicación. La visualización de la aplicación en resoluciones de escritorio son correctas, pero las resoluciones de dispositivos móviles han sido las más complicadas de realizar. El único dispositivo móvil en el que hemos trabajado en su adaptabilidad, es decir en su xref:Glosario[diseño responsive], es el **iPhone X** [Apple, 2021] porque es de los dispositivos más grandes, por lo tanto, el más fácil de implementar.
 
 El tratamiento de los formularios en pantallas más pequeñas no ha sido complicado dado que xref:Justificaciones de las tecnologías y herramientas utilizadas[Materialize] nos daba las herramientas necesarias para hacerlo. El problema ha recaído en las listas, dado que hay mucha información repartida horizontalmente, por lo que hemos tenido que omitir información. En casi todas las listas se ha agrupado los botones con un cuadro emergente, es decir, un xref:Glosario[modal], para aprovechar la mayor cantidad de espacio posible. Esto ha permitido que no se pierda funcionalidad.
 
