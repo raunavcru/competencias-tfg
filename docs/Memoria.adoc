@@ -5,6 +5,7 @@
 :toc:
 :toc-title: Índice general
 :table-caption: Tabla
+:figure-caption: Figura
 :pagenums:
 
 == Resumen

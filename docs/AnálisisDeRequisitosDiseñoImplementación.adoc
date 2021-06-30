@@ -1623,28 +1623,34 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 Sabemos que un parte muy importante del desarrollo de una aplicación web es el modelado de los datos. Este no es más que una estructura que nos permite visualizar, especificar y documentar que datos se van a guardar y cómo. Además, sirve de punto de apoyo para construir la aplicación, algo que es crucial y que se asemeja a lo que serían los cimientos de una casa. Por ello hemos realizado una gran implicación y dedicación al modelo con el fin de que se pudiera construir toda la funcionalidad alrededor de este.
 
-A lo largo del apartado iremos mostrando las partes más relevantes del modelo de datos mediante el uso de diagramas. En primer lugar, veremos la totalidad del modelo en la siguiente imagen.
+A lo largo del apartado iremos mostrando las partes más relevantes del modelo de datos mediante el uso de diagramas. En primer lugar, veremos la totalidad del modelo en la figura 1.
 
+.UML
 image::UML/uml.svg[Modelo general]
 
-Para gestionar los actores que interactúan con el sistema hemos diseñado una estructura que parte de una clase, es decir, un arquetipo para la creación de datos, llamada _User_ (Usuario) proveniente de xref:Justificaciones de las tecnologías y herramientas utilizadas[Django]. Este objeto recoge nombre, apellidos y datos de registro como el nombre de usuario, el correo electrónico y la contraseña. Para almacenar más datos hemos creado el objeto _Profile_ (Perfil) que servirá como patrón de los objetos que representan los actores del sistema, _Administrator_ (Administrador) y _Teacher_ (Profesor). Lo veremos gráficamente en la siguiente imagen.
+Para gestionar los actores que interactúan con el sistema hemos diseñado una estructura que parte de una clase, es decir, un arquetipo para la creación de datos, llamada _User_ (Usuario) proveniente de xref:Justificaciones de las tecnologías y herramientas utilizadas[Django]. Este objeto recoge nombre, apellidos y datos de registro como el nombre de usuario, el correo electrónico y la contraseña. Para almacenar más datos hemos creado el objeto _Profile_ (Perfil) que servirá como patrón de los objetos que representan los actores del sistema, _Administrator_ (Administrador) y _Teacher_ (Profesor). Lo veremos gráficamente en la figura 2.
 
+.UML de usuarios 
 image::UML/uml-user.svg[Modelo de los usuarios]
 
-Hemos creado una clase para cada una de las partes que se pueden evaluar. Estas son _Evaluation_ (Evaluación), _Activity_ (Actividad), _Exercise_ (Ejercicio) y _Competence_ (Competencia). Lo veremos mejor en la siguiente imagen.
+Hemos creado una clase para cada una de las partes que se pueden evaluar. Estas son _Evaluation_ (Evaluación), _Activity_ (Actividad), _Exercise_ (Ejercicio) y _Competence_ (Competencia). Lo veremos mejor en la figura 3.
 
+.UML de evaluación 
 image::UML/uml-evaluation.svg[Modelo de evaluacion]
 
 Necesitábamos una clase intermedia entre _Exercise_ (Ejercicio) y _Competence_ (Competencia) que pudiese almacenar una serie de datos que no podrían almacenar en ninguna de las dos, ya que estos no se podrían almacenar en una sola clase. Esta clase es _Exercise_competence_ que, como podemos ver en la siguiente imagen, guarda _intensity_ (intensidad) y _weight_ (peso). La diferencia entre estos conceptos es que la primera marca la "fuerza" con que se debe utilizar la competencia en el ejercicio, y la segunda es la importancia que tiene la competencia en el ejercicio.
 
+.UML de competencias de un ejercicio
 image::UML/uml-exercise-competence.svg[Exercise Competence]
 
-Para almacenar los tres niveles de competencias hemos optado por crear una sola clase que se relacione con sigo misma. Lo veremos más en detalle en la siguiente imagen.
+Para almacenar los tres niveles de competencias hemos optado por crear una sola clase que se relacione con sigo misma. Lo veremos más en detalle en la figura 5.
 
+.UML de competencia
 image::UML/uml-competence.svg[Competence]
 
-Para almacenar las notas hemos creado una clase para cada una de las clases que se pueden puntuar, es decir, _Evaluation_mark_ para _Evaluation_(Evaluación), _Activity_mark_ para _Activity_ (Actividad), _Exercise_mark_ para _Exercise_ (Ejercicio) y, _Competence_mark_ y _Competence_evaluation_ para _Competence_ (Competencia). La diferencia entre _Competence_mark_ y _Competence_evaluation_ es que la primera clase sirve para almacenar la nota de una competencia dentro de un ejercicio concreto y, la segunda es para la nota total de la competencia. Lo veremos gráficamente en la siguiente imagen.
+Para almacenar las notas hemos creado una clase para cada una de las clases que se pueden puntuar, es decir, _Evaluation_mark_ para _Evaluation_(Evaluación), _Activity_mark_ para _Activity_ (Actividad), _Exercise_mark_ para _Exercise_ (Ejercicio) y, _Competence_mark_ y _Competence_evaluation_ para _Competence_ (Competencia). La diferencia entre _Competence_mark_ y _Competence_evaluation_ es que la primera clase sirve para almacenar la nota de una competencia dentro de un ejercicio concreto y, la segunda es para la nota total de la competencia. Lo veremos gráficamente en la figura 6.
 
+.UML de notas
 image::UML/uml-mark.svg[Modelo de notas]
 
 === III.IV Mockups
