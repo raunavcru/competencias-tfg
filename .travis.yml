@@ -16,11 +16,11 @@ before_install:
   - sudo mv postgresql.conf /etc/postgresql/13/main
   - sudo cp /etc/postgresql/{10,13}/main/pg_hba.conf
   - sudo service postgresql restart 13
-  - cd Corrige
+  - cd Verum
 install:
   - pip install -r requirements.txt
 before_script:
-  - cp ./Corrige/settings.py ./Corrige/local_settings.py
+  - cp ./Verum/settings.py ./Verum/local_settings.py
   - export PATH="/usr/lib/postgresql/13/bin:$PATH"
   - sudo -u postgres createuser Kelsier
   - sudo -u postgres createdb corrige -O Kelsier
