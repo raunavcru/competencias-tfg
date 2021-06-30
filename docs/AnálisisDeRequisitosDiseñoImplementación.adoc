@@ -1,5 +1,4 @@
-
-=== III.I Requisitos
+=== 3.1 Requisitos
 
 En la Ingeniería Informática, los requisitos cumplen el papel de entrada en la etapa de diseño. Estos marcan *qué* debe hacer el sistema de una manera real a cómo se implementará en un futuro.
 
@@ -7,7 +6,7 @@ Los tipos de requisitos son variados, y cada uno de estos cumplen una función e
 
 Nosotros hemos dividido los requisitos en tres: requisitos de información, requisitos funcionales y requisitos no funcionales. A continuación, hablaremos de forma más detallada de cada uno de estos.
 
-==== III.I.I Requisitos de Información:
+==== 3.1.1 Requisitos de Información:
 
 Este tipo de requisitos describen la información que debe guardar el sistema para poder cumplir sus objetivos. Estos, deben identificar qué es lo relevante para así guardar la información sobre ellos en un futuro.
 
@@ -31,7 +30,7 @@ En nuestro caso hemos realizado nueve requisitos de información, los cuales son
 
 **RI-09**: Un Estudiante debe guardar un nombre, unos apellidos, una fecha de nacimiento, sus iniciales y las notas en evaluaciones, actividades, ejercicios y competencias.
 
-==== III.I.II Requisitos Funcionales:
+==== 3.1.2 Requisitos Funcionales:
 
 Este tipo de requisito se basa en la definición de una funcionalidad del sistema o los componentes _software_. Esta, debe tener en cuenta las entradas y las salidas.
 
@@ -91,7 +90,7 @@ En nuestro caso, hemos creado veinticuatro de estos, los cuales se han tenido en
 
 **RF 24**: El sistema permitirá a los usuarios registrados poder modificar sus datos de perfil.
 
-==== III.I.III Requisitos No Funcionales:
+==== 3.1.3 Requisitos No Funcionales:
 
 Estos requisitos son normalmente los más escasos, ya que se basan en aspectos de calidad, como la usabilidad, disponibilidad, fiabilidad, rendimiento, etc.
 
@@ -101,7 +100,7 @@ En nuestro caso solo hemos visto oportuno uno de ellos:
  
 **RNF 01**: El sistema permitirá a los usuarios poder usar la aplicación en español y en inglés.
 
-=== III.II Casos de uso
+=== 3.2 Casos de uso
 
 En Ingeniería del Software, un caso se basa en la obtención de requisitos fundamentales de un nuevo software o una actualización de software.
 
@@ -1619,7 +1618,7 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 |===
 
-=== III.III Modelo de datos
+=== 3.3 Modelo de datos
 
 Sabemos que un parte muy importante del desarrollo de una aplicación web es el modelado de los datos. Este no es más que una estructura que nos permite visualizar, especificar y documentar que datos se van a guardar y cómo. Además, sirve de punto de apoyo para construir la aplicación, algo que es crucial y que se asemeja a lo que serían los cimientos de una casa. Por ello hemos realizado una gran implicación y dedicación al modelo con el fin de que se pudiera construir toda la funcionalidad alrededor de este.
 
@@ -1653,7 +1652,7 @@ Para almacenar las notas hemos creado una clase para cada una de las clases que 
 .UML de notas
 image::UML/uml-mark.svg[Modelo de notas]
 
-=== III.IV Mockups
+=== 3.4 Mockups
 
 En esta sección mostraremos algunos de los mockups creados previamente al desarrollo de la aplicación. El resto de _mockups_ se encuentran disponibles dentro del repositorio de GitHub, en la sección docs/mockups.
 
@@ -1661,7 +1660,7 @@ También en el directorio de docs podremos encontrar mockups-interactivos, en lo
 
 Dividiremos esta guía en dos partes, administrador y profesor.
 
-==== III.IV.I Administrador
+==== 3.4.1 Administrador
 
 Aquí podremos ver la creación de un alumno:
 
@@ -1685,7 +1684,7 @@ La eliminación de estos de un grupo:
 image::mockups/Eliminar alumnos.png[]
 
 
-==== III.IV.II Profesor
+==== 3.4.2 Profesor
 
 El listado de alumnos de un grupo al que pertenece:
 
@@ -1712,7 +1711,7 @@ Modificar un ejercicio:
 .Modificar ejercicio
 image::mockups/Modificar ejercicio.png[] 
 
-=== III.V Justificación de las tecnologías y herramientas utilizadas
+=== 3.5 Justificación de las tecnologías y herramientas utilizadas
 
 A la hora de empezar la búsqueda de las tecnologías tuvimos varios factores a tener en cuenta. Uno de ellos era la profesionalidad y otro era la fiabilidad.
 
@@ -1722,7 +1721,7 @@ El resto de las aplicaciones usadas durante el desarrollo fue elegido por que qu
 
 Este apartado será desglosado en dos: Tecnologías y Herramientas donde hablaremos de manera más específicas de cada una de ellas, y el por qué la elegimos.
 
-==== III.V.I Tecnologías image:./images/icons/tecnologia.png[Icono,17,17]
+==== 3.5.1 Tecnologías image:./images/icons/tecnologia.png[Icono,17,17]
 
 [cols="5a"]
 |===
@@ -1828,7 +1827,7 @@ SonarQube tienen un mantenimiento de código más costoso, haciendo que sea nece
 |Como segunda opción tenemos a Markdown [25], un lenguaje de marcado ligero más extendido que Asciidoc, por lo que hay muchas más herramientas que lo soportan. Al contrario que Asciidoc, carece de un estándar, por lo que al redactar algo con una ligera complejidad, cada herramienta puede interpretarlo de distinta forma.
 |===
 
-==== III.V.II Herramientas  image:./images/icons/herramienta.png[Icono,17,17]
+==== 3.5.2 Herramientas  image:./images/icons/herramienta.png[Icono,17,17]
 
 
 |===
@@ -1862,7 +1861,7 @@ SonarQube tienen un mantenimiento de código más costoso, haciendo que sea nece
 Con todo esto y con el conocimiento de que se usa en entornos laborales de grandes empresas como Everis, decidimos utilizarla y aprender cómo funciona.
 |===
 
-=== III.VI Gestión de código
+=== 3.6 Gestión de código
 
 Este apartado es una parte crucial a la hora de trabajar en grupo con un _software_. En nuestro caso hemos usado Git [19], el cual es una gran herramienta que se basa en la creación de ramas para el trabajo en paralelo. 
 
@@ -1870,7 +1869,7 @@ Algo muy importante a la hora de trabajar con Git es llevar una metodología, no
 
 Dividiremos este apartado en tres con el fin de desglosar de manera más detallada los mismos: Gestión de ramas, Gestión de _commits_ y _Pull requests_.
  
-==== III.VI.I Gestión de ramas
+==== 3.6.1 Gestión de ramas
 
 Una rama es un espacio de trabajo paralelo que deriva de una versión común. Hemos sido muy estrictos en este apartado, en el cual hemos seguido las siguientes pautas.
 
@@ -1903,7 +1902,7 @@ Códigos de sprint (<codigo_sprint>):
 
 Nombre de las tareas (<nombre_tarea>): Nombre especificado en Jira, o abreviación. Por ejemplo, CU-07 Edición de profesores, o simplemente, CU-07. Se pueden añadir varias tareas separadas por &.
 
-==== III.VI.II Gestión de commits
+==== 3.6.2 Gestión de commits
 
 El comando git commit se basa en guardar todos los cambios realizados en local junto a una breve descripción del usuario con el fin de dar sentido al trabajo realizado.
 
@@ -1918,13 +1917,13 @@ Tipo de commit (<tipo_commit>):
 * test      (añadir o refactorizar tests)
 * release   (nueva release)
 
-==== III.VI.III Pull requests
+==== 3.6.3 Pull requests
 
 Para añadir funcionalidad a la rama *dev* se abrirá una pull request. Esto se basa en hacer una petición de la tarea realizada, con el fin de añadirla a el proyecto. El que haya desarrollado la funcionalidad se asignará a la pull request y asignará al compañero como revisor. Para que la pull request se cómo válida debe de pasar el control y análisis de Travis y Sonarcloud, además del visto bueno del revisor. 
 
 Una vez que se haya hecho merge a dev, la rama se eliminará.
 
-=== III.VII Gestión de versiones
+=== 3.7 Gestión de versiones
 
 
 En este apartado detallaremos como hemos nombrado a las versiones relacionadas a cada uno de los incrementos de funcionalidad. La especificación de la versión está marcada por el siguiente patrón: **X.Y.Z**, donde:
@@ -1941,7 +1940,7 @@ Las versiones existentes son las siguientes:
 * **0.3**: Versión que incorpora todo el sprint 3. Incluye la mayor parte de la funcionalidad del profesor.
 * **0.4**: Versión que incorpora todo el sprint 4. Incluye el resto de funcionalidad.
 
-=== III.VIII Fuentes e Imágenes
+=== 3.8 Fuentes e Imágenes
 
 El apartado visual dentro de una aplicación web se le conoce como el _frontend_.Este tiene muchos factores, el color, la forma, las imágenes, etc. En nuestro caso le pusimos mucho hincapié a todo esto, pero especialmente al apartado de las imágenes y la fuente. 
 
@@ -1949,12 +1948,12 @@ Para ambas cosas nos pusimos a estudiar, ya que este apartado tiene temas de der
 
 A continuación, hablaremos de la fuente escogida y de dónde hemos seleccionado las imágenes mostradas en la aplicación.
 
-==== III.VIII.I Fuente 
+==== 3.8.1 Fuente 
 La opción a la hora de seleccionar una fuente ha sido elegida con el fin de evitarnos problemas jurídicos, así como poderla usar en aplicaciones de fines lucrativos.
 
 Este fué uno de los factores más importantes de cara a la elección de una fuente. Otro de ellos fué la elección de una fuente que se use habitualmente y que nos fuera de fácil acceso y visualmente atractiva.
 
-===== III.VIII.I.I Elección
+===== 3.8.1.1 Elección
 
 Nos decantamos por la Fuente Ubuntu, la cual obtuvimos de su página Web [38].
 
@@ -1962,13 +1961,13 @@ La licencia de esta fuente es _copyleft_ permite que las tipografías sean «usa
 
 La documentación de la licencia se encuentra en la carpeta _fonts_, cuyo nombre es "LICENSE.txt".
 
-==== III.VIII.II Imágenes
+==== 3.8.2 Imágenes
 
 Esta tarea sin duda fue una de las más difíciles de encontrar, puesto que todos los bancos de imágenes tenían derechos de autor y muchas trabas legales para su uso.
 
 La opción a la hora de seleccionar las imágenes para la web fue difícil, ya que buscábamos un banco de imágenes que nos permitiera el uso comercial pensando en un hipotético uso de la misma y sin derechos de autor.
 
-===== III.VIII.II.I Elección
+===== 3.8.2.1 Elección
 
 Nos decantamos por la web **Unsplash** [41], la cual tiene un gran número de imágenes muy útiles, y una licencia que nos permitía lo nombrado anteriormente.
 
@@ -1987,7 +1986,7 @@ _What is not permitted 👎_
 
 Para más información puede consultar dicha licencia en la página Web de Unsplash [40].
 
-=== III.IX Implementación del cálculo
+=== 3.9 Implementación del cálculo
 
 Existen muchas formas de realizar el cálculo de las notas, y dado que no podemos implementarlas todas, se desarrollará de tal forma que sea posible añadir nueva funcionalidad para el cálculo. Para que el profesor pueda modificar cómo se va a realizar el cálculo, se ha decidido almacenar esa información en el grupo, así todos los alumnos tendrán el mismo método y no supone un coste computacional muy alto. Se ha separado la selección del método del cálculo, pudiéndose elegir un método de cálculo para la evaluación final y otro para las evaluaciones parciales, para que sea más flexible.
 
@@ -2014,7 +2013,7 @@ Para mejorar la experiencia de usuario en la puntuación se ha optado por añadi
 
 Además, se ha añadido otro par de funcionalidades que mejoran la experiencia de usuario. La primera consiste en poder pasar entre la pantalla de un ejercicio concreto de un alumno al siguiente. Esto permite al profesor puntuar un ejercicio en todos los alumnos sin tener que volver a la página donde se lista los alumnos de un grupo de clase. La otra funcionalidad es pasar por ejemplo, de un ejercicio a otro de un alumno o pasar de una actividad a la siguiente.
 
-==== III.IX.I Añadir nuevos métodos de cálculo
+==== 3.9.1 Añadir nuevos métodos de cálculo
 
 Los pasos son los siguiente:
 
@@ -2030,7 +2029,7 @@ image::images/choices.PNG[]
 .Método de cálculo
 image::images/calculate_evaluation_mark.PNG[]
 
-=== III.X Adaptabilidad del diseño en diferentes resoluciones
+=== 3.10 Adaptabilidad del diseño en diferentes resoluciones
 
 La resolución nativa de la aplicación es _1920x1080_, dado que es la resolución en la que se ha desarrollado la aplicación. La visualización de la aplicación en resoluciones de escritorio son correctas, pero las resoluciones de dispositivos móviles han sido las más complicadas de realizar. El único dispositivo móvil en el que hemos trabajado en su adaptabilidad, es decir en su xref:Glosario[diseño responsive], es el **iPhone X** [4] porque es de los dispositivos más grandes, por lo tanto, el más fácil de implementar.
 
@@ -2038,7 +2037,7 @@ El tratamiento de los formularios en pantallas más pequeñas no ha sido complic
 
 En el resto de resoluciones móviles tampoco se pierde funcionalidad, pero cuanto menor es la pantalla peor se va a ver.
 
-=== III.XI Traducción
+=== 3.11 Traducción
 
 Para la traducción hemos utilizado **gettext** y la etiqueta de Django _trans_, los cuales nos permite traducir elementos concretos de las vistas y obtener información del idioma actual de la aplicación.
 

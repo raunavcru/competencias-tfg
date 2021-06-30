@@ -8,10 +8,10 @@ Una vez realizado cada _Sprint_ se verá reflejado en el proyecto como un increm
 
 Los _Sprints_ son los siguientes:
 
-* Sprint 1: 1 de enero al 28 de enero. Véase **Tabla 1**.
-* Sprint 2: 29 de enero al 25 de febrero. Véase **Tabla 2**.
-* Sprint 3: 26 de febrero al 25 de marzo. Véase **Tabla 3**.
-* Sprint 4: 26 de marzo al 29 de abril. Véase **Tabla 4**.
+* Sprint 1: 1 de enero al 28 de enero. Véase **Tabla 2**.
+* Sprint 2: 29 de enero al 25 de febrero. Véase **Tabla 3**.
+* Sprint 3: 26 de febrero al 25 de marzo. Véase **Tabla 4**.
+* Sprint 4: 26 de marzo al 29 de abril. Véase **Tabla 5**.
 
 Las tablas tienen una cabecera con cada una de las semanas de desarrollo con sus fechas de inicio y de fin. En cada celda se mostrará el nombre de la tarea o el caso de uso y la fecha en la que debe estar finalizada la tarea entre corchetes.
 
@@ -317,11 +317,11 @@ _[1 de Abril]_
 === 2.2 Retrasos e incidencias
 
 
-Gracias a la estrategia que hemos comentado en el apartado de xref:Planificación[Planificación] hemos podido mantener los retrasos al mínimo, siendo el desvío grave un total de tres días. También han surgido una serie de incidencias que se han solventado a lo largo del desarrollo. A lo largo de esta sección concretamos cuales son estos retrasos (Véase Tabla 5) e incidencias (Véase Tabla 6).
+Gracias a la estrategia que hemos comentado en el apartado de xref:Planificación[Planificación] hemos podido mantener los retrasos al mínimo, siendo el desvío grave un total de tres días. También han surgido una serie de incidencias que se han solventado a lo largo del desarrollo. A lo largo de esta sección concretamos cuales son estos retrasos (Véase Tabla 6) e incidencias (Véase Tabla 7).
 
 ==== 2.2.1 Retrasos
 
-En la **Tabla 5** veremos la lista de los retrasos que ha surgido en el proyecto con sus respectivas fechas de su finalización teórica y la real. Los retrasos más graves a nuestro parecer han sido los acontecidos en los despliegues de las versiones 0.1 y 0.4, que no ha permitido la correspondiente revisión por parte del tutor en la fecha prevista. En resto de retrasos han sido de una gravedad muy baja dado que no ha retrasado otras tareas.
+En la **Tabla 6** veremos la lista de los retrasos que ha surgido en el proyecto con sus respectivas fechas de su finalización teórica y la real. Los retrasos más graves a nuestro parecer han sido los acontecidos en los despliegues de las versiones 0.1 y 0.4, que no ha permitido la correspondiente revisión por parte del tutor en la fecha prevista. En resto de retrasos han sido de una gravedad muy baja dado que no ha retrasado otras tareas.
 
 .Tabla de retrasos de desarrollo
 [grid=cols]
@@ -354,7 +354,7 @@ En la **Tabla 5** veremos la lista de los retrasos que ha surgido en el proyecto
 
 ==== 2.2.2 Incidencias
 
-En la **Tabla 6** observaremos la lista de incidencias que hemos tenido a lo largo del proyecto. Las incidencias más graves han sido la falta del _CRUD_ de evaluaciones con anterioridad, lo que nos ha provocado tener que replanificar la dos primera semanas del _Sprint_ 2, y la identificación de un par de fallos al asignar y desasignar competencias, que retrasó el despliegue de la versión 0.4.
+En la **Tabla 7** observaremos la lista de incidencias que hemos tenido a lo largo del proyecto. Las incidencias más graves han sido la falta del _CRUD_ de evaluaciones con anterioridad, lo que nos ha provocado tener que replanificar la dos primera semanas del _Sprint_ 2, y la identificación de un par de fallos al asignar y desasignar competencias, que retrasó el despliegue de la versión 0.4.
 
 .Tabla de incidencias
 [grid=cols]
@@ -415,7 +415,7 @@ Hemos diferenciado varios tipos:
 
 * Alguna reunión esporádica de horas indefinidas.
 
-En la **Tabla** 8 están listadas todas las reuniones, ya sean con el profesor o externas, fijas o esporádicas, en la que se resumirá brevemente el contenido de la reunión.
+En la **Tabla 8** están listadas todas las reuniones, ya sean con el profesor o externas, fijas o esporádicas, en la que se resumirá brevemente el contenido de la reunión.
 
 .Tabla de reuniones
 [grid=cols]

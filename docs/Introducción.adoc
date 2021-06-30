@@ -8,7 +8,7 @@ La finalidad de este Proyecto es la creación de una aplicación web (*Verum*) q
 
 Este capítulo se divide en tres apartados principales: la definición de objetivos, el análisis de antecedentes y aportación realizada, y la comparativas con otras alternativas.
 
-=== I.I Análisis de antecedentes y aportación realizada
+=== 1.1 Análisis de antecedentes y aportación realizada
 
 Para las enseñanzas medias, el Ministerio de Educación, Cultura y Deporte a través del Boletín Oficial del Estado, enumera siete competencias clave [29], que en el ámbito de este proyecto llamaremos competencias de nivel tres. Además, especifica que las asignaturas constan de bloques de contenidos que, a su vez, derivan en una serie de criterios de evaluación (competencias de nivel dos) y estos están relacionados con estándares de aprendizaje evaluables (competencias de nivel uno) [33]. Es decir cada bloque de contenido está asociado a un grupo de competencias de nivel uno y dos. Por ejemplo, Física y Química de 2º y 3º de la ESO, consta de cinco bloques, el último de ellos, llamado "La energía", tiene seis competencias de nivel dos, y estas, están relacionadas con una a cuatro competencias de nivel uno.
 
@@ -18,7 +18,7 @@ Aunque las competencias están perfectamente descritas, no se puede saber con cl
 
 La principal aportación de este trabajo es una herramienta que permite calificar a los alumnos directamente en base a competencias. Hemos permitido que se creen exámenes en torno a las competencias, lo que posibilita una calificación individual y correcta de las mismas. Esto hace que la calificación sobre el conocimiento de un alumno sobre una competencia sea mucho más precisa. Además este sistema no requiere prácticamente el mismo esfuerzo que la evaluación sumativa tradicional.
 
-===  I.II Comparativa con otras alternativas
+===  1.2 Comparativa con otras alternativas
 
 El mundo de la evaluación online ha cambiado en este último año. El problema de no poder asistir a las clases ni a los exámenes a causa de la pandemia producida por el COVID-19 [30] ha dejado a muchos educadores sin otra opción que la de enseñar mediante la Web.[15]
 
@@ -110,7 +110,7 @@ En la siguiente tabla mostraremos de manera visual una comparativa sencilla de n
 
 En conclusión, todas las aplicaciones tienen sus ventajas y desventajas, algunas más que otras, pero en general Verum es la más completa en lo que se refiere a la capacidad de evaluación por competencias.
 
-=== I.III Definición de objetivos
+=== 1.3 Definición de objetivos
 
 Como hemos comentado, la finalidad del proyecto se concreta en una aplicación web que facilite la evaluación por competencias. Los objetivos específicos de la aplicación, que definen, así mismo, el alcance del proyecto, son los siguientes:
 
