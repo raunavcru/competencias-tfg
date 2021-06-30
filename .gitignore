@@ -128,9 +128,6 @@ dmypy.json
 ## Pyre type checker
 .pyre/
 
-## Verum stuff
-initial_data.json
-
 ## IDEs stuff
 # PyCharm and WebStorm
 .idea/
