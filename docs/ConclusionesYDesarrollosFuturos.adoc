@@ -1,4 +1,4 @@
-Finalmente, tras más de 600 horas de trabajo y casi nueve meses de dedicación al proyecto, podemos decir con total sinceridad que la aplicación desarrollada cumple los objetivos propuestos. Aun así, creemos que necesita una serie de mejoras que faltarían para que se pudiera utilizar de forma óptima en la enseñanza.
+Finalmente, tras más de 600 horas de trabajo y casi nueve meses de dedicación al proyecto, podemos decir con total sinceridad que la aplicación desarrollada cumple los objetivos propuestos.
 
 Unas conclusiones más específicas son las siguientes:
 
@@ -38,7 +38,7 @@ Algunas mejoras relevantes, ya que afectan al modelo de datos, serían las sigui
 
 * Implementar alguna manera de añadir de forma masiva datos en la aplicación.
 
-Además las otras mejoras son:
+Otras posibles mejoras menos relevantes son:
 
 * Filtros y/o ordenaciones sobre tablas.
 

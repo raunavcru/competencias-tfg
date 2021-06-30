@@ -1,11 +1,11 @@
 
 === III.I Requisitos
 
-En la ingeniería informática, los requisitos cumplen el papel de entrada en la etapa de diseño. Estos marcan *qué* debe hacer el sistema de una manera real a cómo se implementará en un futuro.
+En la Ingeniería Informática, los requisitos cumplen el papel de entrada en la etapa de diseño. Estos marcan *qué* debe hacer el sistema de una manera real a cómo se implementará en un futuro.
 
 Los tipos de requisitos son variados, y cada uno de estos cumplen una función específica. El conjunto de todos los tipos de requisitos forman una exigencia en forma de documentación sobre el contenido del producto final.
 
-Nosotros hemos dividido los requisitos en tres: Requisitos de Información, Requisitos funcionales y Requisitos no funcionales. A continuación, hablaremos de forma más detallada de cada uno de estos.
+Nosotros hemos dividido los requisitos en tres: requisitos de información, requisitos funcionales y requisitos no funcionales. A continuación, hablaremos de forma más detallada de cada uno de estos.
 
 ==== III.I.I Requisitos de Información:
 
@@ -1619,13 +1619,13 @@ El sistema deberá comportarse como se describe en el siguiente caso de uso cuan
 
 === III.III Modelo de datos
 
-Sabemos que un parte muy importante del desarrollo de una aplicación web es el modelado de los datos. Este no es más que una estructura que nos permite visualizar, especificar y documentar que datos se van a guardar y como. Además, sirve de punto de apoyo para construir la aplicación. Algo que es crucial, se asemeja a los que serían los cimientos de una casa. Por ello hemos realizado una gran implicación y dedicación al modelo con el fin de que se pudiera construir toda la funcionalidad alrededor de este.
+Sabemos que un parte muy importante del desarrollo de una aplicación web es el modelado de los datos. Este no es más que una estructura que nos permite visualizar, especificar y documentar que datos se van a guardar y cómo. Además, sirve de punto de apoyo para construir la aplicación, algo que es crucial y que se asemeja a lo que serían los cimientos de una casa. Por ello hemos realizado una gran implicación y dedicación al modelo con el fin de que se pudiera construir toda la funcionalidad alrededor de este.
 
-A lo largo del apartado iremos mostrando partes del modelo que nos resultan interesantes mediante el uso de diagramas. En primer lugar, veremos la totalidad del modelo en la siguiente imagen.
+A lo largo del apartado iremos mostrando las partes más relevantes del modelo de datos mediante el uso de diagramas. En primer lugar, veremos la totalidad del modelo en la siguiente imagen.
 
 image::UML/uml.svg[Modelo general]
 
-Para gestionar los actores que interactúan con el sistema hemos diseñado de una estructura que parte de una clase, es decir, un arquetipo para la creación de datos, llamada _User_ (Usuario) proveniente de xref:Justificaciones de las tecnologías y herramientas utilizadas[Django]. Este objeto recoge nombre, apellidos y datos de registro como el nombre de usuario, el correo electrónico y la contraseña. Para almacenar más datos hemos creado el objeto _Profile_ (Perfil) que servirá como patrón de los objetos que representan los actores del sistema, _Administrator_ (Administrador) y _Teacher_ (Profesor). Lo veremos gráficamente en la siguiente imagen.
+Para gestionar los actores que interactúan con el sistema hemos diseñado una estructura que parte de una clase, es decir, un arquetipo para la creación de datos, llamada _User_ (Usuario) proveniente de xref:Justificaciones de las tecnologías y herramientas utilizadas[Django]. Este objeto recoge nombre, apellidos y datos de registro como el nombre de usuario, el correo electrónico y la contraseña. Para almacenar más datos hemos creado el objeto _Profile_ (Perfil) que servirá como patrón de los objetos que representan los actores del sistema, _Administrator_ (Administrador) y _Teacher_ (Profesor). Lo veremos gráficamente en la siguiente imagen.
 
 image::UML/uml-user.svg[Modelo de los usuarios]
 

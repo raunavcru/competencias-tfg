@@ -1,6 +1,6 @@
-La *evaluación* de los alumnos, entendida como la valoración del grado de adquisición de conocimientos y competencias por parte de los alumnos, es una tarea esencial del proceso de enseñanza-aprendizaje, y es un problema que ha traídos de cabeza a los educadores desde hace siglos.
+La *evaluación* de los alumnos, entendida como la valoración del grado de adquisición de conocimientos y competencias por parte de los alumnos, es una tarea esencial del proceso de enseñanza-aprendizaje, y es un problema que ha traído de cabeza a los educadores desde hace siglos.
 
-A menudo, el resultado de la evaluación se representa cuantitativamente mediante una calificación numérica que indica (o debe indicar) el grado de destreza del alumno y si éste es suficiente o no para dar la materia por superada.
+A menudo, el resultado de la evaluación se representa cuantitativamente mediante una calificación numérica que indica (o debe indicar) el grado de destreza del alumno y si está es suficiente o no para dar la materia por superada.
 
 Si bien el resultado de la evaluación debería proporcionar información sobre qué conocimientos y competencias ha adquirido el estudiante y en qué grado, a menudo los métodos de evaluación que se emplean en la práctica son de tipo sumativo, en los que se obtiene una calificación mediante la suma y promedio de calificaciones de pruebas parciales donde es difícil establecer a posteriori qué competencias concretas no han sido superadas y en qué grado. Este hecho colisiona con la definición en base a competencias que se hace en términos oficiales de los estudios a todos los niveles, desde la educación primaria hasta los grados universitarios, ya que, en la práctica, no es posible o resulta enormemente costoso, evaluar a los alumnos en base a esas mismas competencias que definen los estudios que cursan.
 
@@ -10,28 +10,30 @@ Este capítulo se divide en tres apartados principales: la definición de objeti
 
 === I.I Análisis de antecedentes y aportación realizada
 
-Para las enseñanzas medias, el Ministerio de Educación, Cultura y Deporte a través del Boletín Oficial del Estado, enumera siete competencias claves [3], es decir, competencias de nivel tres. Además especifica que las asignaturas constan de bloques de contenidos, que a su vez, derivan en una serie de criterios de evaluación (competencias de nivel dos), y estos, están relacionados con estándares de aprendizaje evaluables (competencias de nivel uno) [5]. Es decir cada bloque de contenido está asociado a un grupo de competencias de nivel uno y dos. Por ejemplo, Física y Química de 2º y 3º de la ESO, consta de cinco bloques, el último de ellos, llamado "La energía", tiene seis competencias de nivel dos, y estas, están relacionadas con una a cuatro competencias de nivel uno.
+Para las enseñanzas medias, el Ministerio de Educación, Cultura y Deporte a través del Boletín Oficial del Estado, enumera siete competencias clave [3], que en el ámbito de este proyecto llamaremos competencias de nivel tres. Además, especifica que las asignaturas constan de bloques de contenidos que, a su vez, derivan en una serie de criterios de evaluación (competencias de nivel dos) y estos están relacionados con estándares de aprendizaje evaluables (competencias de nivel uno) [5]. Es decir cada bloque de contenido está asociado a un grupo de competencias de nivel uno y dos. Por ejemplo, Física y Química de 2º y 3º de la ESO, consta de cinco bloques, el último de ellos, llamado "La energía", tiene seis competencias de nivel dos, y estas, están relacionadas con una a cuatro competencias de nivel uno.
 
-Para las enseñanzas universitarias es distinto, las competencias generales y específicas (nivel dos y las competencias básicas (nivel tres) están definidas por las propias universidades [6]. Además, los criterios del profesor (competencias de nivel uno) son especificadas por los departamentos y profesores de la universidad. Por ejemplo, en nuestro grado, Ingeniería del Software, la Universidad de Sevilla define cinco competencias básicas, catorce generales y treinta y cinco específicas [7].
+Para las enseñanzas universitarias es distinto. Las competencias generales y específicas (nivel dos) y las competencias básicas (nivel tres) están definidas por las propias universidades [6]. Además, los criterios del profesor (competencias de nivel uno) son especificadas por los departamentos y profesores de la universidad. Por ejemplo, en nuestro grado, Ingeniería del Software, la Universidad de Sevilla define cinco competencias básicas, catorce generales y treinta y cinco específicas [7].
 
-Aunque las competencias están perfectamente descritas, no se puede saber con claridad si se han superado las competencias ni con qué intensidad, dado que los exámenes están pensados en base al contenido y no en las competencias. La única forma de calcular las calificaciones de las competencias es a través de las notas de los exámenes. Esto es lo contrario a lo que se debería hacer, obtener la calificación total del alumno a través competencias que tiene el alumno sobre la asignatura.
+Aunque las competencias están perfectamente descritas, no se puede saber con claridad si se han superado las competencias ni con qué intensidad, dado que los exámenes están pensados en base al contenido y no a las competencias. La única forma de calcular las calificaciones de las competencias es a través de las notas de los exámenes. Esto es lo contrario a lo que se debería hacer: obtener la calificación total del alumno a través competencias que tiene el alumno sobre la asignatura.
 
-La aportación que hemos realizado ha sido la posibilidad de calificar una competencia a un alumno de manera individual. Hemos permitido que se creen exámenes en torno a las competencias, lo que permite una calificación individual y correcta de las mismas. Esto hace que la calificación sobre el conocimiento de un alumno sobre una competencia sea mucho más precisa. Además este sistema no requiere prácticamente el mismo esfuerzo que la evaluación sumativa tradicional.
+La principal aportación de este trabajo es una herramienta que permite calificar a los alumnos directamente en base a competencias. Hemos permitido que se creen exámenes en torno a las competencias, lo que posibilita una calificación individual y correcta de las mismas. Esto hace que la calificación sobre el conocimiento de un alumno sobre una competencia sea mucho más precisa. Además este sistema no requiere prácticamente el mismo esfuerzo que la evaluación sumativa tradicional.
 
-===  I.II Comparativas con otras alternativas
+===  I.II Comparativa con otras alternativas
 
 El mundo de la evaluación online ha cambiado en este último año. El problema de no poder asistir a las clases ni a los exámenes a causa de la pandemia producida por el COVID-19 [2] ha dejado a muchos educadores sin otra opción que la de enseñar mediante la Web.[4]
 
-Los métodos de evaluación son diversos, cada educador tiene el suyo propio. El uso del papel a la hora de evaluar un alumno ya es algo casi del pasado. Las aplicaciones web realizan y guardan todo ese trabajo, facilitando al profesor un sitio donde poder evaluar de forma segura, fácil y rápida.
+Los métodos de evaluación son diversos, cada educador tiene el suyo propio. El uso del papel a la hora de evaluar a un alumno ya es es cada vez menos frecuente. Las aplicaciones web realizan y guardan todo ese trabajo, facilitando al profesor un sitio donde poder evaluar de forma segura, fácil y rápida.
 
-Por desgracia, no todas las aplicaciones web se asemejan a los tipos de evaluación de los educadores, ni tan siquiera siguen un patrón homogéneo, e incluso muchas de ellas no tienen en cuenta el sistema de competencias. Esto último puede ser un error muy grave por parte de las aplicaciones, ya que en España las competencias es algo obligatorio y esencial para la evaluación de un alumno. Este es uno de los factores que sí tiene en cuenta Verum.
+Por desgracia, no todas las aplicaciones web se asemejan a los tipos de evaluación de los educadores, ni tan siquiera siguen un patrón homogéneo, e incluso muchas de ellas no tienen en cuenta el sistema de competencias. Esto último puede ser un error muy grave por parte de las aplicaciones, ya que en España las competencias son algo obligatorio y esencial para la evaluación de un alumno. Este es uno de los factores que sí tiene en cuenta Verum.
 
 Para empezar a comparar con nuestra aplicación, hemos realizado una búsqueda de las principales alternativas.
 Las tres primeras aplicaciones se suelen usar dentro de los siguientes ámbitos educativos: Educación Infantil, Educación Primaria, Educación Secundaria Obligatoria (ESO) y Bachillerato. Estas serían: Google Classroom, Additio y Moodle. La siguiente sería Blackboard, la cual es la plataforma utilizada por la Universidad de Sevilla y que por tanto solo se usaría en el ámbito Universitario. 
 
-Centrándonos en una comparativa entre Additio y Verum, podemos observar que la principal diferencia es como se gestionan las competencias. En primer lugar, al asignar competencias a un ejercicio, Additio no permitirá elegir las competencias de nivel mayor, las de nivel 3, frente a Verum, que permite elegir las de nivel 1, las de menor nivel. Otra diferencia recae en que Additio permite que las competencias de nivel 1 estén relacionadas sin ponderación a las de nivel 3. Sim embargo, Verum permite una relación ponderada de niveles consecutivos, es decir, las de nivel 1 una de nivel 2, y las de nivel 2 con las de nivel 3. Otra diferencia es el coste de uso, mientras que Verum se va a liberar como un proyecto libre, Additio tiene un coste de aproximadamente 9 euros al año.
+De todos estos sistemas, el único que tienen en cuenta de forma específica la evaluación por competencias es Additio.
 
-Un ejemplo del sistema de competencias sería el siguiente. Una competencia se divide en tres niveles: nivel uno, nivel dos y nivel tres. Cuanto menor sea su nivel, más concreta es. Pondremos como ejemplo la competencia de nivel tres _La actividad científica._, la cual contiene una serie de competencias de nivel dos, un ejemplo de esta sería: _Reconocer e identificar las características del método científico. CMCT._ . Esta a su vez contiene una competencia aún más específica de nivel uno, que sería: _Formula hipótesis para explicar fenómenos cotidianos utilizando teorías y modelos científicos_. [3] [5]
+Centrándonos en una comparativa entre Additio y Verum, podemos observar que la principal diferencia es como se gestionan las competencias. En primer lugar, al asignar competencias a un ejercicio, Additio no permitirá elegir las competencias de nivel mayor, las de nivel 3, frente a Verum, que permite elegir las de nivel 1, las de menor nivel. Otra diferencia recae en que Additio permite que las competencias de nivel 1 estén relacionadas sin ponderación a las de nivel 3. Sim embargo, Verum permite una relación ponderada de niveles consecutivos, es decir, las de nivel 1 con las de nivel 2, y las de nivel 2 con las de nivel 3. Otra diferencia es el coste de uso, mientras que Verum se va a liberar como un proyecto libre, Additio tiene un coste de aproximadamente 9 euros al año por profesor.
+
+Un ejemplo del sistema de competencias sería el siguiente. Cada competencia se clasifica en uno de tres niveles: nivel uno, nivel dos y nivel tres. Cuanto menor sea su nivel, más concreta es. Pondremos como ejemplo la competencia de nivel tres _La actividad científica._, la cual contiene una serie de competencias de nivel dos, un ejemplo de esta sería: _Reconocer e identificar las características del método científico. CMCT._ . Esta a su vez contiene una competencia aún más específica de nivel uno, que sería: _Formula hipótesis para explicar fenómenos cotidianos utilizando teorías y modelos científicos_. [3] [5]
 
 En la siguiente tabla mostraremos de manera visual una comparativa sencilla de nuestra aplicación con las mencionadas anteriormente.
 
@@ -97,7 +99,7 @@ En la siguiente tabla mostraremos de manera visual una comparativa sencilla de n
 ^.^| No
 ^.^| No
 
-| Es gratuito
+| Disponible licencia gratuita
 ^.^| Sí
 ^.^| No
 ^.^| Sí
@@ -106,11 +108,11 @@ En la siguiente tabla mostraremos de manera visual una comparativa sencilla de n
 
 |===
 
-En conclusión, todas las aplicaciones tienen sus ventajas y desventajas, algunas más que otras, pero en general Verum es la más completa.
+En conclusión, todas las aplicaciones tienen sus ventajas y desventajas, algunas más que otras, pero en general Verum es la más completa en lo que se refiere a la capacidad de evaluación por competencias.
 
 === I.III Definición de objetivos
 
-Como hemos comentado, la finalidad del proyecto se concreta en una aplicación web que facilite la evaluación por competencias. Esta finalidad se concreta en los siguientes objetivos específicos de la aplicación, que definen, así mismo, el alcance del mismo:
+Como hemos comentado, la finalidad del proyecto se concreta en una aplicación web que facilite la evaluación por competencias. Los objetivos específicos de la aplicación, que definen, así mismo, el alcance del proyecto, son los siguientes:
 
 * Permitir la evaluación por competencias de forma correcta y sencilla, permitiendo al educador tomar decisiones en función de los resultados obtenidos por los estudiantes como, por ejemplo, programar pruebas que evalúen competencias específicas no superadas por los estudiantes.
 * Ser de aplicación a todos los niveles de la enseñanza mediante la configuración de la aplicación por parte de un administrador.

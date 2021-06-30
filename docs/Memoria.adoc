@@ -7,10 +7,6 @@
 :table-caption: Tabla
 :pagenums:
 
-== Glosario
-
-include::Glosario.adoc[]
-
 == Resumen
 
 include::Resumen.adoc[]
@@ -34,6 +30,10 @@ include::Pruebas.adoc[]
 == V. Conclusiones y desarrollos futuros
 
 include::ConclusionesYDesarrollosFuturos.adoc[]
+
+== Glosario
+
+include::Glosario.adoc[]
 
 == Bibliografía
 

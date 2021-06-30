@@ -630,7 +630,7 @@ En la **Tabla** 8 están listadas todas las reuniones, ya sean con el profesor o
 
 En este apartado hablaremos de los gastos de la realización de todo el proyecto, ya sea documentación, reuniones o desarrollo de la aplicación. Empezaremos con la parte más cuantiosa, que son los salarios, después especificaremos apartados menos costosos y terminaremos con los costes totales, que separaremos en teórico y real.
 
-El proyecto está estimado en **300 horas** de trabajo por persona, basándonos en los 12 créditos del Trabajo Fin de Grado. Por lo tanto, el proyecto supondrá un coste temporal inicial de **600 horas**. Además, los dos miembros del equipo tienen el mismo puesto.
+La dedicación al proyecto se ha estimado en 300 horas de trabajo por persona, que coincide con la dedicación prevista para un Trabajo Fin de Grado de 12 créditos ECTS. Por lo tanto, el proyecto supondrá un coste temporal inicial de **600 horas**. Además, los dos miembros del equipo tienen el mismo puesto.
 
 ==== II.IV.I Salarios
 Suponemos que cada miembro cobra unos **8,5 euros la hora**, basándonos en salarios de puestos reales. Por lo que 300 horas sumarán un coste de **2550 euros**. También supondremos un **35%** de costes de la Seguridad Social. Estos costes deberían ser calculados mensualmente, así que su coste real, supondría un incremento entre 30 y 35%. Escogemos el más alto. Además, asumiremos que ha habido un sobrecoste por costes por formación, es decir, costes que se han producido al dedicar tiempo en cubrir falta de conocimiento en el desarrollo. Valoramos este sobrecoste del **10%** del **salario total**. Desglosamos este coste en la **Tabla 9**.
